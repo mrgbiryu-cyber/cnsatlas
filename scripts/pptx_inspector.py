@@ -82,6 +82,46 @@ def _extract_xfrm(node: ET.Element | None) -> dict[str, int] | None:
     }
 
 
+def _extract_group_context(node: ET.Element | None) -> dict[str, int] | None:
+    if node is None:
+        return None
+    off = node.find("a:off", NS)
+    ext = node.find("a:ext", NS)
+    ch_off = node.find("a:chOff", NS)
+    ch_ext = node.find("a:chExt", NS)
+    if off is None and ext is None:
+        return None
+    return {
+        "x": int(off.attrib.get("x", "0")) if off is not None else 0,
+        "y": int(off.attrib.get("y", "0")) if off is not None else 0,
+        "cx": int(ext.attrib.get("cx", "0")) if ext is not None else 0,
+        "cy": int(ext.attrib.get("cy", "0")) if ext is not None else 0,
+        "chOffX": int(ch_off.attrib.get("x", "0")) if ch_off is not None else 0,
+        "chOffY": int(ch_off.attrib.get("y", "0")) if ch_off is not None else 0,
+        "chExtCx": int(ch_ext.attrib.get("cx", ext.attrib.get("cx", "0"))) if ch_ext is not None and ext is not None else (int(ext.attrib.get("cx", "0")) if ext is not None else 0),
+        "chExtCy": int(ch_ext.attrib.get("cy", ext.attrib.get("cy", "0"))) if ch_ext is not None and ext is not None else (int(ext.attrib.get("cy", "0")) if ext is not None else 0),
+        "rot": int(node.attrib.get("rot", "0")) if node.attrib.get("rot") else 0,
+        "flipH": node.attrib.get("flipH") == "1",
+        "flipV": node.attrib.get("flipV") == "1",
+    }
+
+
+def _apply_group_transform(bounds: dict[str, int] | None, group_context: dict[str, int] | None) -> dict[str, int] | None:
+    if bounds is None or group_context is None:
+        return bounds
+    scale_x = group_context["cx"] / group_context["chExtCx"] if group_context.get("chExtCx") else 1
+    scale_y = group_context["cy"] / group_context["chExtCy"] if group_context.get("chExtCy") else 1
+    return {
+        "x": int(round(group_context["x"] + (bounds.get("x", 0) - group_context.get("chOffX", 0)) * scale_x)),
+        "y": int(round(group_context["y"] + (bounds.get("y", 0) - group_context.get("chOffY", 0)) * scale_y)),
+        "cx": int(round(bounds.get("cx", 0) * scale_x)),
+        "cy": int(round(bounds.get("cy", 0) * scale_y)),
+        "rot": bounds.get("rot", 0),
+        "flipH": bounds.get("flipH", False),
+        "flipV": bounds.get("flipV", False),
+    }
+
+
 def _emu_to_px(value: int | str | None) -> float | None:
     if value is None:
         return None
@@ -369,13 +409,23 @@ def _extract_element(
     archive: ZipFile,
     slide_path: str,
     theme_colors: dict[str, str],
+    group_context: dict[str, int] | None = None,
 ) -> dict[str, Any]:
     tag = _local_name(node.tag)
     meta = _extract_cnvpr(node)
 
     if tag == "grpSp":
+        raw_group_xfrm = _extract_group_context(node.find("p:grpSpPr/a:xfrm", NS))
+        absolute_group_bounds = _apply_group_transform(raw_group_xfrm, group_context)
+        child_group_context = {
+            **(absolute_group_bounds or {}),
+            "chOffX": raw_group_xfrm.get("chOffX", 0) if raw_group_xfrm else 0,
+            "chOffY": raw_group_xfrm.get("chOffY", 0) if raw_group_xfrm else 0,
+            "chExtCx": raw_group_xfrm.get("chExtCx", raw_group_xfrm.get("cx", 0)) if raw_group_xfrm else 0,
+            "chExtCy": raw_group_xfrm.get("chExtCy", raw_group_xfrm.get("cy", 0)) if raw_group_xfrm else 0,
+        } if raw_group_xfrm else None
         children = [
-            _extract_element(child, rel_targets, archive, slide_path, theme_colors)
+            _extract_element(child, rel_targets, archive, slide_path, theme_colors, child_group_context)
             for child in list(node)
             if _local_name(child.tag) not in {"nvGrpSpPr", "grpSpPr"}
         ]
@@ -385,7 +435,7 @@ def _extract_element(
             "node_id": meta.get("id"),
             "name": meta.get("name"),
             "descr": meta.get("descr"),
-            "bounds": _extract_xfrm(node.find("p:grpSpPr/a:xfrm", NS)),
+            "bounds": absolute_group_bounds,
             "children": children,
         }
 
@@ -404,7 +454,7 @@ def _extract_element(
     }
 
     if tag in {"sp", "cxnSp"}:
-        payload["bounds"] = _extract_xfrm(node.find("p:spPr/a:xfrm", NS))
+        payload["bounds"] = _apply_group_transform(_extract_xfrm(node.find("p:spPr/a:xfrm", NS)), group_context)
         payload["shape_kind"] = _extract_shape_kind(node)
         payload["text_runs"] = _extract_text_runs(node, theme_colors)
         payload["shape_style"] = _extract_shape_style(node, theme_colors)
@@ -412,12 +462,12 @@ def _extract_element(
         payload["text_style"] = _summarize_text_style(payload["text_runs"], payload["text_alignment"])
         payload["text"] = "".join(run["text"] for run in payload["text_runs"] if run["type"] == "text").strip()
     elif tag == "graphicFrame":
-        payload["bounds"] = _extract_xfrm(node.find("p:xfrm", NS))
+        payload["bounds"] = _apply_group_transform(_extract_xfrm(node.find("p:xfrm", NS)), group_context)
         table_payload = _extract_table(node)
         payload["table"] = table_payload
         payload["frame_kind"] = "table" if table_payload else "graphic_frame"
     elif tag == "pic":
-        payload["bounds"] = _extract_xfrm(node.find("p:spPr/a:xfrm", NS))
+        payload["bounds"] = _apply_group_transform(_extract_xfrm(node.find("p:spPr/a:xfrm", NS)), group_context)
         payload.update(_extract_picture(node, rel_targets, archive, slide_path))
     else:
         payload["bounds"] = None

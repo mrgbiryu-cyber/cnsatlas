@@ -270,7 +270,7 @@ function base64ToBytes(base64) {
   throw new Error("Base64 decoder is unavailable in this Figma runtime.");
 }
 
-function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor) {
+function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor, direction) {
   const shapeStyle = getShapeStyle(candidate);
   const line = shapeStyle.line || {};
   const tailEnd = line.tail_end || {};
@@ -284,24 +284,31 @@ function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor) {
   arrow.fills = [{ type: "SOLID", color: lineColor }];
   arrow.strokes = [];
 
-  const rotation = ((bounds.rotation || 0) % 360 + 360) % 360;
-  const horizontalLike = bounds.width >= bounds.height;
-  if (rotation >= 45 && rotation < 135) {
-    arrow.rotation = 180;
+  if (direction && (direction.dx !== 0 || direction.dy !== 0)) {
+    const angle = Math.atan2(direction.dy, direction.dx) * (180 / Math.PI);
+    arrow.rotation = angle + 90;
     arrow.x = bounds.x - 4;
-    arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
-  } else if (rotation >= 225 && rotation < 315) {
-    arrow.rotation = 0;
-    arrow.x = bounds.x - 4;
-    arrow.y = bounds.y - 4;
-  } else if (horizontalLike) {
-    arrow.rotation = 90;
-    arrow.x = bounds.x + Math.max(bounds.width - 5, 0);
     arrow.y = bounds.y - 4;
   } else {
-    arrow.rotation = 180;
-    arrow.x = bounds.x - 4;
-    arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
+    const rotation = ((bounds.rotation || 0) % 360 + 360) % 360;
+    const horizontalLike = bounds.width >= bounds.height;
+    if (rotation >= 45 && rotation < 135) {
+      arrow.rotation = 180;
+      arrow.x = bounds.x - 4;
+      arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
+    } else if (rotation >= 225 && rotation < 315) {
+      arrow.rotation = 0;
+      arrow.x = bounds.x - 4;
+      arrow.y = bounds.y - 4;
+    } else if (horizontalLike) {
+      arrow.rotation = 90;
+      arrow.x = bounds.x + Math.max(bounds.width - 5, 0);
+      arrow.y = bounds.y - 4;
+    } else {
+      arrow.rotation = 180;
+      arrow.x = bounds.x - 4;
+      arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
+    }
   }
 
   parentNode.appendChild(arrow);
@@ -628,7 +635,14 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   }
 
   const endPoint = points[points.length - 1];
-  addArrowHeadIfNeeded(candidate, frame, { x: endPoint.x, y: endPoint.y, width: 1, height: 1, rotation: bounds.rotation || 0 }, linePaint.color);
+  const prevPoint = points[points.length - 2] || points[0];
+  addArrowHeadIfNeeded(
+    candidate,
+    frame,
+    { x: endPoint.x, y: endPoint.y, width: 1, height: 1, rotation: bounds.rotation || 0 },
+    linePaint.color,
+    { dx: endPoint.x - prevPoint.x, dy: endPoint.y - prevPoint.y }
+  );
   return frame;
 }
 
