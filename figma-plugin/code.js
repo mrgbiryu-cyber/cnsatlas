@@ -605,6 +605,8 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   const flipV = Boolean(fallbackBounds.flipV);
   const startPointPx = candidate.extra && candidate.extra.start_point_px ? candidate.extra.start_point_px : null;
   const endPointPx = candidate.extra && candidate.extra.end_point_px ? candidate.extra.end_point_px : null;
+  const startTargetBoundsPx = candidate.extra && candidate.extra.start_target_bounds_px ? candidate.extra.start_target_bounds_px : null;
+  const endTargetBoundsPx = candidate.extra && candidate.extra.end_target_bounds_px ? candidate.extra.end_target_bounds_px : null;
   const connectorAdjusts = candidate.extra && candidate.extra.connector_adjusts ? candidate.extra.connector_adjusts : {};
   const startIdx = candidate.extra && candidate.extra.start_connection ? candidate.extra.start_connection.idx : null;
   const endIdx = candidate.extra && candidate.extra.end_connection ? candidate.extra.end_connection.idx : null;
@@ -635,6 +637,30 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     return "unknown";
   }
 
+  function inferSideFromDelta(dx, dy, role) {
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      if (role === "start") {
+        return dx >= 0 ? "right" : "left";
+      }
+      return dx >= 0 ? "left" : "right";
+    }
+    if (role === "start") {
+      return dy >= 0 ? "bottom" : "top";
+    }
+    return dy >= 0 ? "top" : "bottom";
+  }
+
+  function normalizeSide(rawSide, inferredSide, dominantAxis) {
+    if (rawSide === "unknown") {
+      return inferredSide;
+    }
+    const rawAxis = (rawSide === "left" || rawSide === "right") ? "horizontal" : (rawSide === "top" || rawSide === "bottom" ? "vertical" : "corner");
+    if (rawAxis !== dominantAxis) {
+      return inferredSide;
+    }
+    return rawSide;
+  }
+
   function offsetFromSide(point, side, margin) {
     if (side === "left" || side === "top-left" || side === "bottom-left") {
       return { x: point.x - margin, y: point.y };
@@ -649,6 +675,19 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
       return { x: point.x, y: point.y + margin };
     }
     return { x: point.x, y: point.y };
+  }
+
+  function pointOnBoundsSide(box, side) {
+    if (!box) {
+      return null;
+    }
+    const centerX = box.x + box.width / 2;
+    const centerY = box.y + box.height / 2;
+    if (side === "left") return { x: box.x, y: centerY };
+    if (side === "right") return { x: box.x + box.width, y: centerY };
+    if (side === "top") return { x: centerX, y: box.y };
+    if (side === "bottom") return { x: centerX, y: box.y + box.height };
+    return { x: centerX, y: centerY };
   }
 
   function appendSegment(frame, start, end) {
@@ -684,10 +723,19 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
 
   let points;
   if (startPointPx && endPointPx) {
-    const start = pointFromAbsolute(startPointPx);
-    const end = pointFromAbsolute(endPointPx);
-    const startSide = sideFromIdx(startIdx);
-    const endSide = sideFromIdx(endIdx);
+    const startRaw = pointFromAbsolute(startPointPx);
+    const endRaw = pointFromAbsolute(endPointPx);
+    const deltaX = endRaw.x - startRaw.x;
+    const deltaY = endRaw.y - startRaw.y;
+    const dominantAxis = Math.abs(deltaX) >= Math.abs(deltaY) ? "horizontal" : "vertical";
+    const inferredStartSide = inferSideFromDelta(deltaX, deltaY, "start");
+    const inferredEndSide = inferSideFromDelta(deltaX, deltaY, "end");
+    const rawStartSide = sideFromIdx(startIdx);
+    const rawEndSide = sideFromIdx(endIdx);
+    const startSide = normalizeSide(rawStartSide, inferredStartSide, dominantAxis);
+    const endSide = normalizeSide(rawEndSide, inferredEndSide, dominantAxis);
+    const start = pointFromAbsolute(pointOnBoundsSide(startTargetBoundsPx, startSide) || startPointPx);
+    const end = pointFromAbsolute(pointOnBoundsSide(endTargetBoundsPx, endSide) || endPointPx);
     const leadMargin = 12;
     const startLead = offsetFromSide(start, startSide, leadMargin);
     const endLead = offsetFromSide(end, endSide, leadMargin);

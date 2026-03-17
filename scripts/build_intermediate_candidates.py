@@ -66,6 +66,72 @@ def connection_point_px(bounds: dict[str, int] | None, idx: int | None) -> dict[
     return mapping.get(idx, {"x": center_x, "y": center_y})
 
 
+def bounds_px_from_element(element: dict[str, Any] | None) -> dict[str, float] | None:
+    if not element:
+        return None
+    return emu_bounds_to_px(element.get("bounds"))
+
+
+def overlaps_horizontally(a: dict[str, float], b: dict[str, float]) -> bool:
+    return not (a["x"] + a["width"] < b["x"] or b["x"] + b["width"] < a["x"])
+
+
+def overlaps_vertically(a: dict[str, float], b: dict[str, float]) -> bool:
+    return not (a["y"] + a["height"] < b["y"] or b["y"] + b["height"] < a["y"])
+
+
+def infer_connector_endpoints(element: dict[str, Any], element_index: dict[str, dict[str, Any]]) -> tuple[dict[str, float] | None, dict[str, float] | None]:
+    connector_bounds = bounds_px_from_element(element)
+    if not connector_bounds:
+        return None, None
+
+    horizontal = connector_bounds["width"] >= connector_bounds["height"]
+    best_left = None
+    best_right = None
+    best_top = None
+    best_bottom = None
+
+    for other in element_index.values():
+        if other is element:
+            continue
+        if other.get("element_type") == "connector":
+            continue
+        other_bounds = bounds_px_from_element(other)
+        if not other_bounds:
+            continue
+
+        if horizontal and overlaps_vertically(connector_bounds, other_bounds):
+            gap_left = connector_bounds["x"] - (other_bounds["x"] + other_bounds["width"])
+            gap_right = other_bounds["x"] - (connector_bounds["x"] + connector_bounds["width"])
+            if gap_left >= -12 and (best_left is None or gap_left < best_left[0]):
+                best_left = (gap_left, other_bounds)
+            if gap_right >= -12 and (best_right is None or gap_right < best_right[0]):
+                best_right = (gap_right, other_bounds)
+        elif (not horizontal) and overlaps_horizontally(connector_bounds, other_bounds):
+            gap_top = connector_bounds["y"] - (other_bounds["y"] + other_bounds["height"])
+            gap_bottom = other_bounds["y"] - (connector_bounds["y"] + connector_bounds["height"])
+            if gap_top >= -12 and (best_top is None or gap_top < best_top[0]):
+                best_top = (gap_top, other_bounds)
+            if gap_bottom >= -12 and (best_bottom is None or gap_bottom < best_bottom[0]):
+                best_bottom = (gap_bottom, other_bounds)
+
+    if horizontal and best_left and best_right:
+        left = best_left[1]
+        right = best_right[1]
+        return (
+            {"x": left["x"] + left["width"], "y": left["y"] + left["height"] / 2},
+            {"x": right["x"], "y": right["y"] + right["height"] / 2},
+        )
+    if (not horizontal) and best_top and best_bottom:
+        top = best_top[1]
+        bottom = best_bottom[1]
+        return (
+            {"x": top["x"] + top["width"] / 2, "y": top["y"] + top["height"]},
+            {"x": bottom["x"] + bottom["width"] / 2, "y": bottom["y"]},
+        )
+    return None, None
+
+
 def classify_group(element: dict[str, Any]) -> str:
     bounds = element.get("bounds") or {}
     child_count = len(element.get("children", []) or [])
@@ -297,10 +363,20 @@ def append_element_candidates(
             start_target = element_index.get(str(start_connection.get("id")))
             connector_extra["start_connection"] = start_connection
             connector_extra["start_point_px"] = connection_point_px(start_target.get("bounds") if start_target else None, start_connection.get("idx"))
+            connector_extra["start_target_bounds_px"] = bounds_px_from_element(start_target)
         if end_connection:
             end_target = element_index.get(str(end_connection.get("id")))
             connector_extra["end_connection"] = end_connection
             connector_extra["end_point_px"] = connection_point_px(end_target.get("bounds") if end_target else None, end_connection.get("idx"))
+            connector_extra["end_target_bounds_px"] = bounds_px_from_element(end_target)
+        if not connector_extra.get("start_point_px") or not connector_extra.get("end_point_px"):
+            inferred_start, inferred_end = infer_connector_endpoints(element, element_index)
+            if inferred_start and not connector_extra.get("start_point_px"):
+                connector_extra["start_point_px"] = inferred_start
+                connector_extra["inferred_start_point"] = True
+            if inferred_end and not connector_extra.get("end_point_px"):
+                connector_extra["end_point_px"] = inferred_end
+                connector_extra["inferred_end_point"] = True
         if element.get("connector_adjusts"):
             connector_extra["connector_adjusts"] = element.get("connector_adjusts")
 
