@@ -281,6 +281,44 @@ def _extract_shape_kind(node: ET.Element) -> str | None:
     return None
 
 
+def _extract_connector_adjusts(node: ET.Element) -> dict[str, int]:
+    geom = node.find("p:spPr/a:prstGeom", NS)
+    av_lst = geom.find("a:avLst", NS) if geom is not None else None
+    payload: dict[str, int] = {}
+    if av_lst is None:
+        return payload
+    for gd in av_lst.findall("a:gd", NS):
+        name = gd.attrib.get("name")
+        fmla = gd.attrib.get("fmla", "")
+        if not name or not fmla.startswith("val "):
+            continue
+        try:
+            payload[name] = int(fmla.split(" ", 1)[1])
+        except ValueError:
+            continue
+    return payload
+
+
+def _extract_connector_links(node: ET.Element) -> dict[str, Any]:
+    payload: dict[str, Any] = {}
+    cnv = node.find("p:nvCxnSpPr/p:cNvCxnSpPr", NS)
+    if cnv is None:
+        return payload
+    start = cnv.find("a:stCxn", NS)
+    end = cnv.find("a:endCxn", NS)
+    if start is not None:
+        payload["start_connection"] = {
+            "id": start.attrib.get("id"),
+            "idx": int(start.attrib.get("idx", "0")) if start.attrib.get("idx") else None,
+        }
+    if end is not None:
+        payload["end_connection"] = {
+            "id": end.attrib.get("id"),
+            "idx": int(end.attrib.get("idx", "0")) if end.attrib.get("idx") else None,
+        }
+    return payload
+
+
 def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
     table = frame.find(".//a:tbl", NS)
     if table is None:
@@ -461,6 +499,9 @@ def _extract_element(
         payload["text_alignment"] = _extract_text_alignment(node)
         payload["text_style"] = _summarize_text_style(payload["text_runs"], payload["text_alignment"])
         payload["text"] = "".join(run["text"] for run in payload["text_runs"] if run["type"] == "text").strip()
+        if tag == "cxnSp":
+            payload["connector_adjusts"] = _extract_connector_adjusts(node)
+            payload.update(_extract_connector_links(node))
     elif tag == "graphicFrame":
         payload["bounds"] = _apply_group_transform(_extract_xfrm(node.find("p:xfrm", NS)), group_context)
         table_payload = _extract_table(node)

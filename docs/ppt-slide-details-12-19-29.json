@@ -348,7 +348,8 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {}
         },
         {
           "element_type": "shape",
@@ -469,7 +470,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50012
+          },
+          "start_connection": {
+            "id": "3",
+            "idx": 6
+          },
+          "end_connection": {
+            "id": "10",
+            "idx": 1
+          }
         },
         {
           "element_type": "connector",
@@ -519,7 +531,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50008
+          },
+          "start_connection": {
+            "id": "10",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "4",
+            "idx": 1
+          }
         },
         {
           "element_type": "shape",
@@ -862,7 +885,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 49969
+          },
+          "start_connection": {
+            "id": "4",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "9",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -1212,7 +1246,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "9",
+            "idx": 1
+          },
+          "end_connection": {
+            "id": "17",
+            "idx": 0
+          }
         },
         {
           "element_type": "group",
@@ -2305,7 +2348,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "21",
+            "idx": 1
+          },
+          "end_connection": {
+            "id": "31",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -3050,7 +3102,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "21",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "37",
+            "idx": 0
+          }
         },
         {
           "element_type": "connector",
@@ -3100,7 +3161,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 49964
+          },
+          "start_connection": {
+            "id": "37",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "39",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -3574,7 +3646,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "17",
+            "idx": 1
+          },
+          "end_connection": {
+            "id": "50",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -3707,7 +3788,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "9",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "55",
+            "idx": 0
+          }
         },
         {
           "element_type": "group",
@@ -3928,7 +4018,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50032
+          },
+          "start_connection": {
+            "id": "55",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "58",
+            "idx": 0
+          }
         },
         {
           "element_type": "group",
@@ -4489,7 +4590,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "58",
+            "idx": 1
+          },
+          "end_connection": {
+            "id": "65",
+            "idx": 0
+          }
         },
         {
           "element_type": "connector",
@@ -4539,7 +4649,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50000
+          },
+          "start_connection": {
+            "id": "58",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "62",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -4675,7 +4796,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 49980
+          },
+          "start_connection": {
+            "id": "62",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "73",
+            "idx": 0
+          }
         },
         {
           "element_type": "connector",
@@ -4725,7 +4857,12 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "62",
+            "idx": 3
+          }
         },
         {
           "element_type": "shape",
@@ -4917,7 +5054,14 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50029
+          },
+          "start_connection": {
+            "id": "73",
+            "idx": 2
+          }
         },
         {
           "element_type": "group",
@@ -5402,7 +5546,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50004
+          },
+          "start_connection": {
+            "id": "80",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "84",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -5565,7 +5720,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50008
+          },
+          "start_connection": {
+            "id": "84",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "87",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -5686,7 +5852,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": -6960
+          },
+          "start_connection": {
+            "id": "87",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "4",
+            "idx": 3
+          }
         },
         {
           "element_type": "shape",
@@ -5978,7 +6155,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "84",
+            "idx": 1
+          },
+          "end_connection": {
+            "id": "93",
+            "idx": 0
+          }
         },
         {
           "element_type": "group",
@@ -6466,7 +6652,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "93",
+            "idx": 1
+          },
+          "end_connection": {
+            "id": "97",
+            "idx": 0
+          }
         },
         {
           "element_type": "connector",
@@ -6516,7 +6711,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50000
+          },
+          "start_connection": {
+            "id": "93",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "87",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -6779,7 +6985,19 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": -1493,
+            "adj2": 117551
+          },
+          "start_connection": {
+            "id": "97",
+            "idx": 2
+          },
+          "end_connection": {
+            "id": "39",
+            "idx": 1
+          }
         },
         {
           "element_type": "shape",
@@ -7433,7 +7651,16 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {},
+          "start_connection": {
+            "id": "17",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "22",
+            "idx": 0
+          }
         },
         {
           "element_type": "shape",
@@ -12734,7 +12961,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50000
+          },
+          "start_connection": {
+            "id": "4",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "6",
+            "idx": 1
+          }
         },
         {
           "element_type": "shape",
@@ -14000,7 +14238,18 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {
+            "adj1": 50000
+          },
+          "start_connection": {
+            "id": "4",
+            "idx": 3
+          },
+          "end_connection": {
+            "id": "12",
+            "idx": 1
+          }
         },
         {
           "element_type": "shape",
@@ -15156,7 +15405,8 @@
                 "font_family": null,
                 "fill": null
               },
-              "text": ""
+              "text": "",
+              "connector_adjusts": {}
             },
             {
               "element_type": "connector",
@@ -15195,7 +15445,8 @@
                 "font_family": null,
                 "fill": null
               },
-              "text": ""
+              "text": "",
+              "connector_adjusts": {}
             }
           ]
         },
@@ -17040,7 +17291,8 @@
                 "font_family": null,
                 "fill": null
               },
-              "text": ""
+              "text": "",
+              "connector_adjusts": {}
             },
             {
               "element_type": "image",
@@ -20054,7 +20306,8 @@
             "font_family": null,
             "fill": null
           },
-          "text": ""
+          "text": "",
+          "connector_adjusts": {}
         },
         {
           "element_type": "group",

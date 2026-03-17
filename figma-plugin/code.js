@@ -587,12 +587,36 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   const localHeight = Math.max(bounds.height, 6);
   const flipH = Boolean(bounds.flipH);
   const flipV = Boolean(bounds.flipV);
+  const startPointPx = candidate.extra && candidate.extra.start_point_px ? candidate.extra.start_point_px : null;
+  const endPointPx = candidate.extra && candidate.extra.end_point_px ? candidate.extra.end_point_px : null;
+  const connectorAdjusts = candidate.extra && candidate.extra.connector_adjusts ? candidate.extra.connector_adjusts : {};
+  const startIdx = candidate.extra && candidate.extra.start_connection ? candidate.extra.start_connection.idx : null;
+  const endIdx = candidate.extra && candidate.extra.end_connection ? candidate.extra.end_connection.idx : null;
 
   function mapPoint(x, y) {
     return {
       x: flipH ? localWidth - x : x,
       y: flipV ? localHeight - y : y,
     };
+  }
+
+  function pointFromAbsolute(point) {
+    return {
+      x: point.x - bounds.x,
+      y: point.y - bounds.y,
+    };
+  }
+
+  function sideFromIdx(idx) {
+    if (idx === 0) return "top";
+    if (idx === 1) return "left";
+    if (idx === 2) return "bottom";
+    if (idx === 3) return "right";
+    if (idx === 4) return "top-left";
+    if (idx === 5) return "top-right";
+    if (idx === 6) return "bottom-left";
+    if (idx === 7) return "bottom-right";
+    return "unknown";
   }
 
   function appendSegment(start, end) {
@@ -609,7 +633,37 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   }
 
   let points;
-  if (kind === "straightConnector1") {
+  if (startPointPx && endPointPx) {
+    const start = pointFromAbsolute(startPointPx);
+    const end = pointFromAbsolute(endPointPx);
+    const startSide = sideFromIdx(startIdx);
+    const endSide = sideFromIdx(endIdx);
+    const adj1 = typeof connectorAdjusts.adj1 === "number" ? connectorAdjusts.adj1 / 100000 : 0.5;
+    const adj2 = typeof connectorAdjusts.adj2 === "number" ? connectorAdjusts.adj2 / 100000 : 0.5;
+    if (kind === "straightConnector1") {
+      points = [start, end];
+    } else if (kind === "bentConnector2") {
+      if ((startSide === "left" || startSide === "right") && (endSide === "top" || endSide === "bottom")) {
+        points = [start, { x: end.x, y: start.y }, end];
+      } else if ((startSide === "top" || startSide === "bottom") && (endSide === "left" || endSide === "right")) {
+        points = [start, { x: start.x, y: end.y }, end];
+      } else {
+        points = [start, { x: start.x, y: end.y }, end];
+      }
+    } else if (kind === "bentConnector4") {
+      const midX = start.x + (end.x - start.x) * adj1;
+      const midY = start.y + (end.y - start.y) * adj2;
+      points = [start, { x: midX, y: start.y }, { x: midX, y: midY }, { x: end.x, y: midY }, end];
+    } else {
+      if (startSide === "left" || startSide === "right" || endSide === "left" || endSide === "right") {
+        const midX = start.x + (end.x - start.x) * adj1;
+        points = [start, { x: midX, y: start.y }, { x: midX, y: end.y }, end];
+      } else {
+        const midY = start.y + (end.y - start.y) * adj1;
+        points = [start, { x: start.x, y: midY }, { x: end.x, y: midY }, end];
+      }
+    }
+  } else if (kind === "straightConnector1") {
     points = [mapPoint(0, localHeight / 2), mapPoint(localWidth, localHeight / 2)];
   } else if (kind === "bentConnector2") {
     points = [mapPoint(0, 0), mapPoint(0, localHeight), mapPoint(localWidth, localHeight)];

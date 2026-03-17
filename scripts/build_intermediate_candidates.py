@@ -27,6 +27,45 @@ def emu_bounds_to_px(bounds: dict[str, int] | None) -> dict[str, float] | None:
     return payload
 
 
+def build_element_index(elements: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    index: dict[str, dict[str, Any]] = {}
+
+    def walk(items: list[dict[str, Any]]) -> None:
+        for element in items:
+            node_id = element.get("node_id")
+            if node_id:
+                index[str(node_id)] = element
+            children = element.get("children") or []
+            if children:
+                walk(children)
+
+    walk(elements)
+    return index
+
+
+def connection_point_px(bounds: dict[str, int] | None, idx: int | None) -> dict[str, float] | None:
+    px = emu_bounds_to_px(bounds)
+    if not px or idx is None:
+        return None
+    x = px["x"]
+    y = px["y"]
+    width = px["width"]
+    height = px["height"]
+    center_x = x + width / 2
+    center_y = y + height / 2
+    mapping = {
+        0: {"x": center_x, "y": y},
+        1: {"x": x, "y": center_y},
+        2: {"x": center_x, "y": y + height},
+        3: {"x": x + width, "y": center_y},
+        4: {"x": x, "y": y},
+        5: {"x": x + width, "y": y},
+        6: {"x": x, "y": y + height},
+        7: {"x": x + width, "y": y + height},
+    }
+    return mapping.get(idx, {"x": center_x, "y": center_y})
+
+
 def classify_group(element: dict[str, Any]) -> str:
     bounds = element.get("bounds") or {}
     child_count = len(element.get("children", []) or [])
@@ -115,6 +154,7 @@ def append_element_candidates(
     source_path: str,
     parent_candidate_id: str | None,
     candidates: list[dict[str, Any]],
+    element_index: dict[str, dict[str, Any]],
 ) -> None:
     element_type = element.get("element_type")
     candidate_id = f"s{slide_no}:{source_path}"
@@ -149,6 +189,7 @@ def append_element_candidates(
                 source_path=f"{source_path}/child_{index}",
                 parent_candidate_id=candidate_id,
                 candidates=candidates,
+                element_index=element_index,
             )
         return
 
@@ -248,6 +289,21 @@ def append_element_candidates(
         return
 
     node_subtype, shape_subtype = classify_shape(element)
+    connector_extra: dict[str, Any] = {}
+    if node_subtype == "connector":
+        start_connection = element.get("start_connection")
+        end_connection = element.get("end_connection")
+        if start_connection:
+            start_target = element_index.get(str(start_connection.get("id")))
+            connector_extra["start_connection"] = start_connection
+            connector_extra["start_point_px"] = connection_point_px(start_target.get("bounds") if start_target else None, start_connection.get("idx"))
+        if end_connection:
+            end_target = element_index.get(str(end_connection.get("id")))
+            connector_extra["end_connection"] = end_connection
+            connector_extra["end_point_px"] = connection_point_px(end_target.get("bounds") if end_target else None, end_connection.get("idx"))
+        if element.get("connector_adjusts"):
+            connector_extra["connector_adjusts"] = element.get("connector_adjusts")
+
     candidates.append(
         make_candidate(
             candidate_id=candidate_id,
@@ -264,6 +320,7 @@ def append_element_candidates(
                 "shape_kind": shape_subtype,
                 "shape_style": element.get("shape_style"),
                 "text_style": element.get("text_style"),
+                **connector_extra,
             },
         )
     )
@@ -276,6 +333,7 @@ def build_intermediate_model(detail_payload: dict[str, Any]) -> dict[str, Any]:
         slide_no = slide["slide_no"]
         page_id = f"page:{slide_no}"
         candidates: list[dict[str, Any]] = []
+        element_index = build_element_index(slide["elements"])
 
         for index, element in enumerate(slide["elements"], start=1):
             append_element_candidates(
@@ -284,6 +342,7 @@ def build_intermediate_model(detail_payload: dict[str, Any]) -> dict[str, Any]:
                 source_path=f"slide_{slide_no}/element_{index}",
                 parent_candidate_id=page_id,
                 candidates=candidates,
+                element_index=element_index,
             )
 
         pages.append(
