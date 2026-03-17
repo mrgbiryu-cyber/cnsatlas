@@ -100,7 +100,10 @@ def append_element_candidates(
                 source_path=source_path,
                 source_node_id=element.get("node_id"),
                 bounds_emu=element.get("bounds"),
-                extra={"child_count": len(element.get("children", []) or [])},
+                extra={
+                    "child_count": len(element.get("children", []) or []),
+                    "shape_style": element.get("shape_style"),
+                },
             )
         )
         for index, child in enumerate(element.get("children", []) or [], start=1):
@@ -127,7 +130,9 @@ def append_element_candidates(
                 source_path=source_path,
                 source_node_id=element.get("node_id"),
                 bounds_emu=element.get("bounds"),
-                extra={"row_count": table.get("row_count", 0)},
+                extra={
+                    "row_count": table.get("row_count", 0),
+                },
             )
         )
         for row in table.get("rows", []):
@@ -161,6 +166,8 @@ def append_element_candidates(
                         source_node_id=element.get("node_id"),
                         bounds_emu=None,
                         extra={
+                            "row_height_emu": row.get("height"),
+                            "row_height_px": round(int(row["height"]) / EMU_PER_PIXEL, 2) if row.get("height") else None,
                             "grid_span": cell.get("grid_span"),
                             "row_span": cell.get("row_span"),
                             "h_merge": cell.get("h_merge"),
@@ -201,7 +208,11 @@ def append_element_candidates(
             source_path=source_path,
             source_node_id=element.get("node_id"),
             bounds_emu=element.get("bounds"),
-            extra={"shape_kind": shape_subtype},
+            extra={
+                "shape_kind": shape_subtype,
+                "shape_style": element.get("shape_style"),
+                "text_style": element.get("text_style"),
+            },
         )
     )
 
@@ -229,6 +240,7 @@ def build_intermediate_model(detail_payload: dict[str, Any]) -> dict[str, Any]:
                 "slide_no": slide_no,
                 "title_or_label": slide["title_or_label"],
                 "source_path": slide["slide_path"],
+                "slide_size": slide.get("slide_size"),
                 "summary": slide["summary"],
                 "candidates": candidates,
             }

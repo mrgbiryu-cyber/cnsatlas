@@ -15,6 +15,7 @@ R_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 A_NS = "http://schemas.openxmlformats.org/drawingml/2006/main"
 NS = {"p": P_NS, "r": R_NS, "a": A_NS}
 CORE_SLIDES = {12, 26, 29, 34}
+EMU_PER_PIXEL = 9525
 
 
 @dataclass
@@ -77,6 +78,92 @@ def _extract_xfrm(node: ET.Element | None) -> dict[str, int] | None:
     }
 
 
+def _emu_to_px(value: int | str | None) -> float | None:
+    if value is None:
+        return None
+    return round(int(value) / EMU_PER_PIXEL, 2)
+
+
+def _extract_alpha(node: ET.Element | None) -> float | None:
+    if node is None:
+        return None
+    alpha = node.find("a:alpha", NS)
+    if alpha is None:
+        return None
+    value = alpha.attrib.get("val")
+    if value is None:
+        return None
+    return round(int(value) / 100000, 4)
+
+
+def _extract_color_payload(node: ET.Element | None) -> dict[str, Any] | None:
+    if node is None:
+        return None
+
+    srgb = node.find("a:srgbClr", NS)
+    if srgb is not None:
+        return {
+            "type": "srgb",
+            "value": srgb.attrib.get("val"),
+            "alpha": _extract_alpha(srgb),
+        }
+
+    scheme = node.find("a:schemeClr", NS)
+    if scheme is not None:
+        return {
+            "type": "scheme",
+            "value": scheme.attrib.get("val"),
+            "alpha": _extract_alpha(scheme),
+        }
+
+    return None
+
+
+def _extract_shape_style(node: ET.Element) -> dict[str, Any]:
+    sp_pr = node.find("p:spPr", NS)
+    if sp_pr is None:
+        return {}
+
+    fill_payload: dict[str, Any] | None = None
+    solid_fill = sp_pr.find("a:solidFill", NS)
+    if solid_fill is not None:
+        fill_payload = _extract_color_payload(solid_fill)
+        if fill_payload:
+            fill_payload["kind"] = "solid"
+    elif sp_pr.find("a:noFill", NS) is not None:
+        fill_payload = {"kind": "none"}
+
+    line_payload: dict[str, Any] | None = None
+    line = sp_pr.find("a:ln", NS)
+    if line is not None:
+        line_payload = _extract_color_payload(line.find("a:solidFill", NS)) or {"kind": "default"}
+        line_payload["width_emu"] = int(line.attrib.get("w", "0")) if line.attrib.get("w") else None
+        line_payload["width_px"] = _emu_to_px(line_payload["width_emu"]) if line_payload.get("width_emu") else None
+        head_end = line.find("a:headEnd", NS)
+        tail_end = line.find("a:tailEnd", NS)
+        if head_end is not None:
+            line_payload["head_end"] = dict(head_end.attrib)
+        if tail_end is not None:
+            line_payload["tail_end"] = dict(tail_end.attrib)
+
+    return {
+        "fill": fill_payload,
+        "line": line_payload,
+    }
+
+
+def _extract_text_alignment(node: ET.Element) -> dict[str, Any]:
+    body_pr = node.find(".//p:txBody/a:bodyPr", NS)
+    first_paragraph = node.find(".//p:txBody/a:p", NS)
+    p_pr = first_paragraph.find("a:pPr", NS) if first_paragraph is not None else None
+    payload: dict[str, Any] = {}
+    if p_pr is not None and p_pr.attrib.get("algn"):
+        payload["horizontal_align"] = p_pr.attrib.get("algn")
+    if body_pr is not None and body_pr.attrib.get("anchor"):
+        payload["vertical_align"] = body_pr.attrib.get("anchor")
+    return payload
+
+
 def _extract_cnvpr(container: ET.Element | None) -> dict[str, Any]:
     if container is None:
         return {"id": None, "name": None}
@@ -112,6 +199,7 @@ def _extract_text_runs(node: ET.Element) -> list[dict[str, Any]]:
                     "font_size": int(r_pr.attrib.get("sz", "0")) / 100 if r_pr is not None and r_pr.attrib.get("sz") else None,
                     "bold": r_pr.attrib.get("b") == "1" if r_pr is not None else False,
                     "italic": r_pr.attrib.get("i") == "1" if r_pr is not None else False,
+                    "fill": _extract_color_payload(r_pr.find("a:solidFill", NS)) if r_pr is not None else None,
                 }
             )
         if paragraph_runs:
@@ -172,6 +260,18 @@ def _extract_picture(node: ET.Element, rel_targets: dict[str, str]) -> dict[str,
     }
 
 
+def _summarize_text_style(text_runs: list[dict[str, Any]], alignment: dict[str, Any]) -> dict[str, Any]:
+    font_sizes = [run["font_size"] for run in text_runs if run.get("type") == "text" and run.get("font_size")]
+    first_fill = next((run.get("fill") for run in text_runs if run.get("type") == "text" and run.get("fill")), None)
+    return {
+        "font_size_max": max(font_sizes) if font_sizes else None,
+        "font_size_min": min(font_sizes) if font_sizes else None,
+        "font_size_avg": round(sum(font_sizes) / len(font_sizes), 2) if font_sizes else None,
+        "fill": first_fill,
+        **alignment,
+    }
+
+
 def _extract_element(node: ET.Element, rel_targets: dict[str, str]) -> dict[str, Any]:
     tag = _local_name(node.tag)
     meta = _extract_cnvpr(node)
@@ -210,6 +310,9 @@ def _extract_element(node: ET.Element, rel_targets: dict[str, str]) -> dict[str,
         payload["bounds"] = _extract_xfrm(node.find("p:spPr/a:xfrm", NS))
         payload["shape_kind"] = _extract_shape_kind(node)
         payload["text_runs"] = _extract_text_runs(node)
+        payload["shape_style"] = _extract_shape_style(node)
+        payload["text_alignment"] = _extract_text_alignment(node)
+        payload["text_style"] = _summarize_text_style(payload["text_runs"], payload["text_alignment"])
         payload["text"] = "".join(run["text"] for run in payload["text_runs"] if run["type"] == "text").strip()
     elif tag == "graphicFrame":
         payload["bounds"] = _extract_xfrm(node.find("p:xfrm", NS))
@@ -239,11 +342,27 @@ def _slide_rel_targets(archive: ZipFile, slide_path: str) -> dict[str, str]:
     return mapping
 
 
+def _presentation_slide_size(archive: ZipFile) -> dict[str, Any]:
+    presentation_root = ET.fromstring(archive.read("ppt/presentation.xml"))
+    slide_size = presentation_root.find("p:sldSz", NS)
+    if slide_size is None:
+        return {}
+    cx = int(slide_size.attrib.get("cx", "0"))
+    cy = int(slide_size.attrib.get("cy", "0"))
+    return {
+        "cx": cx,
+        "cy": cy,
+        "width_px": _emu_to_px(cx),
+        "height_px": _emu_to_px(cy),
+    }
+
+
 def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str, Any]:
     inspections = inspect_pptx(pptx_path)
     inspection_by_no = {item.slide_no: item for item in inspections}
 
     with ZipFile(pptx_path) as archive:
+        slide_size = _presentation_slide_size(archive)
         slides_payload: list[dict[str, Any]] = []
         for slide_no in slide_numbers:
             inspection = inspection_by_no.get(slide_no)
@@ -267,6 +386,7 @@ def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str
                     "slide_no": slide_no,
                     "title_or_label": inspection.title_or_label,
                     "slide_path": inspection.slide_path,
+                    "slide_size": slide_size,
                     "summary": asdict(inspection),
                     "elements": elements,
                 }
