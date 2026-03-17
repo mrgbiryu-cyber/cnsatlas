@@ -1,0 +1,199 @@
+{
+  "mapping": {
+    "12": "Page 1",
+    "19": "Page 2",
+    "29": "Page 3"
+  },
+  "comparisons": [
+    {
+      "slide_no": 12,
+      "figma_page": "Page 1",
+      "ppt": {
+        "slide_no": 12,
+        "title_or_label": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+        "total_elements": 115,
+        "element_counts": {
+          "shape": 75,
+          "connector": 24,
+          "group": 16
+        },
+        "text_count": 62,
+        "table_count": 0,
+        "image_count": 0,
+        "group_count": 16,
+        "text_samples": [
+          "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십)",
+          "홈",
+          "제품선택(PDP)",
+          "사용자",
+          "제품 탐색",
+          "케어십 신청",
+          "※ 케어십 가능 제품",
+          "YES",
+          "NO",
+          "구매하기",
+          "로그인?비회원주문",
+          "비회원 주문(구매하기)"
+        ]
+      },
+      "figma": {
+        "page_name": "Page 1",
+        "total_nodes": 384,
+        "type_counts": {
+          "FRAME": 3,
+          "VECTOR": 233,
+          "TEXT": 101,
+          "GROUP": 47
+        },
+        "text_count": 101,
+        "group_count": 47,
+        "frame_count": 3,
+        "vector_count": 233,
+        "image_fill_nodes": 0,
+        "text_samples": [
+          "1",
+          "일반제품",
+          "+ 케어십 신청에 따른 프로세스(유상 케어십)",
+          "홈",
+          "제품선택",
+          "(PDP)",
+          "사용자",
+          "제품",
+          "탐색",
+          "케어십 신청",
+          "※ 케어십 가능 제품",
+          "YES"
+        ]
+      },
+      "observations": [
+        "figma output is vector-heavy",
+        "text granularity is preserved or expanded in figma output"
+      ]
+    },
+    {
+      "slide_no": 19,
+      "figma_page": "Page 2",
+      "ppt": {
+        "slide_no": 19,
+        "title_or_label": "리뷰 - 제품 카테고리별 평가 항목",
+        "total_elements": 12,
+        "element_counts": {
+          "shape": 7,
+          "graphic_frame": 3,
+          "connector": 2
+        },
+        "text_count": 6,
+        "table_count": 3,
+        "image_count": 0,
+        "group_count": 0,
+        "text_samples": [
+          "리뷰 - 제품 카테고리별 평가 항목",
+          "항목별 평가 지표",
+          "카테고리별 평가 항목 (중카 기준)",
+          "※ 카테고리 개편내용 현행화하여 평가항목 정리※ 기존 평가 항목 승계",
+          "V0.98 제품 카테고리별 평가 항목 현행화",
+          "V1.01 as-is 맞춰 중카 기준으로 승계, 카테고리ID 추가"
+        ]
+      },
+      "figma": {
+        "page_name": "Page 2",
+        "total_nodes": 398,
+        "type_counts": {
+          "FRAME": 2,
+          "VECTOR": 114,
+          "TEXT": 257,
+          "GROUP": 25
+        },
+        "text_count": 257,
+        "group_count": 25,
+        "frame_count": 2,
+        "vector_count": 114,
+        "image_fill_nodes": 0,
+        "text_samples": [
+          "2",
+          "리뷰",
+          "- 제품 카테고리별 평가 항목",
+          "대카테고리",
+          "중카테고리",
+          "카테고리 ID",
+          "평가 항목",
+          "TV/AV",
+          "TV",
+          "CT50000025",
+          "화질 | 사운드| 부가기능",
+          "프로젝터"
+        ]
+      },
+      "observations": [
+        "text granularity is preserved or expanded in figma output"
+      ]
+    },
+    {
+      "slide_no": 29,
+      "figma_page": "Page 3",
+      "ppt": {
+        "slide_no": 29,
+        "title_or_label": "옵션 선택",
+        "total_elements": 166,
+        "element_counts": {
+          "shape": 131,
+          "group": 19,
+          "connector": 4,
+          "image": 11,
+          "graphic_frame": 1
+        },
+        "text_count": 90,
+        "table_count": 1,
+        "image_count": 11,
+        "group_count": 19,
+        "text_samples": [
+          "옵션 선택",
+          ">",
+          "163cm / 레드",
+          "9,400,000원",
+          "최대할인가",
+          "9,900,000원",
+          "10,969,600원",
+          "회원할인가",
+          "10%",
+          "LG 올레드 evo",
+          "65aRT90EKPB │",
+          "★ 4.89 (999+) >"
+        ]
+      },
+      "figma": {
+        "page_name": "Page 3",
+        "total_nodes": 514,
+        "type_counts": {
+          "FRAME": 12,
+          "VECTOR": 183,
+          "GROUP": 86,
+          "TEXT": 222,
+          "RECTANGLE": 11
+        },
+        "text_count": 222,
+        "group_count": 86,
+        "frame_count": 12,
+        "vector_count": 183,
+        "image_fill_nodes": 11,
+        "text_samples": [
+          "화면",
+          "명",
+          "페이지",
+          "화면경로",
+          "화면ID",
+          "3",
+          "옵션",
+          "선택",
+          ">",
+          "163cm / 레드",
+          "9,400,000원",
+          "최대할인가"
+        ]
+      },
+      "observations": [
+        "text granularity is preserved or expanded in figma output"
+      ]
+    }
+  ]
+}

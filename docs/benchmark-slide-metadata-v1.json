@@ -1,0 +1,789 @@
+{
+  "benchmarkFile": "sampling/pptsample.pptx",
+  "detectedSlideCount": 39,
+  "coreSlides": [
+    12,
+    26,
+    29,
+    34
+  ],
+  "slides": [
+    {
+      "slide_no": 1,
+      "title_or_label": "상품상세 ( ddd ) > 일반제품",
+      "difficulty": "low",
+      "structure_tags": [
+        "mixed_text"
+      ],
+      "risk_notes": [],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 2,
+      "title_or_label": "변경이력",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 3,
+      "title_or_label": "화면목록",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 4,
+      "title_or_label": "화면목록",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 5,
+      "title_or_label": "정책 및 공통 적용 사항",
+      "difficulty": "low",
+      "structure_tags": [],
+      "risk_notes": [],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 6,
+      "title_or_label": "모델구분",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 7,
+      "title_or_label": "모델 판매상태 별 Front 노출 정책",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 8,
+      "title_or_label": "모델 판매상태 별 CMS 상태 변경 정책",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 9,
+      "title_or_label": "일시품절 상태 확인 조건 (API)",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 10,
+      "title_or_label": "일시품절 전환 로직",
+      "difficulty": "medium",
+      "structure_tags": [
+        "image",
+        "mixed_text"
+      ],
+      "risk_notes": [
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 11,
+      "title_or_label": "가격 영역 노출 정보",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 12,
+      "title_or_label": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "yes",
+      "human_review_required": "yes",
+      "auto_result": "",
+      "human_result": "",
+      "notes": "core benchmark slide"
+    },
+    {
+      "slide_no": 13,
+      "title_or_label": "일시불 PDP 최대혜택가 계산의 재구독 할인 금액 적용 Flow",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 14,
+      "title_or_label": "판매량 메시지 노출 관리",
+      "difficulty": "medium",
+      "structure_tags": [
+        "complex_layout",
+        "image",
+        "mixed_text"
+      ],
+      "risk_notes": [
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 15,
+      "title_or_label": "제품 번들링 정책",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 16,
+      "title_or_label": "리뷰 정책",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 17,
+      "title_or_label": "리뷰 정책",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 18,
+      "title_or_label": "리뷰 Flow 개선",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 19,
+      "title_or_label": "리뷰 - 제품 카테고리별 평가 항목",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 20,
+      "title_or_label": "3D 공간 랜더링 이미지 - 리뷰 사진 제공 케이스",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 21,
+      "title_or_label": "뱃지 노출 순서 정의",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 22,
+      "title_or_label": "AI Home 솔루션 판매 상품 정책 (1/3)",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 23,
+      "title_or_label": "AI Home 솔루션 판매 상품 정책 (2/3)",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 24,
+      "title_or_label": "AI Home 솔루션 판매 상품 정책 (3/3)",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 25,
+      "title_or_label": "전화 상담 예약 정책",
+      "difficulty": "medium",
+      "structure_tags": [
+        "complex_layout",
+        "mixed_text"
+      ],
+      "risk_notes": [
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 26,
+      "title_or_label": "전화 상담 예약 정책",
+      "difficulty": "medium",
+      "structure_tags": [
+        "cell",
+        "mixed_text",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk"
+      ],
+      "must_pass": "yes",
+      "human_review_required": "yes",
+      "auto_result": "",
+      "human_result": "",
+      "notes": "core benchmark slide"
+    },
+    {
+      "slide_no": 27,
+      "title_or_label": "[MO] 일반제품",
+      "difficulty": "low",
+      "structure_tags": [
+        "mixed_text"
+      ],
+      "risk_notes": [],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 28,
+      "title_or_label": "제품 관련 공지사항",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 29,
+      "title_or_label": "옵션 선택",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "yes",
+      "human_review_required": "yes",
+      "auto_result": "",
+      "human_result": "",
+      "notes": "core benchmark slide"
+    },
+    {
+      "slide_no": 30,
+      "title_or_label": "제품명 영역",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 31,
+      "title_or_label": "옵션 선택 팝업 – 옵션선택 영역 : 옵션값 UI",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 32,
+      "title_or_label": "구매혜택 ( 카드혜택 선택 )",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 33,
+      "title_or_label": "Fold 영역",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 34,
+      "title_or_label": "옵션선택 영역 : 옵션값 UI",
+      "difficulty": "high",
+      "structure_tags": [
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section"
+      ],
+      "risk_notes": [
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "yes",
+      "human_review_required": "yes",
+      "auto_result": "",
+      "human_result": "",
+      "notes": "core benchmark slide"
+    },
+    {
+      "slide_no": 35,
+      "title_or_label": "8GB",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 36,
+      "title_or_label": "옵션설명 팝업",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 37,
+      "title_or_label": "옵션설명 팝업",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 38,
+      "title_or_label": "일반제품 PDP_ ( 케어십 서비스 신청 가능 모델 )_ 케어십 선택 제품 _ 배송유형다변화 Y ( 가정배달 & 택배배송 )",
+      "difficulty": "high",
+      "structure_tags": [
+        "cell",
+        "complex_layout",
+        "group",
+        "image",
+        "mixed_text",
+        "section",
+        "table"
+      ],
+      "risk_notes": [
+        "table/cell preservation risk",
+        "group/section hierarchy flattening risk",
+        "image asset positioning risk",
+        "mixed text and font handling risk"
+      ],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    },
+    {
+      "slide_no": 39,
+      "title_or_label": "고맙습니다 .",
+      "difficulty": "low",
+      "structure_tags": [],
+      "risk_notes": [],
+      "must_pass": "no",
+      "human_review_required": "no",
+      "auto_result": "",
+      "human_result": "",
+      "notes": ""
+    }
+  ]
+}

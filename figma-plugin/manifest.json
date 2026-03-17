@@ -1,0 +1,8 @@
+{
+  "name": "CNS Atlas PPT Visual Test",
+  "id": "cnsatlas-ppt-visual-test",
+  "api": "1.0.0",
+  "editorType": ["figma"],
+  "main": "code.js",
+  "ui": "ui.html"
+}
