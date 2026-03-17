@@ -83,7 +83,9 @@ async function resolveFontName(textStyle) {
   for (const font of candidate.fallbacks) {
     const key = `${font.family}::${font.style}`;
     if (fontAvailability.has(key)) {
-      return fontAvailability.get(key);
+      const cached = fontAvailability.get(key);
+      if (cached) return cached;
+      continue;
     }
     try {
       await figma.loadFontAsync(font);
@@ -678,7 +680,7 @@ async function createTableCell(candidate, parentNode) {
   const availableWidth = Math.max(width - leftInset - rightInset, 12);
   text.resize(availableWidth, Math.max(parentNode.height, 16));
   cell.appendChild(text);
-  alignTextNode(text, { width, height: parentNode.height }, { ...textStyle, ...cellStyle }, "l", cellStyle.anchor || "ctr");
+  alignTextNode(text, { width, height: parentNode.height }, Object.assign({}, textStyle, cellStyle), "l", cellStyle.anchor || "ctr");
   return cell;
 }
 
