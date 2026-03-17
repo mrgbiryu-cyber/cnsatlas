@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8" />
     <title>CNS Atlas PPT Visual Test</title>
@@ -30,9 +30,33 @@
         margin-bottom: 12px;
       }
 
+      .row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .label {
+        font-size: 11px;
+        color: #6b7280;
+        margin-bottom: 6px;
+      }
+
+      .summary {
+        font-size: 12px;
+        color: #111827;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 10px;
+        min-height: 72px;
+        white-space: pre-wrap;
+      }
+
       textarea {
         width: 100%;
-        height: 160px;
+        height: 120px;
         resize: vertical;
         border: 1px solid #cbd5e1;
         border-radius: 8px;
@@ -52,6 +76,12 @@
         cursor: pointer;
       }
 
+      button.secondary {
+        background: white;
+        color: #111827;
+        border: 1px solid #cbd5e1;
+      }
+
       button:disabled {
         opacity: 0.5;
         cursor: not-allowed;
@@ -65,6 +95,10 @@
       .hint {
         color: #4b5563;
       }
+
+      .danger {
+        color: #b91c1c;
+      }
     </style>
   </head>
   <body>
@@ -72,51 +106,138 @@
 
     <div class="panel">
       <p class="hint">
-        Upload the intermediate JSON file generated from
-        <code>docs/ppt-intermediate-candidates-12-19-29.json</code>, or paste its contents below.
+        이 플러그인은 <code>PPTX</code> 파일이 아니라
+        <code>docs/ppt-intermediate-candidates-12-19-29.json</code> 같은
+        intermediate JSON 파일만 받습니다.
       </p>
-      <input id="fileInput" type="file" accept=".json" />
+      <div class="row">
+        <input id="fileInput" type="file" accept=".json,application/json" />
+        <button class="secondary" id="clearButton" type="button">초기화</button>
+      </div>
+      <div class="status" id="status">JSON 파일을 선택하세요.</div>
     </div>
 
     <div class="panel">
-      <textarea id="jsonText" placeholder="Paste intermediate JSON here"></textarea>
-      <div class="status" id="status">Ready.</div>
+      <div class="label">불러온 파일 요약</div>
+      <div class="summary" id="summary">아직 파일이 없습니다.</div>
     </div>
 
-    <button id="renderButton">Render In Figma</button>
+    <div class="panel">
+      <div class="label">직접 JSON 붙여넣기</div>
+      <textarea id="jsonText" placeholder="필요하면 intermediate JSON을 여기에 붙여넣으세요."></textarea>
+    </div>
+
+    <button id="renderButton" disabled>Figma 렌더 시작</button>
 
     <script>
       const fileInput = document.getElementById("fileInput");
       const jsonText = document.getElementById("jsonText");
       const status = document.getElementById("status");
+      const summary = document.getElementById("summary");
       const renderButton = document.getElementById("renderButton");
+      const clearButton = document.getElementById("clearButton");
+
+      let loadedJsonText = "";
+
+      function setStatus(message, isError = false) {
+        status.textContent = message;
+        status.className = isError ? "status danger" : "status";
+      }
+
+      function setSummary(text) {
+        summary.textContent = text;
+      }
+
+      function validatePayload(payload) {
+        if (!payload || !Array.isArray(payload.pages)) {
+          throw new Error("pages 배열이 없는 intermediate JSON입니다.");
+        }
+        return payload;
+      }
+
+      function summarizePayload(payload, fileName) {
+        const slides = payload.pages.map((page) => `- Slide ${page.slide_no}: ${page.title_or_label || "untitled"} (${page.candidates.length} candidates)`);
+        return [
+          `파일: ${fileName || "직접 입력"}`,
+          `슬라이드 수: ${payload.pages.length}`,
+          "",
+          ...slides
+        ].join("\n");
+      }
+
+      function updateRenderAvailability() {
+        renderButton.disabled = !loadedJsonText.trim() && !jsonText.value.trim();
+      }
+
+      function loadJsonText(text, fileName) {
+        const trimmed = text.trim();
+        if (!trimmed) {
+          throw new Error("파일 내용이 비어 있습니다.");
+        }
+        if (trimmed.startsWith("PK")) {
+          throw new Error("PPTX 바이너리 파일입니다. intermediate JSON 파일을 선택해야 합니다.");
+        }
+
+        const payload = validatePayload(JSON.parse(trimmed));
+        loadedJsonText = JSON.stringify(payload);
+        setSummary(summarizePayload(payload, fileName));
+        setStatus(`${fileName || "직접 입력"} 검증 완료`);
+        updateRenderAvailability();
+      }
 
       fileInput.addEventListener("change", async (event) => {
         const file = event.target.files && event.target.files[0];
         if (!file) {
           return;
         }
-        const text = await file.text();
-        jsonText.value = text;
-        status.textContent = `Loaded ${file.name}`;
+
+        try {
+          const text = await file.text();
+          jsonText.value = "";
+          loadJsonText(text, file.name);
+        } catch (error) {
+          loadedJsonText = "";
+          updateRenderAvailability();
+          setSummary("아직 파일이 없습니다.");
+          setStatus(error instanceof Error ? error.message : String(error), true);
+        }
+      });
+
+      jsonText.addEventListener("input", () => {
+        updateRenderAvailability();
+      });
+
+      clearButton.addEventListener("click", () => {
+        fileInput.value = "";
+        jsonText.value = "";
+        loadedJsonText = "";
+        setSummary("아직 파일이 없습니다.");
+        setStatus("초기화되었습니다.");
+        updateRenderAvailability();
       });
 
       renderButton.addEventListener("click", () => {
-        if (!jsonText.value.trim()) {
-          status.textContent = "JSON is empty.";
+        const sourceText = loadedJsonText.trim() ? loadedJsonText : jsonText.value.trim();
+        if (!sourceText) {
+          setStatus("JSON이 없습니다.", true);
           return;
         }
 
-        status.textContent = "Rendering...";
-        parent.postMessage(
-          {
-            pluginMessage: {
-              type: "render-intermediate-json",
-              jsonText: jsonText.value
-            }
-          },
-          "*"
-        );
+        try {
+          const payload = validatePayload(JSON.parse(sourceText));
+          setStatus(`렌더링 중... (${payload.pages.length} slides)`);
+          parent.postMessage(
+            {
+              pluginMessage: {
+                type: "render-intermediate-json",
+                jsonText: JSON.stringify(payload)
+              }
+            },
+            "*"
+          );
+        } catch (error) {
+          setStatus(error instanceof Error ? error.message : String(error), true);
+        }
       });
 
       window.onmessage = (event) => {
@@ -125,12 +246,12 @@
           return;
         }
         if (message.type === "render-success") {
-          status.textContent = message.message;
+          setStatus(message.message);
         }
         if (message.type === "render-error") {
-          status.textContent = `Error: ${message.message}`;
+          setStatus(`Error: ${message.message}`, true);
         }
       };
     </script>
   </body>
-  </html>
+</html>
