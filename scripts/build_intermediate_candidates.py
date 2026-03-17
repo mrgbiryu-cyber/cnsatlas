@@ -66,7 +66,7 @@ def classify_shape(element: dict[str, Any]) -> tuple[str, str]:
     kind = element.get("shape_kind") or "shape"
     shape_style = element.get("shape_style") or {}
     if element.get("element_type") == "connector":
-        return "connector", "connector"
+        return "connector", kind
     if text and kind in {"rect", "roundRect", "ellipse"}:
         if not has_visible_fill(shape_style) and not has_visible_line(shape_style):
             return "text_block", kind

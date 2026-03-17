@@ -179,6 +179,8 @@ def _extract_text_alignment(node: ET.Element) -> dict[str, Any]:
         for attr in ("lIns", "rIns", "tIns", "bIns"):
             if body_pr.attrib.get(attr):
                 payload[attr] = _emu_to_px(body_pr.attrib.get(attr))
+        if body_pr.attrib.get("wrap"):
+            payload["wrap"] = body_pr.attrib.get("wrap")
     return payload
 
 
@@ -231,7 +233,8 @@ def _extract_text_runs(node: ET.Element, theme_colors: dict[str, str] | None = N
 
 def _extract_shape_kind(node: ET.Element) -> str | None:
     if _local_name(node.tag) == "cxnSp":
-        return "connector"
+        geom = node.find("p:spPr/a:prstGeom", NS)
+        return geom.attrib.get("prst") if geom is not None else "connector"
     geom = node.find("p:spPr/a:prstGeom", NS)
     if geom is not None:
         return geom.attrib.get("prst")

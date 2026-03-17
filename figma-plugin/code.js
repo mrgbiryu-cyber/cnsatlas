@@ -234,12 +234,15 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
   text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, horizontalFallback);
   text.textAlignVertical = mapVerticalAlign(textStyle.vertical_align, verticalFallback);
-  text.textAutoResize = "HEIGHT";
+  const wrapMode = textStyle.wrap || "square";
+  text.textAutoResize = wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT";
 
   const leftInset = typeof textStyle.lIns === "number" ? textStyle.lIns : 6;
   const rightInset = typeof textStyle.rIns === "number" ? textStyle.rIns : 6;
   const contentWidth = Math.max(bounds.width - leftInset - rightInset, 12);
-  text.resize(contentWidth, Math.max(bounds.height, 16));
+  if (wrapMode !== "none") {
+    text.resize(contentWidth, Math.max(bounds.height, 16));
+  }
 
   container.appendChild(text);
   alignTextNode(
@@ -433,11 +436,19 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
   const textStyle = getTextStyle(candidate);
   const bounds = relativeBounds(candidate, origin);
   if (bounds) {
-    const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
-    parentNode.appendChild(frame);
-    await appendTextIntoContainer(frame, candidate, candidate.text || candidate.title || "", textStyle, bounds, "l", "t");
-    return frame;
-  }
+  const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+  parentNode.appendChild(frame);
+  await appendTextIntoContainer(
+    frame,
+    candidate,
+    candidate.text || candidate.title || "",
+    { ...textStyle, wrap: bounds ? textStyle.wrap : "none" },
+    bounds,
+    "l",
+    "t"
+  );
+  return frame;
+}
 
   const fallbackBounds = {
     x: 20,
@@ -470,7 +481,6 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   } else if (shapeKind === "flowChartDecision") {
     visualShape = figma.createPolygon();
     visualShape.pointCount = 4;
-    visualShape.rotation = 45;
     const shapeWidth = Math.max(bounds.width * 0.88, 24);
     const shapeHeight = Math.max(bounds.height * 0.88, 24);
     visualShape.resize(shapeWidth, shapeHeight);
@@ -523,7 +533,6 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
   } else if (shapeKind === "flowChartDecision") {
     node = figma.createPolygon();
     node.pointCount = 4;
-    node.rotation = 45;
   } else {
     node = figma.createRectangle();
   }
@@ -560,25 +569,67 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     width: 80,
     height: 2,
   };
-  const line = figma.createLine();
   const shapeStyle = getShapeStyle(candidate);
   const linePaint = makeSolidPaint(shapeStyle.line, { r: 0.35, g: 0.35, b: 0.35 }, 1);
-  const isVertical = bounds.height > bounds.width;
-  const length = Math.max(isVertical ? bounds.height : bounds.width, 10);
-  line.name = candidate.title || "connector";
-  line.x = bounds.x;
-  line.y = bounds.y;
-  line.resize(isVertical ? 1 : length, isVertical ? length : 1);
-  line.strokes = [linePaint];
-  line.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
-  if (bounds.rotation) {
-    line.rotation = bounds.rotation;
-  } else if (isVertical) {
-    line.rotation = 90;
+  const frame = createTransparentFrame(bounds, candidate.title || "connector");
+  const strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+  parentNode.appendChild(frame);
+
+  const kind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "connector";
+  const localWidth = Math.max(bounds.width, 6);
+  const localHeight = Math.max(bounds.height, 6);
+  const flipH = Boolean(bounds.flipH);
+  const flipV = Boolean(bounds.flipV);
+
+  function mapPoint(x, y) {
+    return {
+      x: flipH ? localWidth - x : x,
+      y: flipV ? localHeight - y : y,
+    };
   }
-  parentNode.appendChild(line);
-  addArrowHeadIfNeeded(candidate, parentNode, Object.assign({}, bounds, { width: isVertical ? 1 : length, height: isVertical ? length : 1 }), linePaint.color);
-  return line;
+
+  function appendSegment(start, end) {
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const segment = figma.createLine();
+    segment.x = start.x;
+    segment.y = start.y;
+    segment.strokes = [linePaint];
+    segment.strokeWeight = strokeWeight;
+    segment.resize(Math.max(Math.abs(dx), 1), Math.max(Math.abs(dy), 1));
+    segment.rotation = Math.atan2(dy, dx) * (180 / Math.PI);
+    frame.appendChild(segment);
+  }
+
+  let points;
+  if (kind === "straightConnector1") {
+    points = [mapPoint(0, localHeight / 2), mapPoint(localWidth, localHeight / 2)];
+  } else if (kind === "bentConnector2") {
+    points = [mapPoint(0, 0), mapPoint(0, localHeight), mapPoint(localWidth, localHeight)];
+  } else if (kind === "bentConnector4") {
+    points = [
+      mapPoint(0, 0),
+      mapPoint(0, localHeight * 0.35),
+      mapPoint(localWidth * 0.5, localHeight * 0.35),
+      mapPoint(localWidth * 0.5, localHeight),
+      mapPoint(localWidth, localHeight),
+    ];
+  } else {
+    points = [
+      mapPoint(0, 0),
+      mapPoint(0, localHeight * 0.5),
+      mapPoint(localWidth, localHeight * 0.5),
+      mapPoint(localWidth, localHeight),
+    ];
+  }
+
+  for (let index = 0; index < points.length - 1; index += 1) {
+    appendSegment(points[index], points[index + 1]);
+  }
+
+  const endPoint = points[points.length - 1];
+  addArrowHeadIfNeeded(candidate, frame, { x: endPoint.x, y: endPoint.y, width: 1, height: 1, rotation: bounds.rotation || 0 }, linePaint.color);
+  return frame;
 }
 
 function createGroupFrame(candidate, parentNode, origin, fallbackIndex) {
@@ -611,7 +662,9 @@ function createTableFrame(candidate, parentNode, origin, fallbackIndex) {
   frame.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
   frame.clipsContent = false;
   const rowCount = candidate.extra && candidate.extra.row_count ? candidate.extra.row_count : 1;
+  const gridColumns = candidate.extra && candidate.extra.grid_columns ? candidate.extra.grid_columns : [];
   frame.setPluginData("rowCount", String(rowCount));
+  frame.setPluginData("gridColumns", JSON.stringify(gridColumns));
   parentNode.appendChild(frame);
   return frame;
 }
@@ -653,9 +706,17 @@ async function createTableCell(candidate, parentNode) {
   const textStyle = getTextStyle(candidate);
   cell.name = candidate.title || candidate.subtype;
   const cellCount = Number(parentNode.getPluginData("cellCount") || "1");
-  const siblings = parentNode.children.filter((child) => child.type === "FRAME");
-  const cellX = siblings.reduce((sum, child) => sum + child.width, 0);
+  const tableFrame = parentNode.parent;
+  const gridColumns = tableFrame && tableFrame.type === "FRAME"
+    ? JSON.parse(tableFrame.getPluginData("gridColumns") || "[]")
+    : [];
+  const startColumnIndex = Number(extra.start_column_index || 1);
   const width = extra.width_px || (parentNode.width / Math.max(cellCount, 1));
+  const cellX = gridColumns.length
+    ? gridColumns
+        .filter((column) => column.column_index < startColumnIndex)
+        .reduce((sum, column) => sum + (column.width_px || 0), 0)
+    : parentNode.children.filter((child) => child.type === "FRAME").reduce((sum, child) => sum + child.width, 0);
   cell.x = cellX;
   cell.y = 0;
   cell.resize(width, parentNode.height);
