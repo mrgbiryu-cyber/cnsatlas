@@ -272,7 +272,17 @@
               "font_size_avg": null,
               "font_family": null,
               "fill": null
-            }
+            },
+            "start_point_px": {
+              "x": 157.29,
+              "y": 110.88
+            },
+            "inferred_start_point": true,
+            "end_point_px": {
+              "x": 187.37,
+              "y": 110.63499999999999
+            },
+            "inferred_end_point": true
           }
         },
         {
@@ -4667,7 +4677,12 @@
             "start_point_px": {
               "x": 881.36,
               "y": 327.555
-            }
+            },
+            "end_point_px": {
+              "x": 890.6550000000001,
+              "y": 428.35
+            },
+            "inferred_end_point": true
           }
         },
         {
@@ -4850,6 +4865,11 @@
               "x": 749.21,
               "y": 393.3
             },
+            "end_point_px": {
+              "x": 809.54,
+              "y": 311.55
+            },
+            "inferred_end_point": true,
             "connector_adjusts": {
               "adj1": 50029
             }
@@ -16329,7 +16349,17 @@
               "font_size_avg": null,
               "font_family": null,
               "fill": null
-            }
+            },
+            "start_point_px": {
+              "x": 197.105,
+              "y": 422.52
+            },
+            "inferred_start_point": true,
+            "end_point_px": {
+              "x": 197.59500000000003,
+              "y": 74.82
+            },
+            "inferred_end_point": true
           }
         },
         {
@@ -16377,7 +16407,17 @@
               "font_size_avg": null,
               "font_family": null,
               "fill": null
-            }
+            },
+            "start_point_px": {
+              "x": 197.105,
+              "y": 422.52
+            },
+            "inferred_start_point": true,
+            "end_point_px": {
+              "x": 197.59500000000003,
+              "y": 74.82
+            },
+            "inferred_end_point": true
           }
         },
         {
@@ -18218,7 +18258,17 @@
               "font_size_avg": null,
               "font_family": null,
               "fill": null
-            }
+            },
+            "start_point_px": {
+              "x": 254.01,
+              "y": 297.17
+            },
+            "inferred_start_point": true,
+            "end_point_px": {
+              "x": 194.95,
+              "y": 297.17
+            },
+            "inferred_end_point": true
           }
         },
         {
@@ -20657,7 +20707,17 @@
               "font_size_avg": null,
               "font_family": null,
               "fill": null
-            }
+            },
+            "start_point_px": {
+              "x": 735.65,
+              "y": 419.365
+            },
+            "inferred_start_point": true,
+            "end_point_px": {
+              "x": 775.19,
+              "y": 420.755
+            },
+            "inferred_end_point": true
           }
         },
         {

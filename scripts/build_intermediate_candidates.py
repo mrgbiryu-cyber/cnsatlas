@@ -66,6 +66,51 @@ def connection_point_px(bounds: dict[str, int] | None, idx: int | None) -> dict[
     return mapping.get(idx, {"x": center_x, "y": center_y})
 
 
+def infer_connector_endpoints(element: dict[str, Any], element_index: dict[str, dict[str, Any]]) -> tuple[dict[str, float] | None, dict[str, float] | None]:
+    connector_bounds = emu_bounds_to_px(element.get("bounds"))
+    if not connector_bounds:
+        return None, None
+
+    horizontal = connector_bounds["width"] >= connector_bounds["height"]
+    candidates: list[dict[str, float]] = []
+    connector_center_x = connector_bounds["x"] + connector_bounds["width"] / 2
+    connector_center_y = connector_bounds["y"] + connector_bounds["height"] / 2
+
+    for other in element_index.values():
+        if other is element or other.get("element_type") == "connector":
+            continue
+        if (other.get("text") or "").strip() and not has_visible_fill(other.get("shape_style")) and not has_visible_line(other.get("shape_style")):
+            continue
+        other_bounds = emu_bounds_to_px(other.get("bounds"))
+        if not other_bounds:
+            continue
+        other_center_x = other_bounds["x"] + other_bounds["width"] / 2
+        other_center_y = other_bounds["y"] + other_bounds["height"] / 2
+        if horizontal:
+            score = abs(other_center_y - connector_center_y) + abs(other_center_x - connector_center_x)
+        else:
+            score = abs(other_center_x - connector_center_x) + abs(other_center_y - connector_center_y)
+        candidates.append({"score": score, **other_bounds})
+
+    candidates.sort(key=lambda item: item["score"])
+    if len(candidates) < 2:
+        return None, None
+
+    first, second = candidates[0], candidates[1]
+    if horizontal:
+        left, right = sorted([first, second], key=lambda item: item["x"])
+        return (
+            {"x": left["x"] + left["width"], "y": left["y"] + left["height"] / 2},
+            {"x": right["x"], "y": right["y"] + right["height"] / 2},
+        )
+
+    top, bottom = sorted([first, second], key=lambda item: item["y"])
+    return (
+        {"x": top["x"] + top["width"] / 2, "y": top["y"] + top["height"]},
+        {"x": bottom["x"] + bottom["width"] / 2, "y": bottom["y"]},
+    )
+
+
 def classify_group(element: dict[str, Any]) -> str:
     bounds = element.get("bounds") or {}
     child_count = len(element.get("children", []) or [])
@@ -301,6 +346,14 @@ def append_element_candidates(
             end_target = element_index.get(str(end_connection.get("id")))
             connector_extra["end_connection"] = end_connection
             connector_extra["end_point_px"] = connection_point_px(end_target.get("bounds") if end_target else None, end_connection.get("idx"))
+        if not connector_extra.get("start_point_px") or not connector_extra.get("end_point_px"):
+            inferred_start, inferred_end = infer_connector_endpoints(element, element_index)
+            if inferred_start and not connector_extra.get("start_point_px"):
+                connector_extra["start_point_px"] = inferred_start
+                connector_extra["inferred_start_point"] = True
+            if inferred_end and not connector_extra.get("end_point_px"):
+                connector_extra["end_point_px"] = inferred_end
+                connector_extra["inferred_end_point"] = True
         if element.get("connector_adjusts"):
             connector_extra["connector_adjusts"] = element.get("connector_adjusts")
 

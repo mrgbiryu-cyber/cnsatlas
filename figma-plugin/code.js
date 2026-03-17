@@ -635,6 +635,29 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     return "unknown";
   }
 
+  function inferSideFromDelta(dx, dy, role) {
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      if (role === "start") {
+        return dx >= 0 ? "right" : "left";
+      }
+      return dx >= 0 ? "left" : "right";
+    }
+    if (role === "start") {
+      return dy >= 0 ? "bottom" : "top";
+    }
+    return dy >= 0 ? "top" : "bottom";
+  }
+
+  function chooseConnectorSide(rawSide, inferredSide) {
+    if (rawSide === "unknown") {
+      return inferredSide;
+    }
+    if (rawSide.includes("-")) {
+      return inferredSide;
+    }
+    return rawSide;
+  }
+
   function offsetFromSide(point, side, margin) {
     if (side === "left" || side === "top-left" || side === "bottom-left") {
       return { x: point.x - margin, y: point.y };
@@ -686,8 +709,10 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   if (startPointPx && endPointPx) {
     const start = pointFromAbsolute(startPointPx);
     const end = pointFromAbsolute(endPointPx);
-    const startSide = sideFromIdx(startIdx);
-    const endSide = sideFromIdx(endIdx);
+    const deltaX = end.x - start.x;
+    const deltaY = end.y - start.y;
+    const startSide = chooseConnectorSide(sideFromIdx(startIdx), inferSideFromDelta(deltaX, deltaY, "start"));
+    const endSide = chooseConnectorSide(sideFromIdx(endIdx), inferSideFromDelta(deltaX, deltaY, "end"));
     const leadMargin = 12;
     const startLead = offsetFromSide(start, startSide, leadMargin);
     const endLead = offsetFromSide(end, endSide, leadMargin);
