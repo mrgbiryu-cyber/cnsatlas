@@ -6,6 +6,8 @@ const ARROW_ROTATION_FLIP_IDS = new Set([
   "s12:slide_12/element_4",
   "s12:slide_12/element_7",
   "s12:slide_12/element_56",
+  "s19:slide_19/element_7",
+  "s19:slide_19/element_11",
 ]);
 const FONT_FALLBACKS = {
   "LG스마트체": [{ family: "LG스마트체", style: "Regular" }, { family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
