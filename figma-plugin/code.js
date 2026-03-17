@@ -640,22 +640,32 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     const endSide = sideFromIdx(endIdx);
     const adj1 = typeof connectorAdjusts.adj1 === "number" ? connectorAdjusts.adj1 / 100000 : 0.5;
     const adj2 = typeof connectorAdjusts.adj2 === "number" ? connectorAdjusts.adj2 / 100000 : 0.5;
+    const startOrientation = (startSide === "left" || startSide === "right") ? "horizontal" : "vertical";
+    const endOrientation = (endSide === "left" || endSide === "right") ? "horizontal" : "vertical";
     if (kind === "straightConnector1") {
       points = [start, end];
     } else if (kind === "bentConnector2") {
-      if ((startSide === "left" || startSide === "right") && (endSide === "top" || endSide === "bottom")) {
+      if (startOrientation === "horizontal" && endOrientation === "vertical") {
         points = [start, { x: end.x, y: start.y }, end];
-      } else if ((startSide === "top" || startSide === "bottom") && (endSide === "left" || endSide === "right")) {
+      } else if (startOrientation === "vertical" && endOrientation === "horizontal") {
         points = [start, { x: start.x, y: end.y }, end];
       } else {
-        points = [start, { x: start.x, y: end.y }, end];
+        const viaX = Math.abs(end.x - start.x);
+        const viaY = Math.abs(end.y - start.y);
+        points = viaX >= viaY
+          ? [start, { x: end.x, y: start.y }, end]
+          : [start, { x: start.x, y: end.y }, end];
       }
     } else if (kind === "bentConnector4") {
       const midX = start.x + (end.x - start.x) * adj1;
       const midY = start.y + (end.y - start.y) * adj2;
-      points = [start, { x: midX, y: start.y }, { x: midX, y: midY }, { x: end.x, y: midY }, end];
+      if (startOrientation === "horizontal") {
+        points = [start, { x: midX, y: start.y }, { x: midX, y: midY }, { x: end.x, y: midY }, end];
+      } else {
+        points = [start, { x: start.x, y: midY }, { x: midX, y: midY }, { x: midX, y: end.y }, end];
+      }
     } else {
-      if (startSide === "left" || startSide === "right" || endSide === "left" || endSide === "right") {
+      if (startOrientation === "horizontal") {
         const midX = start.x + (end.x - start.x) * adj1;
         points = [start, { x: midX, y: start.y }, { x: midX, y: end.y }, end];
       } else {

@@ -239,7 +239,8 @@ def _extract_cnvpr(container: ET.Element | None) -> dict[str, Any]:
 
 def _extract_text_runs(node: ET.Element, theme_colors: dict[str, str] | None = None) -> list[dict[str, Any]]:
     runs: list[dict[str, Any]] = []
-    for paragraph in node.findall(".//a:p", NS):
+    paragraphs = node.findall(".//a:p", NS)
+    for paragraph_index, paragraph in enumerate(paragraphs):
         paragraph_runs: list[dict[str, Any]] = []
         for child in list(paragraph):
             tag = _local_name(child.tag)
@@ -268,7 +269,17 @@ def _extract_text_runs(node: ET.Element, theme_colors: dict[str, str] | None = N
             )
         if paragraph_runs:
             runs.extend(paragraph_runs)
+            if paragraph_index < len(paragraphs) - 1:
+                runs.append({"type": "paragraph_break", "text": "\n"})
     return runs
+
+
+def _build_text_from_runs(text_runs: list[dict[str, Any]]) -> str:
+    parts: list[str] = []
+    for run in text_runs:
+        if run.get("type") in {"text", "line_break", "paragraph_break"}:
+            parts.append(run.get("text", ""))
+    return "".join(parts).strip()
 
 
 def _extract_shape_kind(node: ET.Element) -> str | None:
@@ -498,7 +509,7 @@ def _extract_element(
         payload["shape_style"] = _extract_shape_style(node, theme_colors)
         payload["text_alignment"] = _extract_text_alignment(node)
         payload["text_style"] = _summarize_text_style(payload["text_runs"], payload["text_alignment"])
-        payload["text"] = "".join(run["text"] for run in payload["text_runs"] if run["type"] == "text").strip()
+        payload["text"] = _build_text_from_runs(payload["text_runs"])
         if tag == "cxnSp":
             payload["connector_adjusts"] = _extract_connector_adjusts(node)
             payload.update(_extract_connector_links(node))

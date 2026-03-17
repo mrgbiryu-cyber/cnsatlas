@@ -233,6 +233,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "(PDP)",
               "font_size": 8.0,
@@ -298,7 +302,7 @@
             "bIns": 4.8,
             "wrap": "square"
           },
-          "text": "제품선택(PDP)"
+          "text": "제품선택\n(PDP)"
         },
         {
           "element_type": "connector",
@@ -5270,6 +5274,10 @@
                   }
                 },
                 {
+                  "type": "paragraph_break",
+                  "text": "\n"
+                },
+                {
                   "type": "text",
                   "text": "(SAFE KEY발급)",
                   "font_size": 8.0,
@@ -5336,7 +5344,7 @@
                 "bIns": 4.8,
                 "wrap": "square"
               },
-              "text": "신용정보조회(SAFE KEY발급)"
+              "text": "신용정보조회\n(SAFE KEY발급)"
             }
           ]
         },
@@ -5591,6 +5599,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "제품 주문 관련",
               "font_size": 8.0,
@@ -5670,7 +5682,7 @@
             "bIns": 4.8,
             "wrap": "square"
           },
-          "text": "청약실패 제품 주문 관련안내"
+          "text": "청약실패 \n제품 주문 관련\n안내"
         },
         {
           "element_type": "connector",
@@ -5897,6 +5909,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "(장바구니에 담기지 않음)",
               "font_size": 8.0,
@@ -5947,7 +5963,7 @@
             "bIns": 4.8,
             "wrap": "square"
           },
-          "text": "청약실패, 구매취소(장바구니에 담기지 않음)"
+          "text": "청약실패, 구매취소\n(장바구니에 담기지 않음)"
         },
         {
           "element_type": "group",
@@ -7031,6 +7047,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶",
               "font_size": 8.0,
@@ -7081,7 +7101,7 @@
             "bIns": 4.8,
             "wrap": "square"
           },
-          "text": "청약 성공청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶"
+          "text": "청약 성공\n청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶"
         },
         {
           "element_type": "group",
@@ -7235,6 +7255,10 @@
                   }
                 },
                 {
+                  "type": "paragraph_break",
+                  "text": "\n"
+                },
+                {
                   "type": "text",
                   "text": "(대표사이트개발)",
                   "font_size": 7.0,
@@ -7301,7 +7325,7 @@
                 "bIns": 4.8,
                 "wrap": "square"
               },
-              "text": "케어솔루션(대표사이트개발)"
+              "text": "케어솔루션\n(대표사이트개발)"
             },
             {
               "element_type": "shape",
@@ -7333,6 +7357,10 @@
                     "value": "0C0C0C",
                     "alpha": null
                   }
+                },
+                {
+                  "type": "paragraph_break",
+                  "text": "\n"
                 },
                 {
                   "type": "text",
@@ -7400,7 +7428,7 @@
                 "bIns": 4.8,
                 "wrap": "square"
               },
-              "text": "멤버십(회원)"
+              "text": "멤버십\n(회원)"
             },
             {
               "element_type": "shape",
@@ -7432,6 +7460,10 @@
                     "value": "0C0C0C",
                     "alpha": null
                   }
+                },
+                {
+                  "type": "paragraph_break",
+                  "text": "\n"
                 },
                 {
                   "type": "text",
@@ -7512,7 +7544,7 @@
                 "bIns": 4.8,
                 "wrap": "square"
               },
-              "text": "CSMS(계약정보)"
+              "text": "CSMS\n(계약정보)"
             },
             {
               "element_type": "shape",
@@ -7794,6 +7826,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "설치가능여부 ",
               "font_size": 8.0,
@@ -7864,6 +7900,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "서비스 가능 지역 조회",
               "font_size": 8.0,
@@ -7892,6 +7932,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "기존 중복청약 여부",
               "font_size": 8.0,
@@ -7918,6 +7962,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -7962,6 +8010,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "<",
               "font_size": 8.0,
@@ -8004,6 +8056,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "우편번호가 입력되지 않을 때",
               "font_size": 8.0,
@@ -8016,6 +8072,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -8058,6 +8118,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -8200,6 +8264,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "3. ",
               "font_size": 8.0,
@@ -8254,6 +8322,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -8366,6 +8438,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -8522,6 +8598,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "이때 복수제품을 신청하는 경우이면 정수기",
               "font_size": 8.0,
@@ -8614,7 +8694,7 @@
             },
             "wrap": "square"
           },
-          "text": "서비스 가능여부 = 설치 가능 여부설치가능여부 3가지 API 호출을 통해 가능여부 판단서비스 가능 지역 조회(0057)기존 중복청약 여부(0058)청약모델조회(0050) – 요금제 유효 여부<서비스 가능 여부 NO case>우편번호가 입력되지 않을 때서비스 가능지역조회(0057) 결과 없음2-1. 서비스 가능 지역 조회 결과에서 서비스 가능여부(serviceYn)가 ‘Y가 아닐경우.3. 기존 중복청약 여부(0058) 확인 시 중복청약인 경우4. ‘청약모델조회(0050) – 요금제 유효 여부‘ 조회 시 미제공 요금제 일 경우5. 얼음정수기냉장고, 정수기 일경우 수질검사대상여부 인지 확인 후 수질검사대상이면 설치불가능 (수질검사대상여부는 서비스 가능지역조회(0057)의 결과에 있음)이때 복수제품을 신청하는 경우이면 정수기, 얼음정수기 냉장고를 제외한 설치가능한 제품만 청약 신청가능"
+          "text": "서비스 가능여부 = 설치 가능 여부\n설치가능여부 3가지 API 호출을 통해 가능여부 판단\n서비스 가능 지역 조회(0057)\n기존 중복청약 여부(0058)\n청약모델조회(0050) – 요금제 유효 여부\n<서비스 가능 여부 NO case>\n우편번호가 입력되지 않을 때\n서비스 가능지역조회(0057) 결과 없음\n2-1. 서비스 가능 지역 조회 결과에서 서비스 가능여부(serviceYn)가 ‘Y가 아닐경우.\n3. 기존 중복청약 여부(0058) 확인 시 중복청약인 경우\n4. ‘청약모델조회(0050) – 요금제 유효 여부‘ 조회 시 미제공 요금제 일 경우\n5. 얼음정수기냉장고, 정수기 일경우 수질검사대상여부 인지 확인 후 수질검사대상이면 설치불가능 (수질검사대상여부는 서비스 가능지역조회(0057)의 결과에 있음)\n이때 복수제품을 신청하는 경우이면 정수기, 얼음정수기 냉장고를 제외한 설치가능한 제품만 청약 신청가능"
         }
       ]
     },
@@ -13019,6 +13099,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "※ ",
               "font_size": 8.0,
@@ -13068,7 +13152,7 @@
             "horizontal_align": "just",
             "wrap": "none"
           },
-          "text": "※ 카테고리 개편내용 현행화하여 평가항목 정리※ 기존 평가 항목 승계"
+          "text": "※ 카테고리 개편내용 현행화하여 평가항목 정리\n※ 기존 평가 항목 승계"
         },
         {
           "element_type": "shape",
@@ -17417,6 +17501,10 @@
               "fill": null
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "체험",
               "font_size": 7.0,
@@ -17461,7 +17549,7 @@
             "tIns": 0.0,
             "bIns": 0.0
           },
-          "text": "AR체험"
+          "text": "AR\n체험"
         },
         {
           "element_type": "shape",
@@ -18316,7 +18404,7 @@
             },
             "wrap": "none"
           },
-          "text": "영상 가로 사이즈 맞춰세로 중간맞춤"
+          "text": "영상 가로 사이즈 맞춰\n세로 중간맞춤"
         },
         {
           "element_type": "group",
@@ -18371,6 +18459,10 @@
                   }
                 },
                 {
+                  "type": "paragraph_break",
+                  "text": "\n"
+                },
+                {
                   "type": "text",
                   "text": "자동재생",
                   "font_size": 10.5,
@@ -18383,6 +18475,10 @@
                     "resolved_value": null,
                     "alpha": null
                   }
+                },
+                {
+                  "type": "paragraph_break",
+                  "text": "\n"
                 },
                 {
                   "type": "text",
@@ -18431,7 +18527,7 @@
                 "horizontal_align": "ctr",
                 "vertical_align": "ctr"
               },
-              "text": "Video자동재생(audio : mute)"
+              "text": "Video\n자동재생\n(audio : mute)"
             },
             {
               "element_type": "shape",
@@ -19510,6 +19606,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": " ",
               "font_size": 11.0,
@@ -19611,7 +19711,7 @@
             "horizontal_align": "ctr",
             "vertical_align": "t"
           },
-          "text": "WCMS에 등록한 YouTube 썸네일 이미지"
+          "text": "WCMS에 등록한\n YouTube 썸네일 이미지"
         },
         {
           "element_type": "shape",
@@ -21097,6 +21197,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-22640]",
               "font_size": 8.0,
@@ -21171,6 +21275,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-22833]",
               "font_size": 8.0,
@@ -21183,6 +21291,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -21270,7 +21382,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 1.1[BTOCSITE-22640]- 비교하기 버튼 : 노출 제외 조건 추가[BTOCSITE-22833]- 비교하기 버튼 : 노출 제외 조건 수정"
+          "text": "V 1.1\n[BTOCSITE-22640]\n- 비교하기 버튼 : 노출 제외 조건 추가\n[BTOCSITE-22833]\n- 비교하기 버튼 : 노출 제외 조건 수정"
         },
         {
           "element_type": "shape",
@@ -21319,6 +21431,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-29832]",
               "font_size": 8.0,
@@ -21331,6 +21447,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -21418,7 +21538,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 1.5[BTOCSITE-29832]- UP가전 뱃지 노출 로직 수정"
+          "text": "V 1.5\n[BTOCSITE-29832]\n- UP가전 뱃지 노출 로직 수정"
         },
         {
           "element_type": "shape",
@@ -21451,6 +21571,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -21577,6 +21701,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -21717,6 +21845,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             }
           ],
           "shape_style": {
@@ -21772,7 +21904,7 @@
             "bIns": 4.8,
             "wrap": "square"
           },
-          "text": "ISSUE‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요)[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)"
+          "text": "ISSUE\n‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요)\n[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)"
         },
         {
           "element_type": "shape",
@@ -21939,6 +22071,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-34166]",
               "font_size": 8.0,
@@ -21951,6 +22087,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -22024,7 +22164,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 1.6[BTOCSITE-34166]제품명 우측 그룹명 노출 추가"
+          "text": "V 1.6\n[BTOCSITE-34166]\n제품명 우측 그룹명 노출 추가"
         },
         {
           "element_type": "shape",
@@ -22073,6 +22213,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-35421]",
               "font_size": 8.0,
@@ -22085,6 +22229,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -22200,7 +22348,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 1.7[BTOCSITE-35421]- 다품목할인, 내일배송 뱃지 추가"
+          "text": "V 1.7\n[BTOCSITE-35421]\n- 다품목할인, 내일배송 뱃지 추가"
         },
         {
           "element_type": "shape",
@@ -22249,6 +22397,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-43175]",
               "font_size": 8.0,
@@ -22261,6 +22413,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -22377,7 +22533,7 @@
             },
             "vertical_align": "t"
           },
-          "text": "V 2.0[BTOCSITE-43175]- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          "text": "V 2.0\n[BTOCSITE-43175]\n- [인테리어컷] 영역 디스클레이머 일괄 적용"
         },
         {
           "element_type": "shape",
@@ -22687,6 +22843,10 @@
                   }
                 },
                 {
+                  "type": "paragraph_break",
+                  "text": "\n"
+                },
+                {
                   "type": "text",
                   "text": "ONLY",
                   "font_size": 7.0,
@@ -22729,7 +22889,7 @@
                 "rIns": 0.0,
                 "wrap": "none"
               },
-              "text": "닷컴ONLY"
+              "text": "닷컴\nONLY"
             }
           ]
         },
@@ -22780,6 +22940,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-47092]",
               "font_size": 8.0,
@@ -22792,6 +22956,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -22921,7 +23089,7 @@
             },
             "vertical_align": "t"
           },
-          "text": "V 2.4[BTOCSITE-47092]- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          "text": "V 2.4\n[BTOCSITE-47092]\n- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
         },
         {
           "element_type": "shape",
@@ -23111,6 +23279,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[",
               "font_size": 8.0,
@@ -23182,7 +23354,7 @@
             },
             "vertical_align": "t"
           },
-          "text": "V 2.9[BTOCSITE-51375  PDP 베스트  순서 표시"
+          "text": "V 2.9\n[BTOCSITE-51375  PDP 베스트  순서 표시"
         },
         {
           "element_type": "shape",
@@ -23744,6 +23916,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-73060]",
               "font_size": 8.0,
@@ -23756,6 +23932,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -23843,7 +24023,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 3.2[BTOCSITE-73060]- 제품 PDP UI 개선"
+          "text": "V 3.2\n[BTOCSITE-73060]\n- 제품 PDP UI 개선"
         },
         {
           "element_type": "group",
@@ -24306,7 +24486,7 @@
             "font_family": null,
             "fill": null
           },
-          "text": "CMPDPG-MN17100CMPDPG-MN17110CMPDPG-MN17300"
+          "text": "CMPDPG-MN17100\nCMPDPG-MN17110\nCMPDPG-MN17300"
         },
         {
           "element_type": "shape",
@@ -24355,6 +24535,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-98109]",
               "font_size": 8.0,
@@ -24367,6 +24551,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -24454,7 +24642,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 4.4[BTOCSITE-98109]- 으뜸효율환급 뱃지 추가"
+          "text": "V 4.4\n[BTOCSITE-98109]\n- 으뜸효율환급 뱃지 추가"
         },
         {
           "element_type": "shape",
@@ -24753,6 +24941,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-99487]",
               "font_size": 8.0,
@@ -24765,6 +24957,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -24865,6 +25061,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-91167]",
               "font_size": 8.0,
@@ -24877,6 +25077,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -24936,7 +25140,7 @@
             },
             "vertical_align": "ctr"
           },
-          "text": "V 4.6 [BTOCSITE-99487]- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)[BTOCSITE-91167]- 스펙 기반의 선호도"
+          "text": "V 4.6 \n[BTOCSITE-99487]\n- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)\n[BTOCSITE-91167]\n- 스펙 기반의 선호도"
         },
         {
           "element_type": "shape",
@@ -25100,6 +25304,10 @@
               "fill": null
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-99085]",
               "font_size": 8.0,
@@ -25107,6 +25315,10 @@
               "italic": false,
               "font_family": "LG스마트체 Regular",
               "fill": null
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -25235,6 +25447,10 @@
               "fill": null
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-100137]",
               "font_size": 8.0,
@@ -25242,6 +25458,10 @@
               "italic": false,
               "font_family": "LG스마트체 Regular",
               "fill": null
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -25307,7 +25527,7 @@
             "horizontal_align": "l",
             "vertical_align": "ctr"
           },
-          "text": "V 4.7[BTOCSITE-99085]- admin 판매상태(미판매)의 경우에도. 텍스트 뱃지(출시년도) 노출로 로직 변경 요청[BTOCSITE-100137]LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠 오류 확인 요청"
+          "text": "V 4.7\n[BTOCSITE-99085]\n- admin 판매상태(미판매)의 경우에도. 텍스트 뱃지(출시년도) 노출로 로직 변경 요청\n[BTOCSITE-100137]\nLGE.COM PDP 스펙 용어사전 툴팁 컨텐츠 오류 확인 요청"
         },
         {
           "element_type": "shape",
@@ -25649,6 +25869,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-88928]",
               "font_size": 8.0,
@@ -25661,6 +25885,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -25761,6 +25989,10 @@
               }
             },
             {
+              "type": "paragraph_break",
+              "text": "\n"
+            },
+            {
               "type": "text",
               "text": "[BTOCSITE-85964]",
               "font_size": 8.0,
@@ -25773,6 +26005,10 @@
                 "resolved_value": null,
                 "alpha": null
               }
+            },
+            {
+              "type": "paragraph_break",
+              "text": "\n"
             },
             {
               "type": "text",
@@ -25860,7 +26096,7 @@
             },
             "vertical_align": "t"
           },
-          "text": "V 5.0 [BTOCSITE-88928]- AR체험 서비스 종료, 오브제체험 뱃지 삭제 현행화(BTOCSITE-52092)[BTOCSITE-85964]- 360미디어 디스클라이머 추가"
+          "text": "V 5.0 \n[BTOCSITE-88928]\n- AR체험 서비스 종료, 오브제체험 뱃지 삭제 현행화(BTOCSITE-52092)\n[BTOCSITE-85964]\n- 360미디어 디스클라이머 추가"
         },
         {
           "element_type": "shape",
