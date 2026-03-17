@@ -271,7 +271,7 @@ function base64ToBytes(base64) {
   throw new Error("Base64 decoder is unavailable in this Figma runtime.");
 }
 
-function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor, direction, tipPoint) {
+function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor, direction, tipPoint, strokeWeight) {
   const shapeStyle = getShapeStyle(candidate);
   const line = shapeStyle.line || {};
   const tailEnd = line.tail_end || {};
@@ -279,50 +279,44 @@ function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor, directio
     return;
   }
 
-  const arrow = figma.createPolygon();
-  arrow.pointCount = 3;
-  arrow.resize(10, 10);
-  arrow.fills = [{ type: "SOLID", color: lineColor }];
-  arrow.strokes = [];
-
-  if (direction && (direction.dx !== 0 || direction.dy !== 0)) {
-    const angle = Math.atan2(direction.dy, direction.dx) * (180 / Math.PI);
-    arrow.rotation = angle + 90;
-    if (tipPoint) {
-      const centerX = (bounds.x + tipPoint.x) / 2;
-      const centerY = (bounds.y + tipPoint.y) / 2;
-      arrow.x = centerX - 5;
-      arrow.y = centerY - 5;
-    } else {
-      const radians = Math.atan2(direction.dy, direction.dx);
-      const centerX = bounds.x + Math.cos(radians) * 5;
-      const centerY = bounds.y + Math.sin(radians) * 5;
-      arrow.x = centerX - 5;
-      arrow.y = centerY - 5;
-    }
-  } else {
-    const rotation = ((bounds.rotation || 0) % 360 + 360) % 360;
-    const horizontalLike = bounds.width >= bounds.height;
-    if (rotation >= 45 && rotation < 135) {
-      arrow.rotation = 180;
-      arrow.x = bounds.x - 4;
-      arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
-    } else if (rotation >= 225 && rotation < 315) {
-      arrow.rotation = 0;
-      arrow.x = bounds.x - 4;
-      arrow.y = bounds.y - 4;
-    } else if (horizontalLike) {
-      arrow.rotation = 90;
-      arrow.x = bounds.x + Math.max(bounds.width - 5, 0);
-      arrow.y = bounds.y - 4;
-    } else {
-      arrow.rotation = 180;
-      arrow.x = bounds.x - 4;
-      arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
-    }
+  function appendHeadSegment(start, end) {
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const segment = figma.createRectangle();
+    segment.fills = [{ type: "SOLID", color: lineColor }];
+    segment.strokes = [];
+    segment.x = start.x;
+    segment.y = start.y - strokeWeight / 2;
+    segment.resize(Math.max(Math.sqrt(dx * dx + dy * dy), 1), strokeWeight);
+    segment.rotation = Math.atan2(dy, dx) * (180 / Math.PI);
+    parentNode.appendChild(segment);
   }
 
-  parentNode.appendChild(arrow);
+  const base = { x: bounds.x, y: bounds.y };
+  const tip = tipPoint || base;
+  const dx = tip.x - base.x;
+  const dy = tip.y - base.y;
+  if (dx === 0 && dy === 0) {
+    return;
+  }
+  const length = Math.sqrt(dx * dx + dy * dy) || 1;
+  const ux = dx / length;
+  const uy = dy / length;
+  const px = -uy;
+  const py = ux;
+  const wingSpread = Math.max(5, (strokeWeight || 1) * 4);
+
+  const left = {
+    x: base.x + px * wingSpread,
+    y: base.y + py * wingSpread,
+  };
+  const right = {
+    x: base.x - px * wingSpread,
+    y: base.y - py * wingSpread,
+  };
+
+  appendHeadSegment(tip, left);
+  appendHeadSegment(tip, right);
 }
 
 function buildChildrenMap(candidates) {
@@ -834,7 +828,8 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
           x: originalTipPoint.x - minX,
           y: originalTipPoint.y - minY,
         }
-      : null
+      : null,
+    strokeWeight
   );
   return frame;
 }
