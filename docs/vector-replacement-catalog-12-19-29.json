@@ -1,0 +1,1358 @@
+{
+  "pptxPath": "/mnt/c/Users/mrgbi/OneDrive/Desktop/cnsatlas/sampling/pptsample.pptx",
+  "requestedSlides": [
+    12,
+    19,
+    29
+  ],
+  "summary": {
+    "replacement_candidate_count": 147,
+    "candidate_types": {
+      "decision_diamond": 7,
+      "group_container": 5,
+      "image_asset": 11,
+      "labeled_ui_box": 94,
+      "process_flow_connector": 30
+    }
+  },
+  "slides": {
+    "12": {
+      "count": 68,
+      "items": [
+        {
+          "candidate_id": "s12:slide_12/element_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;465;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_3",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;466;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_4",
+          "subtype": "connector",
+          "title": "Google Shape;467;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_6",
+          "subtype": "connector",
+          "title": "Google Shape;469;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_7",
+          "subtype": "connector",
+          "title": "Google Shape;471;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_8",
+          "subtype": "shape",
+          "title": "Google Shape;472;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_9",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;470;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_12",
+          "subtype": "connector",
+          "title": "Google Shape;475;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_15/child_1",
+          "subtype": "shape",
+          "title": "Google Shape;479;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_16",
+          "subtype": "connector",
+          "title": "Google Shape;481;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_17/child_1",
+          "subtype": "shape",
+          "title": "Google Shape;483;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18",
+          "subtype": "section_block",
+          "title": "Google Shape;485;p15",
+          "preferred_mode": "native",
+          "candidate_type": "group_container",
+          "strategy": "native_then_layout_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_1/child_1",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;487;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;489;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_3",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;490;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_4",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;491;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_5",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;492;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_6",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;493;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_18/child_7",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;494;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_21",
+          "subtype": "connector",
+          "title": "Google Shape;497;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_23",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;499;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_24/child_1",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;501;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_25",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;503;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_26",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;504;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_27",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;505;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_28",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;506;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_29",
+          "subtype": "connector",
+          "title": "Google Shape;507;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_30",
+          "subtype": "connector",
+          "title": "Google Shape;508;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_33/child_1",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;512;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_33/child_2/child_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;515;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_34",
+          "subtype": "connector",
+          "title": "Google Shape;516;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_35",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;517;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_36",
+          "subtype": "connector",
+          "title": "Google Shape;518;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_37/child_1",
+          "subtype": "shape",
+          "title": "Google Shape;520;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_38",
+          "subtype": "connector",
+          "title": "Google Shape;522;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_39/child_1",
+          "subtype": "shape",
+          "title": "Google Shape;524;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_40/child_1",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;527;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_40/child_2/child_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;530;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_42",
+          "subtype": "connector",
+          "title": "Google Shape;532;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_43",
+          "subtype": "connector",
+          "title": "Google Shape;533;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_44",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;536;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_45",
+          "subtype": "connector",
+          "title": "Google Shape;537;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_46",
+          "subtype": "connector",
+          "title": "Google Shape;538;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_49",
+          "subtype": "connector",
+          "title": "Google Shape;541;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_50/child_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;544;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_50/child_3",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;545;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_51/child_1",
+          "subtype": "shape",
+          "title": "Google Shape;547;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_52",
+          "subtype": "connector",
+          "title": "Google Shape;549;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_53",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;550;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_54",
+          "subtype": "connector",
+          "title": "Google Shape;551;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_56",
+          "subtype": "connector",
+          "title": "Google Shape;553;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_58/child_1",
+          "subtype": "shape",
+          "title": "Google Shape;556;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "decision_diamond",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_59",
+          "subtype": "connector",
+          "title": "Google Shape;558;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_60",
+          "subtype": "section_block",
+          "title": "Google Shape;559;p15",
+          "preferred_mode": "native",
+          "candidate_type": "group_container",
+          "strategy": "native_then_layout_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_60/child_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;561;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_60/child_3",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;562;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_60/child_4",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;563;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_60/child_5",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;564;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_61",
+          "subtype": "connector",
+          "title": "Google Shape;565;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_62",
+          "subtype": "connector",
+          "title": "Google Shape;566;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_66",
+          "subtype": "connector",
+          "title": "Google Shape;570;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_68",
+          "subtype": "section_block",
+          "title": "Google Shape;572;p15",
+          "preferred_mode": "native",
+          "candidate_type": "group_container",
+          "strategy": "native_then_layout_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_68/child_1",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;573;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_68/child_2",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;574;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_68/child_3",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;575;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_68/child_4",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;576;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_68/child_5",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;577;p15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s12:slide_12/element_69",
+          "subtype": "connector",
+          "title": "Google Shape;582;p15",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        }
+      ]
+    },
+    "19": {
+      "count": 4,
+      "items": [
+        {
+          "candidate_id": "s19:slide_19/element_7",
+          "subtype": "connector",
+          "title": "연결선: 꺾임 9",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s19:slide_19/element_9",
+          "subtype": "labeled_shape",
+          "title": "직사각형 8",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s19:slide_19/element_11",
+          "subtype": "connector",
+          "title": "연결선: 꺾임 10",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s19:slide_19/element_12",
+          "subtype": "labeled_shape",
+          "title": "직사각형 15",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "29": {
+      "count": 75,
+      "items": [
+        {
+          "candidate_id": "s29:slide_29/element_13/child_2",
+          "subtype": "connector",
+          "title": "직선 연결선[R] 4",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_13/child_3",
+          "subtype": "connector",
+          "title": "직선 연결선[R] 25",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_14",
+          "subtype": "image",
+          "title": "Picture 3",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_19",
+          "subtype": "labeled_shape",
+          "title": "타원 156",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_20",
+          "subtype": "labeled_shape",
+          "title": "타원 157",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_23",
+          "subtype": "labeled_shape",
+          "title": "타원 161",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_24",
+          "subtype": "labeled_shape",
+          "title": "타원 164",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_25",
+          "subtype": "image",
+          "title": "그림 165",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_27",
+          "subtype": "labeled_shape",
+          "title": "타원 168",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_28",
+          "subtype": "labeled_shape",
+          "title": "타원 169",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_31",
+          "subtype": "labeled_shape",
+          "title": "타원 172",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_32",
+          "subtype": "image",
+          "title": "그림 183",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_34",
+          "subtype": "image",
+          "title": "그림 187",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_38",
+          "subtype": "labeled_shape",
+          "title": "Display",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_39/child_1",
+          "subtype": "connector",
+          "title": "직선 화살표 연결선 18",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_39/child_2",
+          "subtype": "image",
+          "title": "Picture 6",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_40",
+          "subtype": "labeled_shape",
+          "title": "타원 3",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_41",
+          "subtype": "labeled_shape",
+          "title": "타원 104",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_43",
+          "subtype": "labeled_shape",
+          "title": "타원 173",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_45",
+          "subtype": "labeled_shape",
+          "title": "타원 158",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_48",
+          "subtype": "labeled_shape",
+          "title": "타원 117",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_50",
+          "subtype": "image",
+          "title": "그림 15",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_52",
+          "subtype": "section_block",
+          "title": "그룹 304",
+          "preferred_mode": "native",
+          "candidate_type": "group_container",
+          "strategy": "native_then_layout_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_52/child_1",
+          "subtype": "labeled_shape",
+          "title": "직사각형 305",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_52/child_3",
+          "subtype": "image",
+          "title": "Picture 3",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_52/child_4",
+          "subtype": "image",
+          "title": "그림 308",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_52/child_6",
+          "subtype": "image",
+          "title": "그림 310",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_53",
+          "subtype": "image",
+          "title": "그림 314",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_55",
+          "subtype": "image",
+          "title": "그림 192",
+          "preferred_mode": "native",
+          "candidate_type": "image_asset",
+          "strategy": "native_asset_replace",
+          "confidence": "low"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_56",
+          "subtype": "labeled_shape",
+          "title": "타원 108",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_57",
+          "subtype": "labeled_shape",
+          "title": "타원 141",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_60",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;1032;p23",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_61",
+          "subtype": "labeled_shape",
+          "title": "타원 163",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_62",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;1032;p23",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_63",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;1032;p23",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_64",
+          "subtype": "labeled_shape",
+          "title": "직사각형 9",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_65",
+          "subtype": "labeled_shape",
+          "title": "모서리가 둥근 직사각형 8",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_70",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;1032;p23",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_71",
+          "subtype": "labeled_shape",
+          "title": "타원 197",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_72",
+          "subtype": "connector",
+          "title": "직선 화살표 연결선 198",
+          "preferred_mode": "vector_fallback",
+          "candidate_type": "process_flow_connector",
+          "strategy": "vector_then_component_replace",
+          "confidence": "high"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_74",
+          "subtype": "labeled_shape",
+          "title": "타원 204",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_75",
+          "subtype": "labeled_shape",
+          "title": "타원 205",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_79",
+          "subtype": "labeled_shape",
+          "title": "직사각형 138",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_80",
+          "subtype": "labeled_shape",
+          "title": "직사각형 11",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_81",
+          "subtype": "labeled_shape",
+          "title": "Google Shape;105;p2",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_84",
+          "subtype": "labeled_shape",
+          "title": "직사각형 150",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_85",
+          "subtype": "labeled_shape",
+          "title": "직사각형 239",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_86",
+          "subtype": "labeled_shape",
+          "title": "직사각형 145",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_88",
+          "subtype": "labeled_shape",
+          "title": "타원 151",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_91",
+          "subtype": "labeled_shape",
+          "title": "직사각형 190",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_92",
+          "subtype": "labeled_shape",
+          "title": "타원 214",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_93",
+          "subtype": "labeled_shape",
+          "title": "직사각형 216",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_94",
+          "subtype": "labeled_shape",
+          "title": "직사각형 152",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_95",
+          "subtype": "labeled_shape",
+          "title": "직사각형 233",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_97",
+          "subtype": "labeled_shape",
+          "title": "직사각형 241",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_98",
+          "subtype": "labeled_shape",
+          "title": "직사각형 149",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_99",
+          "subtype": "section_block",
+          "title": "그룹 12",
+          "preferred_mode": "native",
+          "candidate_type": "group_container",
+          "strategy": "native_then_layout_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_99/child_3",
+          "subtype": "labeled_shape",
+          "title": "직사각형 236",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_99/child_4/child_3",
+          "subtype": "labeled_shape",
+          "title": "타원 243",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_101",
+          "subtype": "labeled_shape",
+          "title": "직사각형 174",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_102",
+          "subtype": "labeled_shape",
+          "title": "직사각형 179",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_103",
+          "subtype": "labeled_shape",
+          "title": "직사각형 180",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_104",
+          "subtype": "labeled_shape",
+          "title": "직사각형 181",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_105",
+          "subtype": "labeled_shape",
+          "title": "직사각형 182",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_106",
+          "subtype": "labeled_shape",
+          "title": "직사각형 195",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_107",
+          "subtype": "labeled_shape",
+          "title": "직사각형 196",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_108",
+          "subtype": "labeled_shape",
+          "title": "직사각형 206",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_109",
+          "subtype": "labeled_shape",
+          "title": "직사각형 191",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_110",
+          "subtype": "labeled_shape",
+          "title": "직사각형 212",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_111",
+          "subtype": "labeled_shape",
+          "title": "직사각형 234",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_113",
+          "subtype": "labeled_shape",
+          "title": "직사각형 246",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_115",
+          "subtype": "labeled_shape",
+          "title": "직사각형 248",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_117",
+          "subtype": "labeled_shape",
+          "title": "타원 250",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_118",
+          "subtype": "labeled_shape",
+          "title": "직사각형 252",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        },
+        {
+          "candidate_id": "s29:slide_29/element_119",
+          "subtype": "labeled_shape",
+          "title": "직사각형 253",
+          "preferred_mode": "native",
+          "candidate_type": "labeled_ui_box",
+          "strategy": "native_then_component_replace",
+          "confidence": "medium"
+        }
+      ]
+    }
+  }
+}

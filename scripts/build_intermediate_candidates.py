@@ -160,6 +160,106 @@ def classify_shape(element: dict[str, Any]) -> tuple[str, str]:
     return "shape", kind
 
 
+COMPLEX_VECTOR_SHAPES = {
+    "flowChartDecision",
+    "flowChartProcess",
+    "flowChartDocument",
+    "chevron",
+    "trapezoid",
+    "hexagon",
+    "parallelogram",
+    "wedgeRoundRectCallout",
+    "wedgeRectCallout",
+    "leftArrow",
+    "rightArrow",
+    "upArrow",
+    "downArrow",
+}
+
+
+REPLACEMENT_TYPE_BY_SHAPE = {
+    "flowChartDecision": "decision_diamond",
+    "flowChartProcess": "process_box",
+    "flowChartDocument": "document_box",
+    "chevron": "chevron_shape",
+    "trapezoid": "trapezoid_shape",
+    "hexagon": "hexagon_shape",
+    "parallelogram": "parallelogram_shape",
+    "wedgeRoundRectCallout": "callout_box",
+    "wedgeRectCallout": "callout_box",
+    "leftArrow": "directional_arrow_shape",
+    "rightArrow": "directional_arrow_shape",
+    "upArrow": "directional_arrow_shape",
+    "downArrow": "directional_arrow_shape",
+}
+
+
+def infer_rendering_metadata(
+    *,
+    node_type: str,
+    subtype: str,
+    shape_kind: str,
+    text: str,
+    extra: dict[str, Any] | None,
+) -> dict[str, Any]:
+    rendering = {
+        "current_mode": "native",
+        "preferred_mode": "native",
+        "replacement_candidate": False,
+    }
+    replacement: dict[str, Any] | None = None
+
+    if subtype == "connector":
+        rendering["preferred_mode"] = "vector_fallback"
+        rendering["replacement_candidate"] = True
+        replacement = {
+            "candidate_type": "process_flow_connector",
+            "strategy": "vector_then_component_replace",
+            "confidence": "high",
+            "reason": "connector_fidelity_and_directionality",
+        }
+    elif subtype in {"section_block", "group"}:
+        child_count = (extra or {}).get("child_count", 0)
+        if child_count >= 4:
+            rendering["replacement_candidate"] = True
+            replacement = {
+                "candidate_type": "group_container",
+                "strategy": "native_then_layout_component_replace",
+                "confidence": "medium",
+                "reason": "repeated_layout_container",
+            }
+    elif shape_kind in COMPLEX_VECTOR_SHAPES:
+        rendering["preferred_mode"] = "vector_fallback"
+        rendering["replacement_candidate"] = True
+        replacement = {
+            "candidate_type": REPLACEMENT_TYPE_BY_SHAPE.get(shape_kind, "complex_shape"),
+            "strategy": "vector_then_component_replace",
+            "confidence": "high",
+            "reason": "complex_shape_fidelity",
+        }
+    elif subtype == "labeled_shape" and text:
+        rendering["replacement_candidate"] = True
+        replacement = {
+            "candidate_type": "labeled_ui_box",
+            "strategy": "native_then_component_replace",
+            "confidence": "medium",
+            "reason": "repeated_labeled_box_pattern",
+        }
+    elif node_type == "asset" and subtype == "image":
+        rendering["replacement_candidate"] = True
+        replacement = {
+            "candidate_type": "image_asset",
+            "strategy": "native_asset_replace",
+            "confidence": "low",
+            "reason": "asset_swap_or_design_asset_upgrade",
+        }
+
+    if replacement:
+        rendering["replacement"] = replacement
+
+    return rendering
+
+
 def make_candidate(
     *,
     candidate_id: str,
@@ -189,6 +289,14 @@ def make_candidate(
     }
     if extra:
         payload["extra"] = extra
+    rendering = infer_rendering_metadata(
+        node_type=node_type,
+        subtype=subtype,
+        shape_kind=(extra or {}).get("shape_kind", subtype),
+        text=text,
+        extra=extra,
+    )
+    payload["rendering"] = rendering
     return payload
 
 
