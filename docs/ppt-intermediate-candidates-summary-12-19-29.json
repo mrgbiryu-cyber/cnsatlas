@@ -11,8 +11,8 @@
       "title_or_label": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
       "candidate_count": 115,
       "candidate_subtypes": {
-        "text_block": 1,
-        "labeled_shape": 61,
+        "text_block": 28,
+        "labeled_shape": 34,
         "connector": 24,
         "shape": 13,
         "group": 13,
@@ -22,31 +22,31 @@
     {
       "slide_no": 19,
       "title_or_label": "리뷰 - 제품 카테고리별 평가 항목",
-      "candidate_count": 299,
+      "candidate_count": 268,
       "candidate_subtypes": {
-        "text_block": 1,
+        "text_block": 4,
         "table": 3,
         "table_row": 55,
-        "table_cell": 232,
-        "labeled_shape": 5,
+        "table_cell": 201,
         "shape": 1,
-        "connector": 2
+        "connector": 2,
+        "labeled_shape": 2
       }
     },
     {
       "slide_no": 29,
       "title_or_label": "옵션 선택",
-      "candidate_count": 184,
+      "candidate_count": 181,
       "candidate_subtypes": {
         "shape": 41,
-        "labeled_shape": 87,
+        "text_block": 32,
         "group": 17,
         "connector": 4,
         "image": 11,
-        "text_block": 3,
+        "labeled_shape": 58,
         "table": 1,
         "table_row": 6,
-        "table_cell": 12,
+        "table_cell": 9,
         "section_block": 2
       }
     }

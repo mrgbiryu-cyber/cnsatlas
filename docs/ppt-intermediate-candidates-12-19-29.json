@@ -278,7 +278,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;468;p15",
           "text": "사용자",
           "source_path": "slide_12/element_5",
@@ -587,7 +587,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;473;p15",
           "text": "케어십 신청",
           "source_path": "slide_12/element_10",
@@ -643,7 +643,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;474;p15",
           "text": "※ 케어십 가능 제품",
           "source_path": "slide_12/element_11",
@@ -759,7 +759,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;476;p15",
           "text": "YES",
           "source_path": "slide_12/element_13",
@@ -815,7 +815,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;477;p15",
           "text": "NO",
           "source_path": "slide_12/element_14",
@@ -971,7 +971,7 @@
           "parent_candidate_id": "s12:slide_12/element_15",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;480;p15",
           "text": "구매하기",
           "source_path": "slide_12/element_15/child_2",
@@ -1186,7 +1186,7 @@
           "parent_candidate_id": "s12:slide_12/element_17",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;484;p15",
           "text": "로그인?비회원주문",
           "source_path": "slide_12/element_17/child_2",
@@ -1885,7 +1885,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;495;p15",
           "text": "NO",
           "source_path": "slide_12/element_19",
@@ -1941,7 +1941,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;496;p15",
           "text": "YES",
           "source_path": "slide_12/element_20",
@@ -2056,7 +2056,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;498;p15",
           "text": "비회원주문",
           "source_path": "slide_12/element_22",
@@ -2763,7 +2763,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;509;p15",
           "text": "회원 로그인",
           "source_path": "slide_12/element_31",
@@ -2819,7 +2819,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;510;p15",
           "text": "로그인 성공 시",
           "source_path": "slide_12/element_32",
@@ -3443,7 +3443,7 @@
           "parent_candidate_id": "s12:slide_12/element_37",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;521;p15",
           "text": "구매하기?",
           "source_path": "slide_12/element_37/child_2",
@@ -3658,7 +3658,7 @@
           "parent_candidate_id": "s12:slide_12/element_39",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;525;p15",
           "text": "로그인?",
           "source_path": "slide_12/element_39/child_2",
@@ -3997,7 +3997,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;531;p15",
           "text": "NO",
           "source_path": "slide_12/element_41",
@@ -4360,7 +4360,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;539;p15",
           "text": "NO",
           "source_path": "slide_12/element_47",
@@ -4416,7 +4416,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;540;p15",
           "text": "YES",
           "source_path": "slide_12/element_48",
@@ -4879,7 +4879,7 @@
           "parent_candidate_id": "s12:slide_12/element_51",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;548;p15",
           "text": "성공?",
           "source_path": "slide_12/element_51/child_2",
@@ -5122,7 +5122,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;552;p15",
           "text": "실패",
           "source_path": "slide_12/element_55",
@@ -5237,7 +5237,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;554;p15",
           "text": "청약실패, 구매취소(장바구니에 담기지 않음)",
           "source_path": "slide_12/element_57",
@@ -5393,7 +5393,7 @@
           "parent_candidate_id": "s12:slide_12/element_58",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;557;p15",
           "text": "서비스 가능여부?",
           "source_path": "slide_12/element_58/child_2",
@@ -6018,7 +6018,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;567;p15",
           "text": "NO",
           "source_path": "slide_12/element_63",
@@ -6074,7 +6074,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;568;p15",
           "text": "성공",
           "source_path": "slide_12/element_64",
@@ -6130,7 +6130,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;569;p15",
           "text": "YES",
           "source_path": "slide_12/element_65",
@@ -6246,7 +6246,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;571;p15",
           "text": "청약 성공청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶",
           "source_path": "slide_12/element_67",
@@ -6754,7 +6754,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;591;p15",
           "text": "YES",
           "source_path": "slide_12/element_70",
@@ -6810,7 +6810,7 @@
           "parent_candidate_id": "page:12",
           "slide_no": 12,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 71",
           "text": "서비스 가능여부 = 설치 가능 여부설치가능여부 3가지 API 호출을 통해 가능여부 판단서비스 가능 지역 조회(0057)기존 중복청약 여부(0058)청약모델조회(0050) – 요금제 유효 여부<서비스 가능 여부 NO case>우편번호가 입력되지 않을 때서비스 가능지역조회(0057) 결과 없음2-1. 서비스 가능 지역 조회 결과에서 서비스 가능여부(serviceYn)가 ‘Y가 아닐경우.3. 기존 중복청약 여부(0058) 확인 시 중복청약인 경우4. ‘청약모델조회(0050) – 요금제 유효 여부‘ 조회 시 미제공 요금제 일 경우5. 얼음정수기냉장고, 정수기 일경우 수질검사대상여부 인지 확인 후 수질검사대상이면 설치불가능 (수질검사대상여부는 서비스 가능지역조회(0057)의 결과에 있음)이때 복수제품을 신청하는 경우이면 정수기, 얼음정수기 냉장고를 제외한 설치가능한 제품만 청약 신청가능",
           "source_path": "slide_12/element_71",
@@ -7292,37 +7292,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_3:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_3",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 3-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_3/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_3:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_3",
           "slide_no": 19,
@@ -7431,37 +7400,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_4:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_4",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 4-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_4/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -7718,37 +7656,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_6:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_6",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 6-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_6/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_6:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_6",
           "slide_no": 19,
@@ -7857,37 +7764,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_7:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_7",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 7-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_7/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -8144,37 +8020,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_9:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_9",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 9-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_9/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_9:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_9",
           "slide_no": 19,
@@ -8283,37 +8128,6 @@
             "height": "237033",
             "row_height_px": 24.89,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_10:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_10",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 10-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_10/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "237033",
-            "row_height_px": 24.89,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -8428,37 +8242,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_11:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_11",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 11-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_11/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_11:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_11",
           "slide_no": 19,
@@ -8567,37 +8350,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_12:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_12",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 12-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_12/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -8712,37 +8464,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_13:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_13",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 13-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_13/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_13:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_13",
           "slide_no": 19,
@@ -8851,37 +8572,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_14:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_14",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 14-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_14/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -9138,37 +8828,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_16:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_16",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 16-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_16/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_16:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_16",
           "slide_no": 19,
@@ -9277,37 +8936,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_17:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_17",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 17-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_17/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -9422,37 +9050,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_18:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_18",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 18-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_18/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_18:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_18",
           "slide_no": 19,
@@ -9564,37 +9161,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_19:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_19",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 19-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_19/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_19:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_19",
           "slide_no": 19,
@@ -9703,37 +9269,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_20:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_20",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 20-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_20/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -9990,37 +9525,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_22:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_22",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 22-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_22/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_22:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_22",
           "slide_no": 19,
@@ -10132,37 +9636,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_23:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_23",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 23-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_23/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_23:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_23",
           "slide_no": 19,
@@ -10271,37 +9744,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_24:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_24",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 24-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_24/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -10558,37 +10000,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_26:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_26",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 26-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_26/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_26:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_26",
           "slide_no": 19,
@@ -10700,37 +10111,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_27:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_27",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 27-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_27/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_27:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_27",
           "slide_no": 19,
@@ -10839,68 +10219,6 @@
             "height": "150113",
             "row_height_px": 15.76,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_28:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_28",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 28-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_28/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_2:row_28:cell_2",
-          "parent_candidate_id": "s19:slide_19/element_2:row_28",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 28-2",
-          "text": "",
-          "source_path": "slide_19/element_2/row_28/cell_2",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 2,
-            "width_px": 96.56,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -11126,37 +10444,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_30:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_30",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 30-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_30/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "150113",
-            "row_height_px": 15.76,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_30:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_30",
           "slide_no": 19,
@@ -11268,37 +10555,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_2:row_31:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_2:row_31",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 31-1",
-          "text": "",
-          "source_path": "slide_19/element_2/row_31/cell_1",
-          "source_node_id": "4",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "132189",
-            "row_height_px": 13.88,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 94.48,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_2:row_31:cell_2",
           "parent_candidate_id": "s19:slide_19/element_2:row_31",
           "slide_no": 19,
@@ -11396,7 +10652,7 @@
           "parent_candidate_id": "page:19",
           "slide_no": 19,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;720;p19",
           "text": "항목별 평가 지표",
           "source_path": "slide_19/element_3",
@@ -11593,103 +10849,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_4:row_1:cell_3",
-          "parent_candidate_id": "s19:slide_19/element_4:row_1",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 1-3",
-          "text": "3점 척도 평가 ( 리뷰 작성 팝업 노출 )",
-          "source_path": "slide_19/element_4/row_1/cell_3",
-          "source_node_id": "6",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "193200",
-            "row_height_px": 20.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 6,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": {
-                "type": "srgb",
-                "value": "EAEAEA",
-                "alpha": null
-              },
-              "anchor": null,
-              "marL": 8.86,
-              "marR": 8.86,
-              "marT": 4.43,
-              "marB": 4.43
-            }
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_4:row_1:cell_4",
-          "parent_candidate_id": "s19:slide_19/element_4:row_1",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 1-4",
-          "text": "",
-          "source_path": "slide_19/element_4/row_1/cell_4",
-          "source_node_id": "6",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "193200",
-            "row_height_px": 20.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 7,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_4:row_1:cell_5",
-          "parent_candidate_id": "s19:slide_19/element_4:row_1",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 1-5",
-          "text": "",
-          "source_path": "slide_19/element_4/row_1/cell_5",
-          "source_node_id": "6",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "193200",
-            "row_height_px": 20.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 8,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_4:row_2",
           "parent_candidate_id": "s19:slide_19/element_4",
           "slide_no": 19,
@@ -11705,37 +10864,6 @@
             "height": "183640",
             "row_height_px": 19.28,
             "cell_count": 5
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_4:row_2:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_4:row_2",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 2-1",
-          "text": "",
-          "source_path": "slide_19/element_4/row_2/cell_1",
-          "source_node_id": "6",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "183640",
-            "row_height_px": 19.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 75.76,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -13677,7 +12805,7 @@
           "parent_candidate_id": "page:19",
           "slide_no": 19,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;720;p19",
           "text": "카테고리별 평가 항목 (중카 기준)",
           "source_path": "slide_19/element_6",
@@ -13788,7 +12916,7 @@
           "parent_candidate_id": "page:19",
           "slide_no": 19,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 12",
           "text": "※ 카테고리 개편내용 현행화하여 평가항목 정리※ 기존 평가 항목 승계",
           "source_path": "slide_19/element_8",
@@ -14021,68 +13149,6 @@
           }
         },
         {
-          "candidate_id": "s19:slide_19/element_10:row_1:cell_3",
-          "parent_candidate_id": "s19:slide_19/element_10:row_1",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 1-3",
-          "text": "",
-          "source_path": "slide_19/element_10/row_1/cell_3",
-          "source_node_id": "12",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "193200",
-            "row_height_px": 20.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 5,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_10:row_1:cell_4",
-          "parent_candidate_id": "s19:slide_19/element_10:row_1",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 1-4",
-          "text": "",
-          "source_path": "slide_19/element_10/row_1/cell_4",
-          "source_node_id": "12",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "193200",
-            "row_height_px": 20.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 6,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
-          }
-        },
-        {
           "candidate_id": "s19:slide_19/element_10:row_2",
           "parent_candidate_id": "s19:slide_19/element_10",
           "slide_no": 19,
@@ -14098,37 +13164,6 @@
             "height": "183640",
             "row_height_px": 19.28,
             "cell_count": 4
-          }
-        },
-        {
-          "candidate_id": "s19:slide_19/element_10:row_2:cell_1",
-          "parent_candidate_id": "s19:slide_19/element_10:row_2",
-          "slide_no": 19,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 2-1",
-          "text": "",
-          "source_path": "slide_19/element_10/row_2/cell_1",
-          "source_node_id": "12",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "183640",
-            "row_height_px": 19.28,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": null,
-            "v_merge": "1",
-            "start_column_index": 1,
-            "width_px": 96.74,
-            "cell_style": {
-              "fill": null,
-              "anchor": null,
-              "marL": null,
-              "marR": null,
-              "marT": null,
-              "marB": null
-            }
           }
         },
         {
@@ -15858,7 +14893,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 129",
           "text": "옵션 선택",
           "source_path": "slide_29/element_2",
@@ -15909,7 +14944,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 131",
           "text": ">",
           "source_path": "slide_29/element_3",
@@ -15956,7 +14991,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "직사각형 134",
           "text": "163cm / 레드",
           "source_path": "slide_29/element_4",
@@ -16002,7 +15037,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 215",
           "text": "9,400,000원",
           "source_path": "slide_29/element_5",
@@ -16089,7 +15124,7 @@
           "parent_candidate_id": "s29:slide_29/element_6",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 224",
           "text": "최대할인가",
           "source_path": "slide_29/element_6/child_1",
@@ -16191,7 +15226,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 226",
           "text": "9,900,000원",
           "source_path": "slide_29/element_7",
@@ -16238,7 +15273,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 227",
           "text": "10,969,600원",
           "source_path": "slide_29/element_8",
@@ -16326,7 +15361,7 @@
           "parent_candidate_id": "s29:slide_29/element_9",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 229",
           "text": "회원할인가",
           "source_path": "slide_29/element_9/child_1",
@@ -16428,7 +15463,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 231",
           "text": "10%",
           "source_path": "slide_29/element_10",
@@ -16799,7 +15834,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 136",
           "text": "LG 올레드 evo",
           "source_path": "slide_29/element_15",
@@ -16881,7 +15916,7 @@
           "parent_candidate_id": "s29:slide_29/element_16",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 142",
           "text": "65aRT90EKPB │",
           "source_path": "slide_29/element_16/child_1",
@@ -17047,7 +16082,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 147",
           "text": "★ 4.89 (999+) >",
           "source_path": "slide_29/element_18",
@@ -17215,7 +16250,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 159",
           "text": "매립배관형",
           "source_path": "slide_29/element_21",
@@ -18066,42 +17101,6 @@
           }
         },
         {
-          "candidate_id": "s29:slide_29/element_37:row_1:cell_2",
-          "parent_candidate_id": "s29:slide_29/element_37:row_1",
-          "slide_no": 29,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 1-2",
-          "text": "",
-          "source_path": "slide_29/element_37/row_1/cell_2",
-          "source_node_id": "49",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "116736",
-            "row_height_px": 12.26,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 3,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": {
-                "type": "scheme",
-                "value": "bg1",
-                "resolved_value": null,
-                "alpha": null
-              },
-              "anchor": null,
-              "marL": 3.78,
-              "marR": 3.78,
-              "marT": 3.77,
-              "marB": 3.77
-            }
-          }
-        },
-        {
           "candidate_id": "s29:slide_29/element_37:row_2",
           "parent_candidate_id": "s29:slide_29/element_37",
           "slide_no": 29,
@@ -18152,42 +17151,6 @@
               "marR": 3.17,
               "marT": 4.11,
               "marB": 4.11
-            }
-          }
-        },
-        {
-          "candidate_id": "s29:slide_29/element_37:row_2:cell_2",
-          "parent_candidate_id": "s29:slide_29/element_37:row_2",
-          "slide_no": 29,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 2-2",
-          "text": "",
-          "source_path": "slide_29/element_37/row_2/cell_2",
-          "source_node_id": "49",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "190217",
-            "row_height_px": 19.97,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 3,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": {
-                "type": "scheme",
-                "value": "bg1",
-                "resolved_value": null,
-                "alpha": null
-              },
-              "anchor": null,
-              "marL": 3.78,
-              "marR": 3.78,
-              "marT": 3.77,
-              "marB": 3.77
             }
           }
         },
@@ -18516,42 +17479,6 @@
           }
         },
         {
-          "candidate_id": "s29:slide_29/element_37:row_6:cell_2",
-          "parent_candidate_id": "s29:slide_29/element_37:row_6",
-          "slide_no": 29,
-          "node_type": "node",
-          "subtype": "table_cell",
-          "title": "cell 6-2",
-          "text": "",
-          "source_path": "slide_29/element_37/row_6/cell_2",
-          "source_node_id": "49",
-          "bounds_emu": null,
-          "bounds_px": null,
-          "extra": {
-            "row_height_emu": "159799",
-            "row_height_px": 16.78,
-            "grid_span": 1,
-            "row_span": 1,
-            "h_merge": "1",
-            "v_merge": null,
-            "start_column_index": 3,
-            "width_px": 0.0,
-            "cell_style": {
-              "fill": {
-                "type": "scheme",
-                "value": "bg1",
-                "resolved_value": null,
-                "alpha": null
-              },
-              "anchor": null,
-              "marL": 3.49,
-              "marR": 3.49,
-              "marT": 3.48,
-              "marB": 3.48
-            }
-          }
-        },
-        {
           "candidate_id": "s29:slide_29/element_38",
           "parent_candidate_id": "page:29",
           "slide_no": 29,
@@ -18732,7 +17659,7 @@
           "parent_candidate_id": "s29:slide_29/element_39",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "Google Shape;741;p20",
           "text": "swipe",
           "source_path": "slide_29/element_39/child_3",
@@ -19299,7 +18226,7 @@
           "parent_candidate_id": "s29:slide_29/element_46",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 113",
           "text": "비교하기",
           "source_path": "slide_29/element_46/child_2",
@@ -19461,7 +18388,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 281",
           "text": "동영상 : Youtube case",
           "source_path": "slide_29/element_49",
@@ -19540,7 +18467,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 303",
           "text": "영상 가로 사이즈 맞춰세로 중간맞춤",
           "source_path": "slide_29/element_51",
@@ -19914,7 +18841,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 24",
           "text": "- 썸네일 이미지 + 재생아이콘 노출",
           "source_path": "slide_29/element_54",
@@ -20570,7 +19497,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 153",
           "text": "동영상 : Video File case",
           "source_path": "slide_29/element_66",
@@ -20617,7 +19544,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 155",
           "text": "- 동영상 자동재생",
           "source_path": "slide_29/element_67",
@@ -22154,7 +21081,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 144",
           "text": "B2K 시리즈",
           "source_path": "slide_29/element_82",
@@ -22418,7 +21345,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "직사각형 10",
           "text": "※ 소비자의 이해를 돕기 위해 연출된 이미지입니다.",
           "source_path": "slide_29/element_87",
@@ -22667,7 +21594,7 @@
           "parent_candidate_id": "s29:slide_29/element_90",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 176",
           "text": "닷컴ONLY",
           "source_path": "slide_29/element_90/child_2",
@@ -23001,7 +21928,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "직사각형 237",
           "text": "으뜸효율환급 | TV 1위 | 2023년 출시 |  다품목할인 | UP가전 |  기간 한정 쿠폰 | 50대 한정수량 특가",
           "source_path": "slide_29/element_96",
@@ -23402,7 +22329,7 @@
           "parent_candidate_id": "s29:slide_29/element_99/child_4",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 240",
           "text": "회원할인가",
           "source_path": "slide_29/element_99/child_4/child_1",
@@ -23448,7 +22375,7 @@
           "parent_candidate_id": "s29:slide_29/element_99/child_4",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 242",
           "text": "9,900,000원",
           "source_path": "slide_29/element_99/child_4/child_2",
@@ -24193,7 +23120,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 245",
           "text": "삭제",
           "source_path": "slide_29/element_112",
@@ -24296,7 +23223,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "TextBox 247",
           "text": "삭제",
           "source_path": "slide_29/element_114",
@@ -24398,7 +23325,7 @@
           "parent_candidate_id": "page:29",
           "slide_no": 29,
           "node_type": "node",
-          "subtype": "labeled_shape",
+          "subtype": "text_block",
           "title": "직사각형 249",
           "text": "※ 소비자의 이해를 돕기 위해 연출된 이미지입니다.",
           "source_path": "slide_29/element_116",

@@ -36,12 +36,40 @@ def classify_group(element: dict[str, Any]) -> str:
     return "group"
 
 
+def has_visible_fill(shape_style: dict[str, Any] | None) -> bool:
+    if not shape_style:
+        return False
+    fill = shape_style.get("fill") or {}
+    if not fill or fill.get("kind") == "none":
+        return False
+    alpha = fill.get("alpha")
+    return alpha is None or alpha > 0
+
+
+def has_visible_line(shape_style: dict[str, Any] | None) -> bool:
+    if not shape_style:
+        return False
+    line = shape_style.get("line") or {}
+    if not line or line.get("kind") in {"none", "default"}:
+        return False
+    alpha = line.get("alpha")
+    width_px = line.get("width_px")
+    if alpha is not None and alpha <= 0:
+        return False
+    if width_px is not None and width_px <= 0:
+        return False
+    return True
+
+
 def classify_shape(element: dict[str, Any]) -> tuple[str, str]:
     text = (element.get("text") or "").strip()
     kind = element.get("shape_kind") or "shape"
+    shape_style = element.get("shape_style") or {}
     if element.get("element_type") == "connector":
         return "connector", "connector"
     if text and kind in {"rect", "roundRect", "ellipse"}:
+        if not has_visible_fill(shape_style) and not has_visible_line(shape_style):
+            return "text_block", kind
         return "labeled_shape", kind
     if text:
         return "text_block", kind
@@ -167,6 +195,8 @@ def append_element_candidates(
                 )
             )
             for cell in row.get("cells", []):
+                if cell.get("h_merge") or cell.get("v_merge"):
+                    continue
                 candidates.append(
                     make_candidate(
                         candidate_id=f"{row_id}:cell_{cell['cell_index']}",

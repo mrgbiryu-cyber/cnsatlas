@@ -183,6 +183,76 @@ function alignTextNode(node, bounds, textStyle, horizontalFallback, verticalFall
   }
 }
 
+function mapHorizontalAlign(value, fallback) {
+  const align = value || fallback || "l";
+  if (align === "ctr" || align === "center") {
+    return "CENTER";
+  }
+  if (align === "r" || align === "right") {
+    return "RIGHT";
+  }
+  if (align === "just" || align === "justify") {
+    return "JUSTIFIED";
+  }
+  return "LEFT";
+}
+
+function mapVerticalAlign(value, fallback) {
+  const align = value || fallback || "t";
+  if (align === "ctr" || align === "mid" || align === "center") {
+    return "CENTER";
+  }
+  if (align === "b" || align === "bottom") {
+    return "BOTTOM";
+  }
+  return "TOP";
+}
+
+function createTransparentFrame(bounds, name) {
+  const frame = figma.createFrame();
+  frame.name = name;
+  frame.x = bounds.x;
+  frame.y = bounds.y;
+  frame.resize(bounds.width, bounds.height);
+  frame.fills = [];
+  frame.strokes = [];
+  frame.clipsContent = false;
+  if (bounds.rotation) {
+    frame.rotation = bounds.rotation;
+  }
+  return frame;
+}
+
+async function appendTextIntoContainer(container, candidate, textValue, textStyle, bounds, horizontalFallback, verticalFallback) {
+  const text = figma.createText();
+  text.name = `${container.name} text`;
+  text.fontName = await resolveFontName(textStyle);
+  text.characters = textValue || candidate.title || "";
+  text.fills = [makeSolidPaint(textStyle.fill, { r: 0.12, g: 0.12, b: 0.12 }, 1)];
+  text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
+  text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, horizontalFallback);
+  text.textAlignVertical = mapVerticalAlign(textStyle.vertical_align, verticalFallback);
+  text.textAutoResize = "HEIGHT";
+
+  const leftInset = typeof textStyle.lIns === "number" ? textStyle.lIns : 6;
+  const rightInset = typeof textStyle.rIns === "number" ? textStyle.rIns : 6;
+  const contentWidth = Math.max(bounds.width - leftInset - rightInset, 12);
+  text.resize(contentWidth, Math.max(bounds.height, 16));
+
+  container.appendChild(text);
+  alignTextNode(
+    text,
+    {
+      width: bounds.width,
+      height: Math.max(bounds.height, text.height),
+    },
+    textStyle,
+    horizontalFallback,
+    verticalFallback
+  );
+  return text;
+}
+
 function base64ToBytes(base64) {
   if (typeof atob === "function") {
     const binary = atob(base64);
@@ -209,7 +279,17 @@ function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor) {
   arrow.fills = [{ type: "SOLID", color: lineColor }];
   arrow.strokes = [];
 
-  if (bounds.width >= bounds.height) {
+  const rotation = ((bounds.rotation || 0) % 360 + 360) % 360;
+  const horizontalLike = bounds.width >= bounds.height;
+  if (rotation >= 45 && rotation < 135) {
+    arrow.rotation = 180;
+    arrow.x = bounds.x - 4;
+    arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
+  } else if (rotation >= 225 && rotation < 315) {
+    arrow.rotation = 0;
+    arrow.x = bounds.x - 4;
+    arrow.y = bounds.y - 4;
+  } else if (horizontalLike) {
     arrow.rotation = 90;
     arrow.x = bounds.x + Math.max(bounds.width - 5, 0);
     arrow.y = bounds.y - 4;
@@ -348,28 +428,25 @@ async function createNodeForCandidate(candidate, parentNode, origin, fallbackInd
 }
 
 async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
-  const node = figma.createText();
   const textStyle = getTextStyle(candidate);
-  node.name = candidate.title || candidate.subtype;
-  node.fontName = await resolveFontName(textStyle);
-  node.characters = candidate.text || candidate.title || "";
-  node.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   const bounds = relativeBounds(candidate, origin);
   if (bounds) {
-    node.x = bounds.x;
-    node.y = bounds.y;
-    node.resize(Math.max(bounds.width, 24), Math.max(bounds.height, 16));
-    node.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height || 16);
-    if (bounds.rotation) {
-      node.rotation = bounds.rotation;
-    }
-  } else {
-    node.x = 20;
-    node.y = 20 + fallbackIndex * 20;
-    node.fontSize = clampFontSize(textStyle.font_size_max || 18);
+    const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+    parentNode.appendChild(frame);
+    await appendTextIntoContainer(frame, candidate, candidate.text || candidate.title || "", textStyle, bounds, "l", "t");
+    return frame;
   }
-  parentNode.appendChild(node);
-  return node;
+
+  const fallbackBounds = {
+    x: 20,
+    y: 20 + fallbackIndex * 20,
+    width: 180,
+    height: 28,
+  };
+  const frame = createTransparentFrame(fallbackBounds, candidate.title || candidate.subtype);
+  parentNode.appendChild(frame);
+  await appendTextIntoContainer(frame, candidate, candidate.text || candidate.title || "", textStyle, fallbackBounds, "l", "t");
+  return frame;
 }
 
 async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) {
@@ -382,17 +459,7 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   const shapeStyle = getShapeStyle(candidate);
   const textStyle = getTextStyle(candidate);
   const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
-  const frame = figma.createFrame();
-  frame.name = candidate.title || candidate.subtype;
-  frame.x = bounds.x;
-  frame.y = bounds.y;
-  frame.resize(bounds.width, bounds.height);
-  frame.fills = [];
-  frame.strokes = [];
-  frame.clipsContent = false;
-  if (bounds.rotation) {
-    frame.rotation = bounds.rotation;
-  }
+  const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
   parentNode.appendChild(frame);
 
   let visualShape;
@@ -402,10 +469,11 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
     visualShape = figma.createPolygon();
     visualShape.pointCount = 4;
     visualShape.rotation = 45;
-    const side = Math.min(bounds.width, bounds.height) * 0.7;
-    visualShape.resize(side, side);
-    visualShape.x = (bounds.width - side) / 2;
-    visualShape.y = (bounds.height - side) / 2;
+    const shapeWidth = Math.max(bounds.width * 0.88, 24);
+    const shapeHeight = Math.max(bounds.height * 0.88, 24);
+    visualShape.resize(shapeWidth, shapeHeight);
+    visualShape.x = (bounds.width - shapeWidth) / 2;
+    visualShape.y = (bounds.height - shapeHeight) / 2;
   } else {
     visualShape = figma.createRectangle();
     visualShape.resize(bounds.width, bounds.height);
@@ -434,14 +502,7 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   }
   frame.appendChild(visualShape);
 
-  const text = figma.createText();
-  text.name = `${frame.name} label`;
-  text.fontName = await resolveFontName(textStyle);
-  text.characters = candidate.text || candidate.title || "";
-  text.fills = [makeSolidPaint(textStyle.fill, { r: 0.12, g: 0.12, b: 0.12 }, 1)];
-  text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
-  frame.appendChild(text);
-  alignTextNode(text, bounds, textStyle, "ctr", "ctr");
+  await appendTextIntoContainer(frame, candidate, candidate.text || candidate.title || "", textStyle, bounds, "ctr", "ctr");
   return frame;
 }
 
@@ -500,19 +561,21 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   const line = figma.createLine();
   const shapeStyle = getShapeStyle(candidate);
   const linePaint = makeSolidPaint(shapeStyle.line, { r: 0.35, g: 0.35, b: 0.35 }, 1);
+  const isVertical = bounds.height > bounds.width;
+  const length = Math.max(isVertical ? bounds.height : bounds.width, 10);
   line.name = candidate.title || "connector";
   line.x = bounds.x;
   line.y = bounds.y;
-  line.resize(Math.max(bounds.width, 10), Math.max(bounds.height, 1));
+  line.resize(isVertical ? 1 : length, isVertical ? length : 1);
   line.strokes = [linePaint];
   line.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
   if (bounds.rotation) {
     line.rotation = bounds.rotation;
-  } else if (bounds.height > bounds.width * 1.5) {
+  } else if (isVertical) {
     line.rotation = 90;
   }
   parentNode.appendChild(line);
-  addArrowHeadIfNeeded(candidate, parentNode, bounds, linePaint.color);
+  addArrowHeadIfNeeded(candidate, parentNode, { ...bounds, width: isVertical ? 1 : length, height: isVertical ? length : 1 }, linePaint.color);
   return line;
 }
 
@@ -523,25 +586,7 @@ function createGroupFrame(candidate, parentNode, origin, fallbackIndex) {
     width: 160,
     height: 60,
   };
-  const frame = figma.createFrame();
-  const shapeStyle = getShapeStyle(candidate);
-  frame.name = candidate.title || candidate.subtype;
-  frame.x = bounds.x;
-  frame.y = bounds.y;
-  frame.resize(bounds.width, bounds.height);
-  frame.fills = [];
-  frame.strokes = [makeSolidPaint(
-    shapeStyle.line,
-    candidate.subtype === "section_block"
-      ? { r: 0.22, g: 0.47, b: 0.86 }
-      : { r: 0.79, g: 0.53, b: 0.18 },
-    1
-  )];
-  frame.strokeWeight = shapeStyle.line && shapeStyle.line.width_px
-    ? Math.max(shapeStyle.line.width_px, 1)
-    : (candidate.subtype === "section_block" ? 2 : 1);
-  frame.dashPattern = candidate.subtype === "section_block" ? [8, 4] : [4, 4];
-  frame.clipsContent = false;
+  const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
   parentNode.appendChild(frame);
   return frame;
 }
@@ -591,9 +636,19 @@ function createTableRow(candidate, parentNode) {
 }
 
 async function createTableCell(candidate, parentNode) {
+  const extra = candidate.extra || {};
+  if (extra.h_merge || extra.v_merge) {
+    const placeholder = figma.createFrame();
+    placeholder.name = `${candidate.title || candidate.subtype} merged-skip`;
+    placeholder.resize(0.01, 0.01);
+    placeholder.fills = [];
+    placeholder.strokes = [];
+    parentNode.appendChild(placeholder);
+    return placeholder;
+  }
+
   const cell = figma.createFrame();
   const textStyle = getTextStyle(candidate);
-  const extra = candidate.extra || {};
   cell.name = candidate.title || candidate.subtype;
   const cellCount = Number(parentNode.getPluginData("cellCount") || "1");
   const siblings = parentNode.children.filter((child) => child.type === "FRAME");
@@ -615,6 +670,13 @@ async function createTableCell(candidate, parentNode) {
   text.characters = candidate.text || "";
   text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || 10);
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
+  text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, "l");
+  text.textAlignVertical = mapVerticalAlign(cellStyle.anchor, "ctr");
+  text.textAutoResize = "HEIGHT";
+  const leftInset = typeof cellStyle.marL === "number" ? cellStyle.marL : 6;
+  const rightInset = typeof cellStyle.marR === "number" ? cellStyle.marR : 6;
+  const availableWidth = Math.max(width - leftInset - rightInset, 12);
+  text.resize(availableWidth, Math.max(parentNode.height, 16));
   cell.appendChild(text);
   alignTextNode(text, { width, height: parentNode.height }, { ...textStyle, ...cellStyle }, "l", cellStyle.anchor || "ctr");
   return cell;
