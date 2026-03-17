@@ -22,7 +22,7 @@ figma.ui.onmessage = async (message) => {
     } catch (error) {
       figma.ui.postMessage({
         type: "render-error",
-        message: error instanceof Error ? error.message : String(error),
+        message: error instanceof Error ? `${error.name}: ${error.message}\n${error.stack}` : String(error),
       });
     }
   }
@@ -73,7 +73,6 @@ async function renderIntermediatePayload(payload) {
   rootFrame.name = "CNS Atlas Visual Test";
   rootFrame.fills = [];
   rootFrame.strokes = [];
-  rootFrame.expanded = true;
 
   let cursorX = 0;
 
@@ -90,7 +89,7 @@ async function renderIntermediatePayload(payload) {
     rootFrame.appendChild(pageFrame);
 
     const childrenMap = buildChildrenMap(page.candidates);
-    const roots = (childrenMap.get(page.page_id) || []).sort(sortByPosition);
+    const roots = [...(childrenMap.get(page.page_id) || [])].sort(sortByPosition);
     for (const candidate of roots) {
       await renderCandidateTree(candidate, childrenMap, pageFrame, { x: 0, y: 0 }, 0);
     }
@@ -129,7 +128,7 @@ function relativeBounds(candidate, origin) {
 
 async function renderCandidateTree(candidate, childrenMap, parentNode, origin, fallbackIndex) {
   const node = await createNodeForCandidate(candidate, parentNode, origin, fallbackIndex);
-  const children = (childrenMap.get(candidate.candidate_id) || []).sort(sortByPosition);
+  const children = [...(childrenMap.get(candidate.candidate_id) || [])].sort(sortByPosition);
 
   if (children.length === 0) {
     return node;
@@ -138,7 +137,12 @@ async function renderCandidateTree(candidate, childrenMap, parentNode, origin, f
   const nextOrigin = candidate.bounds_px || origin;
   let childFallbackIndex = 0;
   for (const child of children) {
-    await renderCandidateTree(child, childrenMap, node, nextOrigin, childFallbackIndex);
+    try {
+      await renderCandidateTree(child, childrenMap, node, nextOrigin, childFallbackIndex);
+    } catch (err) {
+      console.error(`Error rendering child ${child.candidate_id}`, err);
+      throw err;
+    }
     childFallbackIndex += 1;
   }
   return node;
@@ -280,7 +284,7 @@ function createGroupFrame(candidate, parentNode, origin, fallbackIndex) {
       : { r: 0.79, g: 0.53, b: 0.18 },
   }];
   frame.strokeWeight = candidate.subtype === "section_block" ? 2 : 1;
-  frame.strokeDashes = candidate.subtype === "section_block" ? [8, 4] : [4, 4];
+  frame.dashPattern = candidate.subtype === "section_block" ? [8, 4] : [4, 4];
   frame.clipsContent = false;
   parentNode.appendChild(frame);
   return frame;

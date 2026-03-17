@@ -1,8 +1,16 @@
 {
   "name": "CNS Atlas PPT Visual Test",
-  "id": "cnsatlas-ppt-visual-test",
+  "id": "1314324278456201928",
   "api": "1.0.0",
-  "editorType": ["figma"],
+  "editorType": [
+    "figma"
+  ],
   "main": "code.js",
-  "ui": "ui.html"
+  "ui": "ui.html",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ],
+    "reasoning": "Local JSON processing only"
+  }
 }
