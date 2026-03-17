@@ -577,7 +577,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     line.rotation = 90;
   }
   parentNode.appendChild(line);
-  addArrowHeadIfNeeded(candidate, parentNode, { ...bounds, width: isVertical ? 1 : length, height: isVertical ? length : 1 }, linePaint.color);
+  addArrowHeadIfNeeded(candidate, parentNode, Object.assign({}, bounds, { width: isVertical ? 1 : length, height: isVertical ? length : 1 }), linePaint.color);
   return line;
 }
 
