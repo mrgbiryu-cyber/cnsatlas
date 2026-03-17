@@ -234,7 +234,8 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
   text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, horizontalFallback);
   text.textAlignVertical = mapVerticalAlign(textStyle.vertical_align, verticalFallback);
-  const wrapMode = textStyle.wrap || "square";
+  const explicitLineBreak = typeof text.characters === "string" && text.characters.includes("\n");
+  const wrapMode = textStyle.wrap || (explicitLineBreak ? "square" : "none");
   text.textAutoResize = wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT";
 
   const leftInset = typeof textStyle.lIns === "number" ? textStyle.lIns : 6;
@@ -460,12 +461,20 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
   const fallbackBounds = {
     x: 20,
     y: 20 + fallbackIndex * 20,
-    width: 180,
+    width: 720,
     height: 28,
   };
   const frame = createTransparentFrame(fallbackBounds, candidate.title || candidate.subtype);
   parentNode.appendChild(frame);
-  await appendTextIntoContainer(frame, candidate, candidate.text || candidate.title || "", textStyle, fallbackBounds, "l", "t");
+  await appendTextIntoContainer(
+    frame,
+    candidate,
+    candidate.text || candidate.title || "",
+    Object.assign({}, textStyle, { wrap: "none" }),
+    fallbackBounds,
+    "l",
+    "t"
+  );
   return frame;
 }
 
@@ -570,7 +579,7 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
 }
 
 function createConnector(candidate, parentNode, origin, fallbackIndex) {
-  const bounds = relativeBounds(candidate, origin) || {
+  const fallbackBounds = relativeBounds(candidate, origin) || {
     x: 20,
     y: 20 + fallbackIndex * 20,
     width: 80,
@@ -578,15 +587,12 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   };
   const shapeStyle = getShapeStyle(candidate);
   const linePaint = makeSolidPaint(shapeStyle.line, { r: 0.35, g: 0.35, b: 0.35 }, 1);
-  const frame = createTransparentFrame(bounds, candidate.title || "connector");
   const strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
-  parentNode.appendChild(frame);
-
   const kind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "connector";
-  const localWidth = Math.max(bounds.width, 6);
-  const localHeight = Math.max(bounds.height, 6);
-  const flipH = Boolean(bounds.flipH);
-  const flipV = Boolean(bounds.flipV);
+  const localWidth = Math.max(fallbackBounds.width, 6);
+  const localHeight = Math.max(fallbackBounds.height, 6);
+  const flipH = Boolean(fallbackBounds.flipH);
+  const flipV = Boolean(fallbackBounds.flipV);
   const startPointPx = candidate.extra && candidate.extra.start_point_px ? candidate.extra.start_point_px : null;
   const endPointPx = candidate.extra && candidate.extra.end_point_px ? candidate.extra.end_point_px : null;
   const connectorAdjusts = candidate.extra && candidate.extra.connector_adjusts ? candidate.extra.connector_adjusts : {};
@@ -602,8 +608,8 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
 
   function pointFromAbsolute(point) {
     return {
-      x: point.x - bounds.x,
-      y: point.y - bounds.y,
+      x: point.x - fallbackBounds.x,
+      y: point.y - fallbackBounds.y,
     };
   }
 
@@ -619,7 +625,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     return "unknown";
   }
 
-  function appendSegment(start, end) {
+  function appendSegment(frame, start, end) {
     const dx = end.x - start.x;
     const dy = end.y - start.y;
     const segment = figma.createLine();
@@ -694,16 +700,39 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     ];
   }
 
-  for (let index = 0; index < points.length - 1; index += 1) {
-    appendSegment(points[index], points[index + 1]);
+  const minX = Math.min(...points.map((point) => point.x));
+  const minY = Math.min(...points.map((point) => point.y));
+  const maxX = Math.max(...points.map((point) => point.x));
+  const maxY = Math.max(...points.map((point) => point.y));
+  const frame = createTransparentFrame(
+    {
+      x: fallbackBounds.x + minX,
+      y: fallbackBounds.y + minY,
+      width: Math.max(maxX - minX, strokeWeight + 2, 6),
+      height: Math.max(maxY - minY, strokeWeight + 2, 6),
+      rotation: 0,
+      flipH: false,
+      flipV: false,
+    },
+    candidate.title || "connector"
+  );
+  parentNode.appendChild(frame);
+
+  const localizedPoints = points.map((point) => ({
+    x: point.x - minX,
+    y: point.y - minY,
+  }));
+
+  for (let index = 0; index < localizedPoints.length - 1; index += 1) {
+    appendSegment(frame, localizedPoints[index], localizedPoints[index + 1]);
   }
 
-  const endPoint = points[points.length - 1];
-  const prevPoint = points[points.length - 2] || points[0];
+  const endPoint = localizedPoints[localizedPoints.length - 1];
+  const prevPoint = localizedPoints[localizedPoints.length - 2] || localizedPoints[0];
   addArrowHeadIfNeeded(
     candidate,
     frame,
-    { x: endPoint.x, y: endPoint.y, width: 1, height: 1, rotation: bounds.rotation || 0 },
+    { x: endPoint.x, y: endPoint.y, width: 1, height: 1, rotation: 0 },
     linePaint.color,
     { dx: endPoint.x - prevPoint.x, dy: endPoint.y - prevPoint.y }
   );
