@@ -436,19 +436,19 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
   const textStyle = getTextStyle(candidate);
   const bounds = relativeBounds(candidate, origin);
   if (bounds) {
-  const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
-  parentNode.appendChild(frame);
-  await appendTextIntoContainer(
-    frame,
-    candidate,
-    candidate.text || candidate.title || "",
-    { ...textStyle, wrap: bounds ? textStyle.wrap : "none" },
-    bounds,
-    "l",
-    "t"
-  );
-  return frame;
-}
+    const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+    parentNode.appendChild(frame);
+    await appendTextIntoContainer(
+      frame,
+      candidate,
+      candidate.text || candidate.title || "",
+      Object.assign({}, textStyle, { wrap: bounds ? textStyle.wrap : "none" }),
+      bounds,
+      "l",
+      "t"
+    );
+    return frame;
+  }
 
   const fallbackBounds = {
     x: 20,
@@ -714,8 +714,8 @@ async function createTableCell(candidate, parentNode) {
   const width = extra.width_px || (parentNode.width / Math.max(cellCount, 1));
   const cellX = gridColumns.length
     ? gridColumns
-        .filter((column) => column.column_index < startColumnIndex)
-        .reduce((sum, column) => sum + (column.width_px || 0), 0)
+      .filter((column) => column.column_index < startColumnIndex)
+      .reduce((sum, column) => sum + (column.width_px || 0), 0)
     : parentNode.children.filter((child) => child.type === "FRAME").reduce((sum, child) => sum + child.width, 0);
   cell.x = cellX;
   cell.y = 0;
