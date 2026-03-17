@@ -628,13 +628,31 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   function appendSegment(frame, start, end) {
     const dx = end.x - start.x;
     const dy = end.y - start.y;
-    const segment = figma.createLine();
-    segment.x = start.x;
-    segment.y = start.y;
-    segment.strokes = [linePaint];
-    segment.strokeWeight = strokeWeight;
-    segment.resize(Math.max(Math.abs(dx), 1), Math.max(Math.abs(dy), 1));
-    segment.rotation = Math.atan2(dy, dx) * (180 / Math.PI);
+    const isHorizontal = Math.abs(dy) <= 0.5;
+    const isVertical = Math.abs(dx) <= 0.5;
+    let segment;
+    if (isHorizontal || isVertical) {
+      segment = figma.createRectangle();
+      segment.fills = [linePaint];
+      segment.strokes = [];
+      if (isHorizontal) {
+        segment.x = Math.min(start.x, end.x);
+        segment.y = start.y - strokeWeight / 2;
+        segment.resize(Math.max(Math.abs(dx), 1), strokeWeight);
+      } else {
+        segment.x = start.x - strokeWeight / 2;
+        segment.y = Math.min(start.y, end.y);
+        segment.resize(strokeWeight, Math.max(Math.abs(dy), 1));
+      }
+    } else {
+      segment = figma.createLine();
+      segment.x = start.x;
+      segment.y = start.y;
+      segment.strokes = [linePaint];
+      segment.strokeWeight = strokeWeight;
+      segment.resize(Math.max(Math.abs(dx), 1), Math.max(Math.abs(dy), 1));
+      segment.rotation = Math.atan2(dy, dx) * (180 / Math.PI);
+    }
     frame.appendChild(segment);
   }
 
@@ -700,10 +718,24 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     ];
   }
 
-  const minX = Math.min(...points.map((point) => point.x));
-  const minY = Math.min(...points.map((point) => point.y));
-  const maxX = Math.max(...points.map((point) => point.x));
-  const maxY = Math.max(...points.map((point) => point.y));
+  const adjustedPoints = points.map((point) => ({ x: point.x, y: point.y }));
+  if (adjustedPoints.length >= 2) {
+    const arrowInset = 8;
+    const lastPoint = adjustedPoints[adjustedPoints.length - 1];
+    const prevPoint = adjustedPoints[adjustedPoints.length - 2];
+    const dx = lastPoint.x - prevPoint.x;
+    const dy = lastPoint.y - prevPoint.y;
+    if (Math.abs(dx) >= Math.abs(dy) && Math.abs(dx) > arrowInset) {
+      lastPoint.x += dx > 0 ? -arrowInset : arrowInset;
+    } else if (Math.abs(dy) > arrowInset) {
+      lastPoint.y += dy > 0 ? -arrowInset : arrowInset;
+    }
+  }
+
+  const minX = Math.min(...adjustedPoints.map((point) => point.x));
+  const minY = Math.min(...adjustedPoints.map((point) => point.y));
+  const maxX = Math.max(...adjustedPoints.map((point) => point.x));
+  const maxY = Math.max(...adjustedPoints.map((point) => point.y));
   const frame = createTransparentFrame(
     {
       x: fallbackBounds.x + minX,
@@ -718,7 +750,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   );
   parentNode.appendChild(frame);
 
-  const localizedPoints = points.map((point) => ({
+  const localizedPoints = adjustedPoints.map((point) => ({
     x: point.x - minX,
     y: point.y - minY,
   }));
