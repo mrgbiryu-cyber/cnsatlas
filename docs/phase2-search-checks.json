@@ -1,0 +1,205 @@
+{
+  "db_path": "/mnt/c/Users/mrgbi/OneDrive/Desktop/cnsatlas/docs/phase2-demo.sqlite",
+  "queries": [
+    {
+      "query": "케어십",
+      "match_count": 6,
+      "matches": [
+        {
+          "entity_type": "node",
+          "entity_id": "node:s12:slide_12/element_1",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:12",
+          "title": "제목 1",
+          "subtype": "text_block",
+          "source_path": "slide_12/element_1",
+          "searchable_text_excerpt": "제목 1 일반제품 + 케어십 신청에 따른 프로세스(유상 케어십) 일반제품 + 케어십 신청에 따른 프로세스(유상 케어십) text_block"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s12:slide_12/element_10",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:12",
+          "title": "Google Shape;473;p15",
+          "subtype": "labeled_shape",
+          "source_path": "slide_12/element_10",
+          "searchable_text_excerpt": "Google Shape;473;p15 케어십 신청 케어십 신청 labeled_shape"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s12:slide_12/element_11",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:12",
+          "title": "Google Shape;474;p15",
+          "subtype": "labeled_shape",
+          "source_path": "slide_12/element_11",
+          "searchable_text_excerpt": "Google Shape;474;p15 ※ 케어십 가능 제품 ※ 케어십 가능 제품 labeled_shape"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s12:slide_12/element_35",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:12",
+          "title": "Google Shape;517;p15",
+          "subtype": "labeled_shape",
+          "source_path": "slide_12/element_35",
+          "searchable_text_excerpt": "Google Shape;517;p15 케어십 요금 표시 케어십 요금 표시 labeled_shape"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s12:slide_12/element_40/child_2/child_2",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:12",
+          "title": "Google Shape;530;p15",
+          "subtype": "labeled_shape",
+          "source_path": "slide_12/element_40/child_2/child_2",
+          "searchable_text_excerpt": "Google Shape;530;p15 케어십 제품 추가 케어십 제품 추가 labeled_shape"
+        },
+        {
+          "entity_type": "page",
+          "entity_id": "page:12",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:12",
+          "title": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+          "subtype": null,
+          "source_path": null,
+          "searchable_text_excerpt": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 ) ppt_slide slide:12"
+        }
+      ]
+    },
+    {
+      "query": "리뷰",
+      "match_count": 5,
+      "matches": [
+        {
+          "entity_type": "node",
+          "entity_id": "node:s19:slide_19/element_1",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "제목 1",
+          "subtype": "text_block",
+          "source_path": "slide_19/element_1",
+          "searchable_text_excerpt": "제목 1 리뷰 - 제품 카테고리별 평가 항목 리뷰 - 제품 카테고리별 평가 항목 text_block"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s19:slide_19/element_4:row_1:cell_2",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "cell 1-2",
+          "subtype": "table_cell",
+          "source_path": "slide_19/element_4/row_1/cell_2",
+          "searchable_text_excerpt": "cell 1-2 3 점 척도 평가 ( 리뷰 작성 팝업 노출 ) 3 점 척도 평가 ( 리뷰 작성 팝업 노출 ) table_cell"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s19:slide_19/element_4:row_1:cell_3",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "cell 1-3",
+          "subtype": "table_cell",
+          "source_path": "slide_19/element_4/row_1/cell_3",
+          "searchable_text_excerpt": "cell 1-3 3점 척도 평가 ( 리뷰 작성 팝업 노출 ) 3점 척도 평가 ( 리뷰 작성 팝업 노출 ) table_cell"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s29:slide_29/element_37:row_4:cell_2",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:29",
+          "title": "cell 4-2",
+          "subtype": "table_cell",
+          "source_path": "slide_29/element_37/row_4/cell_2",
+          "searchable_text_excerpt": "cell 4-2 [Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공 : 동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe"
+        },
+        {
+          "entity_type": "page",
+          "entity_id": "page:19",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "리뷰 - 제품 카테고리별 평가 항목",
+          "subtype": null,
+          "source_path": null,
+          "searchable_text_excerpt": "리뷰 - 제품 카테고리별 평가 항목 ppt_slide slide:19"
+        }
+      ]
+    },
+    {
+      "query": "제품 카테고리별 평가 항목",
+      "match_count": 3,
+      "matches": [
+        {
+          "entity_type": "node",
+          "entity_id": "node:s19:slide_19/element_1",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "제목 1",
+          "subtype": "text_block",
+          "source_path": "slide_19/element_1",
+          "searchable_text_excerpt": "제목 1 리뷰 - 제품 카테고리별 평가 항목 리뷰 - 제품 카테고리별 평가 항목 text_block"
+        },
+        {
+          "entity_type": "node",
+          "entity_id": "node:s19:slide_19/element_9",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "직사각형 8",
+          "subtype": "labeled_shape",
+          "source_path": "slide_19/element_9",
+          "searchable_text_excerpt": "직사각형 8 V0.98 제품 카테고리별 평가 항목 현행화 V0.98 제품 카테고리별 평가 항목 현행화 labeled_shape"
+        },
+        {
+          "entity_type": "page",
+          "entity_id": "page:19",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:19",
+          "title": "리뷰 - 제품 카테고리별 평가 항목",
+          "subtype": null,
+          "source_path": null,
+          "searchable_text_excerpt": "리뷰 - 제품 카테고리별 평가 항목 ppt_slide slide:19"
+        }
+      ]
+    },
+    {
+      "query": "최대할인가",
+      "match_count": 1,
+      "matches": [
+        {
+          "entity_type": "node",
+          "entity_id": "node:s29:slide_29/element_6/child_1",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:29",
+          "title": "TextBox 224",
+          "subtype": "labeled_shape",
+          "source_path": "slide_29/element_6/child_1",
+          "searchable_text_excerpt": "TextBox 224 최대할인가 최대할인가 labeled_shape"
+        }
+      ]
+    },
+    {
+      "query": "옵션 선택",
+      "match_count": 2,
+      "matches": [
+        {
+          "entity_type": "node",
+          "entity_id": "node:s29:slide_29/element_2",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:29",
+          "title": "TextBox 129",
+          "subtype": "labeled_shape",
+          "source_path": "slide_29/element_2",
+          "searchable_text_excerpt": "TextBox 129 옵션 선택 옵션 선택 labeled_shape"
+        },
+        {
+          "entity_type": "page",
+          "entity_id": "page:29",
+          "document_id": "doc:ppt-benchmark-pptsample",
+          "page_id": "page:29",
+          "title": "옵션 선택",
+          "subtype": null,
+          "source_path": null,
+          "searchable_text_excerpt": "옵션 선택 ppt_slide slide:29"
+        }
+      ]
+    }
+  ]
+}
