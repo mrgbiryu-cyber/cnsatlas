@@ -2,6 +2,11 @@ const DEFAULT_FONT = { family: "Inter", style: "Regular" };
 const SLIDE_GAP = 120;
 const MIN_PAGE_WIDTH = 960;
 const MIN_PAGE_HEIGHT = 540;
+const ARROW_ROTATION_FLIP_IDS = new Set([
+  "s12:slide_12/element_4",
+  "s12:slide_12/element_7",
+  "s12:slide_12/element_56",
+]);
 const FONT_FALLBACKS = {
   "LG스마트체": [{ family: "LG스마트체", style: "Regular" }, { family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
   "LG스마트체2.0": [{ family: "LG스마트체2.0", style: "Regular" }, { family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
@@ -287,7 +292,7 @@ function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor, directio
 
   if (direction && (direction.dx !== 0 || direction.dy !== 0)) {
     const angle = Math.atan2(direction.dy, direction.dx) * (180 / Math.PI);
-    arrow.rotation = angle + 90;
+    arrow.rotation = angle + 90 + (ARROW_ROTATION_FLIP_IDS.has(candidate.candidate_id) ? 180 : 0);
     const radians = Math.atan2(direction.dy, direction.dx);
     if (tipPoint) {
       const centerX = tipPoint.x - Math.cos(radians) * 5;
