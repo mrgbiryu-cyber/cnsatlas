@@ -288,13 +288,13 @@ function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor, directio
   if (direction && (direction.dx !== 0 || direction.dy !== 0)) {
     const angle = Math.atan2(direction.dy, direction.dx) * (180 / Math.PI);
     arrow.rotation = angle + 90;
+    const radians = Math.atan2(direction.dy, direction.dx);
     if (tipPoint) {
-      const centerX = (bounds.x + tipPoint.x) / 2;
-      const centerY = (bounds.y + tipPoint.y) / 2;
+      const centerX = tipPoint.x - Math.cos(radians) * 5;
+      const centerY = tipPoint.y - Math.sin(radians) * 5;
       arrow.x = centerX - 5;
       arrow.y = centerY - 5;
     } else {
-      const radians = Math.atan2(direction.dy, direction.dx);
       const centerX = bounds.x + Math.cos(radians) * 5;
       const centerY = bounds.y + Math.sin(radians) * 5;
       arrow.x = centerX - 5;
