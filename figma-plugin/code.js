@@ -156,6 +156,42 @@ function getTextStyle(candidate) {
   return candidate.extra && candidate.extra.text_style ? candidate.extra.text_style : {};
 }
 
+function getRendering(candidate) {
+  return candidate && candidate.rendering ? candidate.rendering : {};
+}
+
+function getReplacement(candidate) {
+  const rendering = getRendering(candidate);
+  return rendering && rendering.replacement ? rendering.replacement : null;
+}
+
+function prefixedNodeName(candidate) {
+  const replacement = getReplacement(candidate);
+  if (!replacement) {
+    return candidate.title || candidate.subtype;
+  }
+  return `VF/${replacement.candidate_type}/${candidate.title || candidate.subtype}`;
+}
+
+function applyRenderingMetadata(node, candidate) {
+  if (!node || !candidate || typeof node.setPluginData !== "function") {
+    return;
+  }
+  const rendering = getRendering(candidate);
+  const replacement = getReplacement(candidate);
+  node.setPluginData("candidate_id", candidate.candidate_id || "");
+  node.setPluginData("source_path", candidate.source_path || "");
+  node.setPluginData("current_mode", rendering.current_mode || "native");
+  node.setPluginData("preferred_mode", rendering.preferred_mode || "native");
+  node.setPluginData("replacement_candidate", rendering.replacement_candidate ? "true" : "false");
+  if (replacement) {
+    node.setPluginData("replacement_candidate_type", replacement.candidate_type || "");
+    node.setPluginData("replacement_strategy", replacement.strategy || "");
+    node.setPluginData("replacement_confidence", replacement.confidence || "");
+    node.name = prefixedNodeName(candidate);
+  }
+}
+
 function pageCanvasSize(page) {
   const slideSize = page.slide_size || {};
   const width = slideSize.width_px ? Math.ceil(slideSize.width_px) : null;
@@ -462,6 +498,7 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
   const bounds = relativeBounds(candidate, origin);
   if (bounds) {
     const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+    applyRenderingMetadata(frame, candidate);
     parentNode.appendChild(frame);
     await appendTextIntoContainer(
       frame,
@@ -482,6 +519,7 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
     height: 28,
   };
   const frame = createTransparentFrame(fallbackBounds, candidate.title || candidate.subtype);
+  applyRenderingMetadata(frame, candidate);
   parentNode.appendChild(frame);
   await appendTextIntoContainer(
     frame,
@@ -506,6 +544,7 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   const textStyle = getTextStyle(candidate);
   const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
   const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+  applyRenderingMetadata(frame, candidate);
   parentNode.appendChild(frame);
 
   let visualShape;
@@ -592,6 +631,7 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
     node.rotation = bounds.rotation;
   }
   parentNode.appendChild(node);
+  applyRenderingMetadata(node, candidate);
   return node;
 }
 
@@ -817,6 +857,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     },
     candidate.title || "connector"
   );
+  applyRenderingMetadata(frame, candidate);
   parentNode.appendChild(frame);
 
   const localizedPoints = adjustedPoints.map((point) => ({
@@ -854,6 +895,7 @@ function createGroupFrame(candidate, parentNode, origin, fallbackIndex) {
     height: 60,
   };
   const frame = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+  applyRenderingMetadata(frame, candidate);
   parentNode.appendChild(frame);
   return frame;
 }
