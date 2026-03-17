@@ -207,7 +207,8 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   frame.strokes = [{ type: "SOLID", color: { r: 0.28, g: 0.28, b: 0.28 } }];
   frame.strokeWeight = 1;
   frame.clipsContent = false;
-  frame.cornerRadius = candidate.extra?.shape_kind === "ellipse" ? Math.min(bounds.width, bounds.height) / 2 : 6;
+  const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
+  frame.cornerRadius = shapeKind === "ellipse" ? Math.min(bounds.width, bounds.height) / 2 : 6;
   parentNode.appendChild(frame);
 
   const text = figma.createText();
@@ -301,7 +302,8 @@ function createTableFrame(candidate, parentNode, origin, fallbackIndex) {
   frame.strokes = [{ type: "SOLID", color: { r: 0.45, g: 0.45, b: 0.45 } }];
   frame.strokeWeight = 1;
   frame.clipsContent = false;
-  frame.setPluginData("rowCount", String(candidate.extra?.row_count || 1));
+  const rowCount = candidate.extra && candidate.extra.row_count ? candidate.extra.row_count : 1;
+  frame.setPluginData("rowCount", String(rowCount));
   parentNode.appendChild(frame);
   return frame;
 }
