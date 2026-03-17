@@ -12,12 +12,19 @@ EMU_PER_PIXEL = 9525
 def emu_bounds_to_px(bounds: dict[str, int] | None) -> dict[str, float] | None:
     if not bounds:
         return None
-    return {
+    payload = {
         "x": round(bounds.get("x", 0) / EMU_PER_PIXEL, 2),
         "y": round(bounds.get("y", 0) / EMU_PER_PIXEL, 2),
         "width": round(bounds.get("cx", 0) / EMU_PER_PIXEL, 2),
         "height": round(bounds.get("cy", 0) / EMU_PER_PIXEL, 2),
     }
+    if bounds.get("rot"):
+        payload["rotation"] = round(bounds.get("rot", 0) / 60000, 2)
+    if bounds.get("flipH"):
+        payload["flipH"] = True
+    if bounds.get("flipV"):
+        payload["flipV"] = True
+    return payload
 
 
 def classify_group(element: dict[str, Any]) -> str:
@@ -103,6 +110,7 @@ def append_element_candidates(
                 extra={
                     "child_count": len(element.get("children", []) or []),
                     "shape_style": element.get("shape_style"),
+                    "transform": emu_bounds_to_px(element.get("bounds")),
                 },
             )
         )
@@ -132,6 +140,8 @@ def append_element_candidates(
                 bounds_emu=element.get("bounds"),
                 extra={
                     "row_count": table.get("row_count", 0),
+                    "column_count": len(table.get("grid_columns", [])),
+                    "grid_columns": table.get("grid_columns", []),
                 },
             )
         )
@@ -149,7 +159,11 @@ def append_element_candidates(
                     source_path=f"{source_path}/row_{row['row_index']}",
                     source_node_id=element.get("node_id"),
                     bounds_emu=None,
-                    extra={"height": row.get("height"), "cell_count": len(row.get("cells", []))},
+                    extra={
+                        "height": row.get("height"),
+                        "row_height_px": row.get("height_px"),
+                        "cell_count": len(row.get("cells", [])),
+                    },
                 )
             )
             for cell in row.get("cells", []):
@@ -172,6 +186,9 @@ def append_element_candidates(
                             "row_span": cell.get("row_span"),
                             "h_merge": cell.get("h_merge"),
                             "v_merge": cell.get("v_merge"),
+                            "start_column_index": cell.get("start_column_index"),
+                            "width_px": cell.get("width_px"),
+                            "cell_style": cell.get("style"),
                         },
                     )
                 )
@@ -190,7 +207,12 @@ def append_element_candidates(
                 source_path=source_path,
                 source_node_id=element.get("node_id"),
                 bounds_emu=element.get("bounds"),
-                extra={"image_target": element.get("image_target")},
+                extra={
+                    "image_target": element.get("image_target"),
+                    "resolved_target": element.get("resolved_target"),
+                    "mime_type": element.get("mime_type"),
+                    "image_base64": element.get("image_base64"),
+                },
             )
         )
         return
@@ -241,6 +263,7 @@ def build_intermediate_model(detail_payload: dict[str, Any]) -> dict[str, Any]:
                 "title_or_label": slide["title_or_label"],
                 "source_path": slide["slide_path"],
                 "slide_size": slide.get("slide_size"),
+                "theme_colors": slide.get("theme_colors"),
                 "summary": slide["summary"],
                 "candidates": candidates,
             }

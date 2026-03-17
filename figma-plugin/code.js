@@ -2,8 +2,16 @@ const DEFAULT_FONT = { family: "Inter", style: "Regular" };
 const SLIDE_GAP = 120;
 const MIN_PAGE_WIDTH = 960;
 const MIN_PAGE_HEIGHT = 540;
+const FONT_FALLBACKS = {
+  "LG스마트체": [{ family: "LG스마트체", style: "Regular" }, { family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
+  "LG스마트체2.0": [{ family: "LG스마트체2.0", style: "Regular" }, { family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
+  "LG Smart_H": [{ family: "LG Smart_H", style: "Regular" }, { family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
+  "+mn-ea": [{ family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
+  "+mj-ea": [{ family: "Malgun Gothic", style: "Regular" }, DEFAULT_FONT],
+};
 
 let fontLoaded = false;
+const fontAvailability = new Map();
 
 figma.showUI(__html__, {
   width: 420,
@@ -31,8 +39,61 @@ figma.ui.onmessage = async (message) => {
 async function ensureFontLoaded() {
   if (!fontLoaded) {
     await figma.loadFontAsync(DEFAULT_FONT);
+    fontAvailability.set(`${DEFAULT_FONT.family}::${DEFAULT_FONT.style}`, DEFAULT_FONT);
     fontLoaded = true;
   }
+}
+
+function normalizeFontCandidate(textStyle) {
+  const rawFamily = textStyle && textStyle.font_family ? textStyle.font_family : "";
+  if (!rawFamily) {
+    return { family: DEFAULT_FONT.family, style: DEFAULT_FONT.style, fallbacks: [DEFAULT_FONT] };
+  }
+
+  let family = rawFamily;
+  let style = "Regular";
+  if (rawFamily.endsWith(" Bold")) {
+    family = rawFamily.slice(0, -" Bold".length);
+    style = "Bold";
+  } else if (rawFamily.endsWith(" SemiBold")) {
+    family = rawFamily.slice(0, -" SemiBold".length);
+    style = "SemiBold";
+  } else if (rawFamily.endsWith(" Light")) {
+    family = rawFamily.slice(0, -" Light".length);
+    style = "Light";
+  } else if (rawFamily.endsWith(" Regular")) {
+    family = rawFamily.slice(0, -" Regular".length);
+    style = "Regular";
+  }
+
+  const chain = [{ family, style }];
+  const fallbackFamily = FONT_FALLBACKS[family] || FONT_FALLBACKS[rawFamily];
+  if (fallbackFamily) {
+    chain.push(...fallbackFamily.map((item) => ({ family: item.family, style: style === "Bold" && item.family === "Malgun Gothic" ? "Bold" : item.style })));
+  } else {
+    chain.push({ family: "Malgun Gothic", style: style === "Bold" ? "Bold" : "Regular" });
+    chain.push(DEFAULT_FONT);
+  }
+
+  return { family, style, fallbacks: chain };
+}
+
+async function resolveFontName(textStyle) {
+  const candidate = normalizeFontCandidate(textStyle || {});
+  for (const font of candidate.fallbacks) {
+    const key = `${font.family}::${font.style}`;
+    if (fontAvailability.has(key)) {
+      return fontAvailability.get(key);
+    }
+    try {
+      await figma.loadFontAsync(font);
+      fontAvailability.set(key, font);
+      return font;
+    } catch (error) {
+      fontAvailability.set(key, null);
+    }
+  }
+  return DEFAULT_FONT;
 }
 
 function computePageBounds(candidates) {
@@ -66,9 +127,10 @@ function colorFromHex(value, fallback) {
 }
 
 function makeSolidPaint(styleColor, fallback, defaultOpacity) {
+  const resolvedHex = styleColor && (styleColor.resolved_value || styleColor.value);
   const paint = {
     type: "SOLID",
-    color: styleColor && styleColor.type === "srgb" ? colorFromHex(styleColor.value, fallback) : fallback,
+    color: resolvedHex ? colorFromHex(resolvedHex, fallback) : fallback,
   };
   const opacity = styleColor && typeof styleColor.alpha === "number" ? styleColor.alpha : defaultOpacity;
   if (typeof opacity === "number") {
@@ -87,8 +149,8 @@ function getTextStyle(candidate) {
 
 function pageCanvasSize(page) {
   const slideSize = page.slide_size || {};
-  const width = slideSize.width_px ? Math.max(MIN_PAGE_WIDTH, Math.ceil(slideSize.width_px)) : null;
-  const height = slideSize.height_px ? Math.max(MIN_PAGE_HEIGHT, Math.ceil(slideSize.height_px)) : null;
+  const width = slideSize.width_px ? Math.ceil(slideSize.width_px) : null;
+  const height = slideSize.height_px ? Math.ceil(slideSize.height_px) : null;
   if (width && height) {
     return { width, height };
   }
@@ -99,21 +161,65 @@ function alignTextNode(node, bounds, textStyle, horizontalFallback, verticalFall
   const horizontal = textStyle.horizontal_align || horizontalFallback || "l";
   const vertical = textStyle.vertical_align || verticalFallback || "ctr";
 
+  const leftInset = typeof textStyle.lIns === "number" ? textStyle.lIns : 6;
+  const rightInset = typeof textStyle.rIns === "number" ? textStyle.rIns : 6;
+  const topInset = typeof textStyle.tIns === "number" ? textStyle.tIns : 4;
+  const bottomInset = typeof textStyle.bIns === "number" ? textStyle.bIns : 4;
+
   if (horizontal === "ctr" || horizontal === "center") {
     node.x = Math.max((bounds.width - node.width) / 2, 4);
   } else if (horizontal === "r" || horizontal === "right") {
-    node.x = Math.max(bounds.width - node.width - 6, 4);
+    node.x = Math.max(bounds.width - node.width - rightInset, 4);
   } else {
-    node.x = 6;
+    node.x = leftInset;
   }
 
   if (vertical === "ctr" || vertical === "mid" || vertical === "center") {
     node.y = Math.max((bounds.height - node.height) / 2, 4);
   } else if (vertical === "b" || vertical === "bottom") {
-    node.y = Math.max(bounds.height - node.height - 4, 4);
+    node.y = Math.max(bounds.height - node.height - bottomInset, 4);
   } else {
-    node.y = 4;
+    node.y = topInset;
   }
+}
+
+function base64ToBytes(base64) {
+  if (typeof atob === "function") {
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let index = 0; index < binary.length; index += 1) {
+      bytes[index] = binary.charCodeAt(index);
+    }
+    return bytes;
+  }
+  throw new Error("Base64 decoder is unavailable in this Figma runtime.");
+}
+
+function addArrowHeadIfNeeded(candidate, parentNode, bounds, lineColor) {
+  const shapeStyle = getShapeStyle(candidate);
+  const line = shapeStyle.line || {};
+  const tailEnd = line.tail_end || {};
+  if (tailEnd.type !== "triangle") {
+    return;
+  }
+
+  const arrow = figma.createPolygon();
+  arrow.pointCount = 3;
+  arrow.resize(10, 10);
+  arrow.fills = [{ type: "SOLID", color: lineColor }];
+  arrow.strokes = [];
+
+  if (bounds.width >= bounds.height) {
+    arrow.rotation = 90;
+    arrow.x = bounds.x + Math.max(bounds.width - 5, 0);
+    arrow.y = bounds.y - 4;
+  } else {
+    arrow.rotation = 180;
+    arrow.x = bounds.x - 4;
+    arrow.y = bounds.y + Math.max(bounds.height - 5, 0);
+  }
+
+  parentNode.appendChild(arrow);
 }
 
 function buildChildrenMap(candidates) {
@@ -187,6 +293,9 @@ function relativeBounds(candidate, origin) {
     y: bounds.y - origin.y,
     width: Math.max(bounds.width || 1, 1),
     height: Math.max(bounds.height || 1, 1),
+    rotation: bounds.rotation || 0,
+    flipH: Boolean(bounds.flipH),
+    flipV: Boolean(bounds.flipV),
   };
 }
 
@@ -242,7 +351,7 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
   const node = figma.createText();
   const textStyle = getTextStyle(candidate);
   node.name = candidate.title || candidate.subtype;
-  node.fontName = DEFAULT_FONT;
+  node.fontName = await resolveFontName(textStyle);
   node.characters = candidate.text || candidate.title || "";
   node.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   const bounds = relativeBounds(candidate, origin);
@@ -251,6 +360,9 @@ async function createTextBlock(candidate, parentNode, origin, fallbackIndex) {
     node.y = bounds.y;
     node.resize(Math.max(bounds.width, 24), Math.max(bounds.height, 16));
     node.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height || 16);
+    if (bounds.rotation) {
+      node.rotation = bounds.rotation;
+    }
   } else {
     node.x = 20;
     node.y = 20 + fallbackIndex * 20;
@@ -269,25 +381,62 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   };
   const shapeStyle = getShapeStyle(candidate);
   const textStyle = getTextStyle(candidate);
+  const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
   const frame = figma.createFrame();
   frame.name = candidate.title || candidate.subtype;
   frame.x = bounds.x;
   frame.y = bounds.y;
   frame.resize(bounds.width, bounds.height);
-  frame.fills = [makeSolidPaint(shapeStyle.fill, { r: 1, g: 1, b: 1 }, shapeStyle.fill && shapeStyle.fill.kind === "none" ? 0 : 1)];
-  if (shapeStyle.fill && shapeStyle.fill.kind === "none") {
-    frame.fills = [];
-  }
-  frame.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.28, g: 0.28, b: 0.28 }, 1)];
-  frame.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+  frame.fills = [];
+  frame.strokes = [];
   frame.clipsContent = false;
-  const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
-  frame.cornerRadius = shapeKind === "ellipse" ? Math.min(bounds.width, bounds.height) / 2 : 6;
+  if (bounds.rotation) {
+    frame.rotation = bounds.rotation;
+  }
   parentNode.appendChild(frame);
+
+  let visualShape;
+  if (shapeKind === "ellipse") {
+    visualShape = figma.createEllipse();
+  } else if (shapeKind === "flowChartDecision") {
+    visualShape = figma.createPolygon();
+    visualShape.pointCount = 4;
+    visualShape.rotation = 45;
+    const side = Math.min(bounds.width, bounds.height) * 0.7;
+    visualShape.resize(side, side);
+    visualShape.x = (bounds.width - side) / 2;
+    visualShape.y = (bounds.height - side) / 2;
+  } else {
+    visualShape = figma.createRectangle();
+    visualShape.resize(bounds.width, bounds.height);
+    visualShape.x = 0;
+    visualShape.y = 0;
+    if (shapeKind === "roundRect") {
+      visualShape.cornerRadius = 8;
+    } else if (shapeKind === "rightBracket") {
+      visualShape.fills = [];
+      visualShape.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.2, g: 0.2, b: 0.2 }, 1)];
+      visualShape.strokeWeight = 2;
+    }
+  }
+  if (shapeKind === "ellipse") {
+    visualShape.resize(bounds.width, bounds.height);
+    visualShape.x = 0;
+    visualShape.y = 0;
+  }
+  if (shapeKind !== "rightBracket") {
+    visualShape.fills = [makeSolidPaint(shapeStyle.fill, { r: 1, g: 1, b: 1 }, shapeStyle.fill && shapeStyle.fill.kind === "none" ? 0 : 1)];
+    if (shapeStyle.fill && shapeStyle.fill.kind === "none") {
+      visualShape.fills = [];
+    }
+    visualShape.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.28, g: 0.28, b: 0.28 }, 1)];
+    visualShape.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+  }
+  frame.appendChild(visualShape);
 
   const text = figma.createText();
   text.name = `${frame.name} label`;
-  text.fontName = DEFAULT_FONT;
+  text.fontName = await resolveFontName(textStyle);
   text.characters = candidate.text || candidate.title || "";
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.12, g: 0.12, b: 0.12 }, 1)];
   text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
@@ -305,7 +454,16 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
   };
   const shapeStyle = getShapeStyle(candidate);
   const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
-  const node = shapeKind === "ellipse" ? figma.createEllipse() : figma.createRectangle();
+  let node;
+  if (shapeKind === "ellipse") {
+    node = figma.createEllipse();
+  } else if (shapeKind === "flowChartDecision") {
+    node = figma.createPolygon();
+    node.pointCount = 4;
+    node.rotation = 45;
+  } else {
+    node = figma.createRectangle();
+  }
   node.name = candidate.title || candidate.subtype;
   node.x = bounds.x;
   node.y = bounds.y;
@@ -313,12 +471,21 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
   if (shapeKind === "roundRect") {
     node.cornerRadius = 8;
   }
-  node.fills = [makeSolidPaint(shapeStyle.fill, { r: 0.94, g: 0.95, b: 0.97 }, shapeStyle.fill && shapeStyle.fill.kind === "none" ? 0 : 1)];
-  if (shapeStyle.fill && shapeStyle.fill.kind === "none") {
+  if (shapeKind === "rightBracket") {
     node.fills = [];
+    node.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.2, g: 0.2, b: 0.2 }, 1)];
+    node.strokeWeight = 2;
+  } else {
+    node.fills = [makeSolidPaint(shapeStyle.fill, { r: 0.94, g: 0.95, b: 0.97 }, shapeStyle.fill && shapeStyle.fill.kind === "none" ? 0 : 1)];
+    if (shapeStyle.fill && shapeStyle.fill.kind === "none") {
+      node.fills = [];
+    }
+    node.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.75, g: 0.78, b: 0.82 }, 1)];
+    node.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
   }
-  node.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.75, g: 0.78, b: 0.82 }, 1)];
-  node.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+  if (bounds.rotation && shapeKind !== "flowChartDecision") {
+    node.rotation = bounds.rotation;
+  }
   parentNode.appendChild(node);
   return node;
 }
@@ -332,16 +499,20 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   };
   const line = figma.createLine();
   const shapeStyle = getShapeStyle(candidate);
+  const linePaint = makeSolidPaint(shapeStyle.line, { r: 0.35, g: 0.35, b: 0.35 }, 1);
   line.name = candidate.title || "connector";
   line.x = bounds.x;
   line.y = bounds.y;
   line.resize(Math.max(bounds.width, 10), Math.max(bounds.height, 1));
-  line.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.35, g: 0.35, b: 0.35 }, 1)];
+  line.strokes = [linePaint];
   line.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
-  if (bounds.height > bounds.width * 1.5) {
+  if (bounds.rotation) {
+    line.rotation = bounds.rotation;
+  } else if (bounds.height > bounds.width * 1.5) {
     line.rotation = 90;
   }
   parentNode.appendChild(line);
+  addArrowHeadIfNeeded(candidate, parentNode, bounds, linePaint.color);
   return line;
 }
 
@@ -407,11 +578,12 @@ function createTableRow(candidate, parentNode) {
 
   const extra = candidate.extra || {};
   const cellCount = extra.cell_count || 1;
-  const siblings = parentNode.children.filter((child) => child.type === "FRAME").length;
+  const siblings = parentNode.children.filter((child) => child.type === "FRAME");
+  const rowY = siblings.reduce((sum, child) => sum + child.height, 0);
   const rowCount = Number(parentNode.getPluginData("rowCount") || "1");
-  const rowHeight = Math.max(parentNode.height / Math.max(rowCount, 1), 24);
+  const rowHeight = Math.max(extra.row_height_px || (parentNode.height / Math.max(rowCount, 1)), 24);
   row.x = 0;
-  row.y = siblings * rowHeight;
+  row.y = rowY;
   row.resize(parentNode.width, rowHeight);
   parentNode.appendChild(row);
   row.setPluginData("cellCount", String(cellCount));
@@ -421,27 +593,30 @@ function createTableRow(candidate, parentNode) {
 async function createTableCell(candidate, parentNode) {
   const cell = figma.createFrame();
   const textStyle = getTextStyle(candidate);
+  const extra = candidate.extra || {};
   cell.name = candidate.title || candidate.subtype;
   const cellCount = Number(parentNode.getPluginData("cellCount") || "1");
-  const siblings = parentNode.children.filter((child) => child.type === "FRAME").length;
-  const width = parentNode.width / Math.max(cellCount, 1);
-  cell.x = siblings * width;
+  const siblings = parentNode.children.filter((child) => child.type === "FRAME");
+  const cellX = siblings.reduce((sum, child) => sum + child.width, 0);
+  const width = extra.width_px || (parentNode.width / Math.max(cellCount, 1));
+  cell.x = cellX;
   cell.y = 0;
   cell.resize(width, parentNode.height);
-  cell.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+  const cellStyle = extra.cell_style || {};
+  const fill = cellStyle.fill ? makeSolidPaint(cellStyle.fill, { r: 1, g: 1, b: 1 }, 1) : { type: "SOLID", color: { r: 1, g: 1, b: 1 } };
+  cell.fills = [fill];
   cell.strokes = [{ type: "SOLID", color: { r: 0.75, g: 0.75, b: 0.75 } }];
   cell.strokeWeight = 1;
   parentNode.appendChild(cell);
 
   const text = figma.createText();
   text.name = `${cell.name} text`;
-  text.fontName = DEFAULT_FONT;
+  text.fontName = await resolveFontName(textStyle);
   text.characters = candidate.text || "";
   text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || 10);
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   cell.appendChild(text);
-  text.x = 6;
-  text.y = 4;
+  alignTextNode(text, { width, height: parentNode.height }, { ...textStyle, ...cellStyle }, "l", cellStyle.anchor || "ctr");
   return cell;
 }
 
@@ -453,24 +628,40 @@ async function createImagePlaceholder(candidate, parentNode, origin, fallbackInd
     height: 80,
   };
   const frame = figma.createFrame();
+  const extra = candidate.extra || {};
   frame.name = candidate.title || candidate.subtype;
   frame.x = bounds.x;
   frame.y = bounds.y;
   frame.resize(bounds.width, bounds.height);
-  frame.fills = [{ type: "SOLID", color: { r: 0.93, g: 0.94, b: 0.96 } }];
+  if (extra.image_base64 && extra.mime_type) {
+    try {
+      const image = figma.createImage(base64ToBytes(extra.image_base64));
+      frame.fills = [{
+        type: "IMAGE",
+        scaleMode: "FILL",
+        imageHash: image.hash,
+      }];
+    } catch (error) {
+      frame.fills = [{ type: "SOLID", color: { r: 0.93, g: 0.94, b: 0.96 } }];
+    }
+  } else {
+    frame.fills = [{ type: "SOLID", color: { r: 0.93, g: 0.94, b: 0.96 } }];
+  }
   frame.strokes = [{ type: "SOLID", color: { r: 0.64, g: 0.68, b: 0.74 } }];
   frame.strokeWeight = 1;
   parentNode.appendChild(frame);
 
-  const text = figma.createText();
-  text.name = `${frame.name} placeholder`;
-  text.fontName = DEFAULT_FONT;
-  text.characters = "IMAGE";
-  text.fontSize = clampFontSize(bounds.height * 0.22);
-  text.fills = [{ type: "SOLID", color: { r: 0.32, g: 0.36, b: 0.42 } }];
-  frame.appendChild(text);
-  text.x = Math.max((bounds.width - text.width) / 2, 6);
-  text.y = Math.max((bounds.height - text.height) / 2, 4);
+  if (!extra.image_base64 || !extra.mime_type) {
+    const text = figma.createText();
+    text.name = `${frame.name} placeholder`;
+    text.fontName = await resolveFontName({});
+    text.characters = extra.resolved_target && extra.resolved_target.endsWith(".emf") ? "EMF IMAGE" : "IMAGE";
+    text.fontSize = clampFontSize(bounds.height * 0.22);
+    text.fills = [{ type: "SOLID", color: { r: 0.32, g: 0.36, b: 0.42 } }];
+    frame.appendChild(text);
+    text.x = Math.max((bounds.width - text.width) / 2, 6);
+    text.y = Math.max((bounds.height - text.height) / 2, 4);
+  }
   return frame;
 }
 

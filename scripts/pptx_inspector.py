@@ -2,9 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 from dataclasses import asdict, dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 from zipfile import ZipFile
 import xml.etree.ElementTree as ET
@@ -75,6 +76,9 @@ def _extract_xfrm(node: ET.Element | None) -> dict[str, int] | None:
         "y": int(off.attrib.get("y", "0")) if off is not None else 0,
         "cx": int(ext.attrib.get("cx", "0")) if ext is not None else 0,
         "cy": int(ext.attrib.get("cy", "0")) if ext is not None else 0,
+        "rot": int(node.attrib.get("rot", "0")) if node.attrib.get("rot") else 0,
+        "flipH": node.attrib.get("flipH") == "1",
+        "flipV": node.attrib.get("flipV") == "1",
     }
 
 
@@ -96,7 +100,7 @@ def _extract_alpha(node: ET.Element | None) -> float | None:
     return round(int(value) / 100000, 4)
 
 
-def _extract_color_payload(node: ET.Element | None) -> dict[str, Any] | None:
+def _extract_color_payload(node: ET.Element | None, theme_colors: dict[str, str] | None = None) -> dict[str, Any] | None:
     if node is None:
         return None
 
@@ -113,13 +117,23 @@ def _extract_color_payload(node: ET.Element | None) -> dict[str, Any] | None:
         return {
             "type": "scheme",
             "value": scheme.attrib.get("val"),
+            "resolved_value": theme_colors.get(scheme.attrib.get("val")) if theme_colors and scheme.attrib.get("val") else None,
             "alpha": _extract_alpha(scheme),
+        }
+
+    sys_clr = node.find("a:sysClr", NS)
+    if sys_clr is not None:
+        return {
+            "type": "system",
+            "value": sys_clr.attrib.get("val"),
+            "resolved_value": sys_clr.attrib.get("lastClr"),
+            "alpha": _extract_alpha(sys_clr),
         }
 
     return None
 
 
-def _extract_shape_style(node: ET.Element) -> dict[str, Any]:
+def _extract_shape_style(node: ET.Element, theme_colors: dict[str, str] | None = None) -> dict[str, Any]:
     sp_pr = node.find("p:spPr", NS)
     if sp_pr is None:
         return {}
@@ -127,7 +141,7 @@ def _extract_shape_style(node: ET.Element) -> dict[str, Any]:
     fill_payload: dict[str, Any] | None = None
     solid_fill = sp_pr.find("a:solidFill", NS)
     if solid_fill is not None:
-        fill_payload = _extract_color_payload(solid_fill)
+        fill_payload = _extract_color_payload(solid_fill, theme_colors)
         if fill_payload:
             fill_payload["kind"] = "solid"
     elif sp_pr.find("a:noFill", NS) is not None:
@@ -136,7 +150,7 @@ def _extract_shape_style(node: ET.Element) -> dict[str, Any]:
     line_payload: dict[str, Any] | None = None
     line = sp_pr.find("a:ln", NS)
     if line is not None:
-        line_payload = _extract_color_payload(line.find("a:solidFill", NS)) or {"kind": "default"}
+        line_payload = _extract_color_payload(line.find("a:solidFill", NS), theme_colors) or {"kind": "default"}
         line_payload["width_emu"] = int(line.attrib.get("w", "0")) if line.attrib.get("w") else None
         line_payload["width_px"] = _emu_to_px(line_payload["width_emu"]) if line_payload.get("width_emu") else None
         head_end = line.find("a:headEnd", NS)
@@ -161,6 +175,10 @@ def _extract_text_alignment(node: ET.Element) -> dict[str, Any]:
         payload["horizontal_align"] = p_pr.attrib.get("algn")
     if body_pr is not None and body_pr.attrib.get("anchor"):
         payload["vertical_align"] = body_pr.attrib.get("anchor")
+    if body_pr is not None:
+        for attr in ("lIns", "rIns", "tIns", "bIns"):
+            if body_pr.attrib.get(attr):
+                payload[attr] = _emu_to_px(body_pr.attrib.get(attr))
     return payload
 
 
@@ -177,7 +195,7 @@ def _extract_cnvpr(container: ET.Element | None) -> dict[str, Any]:
     }
 
 
-def _extract_text_runs(node: ET.Element) -> list[dict[str, Any]]:
+def _extract_text_runs(node: ET.Element, theme_colors: dict[str, str] | None = None) -> list[dict[str, Any]]:
     runs: list[dict[str, Any]] = []
     for paragraph in node.findall(".//a:p", NS):
         paragraph_runs: list[dict[str, Any]] = []
@@ -199,7 +217,11 @@ def _extract_text_runs(node: ET.Element) -> list[dict[str, Any]]:
                     "font_size": int(r_pr.attrib.get("sz", "0")) / 100 if r_pr is not None and r_pr.attrib.get("sz") else None,
                     "bold": r_pr.attrib.get("b") == "1" if r_pr is not None else False,
                     "italic": r_pr.attrib.get("i") == "1" if r_pr is not None else False,
-                    "fill": _extract_color_payload(r_pr.find("a:solidFill", NS)) if r_pr is not None else None,
+                    "font_family": (
+                        (r_pr.find("a:latin", NS).attrib.get("typeface") if r_pr is not None and r_pr.find("a:latin", NS) is not None else None)
+                        or (r_pr.find("a:ea", NS).attrib.get("typeface") if r_pr is not None and r_pr.find("a:ea", NS) is not None else None)
+                    ),
+                    "fill": _extract_color_payload(r_pr.find("a:solidFill", NS), theme_colors) if r_pr is not None else None,
                 }
             )
         if paragraph_runs:
@@ -220,65 +242,137 @@ def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
     table = frame.find(".//a:tbl", NS)
     if table is None:
         return None
+    grid = table.find("a:tblGrid", NS)
+    grid_columns: list[dict[str, Any]] = []
+    if grid is not None:
+        for index, column in enumerate(grid.findall("a:gridCol", NS), start=1):
+            width_emu = int(column.attrib.get("w", "0")) if column.attrib.get("w") else 0
+            grid_columns.append(
+                {
+                    "column_index": index,
+                    "width_emu": width_emu,
+                    "width_px": _emu_to_px(width_emu),
+                }
+            )
     rows_payload: list[dict[str, Any]] = []
     for row_index, row in enumerate(table.findall("a:tr", NS), start=1):
         cells_payload: list[dict[str, Any]] = []
+        running_col_index = 0
         for cell_index, cell in enumerate(row.findall("a:tc", NS), start=1):
             texts = []
             for text_node in cell.findall(".//a:t", NS):
                 if text_node.text and text_node.text.strip():
                     texts.append(text_node.text.strip())
+            tc_pr = cell.find("a:tcPr", NS)
+            grid_span = int(cell.attrib.get("gridSpan", "1")) if cell.attrib.get("gridSpan") else 1
+            row_span = int(cell.attrib.get("rowSpan", "1")) if cell.attrib.get("rowSpan") else 1
+            spanned_columns = grid_columns[running_col_index: running_col_index + grid_span]
+            width_emu = sum(column["width_emu"] for column in spanned_columns)
             cells_payload.append(
                 {
                     "cell_index": cell_index,
                     "text": " ".join(texts).strip(),
-                    "grid_span": cell.attrib.get("gridSpan"),
-                    "row_span": cell.attrib.get("rowSpan"),
+                    "grid_span": grid_span,
+                    "row_span": row_span,
                     "h_merge": cell.attrib.get("hMerge"),
                     "v_merge": cell.attrib.get("vMerge"),
+                    "start_column_index": running_col_index + 1,
+                    "width_emu": width_emu,
+                    "width_px": _emu_to_px(width_emu),
+                    "style": {
+                        "fill": _extract_color_payload(tc_pr.find("a:solidFill", NS)) if tc_pr is not None else None,
+                        "anchor": tc_pr.attrib.get("anchor") if tc_pr is not None else None,
+                        "marL": _emu_to_px(tc_pr.attrib.get("marL")) if tc_pr is not None and tc_pr.attrib.get("marL") else None,
+                        "marR": _emu_to_px(tc_pr.attrib.get("marR")) if tc_pr is not None and tc_pr.attrib.get("marR") else None,
+                        "marT": _emu_to_px(tc_pr.attrib.get("marT")) if tc_pr is not None and tc_pr.attrib.get("marT") else None,
+                        "marB": _emu_to_px(tc_pr.attrib.get("marB")) if tc_pr is not None and tc_pr.attrib.get("marB") else None,
+                    },
                 }
             )
+            running_col_index += grid_span
         rows_payload.append(
             {
                 "row_index": row_index,
                 "height": row.attrib.get("h"),
+                "height_px": _emu_to_px(row.attrib.get("h")) if row.attrib.get("h") else None,
                 "cells": cells_payload,
             }
         )
     return {
         "row_count": len(rows_payload),
+        "grid_columns": grid_columns,
         "rows": rows_payload,
     }
 
 
-def _extract_picture(node: ET.Element, rel_targets: dict[str, str]) -> dict[str, Any]:
+def _resolve_part_path(base_path: str, target: str) -> str:
+    base = PurePosixPath(base_path).parent
+    resolved = (base / target).as_posix()
+    stack: list[str] = []
+    for part in resolved.split("/"):
+        if not part or part == ".":
+            continue
+        if part == "..":
+            if stack:
+                stack.pop()
+            continue
+        stack.append(part)
+    return "/".join(stack)
+
+
+def _extract_picture(node: ET.Element, rel_targets: dict[str, str], archive: ZipFile, slide_path: str) -> dict[str, Any]:
     blip = node.find(".//a:blip", NS)
     embed = blip.attrib.get(f"{{{R_NS}}}embed") if blip is not None else None
+    image_target = rel_targets.get(embed) if embed else None
+    resolved_target = _resolve_part_path(slide_path, image_target) if image_target else None
+    mime_type = None
+    image_base64 = None
+    if resolved_target and resolved_target in archive.namelist():
+        suffix = Path(resolved_target).suffix.lower()
+        mime_type = {
+            ".png": "image/png",
+            ".jpg": "image/jpeg",
+            ".jpeg": "image/jpeg",
+            ".gif": "image/gif",
+        }.get(suffix)
+        if mime_type:
+            image_base64 = base64.b64encode(archive.read(resolved_target)).decode("ascii")
     return {
         "image_rel_id": embed,
-        "image_target": rel_targets.get(embed) if embed else None,
+        "image_target": image_target,
+        "resolved_target": resolved_target,
+        "mime_type": mime_type,
+        "image_base64": image_base64,
     }
 
 
 def _summarize_text_style(text_runs: list[dict[str, Any]], alignment: dict[str, Any]) -> dict[str, Any]:
     font_sizes = [run["font_size"] for run in text_runs if run.get("type") == "text" and run.get("font_size")]
     first_fill = next((run.get("fill") for run in text_runs if run.get("type") == "text" and run.get("fill")), None)
+    first_family = next((run.get("font_family") for run in text_runs if run.get("type") == "text" and run.get("font_family")), None)
     return {
         "font_size_max": max(font_sizes) if font_sizes else None,
         "font_size_min": min(font_sizes) if font_sizes else None,
         "font_size_avg": round(sum(font_sizes) / len(font_sizes), 2) if font_sizes else None,
+        "font_family": first_family,
         "fill": first_fill,
         **alignment,
     }
 
 
-def _extract_element(node: ET.Element, rel_targets: dict[str, str]) -> dict[str, Any]:
+def _extract_element(
+    node: ET.Element,
+    rel_targets: dict[str, str],
+    archive: ZipFile,
+    slide_path: str,
+    theme_colors: dict[str, str],
+) -> dict[str, Any]:
     tag = _local_name(node.tag)
     meta = _extract_cnvpr(node)
 
     if tag == "grpSp":
         children = [
-            _extract_element(child, rel_targets)
+            _extract_element(child, rel_targets, archive, slide_path, theme_colors)
             for child in list(node)
             if _local_name(child.tag) not in {"nvGrpSpPr", "grpSpPr"}
         ]
@@ -309,8 +403,8 @@ def _extract_element(node: ET.Element, rel_targets: dict[str, str]) -> dict[str,
     if tag in {"sp", "cxnSp"}:
         payload["bounds"] = _extract_xfrm(node.find("p:spPr/a:xfrm", NS))
         payload["shape_kind"] = _extract_shape_kind(node)
-        payload["text_runs"] = _extract_text_runs(node)
-        payload["shape_style"] = _extract_shape_style(node)
+        payload["text_runs"] = _extract_text_runs(node, theme_colors)
+        payload["shape_style"] = _extract_shape_style(node, theme_colors)
         payload["text_alignment"] = _extract_text_alignment(node)
         payload["text_style"] = _summarize_text_style(payload["text_runs"], payload["text_alignment"])
         payload["text"] = "".join(run["text"] for run in payload["text_runs"] if run["type"] == "text").strip()
@@ -321,7 +415,7 @@ def _extract_element(node: ET.Element, rel_targets: dict[str, str]) -> dict[str,
         payload["frame_kind"] = "table" if table_payload else "graphic_frame"
     elif tag == "pic":
         payload["bounds"] = _extract_xfrm(node.find("p:spPr/a:xfrm", NS))
-        payload.update(_extract_picture(node, rel_targets))
+        payload.update(_extract_picture(node, rel_targets, archive, slide_path))
     else:
         payload["bounds"] = None
 
@@ -357,12 +451,32 @@ def _presentation_slide_size(archive: ZipFile) -> dict[str, Any]:
     }
 
 
+def _extract_theme_colors(archive: ZipFile) -> dict[str, str]:
+    theme_path = "ppt/theme/theme1.xml"
+    if theme_path not in archive.namelist():
+        return {}
+    theme_root = ET.fromstring(archive.read(theme_path))
+    scheme = theme_root.find(".//a:clrScheme", NS)
+    if scheme is None:
+        return {}
+    colors: dict[str, str] = {}
+    for child in list(scheme):
+        name = _local_name(child.tag)
+        first = list(child)[0] if list(child) else child
+        if _local_name(first.tag) == "srgbClr":
+            colors[name] = first.attrib.get("val", "")
+        elif _local_name(first.tag) == "sysClr":
+            colors[name] = first.attrib.get("lastClr", "")
+    return colors
+
+
 def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str, Any]:
     inspections = inspect_pptx(pptx_path)
     inspection_by_no = {item.slide_no: item for item in inspections}
 
     with ZipFile(pptx_path) as archive:
         slide_size = _presentation_slide_size(archive)
+        theme_colors = _extract_theme_colors(archive)
         slides_payload: list[dict[str, Any]] = []
         for slide_no in slide_numbers:
             inspection = inspection_by_no.get(slide_no)
@@ -376,7 +490,7 @@ def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str
 
             rel_targets = _slide_rel_targets(archive, inspection.slide_path)
             elements = [
-                _extract_element(child, rel_targets)
+                _extract_element(child, rel_targets, archive, inspection.slide_path, theme_colors)
                 for child in list(sp_tree)
                 if _local_name(child.tag) not in {"nvGrpSpPr", "grpSpPr"}
             ]
@@ -387,6 +501,7 @@ def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str
                     "title_or_label": inspection.title_or_label,
                     "slide_path": inspection.slide_path,
                     "slide_size": slide_size,
+                    "theme_colors": theme_colors,
                     "summary": asdict(inspection),
                     "elements": elements,
                 }
