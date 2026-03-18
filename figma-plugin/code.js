@@ -19,6 +19,7 @@ const FONT_FALLBACKS = {
 
 let fontLoaded = false;
 const fontAvailability = new Map();
+let activeRenderMode = "read-first";
 
 figma.showUI(__html__, {
   width: 420,
@@ -29,10 +30,11 @@ figma.ui.onmessage = async (message) => {
   if (message.type === "render-intermediate-json") {
     try {
       const payload = JSON.parse(message.jsonText);
+      activeRenderMode = message.renderMode === "vector-heavy" ? "vector-heavy" : "read-first";
       await renderIntermediatePayload(payload);
       figma.ui.postMessage({
         type: "render-success",
-        message: `Rendered ${payload.pages.length} slide previews`,
+        message: `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
       });
     } catch (error) {
       figma.ui.postMessage({
@@ -42,6 +44,10 @@ figma.ui.onmessage = async (message) => {
     }
   }
 };
+
+function isVectorHeavyMode() {
+  return activeRenderMode === "vector-heavy";
+}
 
 async function ensureFontLoaded() {
   if (!fontLoaded) {
@@ -296,6 +302,40 @@ function createTransparentFrame(bounds, name) {
   frame.clipsContent = false;
   if (bounds.rotation) {
     frame.rotation = bounds.rotation;
+  }
+  return frame;
+}
+
+function shouldFlattenVisual(candidate) {
+  if (!isVectorHeavyMode()) {
+    return false;
+  }
+  const replacement = getReplacement(candidate);
+  if (candidate.subtype === "connector") {
+    return true;
+  }
+  if (replacement && (replacement.candidate_type === "decision_diamond" || replacement.candidate_type === "complex_shape")) {
+    return true;
+  }
+  if (candidate.subtype === "shape") {
+    return true;
+  }
+  return false;
+}
+
+function finalizeVectorHeavyVisual(frame, candidate) {
+  if (!shouldFlattenVisual(candidate)) {
+    return frame;
+  }
+  const flattenTargets = frame.children.filter((child) => child.type !== "TEXT");
+  if (flattenTargets.length === 0) {
+    return frame;
+  }
+  const flattened = figma.flatten(flattenTargets, frame);
+  flattened.name = `${candidate.title || candidate.subtype} vector`;
+  if (typeof flattened.setPluginData === "function") {
+    flattened.setPluginData("vector_heavy", "true");
+    flattened.setPluginData("candidate_id", candidate.candidate_id || "");
   }
   return frame;
 }
@@ -618,6 +658,7 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
   frame.appendChild(visualShape);
 
   await appendTextIntoContainer(frame, candidate, candidate.text || candidate.title || "", textStyle, bounds, "ctr", "ctr");
+  finalizeVectorHeavyVisual(frame, candidate);
   return frame;
 }
 
@@ -663,6 +704,15 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
   }
   parentNode.appendChild(node);
   applyRenderingMetadata(node, candidate);
+  if (shouldFlattenVisual(candidate)) {
+    const wrapper = createTransparentFrame(bounds, candidate.title || candidate.subtype);
+    applyRenderingMetadata(wrapper, candidate);
+    node.remove();
+    wrapper.appendChild(node);
+    parentNode.appendChild(wrapper);
+    finalizeVectorHeavyVisual(wrapper, candidate);
+    return wrapper;
+  }
   return node;
 }
 
@@ -967,6 +1017,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
         }
       : null
   );
+  finalizeVectorHeavyVisual(frame, candidate);
   return frame;
 }
 
