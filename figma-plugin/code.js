@@ -694,6 +694,26 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     };
   }
 
+  function localPointFromIdx(idx) {
+    const centerX = localWidth / 2;
+    const centerY = localHeight / 2;
+    const mapping = {
+      0: { x: centerX, y: 0 },
+      1: { x: 0, y: centerY },
+      2: { x: centerX, y: localHeight },
+      3: { x: localWidth, y: centerY },
+      4: { x: 0, y: 0 },
+      5: { x: localWidth, y: 0 },
+      6: { x: 0, y: localHeight },
+      7: { x: localWidth, y: localHeight },
+    };
+    const point = mapping[idx];
+    if (!point) {
+      return null;
+    }
+    return mapPoint(point.x, point.y);
+  }
+
   function pointFromAbsolute(point) {
     return {
       x: point.x - fallbackBounds.x,
@@ -843,7 +863,17 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   }
 
   let points;
-  if (startPointPx && endPointPx) {
+  const localStart = localPointFromIdx(startIdx);
+  const localEnd = localPointFromIdx(endIdx);
+  if (localStart && localEnd) {
+    const start = localStart;
+    const end = localEnd;
+    const deltaX = end.x - start.x;
+    const deltaY = end.y - start.y;
+    const startSide = chooseConnectorSide(sideFromIdx(startIdx), inferSideFromDelta(deltaX, deltaY, "start"));
+    const endSide = chooseConnectorSide(sideFromIdx(endIdx), inferSideFromDelta(deltaX, deltaY, "end"));
+    points = pathUsingReadableElbow(start, end, startSide, endSide, kind, connectorAdjusts);
+  } else if (startPointPx && endPointPx) {
     const start = pointFromAbsolute(startPointPx);
     const end = pointFromAbsolute(endPointPx);
     const deltaX = end.x - start.x;
