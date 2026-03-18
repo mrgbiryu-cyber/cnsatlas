@@ -458,8 +458,14 @@ function buildChildrenMap(candidates) {
 async function renderIntermediatePayload(payload) {
   await ensureFontLoaded();
 
+  for (const child of [...figma.currentPage.children]) {
+    if (child.name && child.name.startsWith("CNS Atlas Visual Test")) {
+      child.remove();
+    }
+  }
+
   const rootFrame = figma.createFrame();
-  rootFrame.name = "CNS Atlas Visual Test";
+  rootFrame.name = `CNS Atlas Visual Test (${activeRenderMode})`;
   rootFrame.fills = [];
   rootFrame.strokes = [];
 
