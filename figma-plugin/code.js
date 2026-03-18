@@ -331,11 +331,15 @@ function finalizeVectorHeavyVisual(frame, candidate) {
   if (flattenTargets.length === 0) {
     return frame;
   }
-  const flattened = figma.flatten(flattenTargets, frame);
-  flattened.name = `${candidate.title || candidate.subtype} vector`;
-  if (typeof flattened.setPluginData === "function") {
-    flattened.setPluginData("vector_heavy", "true");
-    flattened.setPluginData("candidate_id", candidate.candidate_id || "");
+  try {
+    const flattened = figma.flatten(flattenTargets, frame);
+    flattened.name = `${candidate.title || candidate.subtype} vector`;
+    if (typeof flattened.setPluginData === "function") {
+      flattened.setPluginData("vector_heavy", "true");
+      flattened.setPluginData("candidate_id", candidate.candidate_id || "");
+    }
+  } catch (error) {
+    console.warn(`vector-heavy flatten skipped for ${candidate.candidate_id}:`, error);
   }
   return frame;
 }
