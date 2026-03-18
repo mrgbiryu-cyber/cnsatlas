@@ -253,6 +253,38 @@ function mapVerticalAlign(value, fallback) {
   return "TOP";
 }
 
+function deriveWrapMode(textValue, textStyle, bounds, options) {
+  const text = typeof textValue === "string" ? textValue : "";
+  const explicitLineBreak = text.includes("\n");
+  if (explicitLineBreak) {
+    return "square";
+  }
+
+  const wrap = textStyle && textStyle.wrap ? textStyle.wrap : null;
+  const fontSize = clampFontSize(
+    (textStyle && (textStyle.font_size_max || textStyle.font_size_avg)) || (bounds ? bounds.height * 0.45 : 12)
+  );
+  const boxWidth = bounds ? bounds.width : 120;
+  const boxHeight = bounds ? bounds.height : fontSize * 1.4;
+  const roughCharCapacity = Math.max(Math.floor((boxWidth - 12) / Math.max(fontSize * 0.55, 4)), 4);
+  const needsWrapByLength = text.length > roughCharCapacity;
+  const canVisuallyHoldMultipleLines = boxHeight >= fontSize * 1.9;
+
+  if (options && options.forceWrap) {
+    return "square";
+  }
+  if (wrap === "none") {
+    return "none";
+  }
+  if (wrap && wrap !== "none" && canVisuallyHoldMultipleLines && needsWrapByLength) {
+    return "square";
+  }
+  if (canVisuallyHoldMultipleLines && needsWrapByLength) {
+    return "square";
+  }
+  return "none";
+}
+
 function createTransparentFrame(bounds, name) {
   const frame = figma.createFrame();
   frame.name = name;
@@ -277,8 +309,7 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
   text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, horizontalFallback);
   text.textAlignVertical = mapVerticalAlign(textStyle.vertical_align, verticalFallback);
-  const explicitLineBreak = typeof text.characters === "string" && text.characters.includes("\n");
-  const wrapMode = textStyle.wrap || (explicitLineBreak ? "square" : "none");
+  const wrapMode = deriveWrapMode(text.characters, textStyle, bounds, { forceWrap: false });
   text.textAutoResize = wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT";
 
   const leftInset = typeof textStyle.lIns === "number" ? textStyle.lIns : 6;
@@ -721,6 +752,65 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     return { x: point.x, y: point.y };
   }
 
+  function pathUsingReadableElbow(start, end, startSide, endSide, kindName, adjusts) {
+    const leadMargin = 16;
+    const startLead = offsetFromSide(start, startSide, leadMargin);
+    const endLead = offsetFromSide(end, endSide, leadMargin);
+    const startOrientation = (startSide === "left" || startSide === "right") ? "horizontal" : "vertical";
+    const endOrientation = (endSide === "left" || endSide === "right") ? "horizontal" : "vertical";
+    const adj1 = typeof adjusts.adj1 === "number" ? adjusts.adj1 / 100000 : 0.5;
+    const adj2 = typeof adjusts.adj2 === "number" ? adjusts.adj2 / 100000 : 0.5;
+
+    if (kindName === "straightConnector1") {
+      if (Math.abs(start.y - end.y) <= 3 || Math.abs(start.x - end.x) <= 3) {
+        return [start, end];
+      }
+      if (Math.abs(end.x - start.x) >= Math.abs(end.y - start.y)) {
+        return [start, { x: end.x, y: start.y }, end];
+      }
+      return [start, { x: start.x, y: end.y }, end];
+    }
+
+    if (startOrientation === "horizontal" && endOrientation === "horizontal") {
+      const routeRight = Math.max(startLead.x, endLead.x) + 18;
+      const routeLeft = Math.min(startLead.x, endLead.x) - 18;
+      const preferRight = startSide === "right" || endSide === "left";
+      const routeX = preferRight ? routeRight : routeLeft;
+      return [start, startLead, { x: routeX, y: startLead.y }, { x: routeX, y: endLead.y }, endLead, end];
+    }
+
+    if (startOrientation === "vertical" && endOrientation === "vertical") {
+      const routeBottom = Math.max(startLead.y, endLead.y) + 18;
+      const routeTop = Math.min(startLead.y, endLead.y) - 18;
+      const preferBottom = startSide === "bottom" || endSide === "top";
+      const routeY = preferBottom ? routeBottom : routeTop;
+      return [start, startLead, { x: startLead.x, y: routeY }, { x: endLead.x, y: routeY }, endLead, end];
+    }
+
+    if (kindName === "bentConnector4") {
+      const midX = startLead.x + (endLead.x - startLead.x) * adj1;
+      const midY = startLead.y + (endLead.y - startLead.y) * adj2;
+      if (startOrientation === "horizontal") {
+        return [start, startLead, { x: midX, y: startLead.y }, { x: midX, y: midY }, { x: endLead.x, y: midY }, endLead, end];
+      }
+      return [start, startLead, { x: startLead.x, y: midY }, { x: midX, y: midY }, { x: midX, y: endLead.y }, endLead, end];
+    }
+
+    if (startOrientation === "horizontal" && endOrientation === "vertical") {
+      return [start, startLead, { x: endLead.x, y: startLead.y }, endLead, end];
+    }
+    if (startOrientation === "vertical" && endOrientation === "horizontal") {
+      return [start, startLead, { x: startLead.x, y: endLead.y }, endLead, end];
+    }
+
+    if (startOrientation === "horizontal") {
+      const midX = startLead.x + (endLead.x - startLead.x) * adj1;
+      return [start, startLead, { x: midX, y: startLead.y }, { x: midX, y: endLead.y }, endLead, end];
+    }
+    const midY = startLead.y + (endLead.y - startLead.y) * adj1;
+    return [start, startLead, { x: startLead.x, y: midY }, { x: endLead.x, y: midY }, endLead, end];
+  }
+
   function appendSegment(frame, start, end) {
     const dx = end.x - start.x;
     const dy = end.y - start.y;
@@ -760,44 +850,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     const deltaY = end.y - start.y;
     const startSide = chooseConnectorSide(sideFromIdx(startIdx), inferSideFromDelta(deltaX, deltaY, "start"));
     const endSide = chooseConnectorSide(sideFromIdx(endIdx), inferSideFromDelta(deltaX, deltaY, "end"));
-    const leadMargin = 12;
-    const startLead = offsetFromSide(start, startSide, leadMargin);
-    const endLead = offsetFromSide(end, endSide, leadMargin);
-    const adj1 = typeof connectorAdjusts.adj1 === "number" ? connectorAdjusts.adj1 / 100000 : 0.5;
-    const adj2 = typeof connectorAdjusts.adj2 === "number" ? connectorAdjusts.adj2 / 100000 : 0.5;
-    const startOrientation = (startSide === "left" || startSide === "right") ? "horizontal" : "vertical";
-    const endOrientation = (endSide === "left" || endSide === "right") ? "horizontal" : "vertical";
-    if (kind === "straightConnector1") {
-      points = [start, endLead, end];
-    } else if (kind === "bentConnector2") {
-      if (startOrientation === "horizontal" && endOrientation === "vertical") {
-        points = [start, startLead, { x: endLead.x, y: startLead.y }, endLead, end];
-      } else if (startOrientation === "vertical" && endOrientation === "horizontal") {
-        points = [start, startLead, { x: startLead.x, y: endLead.y }, endLead, end];
-      } else {
-        const viaX = Math.abs(endLead.x - startLead.x);
-        const viaY = Math.abs(endLead.y - startLead.y);
-        points = viaX >= viaY
-          ? [start, startLead, { x: endLead.x, y: startLead.y }, endLead, end]
-          : [start, startLead, { x: startLead.x, y: endLead.y }, endLead, end];
-      }
-    } else if (kind === "bentConnector4") {
-      const midX = startLead.x + (endLead.x - startLead.x) * adj1;
-      const midY = startLead.y + (endLead.y - startLead.y) * adj2;
-      if (startOrientation === "horizontal") {
-        points = [start, startLead, { x: midX, y: startLead.y }, { x: midX, y: midY }, { x: endLead.x, y: midY }, endLead, end];
-      } else {
-        points = [start, startLead, { x: startLead.x, y: midY }, { x: midX, y: midY }, { x: midX, y: endLead.y }, endLead, end];
-      }
-    } else {
-      if (startOrientation === "horizontal") {
-        const midX = startLead.x + (endLead.x - startLead.x) * adj1;
-        points = [start, startLead, { x: midX, y: startLead.y }, { x: midX, y: endLead.y }, endLead, end];
-      } else {
-        const midY = startLead.y + (endLead.y - startLead.y) * adj1;
-        points = [start, startLead, { x: startLead.x, y: midY }, { x: endLead.x, y: midY }, endLead, end];
-      }
-    }
+    points = pathUsingReadableElbow(start, end, startSide, endSide, kind, connectorAdjusts);
   } else if (kind === "straightConnector1") {
     points = [mapPoint(0, localHeight / 2), mapPoint(localWidth, localHeight / 2)];
   } else if (kind === "bentConnector2") {
@@ -991,10 +1044,11 @@ async function createTableCell(candidate, parentNode) {
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, "l");
   text.textAlignVertical = mapVerticalAlign(cellStyle.anchor, "ctr");
-  text.textAutoResize = "HEIGHT";
   const leftInset = typeof cellStyle.marL === "number" ? cellStyle.marL : 6;
   const rightInset = typeof cellStyle.marR === "number" ? cellStyle.marR : 6;
   const availableWidth = Math.max(width - leftInset - rightInset, 12);
+  const wrapMode = deriveWrapMode(text.characters, Object.assign({}, textStyle, cellStyle), { width, height: parentNode.height }, { forceWrap: true });
+  text.textAutoResize = wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT";
   text.resize(availableWidth, Math.max(parentNode.height, 16));
   cell.appendChild(text);
   alignTextNode(text, { width, height: parentNode.height }, Object.assign({}, textStyle, cellStyle), "l", cellStyle.anchor || "ctr");
