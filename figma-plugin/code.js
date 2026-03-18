@@ -717,7 +717,6 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
   if (shouldFlattenVisual(candidate)) {
     const wrapper = createTransparentFrame(bounds, candidate.title || candidate.subtype);
     applyRenderingMetadata(wrapper, candidate);
-    node.remove();
     node.x = 0;
     node.y = 0;
     wrapper.appendChild(node);
@@ -1024,9 +1023,9 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
     { dx: endPoint.x - prevPoint.x, dy: endPoint.y - prevPoint.y },
     originalTipPoint
       ? {
-          x: originalTipPoint.x - minX,
-          y: originalTipPoint.y - minY,
-        }
+        x: originalTipPoint.x - minX,
+        y: originalTipPoint.y - minY,
+      }
       : null
   );
   finalizeVectorHeavyVisual(frame, candidate);
