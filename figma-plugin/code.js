@@ -712,6 +712,8 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
     const wrapper = createTransparentFrame(bounds, candidate.title || candidate.subtype);
     applyRenderingMetadata(wrapper, candidate);
     node.remove();
+    node.x = 0;
+    node.y = 0;
     wrapper.appendChild(node);
     parentNode.appendChild(wrapper);
     finalizeVectorHeavyVisual(wrapper, candidate);
