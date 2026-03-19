@@ -706,13 +706,6 @@ function findAssetBytes(bundle, imageRef) {
   return base64ToBytes(bundle.assets[imageRef].base64);
 }
 
-function findPageImageBytes(bundle) {
-  if (!bundle || !bundle.page_image || !bundle.page_image.base64) {
-    return null;
-  }
-  return base64ToBytes(bundle.page_image.base64);
-}
-
 function createReplayContainer(node, parentNode, origin) {
   const bounds = getReplayBounds(node);
   if (!bounds) {
@@ -903,36 +896,6 @@ async function renderFigmaReplayBundle(bundle) {
   clearPreviousVisualTests();
 
   const rootBounds = computeReplayRootBounds(bundle.document);
-  const pageImageBytes = findPageImageBytes(bundle);
-  if (pageImageBytes && bundle.page_image) {
-    const rootFrame = figma.createFrame();
-    rootFrame.name = `CNS Atlas Replay (${bundle.page_name || bundle.node_id || "page"})`;
-    rootFrame.x = 0;
-    rootFrame.y = 0;
-    rootFrame.resize(bundle.page_image.width || rootBounds.width, bundle.page_image.height || rootBounds.height);
-    rootFrame.fills = [];
-    rootFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
-    rootFrame.strokeWeight = 1;
-
-    const image = figma.createImage(pageImageBytes);
-    const rect = figma.createRectangle();
-    rect.name = `${bundle.page_name || "page"} visual baseline`;
-    rect.x = 0;
-    rect.y = 0;
-    rect.resize(bundle.page_image.width || rootBounds.width, bundle.page_image.height || rootBounds.height);
-    rect.fills = [{
-      type: "IMAGE",
-      scaleMode: "FILL",
-      imageHash: image.hash,
-    }];
-    rect.strokes = [];
-    rootFrame.appendChild(rect);
-
-    figma.currentPage.appendChild(rootFrame);
-    figma.viewport.scrollAndZoomIntoView([rootFrame]);
-    return;
-  }
-
   const rootFrame = figma.createFrame();
   rootFrame.name = `CNS Atlas Replay (${bundle.page_name || bundle.node_id || "page"})`;
   rootFrame.x = 0;
