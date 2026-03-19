@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <title>CNS Atlas PPT Visual Test</title>
+    <title>CNS Atlas PPT to Figma</title>
     <style>
       body {
         font-family: Inter, Arial, sans-serif;
@@ -102,18 +102,22 @@
     </style>
   </head>
   <body>
-    <h1>CNS Atlas PPT Visual Test</h1>
+    <h1>CNS Atlas PPT to Figma</h1>
 
     <div class="panel">
       <p class="hint">
-        이 플러그인은 <code>PPTX</code> 파일이 아니라
-        <code>intermediate JSON</code> 또는 <code>figma replay bundle JSON</code>만 받습니다.
+        이 플러그인은 <code>PPTX</code>, <code>intermediate JSON</code>,
+        <code>figma replay bundle JSON</code>을 받습니다.
       </p>
       <div class="row">
-        <input id="fileInput" type="file" accept=".json,application/json" />
+        <input
+          id="fileInput"
+          type="file"
+          accept=".pptx,.json,application/json,application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        />
         <button class="secondary" id="clearButton" type="button">초기화</button>
       </div>
-      <div class="status" id="status">JSON 파일을 선택하세요.</div>
+      <div class="status" id="status">PPTX 또는 JSON 파일을 선택하세요.</div>
     </div>
 
     <div class="panel">
@@ -140,6 +144,8 @@
       <button class="secondary" id="exportActualButton" type="button">Actual Manifest 내보내기</button>
     </div>
 
+    <script src="vendor/jszip.min.js"></script>
+    <script src="pptx-parser.js"></script>
     <script>
       const fileInput = document.getElementById("fileInput");
       const jsonText = document.getElementById("jsonText");
@@ -151,6 +157,11 @@
       const renderModeInputs = Array.from(document.querySelectorAll('input[name="renderMode"]'));
 
       let loadedJsonText = "";
+
+      function isPptxFile(file) {
+        const name = String(file && file.name || "").toLowerCase();
+        return name.endsWith(".pptx") || file.type === "application/vnd.openxmlformats-officedocument.presentationml.presentation";
+      }
 
       function setStatus(message, isError = false) {
         status.textContent = message;
@@ -222,6 +233,21 @@
           updateRenderAvailability();
       }
 
+      async function loadPptxFile(file) {
+        if (!window.CnsPptxParser || typeof window.CnsPptxParser.parsePptxArrayBuffer !== "function") {
+          throw new Error("PPTX parser is not loaded.");
+        }
+        setStatus(`${file.name} 분석 중...`);
+        const buffer = await file.arrayBuffer();
+        const payload = await window.CnsPptxParser.parsePptxArrayBuffer(buffer, file.name);
+        const result = validatePayload(payload);
+        loadedJsonText = JSON.stringify(result.payload);
+        jsonText.value = "";
+        setSummary(summarizePayload(result.payload, file.name, result.kind));
+        setStatus(`${file.name} PPTX 변환 준비 완료`);
+        updateRenderAvailability();
+      }
+
       fileInput.addEventListener("change", async (event) => {
         const file = event.target.files && event.target.files[0];
         if (!file) {
@@ -229,6 +255,10 @@
         }
 
         try {
+          if (isPptxFile(file)) {
+            await loadPptxFile(file);
+            return;
+          }
           const text = await file.text();
           jsonText.value = "";
           loadJsonText(text, file.name);
