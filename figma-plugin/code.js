@@ -553,6 +553,43 @@ function getReplayBounds(node) {
   return node.absoluteBoundingBox || node.absoluteRenderBounds || null;
 }
 
+function hasVisibleSolidPaint(node) {
+  const fills = node && node.fills ? node.fills : [];
+  for (const fill of fills) {
+    if (!fill || fill.visible === false) {
+      continue;
+    }
+    if (fill.type === "SOLID") {
+      const opacity = typeof fill.opacity === "number"
+        ? fill.opacity
+        : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1);
+      if (opacity > 0) {
+        return true;
+      }
+    }
+    if (fill.type === "IMAGE") {
+      return true;
+    }
+  }
+  return false;
+}
+
+function hasVisibleStroke(node) {
+  const strokes = node && node.strokes ? node.strokes : [];
+  for (const stroke of strokes) {
+    if (!stroke || stroke.visible === false) {
+      continue;
+    }
+    const opacity = typeof stroke.opacity === "number"
+      ? stroke.opacity
+      : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1);
+    if (opacity > 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function boundsRelativeToOrigin(bounds, origin) {
   return {
     x: bounds.x - origin.x,
@@ -661,6 +698,40 @@ function createReplayContainer(node, parentNode, origin) {
   return frame;
 }
 
+function createReplayFrameShell(node, parentNode, origin) {
+  const bounds = getReplayBounds(node);
+  if (!bounds) {
+    return null;
+  }
+  const local = boundsRelativeToOrigin(bounds, origin);
+  const shell = figma.createRectangle();
+  shell.name = node.name || node.type || "frame-shell";
+  shell.x = local.x;
+  shell.y = local.y;
+  shell.resize(local.width, local.height);
+  shell.fills = (node.fills || []).filter((fill) => fill && (fill.type === "SOLID" || fill.type === "IMAGE")).map((fill) => {
+    if (fill.type === "SOLID") {
+      return {
+        type: "SOLID",
+        color: fill.color,
+        opacity: typeof fill.opacity === "number" ? fill.opacity : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1),
+      };
+    }
+    if (fill.type === "IMAGE") {
+      return fill;
+    }
+    return null;
+  }).filter(Boolean);
+  shell.strokes = (node.strokes || []).filter((stroke) => stroke && stroke.type === "SOLID").map((stroke) => ({
+    type: "SOLID",
+    color: stroke.color,
+    opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
+  }));
+  shell.strokeWeight = node.strokeWeight || 1;
+  parentNode.appendChild(shell);
+  return shell;
+}
+
 async function renderReplayText(node, parentNode, origin) {
   const bounds = getReplayBounds(node);
   if (!bounds) {
@@ -749,12 +820,11 @@ function renderReplayVector(node, parentNode, origin) {
   }
   const local = boundsRelativeToOrigin(bounds, origin);
   const svg = buildVectorSvg(node, local);
-  const wrapper = createTransparentFrame(local, node.name || "Vector");
-  parentNode.appendChild(wrapper);
   const svgNode = figma.createNodeFromSvg(svg);
-  svgNode.x = 0;
-  svgNode.y = 0;
-  wrapper.appendChild(svgNode);
+  svgNode.name = node.name || "Vector";
+  svgNode.x = local.x;
+  svgNode.y = local.y;
+  parentNode.appendChild(svgNode);
 }
 
 async function renderReplayNode(node, parentNode, origin, bundle) {
@@ -773,14 +843,18 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
       renderReplayRectangle(node, parentNode, origin, bundle);
       return;
     case "FRAME":
-    case "GROUP": {
-      const container = createReplayContainer(node, parentNode, origin);
-      const nextOrigin = getReplayBounds(node) || origin;
+      if (hasVisibleSolidPaint(node) || hasVisibleStroke(node)) {
+        createReplayFrameShell(node, parentNode, origin);
+      }
       for (const child of node.children || []) {
-        await renderReplayNode(child, container, nextOrigin, bundle);
+        await renderReplayNode(child, parentNode, origin, bundle);
       }
       return;
-    }
+    case "GROUP":
+      for (const child of node.children || []) {
+        await renderReplayNode(child, parentNode, origin, bundle);
+      }
+      return;
     default:
       for (const child of node.children || []) {
         await renderReplayNode(child, parentNode, origin, bundle);
