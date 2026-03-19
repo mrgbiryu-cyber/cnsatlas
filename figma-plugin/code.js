@@ -556,6 +556,11 @@ function getReplayBounds(node) {
   return node.absoluteBoundingBox || node.absoluteRenderBounds || null;
 }
 
+function shouldSkipReplayNode(node) {
+  const name = node && node.name ? String(node.name) : "";
+  return name.toLowerCase().includes("clip path");
+}
+
 function hasVisibleSolidPaint(node) {
   const fills = node && node.fills ? node.fills : [];
   for (const fill of fills) {
@@ -656,6 +661,20 @@ function buildVectorSvg(node, bounds) {
     `<svg xmlns="http://www.w3.org/2000/svg" width="${bounds.width}" height="${bounds.height}" viewBox="0 0 ${bounds.width} ${bounds.height}">`,
   ];
 
+  const rt = node.relativeTransform || [[1, 0, 0], [0, 1, 0]];
+  const scaleX = rt[0] && typeof rt[0][0] === "number" ? rt[0][0] : 1;
+  const scaleY = rt[1] && typeof rt[1][1] === "number" ? rt[1][1] : 1;
+  let transformParts = [];
+  if (scaleX < 0) {
+    transformParts.push(`translate(${bounds.width} 0) scale(-1 1)`);
+  }
+  if (scaleY < 0) {
+    transformParts.push(`translate(0 ${bounds.height}) scale(1 -1)`);
+  }
+  if (transformParts.length > 0) {
+    parts.push(`<g transform="${transformParts.join(" ")}">`);
+  }
+
   for (const geometry of fillGeometry) {
     if (!geometry.path) continue;
     const fillAttrs = fillInfo
@@ -670,6 +689,10 @@ function buildVectorSvg(node, bounds) {
       ? `stroke="${strokeInfo.rgb}" stroke-opacity="${strokeInfo.opacity}" stroke-width="${strokeWidth}"`
       : `stroke="rgb(0,0,0)" stroke-width="${strokeWidth}"`;
     parts.push(`<path d="${geometry.path}" fill="none" ${strokeAttrs} />`);
+  }
+
+  if (transformParts.length > 0) {
+    parts.push("</g>");
   }
 
   parts.push("</svg>");
@@ -832,6 +855,9 @@ function renderReplayVector(node, parentNode, origin) {
 
 async function renderReplayNode(node, parentNode, origin, bundle) {
   if (!node || typeof node !== "object") {
+    return;
+  }
+  if (shouldSkipReplayNode(node)) {
     return;
   }
 
