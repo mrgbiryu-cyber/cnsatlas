@@ -688,7 +688,7 @@ async function renderReplayText(node, parentNode, origin) {
   }
   text.fills = (node.fills || []).filter((fill) => fill && fill.type === "SOLID").map((fill) => ({
     type: "SOLID",
-    color: fill.color,
+    color: { r: fill.color.r || 0, g: fill.color.g || 0, b: fill.color.b || 0 },
     opacity: typeof fill.opacity === "number" ? fill.opacity : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1),
   }));
   if (text.fills.length === 0) {
@@ -729,13 +729,13 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
     const solidFills = (node.fills || []).filter((fill) => fill && fill.type === "SOLID");
     rect.fills = solidFills.length > 0 ? solidFills.map((fill) => ({
       type: "SOLID",
-      color: fill.color,
+      color: { r: fill.color.r || 0, g: fill.color.g || 0, b: fill.color.b || 0 },
       opacity: typeof fill.opacity === "number" ? fill.opacity : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1),
     })) : [];
   }
   rect.strokes = (node.strokes || []).filter((stroke) => stroke && stroke.type === "SOLID").map((stroke) => ({
     type: "SOLID",
-    color: stroke.color,
+    color: { r: stroke.color.r || 0, g: stroke.color.g || 0, b: stroke.color.b || 0 },
     opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
   }));
   rect.strokeWeight = node.strokeWeight || 1;
