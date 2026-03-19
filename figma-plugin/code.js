@@ -2,6 +2,7 @@ const DEFAULT_FONT = { family: "Inter", style: "Regular" };
 const SLIDE_GAP = 120;
 const MIN_PAGE_WIDTH = 960;
 const MIN_PAGE_HEIGHT = 540;
+const REPLAY_PLUGIN_PREFIX = "cnsatlas.replay.";
 const ARROW_ROTATION_FLIP_IDS = new Set([
   "s12:slide_12/element_4",
   "s12:slide_12/element_7",
@@ -41,6 +42,20 @@ figma.ui.onmessage = async (message) => {
         message: payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
           : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
+      });
+    } catch (error) {
+      figma.ui.postMessage({
+        type: "render-error",
+        message: error instanceof Error ? `${error.name}: ${error.message}\n${error.stack}` : String(error),
+      });
+    }
+  } else if (message.type === "export-actual-manifest") {
+    try {
+      const manifest = exportActualManifest();
+      figma.ui.postMessage({
+        type: "actual-manifest-exported",
+        filename: `actual-manifest-${manifest.page_id || "unknown"}.json`,
+        jsonText: JSON.stringify(manifest, null, 2),
       });
     } catch (error) {
       figma.ui.postMessage({
@@ -552,6 +567,65 @@ function colorToSvg(color, opacity) {
   return { rgb: `rgb(${r}, ${g}, ${b})`, opacity: a };
 }
 
+function replayPluginKey(key) {
+  return `${REPLAY_PLUGIN_PREFIX}${key}`;
+}
+
+function setReplayPluginData(node, key, value) {
+  if (!node || typeof node.setPluginData !== "function") {
+    return;
+  }
+  node.setPluginData(replayPluginKey(key), value == null ? "" : String(value));
+}
+
+function getReplayPluginData(node, key) {
+  if (!node || typeof node.getPluginData !== "function") {
+    return "";
+  }
+  return node.getPluginData(replayPluginKey(key));
+}
+
+function inferReplayComparisonLevel(node) {
+  if (!node || typeof node !== "object") {
+    return "ignore";
+  }
+  const bounds = getReplayBounds(node);
+  const width = bounds ? bounds.width || 0 : 0;
+  const height = bounds ? bounds.height || 0 : 0;
+  if (node.type === "TEXT" || node.type === "VECTOR") {
+    return "L2";
+  }
+  if (node.type === "RECTANGLE") {
+    if ((node.fills || []).some((fill) => fill && fill.type === "IMAGE")) {
+      return "L2";
+    }
+    if (width >= 180 || height >= 80) {
+      return "L2";
+    }
+    return width < 24 && height < 24 ? "L3" : "L2";
+  }
+  if (node.type === "FRAME") {
+    if (width >= 180 || height >= 80) {
+      return "L1";
+    }
+    return "L2";
+  }
+  return "ignore";
+}
+
+function annotateReplayNode(renderedNode, sourceNode, pageId, role) {
+  if (!renderedNode || !sourceNode) {
+    return;
+  }
+  setReplayPluginData(renderedNode, "reference_node_id", sourceNode.id || "");
+  setReplayPluginData(renderedNode, "reference_parent_id", sourceNode.parent ? sourceNode.parent.id || "" : "");
+  setReplayPluginData(renderedNode, "reference_type", sourceNode.type || "");
+  setReplayPluginData(renderedNode, "reference_name", sourceNode.name || "");
+  setReplayPluginData(renderedNode, "replay_page_id", pageId || "");
+  setReplayPluginData(renderedNode, "replay_role", role || "render-node");
+  setReplayPluginData(renderedNode, "comparison_level", inferReplayComparisonLevel(sourceNode));
+}
+
 function getReplayBounds(node) {
   return node.absoluteBoundingBox || node.absoluteRenderBounds || null;
 }
@@ -632,6 +706,184 @@ function computeReplayRootBounds(node) {
 
   walk(node);
   return { x: minX, y: minY, width: Math.max(maxX - minX, 1), height: Math.max(maxY - minY, 1) };
+}
+
+function multiplyAffine(parent, child) {
+  const pa = parent[0][0];
+  const pc = parent[0][1];
+  const pe = parent[0][2];
+  const pb = parent[1][0];
+  const pd = parent[1][1];
+  const pf = parent[1][2];
+  const ca = child[0][0];
+  const cc = child[0][1];
+  const ce = child[0][2];
+  const cb = child[1][0];
+  const cd = child[1][1];
+  const cf = child[1][2];
+  return [
+    [pa * ca + pc * cb, pa * cc + pc * cd, pa * ce + pc * cf + pe],
+    [pb * ca + pd * cb, pb * cc + pd * cd, pb * ce + pd * cf + pf],
+  ];
+}
+
+function identityAffine() {
+  return [[1, 0, 0], [0, 1, 0]];
+}
+
+function getNodeRelativeTransform(node) {
+  return node && node.relativeTransform ? node.relativeTransform : identityAffine();
+}
+
+function transformRotationDegrees(matrix) {
+  const a = matrix[0][0];
+  const b = matrix[1][0];
+  return Math.round((Math.atan2(b, a) * 180) / Math.PI);
+}
+
+function computeNodeComposedTransform(node) {
+  if (!node || typeof node !== "object") {
+    return identityAffine();
+  }
+  if (node.absoluteTransform) {
+    return node.absoluteTransform;
+  }
+  const parentTransform = node.parent ? computeNodeComposedTransform(node.parent) : identityAffine();
+  return multiplyAffine(parentTransform, getNodeRelativeTransform(node));
+}
+
+function computePluginNodeBounds(node) {
+  const absolute = node.absoluteRenderBounds || node.absoluteBoundingBox;
+  if (absolute) {
+    return {
+      x: absolute.x,
+      y: absolute.y,
+      width: absolute.width,
+      height: absolute.height,
+    };
+  }
+  const transform = computeNodeComposedTransform(node);
+  const width = typeof node.width === "number" ? node.width : 0;
+  const height = typeof node.height === "number" ? node.height : 0;
+  return {
+    x: transform[0][2],
+    y: transform[1][2],
+    width,
+    height,
+  };
+}
+
+function normalizeWhitespace(text) {
+  return String(text || "").replace(/\s+/g, " ").trim();
+}
+
+function widthBucket(width) {
+  if (width < 80) return "XS";
+  if (width < 160) return "S";
+  if (width < 320) return "M";
+  if (width < 640) return "L";
+  return "XL";
+}
+
+function buildTextLineBreakSignature(text, width) {
+  const raw = String(text || "");
+  const explicitNewlines = (raw.match(/\n/g) || []).length;
+  const renderedLines = Math.max(raw.split("\n").length, 1);
+  return `NL${explicitNewlines}-L${renderedLines}-W${widthBucket(width || 0)}`;
+}
+
+function getActualParentReferenceId(node) {
+  if (!node || !node.parent) {
+    return "";
+  }
+  return getReplayPluginData(node.parent, "reference_node_id");
+}
+
+function collectActualManifestNodes(current, rows) {
+  if (!current || typeof current !== "object") {
+    return;
+  }
+  const referenceNodeId = getReplayPluginData(current, "reference_node_id");
+  if (referenceNodeId) {
+    const bounds = computePluginNodeBounds(current);
+    const parentBounds = current.parent ? computePluginNodeBounds(current.parent) : { x: 0, y: 0 };
+    const relativeTransform = current.relativeTransform || identityAffine();
+    const composedTransform = computeNodeComposedTransform(current);
+    const fills = "fills" in current && Array.isArray(current.fills) ? current.fills : [];
+    const strokes = "strokes" in current && Array.isArray(current.strokes) ? current.strokes : [];
+    rows.push({
+      actual_node_id: current.id,
+      actual_parent_id: current.parent ? current.parent.id : "",
+      page_id: getReplayPluginData(current, "replay_page_id"),
+      reference_node_id: referenceNodeId,
+      reference_parent_id: getReplayPluginData(current, "reference_parent_id") || getActualParentReferenceId(current),
+      reference_type: getReplayPluginData(current, "reference_type"),
+      reference_name: getReplayPluginData(current, "reference_name"),
+      replay_role: getReplayPluginData(current, "replay_role"),
+      comparison_level: getReplayPluginData(current, "comparison_level") || "ignore",
+      node_type: current.type,
+      node_name: current.name || "",
+      bbox_absolute: bounds,
+      bbox_parent_relative: {
+        x: bounds.x - parentBounds.x,
+        y: bounds.y - parentBounds.y,
+        width: bounds.width,
+        height: bounds.height,
+      },
+      relative_transform: relativeTransform,
+      composed_transform: composedTransform,
+      flip_x: composedTransform[0][0] < 0,
+      flip_y: composedTransform[1][1] < 0,
+      rotation_hint: transformRotationDegrees(composedTransform),
+      has_fill: fills.length > 0,
+      has_stroke: strokes.length > 0,
+      has_image_fill: fills.some((fill) => fill && fill.type === "IMAGE"),
+      has_vector_geometry: current.type === "VECTOR",
+      text_characters: current.type === "TEXT" ? current.characters || "" : "",
+      text_line_break_signature: current.type === "TEXT"
+        ? buildTextLineBreakSignature(current.characters || "", bounds.width)
+        : "",
+      structure_key: `${getReplayPluginData(current, "reference_parent_id") || ""}|${current.type}|${getReplayPluginData(current, "comparison_level") || ""}`,
+    });
+  }
+  if ("children" in current && Array.isArray(current.children)) {
+    for (const child of current.children) {
+      collectActualManifestNodes(child, rows);
+    }
+  }
+}
+
+function pickReplayRootFromSelection() {
+  const selected = figma.currentPage.selection || [];
+  for (const node of selected) {
+    if (node && node.name && node.name.startsWith("CNS Atlas Replay")) {
+      return node;
+    }
+  }
+  const pageChildren = [...figma.currentPage.children].reverse();
+  for (const node of pageChildren) {
+    if (node && node.name && node.name.startsWith("CNS Atlas Replay")) {
+      return node;
+    }
+  }
+  return null;
+}
+
+function exportActualManifest() {
+  const root = pickReplayRootFromSelection();
+  if (!root) {
+    throw new Error("내보낼 replay root를 찾지 못했습니다. replay 결과를 먼저 생성하거나 root frame을 선택하세요.");
+  }
+  const rows = [];
+  collectActualManifestNodes(root, rows);
+  const pageId = rows[0] ? rows[0].page_id : "";
+  return {
+    kind: "actual-manifest",
+    page_id: pageId,
+    generated_at: new Date().toISOString(),
+    root_actual_node_id: root.id,
+    nodes: rows,
+  };
 }
 
 function mapReplayHorizontalAlign(value) {
@@ -755,6 +1007,7 @@ function createReplayFrameShell(node, parentNode, origin) {
   }));
   shell.strokeWeight = node.strokeWeight || 1;
   parentNode.appendChild(shell);
+  annotateReplayNode(shell, node, origin.pageId, "frame-shell");
   return shell;
 }
 
@@ -794,6 +1047,7 @@ async function renderReplayText(node, parentNode, origin) {
   text.x = local.x;
   text.y = local.y;
   parentNode.appendChild(text);
+  annotateReplayNode(text, node, origin.pageId, "render-node");
 }
 
 function renderReplayRectangle(node, parentNode, origin, bundle) {
@@ -837,6 +1091,7 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
   }));
   rect.strokeWeight = node.strokeWeight || 1;
   parentNode.appendChild(rect);
+  annotateReplayNode(rect, node, origin.pageId, "render-node");
 }
 
 function renderReplayVector(node, parentNode, origin) {
@@ -851,6 +1106,7 @@ function renderReplayVector(node, parentNode, origin) {
   svgNode.x = local.x;
   svgNode.y = local.y;
   parentNode.appendChild(svgNode);
+  annotateReplayNode(svgNode, node, origin.pageId, "render-node");
 }
 
 async function renderReplayNode(node, parentNode, origin, bundle) {
@@ -906,12 +1162,13 @@ async function renderFigmaReplayBundle(bundle) {
   rootFrame.strokeWeight = 1;
 
   const documentNode = bundle.document;
+  const replayOrigin = { ...rootBounds, pageId: bundle.node_id || "" };
   if (documentNode && documentNode.type === "FRAME") {
     for (const child of documentNode.children || []) {
-      await renderReplayNode(child, rootFrame, rootBounds, bundle);
+      await renderReplayNode(child, rootFrame, replayOrigin, bundle);
     }
   } else {
-    await renderReplayNode(documentNode, rootFrame, rootBounds, bundle);
+    await renderReplayNode(documentNode, rootFrame, replayOrigin, bundle);
   }
 
   figma.currentPage.appendChild(rootFrame);
