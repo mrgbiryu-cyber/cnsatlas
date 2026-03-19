@@ -1335,8 +1335,8 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
   }
 
   const currentSourceTransform = multiplyAffine(origin.sourceTransform || identityAffine(), getNodeRelativeTransform(node));
-  const sourceIsClipLike = isClipLikeReplayNode(node);
-  if (node.type === "VECTOR" && origin.sourceIsClipLike && isFullPageBlackOverlayVector(node, origin)) {
+  const sourceIsClipLike = Boolean(origin.sourceIsClipLike || isClipLikeReplayNode(node));
+  if (node.type === "VECTOR" && sourceIsClipLike && isFullPageBlackOverlayVector(node, origin)) {
     pushSkippedReplayNode(node, origin, "skip_full_page_clip_overlay_vector");
     return;
   }
