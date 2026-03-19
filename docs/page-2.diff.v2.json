@@ -1,0 +1,7718 @@
+{
+  "kind": "visual-replay-diff",
+  "page_summary": {
+    "page_id": "1:543",
+    "page_name": "Page 2",
+    "reference_origin": {
+      "x": 782.0,
+      "y": -279.0
+    },
+    "actual_origin": {
+      "x": 0,
+      "y": 0
+    },
+    "matched_nodes": 371,
+    "missing_nodes": 27,
+    "extra_nodes": 0,
+    "flip_mismatches": 114,
+    "rotation_mismatches": 0,
+    "bbox_critical_mismatches": 0,
+    "parent_mismatches": 0,
+    "parent_uncomparable_nodes": 371
+  },
+  "pattern_summary": [
+    {
+      "pattern": "flip_y_mismatch",
+      "count": 114
+    },
+    {
+      "pattern": "parent_uncomparable",
+      "count": 371
+    }
+  ],
+  "vector_cluster_report": [
+    {
+      "cluster_key": [
+        "1:552",
+        "+:-:R0",
+        "G1",
+        "ULTRA_WIDE"
+      ],
+      "member_count": 36,
+      "avg_dx": 0.0,
+      "avg_dy": 0.0,
+      "flip_y_ratio": 1.0
+    },
+    {
+      "cluster_key": [
+        "1:552",
+        "+:-:R0",
+        "G1",
+        "TALL"
+      ],
+      "member_count": 5,
+      "avg_dx": 0.0,
+      "avg_dy": 0.0,
+      "flip_y_ratio": 1.0
+    },
+    {
+      "cluster_key": [
+        "1:746",
+        "+:-:R0",
+        "G1",
+        "ULTRA_WIDE"
+      ],
+      "member_count": 18,
+      "avg_dx": 0.0,
+      "avg_dy": 0.0,
+      "flip_y_ratio": 1.0
+    },
+    {
+      "cluster_key": [
+        "1:746",
+        "+:-:R0",
+        "G1",
+        "TALL"
+      ],
+      "member_count": 6,
+      "avg_dx": 0.0,
+      "avg_dy": 0.0,
+      "flip_y_ratio": 1.0
+    },
+    {
+      "cluster_key": [
+        "1:960",
+        "+:-:R0",
+        "G1",
+        "ULTRA_WIDE"
+      ],
+      "member_count": 17,
+      "avg_dx": 0.0,
+      "avg_dy": 0.0,
+      "flip_y_ratio": 1.0
+    },
+    {
+      "cluster_key": [
+        "1:960",
+        "+:-:R0",
+        "G1",
+        "TALL"
+      ],
+      "member_count": 5,
+      "avg_dx": 0.0,
+      "avg_dy": 0.0,
+      "flip_y_ratio": 1.0
+    }
+  ],
+  "diffs": [
+    {
+      "reference_node_id": "1:543",
+      "status": "missing_in_actual",
+      "node_type": "FRAME",
+      "node_name": "Page 2",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:544",
+      "status": "missing_in_actual",
+      "node_type": "FRAME",
+      "node_name": "Frame",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:546",
+      "actual_node_id": "15:34799",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:547",
+      "actual_node_id": "15:34802",
+      "node_type": "TEXT",
+      "node_name": "2",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.5,
+        "dy": 3.43,
+        "dw": -1.12,
+        "dh": -5.43
+      },
+      "bbox_status": "warn",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:548",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:549",
+      "actual_node_id": "15:34803",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:550",
+      "actual_node_id": "15:34805",
+      "node_type": "TEXT",
+      "node_name": "리뷰",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.94,
+        "dy": 1.19,
+        "dw": -2.36,
+        "dh": -2.25
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:551",
+      "actual_node_id": "15:34806",
+      "node_type": "TEXT",
+      "node_name": "-",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.72,
+        "dy": 1.14,
+        "dw": -1.73,
+        "dh": -2.19
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:552",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:553",
+      "actual_node_id": "15:34807",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:554",
+      "actual_node_id": "15:34809",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:555",
+      "actual_node_id": "15:34811",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:556",
+      "actual_node_id": "15:34813",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:557",
+      "actual_node_id": "15:34815",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:558",
+      "actual_node_id": "15:34817",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:559",
+      "actual_node_id": "15:34819",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:560",
+      "actual_node_id": "15:34821",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:561",
+      "actual_node_id": "15:34823",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:562",
+      "actual_node_id": "15:34825",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:563",
+      "actual_node_id": "15:34827",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:564",
+      "actual_node_id": "15:34829",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:565",
+      "actual_node_id": "15:34831",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:566",
+      "actual_node_id": "15:34833",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:567",
+      "actual_node_id": "15:34835",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:568",
+      "actual_node_id": "15:34837",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:569",
+      "actual_node_id": "15:34839",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:570",
+      "actual_node_id": "15:34841",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:571",
+      "actual_node_id": "15:34843",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:572",
+      "actual_node_id": "15:34845",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:573",
+      "actual_node_id": "15:34847",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:574",
+      "actual_node_id": "15:34849",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:575",
+      "actual_node_id": "15:34851",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:576",
+      "actual_node_id": "15:34853",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:577",
+      "actual_node_id": "15:34855",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:578",
+      "actual_node_id": "15:34857",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:579",
+      "actual_node_id": "15:34859",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:580",
+      "actual_node_id": "15:34861",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:581",
+      "actual_node_id": "15:34863",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:582",
+      "actual_node_id": "15:34865",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:583",
+      "actual_node_id": "15:34867",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:584",
+      "actual_node_id": "15:34869",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:585",
+      "actual_node_id": "15:34871",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:586",
+      "actual_node_id": "15:34873",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:587",
+      "actual_node_id": "15:34875",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:588",
+      "actual_node_id": "15:34877",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:589",
+      "actual_node_id": "15:34879",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:590",
+      "actual_node_id": "15:34881",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:591",
+      "actual_node_id": "15:34883",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:592",
+      "actual_node_id": "15:34885",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:593",
+      "actual_node_id": "15:34887",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:594",
+      "actual_node_id": "15:34889",
+      "node_type": "TEXT",
+      "node_name": "대카테고리",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.62,
+        "dy": 0.71,
+        "dw": -1.7,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:595",
+      "actual_node_id": "15:34890",
+      "node_type": "TEXT",
+      "node_name": "중카테고리",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:596",
+      "actual_node_id": "15:34891",
+      "node_type": "TEXT",
+      "node_name": "카테고리",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.44,
+        "dy": 0.71,
+        "dw": -1.6,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:597",
+      "actual_node_id": "15:34892",
+      "node_type": "TEXT",
+      "node_name": "평가",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.66,
+        "dw": -1.69,
+        "dh": -2.07
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:598",
+      "actual_node_id": "15:34893",
+      "node_type": "TEXT",
+      "node_name": "TV/AV",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 0.83,
+        "dw": -1.26,
+        "dh": -1.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:599",
+      "actual_node_id": "15:34894",
+      "node_type": "TEXT",
+      "node_name": "TV",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 1.11,
+        "dw": -0.94,
+        "dh": -3.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:600",
+      "actual_node_id": "15:34895",
+      "node_type": "TEXT",
+      "node_name": "CT50000025",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.56,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:601",
+      "actual_node_id": "15:34896",
+      "node_type": "TEXT",
+      "node_name": "화질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": -0.31,
+        "dw": -1.16,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:602",
+      "actual_node_id": "15:34897",
+      "node_type": "TEXT",
+      "node_name": "프로젝터",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.37,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:603",
+      "actual_node_id": "15:34898",
+      "node_type": "TEXT",
+      "node_name": "CT50000032",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.95,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:604",
+      "actual_node_id": "15:34899",
+      "node_type": "TEXT",
+      "node_name": "화질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": -0.31,
+        "dw": -1.78,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:605",
+      "actual_node_id": "15:34900",
+      "node_type": "TEXT",
+      "node_name": "오디오",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.1,
+        "dh": -1.88
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:606",
+      "actual_node_id": "15:34901",
+      "node_type": "TEXT",
+      "node_name": "CT50000036",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.74,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:607",
+      "actual_node_id": "15:34902",
+      "node_type": "TEXT",
+      "node_name": "음질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": -0.31,
+        "dw": -1.86,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:608",
+      "actual_node_id": "15:34903",
+      "node_type": "TEXT",
+      "node_name": "PC",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.3,
+        "dw": -1.99,
+        "dh": -1.42
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:609",
+      "actual_node_id": "15:34904",
+      "node_type": "TEXT",
+      "node_name": "노트북",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.3,
+        "dh": -1.88
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:610",
+      "actual_node_id": "15:34905",
+      "node_type": "TEXT",
+      "node_name": "CT50000046",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.7,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:611",
+      "actual_node_id": "15:34906",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:612",
+      "actual_node_id": "15:34907",
+      "node_type": "TEXT",
+      "node_name": "일체형",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.53,
+        "dy": 0.65,
+        "dw": -1.29,
+        "dh": -1.82
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:613",
+      "actual_node_id": "15:34908",
+      "node_type": "TEXT",
+      "node_name": "CT50000051",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -2.11,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:614",
+      "actual_node_id": "15:34909",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.42,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:615",
+      "actual_node_id": "15:34910",
+      "node_type": "TEXT",
+      "node_name": "모니터",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.36,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:616",
+      "actual_node_id": "15:34911",
+      "node_type": "TEXT",
+      "node_name": "CT50000055",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.54,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:617",
+      "actual_node_id": "15:34912",
+      "node_type": "TEXT",
+      "node_name": "화질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": -0.31,
+        "dw": -1.31,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:618",
+      "actual_node_id": "15:34913",
+      "node_type": "TEXT",
+      "node_name": "주방가전",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.18,
+        "dh": -2.13
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:619",
+      "actual_node_id": "15:34914",
+      "node_type": "TEXT",
+      "node_name": "냉장고",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.14,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:620",
+      "actual_node_id": "15:34915",
+      "node_type": "TEXT",
+      "node_name": "CT50000065",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.98,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:621",
+      "actual_node_id": "15:34916",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.68,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:622",
+      "actual_node_id": "15:34917",
+      "node_type": "TEXT",
+      "node_name": "김치냉장고",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -0.9,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:623",
+      "actual_node_id": "15:34918",
+      "node_type": "TEXT",
+      "node_name": "CT50000072",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.5,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:624",
+      "actual_node_id": "15:34919",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.68,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:625",
+      "actual_node_id": "15:34920",
+      "node_type": "TEXT",
+      "node_name": "전자레인지",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.71,
+        "dw": -1.16,
+        "dh": -1.88
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:626",
+      "actual_node_id": "15:34921",
+      "node_type": "TEXT",
+      "node_name": "CT50019018",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.02,
+        "dw": -1.05,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:627",
+      "actual_node_id": "15:34922",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.15,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:628",
+      "actual_node_id": "15:34923",
+      "node_type": "TEXT",
+      "node_name": "전기레인지",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.71,
+        "dw": -1.43,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:629",
+      "actual_node_id": "15:34924",
+      "node_type": "TEXT",
+      "node_name": "CT50000076",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.42,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:630",
+      "actual_node_id": "15:34925",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.15,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:631",
+      "actual_node_id": "15:34926",
+      "node_type": "TEXT",
+      "node_name": "식기세척기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.44,
+        "dy": 0.68,
+        "dw": -1.46,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:632",
+      "actual_node_id": "15:34927",
+      "node_type": "TEXT",
+      "node_name": "CT50000086",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.91,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:633",
+      "actual_node_id": "15:34928",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:634",
+      "actual_node_id": "15:34929",
+      "node_type": "TEXT",
+      "node_name": "정수기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.71,
+        "dw": -1.4,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:635",
+      "actual_node_id": "15:34930",
+      "node_type": "TEXT",
+      "node_name": "CT50000094",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.02,
+        "dw": -1.65,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:636",
+      "actual_node_id": "15:34931",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:637",
+      "actual_node_id": "15:34932",
+      "node_type": "TEXT",
+      "node_name": "맥주제조기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.68,
+        "dy": 0.71,
+        "dw": -1.7,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:638",
+      "actual_node_id": "15:34933",
+      "node_type": "TEXT",
+      "node_name": "CT50000087",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.14,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:639",
+      "actual_node_id": "15:34934",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:640",
+      "actual_node_id": "15:34935",
+      "node_type": "TEXT",
+      "node_name": "생활가전",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.65,
+        "dw": -1.18,
+        "dh": -2.07
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:641",
+      "actual_node_id": "15:34936",
+      "node_type": "TEXT",
+      "node_name": "워시타워",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.35,
+        "dy": 0.71,
+        "dw": -1.35,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:642",
+      "actual_node_id": "15:34937",
+      "node_type": "TEXT",
+      "node_name": "CT50000110",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.54,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:643",
+      "actual_node_id": "15:34938",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:644",
+      "actual_node_id": "15:34939",
+      "node_type": "TEXT",
+      "node_name": "세탁기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.3,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:645",
+      "actual_node_id": "15:34940",
+      "node_type": "TEXT",
+      "node_name": "CT50000101",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -2.14,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:646",
+      "actual_node_id": "15:34941",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:647",
+      "actual_node_id": "15:34942",
+      "node_type": "TEXT",
+      "node_name": "의류건조기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.42,
+        "dy": 0.71,
+        "dw": -1.43,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:648",
+      "actual_node_id": "15:34943",
+      "node_type": "TEXT",
+      "node_name": "CT50000107",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.38,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:649",
+      "actual_node_id": "15:34944",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:650",
+      "actual_node_id": "15:34945",
+      "node_type": "TEXT",
+      "node_name": "의류관리기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.42,
+        "dy": 0.71,
+        "dw": -1.43,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:651",
+      "actual_node_id": "15:34946",
+      "node_type": "TEXT",
+      "node_name": "CT50000106",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.99,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:652",
+      "actual_node_id": "15:34947",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:653",
+      "actual_node_id": "15:34948",
+      "node_type": "TEXT",
+      "node_name": "청소기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.68,
+        "dw": -1.39,
+        "dh": -2.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:654",
+      "actual_node_id": "15:34949",
+      "node_type": "TEXT",
+      "node_name": "CT50000111",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.73,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:655",
+      "actual_node_id": "15:34950",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:656",
+      "actual_node_id": "15:34951",
+      "node_type": "TEXT",
+      "node_name": "안마의자",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.5,
+        "dy": 0.71,
+        "dw": -0.74,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:657",
+      "actual_node_id": "15:34952",
+      "node_type": "TEXT",
+      "node_name": "CT50000123",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.52,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:658",
+      "actual_node_id": "15:34953",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.15,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:659",
+      "actual_node_id": "15:34954",
+      "node_type": "TEXT",
+      "node_name": "에어컨",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -1.77,
+        "dh": -1.88
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:660",
+      "actual_node_id": "15:34955",
+      "node_type": "TEXT",
+      "node_name": "에어컨",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -1.24,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:661",
+      "actual_node_id": "15:34956",
+      "node_type": "TEXT",
+      "node_name": "CT50000131",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -2.04,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:662",
+      "actual_node_id": "15:34957",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:663",
+      "actual_node_id": "15:34958",
+      "node_type": "TEXT",
+      "node_name": "공기청정기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 0.68,
+        "dw": -1.4,
+        "dh": -2.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:664",
+      "actual_node_id": "15:34959",
+      "node_type": "TEXT",
+      "node_name": "CT50000143",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.8,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:665",
+      "actual_node_id": "15:34960",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:666",
+      "actual_node_id": "15:34961",
+      "node_type": "TEXT",
+      "node_name": "제습기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.29,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:667",
+      "actual_node_id": "15:34962",
+      "node_type": "TEXT",
+      "node_name": "CT50000142",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.5,
+        "dh": -2.95
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:668",
+      "actual_node_id": "15:34963",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:669",
+      "actual_node_id": "15:34964",
+      "node_type": "TEXT",
+      "node_name": "가습기",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.42,
+        "dy": 0.71,
+        "dw": -1.42,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:670",
+      "actual_node_id": "15:34965",
+      "node_type": "TEXT",
+      "node_name": "CT50000139",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.02,
+        "dw": -1.9,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:671",
+      "actual_node_id": "15:34966",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:672",
+      "actual_node_id": "15:34967",
+      "node_type": "TEXT",
+      "node_name": "모바일",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.15,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:673",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:674",
+      "actual_node_id": "15:34968",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:675",
+      "actual_node_id": "15:34970",
+      "node_type": "TEXT",
+      "node_name": "스마트폰",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.82,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:676",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:677",
+      "actual_node_id": "15:34971",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:678",
+      "actual_node_id": "15:34973",
+      "node_type": "TEXT",
+      "node_name": "제외",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:679",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:680",
+      "actual_node_id": "15:34974",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:681",
+      "actual_node_id": "15:34976",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:682",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:683",
+      "actual_node_id": "15:34977",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:684",
+      "actual_node_id": "15:34979",
+      "node_type": "TEXT",
+      "node_name": "|",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 1.04,
+        "dy": -0.79,
+        "dw": -2.42,
+        "dh": 0.69
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:685",
+      "actual_node_id": "15:34980",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": -0.31,
+        "dw": -2.0,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:686",
+      "actual_node_id": "15:34981",
+      "node_type": "TEXT",
+      "node_name": "피처폰",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:687",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:688",
+      "actual_node_id": "15:34982",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:689",
+      "actual_node_id": "15:34984",
+      "node_type": "TEXT",
+      "node_name": "제외",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:690",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:691",
+      "actual_node_id": "15:34985",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:692",
+      "actual_node_id": "15:34987",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:693",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:694",
+      "actual_node_id": "15:34988",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:695",
+      "actual_node_id": "15:34990",
+      "node_type": "TEXT",
+      "node_name": "|",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 1.04,
+        "dy": -0.79,
+        "dw": -2.42,
+        "dh": 0.69
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:696",
+      "actual_node_id": "15:34991",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": -0.31,
+        "dw": -2.0,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:697",
+      "actual_node_id": "15:34992",
+      "node_type": "TEXT",
+      "node_name": "스마트",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.79,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:698",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:699",
+      "actual_node_id": "15:34993",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:700",
+      "actual_node_id": "15:34995",
+      "node_type": "TEXT",
+      "node_name": "디바이스",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.23,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:701",
+      "actual_node_id": "15:34996",
+      "node_type": "TEXT",
+      "node_name": "제외",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:702",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:703",
+      "actual_node_id": "15:34997",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:704",
+      "actual_node_id": "15:34999",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:705",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:706",
+      "actual_node_id": "15:35000",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:707",
+      "actual_node_id": "15:35002",
+      "node_type": "TEXT",
+      "node_name": "|",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 1.04,
+        "dy": -0.79,
+        "dw": -2.42,
+        "dh": 0.69
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:708",
+      "actual_node_id": "15:35003",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": -0.31,
+        "dw": -2.0,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:709",
+      "actual_node_id": "15:35004",
+      "node_type": "TEXT",
+      "node_name": "제외",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:710",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:711",
+      "actual_node_id": "15:35005",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:712",
+      "actual_node_id": "15:35007",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:713",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:714",
+      "actual_node_id": "15:35008",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:715",
+      "actual_node_id": "15:35010",
+      "node_type": "TEXT",
+      "node_name": "|",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 1.04,
+        "dy": -0.79,
+        "dw": -2.42,
+        "dh": 0.69
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:716",
+      "actual_node_id": "15:35011",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": -0.31,
+        "dw": -2.0,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:717",
+      "actual_node_id": "15:35012",
+      "node_type": "TEXT",
+      "node_name": "뷰티",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.72,
+        "dw": -1.69,
+        "dh": -1.88
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:718",
+      "actual_node_id": "15:35013",
+      "node_type": "TEXT",
+      "node_name": "LED",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 1.11,
+        "dw": -1.99,
+        "dh": -3.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:719",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:720",
+      "actual_node_id": "15:35014",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:721",
+      "actual_node_id": "15:35016",
+      "node_type": "TEXT",
+      "node_name": "마스크",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.65,
+        "dy": 0.72,
+        "dw": -1.08,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:722",
+      "actual_node_id": "15:35017",
+      "node_type": "TEXT",
+      "node_name": "제외",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.72,
+        "dw": -1.32,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:723",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:724",
+      "actual_node_id": "15:35018",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:725",
+      "actual_node_id": "15:35020",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.72,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:726",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:727",
+      "actual_node_id": "15:35021",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:728",
+      "actual_node_id": "15:35023",
+      "node_type": "TEXT",
+      "node_name": "|",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 1.04,
+        "dy": -0.79,
+        "dw": -2.42,
+        "dh": 0.69
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:729",
+      "actual_node_id": "15:35024",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": -0.31,
+        "dw": -2.0,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:730",
+      "actual_node_id": "15:35025",
+      "node_type": "TEXT",
+      "node_name": "LED",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 1.11,
+        "dw": -1.99,
+        "dh": -3.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:731",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:732",
+      "actual_node_id": "15:35026",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:733",
+      "actual_node_id": "15:35028",
+      "node_type": "TEXT",
+      "node_name": "넥케어",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.74,
+        "dy": 0.71,
+        "dw": -1.73,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:734",
+      "actual_node_id": "15:35029",
+      "node_type": "TEXT",
+      "node_name": "제외",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:735",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:736",
+      "actual_node_id": "15:35030",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:737",
+      "actual_node_id": "15:35032",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:738",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L2"
+    },
+    {
+      "reference_node_id": "1:739",
+      "actual_node_id": "15:35033",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.64
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:740",
+      "actual_node_id": "15:35035",
+      "node_type": "TEXT",
+      "node_name": "|",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 1.04,
+        "dy": -0.79,
+        "dw": -2.42,
+        "dh": 0.69
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:741",
+      "actual_node_id": "15:35036",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": -0.31,
+        "dw": -2.0,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:742",
+      "actual_node_id": "15:35037",
+      "node_type": "TEXT",
+      "node_name": "뷰티",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -1.67,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:743",
+      "actual_node_id": "15:35038",
+      "node_type": "TEXT",
+      "node_name": "CT50000165",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 1.03,
+        "dw": -1.57,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:744",
+      "actual_node_id": "15:35039",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": -0.31,
+        "dw": -1.85,
+        "dh": 0.09
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:745",
+      "actual_node_id": "15:35040",
+      "node_type": "TEXT",
+      "node_name": "항목",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.52,
+        "dy": 1.66,
+        "dw": -1.62,
+        "dh": -2.88
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:746",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:747",
+      "actual_node_id": "15:35041",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:748",
+      "actual_node_id": "15:35043",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:749",
+      "actual_node_id": "15:35045",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:750",
+      "actual_node_id": "15:35047",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:751",
+      "actual_node_id": "15:35049",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:752",
+      "actual_node_id": "15:35051",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:753",
+      "actual_node_id": "15:35053",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:754",
+      "actual_node_id": "15:35055",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:755",
+      "actual_node_id": "15:35057",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:756",
+      "actual_node_id": "15:35059",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:757",
+      "actual_node_id": "15:35061",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:758",
+      "actual_node_id": "15:35063",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:759",
+      "actual_node_id": "15:35065",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:760",
+      "actual_node_id": "15:35067",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:761",
+      "actual_node_id": "15:35069",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:762",
+      "actual_node_id": "15:35071",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:763",
+      "actual_node_id": "15:35073",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:764",
+      "actual_node_id": "15:35075",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:765",
+      "actual_node_id": "15:35077",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:766",
+      "actual_node_id": "15:35079",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:767",
+      "actual_node_id": "15:35081",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:768",
+      "actual_node_id": "15:35083",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:769",
+      "actual_node_id": "15:35085",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:770",
+      "actual_node_id": "15:35087",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:771",
+      "actual_node_id": "15:35089",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:772",
+      "actual_node_id": "15:35091",
+      "node_type": "TEXT",
+      "node_name": "항목",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.66,
+        "dw": -0.81,
+        "dh": -2.07
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:773",
+      "actual_node_id": "15:35092",
+      "node_type": "TEXT",
+      "node_name": "3",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.6,
+        "dy": 0.26,
+        "dw": -1.88,
+        "dh": -1.06
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:774",
+      "actual_node_id": "15:35093",
+      "node_type": "TEXT",
+      "node_name": "노출",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -1.68,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:775",
+      "actual_node_id": "15:35094",
+      "node_type": "TEXT",
+      "node_name": "긍정",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.33,
+        "dh": -2.13
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:776",
+      "actual_node_id": "15:35095",
+      "node_type": "TEXT",
+      "node_name": "보통",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.91,
+        "dw": -0.8,
+        "dh": -2.33
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:777",
+      "actual_node_id": "15:35096",
+      "node_type": "TEXT",
+      "node_name": "부정",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:778",
+      "actual_node_id": "15:35097",
+      "node_type": "TEXT",
+      "node_name": "화질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.06,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:779",
+      "actual_node_id": "15:35098",
+      "node_type": "TEXT",
+      "node_name": "화질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -0.74,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:781",
+      "actual_node_id": "15:35099",
+      "node_type": "TEXT",
+      "node_name": "선명해요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:786",
+      "actual_node_id": "15:35100",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:791",
+      "actual_node_id": "15:35101",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:795",
+      "actual_node_id": "15:35102",
+      "node_type": "TEXT",
+      "node_name": "음질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.14,
+        "dh": -2.2
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:796",
+      "actual_node_id": "15:35103",
+      "node_type": "TEXT",
+      "node_name": "음질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.83,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:798",
+      "actual_node_id": "15:35104",
+      "node_type": "TEXT",
+      "node_name": "뛰어나요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.33,
+        "dy": 0.71,
+        "dw": -0.75,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:803",
+      "actual_node_id": "15:35105",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:808",
+      "actual_node_id": "15:35106",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:812",
+      "actual_node_id": "15:35107",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:813",
+      "actual_node_id": "15:35108",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.82,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:815",
+      "actual_node_id": "15:35109",
+      "node_type": "TEXT",
+      "node_name": "좋아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:820",
+      "actual_node_id": "15:35110",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:825",
+      "actual_node_id": "15:35111",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:829",
+      "actual_node_id": "15:35112",
+      "node_type": "TEXT",
+      "node_name": "사운드",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.69,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:830",
+      "actual_node_id": "15:35113",
+      "node_type": "TEXT",
+      "node_name": "사운드",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.81,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:832",
+      "actual_node_id": "15:35114",
+      "node_type": "TEXT",
+      "node_name": "우수해요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.79,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:837",
+      "actual_node_id": "15:35115",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:842",
+      "actual_node_id": "15:35116",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:846",
+      "actual_node_id": "15:35117",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.61,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:847",
+      "actual_node_id": "15:35118",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.34,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:849",
+      "actual_node_id": "15:35119",
+      "node_type": "TEXT",
+      "node_name": "뛰어나요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.33,
+        "dy": 0.71,
+        "dw": -0.75,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:854",
+      "actual_node_id": "15:35120",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:859",
+      "actual_node_id": "15:35121",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:863",
+      "actual_node_id": "15:35122",
+      "node_type": "TEXT",
+      "node_name": "기능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -0.88,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:864",
+      "actual_node_id": "15:35123",
+      "node_type": "TEXT",
+      "node_name": "기능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -0.91,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:866",
+      "actual_node_id": "15:35124",
+      "node_type": "TEXT",
+      "node_name": "다양해요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.68,
+        "dy": 0.71,
+        "dw": -1.09,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:871",
+      "actual_node_id": "15:35125",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:876",
+      "actual_node_id": "15:35126",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:880",
+      "actual_node_id": "15:35127",
+      "node_type": "TEXT",
+      "node_name": "휴대성",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -1.34,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:881",
+      "actual_node_id": "15:35128",
+      "node_type": "TEXT",
+      "node_name": "휴대성",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -0.9,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:883",
+      "actual_node_id": "15:35129",
+      "node_type": "TEXT",
+      "node_name": "좋아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:888",
+      "actual_node_id": "15:35130",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:893",
+      "actual_node_id": "15:35131",
+      "node_type": "TEXT",
+      "node_name": "떨어져요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.55,
+        "dy": 0.71,
+        "dw": -0.97,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:897",
+      "actual_node_id": "15:35132",
+      "node_type": "TEXT",
+      "node_name": "용량",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -2.22,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:898",
+      "actual_node_id": "15:35133",
+      "node_type": "TEXT",
+      "node_name": "용량",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.71,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:900",
+      "actual_node_id": "15:35134",
+      "node_type": "TEXT",
+      "node_name": "높아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.79,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:905",
+      "actual_node_id": "15:35135",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:910",
+      "actual_node_id": "15:35136",
+      "node_type": "TEXT",
+      "node_name": "떨어져요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.55,
+        "dy": 0.71,
+        "dw": -0.97,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:914",
+      "actual_node_id": "15:35137",
+      "node_type": "TEXT",
+      "node_name": "부가기능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:915",
+      "actual_node_id": "15:35138",
+      "node_type": "TEXT",
+      "node_name": "부가기능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.84,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:917",
+      "actual_node_id": "15:35139",
+      "node_type": "TEXT",
+      "node_name": "많아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.66,
+        "dy": 0.71,
+        "dw": -1.07,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:922",
+      "actual_node_id": "15:35140",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:927",
+      "actual_node_id": "15:35141",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:931",
+      "actual_node_id": "15:35142",
+      "node_type": "TEXT",
+      "node_name": "사용성",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -1.24,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:932",
+      "actual_node_id": "15:35143",
+      "node_type": "TEXT",
+      "node_name": "사용성",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.81,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:934",
+      "actual_node_id": "15:35144",
+      "node_type": "TEXT",
+      "node_name": "좋아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:939",
+      "actual_node_id": "15:35145",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:944",
+      "actual_node_id": "15:35146",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:948",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:949",
+      "actual_node_id": "15:35147",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:950",
+      "actual_node_id": "15:35149",
+      "node_type": "TEXT",
+      "node_name": "카테고리별",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.58,
+        "dy": 1.73,
+        "dw": -1.76,
+        "dh": -2.94
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:951",
+      "actual_node_id": "15:35150",
+      "node_type": "TEXT",
+      "node_name": "평가",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.52,
+        "dy": 1.66,
+        "dw": -2.25,
+        "dh": -2.18
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:952",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:953",
+      "actual_node_id": "15:35151",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:954",
+      "actual_node_id": "15:35153",
+      "node_type": "TEXT",
+      "node_name": "※",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 2.43,
+        "dw": -0.97,
+        "dh": -4.96
+      },
+      "bbox_status": "warn",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:955",
+      "actual_node_id": "15:35154",
+      "node_type": "TEXT",
+      "node_name": "카테고리",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.44,
+        "dy": 0.66,
+        "dw": -2.03,
+        "dh": -2.06
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:956",
+      "actual_node_id": "15:35155",
+      "node_type": "TEXT",
+      "node_name": "※",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 0.66,
+        "dw": -1.32,
+        "dh": -2.07
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:958",
+      "actual_node_id": "15:35156",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:959",
+      "actual_node_id": "15:35159",
+      "node_type": "TEXT",
+      "node_name": "V0.98",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.21,
+        "dy": 0.24,
+        "dw": -1.39,
+        "dh": -1.6
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:960",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:961",
+      "actual_node_id": "15:35160",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:962",
+      "actual_node_id": "15:35162",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:963",
+      "actual_node_id": "15:35164",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:964",
+      "actual_node_id": "15:35166",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:965",
+      "actual_node_id": "15:35168",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:966",
+      "actual_node_id": "15:35170",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:967",
+      "actual_node_id": "15:35172",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:968",
+      "actual_node_id": "15:35174",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:969",
+      "actual_node_id": "15:35176",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:970",
+      "actual_node_id": "15:35178",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:971",
+      "actual_node_id": "15:35180",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:972",
+      "actual_node_id": "15:35182",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:973",
+      "actual_node_id": "15:35184",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:974",
+      "actual_node_id": "15:35186",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:975",
+      "actual_node_id": "15:35188",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:976",
+      "actual_node_id": "15:35190",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:977",
+      "actual_node_id": "15:35192",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:978",
+      "actual_node_id": "15:35194",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:979",
+      "actual_node_id": "15:35196",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:980",
+      "actual_node_id": "15:35198",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:981",
+      "actual_node_id": "15:35200",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 1.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:982",
+      "actual_node_id": "15:35202",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:983",
+      "actual_node_id": "15:35204",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 1.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:984",
+      "actual_node_id": "15:35206",
+      "node_type": "TEXT",
+      "node_name": "항목",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.4,
+        "dy": 0.66,
+        "dw": -0.81,
+        "dh": -2.07
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:985",
+      "actual_node_id": "15:35207",
+      "node_type": "TEXT",
+      "node_name": "3",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.6,
+        "dy": 0.26,
+        "dw": -2.27,
+        "dh": -1.06
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:986",
+      "actual_node_id": "15:35208",
+      "node_type": "TEXT",
+      "node_name": "긍정",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.33,
+        "dh": -2.13
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:987",
+      "actual_node_id": "15:35209",
+      "node_type": "TEXT",
+      "node_name": "보통",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.91,
+        "dw": -0.8,
+        "dh": -2.33
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:988",
+      "actual_node_id": "15:35210",
+      "node_type": "TEXT",
+      "node_name": "부정",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -1.32,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:989",
+      "actual_node_id": "15:35211",
+      "node_type": "TEXT",
+      "node_name": "화질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.06,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:991",
+      "actual_node_id": "15:35212",
+      "node_type": "TEXT",
+      "node_name": "화질이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.31,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:995",
+      "actual_node_id": "15:35213",
+      "node_type": "TEXT",
+      "node_name": "선명해요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.39,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:997",
+      "actual_node_id": "15:35214",
+      "node_type": "TEXT",
+      "node_name": "화질이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.31,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1001",
+      "actual_node_id": "15:35215",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1003",
+      "actual_node_id": "15:35216",
+      "node_type": "TEXT",
+      "node_name": "화질이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.3,
+        "dy": 0.71,
+        "dw": -1.31,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1007",
+      "actual_node_id": "15:35217",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1008",
+      "actual_node_id": "15:35218",
+      "node_type": "TEXT",
+      "node_name": "음질",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.14,
+        "dh": -2.2
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1010",
+      "actual_node_id": "15:35219",
+      "node_type": "TEXT",
+      "node_name": "음질이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.39,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1014",
+      "actual_node_id": "15:35220",
+      "node_type": "TEXT",
+      "node_name": "뛰어나요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.33,
+        "dy": 0.71,
+        "dw": -0.75,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1016",
+      "actual_node_id": "15:35221",
+      "node_type": "TEXT",
+      "node_name": "음질이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.39,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1020",
+      "actual_node_id": "15:35222",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1022",
+      "actual_node_id": "15:35223",
+      "node_type": "TEXT",
+      "node_name": "음질이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -1.39,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1026",
+      "actual_node_id": "15:35224",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1027",
+      "actual_node_id": "15:35225",
+      "node_type": "TEXT",
+      "node_name": "성능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1029",
+      "actual_node_id": "15:35226",
+      "node_type": "TEXT",
+      "node_name": "성능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -1.39,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1033",
+      "actual_node_id": "15:35227",
+      "node_type": "TEXT",
+      "node_name": "좋아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1035",
+      "actual_node_id": "15:35228",
+      "node_type": "TEXT",
+      "node_name": "성능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -1.39,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1039",
+      "actual_node_id": "15:35229",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1041",
+      "actual_node_id": "15:35230",
+      "node_type": "TEXT",
+      "node_name": "성능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -1.39,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1045",
+      "actual_node_id": "15:35231",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1046",
+      "actual_node_id": "15:35232",
+      "node_type": "TEXT",
+      "node_name": "사운드",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.69,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1048",
+      "actual_node_id": "15:35233",
+      "node_type": "TEXT",
+      "node_name": "사운드가",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.55,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1052",
+      "actual_node_id": "15:35234",
+      "node_type": "TEXT",
+      "node_name": "우수해요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.79,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1054",
+      "actual_node_id": "15:35235",
+      "node_type": "TEXT",
+      "node_name": "사운드가",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.55,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1058",
+      "actual_node_id": "15:35236",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1060",
+      "actual_node_id": "15:35237",
+      "node_type": "TEXT",
+      "node_name": "사운드가",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -0.55,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1064",
+      "actual_node_id": "15:35238",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1065",
+      "actual_node_id": "15:35239",
+      "node_type": "TEXT",
+      "node_name": "디자인",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.61,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1067",
+      "actual_node_id": "15:35240",
+      "node_type": "TEXT",
+      "node_name": "디자인이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.84,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1071",
+      "actual_node_id": "15:35241",
+      "node_type": "TEXT",
+      "node_name": "뛰어나요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.33,
+        "dy": 0.71,
+        "dw": -0.75,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1073",
+      "actual_node_id": "15:35242",
+      "node_type": "TEXT",
+      "node_name": "디자인이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.84,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1077",
+      "actual_node_id": "15:35243",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1079",
+      "actual_node_id": "15:35244",
+      "node_type": "TEXT",
+      "node_name": "디자인이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.82,
+        "dy": 0.71,
+        "dw": -1.84,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1083",
+      "actual_node_id": "15:35245",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1084",
+      "actual_node_id": "15:35246",
+      "node_type": "TEXT",
+      "node_name": "기능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -0.88,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1086",
+      "actual_node_id": "15:35247",
+      "node_type": "TEXT",
+      "node_name": "기능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -1.48,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1090",
+      "actual_node_id": "15:35248",
+      "node_type": "TEXT",
+      "node_name": "다양해요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.68,
+        "dy": 0.71,
+        "dw": -1.09,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1092",
+      "actual_node_id": "15:35249",
+      "node_type": "TEXT",
+      "node_name": "기능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -1.48,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1096",
+      "actual_node_id": "15:35250",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1098",
+      "actual_node_id": "15:35251",
+      "node_type": "TEXT",
+      "node_name": "기능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.46,
+        "dy": 0.71,
+        "dw": -1.48,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1102",
+      "actual_node_id": "15:35252",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.71,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1103",
+      "actual_node_id": "15:35253",
+      "node_type": "TEXT",
+      "node_name": "휴대성",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -1.34,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1105",
+      "actual_node_id": "15:35254",
+      "node_type": "TEXT",
+      "node_name": "휴대성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -1.4,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1109",
+      "actual_node_id": "15:35255",
+      "node_type": "TEXT",
+      "node_name": "좋아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1111",
+      "actual_node_id": "15:35256",
+      "node_type": "TEXT",
+      "node_name": "휴대성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -1.4,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1115",
+      "actual_node_id": "15:35257",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1117",
+      "actual_node_id": "15:35258",
+      "node_type": "TEXT",
+      "node_name": "휴대성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.68,
+        "dw": -1.4,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1121",
+      "actual_node_id": "15:35259",
+      "node_type": "TEXT",
+      "node_name": "떨어져요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.55,
+        "dy": 0.71,
+        "dw": -0.97,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1122",
+      "actual_node_id": "15:35260",
+      "node_type": "TEXT",
+      "node_name": "용량",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -2.22,
+        "dh": -2.14
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1124",
+      "actual_node_id": "15:35261",
+      "node_type": "TEXT",
+      "node_name": "효율성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1128",
+      "actual_node_id": "15:35262",
+      "node_type": "TEXT",
+      "node_name": "높아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -0.79,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1130",
+      "actual_node_id": "15:35263",
+      "node_type": "TEXT",
+      "node_name": "효율성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1134",
+      "actual_node_id": "15:35264",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1136",
+      "actual_node_id": "15:35265",
+      "node_type": "TEXT",
+      "node_name": "효율성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1140",
+      "actual_node_id": "15:35266",
+      "node_type": "TEXT",
+      "node_name": "떨어져요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.55,
+        "dy": 0.72,
+        "dw": -0.97,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1141",
+      "actual_node_id": "15:35267",
+      "node_type": "TEXT",
+      "node_name": "부가기능",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.72,
+        "dw": -0.8,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1143",
+      "actual_node_id": "15:35268",
+      "node_type": "TEXT",
+      "node_name": "부가기능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.72,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1147",
+      "actual_node_id": "15:35269",
+      "node_type": "TEXT",
+      "node_name": "많아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.66,
+        "dy": 0.72,
+        "dw": -1.07,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1149",
+      "actual_node_id": "15:35270",
+      "node_type": "TEXT",
+      "node_name": "부가기능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.72,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1153",
+      "actual_node_id": "15:35271",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.72,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1155",
+      "actual_node_id": "15:35272",
+      "node_type": "TEXT",
+      "node_name": "부가기능이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.72,
+        "dw": -1.4,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1159",
+      "actual_node_id": "15:35273",
+      "node_type": "TEXT",
+      "node_name": "아쉬워요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.48,
+        "dy": 0.72,
+        "dw": -0.89,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1160",
+      "actual_node_id": "15:35274",
+      "node_type": "TEXT",
+      "node_name": "사용성",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -1.24,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1162",
+      "actual_node_id": "15:35275",
+      "node_type": "TEXT",
+      "node_name": "사용성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -1.3,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1166",
+      "actual_node_id": "15:35276",
+      "node_type": "TEXT",
+      "node_name": "좋아요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.37,
+        "dy": 0.71,
+        "dw": -0.78,
+        "dh": -2.08
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1168",
+      "actual_node_id": "15:35277",
+      "node_type": "TEXT",
+      "node_name": "사용성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -1.3,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1172",
+      "actual_node_id": "15:35278",
+      "node_type": "TEXT",
+      "node_name": "보통이예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.38,
+        "dy": 0.71,
+        "dw": -0.8,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1174",
+      "actual_node_id": "15:35279",
+      "node_type": "TEXT",
+      "node_name": "사용성이",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.28,
+        "dy": 0.71,
+        "dw": -1.3,
+        "dh": -2.11
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1178",
+      "actual_node_id": "15:35280",
+      "node_type": "TEXT",
+      "node_name": "별로예요",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.71,
+        "dy": 0.71,
+        "dw": -1.13,
+        "dh": -2.12
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1179",
+      "status": "missing_in_actual",
+      "node_type": "GROUP",
+      "node_name": "Group",
+      "comparison_level": "L1"
+    },
+    {
+      "reference_node_id": "1:1180",
+      "actual_node_id": "15:35281",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1181",
+      "actual_node_id": "15:35283",
+      "node_type": "VECTOR",
+      "node_name": "Vector",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dw": 0.0,
+        "dh": 0.0
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": true,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    },
+    {
+      "reference_node_id": "1:1182",
+      "actual_node_id": "15:35285",
+      "node_type": "TEXT",
+      "node_name": "V1.01 as",
+      "comparison_level": "L2",
+      "bbox_diff": {
+        "dx": 0.21,
+        "dy": 0.3,
+        "dw": -0.92,
+        "dh": -0.86
+      },
+      "bbox_status": "ok",
+      "flip_x_mismatch": false,
+      "flip_y_mismatch": false,
+      "rotation_delta": 0,
+      "rotation_status": "ok",
+      "parent_comparable": false,
+      "parent_mismatch": false
+    }
+  ]
+}

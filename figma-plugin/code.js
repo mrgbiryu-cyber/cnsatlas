@@ -613,12 +613,14 @@ function inferReplayComparisonLevel(node) {
   return "ignore";
 }
 
-function annotateReplayNode(renderedNode, sourceNode, pageId, role) {
+function annotateReplayNode(renderedNode, sourceNode, context, role) {
   if (!renderedNode || !sourceNode) {
     return;
   }
+  const pageId = context && context.pageId ? context.pageId : "";
+  const referenceParentId = context && context.referenceParentId ? context.referenceParentId : "";
   setReplayPluginData(renderedNode, "reference_node_id", sourceNode.id || "");
-  setReplayPluginData(renderedNode, "reference_parent_id", sourceNode.parent ? sourceNode.parent.id || "" : "");
+  setReplayPluginData(renderedNode, "reference_parent_id", referenceParentId);
   setReplayPluginData(renderedNode, "reference_type", sourceNode.type || "");
   setReplayPluginData(renderedNode, "reference_name", sourceNode.name || "");
   setReplayPluginData(renderedNode, "replay_page_id", pageId || "");
@@ -1007,7 +1009,7 @@ function createReplayFrameShell(node, parentNode, origin) {
   }));
   shell.strokeWeight = node.strokeWeight || 1;
   parentNode.appendChild(shell);
-  annotateReplayNode(shell, node, origin.pageId, "frame-shell");
+  annotateReplayNode(shell, node, origin, "frame-shell");
   return shell;
 }
 
@@ -1047,7 +1049,7 @@ async function renderReplayText(node, parentNode, origin) {
   text.x = local.x;
   text.y = local.y;
   parentNode.appendChild(text);
-  annotateReplayNode(text, node, origin.pageId, "render-node");
+  annotateReplayNode(text, node, origin, "render-node");
 }
 
 function renderReplayRectangle(node, parentNode, origin, bundle) {
@@ -1091,7 +1093,7 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
   }));
   rect.strokeWeight = node.strokeWeight || 1;
   parentNode.appendChild(rect);
-  annotateReplayNode(rect, node, origin.pageId, "render-node");
+  annotateReplayNode(rect, node, origin, "render-node");
 }
 
 function renderReplayVector(node, parentNode, origin) {
@@ -1106,7 +1108,7 @@ function renderReplayVector(node, parentNode, origin) {
   svgNode.x = local.x;
   svgNode.y = local.y;
   parentNode.appendChild(svgNode);
-  annotateReplayNode(svgNode, node, origin.pageId, "render-node");
+  annotateReplayNode(svgNode, node, origin, "render-node");
 }
 
 async function renderReplayNode(node, parentNode, origin, bundle) {
@@ -1131,18 +1133,21 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
       if (hasVisibleSolidPaint(node) || hasVisibleStroke(node)) {
         createReplayFrameShell(node, parentNode, origin);
       }
+      var frameChildOrigin = Object.assign({}, origin, { referenceParentId: node.id || origin.referenceParentId || "" });
       for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, origin, bundle);
+        await renderReplayNode(child, parentNode, frameChildOrigin, bundle);
       }
       return;
     case "GROUP":
+      var groupChildOrigin = Object.assign({}, origin, { referenceParentId: node.id || origin.referenceParentId || "" });
       for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, origin, bundle);
+        await renderReplayNode(child, parentNode, groupChildOrigin, bundle);
       }
       return;
     default:
+      var childOrigin = Object.assign({}, origin, { referenceParentId: node.id || origin.referenceParentId || "" });
       for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, origin, bundle);
+        await renderReplayNode(child, parentNode, childOrigin, bundle);
       }
   }
 }
@@ -1162,7 +1167,7 @@ async function renderFigmaReplayBundle(bundle) {
   rootFrame.strokeWeight = 1;
 
   const documentNode = bundle.document;
-  const replayOrigin = Object.assign({}, rootBounds, { pageId: bundle.node_id || "" });
+  const replayOrigin = Object.assign({}, rootBounds, { pageId: bundle.node_id || "", referenceParentId: documentNode && documentNode.id ? documentNode.id : "" });
   if (documentNode && documentNode.type === "FRAME") {
     for (const child of documentNode.children || []) {
       await renderReplayNode(child, rootFrame, replayOrigin, bundle);

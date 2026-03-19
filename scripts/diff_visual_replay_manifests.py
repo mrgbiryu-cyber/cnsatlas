@@ -16,9 +16,34 @@ def load_json(path):
         return json.load(handle)
 
 
-def bbox_diff(reference, actual):
-    rb = reference.get("bbox_absolute") or {}
-    ab = actual.get("bbox_absolute") or {}
+def manifest_origin(manifest, rows):
+    page_bounds = manifest.get("page_bounds") or {}
+    if page_bounds and "x" in page_bounds and "y" in page_bounds:
+        return {"x": page_bounds.get("x", 0), "y": page_bounds.get("y", 0)}
+    xs = []
+    ys = []
+    for row in rows:
+        bbox = row.get("bbox_absolute") or {}
+        if "x" in bbox and "y" in bbox:
+            xs.append(bbox["x"])
+            ys.append(bbox["y"])
+    if not xs or not ys:
+        return {"x": 0, "y": 0}
+    return {"x": min(xs), "y": min(ys)}
+
+
+def normalize_bbox(bbox, origin):
+    return {
+        "x": round((bbox.get("x", 0) - origin.get("x", 0)), 2),
+        "y": round((bbox.get("y", 0) - origin.get("y", 0)), 2),
+        "width": round(bbox.get("width", 0), 2),
+        "height": round(bbox.get("height", 0), 2),
+    }
+
+
+def bbox_diff(reference, actual, reference_origin, actual_origin):
+    rb = normalize_bbox(reference.get("bbox_absolute") or {}, reference_origin)
+    ab = normalize_bbox(actual.get("bbox_absolute") or {}, actual_origin)
     return {
         "dx": round((ab.get("x", 0) - rb.get("x", 0)), 2),
         "dy": round((ab.get("y", 0) - rb.get("y", 0)), 2),
@@ -63,10 +88,14 @@ def build_diff(reference_manifest, actual_manifest):
     reference_rows = [row for row in reference_manifest.get("nodes", []) if row.get("comparison_target")]
     actual_rows = [row for row in actual_manifest.get("nodes", []) if row.get("comparison_level") in {"L1", "L2"}]
     actual_by_ref = manifest_map(actual_rows, "reference_node_id")
+    reference_origin = manifest_origin(reference_manifest, reference_rows)
+    actual_origin = manifest_origin(actual_manifest, actual_rows)
 
     page_summary = {
         "page_id": reference_manifest.get("page_id"),
         "page_name": reference_manifest.get("page_name"),
+        "reference_origin": reference_origin,
+        "actual_origin": actual_origin,
         "matched_nodes": 0,
         "missing_nodes": 0,
         "extra_nodes": 0,
@@ -74,6 +103,7 @@ def build_diff(reference_manifest, actual_manifest):
         "rotation_mismatches": 0,
         "bbox_critical_mismatches": 0,
         "parent_mismatches": 0,
+        "parent_uncomparable_nodes": 0,
     }
 
     diffs = []
@@ -93,11 +123,13 @@ def build_diff(reference_manifest, actual_manifest):
             continue
 
         page_summary["matched_nodes"] += 1
-        bbox = bbox_diff(ref, actual)
+        bbox = bbox_diff(ref, actual, reference_origin, actual_origin)
         bbox_status = classify_bbox(bbox, ref.get("comparison_level"))
         flip_x_mismatch = bool(ref.get("flip_x")) != bool(actual.get("flip_x"))
         flip_y_mismatch = bool(ref.get("flip_y")) != bool(actual.get("flip_y"))
-        parent_mismatch = (ref.get("reference_parent_id") or "") != (actual.get("reference_parent_id") or "")
+        actual_reference_parent_id = actual.get("reference_parent_id") or ""
+        parent_comparable = bool(actual_reference_parent_id)
+        parent_mismatch = parent_comparable and ((ref.get("reference_parent_id") or "") != actual_reference_parent_id)
         rotation = rotation_delta(ref, actual)
         rotation_status = classify_rotation(rotation)
 
@@ -109,6 +141,8 @@ def build_diff(reference_manifest, actual_manifest):
             page_summary["bbox_critical_mismatches"] += 1
         if parent_mismatch:
             page_summary["parent_mismatches"] += 1
+        if not parent_comparable:
+            page_summary["parent_uncomparable_nodes"] += 1
 
         diff_row = {
             "reference_node_id": ref.get("reference_node_id"),
@@ -122,6 +156,7 @@ def build_diff(reference_manifest, actual_manifest):
             "flip_y_mismatch": flip_y_mismatch,
             "rotation_delta": rotation,
             "rotation_status": rotation_status,
+            "parent_comparable": parent_comparable,
             "parent_mismatch": parent_mismatch,
         }
         diffs.append(diff_row)
@@ -148,6 +183,8 @@ def build_diff(reference_manifest, actual_manifest):
             flip_counter["flip_x_mismatch"] += 1
         if row.get("parent_mismatch"):
             flip_counter["parent_mismatch"] += 1
+        if not row.get("parent_comparable", True):
+            flip_counter["parent_uncomparable"] += 1
     for key, count in flip_counter.items():
         pattern_summary.append({"pattern": key, "count": count})
 
