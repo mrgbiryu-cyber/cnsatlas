@@ -1162,7 +1162,7 @@ async function renderFigmaReplayBundle(bundle) {
   rootFrame.strokeWeight = 1;
 
   const documentNode = bundle.document;
-  const replayOrigin = { ...rootBounds, pageId: bundle.node_id || "" };
+  const replayOrigin = Object.assign({}, rootBounds, { pageId: bundle.node_id || "" });
   if (documentNode && documentNode.type === "FRAME") {
     for (const child of documentNode.children || []) {
       await renderReplayNode(child, rootFrame, replayOrigin, bundle);
