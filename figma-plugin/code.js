@@ -21,6 +21,9 @@ const FONT_FALLBACKS = {
 let fontLoaded = false;
 const fontAvailability = new Map();
 let activeRenderMode = "read-first";
+let replayDebugState = {
+  skipped_nodes: [],
+};
 
 figma.showUI(__html__, {
   width: 420,
@@ -72,6 +75,48 @@ function clearPreviousVisualTests() {
       child.remove();
     }
   }
+}
+
+function resetReplayDebugState() {
+  replayDebugState = {
+    skipped_nodes: [],
+  };
+}
+
+function pushSkippedReplayNode(node, origin, reason) {
+  if (!node) {
+    return;
+  }
+  const bounds = getReplayBounds(node) || { x: 0, y: 0, width: 0, height: 0 };
+  const fills = node.fills || [];
+  let fillType = "";
+  let fillOpacity = "";
+  let fillColor = "";
+  if (fills.length > 0 && fills[0]) {
+    const fill = fills[0];
+    fillType = fill.type || "";
+    const color = fill.color || {};
+    const opacity = typeof fill.opacity === "number"
+      ? fill.opacity
+      : (typeof color.a === "number" ? color.a : "");
+    fillOpacity = opacity === "" ? "" : String(opacity);
+    if (fill.type === "SOLID") {
+      fillColor = `${color.r || 0},${color.g || 0},${color.b || 0}`;
+    }
+  }
+  replayDebugState.skipped_nodes.push({
+    reference_node_id: node.id || "",
+    reference_parent_id: origin && origin.referenceParentId ? origin.referenceParentId : "",
+    node_type: node.type || "",
+    node_name: node.name || "",
+    reason,
+    source_is_clip_like: Boolean(origin && origin.sourceIsClipLike),
+    bbox_absolute: bounds,
+    page_bounds_hint: origin ? { x: origin.x, y: origin.y, width: origin.width, height: origin.height } : null,
+    fill_type: fillType,
+    fill_opacity: fillOpacity,
+    fill_color: fillColor,
+  });
 }
 
 function isVectorHeavyMode() {
@@ -1018,6 +1063,7 @@ function exportActualManifest() {
     by_replay_role: {},
     render_flip_y_true: 0,
     source_clip_like_true: 0,
+    skipped_node_count: replayDebugState.skipped_nodes.length,
   };
   for (const row of rows) {
     const referenceType = row.reference_type || "";
@@ -1039,6 +1085,9 @@ function exportActualManifest() {
     generated_at: new Date().toISOString(),
     root_actual_node_id: root.id,
     summary,
+    debug: {
+      skipped_nodes: replayDebugState.skipped_nodes,
+    },
     nodes: rows,
   };
 }
@@ -1288,6 +1337,7 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
   const currentSourceTransform = multiplyAffine(origin.sourceTransform || identityAffine(), getNodeRelativeTransform(node));
   const sourceIsClipLike = isClipLikeReplayNode(node);
   if (node.type === "VECTOR" && origin.sourceIsClipLike && isFullPageBlackOverlayVector(node, origin)) {
+    pushSkippedReplayNode(node, origin, "skip_full_page_clip_overlay_vector");
     return;
   }
   const currentNodeOrigin = Object.assign({}, origin, {
@@ -1333,6 +1383,7 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
 async function renderFigmaReplayBundle(bundle) {
   await ensureFontLoaded();
   clearPreviousVisualTests();
+  resetReplayDebugState();
 
   const rootBounds = computeReplayRootBounds(bundle.document);
   const rootFrame = figma.createFrame();
