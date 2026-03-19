@@ -424,6 +424,9 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
 }
 
 function base64ToBytes(base64) {
+  if (typeof figma !== "undefined" && typeof figma.base64Decode === "function") {
+    return figma.base64Decode(base64);
+  }
   if (typeof atob === "function") {
     const binary = atob(base64);
     const bytes = new Uint8Array(binary.length);
