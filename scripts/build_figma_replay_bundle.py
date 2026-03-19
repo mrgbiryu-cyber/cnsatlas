@@ -44,6 +44,24 @@ def build_bundle(page_json_path: Path, assets_dir: Path):
             "base64": base64.b64encode(asset_path.read_bytes()).decode("ascii"),
         }
 
+    page_image = None
+    page_png_path = page_json_path.with_suffix(".png")
+    if page_png_path.exists():
+        png_bytes = page_png_path.read_bytes()
+        if png_bytes[:8] == b"\x89PNG\r\n\x1a\n":
+            width = int.from_bytes(png_bytes[16:20], "big")
+            height = int.from_bytes(png_bytes[20:24], "big")
+        else:
+            width = None
+            height = None
+        page_image = {
+            "filename": page_png_path.name,
+            "mime_type": "image/png",
+            "width": width,
+            "height": height,
+            "base64": base64.b64encode(png_bytes).decode("ascii"),
+        }
+
     bundle = {
         "kind": "figma-replay-bundle",
         "source_file": page_json_path.name,
@@ -53,6 +71,7 @@ def build_bundle(page_json_path: Path, assets_dir: Path):
         "last_modified": page_data.get("lastModified"),
         "version": page_data.get("version"),
         "document": document,
+        "page_image": page_image,
         "assets": assets,
         "missing_assets": missing_assets,
     }
