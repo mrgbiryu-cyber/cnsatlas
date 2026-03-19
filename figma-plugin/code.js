@@ -694,6 +694,44 @@ function hasVisibleStroke(node) {
   return false;
 }
 
+function isNear(value, target, tolerance) {
+  return Math.abs(value - target) <= tolerance;
+}
+
+function isFullPageBlackOverlayVector(node, origin) {
+  if (!node || node.type !== "VECTOR" || !origin) {
+    return false;
+  }
+  const fills = node.fills || [];
+  if (fills.length !== 1) {
+    return false;
+  }
+  const fill = fills[0];
+  if (!fill || fill.type !== "SOLID" || fill.visible === false) {
+    return false;
+  }
+  const color = fill.color || {};
+  const opacity = typeof fill.opacity === "number"
+    ? fill.opacity
+    : (typeof color.a === "number" ? color.a : 1);
+  if (opacity < 0.95) {
+    return false;
+  }
+  if ((color.r || 0) > 0.02 || (color.g || 0) > 0.02 || (color.b || 0) > 0.02) {
+    return false;
+  }
+  const bounds = getReplayBounds(node);
+  if (!bounds) {
+    return false;
+  }
+  return (
+    isNear(bounds.x, origin.x, 1) &&
+    isNear(bounds.y, origin.y, 1) &&
+    isNear(bounds.width, origin.width, 1) &&
+    isNear(bounds.height, origin.height, 1)
+  );
+}
+
 function boundsRelativeToOrigin(bounds, origin) {
   return {
     x: bounds.x - origin.x,
@@ -1248,14 +1286,18 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
   }
 
   const currentSourceTransform = multiplyAffine(origin.sourceTransform || identityAffine(), getNodeRelativeTransform(node));
+  const sourceIsClipLike = isClipLikeReplayNode(node);
+  if (node.type === "VECTOR" && origin.sourceIsClipLike && isFullPageBlackOverlayVector(node, origin)) {
+    return;
+  }
   const currentNodeOrigin = Object.assign({}, origin, {
     sourceTransform: currentSourceTransform,
-    sourceIsClipLike: isClipLikeReplayNode(node),
+    sourceIsClipLike,
   });
   const nextOriginBase = Object.assign({}, origin, {
     referenceParentId: node.id || origin.referenceParentId || "",
     sourceTransform: currentSourceTransform,
-    sourceIsClipLike: isClipLikeReplayNode(node),
+    sourceIsClipLike,
   });
 
   switch (node.type) {
