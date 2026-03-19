@@ -626,6 +626,10 @@ function annotateReplayNode(renderedNode, sourceNode, context, role) {
   setReplayPluginData(renderedNode, "replay_page_id", pageId || "");
   setReplayPluginData(renderedNode, "replay_role", role || "render-node");
   setReplayPluginData(renderedNode, "comparison_level", inferReplayComparisonLevel(sourceNode));
+  const rt = getNodeRelativeTransform(sourceNode);
+  setReplayPluginData(renderedNode, "reference_flip_x", rt[0][0] < 0 ? "true" : "false");
+  setReplayPluginData(renderedNode, "reference_flip_y", rt[1][1] < 0 ? "true" : "false");
+  setReplayPluginData(renderedNode, "reference_rotation_hint", String(transformRotationDegrees(rt)));
 }
 
 function getReplayBounds(node) {
@@ -775,6 +779,51 @@ function computePluginNodeBounds(node) {
   };
 }
 
+function unionBounds(boundsList) {
+  if (!boundsList.length) {
+    return null;
+  }
+  let minX = boundsList[0].x;
+  let minY = boundsList[0].y;
+  let maxX = boundsList[0].x + boundsList[0].width;
+  let maxY = boundsList[0].y + boundsList[0].height;
+  for (let i = 1; i < boundsList.length; i += 1) {
+    const bounds = boundsList[i];
+    minX = Math.min(minX, bounds.x);
+    minY = Math.min(minY, bounds.y);
+    maxX = Math.max(maxX, bounds.x + bounds.width);
+    maxY = Math.max(maxY, bounds.y + bounds.height);
+  }
+  return {
+    x: minX,
+    y: minY,
+    width: maxX - minX,
+    height: maxY - minY,
+  };
+}
+
+function computeRenderableBounds(node) {
+  if (!node || typeof node !== "object") {
+    return computePluginNodeBounds(node);
+  }
+  const referenceType = getReplayPluginData(node, "reference_type");
+  const replayRole = getReplayPluginData(node, "replay_role");
+  if (referenceType === "VECTOR" && replayRole === "render-node" && "children" in node && Array.isArray(node.children) && node.children.length > 0) {
+    const childBounds = [];
+    for (const child of node.children) {
+      const bounds = computePluginNodeBounds(child);
+      if (bounds && bounds.width > 0 && bounds.height > 0) {
+        childBounds.push(bounds);
+      }
+    }
+    const union = unionBounds(childBounds);
+    if (union) {
+      return union;
+    }
+  }
+  return computePluginNodeBounds(node);
+}
+
 function normalizeWhitespace(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
 }
@@ -807,12 +856,18 @@ function collectActualManifestNodes(current, rows) {
   }
   const referenceNodeId = getReplayPluginData(current, "reference_node_id");
   if (referenceNodeId) {
-    const bounds = computePluginNodeBounds(current);
-    const parentBounds = current.parent ? computePluginNodeBounds(current.parent) : { x: 0, y: 0 };
+    const bounds = computeRenderableBounds(current);
+    const parentBounds = current.parent ? computeRenderableBounds(current.parent) : { x: 0, y: 0 };
     const relativeTransform = current.relativeTransform || identityAffine();
     const composedTransform = computeNodeComposedTransform(current);
     const fills = "fills" in current && Array.isArray(current.fills) ? current.fills : [];
     const strokes = "strokes" in current && Array.isArray(current.strokes) ? current.strokes : [];
+    const referenceFlipX = getReplayPluginData(current, "reference_flip_x");
+    const referenceFlipY = getReplayPluginData(current, "reference_flip_y");
+    const referenceRotationHint = getReplayPluginData(current, "reference_rotation_hint");
+    const effectiveFlipX = referenceFlipX ? referenceFlipX === "true" : composedTransform[0][0] < 0;
+    const effectiveFlipY = referenceFlipY ? referenceFlipY === "true" : composedTransform[1][1] < 0;
+    const effectiveRotationHint = referenceRotationHint ? Number(referenceRotationHint || "0") : transformRotationDegrees(composedTransform);
     rows.push({
       actual_node_id: current.id,
       actual_parent_id: current.parent ? current.parent.id : "",
@@ -834,9 +889,9 @@ function collectActualManifestNodes(current, rows) {
       },
       relative_transform: relativeTransform,
       composed_transform: composedTransform,
-      flip_x: composedTransform[0][0] < 0,
-      flip_y: composedTransform[1][1] < 0,
-      rotation_hint: transformRotationDegrees(composedTransform),
+      flip_x: effectiveFlipX,
+      flip_y: effectiveFlipY,
+      rotation_hint: effectiveRotationHint,
       has_fill: fills.length > 0,
       has_stroke: strokes.length > 0,
       has_image_fill: fills.some((fill) => fill && fill.type === "IMAGE"),
