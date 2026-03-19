@@ -31,10 +31,16 @@ figma.ui.onmessage = async (message) => {
     try {
       const payload = JSON.parse(message.jsonText);
       activeRenderMode = message.renderMode === "vector-heavy" ? "vector-heavy" : "read-first";
-      await renderIntermediatePayload(payload);
+      if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
+        await renderFigmaReplayBundle(payload);
+      } else {
+        await renderIntermediatePayload(payload);
+      }
       figma.ui.postMessage({
         type: "render-success",
-        message: `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
+        message: payload && payload.kind === "figma-replay-bundle"
+          ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
+          : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
       });
     } catch (error) {
       figma.ui.postMessage({
@@ -44,6 +50,14 @@ figma.ui.onmessage = async (message) => {
     }
   }
 };
+
+function clearPreviousVisualTests() {
+  for (const child of [...figma.currentPage.children]) {
+    if (child.name && (child.name.startsWith("CNS Atlas Visual Test") || child.name.startsWith("CNS Atlas Replay"))) {
+      child.remove();
+    }
+  }
+}
 
 function isVectorHeavyMode() {
   return activeRenderMode === "vector-heavy";
@@ -98,6 +112,38 @@ async function resolveFontName(textStyle) {
     if (fontAvailability.has(key)) {
       const cached = fontAvailability.get(key);
       if (cached) return cached;
+      continue;
+    }
+    try {
+      await figma.loadFontAsync(font);
+      fontAvailability.set(key, font);
+      return font;
+    } catch (error) {
+      fontAvailability.set(key, null);
+    }
+  }
+  return DEFAULT_FONT;
+}
+
+async function resolveFigmaFontName(style) {
+  const family = style && style.fontFamily ? style.fontFamily : DEFAULT_FONT.family;
+  const fontStyle = style && style.fontStyle ? style.fontStyle : DEFAULT_FONT.style;
+  const postScript = style && style.fontPostScriptName ? style.fontPostScriptName : null;
+  const candidates = [];
+  candidates.push({ family, style: fontStyle });
+  if (postScript && postScript.toLowerCase().includes("bold")) {
+    candidates.push({ family, style: "Bold" });
+  }
+  candidates.push(...(FONT_FALLBACKS[family] || []));
+  candidates.push(DEFAULT_FONT);
+
+  for (const font of candidates) {
+    const key = `${font.family}::${font.style}`;
+    if (fontAvailability.has(key)) {
+      const cached = fontAvailability.get(key);
+      if (cached) {
+        return cached;
+      }
       continue;
     }
     try {
@@ -458,11 +504,7 @@ function buildChildrenMap(candidates) {
 async function renderIntermediatePayload(payload) {
   await ensureFontLoaded();
 
-  for (const child of [...figma.currentPage.children]) {
-    if (child.name && child.name.startsWith("CNS Atlas Visual Test")) {
-      child.remove();
-    }
-  }
+  clearPreviousVisualTests();
 
   const rootFrame = figma.createFrame();
   rootFrame.name = `CNS Atlas Visual Test (${activeRenderMode})`;
@@ -495,6 +537,280 @@ async function renderIntermediatePayload(payload) {
   }
 
   rootFrame.resize(Math.max(cursorX - SLIDE_GAP, 1), maxHeight);
+  figma.currentPage.appendChild(rootFrame);
+  figma.viewport.scrollAndZoomIntoView([rootFrame]);
+}
+
+function colorToSvg(color, opacity) {
+  const r = Math.round((color.r || 0) * 255);
+  const g = Math.round((color.g || 0) * 255);
+  const b = Math.round((color.b || 0) * 255);
+  const a = typeof opacity === "number" ? opacity : (typeof color.a === "number" ? color.a : 1);
+  return { rgb: `rgb(${r}, ${g}, ${b})`, opacity: a };
+}
+
+function getReplayBounds(node) {
+  return node.absoluteBoundingBox || node.absoluteRenderBounds || null;
+}
+
+function boundsRelativeToOrigin(bounds, origin) {
+  return {
+    x: bounds.x - origin.x,
+    y: bounds.y - origin.y,
+    width: Math.max(bounds.width || 1, 1),
+    height: Math.max(bounds.height || 1, 1),
+  };
+}
+
+function computeReplayRootBounds(node) {
+  const fallback = getReplayBounds(node) || { x: 0, y: 0, width: MIN_PAGE_WIDTH, height: MIN_PAGE_HEIGHT };
+  let minX = fallback.x;
+  let minY = fallback.y;
+  let maxX = fallback.x + fallback.width;
+  let maxY = fallback.y + fallback.height;
+
+  function walk(current) {
+    if (!current || typeof current !== "object") {
+      return;
+    }
+    const bounds = getReplayBounds(current);
+    if (bounds) {
+      minX = Math.min(minX, bounds.x);
+      minY = Math.min(minY, bounds.y);
+      maxX = Math.max(maxX, bounds.x + bounds.width);
+      maxY = Math.max(maxY, bounds.y + bounds.height);
+    }
+    for (const child of current.children || []) {
+      walk(child);
+    }
+  }
+
+  walk(node);
+  return { x: minX, y: minY, width: Math.max(maxX - minX, 1), height: Math.max(maxY - minY, 1) };
+}
+
+function mapReplayHorizontalAlign(value) {
+  if (value === "CENTER") return "CENTER";
+  if (value === "RIGHT") return "RIGHT";
+  if (value === "JUSTIFIED") return "JUSTIFIED";
+  return "LEFT";
+}
+
+function mapReplayVerticalAlign(value) {
+  if (value === "CENTER") return "CENTER";
+  if (value === "BOTTOM") return "BOTTOM";
+  return "TOP";
+}
+
+function buildVectorSvg(node, bounds) {
+  const fillGeometry = node.fillGeometry || [];
+  const strokeGeometry = node.strokeGeometry || [];
+  const solidFill = (node.fills || []).find((fill) => fill && fill.type === "SOLID");
+  const solidStroke = (node.strokes || []).find((stroke) => stroke && stroke.type === "SOLID");
+  const fillInfo = solidFill ? colorToSvg(solidFill.color || {}, solidFill.opacity) : null;
+  const strokeInfo = solidStroke ? colorToSvg(solidStroke.color || {}, solidStroke.opacity) : null;
+  const strokeWidth = node.strokeWeight || 1;
+  const fillRule = fillGeometry[0] && fillGeometry[0].windingRule === "NONZERO" ? "nonzero" : "evenodd";
+
+  const parts = [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${bounds.width}" height="${bounds.height}" viewBox="0 0 ${bounds.width} ${bounds.height}">`,
+  ];
+
+  for (const geometry of fillGeometry) {
+    if (!geometry.path) continue;
+    const fillAttrs = fillInfo
+      ? `fill="${fillInfo.rgb}" fill-opacity="${fillInfo.opacity}"`
+      : 'fill="none"';
+    parts.push(`<path d="${geometry.path}" ${fillAttrs} fill-rule="${fillRule}" />`);
+  }
+
+  for (const geometry of strokeGeometry) {
+    if (!geometry.path) continue;
+    const strokeAttrs = strokeInfo
+      ? `stroke="${strokeInfo.rgb}" stroke-opacity="${strokeInfo.opacity}" stroke-width="${strokeWidth}"`
+      : `stroke="rgb(0,0,0)" stroke-width="${strokeWidth}"`;
+    parts.push(`<path d="${geometry.path}" fill="none" ${strokeAttrs} />`);
+  }
+
+  parts.push("</svg>");
+  return parts.join("");
+}
+
+function findAssetBytes(bundle, imageRef) {
+  if (!bundle || !bundle.assets || !bundle.assets[imageRef]) {
+    return null;
+  }
+  return base64ToBytes(bundle.assets[imageRef].base64);
+}
+
+function createReplayContainer(node, parentNode, origin) {
+  const bounds = getReplayBounds(node);
+  if (!bounds) {
+    return parentNode;
+  }
+  const local = boundsRelativeToOrigin(bounds, origin);
+  const frame = figma.createFrame();
+  frame.name = node.name || node.type || "container";
+  frame.x = local.x;
+  frame.y = local.y;
+  frame.resize(local.width, local.height);
+  frame.fills = [];
+  frame.strokes = [];
+  frame.clipsContent = false;
+  parentNode.appendChild(frame);
+  return frame;
+}
+
+async function renderReplayText(node, parentNode, origin) {
+  const bounds = getReplayBounds(node);
+  if (!bounds) {
+    return;
+  }
+  const local = boundsRelativeToOrigin(bounds, origin);
+  const text = figma.createText();
+  text.name = node.name || "Text";
+  text.fontName = await resolveFigmaFontName(node.style || {});
+  text.characters = node.characters || "";
+  text.fontSize = node.style && node.style.fontSize ? node.style.fontSize : 12;
+  text.textAlignHorizontal = mapReplayHorizontalAlign(node.style && node.style.textAlignHorizontal);
+  text.textAlignVertical = mapReplayVerticalAlign(node.style && node.style.textAlignVertical);
+  if ((node.style && node.style.textAutoResize) === "HEIGHT") {
+    text.textAutoResize = "HEIGHT";
+    text.resize(Math.max(local.width, 12), Math.max(local.height, 16));
+  } else {
+    text.textAutoResize = "WIDTH_AND_HEIGHT";
+  }
+  if (node.style && typeof node.style.letterSpacing === "number") {
+    text.letterSpacing = { value: node.style.letterSpacing, unit: "PIXELS" };
+  }
+  if (node.style && typeof node.style.lineHeightPx === "number") {
+    text.lineHeight = { unit: "PIXELS", value: node.style.lineHeightPx };
+  }
+  text.fills = (node.fills || []).filter((fill) => fill && fill.type === "SOLID").map((fill) => ({
+    type: "SOLID",
+    color: fill.color,
+    opacity: typeof fill.opacity === "number" ? fill.opacity : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1),
+  }));
+  if (text.fills.length === 0) {
+    text.fills = [{ type: "SOLID", color: { r: 0, g: 0, b: 0 } }];
+  }
+  text.x = local.x;
+  text.y = local.y;
+  parentNode.appendChild(text);
+}
+
+function renderReplayRectangle(node, parentNode, origin, bundle) {
+  const bounds = getReplayBounds(node);
+  if (!bounds) {
+    return;
+  }
+  const local = boundsRelativeToOrigin(bounds, origin);
+  const rect = figma.createRectangle();
+  rect.name = node.name || "Rectangle";
+  rect.x = local.x;
+  rect.y = local.y;
+  rect.resize(local.width, local.height);
+  if (typeof node.cornerRadius === "number") {
+    rect.cornerRadius = node.cornerRadius;
+  }
+  const imageFill = (node.fills || []).find((fill) => fill && fill.type === "IMAGE" && fill.imageRef);
+  if (imageFill) {
+    const bytes = findAssetBytes(bundle, imageFill.imageRef);
+    if (bytes) {
+      const image = figma.createImage(bytes);
+      rect.fills = [{
+        type: "IMAGE",
+        scaleMode: imageFill.scaleMode || "FIT",
+        imageHash: image.hash,
+      }];
+    }
+  }
+  if (!rect.fills || rect.fills.length === 0) {
+    const solidFills = (node.fills || []).filter((fill) => fill && fill.type === "SOLID");
+    rect.fills = solidFills.length > 0 ? solidFills.map((fill) => ({
+      type: "SOLID",
+      color: fill.color,
+      opacity: typeof fill.opacity === "number" ? fill.opacity : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1),
+    })) : [];
+  }
+  rect.strokes = (node.strokes || []).filter((stroke) => stroke && stroke.type === "SOLID").map((stroke) => ({
+    type: "SOLID",
+    color: stroke.color,
+    opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
+  }));
+  rect.strokeWeight = node.strokeWeight || 1;
+  parentNode.appendChild(rect);
+}
+
+function renderReplayVector(node, parentNode, origin) {
+  const bounds = getReplayBounds(node);
+  if (!bounds) {
+    return;
+  }
+  const local = boundsRelativeToOrigin(bounds, origin);
+  const svg = buildVectorSvg(node, local);
+  const wrapper = createTransparentFrame(local, node.name || "Vector");
+  parentNode.appendChild(wrapper);
+  const svgNode = figma.createNodeFromSvg(svg);
+  svgNode.x = 0;
+  svgNode.y = 0;
+  wrapper.appendChild(svgNode);
+}
+
+async function renderReplayNode(node, parentNode, origin, bundle) {
+  if (!node || typeof node !== "object") {
+    return;
+  }
+
+  switch (node.type) {
+    case "TEXT":
+      await renderReplayText(node, parentNode, origin);
+      return;
+    case "VECTOR":
+      renderReplayVector(node, parentNode, origin);
+      return;
+    case "RECTANGLE":
+      renderReplayRectangle(node, parentNode, origin, bundle);
+      return;
+    case "FRAME":
+    case "GROUP": {
+      const container = createReplayContainer(node, parentNode, origin);
+      const nextOrigin = getReplayBounds(node) || origin;
+      for (const child of node.children || []) {
+        await renderReplayNode(child, container, nextOrigin, bundle);
+      }
+      return;
+    }
+    default:
+      for (const child of node.children || []) {
+        await renderReplayNode(child, parentNode, origin, bundle);
+      }
+  }
+}
+
+async function renderFigmaReplayBundle(bundle) {
+  await ensureFontLoaded();
+  clearPreviousVisualTests();
+
+  const rootBounds = computeReplayRootBounds(bundle.document);
+  const rootFrame = figma.createFrame();
+  rootFrame.name = `CNS Atlas Replay (${bundle.page_name || bundle.node_id || "page"})`;
+  rootFrame.x = 0;
+  rootFrame.y = 0;
+  rootFrame.resize(rootBounds.width, rootBounds.height);
+  rootFrame.fills = [];
+  rootFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
+  rootFrame.strokeWeight = 1;
+
+  const documentNode = bundle.document;
+  if (documentNode && documentNode.type === "FRAME") {
+    for (const child of documentNode.children || []) {
+      await renderReplayNode(child, rootFrame, rootBounds, bundle);
+    }
+  } else {
+    await renderReplayNode(documentNode, rootFrame, rootBounds, bundle);
+  }
+
   figma.currentPage.appendChild(rootFrame);
   figma.viewport.scrollAndZoomIntoView([rootFrame]);
 }

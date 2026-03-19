@@ -107,8 +107,7 @@
     <div class="panel">
       <p class="hint">
         이 플러그인은 <code>PPTX</code> 파일이 아니라
-        <code>docs/ppt-intermediate-candidates-12-19-29.json</code> 같은
-        intermediate JSON 파일만 받습니다.
+        <code>intermediate JSON</code> 또는 <code>figma replay bundle JSON</code>만 받습니다.
       </p>
       <div class="row">
         <input id="fileInput" type="file" accept=".json,application/json" />
@@ -158,20 +157,44 @@
         summary.textContent = text;
       }
 
-      function validatePayload(payload) {
-        if (!payload || !Array.isArray(payload.pages)) {
-          throw new Error("pages 배열이 없는 intermediate JSON입니다.");
+      function getPayloadKind(payload) {
+        if (payload && Array.isArray(payload.pages)) {
+          return "intermediate";
         }
-        return payload;
+        if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
+          return "figma-replay-bundle";
+        }
+        throw new Error("지원하지 않는 JSON 형식입니다. intermediate JSON 또는 figma replay bundle JSON을 넣어야 합니다.");
       }
 
-      function summarizePayload(payload, fileName) {
-        const slides = payload.pages.map((page) => `- Slide ${page.slide_no}: ${page.title_or_label || "untitled"} (${page.candidates.length} candidates)`);
+      function validatePayload(payload) {
+        return {
+          payload,
+          kind: getPayloadKind(payload)
+        };
+      }
+
+      function summarizePayload(payload, fileName, kind) {
+        if (kind === "intermediate") {
+          const slides = payload.pages.map((page) => `- Slide ${page.slide_no}: ${page.title_or_label || "untitled"} (${page.candidates.length} candidates)`);
+          return [
+            `파일: ${fileName || "직접 입력"}`,
+            `형식: intermediate JSON`,
+            `슬라이드 수: ${payload.pages.length}`,
+            "",
+            ...slides
+          ].join("\n");
+        }
+
+        const assetCount = payload.assets ? Object.keys(payload.assets).length : 0;
+        const missingAssets = Array.isArray(payload.missing_assets) ? payload.missing_assets.length : 0;
         return [
           `파일: ${fileName || "직접 입력"}`,
-          `슬라이드 수: ${payload.pages.length}`,
-          "",
-          ...slides
+          `형식: figma replay bundle`,
+          `페이지: ${payload.page_name || "unknown"}`,
+          `노드 ID: ${payload.node_id || "unknown"}`,
+          `에셋 수: ${assetCount}`,
+          `누락 에셋 수: ${missingAssets}`
         ].join("\n");
       }
 
@@ -188,11 +211,11 @@
           throw new Error("PPTX 바이너리 파일입니다. intermediate JSON 파일을 선택해야 합니다.");
         }
 
-        const payload = validatePayload(JSON.parse(trimmed));
-        loadedJsonText = JSON.stringify(payload);
-        setSummary(summarizePayload(payload, fileName));
-        setStatus(`${fileName || "직접 입력"} 검증 완료`);
-        updateRenderAvailability();
+          const result = validatePayload(JSON.parse(trimmed));
+          loadedJsonText = JSON.stringify(result.payload);
+          setSummary(summarizePayload(result.payload, fileName, result.kind));
+          setStatus(`${fileName || "직접 입력"} 검증 완료`);
+          updateRenderAvailability();
       }
 
       fileInput.addEventListener("change", async (event) => {
@@ -234,9 +257,13 @@
         }
 
         try {
-          const payload = validatePayload(JSON.parse(sourceText));
+          const result = validatePayload(JSON.parse(sourceText));
+          const payload = result.payload;
           const selectedMode = renderModeInputs.find((input) => input.checked)?.value || "read-first";
-          setStatus(`렌더링 중... (${payload.pages.length} slides)`);
+          const renderTarget = result.kind === "intermediate"
+            ? `${payload.pages.length} slides`
+            : `${payload.page_name || "1 page"} replay`;
+          setStatus(`렌더링 중... (${renderTarget})`);
           parent.postMessage(
             {
               pluginMessage: {
