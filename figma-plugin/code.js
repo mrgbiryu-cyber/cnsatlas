@@ -112,7 +112,7 @@ function pushSkippedReplayNode(node, origin, reason) {
     reason,
     source_is_clip_like: Boolean(origin && origin.sourceIsClipLike),
     bbox_absolute: bounds,
-    page_bounds_hint: origin ? { x: origin.x, y: origin.y, width: origin.width, height: origin.height } : null,
+    page_bounds_hint: origin ? (origin.pageBounds || { x: origin.x, y: origin.y, width: origin.width, height: origin.height }) : null,
     fill_type: fillType,
     fill_opacity: fillOpacity,
     fill_color: fillColor,
@@ -769,11 +769,12 @@ function isFullPageBlackOverlayVector(node, origin) {
   if (!bounds) {
     return false;
   }
+  const pageBounds = origin.pageBounds || origin;
   return (
-    isNear(bounds.x, origin.x, 1) &&
-    isNear(bounds.y, origin.y, 1) &&
-    isNear(bounds.width, origin.width, 1) &&
-    isNear(bounds.height, origin.height, 1)
+    isNear(bounds.x, pageBounds.x, 1) &&
+    isNear(bounds.y, pageBounds.y, 1) &&
+    isNear(bounds.width, pageBounds.width, 1) &&
+    isNear(bounds.height, pageBounds.height, 1)
   );
 }
 
@@ -1400,6 +1401,7 @@ async function renderFigmaReplayBundle(bundle) {
     pageId: bundle.node_id || "",
     referenceParentId: documentNode && documentNode.id ? documentNode.id : "",
     sourceTransform: identityAffine(),
+    pageBounds: getReplayBounds(documentNode) || rootBounds,
   });
   if (documentNode && documentNode.type === "FRAME") {
     for (const child of documentNode.children || []) {
