@@ -626,10 +626,21 @@ function annotateReplayNode(renderedNode, sourceNode, context, role) {
   setReplayPluginData(renderedNode, "replay_page_id", pageId || "");
   setReplayPluginData(renderedNode, "replay_role", role || "render-node");
   setReplayPluginData(renderedNode, "comparison_level", inferReplayComparisonLevel(sourceNode));
-  const rt = getNodeRelativeTransform(sourceNode);
-  setReplayPluginData(renderedNode, "reference_flip_x", rt[0][0] < 0 ? "true" : "false");
-  setReplayPluginData(renderedNode, "reference_flip_y", rt[1][1] < 0 ? "true" : "false");
-  setReplayPluginData(renderedNode, "reference_rotation_hint", String(transformRotationDegrees(rt)));
+  if (context && context.renderFlipX !== undefined) {
+    setReplayPluginData(renderedNode, "render_flip_x", context.renderFlipX ? "true" : "false");
+  }
+  if (context && context.renderFlipY !== undefined) {
+    setReplayPluginData(renderedNode, "render_flip_y", context.renderFlipY ? "true" : "false");
+  }
+  if (context && context.renderRotationHint !== undefined) {
+    setReplayPluginData(renderedNode, "render_rotation_hint", String(context.renderRotationHint));
+  }
+  if (context && context.sourceTransform) {
+    setReplayPluginData(renderedNode, "render_transform_signature", transformSignatureFromMatrix(context.sourceTransform));
+  }
+  if (context && context.sourceIsClipLike !== undefined) {
+    setReplayPluginData(renderedNode, "source_is_clip_like", context.sourceIsClipLike ? "true" : "false");
+  }
 }
 
 function getReplayBounds(node) {
@@ -638,7 +649,12 @@ function getReplayBounds(node) {
 
 function shouldSkipReplayNode(node) {
   const name = node && node.name ? String(node.name) : "";
-  return name.toLowerCase().includes("clip path");
+  return false;
+}
+
+function isClipLikeReplayNode(node) {
+  const name = node && node.name ? String(node.name).toLowerCase() : "";
+  return name.includes("clip path") || name.includes("mask");
 }
 
 function hasVisibleSolidPaint(node) {
@@ -741,10 +757,25 @@ function getNodeRelativeTransform(node) {
   return node && node.relativeTransform ? node.relativeTransform : identityAffine();
 }
 
+function getTransformSigns(matrix) {
+  const a = matrix[0][0];
+  const d = matrix[1][1];
+  return {
+    flipX: a < 0,
+    flipY: d < 0,
+    rotation: transformRotationDegrees(matrix),
+  };
+}
+
 function transformRotationDegrees(matrix) {
   const a = matrix[0][0];
   const b = matrix[1][0];
   return Math.round((Math.atan2(b, a) * 180) / Math.PI);
+}
+
+function transformSignatureFromMatrix(matrix) {
+  const signs = getTransformSigns(matrix);
+  return `${signs.flipX ? "-" : "+"}:${signs.flipY ? "-" : "+"}:R${signs.rotation}`;
 }
 
 function computeNodeComposedTransform(node) {
@@ -862,12 +893,14 @@ function collectActualManifestNodes(current, rows) {
     const composedTransform = computeNodeComposedTransform(current);
     const fills = "fills" in current && Array.isArray(current.fills) ? current.fills : [];
     const strokes = "strokes" in current && Array.isArray(current.strokes) ? current.strokes : [];
-    const referenceFlipX = getReplayPluginData(current, "reference_flip_x");
-    const referenceFlipY = getReplayPluginData(current, "reference_flip_y");
-    const referenceRotationHint = getReplayPluginData(current, "reference_rotation_hint");
-    const effectiveFlipX = referenceFlipX ? referenceFlipX === "true" : composedTransform[0][0] < 0;
-    const effectiveFlipY = referenceFlipY ? referenceFlipY === "true" : composedTransform[1][1] < 0;
-    const effectiveRotationHint = referenceRotationHint ? Number(referenceRotationHint || "0") : transformRotationDegrees(composedTransform);
+    const renderFlipX = getReplayPluginData(current, "render_flip_x");
+    const renderFlipY = getReplayPluginData(current, "render_flip_y");
+    const renderRotationHint = getReplayPluginData(current, "render_rotation_hint");
+    const renderTransformSignature = getReplayPluginData(current, "render_transform_signature");
+    const sourceIsClipLike = getReplayPluginData(current, "source_is_clip_like");
+    const effectiveFlipX = renderFlipX ? renderFlipX === "true" : composedTransform[0][0] < 0;
+    const effectiveFlipY = renderFlipY ? renderFlipY === "true" : composedTransform[1][1] < 0;
+    const effectiveRotationHint = renderRotationHint ? Number(renderRotationHint || "0") : transformRotationDegrees(composedTransform);
     rows.push({
       actual_node_id: current.id,
       actual_parent_id: current.parent ? current.parent.id : "",
@@ -901,6 +934,12 @@ function collectActualManifestNodes(current, rows) {
         ? buildTextLineBreakSignature(current.characters || "", bounds.width)
         : "",
       structure_key: `${getReplayPluginData(current, "reference_parent_id") || ""}|${current.type}|${getReplayPluginData(current, "comparison_level") || ""}`,
+      debug_render_flip_x: renderFlipX || "",
+      debug_render_flip_y: renderFlipY || "",
+      debug_render_rotation_hint: renderRotationHint || "",
+      debug_render_transform_signature: renderTransformSignature || "",
+      debug_source_is_clip_like: sourceIsClipLike === "true",
+      debug_child_count: "children" in current && Array.isArray(current.children) ? current.children.length : 0,
     });
   }
   if ("children" in current && Array.isArray(current.children)) {
@@ -934,11 +973,34 @@ function exportActualManifest() {
   const rows = [];
   collectActualManifestNodes(root, rows);
   const pageId = rows[0] ? rows[0].page_id : "";
+  const summary = {
+    node_count: rows.length,
+    by_reference_type: {},
+    by_node_type: {},
+    by_replay_role: {},
+    render_flip_y_true: 0,
+    source_clip_like_true: 0,
+  };
+  for (const row of rows) {
+    const referenceType = row.reference_type || "";
+    const nodeType = row.node_type || "";
+    const replayRole = row.replay_role || "";
+    summary.by_reference_type[referenceType] = (summary.by_reference_type[referenceType] || 0) + 1;
+    summary.by_node_type[nodeType] = (summary.by_node_type[nodeType] || 0) + 1;
+    summary.by_replay_role[replayRole] = (summary.by_replay_role[replayRole] || 0) + 1;
+    if (row.flip_y) {
+      summary.render_flip_y_true += 1;
+    }
+    if (row.debug_source_is_clip_like) {
+      summary.source_clip_like_true += 1;
+    }
+  }
   return {
     kind: "actual-manifest",
     page_id: pageId,
     generated_at: new Date().toISOString(),
     root_actual_node_id: root.id,
+    summary,
     nodes: rows,
   };
 }
@@ -970,9 +1032,9 @@ function buildVectorSvg(node, bounds) {
     `<svg xmlns="http://www.w3.org/2000/svg" width="${bounds.width}" height="${bounds.height}" viewBox="0 0 ${bounds.width} ${bounds.height}">`,
   ];
 
-  const rt = node.relativeTransform || [[1, 0, 0], [0, 1, 0]];
-  const scaleX = rt[0] && typeof rt[0][0] === "number" ? rt[0][0] : 1;
-  const scaleY = rt[1] && typeof rt[1][1] === "number" ? rt[1][1] : 1;
+  const renderTransform = node.renderTransform || node.relativeTransform || [[1, 0, 0], [0, 1, 0]];
+  const scaleX = renderTransform[0] && typeof renderTransform[0][0] === "number" ? renderTransform[0][0] : 1;
+  const scaleY = renderTransform[1] && typeof renderTransform[1][1] === "number" ? renderTransform[1][1] : 1;
   let transformParts = [];
   if (scaleX < 0) {
     transformParts.push(`translate(${bounds.width} 0) scale(-1 1)`);
@@ -1157,13 +1219,24 @@ function renderReplayVector(node, parentNode, origin) {
     return;
   }
   const local = boundsRelativeToOrigin(bounds, origin);
-  const svg = buildVectorSvg(node, local);
+  const signs = getTransformSigns(origin.sourceTransform || identityAffine());
+  const vectorNode = Object.assign({}, node, {
+    renderTransform: [
+      [signs.flipX ? -1 : 1, 0, 0],
+      [0, signs.flipY ? -1 : 1, 0],
+    ],
+  });
+  const svg = buildVectorSvg(vectorNode, local);
   const svgNode = figma.createNodeFromSvg(svg);
   svgNode.name = node.name || "Vector";
   svgNode.x = local.x;
   svgNode.y = local.y;
   parentNode.appendChild(svgNode);
-  annotateReplayNode(svgNode, node, origin, "render-node");
+  annotateReplayNode(svgNode, node, Object.assign({}, origin, {
+    renderFlipX: signs.flipX,
+    renderFlipY: signs.flipY,
+    renderRotationHint: signs.rotation,
+  }), "render-node");
 }
 
 async function renderReplayNode(node, parentNode, origin, bundle) {
@@ -1174,35 +1247,43 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
     return;
   }
 
+  const currentSourceTransform = multiplyAffine(origin.sourceTransform || identityAffine(), getNodeRelativeTransform(node));
+  const currentNodeOrigin = Object.assign({}, origin, {
+    sourceTransform: currentSourceTransform,
+    sourceIsClipLike: isClipLikeReplayNode(node),
+  });
+  const nextOriginBase = Object.assign({}, origin, {
+    referenceParentId: node.id || origin.referenceParentId || "",
+    sourceTransform: currentSourceTransform,
+    sourceIsClipLike: isClipLikeReplayNode(node),
+  });
+
   switch (node.type) {
     case "TEXT":
-      await renderReplayText(node, parentNode, origin);
+      await renderReplayText(node, parentNode, currentNodeOrigin);
       return;
     case "VECTOR":
-      renderReplayVector(node, parentNode, origin);
+      renderReplayVector(node, parentNode, currentNodeOrigin);
       return;
     case "RECTANGLE":
-      renderReplayRectangle(node, parentNode, origin, bundle);
+      renderReplayRectangle(node, parentNode, currentNodeOrigin, bundle);
       return;
     case "FRAME":
-      if (hasVisibleSolidPaint(node) || hasVisibleStroke(node)) {
-        createReplayFrameShell(node, parentNode, origin);
+      if (!isClipLikeReplayNode(node) && (hasVisibleSolidPaint(node) || hasVisibleStroke(node))) {
+        createReplayFrameShell(node, parentNode, currentNodeOrigin);
       }
-      var frameChildOrigin = Object.assign({}, origin, { referenceParentId: node.id || origin.referenceParentId || "" });
       for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, frameChildOrigin, bundle);
+        await renderReplayNode(child, parentNode, nextOriginBase, bundle);
       }
       return;
     case "GROUP":
-      var groupChildOrigin = Object.assign({}, origin, { referenceParentId: node.id || origin.referenceParentId || "" });
       for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, groupChildOrigin, bundle);
+        await renderReplayNode(child, parentNode, nextOriginBase, bundle);
       }
       return;
     default:
-      var childOrigin = Object.assign({}, origin, { referenceParentId: node.id || origin.referenceParentId || "" });
       for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, childOrigin, bundle);
+        await renderReplayNode(child, parentNode, nextOriginBase, bundle);
       }
   }
 }
@@ -1222,7 +1303,11 @@ async function renderFigmaReplayBundle(bundle) {
   rootFrame.strokeWeight = 1;
 
   const documentNode = bundle.document;
-  const replayOrigin = Object.assign({}, rootBounds, { pageId: bundle.node_id || "", referenceParentId: documentNode && documentNode.id ? documentNode.id : "" });
+  const replayOrigin = Object.assign({}, rootBounds, {
+    pageId: bundle.node_id || "",
+    referenceParentId: documentNode && documentNode.id ? documentNode.id : "",
+    sourceTransform: identityAffine(),
+  });
   if (documentNode && documentNode.type === "FRAME") {
     for (const child of documentNode.children || []) {
       await renderReplayNode(child, rootFrame, replayOrigin, bundle);
