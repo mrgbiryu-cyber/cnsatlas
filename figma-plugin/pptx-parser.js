@@ -71,6 +71,25 @@
     return null;
   }
 
+  function relationshipAttr(node, local) {
+    if (!node) return null;
+    if (node.getAttributeNS) {
+      var namespaced = node.getAttributeNS(R_NS, local);
+      if (namespaced) return namespaced;
+    }
+    if (!node.attributes) return null;
+    for (var i = 0; i < node.attributes.length; i += 1) {
+      var attribute = node.attributes[i];
+      if ((attribute.localName || attribute.name) === local && attribute.namespaceURI === R_NS) {
+        return attribute.value;
+      }
+      if (attribute.name === "r:" + local) {
+        return attribute.value;
+      }
+    }
+    return null;
+  }
+
   function parseXml(text) {
     return new DOMParser().parseFromString(text, "application/xml");
   }
@@ -627,8 +646,11 @@
   function inspectPptxSlides(presentationRoot, relsMap, zip) {
     var slideRefs = descendants(presentationRoot, "sldId");
     return slideRefs.map(function (slideRef, index) {
-      var relId = (slideRef.getAttributeNS && slideRef.getAttributeNS(R_NS, "id")) || attr(slideRef, "id");
+      var relId = relationshipAttr(slideRef, "id");
       var target = relsMap[relId];
+      if (!relId || !target) {
+        throw new Error("슬라이드 관계 매핑을 찾을 수 없습니다: slide " + (index + 1));
+      }
       return {
         slide_no: index + 1,
         slide_path: "ppt/" + String(target || "").replace(/^\/+/, ""),
