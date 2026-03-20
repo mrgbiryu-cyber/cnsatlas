@@ -446,24 +446,6 @@ function deriveWrapMode(textValue, textStyle, bounds, options) {
   return "none";
 }
 
-function estimateTextFontSize(textValue, textStyle, bounds, options) {
-  const explicit = textStyle && (textStyle.font_size_max || textStyle.font_size_avg)
-    ? Number(textStyle.font_size_max || textStyle.font_size_avg)
-    : 0;
-  if (explicit > 0) {
-    return clampFontSize(explicit);
-  }
-  const text = typeof textValue === "string" ? textValue : "";
-  const width = bounds && bounds.width ? bounds.width : 120;
-  const height = bounds && bounds.height ? bounds.height : 24;
-  const baseByHeight = height * 0.42;
-  const roughCapacity = Math.max(Math.floor((width - 12) / Math.max(baseByHeight * 0.55, 4)), 4);
-  const multilinePenalty = text.length > roughCapacity ? 0.82 : 1;
-  const widthPenalty = width < 120 ? 0.86 : width < 220 ? 0.94 : 1;
-  const scale = options && options.tableCell ? 0.9 : 1;
-  return clampFontSize(baseByHeight * multilinePenalty * widthPenalty * scale);
-}
-
 function createTransparentFrame(bounds, name) {
   const frame = figma.createFrame();
   frame.name = name;
@@ -523,7 +505,7 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
   text.fontName = await resolveFontName(textStyle);
   text.characters = textValue || candidate.title || "";
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.12, g: 0.12, b: 0.12 }, 1)];
-  text.fontSize = estimateTextFontSize(text.characters, textStyle, bounds, { tableCell: false });
+  text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, horizontalFallback);
   text.textAlignVertical = mapVerticalAlign(textStyle.vertical_align, verticalFallback);
   const wrapMode = deriveWrapMode(text.characters, textStyle, bounds, { forceWrap: false });
@@ -683,548 +665,26 @@ async function renderIntermediatePayload(payload) {
   figma.viewport.scrollAndZoomIntoView([rootFrame]);
 }
 
-function makeReplayAbsoluteBounds(x, y, width, height) {
-  return {
-    x,
-    y,
-    width: Math.max(width || 1, 1),
-    height: Math.max(height || 1, 1),
-  };
-}
+async function renderPptxReplayBundle(payload) {
+  await ensureFontLoaded();
 
-function normalizeDegrees(value) {
-  let degrees = Number(value || 0);
-  while (degrees > 180) degrees -= 360;
-  while (degrees <= -180) degrees += 360;
-  return degrees;
-}
+  clearPreviousVisualTests();
 
-function buildReplayRelativeTransformFromCandidate(candidate) {
-  const bounds = candidate && candidate.bounds_px ? candidate.bounds_px : null;
-  if (!bounds) {
-    return identityAffine();
-  }
-  const rotation = normalizeDegrees(bounds.rotation || 0);
-  const radians = (rotation * Math.PI) / 180;
-  const scaleX = bounds.flipH ? -1 : 1;
-  const scaleY = bounds.flipV ? -1 : 1;
-  const cos = Math.cos(radians);
-  const sin = Math.sin(radians);
-  return [
-    [cos * scaleX, -sin * scaleY, 0],
-    [sin * scaleX, cos * scaleY, 0],
-  ];
-}
+  const rootFrame = figma.createFrame();
+  rootFrame.name = "CNS Atlas PPTX Replay";
+  rootFrame.fills = [];
+  rootFrame.strokes = [];
 
-function estimateReplayWrappedHeight(textValue, candidate, width, minHeight) {
-  const textStyle = getTextStyle(candidate);
-  const bounds = {
-    width: Math.max(width || 1, 1),
-    height: Math.max(minHeight || 1, 1),
-  };
-  const fontSize = estimateTextFontSize(textValue, textStyle, bounds, { tableCell: true });
-  const averageCharWidth = Math.max(fontSize * 0.55, 4);
-  const charsPerLine = Math.max(Math.floor((bounds.width - 10) / averageCharWidth), 1);
-  const normalized = String(textValue || "");
-  const explicitLines = normalized.split("\n");
-  let renderedLines = 0;
-  for (const line of explicitLines) {
-    const length = Math.max(line.length, 1);
-    renderedLines += Math.max(Math.ceil(length / charsPerLine), 1);
-  }
-  const lineHeight = fontSize * 1.35;
-  return Math.max(Math.ceil(renderedLines * lineHeight + 8), minHeight || 1);
-}
-
-function buildReplayFillArrayFromShapeStyle(shapeStyle, fallback) {
-  if (!hasRenderableFill(shapeStyle)) {
-    return [];
-  }
-  return [makeSolidPaint(shapeStyle.fill, fallback || { r: 1, g: 1, b: 1 }, 1)];
-}
-
-function buildReplayStrokeArrayFromShapeStyle(shapeStyle, fallback) {
-  if (!hasRenderableLine(shapeStyle)) {
-    return [];
-  }
-  return [makeSolidPaint(shapeStyle.line, fallback || { r: 0.35, g: 0.35, b: 0.35 }, 1)];
-}
-
-function buildReplayTextStyleFromCandidate(candidate, bounds, options) {
-  const textStyle = getTextStyle(candidate);
-  const textValue = candidate.text || candidate.title || "";
-  const wrapMode = deriveWrapMode(textValue, textStyle, bounds, { forceWrap: options && options.forceWrap });
-  return {
-    fontSize: estimateTextFontSize(textValue, textStyle, bounds, { tableCell: options && options.tableCell }),
-    fontFamily: textStyle.font_family || DEFAULT_FONT.family,
-    textAlignHorizontal: mapHorizontalAlign(textStyle.horizontal_align, options && options.horizontalFallback ? options.horizontalFallback : "l"),
-    textAlignVertical: mapVerticalAlign(textStyle.vertical_align, options && options.verticalFallback ? options.verticalFallback : "t"),
-    textAutoResize: wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT",
-    lineHeightPx: null,
-  };
-}
-
-function buildReplayTextNode(candidate, absBounds, options) {
-  return {
-    id: `${candidate.candidate_id}:text`,
-    type: "TEXT",
-    name: candidate.title || candidate.subtype || "text",
-    characters: candidate.text || candidate.title || "",
-    absoluteBoundingBox: absBounds,
-    relativeTransform: buildReplayRelativeTransformFromCandidate(candidate),
-    fills: [makeSolidPaint(getTextStyle(candidate).fill, { r: 0.12, g: 0.12, b: 0.12 }, 1)],
-    style: buildReplayTextStyleFromCandidate(candidate, absBounds, options || {}),
-    debug: {
-      source_path: candidate.source_path || "",
-      source_node_id: candidate.source_node_id || "",
-      source_subtype: candidate.subtype || "",
-      rotation_degrees: normalizeDegrees(candidate && candidate.bounds_px ? candidate.bounds_px.rotation || 0 : 0),
-    },
-    children: [],
-  };
-}
-
-function buildReplayVectorNode(id, name, absBounds, fillGeometry, strokeGeometry, fills, strokes, strokeWeight, debug, relativeTransform) {
-  return {
-    id,
-    type: "VECTOR",
-    name,
-    absoluteBoundingBox: absBounds,
-    relativeTransform: relativeTransform || identityAffine(),
-    fillGeometry: fillGeometry || [],
-    strokeGeometry: strokeGeometry || [],
-    fills: fills || [],
-    strokes: strokes || [],
-    strokeWeight: strokeWeight || 1,
-    debug: debug || {},
-    children: [],
-  };
-}
-
-function buildRectPath(width, height) {
-  return `M 0 0 H ${width} V ${height} H 0 Z`;
-}
-
-function buildDiamondPath(width, height) {
-  const midX = width / 2;
-  const midY = height / 2;
-  return `M ${midX} 0 L ${width} ${midY} L ${midX} ${height} L 0 ${midY} Z`;
-}
-
-function buildEllipsePath(width, height) {
-  const rx = width / 2;
-  const ry = height / 2;
-  return `M ${rx} 0 A ${rx} ${ry} 0 1 1 ${rx} ${height} A ${rx} ${ry} 0 1 1 ${rx} 0 Z`;
-}
-
-function buildPptxShapeReplayNode(candidate, absBounds) {
-  const shapeStyle = getShapeStyle(candidate);
-  const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
-  const relativeTransform = buildReplayRelativeTransformFromCandidate(candidate);
-  const debug = {
-    source_path: candidate.source_path || "",
-    source_node_id: candidate.source_node_id || "",
-    source_subtype: candidate.subtype || "",
-    full_page_overlay_candidate: Boolean(candidate.extra && candidate.extra.full_page_overlay_candidate),
-    rotation_degrees: normalizeDegrees(candidate && candidate.bounds_px ? candidate.bounds_px.rotation || 0 : 0),
-  };
-  if (shapeKind === "flowChartDecision" || shapeKind === "ellipse" || shapeKind === "rightBracket") {
-    let path = buildRectPath(absBounds.width, absBounds.height);
-    if (shapeKind === "flowChartDecision") {
-      path = buildDiamondPath(absBounds.width, absBounds.height);
-    } else if (shapeKind === "ellipse") {
-      path = buildEllipsePath(absBounds.width, absBounds.height);
-    } else if (shapeKind === "rightBracket") {
-      const w = absBounds.width;
-      const h = absBounds.height;
-      path = `M ${w * 0.2} 0 L ${w} 0 L ${w} ${h} L ${w * 0.2} ${h}`;
-    }
-    const fills = shapeKind === "rightBracket"
-      ? []
-      : buildReplayFillArrayFromShapeStyle(shapeStyle, { r: 1, g: 1, b: 1 });
-    const strokes = buildReplayStrokeArrayFromShapeStyle(shapeStyle, { r: 0.28, g: 0.28, b: 0.28 });
-    return buildReplayVectorNode(
-      candidate.candidate_id,
-      candidate.title || candidate.subtype || "shape",
-      absBounds,
-      fills.length ? [{ path, windingRule: "NONZERO" }] : [],
-      strokes.length ? [{ path }] : [],
-      fills,
-      strokes,
-      shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1,
-      debug,
-      relativeTransform
-    );
-  }
-  return {
-    id: candidate.candidate_id,
-    type: "RECTANGLE",
-    name: candidate.title || candidate.subtype || "shape",
-    absoluteBoundingBox: absBounds,
-    relativeTransform,
-    fills: buildReplayFillArrayFromShapeStyle(shapeStyle, { r: 0.94, g: 0.95, b: 0.97 }),
-    strokes: buildReplayStrokeArrayFromShapeStyle(shapeStyle, { r: 0.75, g: 0.78, b: 0.82 }),
-    strokeWeight: shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1,
-    cornerRadius: shapeKind === "roundRect" ? 8 : undefined,
-    debug,
-    children: [],
-  };
-}
-
-function buildPptxConnectorReplayNode(candidate, absBounds) {
-  const shapeStyle = getShapeStyle(candidate);
-  const linePaint = buildReplayStrokeArrayFromShapeStyle(shapeStyle, { r: 0.35, g: 0.35, b: 0.35 });
-  const strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1.5) : 1.5;
-  const kind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "connector";
-  const localWidth = Math.max(absBounds.width, 6);
-  const localHeight = Math.max(absBounds.height, 6);
-  const startPointPx = candidate.extra && candidate.extra.start_point_px ? candidate.extra.start_point_px : null;
-  const endPointPx = candidate.extra && candidate.extra.end_point_px ? candidate.extra.end_point_px : null;
-  const connectorAdjusts = candidate.extra && candidate.extra.connector_adjusts ? candidate.extra.connector_adjusts : {};
-  const relativeTransform = buildReplayRelativeTransformFromCandidate(candidate);
-
-  function relPoint(point) {
-    return {
-      x: point.x - absBounds.x,
-      y: point.y - absBounds.y,
-    };
-  }
-
-  function pathUsingReadableElbow(start, end, kindName, adjusts) {
-    const leadMargin = 16;
-    const dx = end.x - start.x;
-    const dy = end.y - start.y;
-    const horizontal = Math.abs(dx) >= Math.abs(dy);
-    if (kindName === "straightConnector1") {
-      if (Math.abs(start.y - end.y) <= 3 || Math.abs(start.x - end.x) <= 3) {
-        return [start, end];
-      }
-      if (horizontal) {
-        return [start, { x: end.x, y: start.y }, end];
-      }
-      return [start, { x: start.x, y: end.y }, end];
-    }
-    if (kindName === "bentConnector2") {
-      return [start, { x: start.x, y: end.y }, end];
-    }
-    if (kindName === "bentConnector4") {
-      const adj1 = typeof adjusts.adj1 === "number" ? adjusts.adj1 / 100000 : 0.5;
-      const midX = start.x + (end.x - start.x) * adj1;
-      return [start, { x: midX, y: start.y }, { x: midX, y: end.y }, end];
-    }
-    if (horizontal) {
-      const routeY = start.y + (dy >= 0 ? leadMargin : -leadMargin);
-      return [start, { x: start.x, y: routeY }, { x: end.x, y: routeY }, end];
-    }
-    const routeX = start.x + (dx >= 0 ? leadMargin : -leadMargin);
-    return [start, { x: routeX, y: start.y }, { x: routeX, y: end.y }, end];
-  }
-
-  let points;
-  if (startPointPx && endPointPx) {
-    points = pathUsingReadableElbow(relPoint(startPointPx), relPoint(endPointPx), kind, connectorAdjusts);
-  } else if (kind === "straightConnector1") {
-    points = [{ x: 0, y: localHeight / 2 }, { x: localWidth, y: localHeight / 2 }];
-  } else if (kind === "bentConnector2") {
-    points = [{ x: 0, y: 0 }, { x: 0, y: localHeight }, { x: localWidth, y: localHeight }];
-  } else if (kind === "bentConnector4") {
-    points = [{ x: 0, y: 0 }, { x: 0, y: localHeight * 0.35 }, { x: localWidth * 0.5, y: localHeight * 0.35 }, { x: localWidth * 0.5, y: localHeight }, { x: localWidth, y: localHeight }];
-  } else {
-    points = [{ x: 0, y: 0 }, { x: 0, y: localHeight * 0.5 }, { x: localWidth, y: localHeight * 0.5 }, { x: localWidth, y: localHeight }];
-  }
-
-  const path = points.map(function (point, index) {
-    return `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`;
-  }).join(" ");
-
-  const fillGeometry = [];
-  const tailEnd = shapeStyle.line && shapeStyle.line.tail_end ? shapeStyle.line.tail_end : {};
-  if (tailEnd.type === "triangle" && points.length >= 2) {
-    const tip = points[points.length - 1];
-    const prev = points[points.length - 2];
-    const dx = tip.x - prev.x;
-    const dy = tip.y - prev.y;
-    const angle = Math.atan2(dy, dx);
-    const size = 10;
-    const backX = tip.x - Math.cos(angle) * size;
-    const backY = tip.y - Math.sin(angle) * size;
-    const leftX = backX + Math.cos(angle + Math.PI / 2) * (size * 0.5);
-    const leftY = backY + Math.sin(angle + Math.PI / 2) * (size * 0.5);
-    const rightX = backX + Math.cos(angle - Math.PI / 2) * (size * 0.5);
-    const rightY = backY + Math.sin(angle - Math.PI / 2) * (size * 0.5);
-    fillGeometry.push({
-      path: `M ${tip.x} ${tip.y} L ${leftX} ${leftY} L ${rightX} ${rightY} Z`,
-      windingRule: "NONZERO",
-    });
-  }
-
-  return buildReplayVectorNode(
-    candidate.candidate_id,
-    candidate.title || candidate.subtype || "connector",
-    absBounds,
-    fillGeometry,
-    [{ path }],
-    linePaint.length ? [linePaint[0]] : [],
-    linePaint,
-    strokeWeight,
-    {
-      source_path: candidate.source_path || "",
-      source_node_id: candidate.source_node_id || "",
-      source_subtype: candidate.subtype || "",
-      rotation_degrees: normalizeDegrees(candidate && candidate.bounds_px ? candidate.bounds_px.rotation || 0 : 0),
-    },
-    relativeTransform
-  );
-}
-
-function buildPptxImageReplayNode(candidate, absBounds, assets) {
-  const extra = candidate.extra || {};
-  const imageRef = `pptx-image:${candidate.candidate_id}`;
-  if (extra.image_base64) {
-    assets[imageRef] = {
-      base64: extra.image_base64,
-      mimeType: extra.mime_type || "",
-    };
-  }
-  return {
-    id: candidate.candidate_id,
-    type: "RECTANGLE",
-    name: candidate.title || candidate.subtype || "image",
-    absoluteBoundingBox: absBounds,
-    relativeTransform: buildReplayRelativeTransformFromCandidate(candidate),
-    fills: extra.image_base64 ? [{ type: "IMAGE", imageRef, scaleMode: "FILL" }] : [{ type: "SOLID", color: { r: 0.93, g: 0.94, b: 0.96 } }],
-    strokes: [{ type: "SOLID", color: { r: 0.64, g: 0.68, b: 0.74 } }],
-    strokeWeight: 1,
-    debug: {
-      source_path: candidate.source_path || "",
-      source_node_id: candidate.source_node_id || "",
-      source_subtype: candidate.subtype || "",
-      resolved_target: extra.resolved_target || "",
-    },
-    children: [],
-  };
-}
-
-function buildPptxTableReplayNode(candidate, pageOffsetX, pageOffsetY, childrenMap) {
-  const bounds = candidate.bounds_px || { x: 0, y: 0, width: 400, height: 240 };
-  const absBounds = makeReplayAbsoluteBounds(pageOffsetX + bounds.x, pageOffsetY + bounds.y, bounds.width, bounds.height);
-  const shapeStyle = getShapeStyle(candidate);
-  const tableNode = {
-    id: candidate.candidate_id,
-    type: "FRAME",
-    name: candidate.title || "table",
-    absoluteBoundingBox: absBounds,
-    relativeTransform: buildReplayRelativeTransformFromCandidate(candidate),
-    fills: buildReplayFillArrayFromShapeStyle(shapeStyle, { r: 1, g: 1, b: 1 }),
-    strokes: buildReplayStrokeArrayFromShapeStyle(shapeStyle, { r: 0.45, g: 0.45, b: 0.45 }),
-    strokeWeight: shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1,
-    debug: {
-      source_path: candidate.source_path || "",
-      source_node_id: candidate.source_node_id || "",
-      source_subtype: candidate.subtype || "",
-    },
-    children: [],
-  };
-
-  const rows = (childrenMap.get(candidate.candidate_id) || []).filter((child) => child.subtype === "table_row").sort(sortByPosition);
-  const gridColumns = candidate.extra && candidate.extra.grid_columns ? candidate.extra.grid_columns : [];
-  let rowCursorY = absBounds.y;
-  for (const rowCandidate of rows) {
-    const cellCandidates = (childrenMap.get(rowCandidate.candidate_id) || []).filter((child) => child.subtype === "table_cell");
-    let rowHeight = Math.max((rowCandidate.extra && rowCandidate.extra.row_height_px) || 28, 28);
-    for (const cellCandidate of cellCandidates) {
-      const extra = cellCandidate.extra || {};
-      if (extra.h_merge || extra.v_merge) {
-        continue;
-      }
-      const startColumnIndex = Number(extra.start_column_index || 1);
-      const cellWidth = extra.width_px || (absBounds.width / Math.max(cellCandidates.length, 1));
-      const cellX = gridColumns.length
-        ? gridColumns.filter((column) => column.column_index < startColumnIndex).reduce((sum, column) => sum + (column.width_px || 0), 0)
-        : 0;
-      const mergedWidth = Math.max(cellWidth, 1);
-      const estimatedHeight = estimateReplayWrappedHeight(cellCandidate.text || cellCandidate.title || "", cellCandidate, mergedWidth, rowHeight);
-      rowHeight = Math.max(rowHeight, estimatedHeight);
-      if (cellX > absBounds.width) {
-        rowHeight = Math.max(rowHeight, 28);
-      }
-    }
-    const rowNode = {
-      id: rowCandidate.candidate_id,
-      type: "FRAME",
-      name: rowCandidate.title || "row",
-      absoluteBoundingBox: makeReplayAbsoluteBounds(absBounds.x, rowCursorY, absBounds.width, rowHeight),
-      relativeTransform: buildReplayRelativeTransformFromCandidate(rowCandidate),
-      fills: [],
-      strokes: [],
-      strokeWeight: 0,
-      debug: {
-        source_path: rowCandidate.source_path || "",
-        source_node_id: rowCandidate.source_node_id || "",
-        source_subtype: rowCandidate.subtype || "",
-      },
-      children: [],
-    };
-    for (const cellCandidate of cellCandidates) {
-      const extra = cellCandidate.extra || {};
-      if (extra.h_merge || extra.v_merge) {
-        continue;
-      }
-      const startColumnIndex = Number(extra.start_column_index || 1);
-      const cellWidth = extra.width_px || (rowNode.absoluteBoundingBox.width / Math.max(cellCandidates.length, 1));
-      const cellX = gridColumns.length
-        ? gridColumns.filter((column) => column.column_index < startColumnIndex).reduce((sum, column) => sum + (column.width_px || 0), 0)
-        : rowNode.children.reduce((sum, child) => sum + child.absoluteBoundingBox.width, 0);
-      const cellAbsBounds = makeReplayAbsoluteBounds(rowNode.absoluteBoundingBox.x + cellX, rowNode.absoluteBoundingBox.y, cellWidth, rowHeight);
-      const cellStyle = extra.cell_style || {};
-      const cellNode = {
-        id: cellCandidate.candidate_id,
-        type: "FRAME",
-        name: cellCandidate.title || "cell",
-        absoluteBoundingBox: cellAbsBounds,
-        relativeTransform: buildReplayRelativeTransformFromCandidate(cellCandidate),
-        fills: cellStyle.fill ? [makeSolidPaint(cellStyle.fill, { r: 1, g: 1, b: 1 }, 1)] : [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }],
-        strokes: [{ type: "SOLID", color: { r: 0.75, g: 0.75, b: 0.75 } }],
-        strokeWeight: 1,
-        debug: {
-          source_path: cellCandidate.source_path || "",
-          source_node_id: cellCandidate.source_node_id || "",
-          source_subtype: cellCandidate.subtype || "",
-        },
-        children: [],
-      };
-      if (cellCandidate.text) {
-        cellNode.children.push(buildReplayTextNode(cellCandidate, cellAbsBounds, {
-          forceWrap: true,
-          tableCell: true,
-          horizontalFallback: "l",
-          verticalFallback: cellStyle.anchor || "ctr",
-        }));
-      }
-      rowNode.children.push(cellNode);
-    }
-    tableNode.children.push(rowNode);
-    rowCursorY += rowHeight;
-  }
-  return tableNode;
-}
-
-function buildReplayNodeFromPptxCandidate(candidate, pageOffsetX, pageOffsetY, childrenMap, assets) {
-  if (!candidate) {
-    return null;
-  }
-  const bounds = candidate.bounds_px || { x: 0, y: 0, width: 120, height: 24 };
-  const absBounds = makeReplayAbsoluteBounds(pageOffsetX + bounds.x, pageOffsetY + bounds.y, bounds.width, bounds.height);
-
-  if (candidate.node_type === "asset" && candidate.subtype === "image") {
-    return buildPptxImageReplayNode(candidate, absBounds, assets);
-  }
-
-  if (candidate.subtype === "text_block") {
-    return buildReplayTextNode(candidate, absBounds, {
-      forceWrap: false,
-      tableCell: false,
-      horizontalFallback: "l",
-      verticalFallback: "t",
-    });
-  }
-
-  if (candidate.subtype === "connector") {
-    return buildPptxConnectorReplayNode(candidate, absBounds);
-  }
-
-  if (candidate.subtype === "table") {
-    return buildPptxTableReplayNode(candidate, pageOffsetX, pageOffsetY, childrenMap);
-  }
-
-  if (candidate.subtype === "table_row" || candidate.subtype === "table_cell") {
-    return null;
-  }
-
-  if (candidate.subtype === "group" || candidate.subtype === "section_block") {
-    const groupNode = {
-      id: candidate.candidate_id,
-      type: "GROUP",
-      name: candidate.title || candidate.subtype || "group",
-      absoluteBoundingBox: absBounds,
-      relativeTransform: buildReplayRelativeTransformFromCandidate(candidate),
-      debug: {
-        source_path: candidate.source_path || "",
-        source_node_id: candidate.source_node_id || "",
-        source_subtype: candidate.subtype || "",
-      },
-      children: [],
-    };
-    const children = (childrenMap.get(candidate.candidate_id) || []).sort(sortByPosition);
-    for (const child of children) {
-      const childNode = buildReplayNodeFromPptxCandidate(child, pageOffsetX, pageOffsetY, childrenMap, assets);
-      if (childNode) {
-        groupNode.children.push(childNode);
-      }
-    }
-    return groupNode;
-  }
-
-  if (candidate.subtype === "labeled_shape") {
-    const shapeKind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "";
-    const childText = buildReplayTextNode(candidate, absBounds, {
-      forceWrap: false,
-      tableCell: false,
-      horizontalFallback: "ctr",
-      verticalFallback: "ctr",
-    });
-    if (shapeKind === "flowChartDecision") {
-      return {
-        id: candidate.candidate_id,
-        type: "GROUP",
-        name: candidate.title || candidate.subtype || "labeled_shape",
-        absoluteBoundingBox: absBounds,
-        relativeTransform: buildReplayRelativeTransformFromCandidate(candidate),
-        debug: {
-          source_path: candidate.source_path || "",
-          source_node_id: candidate.source_node_id || "",
-          source_subtype: candidate.subtype || "",
-        },
-        children: [buildPptxShapeReplayNode(candidate, absBounds), childText],
-      };
-    }
-    return {
-      id: candidate.candidate_id,
-      type: "FRAME",
-      name: candidate.title || candidate.subtype || "labeled_shape",
-      absoluteBoundingBox: absBounds,
-      relativeTransform: buildReplayRelativeTransformFromCandidate(candidate),
-      fills: buildReplayFillArrayFromShapeStyle(getShapeStyle(candidate), { r: 1, g: 1, b: 1 }),
-      strokes: buildReplayStrokeArrayFromShapeStyle(getShapeStyle(candidate), { r: 0.28, g: 0.28, b: 0.28 }),
-      strokeWeight: getShapeStyle(candidate).line && getShapeStyle(candidate).line.width_px ? Math.max(getShapeStyle(candidate).line.width_px, 1) : 1,
-      cornerRadius: shapeKind === "roundRect" ? 8 : undefined,
-      debug: {
-        source_path: candidate.source_path || "",
-        source_node_id: candidate.source_node_id || "",
-        source_subtype: candidate.subtype || "",
-      },
-      children: [childText],
-    };
-  }
-
-  if (candidate.subtype === "shape") {
-    return buildPptxShapeReplayNode(candidate, absBounds);
-  }
-
-  return null;
-}
-
-function buildReplayTreeFromPptxBundle(payload) {
-  const assets = {};
-  const pageNodes = [];
   let cursorX = 0;
   let cursorY = 0;
   let rowHeight = MIN_PAGE_HEIGHT;
   let maxWidth = 0;
 
   for (const [index, page] of payload.pages.entries()) {
+    const pageFrame = figma.createFrame();
     const pageBounds = pageCanvasSize(page);
     const dividerPage = isDividerLikePage(page);
+
     if (dividerPage && index > 0 && cursorX > 0) {
       maxWidth = Math.max(maxWidth, Math.max(cursorX - SLIDE_GAP, 1));
       cursorX = 0;
@@ -1232,62 +692,32 @@ function buildReplayTreeFromPptxBundle(payload) {
       rowHeight = MIN_PAGE_HEIGHT;
     }
 
-    const pageFrame = {
-      id: page.page_id || `page:${page.slide_no}`,
-      type: "FRAME",
-      name: `Slide ${page.slide_no} - ${page.title_or_label}`,
-      absoluteBoundingBox: makeReplayAbsoluteBounds(cursorX, cursorY, pageBounds.width, pageBounds.height),
-      relativeTransform: identityAffine(),
-      fills: [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }],
-      strokes: [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }],
-      strokeWeight: 1,
-      children: [],
-      debug: {
-        source_path: page.source_path || "",
-        source_node_id: page.page_id || "",
-        source_subtype: "page",
-      },
-    };
+    pageFrame.name = `Slide ${page.slide_no} - ${page.title_or_label}`;
+    pageFrame.resize(pageBounds.width, pageBounds.height);
+    pageFrame.x = cursorX;
+    pageFrame.y = cursorY;
+    pageFrame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    pageFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
+    pageFrame.strokeWeight = 1;
+    setReplayPluginData(pageFrame, "replay_role", "pptx-replay-page");
+    setReplayPluginData(pageFrame, "replay_page_id", String(page.page_id || `slide:${page.slide_no}`));
+    setReplayPluginData(pageFrame, "reference_name", page.title_or_label || "");
+    rootFrame.appendChild(pageFrame);
 
     const childrenMap = buildChildrenMap(page.candidates);
     const roots = [...(childrenMap.get(page.page_id) || [])].sort(sortByPosition);
     for (const candidate of roots) {
-      const childNode = buildReplayNodeFromPptxCandidate(candidate, cursorX, cursorY, childrenMap, assets);
-      if (childNode) {
-        pageFrame.children.push(childNode);
-      }
+      await renderCandidateTree(candidate, childrenMap, pageFrame, { x: 0, y: 0 }, 0);
     }
-    pageNodes.push(pageFrame);
+
     cursorX += pageBounds.width + SLIDE_GAP;
     rowHeight = Math.max(rowHeight, pageBounds.height);
     maxWidth = Math.max(maxWidth, Math.max(cursorX - SLIDE_GAP, 1));
   }
 
-  const documentNode = {
-    id: "pptx:document",
-    type: "FRAME",
-    name: "PPTX Replay Document",
-    absoluteBoundingBox: makeReplayAbsoluteBounds(0, 0, maxWidth || MIN_PAGE_WIDTH, Math.max(cursorY + rowHeight, MIN_PAGE_HEIGHT)),
-    relativeTransform: identityAffine(),
-    fills: [],
-    strokes: [],
-    strokeWeight: 0,
-    children: pageNodes,
-  };
-
-  return {
-    kind: "figma-replay-bundle",
-    node_id: "pptx-upload",
-    page_name: payload.pptxPath || "PPTX Upload",
-    document: documentNode,
-    assets,
-    source_kind: "pptx",
-  };
-}
-
-async function renderPptxReplayBundle(payload) {
-  const replayBundle = buildReplayTreeFromPptxBundle(payload);
-  await renderFigmaReplayBundle(replayBundle);
+  rootFrame.resize(maxWidth, Math.max(cursorY + rowHeight, MIN_PAGE_HEIGHT));
+  figma.currentPage.appendChild(rootFrame);
+  figma.viewport.scrollAndZoomIntoView([rootFrame]);
 }
 
 function isDividerLikePage(page) {
@@ -1425,9 +855,7 @@ function getReplayBounds(node) {
 }
 
 function shouldSkipReplayNode(node) {
-  if (node && node.debug && node.debug.full_page_overlay_candidate) {
-    return true;
-  }
+  const name = node && node.name ? String(node.name) : "";
   return false;
 }
 
@@ -1855,19 +1283,14 @@ function buildVectorSvg(node, bounds) {
   ];
 
   const renderTransform = node.renderTransform || node.relativeTransform || [[1, 0, 0], [0, 1, 0]];
-  const transformSigns = getTransformSigns(renderTransform);
-  const scaleX = transformSigns.flipX ? -1 : 1;
-  const scaleY = transformSigns.flipY ? -1 : 1;
-  const rotation = transformSigns.rotation;
+  const scaleX = renderTransform[0] && typeof renderTransform[0][0] === "number" ? renderTransform[0][0] : 1;
+  const scaleY = renderTransform[1] && typeof renderTransform[1][1] === "number" ? renderTransform[1][1] : 1;
   let transformParts = [];
   if (scaleX < 0) {
     transformParts.push(`translate(${bounds.width} 0) scale(-1 1)`);
   }
   if (scaleY < 0) {
     transformParts.push(`translate(0 ${bounds.height}) scale(1 -1)`);
-  }
-  if (rotation !== 0) {
-    transformParts.push(`rotate(${rotation} ${bounds.width / 2} ${bounds.height / 2})`);
   }
   if (transformParts.length > 0) {
     parts.push(`<g transform="${transformParts.join(" ")}">`);
@@ -1992,10 +1415,6 @@ async function renderReplayText(node, parentNode, origin) {
   }
   text.x = local.x;
   text.y = local.y;
-  const rotation = transformRotationDegrees(node.relativeTransform || identityAffine());
-  if (rotation) {
-    text.rotation = rotation;
-  }
   parentNode.appendChild(text);
   annotateReplayNode(text, node, origin, "render-node");
 }
@@ -2040,10 +1459,6 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
     opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
   }));
   rect.strokeWeight = node.strokeWeight || 1;
-  const rotation = transformRotationDegrees(node.relativeTransform || identityAffine());
-  if (rotation) {
-    rect.rotation = rotation;
-  }
   parentNode.appendChild(rect);
   annotateReplayNode(rect, node, origin, "render-node");
 }
@@ -2054,9 +1469,12 @@ function renderReplayVector(node, parentNode, origin) {
     return;
   }
   const local = boundsRelativeToOrigin(bounds, origin);
-  const combinedTransform = multiplyAffine(origin.sourceTransform || identityAffine(), node.relativeTransform || identityAffine());
+  const signs = getTransformSigns(origin.sourceTransform || identityAffine());
   const vectorNode = Object.assign({}, node, {
-    renderTransform: combinedTransform,
+    renderTransform: [
+      [signs.flipX ? -1 : 1, 0, 0],
+      [0, signs.flipY ? -1 : 1, 0],
+    ],
   });
   const svg = buildVectorSvg(vectorNode, local);
   const svgNode = figma.createNodeFromSvg(svg);
@@ -2065,9 +1483,9 @@ function renderReplayVector(node, parentNode, origin) {
   svgNode.y = local.y;
   parentNode.appendChild(svgNode);
   annotateReplayNode(svgNode, node, Object.assign({}, origin, {
-    renderFlipX: getTransformSigns(combinedTransform).flipX,
-    renderFlipY: getTransformSigns(combinedTransform).flipY,
-    renderRotationHint: getTransformSigns(combinedTransform).rotation,
+    renderFlipX: signs.flipX,
+    renderFlipY: signs.flipY,
+    renderRotationHint: signs.rotation,
   }), "render-node");
 }
 
@@ -2390,7 +1808,7 @@ function createConnector(candidate, parentNode, origin, fallbackIndex) {
   };
   const shapeStyle = getShapeStyle(candidate);
   const linePaint = makeSolidPaint(shapeStyle.line, { r: 0.35, g: 0.35, b: 0.35 }, 1);
-  const strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1.5) : 1.5;
+  const strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
   const kind = candidate.extra && candidate.extra.shape_kind ? candidate.extra.shape_kind : "connector";
   const localWidth = Math.max(fallbackBounds.width, 6);
   const localHeight = Math.max(fallbackBounds.height, 6);
@@ -2734,7 +2152,7 @@ function createTableRow(candidate, parentNode) {
   const siblings = parentNode.children.filter((child) => child.type === "FRAME");
   const rowY = siblings.reduce((sum, child) => sum + child.height, 0);
   const rowCount = Number(parentNode.getPluginData("rowCount") || "1");
-  const rowHeight = Math.max(extra.row_height_px || (parentNode.height / Math.max(rowCount, 1)), 28);
+  const rowHeight = Math.max(extra.row_height_px || (parentNode.height / Math.max(rowCount, 1)), 24);
   row.x = 0;
   row.y = rowY;
   row.resize(parentNode.width, rowHeight);
@@ -2784,7 +2202,7 @@ async function createTableCell(candidate, parentNode) {
   text.name = `${cell.name} text`;
   text.fontName = await resolveFontName(textStyle);
   text.characters = candidate.text || "";
-  text.fontSize = estimateTextFontSize(text.characters, textStyle, { width, height: parentNode.height }, { tableCell: true });
+  text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || 10);
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, "l");
   text.textAlignVertical = mapVerticalAlign(cellStyle.anchor, "ctr");
@@ -2795,13 +2213,7 @@ async function createTableCell(candidate, parentNode) {
   text.textAutoResize = wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT";
   text.resize(availableWidth, Math.max(parentNode.height, 16));
   cell.appendChild(text);
-  if (wrapMode !== "none" && text.height + 8 > cell.height) {
-    cell.resize(width, text.height + 8);
-    if (cell.parent && cell.parent.type === "FRAME" && cell.height > cell.parent.height) {
-      cell.parent.resize(cell.parent.width, cell.height);
-    }
-  }
-  alignTextNode(text, { width, height: cell.height }, Object.assign({}, textStyle, cellStyle), "l", cellStyle.anchor || "ctr");
+  alignTextNode(text, { width, height: parentNode.height }, Object.assign({}, textStyle, cellStyle), "l", cellStyle.anchor || "ctr");
   return cell;
 }
 
@@ -2851,5 +2263,5 @@ async function createImagePlaceholder(candidate, parentNode, origin, fallbackInd
 }
 
 function clampFontSize(value) {
-  return Math.max(8, Math.min(Math.round(value), 72));
+  return Math.max(10, Math.min(Math.round(value), 28));
 }
