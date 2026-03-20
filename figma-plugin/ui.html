@@ -270,6 +270,18 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     return null;
   }
 
+  function readZipFile(zip, path) {
+    return zip.file(path);
+  }
+
+  async function readZipText(zip, path, message) {
+    var file = readZipFile(zip, path);
+    if (!file) {
+      throw new Error(message || ("PPTX 내부 파일을 찾을 수 없습니다: " + path));
+    }
+    return file.async("string");
+  }
+
   function resolvePartPath(basePath, target) {
     var baseParts = String(basePath || "").split("/");
     baseParts.pop();
@@ -641,7 +653,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     var imageTarget = embed ? relTargets[embed] : null;
     var resolvedTarget = imageTarget ? resolvePartPath(slidePath, imageTarget) : null;
     var mimeType = inferMimeType(resolvedTarget);
-    return zip.file(resolvedTarget || "") ? zip.file(resolvedTarget).async("uint8array").then(function (bytes) {
+    return readZipFile(zip, resolvedTarget || "") ? readZipFile(zip, resolvedTarget).async("uint8array").then(function (bytes) {
       return {
         image_rel_id: embed,
         image_target: imageTarget,
@@ -1158,15 +1170,15 @@ https://github.com/nodeca/pako/blob/main/LICENSE
   }
 
   async function buildIntermediateModelFromZip(zip, pptxName) {
-    var presentationXml = await zip.file("ppt/presentation.xml").async("string");
-    var presentationRelsXml = await zip.file("ppt/_rels/presentation.xml.rels").async("string");
+    var presentationXml = await readZipText(zip, "ppt/presentation.xml", "현재는 표준 PPTX(OOXML)만 지원합니다. presentation.xml을 찾을 수 없습니다.");
+    var presentationRelsXml = await readZipText(zip, "ppt/_rels/presentation.xml.rels", "현재는 표준 PPTX(OOXML)만 지원합니다. presentation.xml.rels를 찾을 수 없습니다.");
     var presentationRoot = parseXml(presentationXml).documentElement;
     var relsRoot = parseXml(presentationRelsXml).documentElement;
     var relTargets = buildRelationshipTargets(relsRoot);
     var slideSize = presentationSlideSize(presentationRoot);
     var themeColors = {};
     if (zip.file("ppt/theme/theme1.xml")) {
-      var themeXml = await zip.file("ppt/theme/theme1.xml").async("string");
+      var themeXml = await readZipText(zip, "ppt/theme/theme1.xml");
       themeColors = extractThemeColors(parseXml(themeXml).documentElement);
     }
     var slides = inspectPptxSlides(presentationRoot, relTargets, zip);
@@ -1174,14 +1186,14 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 
     for (var i = 0; i < slides.length; i += 1) {
       var slideInfo = slides[i];
-      var slideXml = await zip.file(slideInfo.slide_path).async("string");
+      var slideXml = await readZipText(zip, slideInfo.slide_path, "슬라이드 XML을 찾을 수 없습니다: " + slideInfo.slide_path);
       var slideDoc = parseXml(slideXml).documentElement;
       var spTree = findPath(slideDoc, ["cSld", "spTree"]);
       if (!spTree) continue;
       var slideRelPath = slideInfo.slide_path.replace("/slides/", "/slides/_rels/") + ".rels";
       var slideRelTargets = {};
-      if (zip.file(slideRelPath)) {
-        var slideRelXml = await zip.file(slideRelPath).async("string");
+      if (readZipFile(zip, slideRelPath)) {
+        var slideRelXml = await readZipText(zip, slideRelPath);
         slideRelTargets = buildRelationshipTargets(parseXml(slideRelXml).documentElement);
       }
 
@@ -1233,7 +1245,9 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     if (!global.JSZip) {
       throw new Error("JSZip is not loaded.");
     }
-    var zip = await global.JSZip.loadAsync(arrayBuffer);
+    var zip = await global.JSZip.loadAsync(arrayBuffer).catch(function () {
+      throw new Error("현재는 .pptx 파일만 지원합니다. 파일이 손상되었거나 legacy .ppt 형식일 수 있습니다.");
+    });
     return buildIntermediateModelFromZip(zip, fileName || "uploaded.pptx");
   }
 
