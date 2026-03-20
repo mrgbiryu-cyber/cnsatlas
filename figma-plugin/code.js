@@ -21,6 +21,7 @@ const FONT_FALLBACKS = {
 let fontLoaded = false;
 const fontAvailability = new Map();
 let activeRenderMode = "read-first";
+let activePayloadKind = "intermediate";
 let replayDebugState = {
   skipped_nodes: [],
 };
@@ -35,8 +36,11 @@ figma.ui.onmessage = async (message) => {
     try {
       const payload = JSON.parse(message.jsonText);
       activeRenderMode = message.renderMode === "vector-heavy" ? "vector-heavy" : "read-first";
+      activePayloadKind = payload && payload.kind ? payload.kind : "intermediate";
       if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
         await renderFigmaReplayBundle(payload);
+      } else if (payload && payload.kind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
+        await renderPptxReplayBundle(payload);
       } else {
         await renderIntermediatePayload(payload);
       }
@@ -44,7 +48,9 @@ figma.ui.onmessage = async (message) => {
         type: "render-success",
         message: payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
+          : payload && payload.kind === "pptx-replay-bundle"
+            ? `Rendered PPTX replay bundle (${payload.pages.length} slides)`
+            : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
       });
     } catch (error) {
       figma.ui.postMessage({
@@ -121,6 +127,10 @@ function pushSkippedReplayNode(node, origin, reason) {
 
 function isVectorHeavyMode() {
   return activeRenderMode === "vector-heavy";
+}
+
+function isPptxReplayMode() {
+  return activePayloadKind === "pptx-replay-bundle";
 }
 
 async function ensureFontLoaded() {
@@ -262,6 +272,42 @@ function makeSolidPaint(styleColor, fallback, defaultOpacity) {
 
 function getShapeStyle(candidate) {
   return candidate.extra && candidate.extra.shape_style ? candidate.extra.shape_style : {};
+}
+
+function hasRenderableFill(shapeStyle) {
+  if (!shapeStyle || !shapeStyle.fill || shapeStyle.fill.kind === "none") {
+    return false;
+  }
+  return shapeStyle.fill.alpha === null || shapeStyle.fill.alpha === undefined || shapeStyle.fill.alpha > 0;
+}
+
+function hasRenderableLine(shapeStyle) {
+  if (!shapeStyle || !shapeStyle.line || shapeStyle.line.kind === "none" || shapeStyle.line.kind === "default") {
+    return false;
+  }
+  if (shapeStyle.line.alpha !== null && shapeStyle.line.alpha !== undefined && shapeStyle.line.alpha <= 0) {
+    return false;
+  }
+  if (shapeStyle.line.width_px !== null && shapeStyle.line.width_px !== undefined && shapeStyle.line.width_px <= 0) {
+    return false;
+  }
+  return true;
+}
+
+function applyShapePaints(node, shapeStyle, fillFallback, lineFallback) {
+  if (hasRenderableFill(shapeStyle)) {
+    node.fills = [makeSolidPaint(shapeStyle.fill, fillFallback, 1)];
+  } else {
+    node.fills = [];
+  }
+
+  if (hasRenderableLine(shapeStyle)) {
+    node.strokes = [makeSolidPaint(shapeStyle.line, lineFallback, 1)];
+    node.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+  } else {
+    node.strokes = [];
+    node.strokeWeight = 0;
+  }
 }
 
 function getTextStyle(candidate) {
@@ -598,6 +644,61 @@ async function renderIntermediatePayload(payload) {
     pageFrame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
     pageFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
     pageFrame.strokeWeight = 1;
+    rootFrame.appendChild(pageFrame);
+
+    const childrenMap = buildChildrenMap(page.candidates);
+    const roots = [...(childrenMap.get(page.page_id) || [])].sort(sortByPosition);
+    for (const candidate of roots) {
+      await renderCandidateTree(candidate, childrenMap, pageFrame, { x: 0, y: 0 }, 0);
+    }
+
+    cursorX += pageBounds.width + SLIDE_GAP;
+    rowHeight = Math.max(rowHeight, pageBounds.height);
+    maxWidth = Math.max(maxWidth, Math.max(cursorX - SLIDE_GAP, 1));
+  }
+
+  rootFrame.resize(maxWidth, Math.max(cursorY + rowHeight, MIN_PAGE_HEIGHT));
+  figma.currentPage.appendChild(rootFrame);
+  figma.viewport.scrollAndZoomIntoView([rootFrame]);
+}
+
+async function renderPptxReplayBundle(payload) {
+  await ensureFontLoaded();
+
+  clearPreviousVisualTests();
+
+  const rootFrame = figma.createFrame();
+  rootFrame.name = "CNS Atlas PPTX Replay";
+  rootFrame.fills = [];
+  rootFrame.strokes = [];
+
+  let cursorX = 0;
+  let cursorY = 0;
+  let rowHeight = MIN_PAGE_HEIGHT;
+  let maxWidth = 0;
+
+  for (const [index, page] of payload.pages.entries()) {
+    const pageFrame = figma.createFrame();
+    const pageBounds = pageCanvasSize(page);
+    const dividerPage = isDividerLikePage(page);
+
+    if (dividerPage && index > 0 && cursorX > 0) {
+      maxWidth = Math.max(maxWidth, Math.max(cursorX - SLIDE_GAP, 1));
+      cursorX = 0;
+      cursorY += rowHeight + SLIDE_GAP;
+      rowHeight = MIN_PAGE_HEIGHT;
+    }
+
+    pageFrame.name = `Slide ${page.slide_no} - ${page.title_or_label}`;
+    pageFrame.resize(pageBounds.width, pageBounds.height);
+    pageFrame.x = cursorX;
+    pageFrame.y = cursorY;
+    pageFrame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    pageFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
+    pageFrame.strokeWeight = 1;
+    setReplayPluginData(pageFrame, "replay_role", "pptx-replay-page");
+    setReplayPluginData(pageFrame, "replay_page_id", String(page.page_id || `slide:${page.slide_no}`));
+    setReplayPluginData(pageFrame, "reference_name", page.title_or_label || "");
     rootFrame.appendChild(pageFrame);
 
     const childrenMap = buildChildrenMap(page.candidates);
@@ -1509,10 +1610,11 @@ async function renderCandidateTree(candidate, childrenMap, parentNode, origin, f
   }
 
   const nextOrigin = candidate.bounds_px || origin;
+  const childParent = node || parentNode;
   let childFallbackIndex = 0;
   for (const child of children) {
     try {
-      await renderCandidateTree(child, childrenMap, node, nextOrigin, childFallbackIndex);
+      await renderCandidateTree(child, childrenMap, childParent, nextOrigin, childFallbackIndex);
     } catch (err) {
       console.error(`Error rendering child ${child.candidate_id}`, err);
       throw err;
@@ -1632,12 +1734,7 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
     visualShape.y = 0;
   }
   if (shapeKind !== "rightBracket") {
-    visualShape.fills = [makeSolidPaint(shapeStyle.fill, { r: 1, g: 1, b: 1 }, shapeStyle.fill && shapeStyle.fill.kind === "none" ? 0 : 1)];
-    if (shapeStyle.fill && shapeStyle.fill.kind === "none") {
-      visualShape.fills = [];
-    }
-    visualShape.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.28, g: 0.28, b: 0.28 }, 1)];
-    visualShape.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+    applyShapePaints(visualShape, shapeStyle, { r: 1, g: 1, b: 1 }, { r: 0.28, g: 0.28, b: 0.28 });
   }
   frame.appendChild(visualShape);
 
@@ -1647,6 +1744,9 @@ async function createLabeledShape(candidate, parentNode, origin, fallbackIndex) 
 }
 
 function createShape(candidate, parentNode, origin, fallbackIndex) {
+  if (isPptxReplayMode() && candidate.extra && candidate.extra.full_page_overlay_candidate) {
+    return null;
+  }
   const bounds = relativeBounds(candidate, origin) || {
     x: 20,
     y: 20 + fallbackIndex * 20,
@@ -1676,12 +1776,7 @@ function createShape(candidate, parentNode, origin, fallbackIndex) {
     node.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.2, g: 0.2, b: 0.2 }, 1)];
     node.strokeWeight = 2;
   } else {
-    node.fills = [makeSolidPaint(shapeStyle.fill, { r: 0.94, g: 0.95, b: 0.97 }, shapeStyle.fill && shapeStyle.fill.kind === "none" ? 0 : 1)];
-    if (shapeStyle.fill && shapeStyle.fill.kind === "none") {
-      node.fills = [];
-    }
-    node.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.75, g: 0.78, b: 0.82 }, 1)];
-    node.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+    applyShapePaints(node, shapeStyle, { r: 0.94, g: 0.95, b: 0.97 }, { r: 0.75, g: 0.78, b: 0.82 });
   }
   if (bounds.rotation && shapeKind !== "flowChartDecision") {
     node.rotation = bounds.rotation;
@@ -2032,9 +2127,7 @@ function createTableFrame(candidate, parentNode, origin, fallbackIndex) {
   frame.x = bounds.x;
   frame.y = bounds.y;
   frame.resize(bounds.width, bounds.height);
-  frame.fills = [makeSolidPaint(shapeStyle.fill, { r: 1, g: 1, b: 1 }, 1)];
-  frame.strokes = [makeSolidPaint(shapeStyle.line, { r: 0.45, g: 0.45, b: 0.45 }, 1)];
-  frame.strokeWeight = shapeStyle.line && shapeStyle.line.width_px ? Math.max(shapeStyle.line.width_px, 1) : 1;
+  applyShapePaints(frame, shapeStyle, { r: 1, g: 1, b: 1 }, { r: 0.45, g: 0.45, b: 0.45 });
   frame.clipsContent = false;
   const rowCount = candidate.extra && candidate.extra.row_count ? candidate.extra.row_count : 1;
   const gridColumns = candidate.extra && candidate.extra.grid_columns ? candidate.extra.grid_columns : [];
