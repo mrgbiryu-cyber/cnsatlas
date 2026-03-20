@@ -644,18 +644,30 @@
   }
 
   function inspectPptxSlides(presentationRoot, relsMap, zip) {
-    var slideRefs = descendants(presentationRoot, "sldId");
-    return slideRefs.map(function (slideRef, index) {
+    var slideIdList = firstChild(presentationRoot, "sldIdLst");
+    var slideRefs = slideIdList ? childElements(slideIdList, "sldId") : descendants(presentationRoot, "sldId");
+    var missing = [];
+    var slides = [];
+    for (var index = 0; index < slideRefs.length; index += 1) {
+      var slideRef = slideRefs[index];
       var relId = relationshipAttr(slideRef, "id");
       var target = relsMap[relId];
       if (!relId || !target) {
-        throw new Error("슬라이드 관계 매핑을 찾을 수 없습니다: slide " + (index + 1));
+        missing.push({
+          slide_no: index + 1,
+          relationship_id: relId || null,
+        });
+        continue;
       }
-      return {
+      slides.push({
         slide_no: index + 1,
         slide_path: "ppt/" + String(target || "").replace(/^\/+/, ""),
-      };
-    });
+      });
+    }
+    return {
+      slides: slides,
+      missing: missing,
+    };
   }
 
   function buildElementIndex(elements) {
@@ -1040,7 +1052,8 @@
       var themeXml = await readZipText(zip, "ppt/theme/theme1.xml");
       themeColors = extractThemeColors(parseXml(themeXml).documentElement);
     }
-    var slides = inspectPptxSlides(presentationRoot, relTargets, zip);
+    var slideInspection = inspectPptxSlides(presentationRoot, relTargets, zip);
+    var slides = slideInspection.slides;
     var pages = [];
 
     for (var i = 0; i < slides.length; i += 1) {
@@ -1096,6 +1109,7 @@
     return {
       pptxPath: pptxName || "uploaded.pptx",
       requestedSlides: pages.map(function (page) { return page.slide_no; }),
+      skippedSlides: slideInspection.missing,
       pages: pages,
     };
   }
