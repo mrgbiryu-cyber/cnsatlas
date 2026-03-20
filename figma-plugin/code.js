@@ -36,22 +36,19 @@ figma.ui.onmessage = async (message) => {
     try {
       const payload = JSON.parse(message.jsonText);
       activeRenderMode = message.renderMode === "vector-heavy" ? "vector-heavy" : "read-first";
-      const effectiveKind = payload && payload.kind
-        ? payload.kind
-        : (payload && payload.source_kind === "pptx" && Array.isArray(payload.pages) ? "pptx-replay-bundle" : "intermediate");
-      activePayloadKind = effectiveKind;
-      if (payload && effectiveKind === "figma-replay-bundle" && payload.document) {
+      activePayloadKind = payload && payload.kind ? payload.kind : "intermediate";
+      if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
         await renderFigmaReplayBundle(payload);
-      } else if (payload && effectiveKind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
+      } else if (payload && payload.kind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
         await renderPptxReplayBundle(payload);
       } else {
         await renderIntermediatePayload(payload);
       }
       figma.ui.postMessage({
         type: "render-success",
-        message: payload && effectiveKind === "figma-replay-bundle"
+        message: payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : payload && effectiveKind === "pptx-replay-bundle"
+          : payload && payload.kind === "pptx-replay-bundle"
             ? `Rendered PPTX replay bundle (${payload.pages.length} slides)`
             : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
       });
