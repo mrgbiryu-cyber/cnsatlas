@@ -1457,23 +1457,26 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
 
       function validatePptxPayload(payload) {
-        if (payload && (payload.kind === "pptx-replay-bundle" || payload.source_kind === "pptx" || Array.isArray(payload.pages))) {
-          if (!payload.kind) {
-            payload = buildPptxReplayBundle(payload);
-          }
-          if (Array.isArray(payload.pages) || payload.pages) {
-             return {
-               payload,
-               kind: "pptx-replay-bundle"
-             };
-          }
+        if (payload && payload.kind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
+          return {
+            payload,
+            kind: "pptx-replay-bundle"
+          };
         }
-        
+        if (payload && payload.source_kind === "pptx" && Array.isArray(payload.pages)) {
+          return {
+            payload: buildPptxReplayBundle(payload),
+            kind: "pptx-replay-bundle"
+          };
+        }
+        if (payload && Array.isArray(payload.pages)) {
+          return {
+            payload: buildPptxReplayBundle(payload),
+            kind: "pptx-replay-bundle"
+          };
+        }
         const keys = payload && typeof payload === "object" ? Object.keys(payload).slice(0, 12).join(", ") : String(payload);
-        const kind = payload ? payload.kind : "none";
-        const hasPages = payload && !!payload.pages;
-        const pagesIsArray = payload && Array.isArray(payload.pages);
-        throw new Error(`PPTX 파싱 결과 형식이 올바르지 않습니다. 반환 키: ${keys || "none"}, kind: ${kind}, hasPages: ${hasPages}, pagesIsArray: ${pagesIsArray}`);
+        throw new Error(`PPTX 파싱 결과 형식이 올바르지 않습니다. 반환 키: ${keys || "none"}`);
       }
 
       function summarizePayload(payload, fileName, kind) {
