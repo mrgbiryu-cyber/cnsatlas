@@ -1,4 +1,4 @@
-import requests
+﻿import requests
 import json
 import urllib3
 
@@ -18,13 +18,13 @@ sys.stderr.reconfigure(encoding='utf-8')
 # ==========================================
 # 🛑 아래 4가지 변수를 본인 피그마 정보로 변경하세요!
 # ==========================================
-FIGMA_TOKEN = "figd_여기에_발급받은_토큰을_넣어주세요"
-FILE_KEY = "IpJ3tSViosvLVbKLqq6vB0"
+FIGMA_TOKEN = "fig"
+FILE_KEY = "VdhL71dZBwFoqFeuPCuG1l"
 
 # 추출할 3개 페이지(프레임)의 노드 아이디 (예: "12:345")
-PAGE_1_NODE_ID = "1:4"
-PAGE_2_NODE_ID = "1:543"
-PAGE_3_NODE_ID = "1:1440"
+PAGE_1_NODE_ID = "1:2"
+PAGE_2_NODE_ID = "1:201"
+PAGE_3_NODE_ID = "1:620"
 # ==========================================
 
 HEADERS = {
