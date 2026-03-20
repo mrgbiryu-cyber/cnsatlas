@@ -643,25 +643,67 @@
     return map;
   }
 
+  function listZipSlidePaths(zip) {
+    var paths = [];
+    Object.keys(zip.files || {}).forEach(function (path) {
+      if (/^ppt\/slides\/slide\d+\.xml$/i.test(path)) {
+        paths.push(path);
+      }
+    });
+    paths.sort(function (a, b) {
+      var aMatch = a.match(/slide(\d+)\.xml$/i);
+      var bMatch = b.match(/slide(\d+)\.xml$/i);
+      var aNo = aMatch ? Number(aMatch[1]) : 0;
+      var bNo = bMatch ? Number(bMatch[1]) : 0;
+      return aNo - bNo;
+    });
+    return paths;
+  }
+
   function inspectPptxSlides(presentationRoot, relsMap, zip) {
     var slideIdList = firstChild(presentationRoot, "sldIdLst");
     var slideRefs = slideIdList ? childElements(slideIdList, "sldId") : descendants(presentationRoot, "sldId");
     var missing = [];
     var slides = [];
+    var knownPaths = {};
+    var zipSlidePaths = listZipSlidePaths(zip);
     for (var index = 0; index < slideRefs.length; index += 1) {
       var slideRef = slideRefs[index];
       var relId = relationshipAttr(slideRef, "id");
       var target = relsMap[relId];
       if (!relId || !target) {
+        var fallbackPath = zipSlidePaths[index] || null;
+        if (fallbackPath) {
+          slides.push({
+            slide_no: index + 1,
+            slide_path: fallbackPath,
+            recovered_from_zip_listing: true,
+            missing_relationship_id: relId || null,
+          });
+          knownPaths[fallbackPath] = true;
+          continue;
+        }
         missing.push({
           slide_no: index + 1,
           relationship_id: relId || null,
         });
         continue;
       }
+      var resolvedPath = "ppt/" + String(target || "").replace(/^\/+/, "");
       slides.push({
         slide_no: index + 1,
-        slide_path: "ppt/" + String(target || "").replace(/^\/+/, ""),
+        slide_path: resolvedPath,
+      });
+      knownPaths[resolvedPath] = true;
+    }
+    for (var zipIndex = 0; zipIndex < zipSlidePaths.length; zipIndex += 1) {
+      var zipSlidePath = zipSlidePaths[zipIndex];
+      if (knownPaths[zipSlidePath]) continue;
+      slides.push({
+        slide_no: slides.length + 1,
+        slide_path: zipSlidePath,
+        recovered_from_zip_listing: true,
+        appended_without_presentation_entry: true,
       });
     }
     return {
@@ -1110,6 +1152,16 @@
       pptxPath: pptxName || "uploaded.pptx",
       requestedSlides: pages.map(function (page) { return page.slide_no; }),
       skippedSlides: slideInspection.missing,
+      recoveredSlides: slides
+        .filter(function (slide) { return !!slide.recovered_from_zip_listing; })
+        .map(function (slide) {
+          return {
+            slide_no: slide.slide_no,
+            slide_path: slide.slide_path,
+            missing_relationship_id: slide.missing_relationship_id || null,
+            appended_without_presentation_entry: !!slide.appended_without_presentation_entry,
+          };
+        }),
       pages: pages,
     };
   }
