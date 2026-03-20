@@ -750,10 +750,11 @@
     var kind = element.shape_kind || "shape";
     var style = element.shape_style || {};
     if (element.element_type === "connector") return ["connector", kind];
-    if (text) {
+    if (text && (kind === "rect" || kind === "roundRect" || kind === "ellipse")) {
       if (!hasVisibleFill(style) && !hasVisibleLine(style)) return ["text_block", kind];
       return ["labeled_shape", kind];
     }
+    if (text) return ["text_block", kind];
     return ["shape", kind];
   }
 
@@ -791,29 +792,6 @@
     if (bounds.flipH) payload.flipH = true;
     if (bounds.flipV) payload.flipV = true;
     return payload;
-  }
-
-  function isNear(value, target, tolerance) {
-    return Math.abs(value - target) <= tolerance;
-  }
-
-  function isLikelyFullPageOverlay(element, nodeSubtype, text, slideSize) {
-    if (!slideSize || !slideSize.width_px || !slideSize.height_px) return false;
-    if (nodeSubtype !== "shape") return false;
-    if (text) return false;
-    var style = element.shape_style || {};
-    if (!hasVisibleFill(style) || !style.fill || style.fill.kind !== "solid") return false;
-    var fillValue = String(style.fill.resolved_value || style.fill.value || "").toLowerCase();
-    var alpha = style.fill.alpha;
-    if (fillValue !== "000000" || (alpha !== null && alpha !== undefined && alpha < 0.95)) return false;
-    var boundsPx = emuBoundsToPx(element.bounds);
-    if (!boundsPx) return false;
-    return (
-      isNear(boundsPx.x, 0, 2) &&
-      isNear(boundsPx.y, 0, 2) &&
-      isNear(boundsPx.width, slideSize.width_px, 2) &&
-      isNear(boundsPx.height, slideSize.height_px, 2)
-    );
   }
 
   function inferConnectorEndpoints(element, elementIndex) {
@@ -930,7 +908,6 @@
     var parentCandidateId = params.parent_candidate_id;
     var candidates = params.candidates;
     var elementIndex = params.element_index;
-    var slideSize = params.slide_size;
     var candidateId = "s" + slideNo + ":" + sourcePath;
     var title = element.name || element.text || element.element_type || "element";
     var text = String(element.text || "").trim();
@@ -1061,7 +1038,6 @@
     var nodeSubtype = shapeInfo[0];
     var shapeSubtype = shapeInfo[1];
     var connectorExtra = {};
-    var overlayCandidate = isLikelyFullPageOverlay(element, nodeSubtype, text, slideSize);
     if (nodeSubtype === "connector") {
       if (element.start_connection) {
         connectorExtra.start_connection = element.start_connection;
@@ -1102,7 +1078,6 @@
         shape_kind: shapeSubtype,
         shape_style: element.shape_style,
         text_style: element.text_style,
-        full_page_overlay_candidate: overlayCandidate,
       }, connectorExtra),
     }));
   }
@@ -1154,7 +1129,6 @@
           parent_candidate_id: "page:" + slideInfo.slide_no,
           candidates: candidates,
           element_index: elementIndex,
-          slide_size: slideSize,
         });
       }
 
@@ -1192,20 +1166,6 @@
     };
   }
 
-  function buildPptxReplayBundle(intermediate) {
-    return {
-      kind: "pptx-replay-bundle",
-      source_kind: "pptx",
-      visual_model_version: "v1",
-      layout_mode: "chapter-rows",
-      pptxPath: intermediate.pptxPath,
-      requestedSlides: intermediate.requestedSlides,
-      skippedSlides: intermediate.skippedSlides,
-      recoveredSlides: intermediate.recoveredSlides,
-      pages: intermediate.pages,
-    };
-  }
-
   async function parsePptxArrayBuffer(arrayBuffer, fileName) {
     if (!global.JSZip) {
       throw new Error("JSZip is not loaded.");
@@ -1213,7 +1173,7 @@
     var zip = await global.JSZip.loadAsync(arrayBuffer).catch(function () {
       throw new Error("현재는 .pptx 파일만 지원합니다. 파일이 손상되었거나 legacy .ppt 형식일 수 있습니다.");
     });
-    return buildPptxReplayBundle(buildIntermediateModelFromZip(zip, fileName || "uploaded.pptx"));
+    return buildIntermediateModelFromZip(zip, fileName || "uploaded.pptx");
   }
 
   var api = {

@@ -913,10 +913,11 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     var kind = element.shape_kind || "shape";
     var style = element.shape_style || {};
     if (element.element_type === "connector") return ["connector", kind];
-    if (text) {
+    if (text && (kind === "rect" || kind === "roundRect" || kind === "ellipse")) {
       if (!hasVisibleFill(style) && !hasVisibleLine(style)) return ["text_block", kind];
       return ["labeled_shape", kind];
     }
+    if (text) return ["text_block", kind];
     return ["shape", kind];
   }
 
@@ -954,29 +955,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     if (bounds.flipH) payload.flipH = true;
     if (bounds.flipV) payload.flipV = true;
     return payload;
-  }
-
-  function isNear(value, target, tolerance) {
-    return Math.abs(value - target) <= tolerance;
-  }
-
-  function isLikelyFullPageOverlay(element, nodeSubtype, text, slideSize) {
-    if (!slideSize || !slideSize.width_px || !slideSize.height_px) return false;
-    if (nodeSubtype !== "shape") return false;
-    if (text) return false;
-    var style = element.shape_style || {};
-    if (!hasVisibleFill(style) || !style.fill || style.fill.kind !== "solid") return false;
-    var fillValue = String(style.fill.resolved_value || style.fill.value || "").toLowerCase();
-    var alpha = style.fill.alpha;
-    if (fillValue !== "000000" || (alpha !== null && alpha !== undefined && alpha < 0.95)) return false;
-    var boundsPx = emuBoundsToPx(element.bounds);
-    if (!boundsPx) return false;
-    return (
-      isNear(boundsPx.x, 0, 2) &&
-      isNear(boundsPx.y, 0, 2) &&
-      isNear(boundsPx.width, slideSize.width_px, 2) &&
-      isNear(boundsPx.height, slideSize.height_px, 2)
-    );
   }
 
   function inferConnectorEndpoints(element, elementIndex) {
@@ -1093,7 +1071,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     var parentCandidateId = params.parent_candidate_id;
     var candidates = params.candidates;
     var elementIndex = params.element_index;
-    var slideSize = params.slide_size;
     var candidateId = "s" + slideNo + ":" + sourcePath;
     var title = element.name || element.text || element.element_type || "element";
     var text = String(element.text || "").trim();
@@ -1224,7 +1201,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     var nodeSubtype = shapeInfo[0];
     var shapeSubtype = shapeInfo[1];
     var connectorExtra = {};
-    var overlayCandidate = isLikelyFullPageOverlay(element, nodeSubtype, text, slideSize);
     if (nodeSubtype === "connector") {
       if (element.start_connection) {
         connectorExtra.start_connection = element.start_connection;
@@ -1265,7 +1241,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         shape_kind: shapeSubtype,
         shape_style: element.shape_style,
         text_style: element.text_style,
-        full_page_overlay_candidate: overlayCandidate,
       }, connectorExtra),
     }));
   }
@@ -1317,7 +1292,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
           parent_candidate_id: "page:" + slideInfo.slide_no,
           candidates: candidates,
           element_index: elementIndex,
-          slide_size: slideSize,
         });
       }
 
@@ -1355,20 +1329,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     };
   }
 
-  function buildPptxReplayBundle(intermediate) {
-    return {
-      kind: "pptx-replay-bundle",
-      source_kind: "pptx",
-      visual_model_version: "v1",
-      layout_mode: "chapter-rows",
-      pptxPath: intermediate.pptxPath,
-      requestedSlides: intermediate.requestedSlides,
-      skippedSlides: intermediate.skippedSlides,
-      recoveredSlides: intermediate.recoveredSlides,
-      pages: intermediate.pages,
-    };
-  }
-
   async function parsePptxArrayBuffer(arrayBuffer, fileName) {
     if (!global.JSZip) {
       throw new Error("JSZip is not loaded.");
@@ -1376,7 +1336,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     var zip = await global.JSZip.loadAsync(arrayBuffer).catch(function () {
       throw new Error("현재는 .pptx 파일만 지원합니다. 파일이 손상되었거나 legacy .ppt 형식일 수 있습니다.");
     });
-    return buildPptxReplayBundle(buildIntermediateModelFromZip(zip, fileName || "uploaded.pptx"));
+    return buildIntermediateModelFromZip(zip, fileName || "uploaded.pptx");
   }
 
   var api = {
@@ -1434,16 +1394,13 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
 
       function getPayloadKind(payload) {
-        if (payload && payload.kind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
-          return "pptx-replay-bundle";
-        }
         if (payload && Array.isArray(payload.pages)) {
           return "intermediate";
         }
         if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
           return "figma-replay-bundle";
         }
-        throw new Error("지원하지 않는 JSON 형식입니다. intermediate JSON, pptx replay bundle JSON 또는 figma replay bundle JSON을 넣어야 합니다.");
+        throw new Error("지원하지 않는 JSON 형식입니다. intermediate JSON 또는 figma replay bundle JSON을 넣어야 합니다.");
       }
 
       function validatePayload(payload) {
@@ -1454,38 +1411,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
 
       function summarizePayload(payload, fileName, kind) {
-        if (kind === "pptx-replay-bundle") {
-          const slides = payload.pages.map((page) => `- Slide ${page.slide_no}: ${page.title_or_label || "untitled"} (${page.candidates.length} candidates)`);
-          const skipped = Array.isArray(payload.skippedSlides) && payload.skippedSlides.length
-            ? [
-                "",
-                `건너뛴 슬라이드: ${payload.skippedSlides.length}`,
-                ...payload.skippedSlides.map((item) => `- Slide ${item.slide_no}: missing rel ${item.relationship_id || "unknown"}`)
-              ]
-            : [];
-          const recovered = Array.isArray(payload.recoveredSlides) && payload.recoveredSlides.length
-            ? [
-                "",
-                `복구한 슬라이드: ${payload.recoveredSlides.length}`,
-                ...payload.recoveredSlides.map((item) => {
-                  const reason = item.appended_without_presentation_entry
-                    ? "zip only"
-                    : `fallback rel ${item.missing_relationship_id || "unknown"}`;
-                  return `- Slide ${item.slide_no}: ${reason}`;
-                })
-              ]
-            : [];
-          return [
-            `파일: ${fileName || "직접 입력"}`,
-            `형식: pptx replay bundle`,
-            `슬라이드 수: ${payload.pages.length}`,
-            "",
-            ...slides,
-            ...skipped,
-            ...recovered
-          ].join("\n");
-        }
-
         if (kind === "intermediate") {
           const slides = payload.pages.map((page) => `- Slide ${page.slide_no}: ${page.title_or_label || "untitled"} (${page.candidates.length} candidates)`);
           const skipped = Array.isArray(payload.skippedSlides) && payload.skippedSlides.length
@@ -1624,9 +1549,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
           const selectedMode = renderModeInputs.find((input) => input.checked)?.value || "read-first";
           const renderTarget = result.kind === "intermediate"
             ? `${payload.pages.length} slides`
-            : result.kind === "pptx-replay-bundle"
-              ? `${payload.pages.length} slides replay`
-              : `${payload.page_name || "1 page"} replay`;
+            : `${payload.page_name || "1 page"} replay`;
           setStatus(`렌더링 중... (${renderTarget})`);
           parent.postMessage(
             {
