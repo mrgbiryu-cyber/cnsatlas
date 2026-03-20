@@ -1456,29 +1456,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         };
       }
 
-      function validatePptxPayload(payload) {
-        if (payload && payload.kind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
-          return {
-            payload,
-            kind: "pptx-replay-bundle"
-          };
-        }
-        if (payload && payload.source_kind === "pptx" && Array.isArray(payload.pages)) {
-          return {
-            payload: buildPptxReplayBundle(payload),
-            kind: "pptx-replay-bundle"
-          };
-        }
-        if (payload && Array.isArray(payload.pages)) {
-          return {
-            payload: buildPptxReplayBundle(payload),
-            kind: "pptx-replay-bundle"
-          };
-        }
-        const keys = payload && typeof payload === "object" ? Object.keys(payload).slice(0, 12).join(", ") : String(payload);
-        throw new Error(`PPTX 파싱 결과 형식이 올바르지 않습니다. 반환 키: ${keys || "none"}`);
-      }
-
       function summarizePayload(payload, fileName, kind) {
         if (kind === "pptx-replay-bundle") {
           const slides = payload.pages.map((page) => `- Slide ${page.slide_no}: ${page.title_or_label || "untitled"} (${page.candidates.length} candidates)`);
@@ -1589,7 +1566,10 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         setStatus(`${file.name} 분석 중...`);
         const buffer = await file.arrayBuffer();
         let payload = await window.CnsPptxParser.parsePptxArrayBuffer(buffer, file.name);
-        const result = validatePptxPayload(payload);
+        if (payload && Array.isArray(payload.pages) && (!payload.kind || payload.kind === "intermediate")) {
+          payload = buildPptxReplayBundle(payload);
+        }
+        const result = validatePayload(payload);
         loadedJsonText = JSON.stringify(result.payload);
         jsonText.value = "";
         setSummary(summarizePayload(result.payload, file.name, result.kind));
