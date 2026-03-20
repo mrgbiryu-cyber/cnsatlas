@@ -11,8 +11,8 @@
     "absoluteBoundingBox": {
       "x": 0.0,
       "y": 0.0,
-      "width": 1280.0,
-      "height": 720.0
+      "width": 960.0,
+      "height": 540.0
     },
     "relativeTransform": [
       [
@@ -56,8 +56,8 @@
         "absoluteBoundingBox": {
           "x": 0.0,
           "y": 0.0,
-          "width": 120.0,
-          "height": 24.0
+          "width": 90.0,
+          "height": 18.0
         },
         "relativeTransform": [
           [
@@ -83,7 +83,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "Inter",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -106,8 +106,8 @@
         "absoluteBoundingBox": {
           "x": 0.0,
           "y": 0.0,
-          "width": 120.0,
-          "height": 24.0
+          "width": 90.0,
+          "height": 18.0
         },
         "relativeTransform": [
           [
@@ -133,7 +133,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "Inter",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -156,8 +156,8 @@
         "absoluteBoundingBox": {
           "x": 0.0,
           "y": 0.0,
-          "width": 120.0,
-          "height": 24.0
+          "width": 90.0,
+          "height": 18.0
         },
         "relativeTransform": [
           [
@@ -203,10 +203,10 @@
         "type": "FRAME",
         "name": "직사각형 138",
         "absoluteBoundingBox": {
-          "x": 777.85,
+          "x": 583.39,
           "y": 0.0,
-          "width": 188.63,
-          "height": 74.82
+          "width": 141.47,
+          "height": 56.11
         },
         "relativeTransform": [
           [
@@ -241,10 +241,10 @@
             "name": "직사각형 138",
             "characters": "V 1.1\n[BTOCSITE-22640]\n- 비교하기 버튼 : 노출 제외 조건 추가\n[BTOCSITE-22833]\n- 비교하기 버튼 : 노출 제외 조건 수정",
             "absoluteBoundingBox": {
-              "x": 777.85,
+              "x": 583.39,
               "y": 0.0,
-              "width": 188.63,
-              "height": 74.82
+              "width": 141.47,
+              "height": 56.11
             },
             "relativeTransform": [
               [
@@ -298,9 +298,9 @@
         "name": "Display",
         "absoluteBoundingBox": {
           "x": 0.0,
-          "y": 10.76,
-          "width": 76.78,
-          "height": 46.69
+          "y": 8.07,
+          "width": 57.59,
+          "height": 35.02
         },
         "relativeTransform": [
           [
@@ -336,9 +336,9 @@
             "characters": "일반PDP",
             "absoluteBoundingBox": {
               "x": 0.0,
-              "y": 10.76,
-              "width": 76.78,
-              "height": 46.69
+              "y": 8.07,
+              "width": 57.59,
+              "height": 35.02
             },
             "relativeTransform": [
               [
@@ -364,7 +364,7 @@
               }
             ],
             "style": {
-              "fontSize": 9,
+              "fontSize": 8,
               "fontFamily": "LG스마트체 SemiBold",
               "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
@@ -391,10 +391,10 @@
         "type": "FRAME",
         "name": "직사각형 11",
         "absoluteBoundingBox": {
-          "x": 777.85,
-          "y": 15.28,
-          "width": 188.98,
-          "height": 42.17
+          "x": 583.39,
+          "y": 11.46,
+          "width": 141.73,
+          "height": 31.63
         },
         "relativeTransform": [
           [
@@ -429,10 +429,10 @@
             "name": "직사각형 11",
             "characters": "V 1.5\n[BTOCSITE-29832]\n- UP가전 뱃지 노출 로직 수정",
             "absoluteBoundingBox": {
-              "x": 777.85,
-              "y": 15.28,
-              "width": 188.98,
-              "height": 42.17
+              "x": 583.39,
+              "y": 11.46,
+              "width": 141.73,
+              "height": 31.63
             },
             "relativeTransform": [
               [
@@ -485,10 +485,10 @@
         "type": "FRAME",
         "name": "직사각형 150",
         "absoluteBoundingBox": {
-          "x": 777.85,
-          "y": 30.8,
-          "width": 188.98,
-          "height": 46.42
+          "x": 583.39,
+          "y": 23.1,
+          "width": 141.73,
+          "height": 34.81
         },
         "relativeTransform": [
           [
@@ -523,10 +523,10 @@
             "name": "직사각형 150",
             "characters": "V 1.6\n[BTOCSITE-34166]\n제품명 우측 그룹명 노출 추가",
             "absoluteBoundingBox": {
-              "x": 777.85,
-              "y": 30.8,
-              "width": 188.98,
-              "height": 46.42
+              "x": 583.39,
+              "y": 23.1,
+              "width": 141.73,
+              "height": 34.81
             },
             "relativeTransform": [
               [
@@ -579,10 +579,10 @@
         "type": "FRAME",
         "name": "직사각형 239",
         "absoluteBoundingBox": {
-          "x": 777.85,
-          "y": 48.41,
-          "width": 188.98,
-          "height": 53.67
+          "x": 583.39,
+          "y": 36.31,
+          "width": 141.73,
+          "height": 40.25
         },
         "relativeTransform": [
           [
@@ -617,10 +617,10 @@
             "name": "직사각형 239",
             "characters": "V 1.7\n[BTOCSITE-35421]\n- 다품목할인, 내일배송 뱃지 추가",
             "absoluteBoundingBox": {
-              "x": 777.85,
-              "y": 48.41,
-              "width": 188.98,
-              "height": 53.67
+              "x": 583.39,
+              "y": 36.31,
+              "width": 141.73,
+              "height": 40.25
             },
             "relativeTransform": [
               [
@@ -673,10 +673,10 @@
         "type": "FRAME",
         "name": "표 48",
         "absoluteBoundingBox": {
-          "x": 880.88,
-          "y": 57.45,
-          "width": 366.67,
-          "height": 998.68
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.0,
+          "height": 749.01
         },
         "relativeTransform": [
           [
@@ -699,10 +699,10 @@
             "type": "FRAME",
             "name": "row 1",
             "absoluteBoundingBox": {
-              "x": 880.88,
-              "y": 57.45,
-              "width": 366.67,
-              "height": 28.0
+              "x": 660.66,
+              "y": 43.09,
+              "width": 275.0,
+              "height": 21.0
             },
             "relativeTransform": [
               [
@@ -725,10 +725,10 @@
                 "type": "FRAME",
                 "name": "cell 1-1",
                 "absoluteBoundingBox": {
-                  "x": 880.88,
-                  "y": 57.45,
-                  "width": 366.67,
-                  "height": 28.0
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 21.0
                 },
                 "relativeTransform": [
                   [
@@ -771,10 +771,10 @@
                     "name": "cell 1-1",
                     "characters": "화면 설명",
                     "absoluteBoundingBox": {
-                      "x": 880.88,
-                      "y": 57.45,
-                      "width": 366.67,
-                      "height": 28.0
+                      "x": 660.66,
+                      "y": 43.09,
+                      "width": 275.0,
+                      "height": 21.0
                     },
                     "relativeTransform": [
                       [
@@ -800,7 +800,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 11,
+                      "fontSize": 8,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -834,10 +834,10 @@
             "type": "FRAME",
             "name": "row 2",
             "absoluteBoundingBox": {
-              "x": 880.88,
-              "y": 85.45,
-              "width": 366.67,
-              "height": 28.0
+              "x": 660.66,
+              "y": 64.09,
+              "width": 275.0,
+              "height": 21.0
             },
             "relativeTransform": [
               [
@@ -860,10 +860,10 @@
                 "type": "FRAME",
                 "name": "cell 2-1",
                 "absoluteBoundingBox": {
-                  "x": 880.88,
-                  "y": 85.45,
-                  "width": 366.67,
-                  "height": 28.0
+                  "x": 660.66,
+                  "y": 64.09,
+                  "width": 275.0,
+                  "height": 21.0
                 },
                 "relativeTransform": [
                   [
@@ -906,10 +906,10 @@
                     "name": "cell 2-1",
                     "characters": "Fold 영역 정의",
                     "absoluteBoundingBox": {
-                      "x": 880.88,
-                      "y": 85.45,
-                      "width": 366.67,
-                      "height": 28.0
+                      "x": 660.66,
+                      "y": 64.09,
+                      "width": 275.0,
+                      "height": 21.0
                     },
                     "relativeTransform": [
                       [
@@ -935,7 +935,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 11,
+                      "fontSize": 8,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -969,10 +969,10 @@
             "type": "FRAME",
             "name": "row 3",
             "absoluteBoundingBox": {
-              "x": 880.88,
-              "y": 113.45,
-              "width": 366.67,
-              "height": 33.0
+              "x": 660.66,
+              "y": 85.09,
+              "width": 275.0,
+              "height": 30.0
             },
             "relativeTransform": [
               [
@@ -995,10 +995,10 @@
                 "type": "FRAME",
                 "name": "cell 3-1",
                 "absoluteBoundingBox": {
-                  "x": 880.88,
-                  "y": 113.45,
-                  "width": 34.08,
-                  "height": 33.0
+                  "x": 660.66,
+                  "y": 85.09,
+                  "width": 25.56,
+                  "height": 30.0
                 },
                 "relativeTransform": [
                   [
@@ -1041,10 +1041,10 @@
                     "name": "cell 3-1",
                     "characters": "1",
                     "absoluteBoundingBox": {
-                      "x": 880.88,
-                      "y": 113.45,
-                      "width": 34.08,
-                      "height": 33.0
+                      "x": 660.66,
+                      "y": 85.09,
+                      "width": 25.56,
+                      "height": 30.0
                     },
                     "relativeTransform": [
                       [
@@ -1070,7 +1070,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 11,
+                      "fontSize": 10,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -1097,10 +1097,10 @@
                 "type": "FRAME",
                 "name": "cell 3-2",
                 "absoluteBoundingBox": {
-                  "x": 914.96,
-                  "y": 113.45,
-                  "width": 332.6,
-                  "height": 33.0
+                  "x": 686.22,
+                  "y": 85.09,
+                  "width": 249.45,
+                  "height": 30.0
                 },
                 "relativeTransform": [
                   [
@@ -1143,10 +1143,10 @@
                     "name": "cell 3-2",
                     "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조 문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )- V0.0.pptx",
                     "absoluteBoundingBox": {
-                      "x": 914.96,
-                      "y": 113.45,
-                      "width": 332.6,
-                      "height": 33.0
+                      "x": 686.22,
+                      "y": 85.09,
+                      "width": 249.45,
+                      "height": 30.0
                     },
                     "relativeTransform": [
                       [
@@ -1172,7 +1172,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 10,
+                      "fontSize": 9,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -1206,10 +1206,10 @@
             "type": "FRAME",
             "name": "row 4",
             "absoluteBoundingBox": {
-              "x": 880.88,
-              "y": 146.45,
-              "width": 366.67,
-              "height": 191.0
+              "x": 660.66,
+              "y": 115.09,
+              "width": 275.0,
+              "height": 203.0
             },
             "relativeTransform": [
               [
@@ -1232,10 +1232,10 @@
                 "type": "FRAME",
                 "name": "cell 4-1",
                 "absoluteBoundingBox": {
-                  "x": 880.88,
-                  "y": 146.45,
-                  "width": 34.08,
-                  "height": 191.0
+                  "x": 660.66,
+                  "y": 115.09,
+                  "width": 25.56,
+                  "height": 203.0
                 },
                 "relativeTransform": [
                   [
@@ -1278,10 +1278,10 @@
                     "name": "cell 4-1",
                     "characters": "2",
                     "absoluteBoundingBox": {
-                      "x": 880.88,
-                      "y": 146.45,
-                      "width": 34.08,
-                      "height": 191.0
+                      "x": 660.66,
+                      "y": 115.09,
+                      "width": 25.56,
+                      "height": 203.0
                     },
                     "relativeTransform": [
                       [
@@ -1307,7 +1307,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 62,
+                      "fontSize": 66,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -1334,10 +1334,10 @@
                 "type": "FRAME",
                 "name": "cell 4-2",
                 "absoluteBoundingBox": {
-                  "x": 914.96,
-                  "y": 146.45,
-                  "width": 332.6,
-                  "height": 191.0
+                  "x": 686.22,
+                  "y": 115.09,
+                  "width": 249.45,
+                  "height": 203.0
                 },
                 "relativeTransform": [
                   [
@@ -1380,10 +1380,10 @@
                     "name": "cell 4-2",
                     "characters": "[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공 : 동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서 인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS > 제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e) Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두 충족 시 문구 제공 1) WCMS > [KRP0008] > 비디오 > Video File > ‘360 미디어용도 ’ 에 체크 2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360 미디어 디스클라이머 노출에 Y 체크",
                     "absoluteBoundingBox": {
-                      "x": 914.96,
-                      "y": 146.45,
-                      "width": 332.6,
-                      "height": 191.0
+                      "x": 686.22,
+                      "y": 115.09,
+                      "width": 249.45,
+                      "height": 203.0
                     },
                     "relativeTransform": [
                       [
@@ -1409,7 +1409,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 59,
+                      "fontSize": 63,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -1443,10 +1443,10 @@
             "type": "FRAME",
             "name": "row 5",
             "absoluteBoundingBox": {
-              "x": 880.88,
-              "y": 337.45,
-              "width": 366.67,
-              "height": 227.0
+              "x": 660.66,
+              "y": 318.09,
+              "width": 275.0,
+              "height": 246.0
             },
             "relativeTransform": [
               [
@@ -1469,10 +1469,10 @@
                 "type": "FRAME",
                 "name": "cell 5-1",
                 "absoluteBoundingBox": {
-                  "x": 880.88,
-                  "y": 337.45,
-                  "width": 34.08,
-                  "height": 227.0
+                  "x": 660.66,
+                  "y": 318.09,
+                  "width": 25.56,
+                  "height": 246.0
                 },
                 "relativeTransform": [
                   [
@@ -1515,10 +1515,10 @@
                     "name": "cell 5-1",
                     "characters": "3",
                     "absoluteBoundingBox": {
-                      "x": 880.88,
-                      "y": 337.45,
-                      "width": 34.08,
-                      "height": 227.0
+                      "x": 660.66,
+                      "y": 318.09,
+                      "width": 25.56,
+                      "height": 246.0
                     },
                     "relativeTransform": [
                       [
@@ -1571,10 +1571,10 @@
                 "type": "FRAME",
                 "name": "cell 5-2",
                 "absoluteBoundingBox": {
-                  "x": 914.96,
-                  "y": 337.45,
-                  "width": 332.6,
-                  "height": 227.0
+                  "x": 686.22,
+                  "y": 318.09,
+                  "width": 249.45,
+                  "height": 246.0
                 },
                 "relativeTransform": [
                   [
@@ -1617,10 +1617,10 @@
                     "name": "cell 5-2",
                     "characters": "[ 제품명 영역 ] Badge 노출 - 다품목할인 > 내일배송 ( 판매예정 ) > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
                     "absoluteBoundingBox": {
-                      "x": 914.96,
-                      "y": 337.45,
-                      "width": 332.6,
-                      "height": 227.0
+                      "x": 686.22,
+                      "y": 318.09,
+                      "width": 249.45,
+                      "height": 246.0
                     },
                     "relativeTransform": [
                       [
@@ -1646,7 +1646,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 70,
+                      "fontSize": 72,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -1680,10 +1680,10 @@
             "type": "FRAME",
             "name": "row 6",
             "absoluteBoundingBox": {
-              "x": 880.88,
-              "y": 564.45,
-              "width": 366.67,
-              "height": 28.0
+              "x": 660.66,
+              "y": 564.09,
+              "width": 275.0,
+              "height": 21.0
             },
             "relativeTransform": [
               [
@@ -1706,10 +1706,10 @@
                 "type": "FRAME",
                 "name": "cell 6-1",
                 "absoluteBoundingBox": {
-                  "x": 880.88,
-                  "y": 564.45,
-                  "width": 366.67,
-                  "height": 28.0
+                  "x": 660.66,
+                  "y": 564.09,
+                  "width": 275.0,
+                  "height": 21.0
                 },
                 "relativeTransform": [
                   [
@@ -1752,10 +1752,10 @@
                     "name": "cell 6-1",
                     "characters": "뒷페이지 계속",
                     "absoluteBoundingBox": {
-                      "x": 880.88,
-                      "y": 564.45,
-                      "width": 366.67,
-                      "height": 28.0
+                      "x": 660.66,
+                      "y": 564.09,
+                      "width": 275.0,
+                      "height": 21.0
                     },
                     "relativeTransform": [
                       [
@@ -1781,7 +1781,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 11,
+                      "fontSize": 8,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -1823,10 +1823,10 @@
         "name": "TextBox 281",
         "characters": "동영상 : Youtube case",
         "absoluteBoundingBox": {
-          "x": 411.93,
-          "y": 66.76,
-          "width": 138.2,
-          "height": 24.23
+          "x": 308.95,
+          "y": 50.07,
+          "width": 103.65,
+          "height": 18.17
         },
         "relativeTransform": [
           [
@@ -1852,7 +1852,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 Bold",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -1872,10 +1872,10 @@
         "type": "FRAME",
         "name": "직사각형 145",
         "absoluteBoundingBox": {
-          "x": 777.53,
-          "y": 70.68,
-          "width": 188.98,
-          "height": 64.87
+          "x": 583.15,
+          "y": 53.01,
+          "width": 141.73,
+          "height": 48.65
         },
         "relativeTransform": [
           [
@@ -1910,10 +1910,10 @@
             "name": "직사각형 145",
             "characters": "V 2.0\n[BTOCSITE-43175]\n- [인테리어컷] 영역 디스클레이머 일괄 적용",
             "absoluteBoundingBox": {
-              "x": 777.53,
-              "y": 70.68,
-              "width": 188.98,
-              "height": 64.87
+              "x": 583.15,
+              "y": 53.01,
+              "width": 141.73,
+              "height": 48.65
             },
             "relativeTransform": [
               [
@@ -1966,10 +1966,10 @@
         "type": "GROUP",
         "name": "그룹 124",
         "absoluteBoundingBox": {
-          "x": 39.69,
-          "y": 73.88,
-          "width": 314.83,
-          "height": 348.64
+          "x": 29.77,
+          "y": 55.41,
+          "width": 236.12,
+          "height": 261.48
         },
         "relativeTransform": [
           [
@@ -1989,27 +1989,27 @@
             "type": "VECTOR",
             "name": "직선 연결선[R] 4",
             "absoluteBoundingBox": {
-              "x": 39.69,
-              "y": 73.88,
-              "width": 314.83,
-              "height": 348.14
+              "x": 29.77,
+              "y": 55.41,
+              "width": 236.12,
+              "height": 261.11
             },
             "relativeTransform": [
               [
-                1.0,
-                -0.0,
+                1,
+                0,
                 0
               ],
               [
-                0.0,
-                1.0,
+                0,
+                1,
                 0
               ]
             ],
             "fillGeometry": [],
             "strokeGeometry": [
               {
-                "path": "M 157.41 348.64 L 173.41 348.64 L 173.41 0.94 L 157.91 0.94"
+                "path": "M 118.06 261.48 L 134.06 261.48 L 134.06 0.7 L 118.43 0.7"
               }
             ],
             "fills": [
@@ -2034,7 +2034,7 @@
                 "opacity": null
               }
             ],
-            "strokeWeight": 1.5,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_13/child_2",
@@ -2048,27 +2048,27 @@
             "type": "VECTOR",
             "name": "직선 연결선[R] 25",
             "absoluteBoundingBox": {
-              "x": 39.69,
-              "y": 73.88,
-              "width": 314.78,
-              "height": 348.14
+              "x": 29.77,
+              "y": 55.41,
+              "width": 236.08,
+              "height": 261.11
             },
             "relativeTransform": [
               [
-                -1.0,
-                -0.0,
+                1,
+                0,
                 0
               ],
               [
-                -0.0,
-                1.0,
+                0,
+                1,
                 0
               ]
             ],
             "fillGeometry": [],
             "strokeGeometry": [
               {
-                "path": "M 157.41 348.64 L 173.41 348.64 L 173.41 0.94 L 157.91 0.94"
+                "path": "M 118.06 261.48 L 134.06 261.48 L 134.06 0.7 L 118.43 0.7"
               }
             ],
             "fills": [
@@ -2093,7 +2093,7 @@
                 "opacity": null
               }
             ],
-            "strokeWeight": 1.5,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_13/child_3",
@@ -2107,10 +2107,10 @@
             "type": "RECTANGLE",
             "name": "직사각형 127",
             "absoluteBoundingBox": {
-              "x": 40.67,
-              "y": 74.82,
-              "width": 313.85,
-              "height": 347.7
+              "x": 30.5,
+              "y": 56.11,
+              "width": 235.39,
+              "height": 260.77
             },
             "relativeTransform": [
               [
@@ -2168,10 +2168,10 @@
         "type": "RECTANGLE",
         "name": "Google Shape;64;p67",
         "absoluteBoundingBox": {
-          "x": 39.83,
-          "y": 74.63,
-          "width": 314.88,
-          "height": 624.28
+          "x": 29.87,
+          "y": 55.97,
+          "width": 236.16,
+          "height": 468.21
         },
         "relativeTransform": [
           [
@@ -2213,10 +2213,10 @@
         "name": "TextBox 24",
         "characters": "- 썸네일 이미지 + 재생아이콘 노출",
         "absoluteBoundingBox": {
-          "x": 411.05,
-          "y": 85.48,
-          "width": 172.54,
-          "height": 22.62
+          "x": 308.29,
+          "y": 64.11,
+          "width": 129.41,
+          "height": 16.96
         },
         "relativeTransform": [
           [
@@ -2262,10 +2262,10 @@
         "type": "FRAME",
         "name": "타원 157",
         "absoluteBoundingBox": {
-          "x": 28.23,
-          "y": 86.01,
-          "width": 17.44,
-          "height": 17.44
+          "x": 21.17,
+          "y": 64.51,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -2300,10 +2300,10 @@
             "name": "타원 157",
             "characters": "1",
             "absoluteBoundingBox": {
-              "x": 28.23,
-              "y": 86.01,
-              "width": 17.44,
-              "height": 17.44
+              "x": 21.17,
+              "y": 64.51,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -2356,10 +2356,10 @@
         "type": "RECTANGLE",
         "name": "그림 183",
         "absoluteBoundingBox": {
-          "x": 318.43,
-          "y": 86.83,
-          "width": 23.08,
-          "height": 23.08
+          "x": 238.82,
+          "y": 65.12,
+          "width": 17.31,
+          "height": 17.31
         },
         "relativeTransform": [
           [
@@ -2404,10 +2404,10 @@
         "type": "RECTANGLE",
         "name": "Picture 3",
         "absoluteBoundingBox": {
-          "x": 47.45,
-          "y": 87.58,
-          "width": 24.44,
-          "height": 24.44
+          "x": 35.59,
+          "y": 65.69,
+          "width": 18.33,
+          "height": 18.33
         },
         "relativeTransform": [
           [
@@ -2452,10 +2452,10 @@
         "type": "RECTANGLE",
         "name": "그림 187",
         "absoluteBoundingBox": {
-          "x": 285.72,
-          "y": 87.58,
-          "width": 19.83,
-          "height": 19.83
+          "x": 214.29,
+          "y": 65.69,
+          "width": 14.87,
+          "height": 14.87
         },
         "relativeTransform": [
           [
@@ -2500,10 +2500,10 @@
         "type": "FRAME",
         "name": "직사각형 190",
         "absoluteBoundingBox": {
-          "x": 777.53,
-          "y": 89.85,
-          "width": 188.98,
-          "height": 58.93
+          "x": 583.15,
+          "y": 67.39,
+          "width": 141.73,
+          "height": 44.2
         },
         "relativeTransform": [
           [
@@ -2538,10 +2538,10 @@
             "name": "직사각형 190",
             "characters": "V 2.4\n[BTOCSITE-47092]\n- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
             "absoluteBoundingBox": {
-              "x": 777.53,
-              "y": 89.85,
-              "width": 188.98,
-              "height": 58.93
+              "x": 583.15,
+              "y": 67.39,
+              "width": 141.73,
+              "height": 44.2
             },
             "relativeTransform": [
               [
@@ -2594,10 +2594,10 @@
         "type": "RECTANGLE",
         "name": "Search",
         "absoluteBoundingBox": {
-          "x": 254.02,
-          "y": 89.97,
-          "width": 17.44,
-          "height": 17.84
+          "x": 190.52,
+          "y": 67.48,
+          "width": 13.08,
+          "height": 13.38
         },
         "relativeTransform": [
           [
@@ -2648,10 +2648,10 @@
         "type": "RECTANGLE",
         "name": "그림 192",
         "absoluteBoundingBox": {
-          "x": 413.64,
-          "y": 107.94,
-          "width": 238.98,
-          "height": 265.26
+          "x": 310.23,
+          "y": 80.95,
+          "width": 179.23,
+          "height": 198.94
         },
         "relativeTransform": [
           [
@@ -2696,10 +2696,10 @@
         "type": "FRAME",
         "name": "직사각형 152",
         "absoluteBoundingBox": {
-          "x": 777.53,
-          "y": 108.81,
-          "width": 188.98,
-          "height": 58.93
+          "x": 583.15,
+          "y": 81.61,
+          "width": 141.73,
+          "height": 44.2
         },
         "relativeTransform": [
           [
@@ -2734,10 +2734,10 @@
             "name": "직사각형 152",
             "characters": "V 2.9\n[BTOCSITE-51375  PDP 베스트  순서 표시",
             "absoluteBoundingBox": {
-              "x": 777.53,
-              "y": 108.81,
-              "width": 188.98,
-              "height": 58.93
+              "x": 583.15,
+              "y": 81.61,
+              "width": 141.73,
+              "height": 44.2
             },
             "relativeTransform": [
               [
@@ -2790,10 +2790,10 @@
         "type": "FRAME",
         "name": "Google Shape;105;p2",
         "absoluteBoundingBox": {
-          "x": 967.57,
-          "y": 127.42,
-          "width": 312.43,
-          "height": 72.45
+          "x": 725.68,
+          "y": 95.56,
+          "width": 234.32,
+          "height": 54.34
         },
         "relativeTransform": [
           [
@@ -2829,7 +2829,7 @@
             "opacity": null
           }
         ],
-        "strokeWeight": 1.33,
+        "strokeWeight": 1.0,
         "cornerRadius": null,
         "children": [
           {
@@ -2838,10 +2838,10 @@
             "name": "Google Shape;105;p2",
             "characters": "ISSUE\n‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요)\n[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)",
             "absoluteBoundingBox": {
-              "x": 967.57,
-              "y": 127.42,
-              "width": 312.43,
-              "height": 72.45
+              "x": 725.68,
+              "y": 95.56,
+              "width": 234.32,
+              "height": 54.34
             },
             "relativeTransform": [
               [
@@ -2894,10 +2894,10 @@
         "type": "FRAME",
         "name": "타원 156",
         "absoluteBoundingBox": {
-          "x": 29.25,
-          "y": 127.73,
-          "width": 17.44,
-          "height": 17.44
+          "x": 21.94,
+          "y": 95.8,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -2932,10 +2932,10 @@
             "name": "타원 156",
             "characters": "2",
             "absoluteBoundingBox": {
-              "x": 29.25,
-              "y": 127.73,
-              "width": 17.44,
-              "height": 17.44
+              "x": 21.94,
+              "y": 95.8,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -2988,10 +2988,10 @@
         "type": "FRAME",
         "name": "직사각형 149",
         "absoluteBoundingBox": {
-          "x": 777.53,
-          "y": 127.84,
-          "width": 188.63,
-          "height": 45.44
+          "x": 583.15,
+          "y": 95.88,
+          "width": 141.47,
+          "height": 34.08
         },
         "relativeTransform": [
           [
@@ -3026,10 +3026,10 @@
             "name": "직사각형 149",
             "characters": "V 3.2\n[BTOCSITE-73060]\n- 제품 PDP UI 개선",
             "absoluteBoundingBox": {
-              "x": 777.53,
-              "y": 127.84,
-              "width": 188.63,
-              "height": 45.44
+              "x": 583.15,
+              "y": 95.88,
+              "width": 141.47,
+              "height": 34.08
             },
             "relativeTransform": [
               [
@@ -3082,10 +3082,10 @@
         "type": "GROUP",
         "name": "그룹 166",
         "absoluteBoundingBox": {
-          "x": 62.08,
-          "y": 133.59,
-          "width": 31.36,
-          "height": 31.91
+          "x": 46.56,
+          "y": 100.19,
+          "width": 23.52,
+          "height": 23.93
         },
         "relativeTransform": [
           [
@@ -3106,10 +3106,10 @@
             "name": "TextBox 176",
             "characters": "닷컴\nONLY",
             "absoluteBoundingBox": {
-              "x": 65.89,
-              "y": 133.59,
-              "width": 23.73,
-              "height": 30.05
+              "x": 49.42,
+              "y": 100.19,
+              "width": 17.8,
+              "height": 22.54
             },
             "relativeTransform": [
               [
@@ -3155,10 +3155,10 @@
             "type": "VECTOR",
             "name": "타원 175",
             "absoluteBoundingBox": {
-              "x": 62.08,
-              "y": 134.14,
-              "width": 31.36,
-              "height": 31.36
+              "x": 46.56,
+              "y": 100.6,
+              "width": 23.52,
+              "height": 23.52
             },
             "relativeTransform": [
               [
@@ -3174,13 +3174,13 @@
             ],
             "fillGeometry": [
               {
-                "path": "M 15.68 0 A 15.68 15.68 0 1 1 15.68 31.36 A 15.68 15.68 0 1 1 15.68 0 Z",
+                "path": "M 11.76 0 A 11.76 11.76 0 1 1 11.76 23.52 A 11.76 11.76 0 1 1 11.76 0 Z",
                 "windingRule": "NONZERO"
               }
             ],
             "strokeGeometry": [
               {
-                "path": "M 15.68 0 A 15.68 15.68 0 1 1 15.68 31.36 A 15.68 15.68 0 1 1 15.68 0 Z"
+                "path": "M 11.76 0 A 11.76 11.76 0 1 1 11.76 23.52 A 11.76 11.76 0 1 1 11.76 0 Z"
               }
             ],
             "fills": [
@@ -3205,7 +3205,7 @@
                 "opacity": null
               }
             ],
-            "strokeWeight": 1.33,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_90/child_1",
@@ -3226,10 +3226,10 @@
         "type": "FRAME",
         "name": "직사각형 174",
         "absoluteBoundingBox": {
-          "x": 777.59,
-          "y": 144.2,
-          "width": 188.98,
-          "height": 53.83
+          "x": 583.19,
+          "y": 108.15,
+          "width": 141.73,
+          "height": 40.37
         },
         "relativeTransform": [
           [
@@ -3264,10 +3264,10 @@
             "name": "직사각형 174",
             "characters": "V 4.4\n[BTOCSITE-98109]\n- 으뜸효율환급 뱃지 추가",
             "absoluteBoundingBox": {
-              "x": 777.59,
-              "y": 144.2,
-              "width": 188.98,
-              "height": 53.83
+              "x": 583.19,
+              "y": 108.15,
+              "width": 141.73,
+              "height": 40.37
             },
             "relativeTransform": [
               [
@@ -3320,10 +3320,10 @@
         "type": "FRAME",
         "name": "타원 214",
         "absoluteBoundingBox": {
-          "x": 64.36,
-          "y": 160.96,
-          "width": 17.44,
-          "height": 17.44
+          "x": 48.27,
+          "y": 120.72,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -3358,10 +3358,10 @@
             "name": "타원 214",
             "characters": "2d",
             "absoluteBoundingBox": {
-              "x": 64.36,
-              "y": 160.96,
-              "width": 17.44,
-              "height": 17.44
+              "x": 48.27,
+              "y": 120.72,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -3414,10 +3414,10 @@
         "type": "FRAME",
         "name": "직사각형 195",
         "absoluteBoundingBox": {
-          "x": 777.59,
-          "y": 164.47,
-          "width": 188.98,
-          "height": 80.62
+          "x": 583.19,
+          "y": 123.35,
+          "width": 141.73,
+          "height": 60.47
         },
         "relativeTransform": [
           [
@@ -3452,10 +3452,10 @@
             "name": "직사각형 195",
             "characters": "V 4.6 \n[BTOCSITE-99487]\n- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)\n[BTOCSITE-91167]\n- 스펙 기반의 선호도",
             "absoluteBoundingBox": {
-              "x": 777.59,
-              "y": 164.47,
-              "width": 188.98,
-              "height": 80.62
+              "x": 583.19,
+              "y": 123.35,
+              "width": 141.73,
+              "height": 60.47
             },
             "relativeTransform": [
               [
@@ -3508,10 +3508,10 @@
         "type": "FRAME",
         "name": "직사각형 191",
         "absoluteBoundingBox": {
-          "x": 777.53,
-          "y": 180.41,
-          "width": 188.98,
-          "height": 112.62
+          "x": 583.15,
+          "y": 135.31,
+          "width": 141.73,
+          "height": 84.47
         },
         "relativeTransform": [
           [
@@ -3546,10 +3546,10 @@
             "name": "직사각형 191",
             "characters": "V 4.7\n[BTOCSITE-99085]\n- admin 판매상태(미판매)의 경우에도. 텍스트 뱃지(출시년도) 노출로 로직 변경 요청\n[BTOCSITE-100137]\nLGE.COM PDP 스펙 용어사전 툴팁 컨텐츠 오류 확인 요청",
             "absoluteBoundingBox": {
-              "x": 777.53,
-              "y": 180.41,
-              "width": 188.98,
-              "height": 112.62
+              "x": 583.15,
+              "y": 135.31,
+              "width": 141.73,
+              "height": 84.47
             },
             "relativeTransform": [
               [
@@ -3602,10 +3602,10 @@
         "type": "FRAME",
         "name": "직사각형 9",
         "absoluteBoundingBox": {
-          "x": 438.73,
-          "y": 191.66,
-          "width": 191.64,
-          "height": 85.06
+          "x": 329.05,
+          "y": 143.75,
+          "width": 143.73,
+          "height": 63.8
         },
         "relativeTransform": [
           [
@@ -3640,10 +3640,10 @@
             "name": "직사각형 9",
             "characters": "WCMS에 등록한\n YouTube 썸네일 이미지",
             "absoluteBoundingBox": {
-              "x": 438.73,
-              "y": 191.66,
-              "width": 191.64,
-              "height": 85.06
+              "x": 329.05,
+              "y": 143.75,
+              "width": 143.73,
+              "height": 63.8
             },
             "relativeTransform": [
               [
@@ -3669,7 +3669,7 @@
               }
             ],
             "style": {
-              "fontSize": 11,
+              "fontSize": 8,
               "fontFamily": "Inter",
               "textAlignHorizontal": "CENTER",
               "textAlignVertical": "TOP",
@@ -3696,10 +3696,10 @@
         "type": "FRAME",
         "name": "직사각형 248",
         "absoluteBoundingBox": {
-          "x": 777.59,
-          "y": 199.3,
-          "width": 188.98,
-          "height": 93.72
+          "x": 583.19,
+          "y": 149.48,
+          "width": 141.73,
+          "height": 70.29
         },
         "relativeTransform": [
           [
@@ -3734,10 +3734,10 @@
             "name": "직사각형 248",
             "characters": "V 5.0 \n[BTOCSITE-88928]\n- AR체험 서비스 종료, 오브제체험 뱃지 삭제 현행화(BTOCSITE-52092)\n[BTOCSITE-85964]\n- 360미디어 디스클라이머 추가",
             "absoluteBoundingBox": {
-              "x": 777.59,
-              "y": 199.3,
-              "width": 188.98,
-              "height": 93.72
+              "x": 583.19,
+              "y": 149.48,
+              "width": 141.73,
+              "height": 70.29
             },
             "relativeTransform": [
               [
@@ -3790,10 +3790,10 @@
         "type": "FRAME",
         "name": "모서리가 둥근 직사각형 8",
         "absoluteBoundingBox": {
-          "x": 507.5,
-          "y": 223.98,
-          "width": 51.26,
-          "height": 33.17
+          "x": 380.62,
+          "y": 167.98,
+          "width": 38.45,
+          "height": 24.88
         },
         "relativeTransform": [
           [
@@ -3828,10 +3828,10 @@
             "name": "모서리가 둥근 직사각형 8",
             "characters": "▶",
             "absoluteBoundingBox": {
-              "x": 507.5,
-              "y": 223.98,
-              "width": 51.26,
-              "height": 33.17
+              "x": 380.62,
+              "y": 167.98,
+              "width": 38.45,
+              "height": 24.88
             },
             "relativeTransform": [
               [
@@ -3857,7 +3857,7 @@
               }
             ],
             "style": {
-              "fontSize": 16,
+              "fontSize": 12,
               "fontFamily": "Inter",
               "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
@@ -3884,10 +3884,10 @@
         "type": "GROUP",
         "name": "그룹 21",
         "absoluteBoundingBox": {
-          "x": 171.35,
-          "y": 270.86,
-          "width": 82.66,
-          "height": 52.62
+          "x": 128.51,
+          "y": 203.15,
+          "width": 61.99,
+          "height": 39.46
         },
         "relativeTransform": [
           [
@@ -3907,10 +3907,10 @@
             "type": "RECTANGLE",
             "name": "Picture 6",
             "absoluteBoundingBox": {
-              "x": 194.95,
-              "y": 270.86,
-              "width": 42.14,
-              "height": 52.62
+              "x": 146.21,
+              "y": 203.15,
+              "width": 31.61,
+              "height": 39.46
             },
             "relativeTransform": [
               [
@@ -3955,32 +3955,32 @@
             "type": "VECTOR",
             "name": "직선 화살표 연결선 18",
             "absoluteBoundingBox": {
-              "x": 171.35,
-              "y": 279.42,
-              "width": 82.66,
+              "x": 128.51,
+              "y": 209.56,
+              "width": 61.99,
               "height": 1.0
             },
             "relativeTransform": [
               [
-                1.0,
-                -0.0,
+                1,
+                0,
                 0
               ],
               [
-                0.0,
-                1.0,
+                0,
+                1,
                 0
               ]
             ],
             "fillGeometry": [
               {
-                "path": "M 23.6 17.75 L 33.6 12.75 L 33.6 22.75 Z",
+                "path": "M 17.7 13.32 L 23.7 10.32 L 23.7 16.32 Z",
                 "windingRule": "NONZERO"
               }
             ],
             "strokeGeometry": [
               {
-                "path": "M 82.66 17.75 L 23.6 17.75"
+                "path": "M 62.0 13.32 L 17.7 13.32"
               }
             ],
             "fills": [
@@ -4005,7 +4005,7 @@
                 "opacity": 0.74
               }
             ],
-            "strokeWeight": 5.67,
+            "strokeWeight": 4.2524999999999995,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_39/child_1",
@@ -4020,10 +4020,10 @@
             "name": "Google Shape;741;p20",
             "characters": "swipe",
             "absoluteBoundingBox": {
-              "x": 196.68,
-              "y": 299.76,
-              "width": 45.47,
-              "height": 22.17
+              "x": 147.51,
+              "y": 224.82,
+              "width": 34.1,
+              "height": 16.63
             },
             "relativeTransform": [
               [
@@ -4076,10 +4076,10 @@
         "type": "FRAME",
         "name": "타원 141",
         "absoluteBoundingBox": {
-          "x": 293.18,
-          "y": 283.18,
-          "width": 17.44,
-          "height": 17.44
+          "x": 219.88,
+          "y": 212.38,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -4114,10 +4114,10 @@
             "name": "타원 141",
             "characters": "9",
             "absoluteBoundingBox": {
-              "x": 293.18,
-              "y": 283.18,
-              "width": 17.44,
-              "height": 17.44
+              "x": 219.88,
+              "y": 212.38,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -4170,10 +4170,10 @@
         "type": "FRAME",
         "name": "타원 108",
         "absoluteBoundingBox": {
-          "x": 307.52,
-          "y": 283.34,
-          "width": 40.39,
-          "height": 40.39
+          "x": 230.64,
+          "y": 212.5,
+          "width": 30.29,
+          "height": 30.29
         },
         "relativeTransform": [
           [
@@ -4208,10 +4208,10 @@
             "name": "타원 108",
             "characters": "360°",
             "absoluteBoundingBox": {
-              "x": 307.52,
-              "y": 283.34,
-              "width": 40.39,
-              "height": 40.39
+              "x": 230.64,
+              "y": 212.5,
+              "width": 30.29,
+              "height": 30.29
             },
             "relativeTransform": [
               [
@@ -4264,10 +4264,10 @@
         "type": "FRAME",
         "name": "직사각형 246",
         "absoluteBoundingBox": {
-          "x": 616.97,
-          "y": 299.19,
-          "width": 32.66,
-          "height": 68.42
+          "x": 462.73,
+          "y": 224.39,
+          "width": 24.49,
+          "height": 51.31
         },
         "relativeTransform": [
           [
@@ -4302,10 +4302,10 @@
             "name": "직사각형 246",
             "characters": "V.5.0",
             "absoluteBoundingBox": {
-              "x": 616.97,
-              "y": 299.19,
-              "width": 32.66,
-              "height": 68.42
+              "x": 462.73,
+              "y": 224.39,
+              "width": 24.49,
+              "height": 51.31
             },
             "relativeTransform": [
               [
@@ -4359,10 +4359,10 @@
         "name": "TextBox 247",
         "characters": "삭제",
         "absoluteBoundingBox": {
-          "x": 611.53,
-          "y": 319.58,
-          "width": 41.27,
-          "height": 24.23
+          "x": 458.65,
+          "y": 239.69,
+          "width": 30.95,
+          "height": 18.17
         },
         "relativeTransform": [
           [
@@ -4388,7 +4388,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 Bold",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -4408,10 +4408,10 @@
         "type": "FRAME",
         "name": "타원 173",
         "absoluteBoundingBox": {
-          "x": 293.18,
-          "y": 324.31,
-          "width": 17.44,
-          "height": 17.44
+          "x": 219.88,
+          "y": 243.23,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -4446,10 +4446,10 @@
             "name": "타원 173",
             "characters": "8",
             "absoluteBoundingBox": {
-              "x": 293.18,
-              "y": 324.31,
-              "width": 17.44,
-              "height": 17.44
+              "x": 219.88,
+              "y": 243.23,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -4502,10 +4502,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 2",
         "absoluteBoundingBox": {
-          "x": 467.84,
-          "y": 324.89,
-          "width": 109.46,
-          "height": 37.87
+          "x": 350.88,
+          "y": 243.67,
+          "width": 82.09,
+          "height": 28.4
         },
         "relativeTransform": [
           [
@@ -4546,10 +4546,10 @@
         "type": "FRAME",
         "name": "직사각형 234",
         "absoluteBoundingBox": {
-          "x": 303.17,
-          "y": 329.33,
-          "width": 47.16,
-          "height": 90.88
+          "x": 227.38,
+          "y": 247.0,
+          "width": 35.37,
+          "height": 68.16
         },
         "relativeTransform": [
           [
@@ -4584,10 +4584,10 @@
             "name": "직사각형 234",
             "characters": "V.5.0",
             "absoluteBoundingBox": {
-              "x": 303.17,
-              "y": 329.33,
-              "width": 47.16,
-              "height": 90.88
+              "x": 227.38,
+              "y": 247.0,
+              "width": 35.37,
+              "height": 68.16
             },
             "relativeTransform": [
               [
@@ -4640,10 +4640,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 6",
         "absoluteBoundingBox": {
-          "x": 304.43,
-          "y": 329.48,
-          "width": 46.95,
-          "height": 90.72
+          "x": 228.32,
+          "y": 247.11,
+          "width": 35.21,
+          "height": 68.04
         },
         "relativeTransform": [
           [
@@ -4669,7 +4669,7 @@
             "opacity": null
           }
         ],
-        "strokeWeight": 2.0,
+        "strokeWeight": 1.5,
         "cornerRadius": null,
         "children": [],
         "debug": {
@@ -4684,10 +4684,10 @@
         "type": "FRAME",
         "name": "타원 3",
         "absoluteBoundingBox": {
-          "x": 307.52,
-          "y": 329.48,
-          "width": 40.39,
-          "height": 40.39
+          "x": 230.64,
+          "y": 247.11,
+          "width": 30.29,
+          "height": 30.29
         },
         "relativeTransform": [
           [
@@ -4722,10 +4722,10 @@
             "name": "타원 3",
             "characters": "AR\n체험",
             "absoluteBoundingBox": {
-              "x": 307.52,
-              "y": 329.48,
-              "width": 40.39,
-              "height": 40.39
+              "x": 230.64,
+              "y": 247.11,
+              "width": 30.29,
+              "height": 30.29
             },
             "relativeTransform": [
               [
@@ -4778,10 +4778,10 @@
         "type": "FRAME",
         "name": "Google Shape;1032;p23",
         "absoluteBoundingBox": {
-          "x": 509.41,
-          "y": 350.79,
-          "width": 50.27,
-          "height": 15.47
+          "x": 382.06,
+          "y": 263.09,
+          "width": 37.7,
+          "height": 11.6
         },
         "relativeTransform": [
           [
@@ -4816,10 +4816,10 @@
             "name": "Google Shape;1032;p23",
             "characters": "< 1 / 19 >",
             "absoluteBoundingBox": {
-              "x": 509.41,
-              "y": 350.79,
-              "width": 50.27,
-              "height": 15.47
+              "x": 382.06,
+              "y": 263.09,
+              "width": 37.7,
+              "height": 11.6
             },
             "relativeTransform": [
               [
@@ -4872,10 +4872,10 @@
         "type": "FRAME",
         "name": "직사각형 216",
         "absoluteBoundingBox": {
-          "x": 914.7,
-          "y": 352.37,
-          "width": 333.21,
-          "height": 50.8
+          "x": 686.03,
+          "y": 264.28,
+          "width": 249.91,
+          "height": 38.1
         },
         "relativeTransform": [
           [
@@ -4910,10 +4910,10 @@
             "name": "직사각형 216",
             "characters": "V.2.4",
             "absoluteBoundingBox": {
-              "x": 914.7,
-              "y": 352.37,
-              "width": 333.21,
-              "height": 50.8
+              "x": 686.03,
+              "y": 264.28,
+              "width": 249.91,
+              "height": 38.1
             },
             "relativeTransform": [
               [
@@ -4967,10 +4967,10 @@
         "name": "TextBox 245",
         "characters": "삭제",
         "absoluteBoundingBox": {
-          "x": 304.98,
-          "y": 359.46,
-          "width": 41.27,
-          "height": 24.23
+          "x": 228.74,
+          "y": 269.59,
+          "width": 30.95,
+          "height": 18.17
         },
         "relativeTransform": [
           [
@@ -4996,7 +4996,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 Bold",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -5016,10 +5016,10 @@
         "type": "FRAME",
         "name": "타원 151",
         "absoluteBoundingBox": {
-          "x": 83.29,
-          "y": 365.72,
-          "width": 17.44,
-          "height": 17.44
+          "x": 62.47,
+          "y": 274.29,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -5054,10 +5054,10 @@
             "name": "타원 151",
             "characters": "2c",
             "absoluteBoundingBox": {
-              "x": 83.29,
-              "y": 365.72,
-              "width": 17.44,
-              "height": 17.44
+              "x": 62.47,
+              "y": 274.29,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -5110,10 +5110,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 162",
         "absoluteBoundingBox": {
-          "x": 71.28,
-          "y": 370.05,
-          "width": 233.15,
-          "height": 23.89
+          "x": 53.46,
+          "y": 277.54,
+          "width": 174.86,
+          "height": 17.92
         },
         "relativeTransform": [
           [
@@ -5155,10 +5155,10 @@
         "name": "직사각형 10",
         "characters": "※ 소비자의 이해를 돕기 위해 연출된 이미지입니다.",
         "absoluteBoundingBox": {
-          "x": 76.12,
-          "y": 373.44,
-          "width": 237.67,
-          "height": 21.0
+          "x": 57.09,
+          "y": 280.08,
+          "width": 178.25,
+          "height": 15.75
         },
         "relativeTransform": [
           [
@@ -5188,7 +5188,7 @@
           "fontFamily": "+mn-ea",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
-          "textAutoResize": "WIDTH_AND_HEIGHT",
+          "textAutoResize": "HEIGHT",
           "lineHeightPx": null
         },
         "children": [],
@@ -5204,10 +5204,10 @@
         "type": "FRAME",
         "name": "타원 104",
         "absoluteBoundingBox": {
-          "x": 307.52,
-          "y": 373.98,
-          "width": 40.39,
-          "height": 40.39
+          "x": 230.64,
+          "y": 280.49,
+          "width": 30.29,
+          "height": 30.29
         },
         "relativeTransform": [
           [
@@ -5242,10 +5242,10 @@
             "name": "타원 104",
             "characters": "오브제 체험",
             "absoluteBoundingBox": {
-              "x": 307.52,
-              "y": 373.98,
-              "width": 40.39,
-              "height": 40.39
+              "x": 230.64,
+              "y": 280.49,
+              "width": 30.29,
+              "height": 30.29
             },
             "relativeTransform": [
               [
@@ -5298,10 +5298,10 @@
         "type": "FRAME",
         "name": "타원 204",
         "absoluteBoundingBox": {
-          "x": 37.86,
-          "y": 385.72,
-          "width": 17.44,
-          "height": 17.44
+          "x": 28.39,
+          "y": 289.29,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -5336,10 +5336,10 @@
             "name": "타원 204",
             "characters": "2b",
             "absoluteBoundingBox": {
-              "x": 37.86,
-              "y": 385.72,
-              "width": 17.44,
-              "height": 17.44
+              "x": 28.39,
+              "y": 289.29,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -5392,10 +5392,10 @@
         "type": "FRAME",
         "name": "타원 163",
         "absoluteBoundingBox": {
-          "x": 164.65,
-          "y": 385.72,
-          "width": 17.44,
-          "height": 17.44
+          "x": 123.49,
+          "y": 289.29,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -5430,10 +5430,10 @@
             "name": "타원 163",
             "characters": "2a",
             "absoluteBoundingBox": {
-              "x": 164.65,
-              "y": 385.72,
-              "width": 17.44,
-              "height": 17.44
+              "x": 123.49,
+              "y": 289.29,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -5487,10 +5487,10 @@
         "name": "TextBox 153",
         "characters": "동영상 : Video File case",
         "absoluteBoundingBox": {
-          "x": 411.93,
-          "y": 389.78,
-          "width": 145.78,
-          "height": 24.23
+          "x": 308.95,
+          "y": 292.33,
+          "width": 109.34,
+          "height": 18.17
         },
         "relativeTransform": [
           [
@@ -5516,7 +5516,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 Bold",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -5536,10 +5536,10 @@
         "type": "GROUP",
         "name": "그룹 177",
         "absoluteBoundingBox": {
-          "x": 52.0,
-          "y": 390.5,
-          "width": 25.02,
-          "height": 25.02
+          "x": 39.0,
+          "y": 292.88,
+          "width": 18.77,
+          "height": 18.77
         },
         "relativeTransform": [
           [
@@ -5559,10 +5559,10 @@
             "type": "VECTOR",
             "name": "타원 178",
             "absoluteBoundingBox": {
-              "x": 52.0,
-              "y": 390.5,
-              "width": 25.02,
-              "height": 25.02
+              "x": 39.0,
+              "y": 292.88,
+              "width": 18.77,
+              "height": 18.77
             },
             "relativeTransform": [
               [
@@ -5578,7 +5578,7 @@
             ],
             "fillGeometry": [
               {
-                "path": "M 12.51 0 A 12.51 12.51 0 1 1 12.51 25.02 A 12.51 12.51 0 1 1 12.51 0 Z",
+                "path": "M 9.385 0 A 9.385 9.385 0 1 1 9.385 18.77 A 9.385 9.385 0 1 1 9.385 0 Z",
                 "windingRule": "NONZERO"
               }
             ],
@@ -5595,7 +5595,7 @@
               }
             ],
             "strokes": [],
-            "strokeWeight": 1.33,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_69/child_1",
@@ -5609,10 +5609,10 @@
             "type": "GROUP",
             "name": "그룹 189",
             "absoluteBoundingBox": {
-              "x": 60.34,
-              "y": 397.32,
-              "width": 8.35,
-              "height": 11.37
+              "x": 45.26,
+              "y": 297.99,
+              "width": 6.26,
+              "height": 8.53
             },
             "relativeTransform": [
               [
@@ -5632,10 +5632,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 193",
                 "absoluteBoundingBox": {
-                  "x": 60.34,
-                  "y": 397.32,
-                  "width": 2.78,
-                  "height": 11.37
+                  "x": 45.26,
+                  "y": 297.99,
+                  "width": 2.08,
+                  "height": 8.53
                 },
                 "relativeTransform": [
                   [
@@ -5676,10 +5676,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 194",
                 "absoluteBoundingBox": {
-                  "x": 65.9,
-                  "y": 397.32,
-                  "width": 2.78,
-                  "height": 11.37
+                  "x": 49.43,
+                  "y": 297.99,
+                  "width": 2.08,
+                  "height": 8.53
                 },
                 "relativeTransform": [
                   [
@@ -5734,10 +5734,10 @@
         "type": "FRAME",
         "name": "Google Shape;1032;p23",
         "absoluteBoundingBox": {
-          "x": 175.47,
-          "y": 397.98,
-          "width": 56.69,
-          "height": 17.44
+          "x": 131.6,
+          "y": 298.49,
+          "width": 42.52,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -5772,10 +5772,10 @@
             "name": "Google Shape;1032;p23",
             "characters": "< 1 / 5 >",
             "absoluteBoundingBox": {
-              "x": 175.47,
-              "y": 397.98,
-              "width": 56.69,
-              "height": 17.44
+              "x": 131.6,
+              "y": 298.49,
+              "width": 42.52,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -5828,10 +5828,10 @@
         "type": "FRAME",
         "name": "직사각형 253",
         "absoluteBoundingBox": {
-          "x": 914.2,
-          "y": 403.16,
-          "width": 334.45,
-          "height": 55.05
+          "x": 685.65,
+          "y": 302.37,
+          "width": 250.84,
+          "height": 41.29
         },
         "relativeTransform": [
           [
@@ -5866,10 +5866,10 @@
             "name": "직사각형 253",
             "characters": "V.5.0",
             "absoluteBoundingBox": {
-              "x": 914.2,
-              "y": 403.16,
-              "width": 334.45,
-              "height": 55.05
+              "x": 685.65,
+              "y": 302.37,
+              "width": 250.84,
+              "height": 41.29
             },
             "relativeTransform": [
               [
@@ -5922,10 +5922,10 @@
         "type": "GROUP",
         "name": "그룹 199",
         "absoluteBoundingBox": {
-          "x": 718.97,
-          "y": 406.85,
-          "width": 25.02,
-          "height": 25.02
+          "x": 539.23,
+          "y": 305.14,
+          "width": 18.77,
+          "height": 18.77
         },
         "relativeTransform": [
           [
@@ -5945,10 +5945,10 @@
             "type": "VECTOR",
             "name": "타원 200",
             "absoluteBoundingBox": {
-              "x": 718.97,
-              "y": 406.85,
-              "width": 25.02,
-              "height": 25.02
+              "x": 539.23,
+              "y": 305.14,
+              "width": 18.77,
+              "height": 18.77
             },
             "relativeTransform": [
               [
@@ -5964,13 +5964,13 @@
             ],
             "fillGeometry": [
               {
-                "path": "M 12.51 0 A 12.51 12.51 0 1 1 12.51 25.02 A 12.51 12.51 0 1 1 12.51 0 Z",
+                "path": "M 9.385 0 A 9.385 9.385 0 1 1 9.385 18.77 A 9.385 9.385 0 1 1 9.385 0 Z",
                 "windingRule": "NONZERO"
               }
             ],
             "strokeGeometry": [
               {
-                "path": "M 12.51 0 A 12.51 12.51 0 1 1 12.51 25.02 A 12.51 12.51 0 1 1 12.51 0 Z"
+                "path": "M 9.385 0 A 9.385 9.385 0 1 1 9.385 18.77 A 9.385 9.385 0 1 1 9.385 0 Z"
               }
             ],
             "fills": [
@@ -5995,7 +5995,7 @@
                 "opacity": null
               }
             ],
-            "strokeWeight": 1.33,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_73/child_1",
@@ -6009,10 +6009,10 @@
             "type": "GROUP",
             "name": "그룹 201",
             "absoluteBoundingBox": {
-              "x": 727.31,
-              "y": 413.68,
-              "width": 8.35,
-              "height": 11.37
+              "x": 545.48,
+              "y": 310.26,
+              "width": 6.26,
+              "height": 8.53
             },
             "relativeTransform": [
               [
@@ -6032,10 +6032,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 202",
                 "absoluteBoundingBox": {
-                  "x": 727.31,
-                  "y": 413.68,
-                  "width": 2.78,
-                  "height": 11.37
+                  "x": 545.48,
+                  "y": 310.26,
+                  "width": 2.08,
+                  "height": 8.53
                 },
                 "relativeTransform": [
                   [
@@ -6076,10 +6076,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 203",
                 "absoluteBoundingBox": {
-                  "x": 732.87,
-                  "y": 413.68,
-                  "width": 2.78,
-                  "height": 11.37
+                  "x": 549.65,
+                  "y": 310.26,
+                  "width": 2.08,
+                  "height": 8.53
                 },
                 "relativeTransform": [
                   [
@@ -6135,10 +6135,10 @@
         "name": "TextBox 155",
         "characters": "- 동영상 자동재생",
         "absoluteBoundingBox": {
-          "x": 410.83,
-          "y": 407.51,
-          "width": 96.97,
-          "height": 22.62
+          "x": 308.12,
+          "y": 305.63,
+          "width": 72.73,
+          "height": 16.96
         },
         "relativeTransform": [
           [
@@ -6184,10 +6184,10 @@
         "type": "FRAME",
         "name": "타원 197",
         "absoluteBoundingBox": {
-          "x": 775.19,
-          "y": 408.07,
-          "width": 25.37,
-          "height": 25.37
+          "x": 581.39,
+          "y": 306.05,
+          "width": 19.03,
+          "height": 19.03
         },
         "relativeTransform": [
           [
@@ -6213,7 +6213,7 @@
           }
         ],
         "strokes": [],
-        "strokeWeight": 1.33,
+        "strokeWeight": 1.0,
         "cornerRadius": null,
         "children": [
           {
@@ -6222,10 +6222,10 @@
             "name": "타원 197",
             "characters": "▶",
             "absoluteBoundingBox": {
-              "x": 775.19,
-              "y": 408.07,
-              "width": 25.37,
-              "height": 25.37
+              "x": 581.39,
+              "y": 306.05,
+              "width": 19.03,
+              "height": 19.03
             },
             "relativeTransform": [
               [
@@ -6251,7 +6251,7 @@
               }
             ],
             "style": {
-              "fontSize": 10,
+              "fontSize": 8,
               "fontFamily": "Inter",
               "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
@@ -6278,10 +6278,10 @@
         "type": "FRAME",
         "name": "직사각형 196",
         "absoluteBoundingBox": {
-          "x": 245.7,
-          "y": 409.49,
-          "width": 50.61,
-          "height": 32.5
+          "x": 184.27,
+          "y": 307.12,
+          "width": 37.96,
+          "height": 24.38
         },
         "relativeTransform": [
           [
@@ -6316,10 +6316,10 @@
             "name": "직사각형 196",
             "characters": "V.4.6",
             "absoluteBoundingBox": {
-              "x": 245.7,
-              "y": 409.49,
-              "width": 50.61,
-              "height": 32.5
+              "x": 184.27,
+              "y": 307.12,
+              "width": 37.96,
+              "height": 24.38
             },
             "relativeTransform": [
               [
@@ -6372,10 +6372,10 @@
         "type": "FRAME",
         "name": "타원 205",
         "absoluteBoundingBox": {
-          "x": 694.59,
-          "y": 409.67,
-          "width": 17.44,
-          "height": 17.44
+          "x": 520.94,
+          "y": 307.25,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -6410,10 +6410,10 @@
             "name": "타원 205",
             "characters": "2b",
             "absoluteBoundingBox": {
-              "x": 694.59,
-              "y": 409.67,
-              "width": 17.44,
-              "height": 17.44
+              "x": 520.94,
+              "y": 307.25,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -6466,10 +6466,10 @@
         "type": "FRAME",
         "name": "직사각형 180",
         "absoluteBoundingBox": {
-          "x": 43.66,
-          "y": 413.68,
-          "width": 63.32,
-          "height": 31.21
+          "x": 32.74,
+          "y": 310.26,
+          "width": 47.49,
+          "height": 23.41
         },
         "relativeTransform": [
           [
@@ -6504,10 +6504,10 @@
             "name": "직사각형 180",
             "characters": "V.2.2",
             "absoluteBoundingBox": {
-              "x": 43.66,
-              "y": 413.68,
-              "width": 63.32,
-              "height": 31.21
+              "x": 32.74,
+              "y": 310.26,
+              "width": 47.49,
+              "height": 23.41
             },
             "relativeTransform": [
               [
@@ -6560,32 +6560,32 @@
         "type": "VECTOR",
         "name": "직선 화살표 연결선 198",
         "absoluteBoundingBox": {
-          "x": 745.74,
-          "y": 421.58,
-          "width": 27.04,
+          "x": 559.31,
+          "y": 316.19,
+          "width": 20.28,
           "height": 1.0
         },
         "relativeTransform": [
           [
-            1.0,
-            -0.0,
+            1,
+            0,
             0
           ],
           [
-            0.0,
-            1.0,
+            0,
+            1,
             0
           ]
         ],
         "fillGeometry": [
           {
-            "path": "M 29.45 -0.82 L 19.28 3.83 L 19.63 -6.17 Z",
+            "path": "M 22.08 -0.62 L 15.98 2.17 L 16.19 -3.83 Z",
             "windingRule": "NONZERO"
           }
         ],
         "strokeGeometry": [
           {
-            "path": "M -10.09 -2.21 L 29.45 -0.82"
+            "path": "M -7.57 -1.67 L 22.08 -0.62"
           }
         ],
         "fills": [
@@ -6610,7 +6610,7 @@
             "opacity": null
           }
         ],
-        "strokeWeight": 1.5,
+        "strokeWeight": 1.125,
         "children": [],
         "debug": {
           "source_path": "slide_29/element_72",
@@ -6624,10 +6624,10 @@
         "type": "FRAME",
         "name": "타원 168",
         "absoluteBoundingBox": {
-          "x": 20.96,
-          "y": 424.29,
-          "width": 17.44,
-          "height": 17.44
+          "x": 15.72,
+          "y": 318.22,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -6662,10 +6662,10 @@
             "name": "타원 168",
             "characters": "3",
             "absoluteBoundingBox": {
-              "x": 20.96,
-              "y": 424.29,
-              "width": 17.44,
-              "height": 17.44
+              "x": 15.72,
+              "y": 318.22,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -6718,10 +6718,10 @@
         "type": "FRAME",
         "name": "직사각형 179",
         "absoluteBoundingBox": {
-          "x": 389.1,
-          "y": 425.7,
-          "width": 285.67,
-          "height": 278.21
+          "x": 291.83,
+          "y": 319.27,
+          "width": 214.25,
+          "height": 208.66
         },
         "relativeTransform": [
           [
@@ -6756,10 +6756,10 @@
             "name": "직사각형 179",
             "characters": "V.2.2",
             "absoluteBoundingBox": {
-              "x": 389.1,
-              "y": 425.7,
-              "width": 285.67,
-              "height": 278.21
+              "x": 291.83,
+              "y": 319.27,
+              "width": 214.25,
+              "height": 208.66
             },
             "relativeTransform": [
               [
@@ -6813,10 +6813,10 @@
         "name": "직사각형 237",
         "characters": "으뜸효율환급 | TV 1위 | 2023년 출시 |  다품목할인 | UP가전 |  기간 한정 쿠폰 | 50대 한정수량 특가",
         "absoluteBoundingBox": {
-          "x": 48.09,
-          "y": 427.5,
-          "width": 263.7,
-          "height": 30.15
+          "x": 36.07,
+          "y": 320.62,
+          "width": 197.77,
+          "height": 22.61
         },
         "relativeTransform": [
           [
@@ -6862,10 +6862,10 @@
         "type": "FRAME",
         "name": "직사각형 241",
         "absoluteBoundingBox": {
-          "x": 47.1,
-          "y": 429.26,
-          "width": 287.23,
-          "height": 28.5
+          "x": 35.33,
+          "y": 321.94,
+          "width": 215.42,
+          "height": 21.38
         },
         "relativeTransform": [
           [
@@ -6900,10 +6900,10 @@
             "name": "직사각형 241",
             "characters": "V 2.9",
             "absoluteBoundingBox": {
-              "x": 47.1,
-              "y": 429.26,
-              "width": 287.23,
-              "height": 28.5
+              "x": 35.33,
+              "y": 321.94,
+              "width": 215.42,
+              "height": 21.38
             },
             "relativeTransform": [
               [
@@ -6956,10 +6956,10 @@
         "type": "VECTOR",
         "name": "오른쪽 대괄호 164",
         "absoluteBoundingBox": {
-          "x": 30.53,
-          "y": 432.58,
-          "width": 11.06,
-          "height": 52.91
+          "x": 22.9,
+          "y": 324.44,
+          "width": 8.29,
+          "height": 39.68
         },
         "relativeTransform": [
           [
@@ -6976,7 +6976,7 @@
         "fillGeometry": [],
         "strokeGeometry": [
           {
-            "path": "M 2.212 0 L 11.06 0 L 11.06 52.91 L 2.212 52.91"
+            "path": "M 1.658 0 L 8.29 0 L 8.29 39.68 L 1.658 39.68"
           }
         ],
         "fills": [],
@@ -7005,10 +7005,10 @@
         "type": "RECTANGLE",
         "name": "그림 15",
         "absoluteBoundingBox": {
-          "x": 422.57,
-          "y": 438.17,
-          "width": 238.98,
-          "height": 265.58
+          "x": 316.93,
+          "y": 328.63,
+          "width": 179.23,
+          "height": 199.19
         },
         "relativeTransform": [
           [
@@ -7053,10 +7053,10 @@
         "type": "FRAME",
         "name": "타원 164",
         "absoluteBoundingBox": {
-          "x": 193.72,
-          "y": 451.42,
-          "width": 17.44,
-          "height": 17.44
+          "x": 145.29,
+          "y": 338.56,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -7091,10 +7091,10 @@
             "name": "타원 164",
             "characters": "3f",
             "absoluteBoundingBox": {
-              "x": 193.72,
-              "y": 451.42,
-              "width": 17.44,
-              "height": 17.44
+              "x": 145.29,
+              "y": 338.56,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -7147,10 +7147,10 @@
         "type": "FRAME",
         "name": "타원 172",
         "absoluteBoundingBox": {
-          "x": 283.03,
-          "y": 451.42,
-          "width": 17.44,
-          "height": 17.44
+          "x": 212.27,
+          "y": 338.56,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -7185,10 +7185,10 @@
             "name": "타원 172",
             "characters": "4",
             "absoluteBoundingBox": {
-              "x": 283.03,
-              "y": 451.42,
-              "width": 17.44,
-              "height": 17.44
+              "x": 212.27,
+              "y": 338.56,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -7242,10 +7242,10 @@
         "name": "TextBox 303",
         "characters": "영상 가로 사이즈 맞춰\n세로 중간맞춤",
         "absoluteBoundingBox": {
-          "x": 673.44,
-          "y": 451.86,
-          "width": 114.81,
-          "height": 35.54
+          "x": 505.08,
+          "y": 338.89,
+          "width": 86.11,
+          "height": 26.66
         },
         "relativeTransform": [
           [
@@ -7292,10 +7292,10 @@
         "name": "TextBox 159",
         "characters": "매립배관형",
         "absoluteBoundingBox": {
-          "x": 143.98,
-          "y": 453.58,
-          "width": 55.6,
-          "height": 22.62
+          "x": 107.98,
+          "y": 340.19,
+          "width": 41.7,
+          "height": 16.96
         },
         "relativeTransform": [
           [
@@ -7341,10 +7341,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 223",
         "absoluteBoundingBox": {
-          "x": 298.21,
-          "y": 453.58,
-          "width": 24.87,
-          "height": 26.65
+          "x": 223.66,
+          "y": 340.19,
+          "width": 18.65,
+          "height": 19.99
         },
         "relativeTransform": [
           [
@@ -7385,10 +7385,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 171",
         "absoluteBoundingBox": {
-          "x": 325.46,
-          "y": 453.58,
-          "width": 24.87,
-          "height": 26.65
+          "x": 244.09,
+          "y": 340.19,
+          "width": 18.65,
+          "height": 19.99
         },
         "relativeTransform": [
           [
@@ -7429,10 +7429,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 160",
         "absoluteBoundingBox": {
-          "x": 147.85,
-          "y": 454.84,
-          "width": 47.69,
-          "height": 16.79
+          "x": 110.89,
+          "y": 341.13,
+          "width": 35.77,
+          "height": 12.59
         },
         "relativeTransform": [
           [
@@ -7473,10 +7473,10 @@
         "type": "RECTANGLE",
         "name": "그림 165",
         "absoluteBoundingBox": {
-          "x": 326.53,
-          "y": 456.85,
-          "width": 19.0,
-          "height": 19.0
+          "x": 244.9,
+          "y": 342.64,
+          "width": 14.25,
+          "height": 14.25
         },
         "relativeTransform": [
           [
@@ -7524,10 +7524,10 @@
         "type": "RECTANGLE",
         "name": "Like",
         "absoluteBoundingBox": {
-          "x": 302.27,
-          "y": 459.94,
-          "width": 17.09,
-          "height": 15.09
+          "x": 226.7,
+          "y": 344.95,
+          "width": 12.82,
+          "height": 11.32
         },
         "relativeTransform": [
           [
@@ -7569,10 +7569,10 @@
         "name": "TextBox 136",
         "characters": "LG 올레드 evo",
         "absoluteBoundingBox": {
-          "x": 50.15,
-          "y": 460.84,
-          "width": 96.94,
-          "height": 19.39
+          "x": 37.61,
+          "y": 345.63,
+          "width": 72.7,
+          "height": 14.54
         },
         "relativeTransform": [
           [
@@ -7598,7 +7598,7 @@
           }
         ],
         "style": {
-          "fontSize": 12,
+          "fontSize": 9,
           "fontFamily": "LG스마트체 Regular",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -7618,10 +7618,10 @@
         "type": "FRAME",
         "name": "타원 161",
         "absoluteBoundingBox": {
-          "x": 31.59,
-          "y": 461.22,
-          "width": 17.44,
-          "height": 17.44
+          "x": 23.69,
+          "y": 345.92,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -7656,10 +7656,10 @@
             "name": "타원 161",
             "characters": "3d",
             "absoluteBoundingBox": {
-              "x": 31.59,
-              "y": 461.22,
-              "width": 17.44,
-              "height": 17.44
+              "x": 23.69,
+              "y": 345.92,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -7713,10 +7713,10 @@
         "name": "TextBox 144",
         "characters": "B2K 시리즈",
         "absoluteBoundingBox": {
-          "x": 189.19,
-          "y": 463.89,
-          "width": 65.33,
-          "height": 21.0
+          "x": 141.89,
+          "y": 347.92,
+          "width": 49.0,
+          "height": 15.75
         },
         "relativeTransform": [
           [
@@ -7762,10 +7762,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 148",
         "absoluteBoundingBox": {
-          "x": 197.18,
-          "y": 464.84,
-          "width": 47.69,
-          "height": 16.79
+          "x": 147.88,
+          "y": 348.63,
+          "width": 35.77,
+          "height": 12.59
         },
         "relativeTransform": [
           [
@@ -7806,10 +7806,10 @@
         "type": "FRAME",
         "name": "직사각형 233",
         "absoluteBoundingBox": {
-          "x": 914.2,
-          "y": 474.54,
-          "width": 327.26,
-          "height": 559.82
+          "x": 685.65,
+          "y": 355.91,
+          "width": 245.44,
+          "height": 419.87
         },
         "relativeTransform": [
           [
@@ -7844,10 +7844,10 @@
             "name": "직사각형 233",
             "characters": "V 2.9",
             "absoluteBoundingBox": {
-              "x": 914.2,
-              "y": 474.54,
-              "width": 327.26,
-              "height": 559.82
+              "x": 685.65,
+              "y": 355.91,
+              "width": 245.44,
+              "height": 419.87
             },
             "relativeTransform": [
               [
@@ -7900,10 +7900,10 @@
         "type": "FRAME",
         "name": "타원 158",
         "absoluteBoundingBox": {
-          "x": 147.67,
-          "y": 484.43,
-          "width": 17.44,
-          "height": 17.44
+          "x": 110.75,
+          "y": 363.32,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -7938,10 +7938,10 @@
             "name": "타원 158",
             "characters": "6",
             "absoluteBoundingBox": {
-              "x": 147.67,
-              "y": 484.43,
-              "width": 17.44,
-              "height": 17.44
+              "x": 110.75,
+              "y": 363.32,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -7994,10 +7994,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 7",
         "absoluteBoundingBox": {
-          "x": 679.33,
-          "y": 485.49,
-          "width": 193.79,
-          "height": 217.57
+          "x": 509.5,
+          "y": 364.12,
+          "width": 145.34,
+          "height": 163.18
         },
         "relativeTransform": [
           [
@@ -8038,10 +8038,10 @@
         "type": "GROUP",
         "name": "그룹 304",
         "absoluteBoundingBox": {
-          "x": 679.04,
-          "y": 485.85,
-          "width": 194.36,
-          "height": 216.34
+          "x": 509.28,
+          "y": 364.39,
+          "width": 145.77,
+          "height": 162.25
         },
         "relativeTransform": [
           [
@@ -8061,10 +8061,10 @@
             "type": "RECTANGLE",
             "name": "직사각형 306",
             "absoluteBoundingBox": {
-              "x": 679.04,
-              "y": 485.85,
-              "width": 194.07,
-              "height": 216.34
+              "x": 509.28,
+              "y": 364.39,
+              "width": 145.55,
+              "height": 162.25
             },
             "relativeTransform": [
               [
@@ -8105,10 +8105,10 @@
             "type": "RECTANGLE",
             "name": "그림 308",
             "absoluteBoundingBox": {
-              "x": 850.99,
-              "y": 494.03,
-              "width": 14.25,
-              "height": 14.25
+              "x": 638.24,
+              "y": 370.52,
+              "width": 10.69,
+              "height": 10.69
             },
             "relativeTransform": [
               [
@@ -8153,10 +8153,10 @@
             "type": "RECTANGLE",
             "name": "Picture 3",
             "absoluteBoundingBox": {
-              "x": 683.69,
-              "y": 494.49,
-              "width": 15.09,
-              "height": 15.09
+              "x": 512.77,
+              "y": 370.87,
+              "width": 11.32,
+              "height": 11.32
             },
             "relativeTransform": [
               [
@@ -8201,10 +8201,10 @@
             "type": "RECTANGLE",
             "name": "그림 310",
             "absoluteBoundingBox": {
-              "x": 830.8,
-              "y": 494.49,
-              "width": 12.25,
-              "height": 12.25
+              "x": 623.1,
+              "y": 370.87,
+              "width": 9.19,
+              "height": 9.19
             },
             "relativeTransform": [
               [
@@ -8249,10 +8249,10 @@
             "type": "RECTANGLE",
             "name": "Search",
             "absoluteBoundingBox": {
-              "x": 811.23,
-              "y": 495.97,
-              "width": 10.77,
-              "height": 11.01
+              "x": 608.42,
+              "y": 371.98,
+              "width": 8.08,
+              "height": 8.26
             },
             "relativeTransform": [
               [
@@ -8303,10 +8303,10 @@
             "type": "FRAME",
             "name": "직사각형 305",
             "absoluteBoundingBox": {
-              "x": 679.33,
-              "y": 529.96,
-              "width": 194.07,
-              "height": 128.12
+              "x": 509.5,
+              "y": 397.47,
+              "width": 145.55,
+              "height": 96.09
             },
             "relativeTransform": [
               [
@@ -8341,10 +8341,10 @@
                 "name": "직사각형 305",
                 "characters": "Video\n자동재생\n(audio : mute)",
                 "absoluteBoundingBox": {
-                  "x": 679.33,
-                  "y": 529.96,
-                  "width": 194.07,
-                  "height": 128.12
+                  "x": 509.5,
+                  "y": 397.47,
+                  "width": 145.55,
+                  "height": 96.09
                 },
                 "relativeTransform": [
                   [
@@ -8370,7 +8370,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 10,
+                  "fontSize": 8,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
@@ -8404,10 +8404,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 116",
         "absoluteBoundingBox": {
-          "x": 278.6,
-          "y": 494.9,
-          "width": 73.99,
-          "height": 26.43
+          "x": 208.95,
+          "y": 371.17,
+          "width": 55.49,
+          "height": 19.82
         },
         "relativeTransform": [
           [
@@ -8448,10 +8448,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 170",
         "absoluteBoundingBox": {
-          "x": 48.45,
-          "y": 497.77,
-          "width": 99.0,
-          "height": 22.1
+          "x": 36.34,
+          "y": 373.33,
+          "width": 74.25,
+          "height": 16.58
         },
         "relativeTransform": [
           [
@@ -8492,10 +8492,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 107",
         "absoluteBoundingBox": {
-          "x": 149.2,
-          "y": 497.77,
-          "width": 102.81,
-          "height": 22.1
+          "x": 111.9,
+          "y": 373.33,
+          "width": 77.11,
+          "height": 16.58
         },
         "relativeTransform": [
           [
@@ -8536,10 +8536,10 @@
         "type": "FRAME",
         "name": "타원 117",
         "absoluteBoundingBox": {
-          "x": 263.6,
-          "y": 498.12,
-          "width": 17.44,
-          "height": 17.44
+          "x": 197.7,
+          "y": 373.59,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -8574,10 +8574,10 @@
             "name": "타원 117",
             "characters": "7",
             "absoluteBoundingBox": {
-              "x": 263.6,
-              "y": 498.12,
-              "width": 17.44,
-              "height": 17.44
+              "x": 197.7,
+              "y": 373.59,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -8630,10 +8630,10 @@
         "type": "GROUP",
         "name": "그룹 111",
         "absoluteBoundingBox": {
-          "x": 286.27,
-          "y": 500.26,
-          "width": 62.6,
-          "height": 15.99
+          "x": 214.7,
+          "y": 375.19,
+          "width": 46.95,
+          "height": 11.99
         },
         "relativeTransform": [
           [
@@ -8653,10 +8653,10 @@
             "type": "GROUP",
             "name": "그룹 112",
             "absoluteBoundingBox": {
-              "x": 286.27,
-              "y": 500.26,
-              "width": 15.99,
-              "height": 15.99
+              "x": 214.7,
+              "y": 375.19,
+              "width": 11.99,
+              "height": 11.99
             },
             "relativeTransform": [
               [
@@ -8676,10 +8676,10 @@
                 "type": "VECTOR",
                 "name": "타원 114",
                 "absoluteBoundingBox": {
-                  "x": 286.27,
-                  "y": 500.26,
-                  "width": 15.99,
-                  "height": 15.99
+                  "x": 214.7,
+                  "y": 375.19,
+                  "width": 11.99,
+                  "height": 11.99
                 },
                 "relativeTransform": [
                   [
@@ -8696,7 +8696,7 @@
                 "fillGeometry": [],
                 "strokeGeometry": [
                   {
-                    "path": "M 7.995 0 A 7.995 7.995 0 1 1 7.995 15.99 A 7.995 7.995 0 1 1 7.995 0 Z"
+                    "path": "M 5.995 0 A 5.995 5.995 0 1 1 5.995 11.99 A 5.995 5.995 0 1 1 5.995 0 Z"
                   }
                 ],
                 "fills": [],
@@ -8725,10 +8725,10 @@
                 "type": "RECTANGLE",
                 "name": "Accept",
                 "absoluteBoundingBox": {
-                  "x": 290.61,
-                  "y": 504.41,
-                  "width": 8.02,
-                  "height": 7.12
+                  "x": 217.96,
+                  "y": 378.31,
+                  "width": 6.01,
+                  "height": 5.34
                 },
                 "relativeTransform": [
                   [
@@ -8777,10 +8777,10 @@
             "name": "TextBox 113",
             "characters": "비교하기",
             "absoluteBoundingBox": {
-              "x": 308.48,
-              "y": 501.83,
-              "width": 40.39,
-              "height": 13.73
+              "x": 231.36,
+              "y": 376.37,
+              "width": 30.29,
+              "height": 10.3
             },
             "relativeTransform": [
               [
@@ -8833,10 +8833,10 @@
         "type": "FRAME",
         "name": "타원 169",
         "absoluteBoundingBox": {
-          "x": 31.61,
-          "y": 501.05,
-          "width": 17.44,
-          "height": 17.44
+          "x": 23.71,
+          "y": 375.79,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -8871,10 +8871,10 @@
             "name": "타원 169",
             "characters": "5",
             "absoluteBoundingBox": {
-              "x": 31.61,
-              "y": 501.05,
-              "width": 17.44,
-              "height": 17.44
+              "x": 23.71,
+              "y": 375.79,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -8927,10 +8927,10 @@
         "type": "GROUP",
         "name": "그룹 137",
         "absoluteBoundingBox": {
-          "x": 50.84,
-          "y": 502.6,
-          "width": 108.0,
-          "height": 14.54
+          "x": 38.13,
+          "y": 376.95,
+          "width": 81.0,
+          "height": 10.9
         },
         "relativeTransform": [
           [
@@ -8951,10 +8951,10 @@
             "name": "TextBox 142",
             "characters": "65aRT90EKPB │",
             "absoluteBoundingBox": {
-              "x": 66.1,
-              "y": 502.6,
-              "width": 92.73,
-              "height": 14.54
+              "x": 49.57,
+              "y": 376.95,
+              "width": 69.55,
+              "height": 10.9
             },
             "relativeTransform": [
               [
@@ -8980,7 +8980,7 @@
               }
             ],
             "style": {
-              "fontSize": 9,
+              "fontSize": 8,
               "fontFamily": "LG스마트체 Light",
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
@@ -9000,10 +9000,10 @@
             "type": "RECTANGLE",
             "name": "Edit File",
             "absoluteBoundingBox": {
-              "x": 50.84,
-              "y": 503.0,
-              "width": 11.74,
-              "height": 12.73
+              "x": 38.13,
+              "y": 377.25,
+              "width": 8.8,
+              "height": 9.55
             },
             "relativeTransform": [
               [
@@ -9052,10 +9052,10 @@
         "name": "TextBox 147",
         "characters": "★ 4.89 (999+) >",
         "absoluteBoundingBox": {
-          "x": 160.64,
-          "y": 502.99,
-          "width": 86.34,
-          "height": 13.73
+          "x": 120.48,
+          "y": 377.24,
+          "width": 64.75,
+          "height": 10.3
         },
         "relativeTransform": [
           [
@@ -9101,10 +9101,10 @@
         "type": "RECTANGLE",
         "name": "모서리가 둥근 직사각형 128",
         "absoluteBoundingBox": {
-          "x": 48.45,
-          "y": 534.43,
-          "width": 295.38,
-          "height": 63.02
+          "x": 36.34,
+          "y": 400.82,
+          "width": 221.53,
+          "height": 47.27
         },
         "relativeTransform": [
           [
@@ -9145,10 +9145,10 @@
         "type": "FRAME",
         "name": "직사각형 182",
         "absoluteBoundingBox": {
-          "x": 1002.13,
-          "y": 543.99,
-          "width": 77.1,
-          "height": 19.58
+          "x": 751.6,
+          "y": 407.99,
+          "width": 57.82,
+          "height": 14.68
         },
         "relativeTransform": [
           [
@@ -9183,10 +9183,10 @@
             "name": "직사각형 182",
             "characters": "V.2.2",
             "absoluteBoundingBox": {
-              "x": 1002.13,
-              "y": 543.99,
-              "width": 77.1,
-              "height": 19.58
+              "x": 751.6,
+              "y": 407.99,
+              "width": 57.82,
+              "height": 14.68
             },
             "relativeTransform": [
               [
@@ -9239,10 +9239,10 @@
         "type": "FRAME",
         "name": "직사각형 206",
         "absoluteBoundingBox": {
-          "x": 954.63,
-          "y": 546.36,
-          "width": 50.61,
-          "height": 32.5
+          "x": 715.97,
+          "y": 409.77,
+          "width": 37.96,
+          "height": 24.38
         },
         "relativeTransform": [
           [
@@ -9277,10 +9277,10 @@
             "name": "직사각형 206",
             "characters": "V.4.6",
             "absoluteBoundingBox": {
-              "x": 954.63,
-              "y": 546.36,
-              "width": 50.61,
-              "height": 32.5
+              "x": 715.97,
+              "y": 409.77,
+              "width": 37.96,
+              "height": 24.38
             },
             "relativeTransform": [
               [
@@ -9334,10 +9334,10 @@
         "name": "TextBox 129",
         "characters": "옵션 선택",
         "absoluteBoundingBox": {
-          "x": 60.54,
-          "y": 549.07,
-          "width": 46.45,
-          "height": 14.54
+          "x": 45.41,
+          "y": 411.8,
+          "width": 34.84,
+          "height": 10.9
         },
         "relativeTransform": [
           [
@@ -9363,7 +9363,7 @@
           }
         ],
         "style": {
-          "fontSize": 9,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 Light",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -9384,10 +9384,10 @@
         "name": "TextBox 131",
         "characters": ">",
         "absoluteBoundingBox": {
-          "x": 326.3,
-          "y": 557.06,
-          "width": 8.41,
-          "height": 16.16
+          "x": 244.73,
+          "y": 417.79,
+          "width": 6.31,
+          "height": 12.12
         },
         "relativeTransform": [
           [
@@ -9413,7 +9413,7 @@
           }
         ],
         "style": {
-          "fontSize": 10,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 SemiBold",
           "textAlignHorizontal": "RIGHT",
           "textAlignVertical": "TOP",
@@ -9434,10 +9434,10 @@
         "name": "직사각형 134",
         "characters": "163cm / 레드",
         "absoluteBoundingBox": {
-          "x": 60.08,
-          "y": 571.34,
-          "width": 83.98,
-          "height": 16.16
+          "x": 45.06,
+          "y": 428.5,
+          "width": 62.98,
+          "height": 12.12
         },
         "relativeTransform": [
           [
@@ -9463,7 +9463,7 @@
           }
         ],
         "style": {
-          "fontSize": 10,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 SemiBold",
           "textAlignHorizontal": "LEFT",
           "textAlignVertical": "TOP",
@@ -9483,10 +9483,10 @@
         "type": "RECTANGLE",
         "name": "모서리가 둥근 직사각형 232",
         "absoluteBoundingBox": {
-          "x": 50.03,
-          "y": 609.86,
-          "width": 295.38,
-          "height": 75.67
+          "x": 37.52,
+          "y": 457.39,
+          "width": 221.53,
+          "height": 56.75
         },
         "relativeTransform": [
           [
@@ -9527,10 +9527,10 @@
         "type": "GROUP",
         "name": "그룹 12",
         "absoluteBoundingBox": {
-          "x": 39.83,
-          "y": 611.37,
-          "width": 315.0,
-          "height": 87.54
+          "x": 29.87,
+          "y": 458.53,
+          "width": 236.25,
+          "height": 65.66
         },
         "relativeTransform": [
           [
@@ -9550,10 +9550,10 @@
             "type": "RECTANGLE",
             "name": "직사각형 213",
             "absoluteBoundingBox": {
-              "x": 39.83,
-              "y": 611.37,
-              "width": 315.0,
-              "height": 87.54
+              "x": 29.87,
+              "y": 458.53,
+              "width": 236.25,
+              "height": 65.66
             },
             "relativeTransform": [
               [
@@ -9604,10 +9604,10 @@
             "type": "GROUP",
             "name": "그룹 238",
             "absoluteBoundingBox": {
-              "x": 53.97,
-              "y": 623.11,
-              "width": 294.37,
-              "height": 17.77
+              "x": 40.48,
+              "y": 467.33,
+              "width": 220.78,
+              "height": 13.33
             },
             "relativeTransform": [
               [
@@ -9628,10 +9628,10 @@
                 "name": "TextBox 242",
                 "characters": "9,900,000원",
                 "absoluteBoundingBox": {
-                  "x": 266.55,
-                  "y": 623.11,
-                  "width": 81.79,
-                  "height": 17.77
+                  "x": 199.91,
+                  "y": 467.33,
+                  "width": 61.34,
+                  "height": 13.33
                 },
                 "relativeTransform": [
                   [
@@ -9657,7 +9657,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 11,
+                  "fontSize": 8,
                   "fontFamily": "LG스마트체 Regular",
                   "textAlignHorizontal": "RIGHT",
                   "textAlignVertical": "TOP",
@@ -9678,10 +9678,10 @@
                 "name": "TextBox 240",
                 "characters": "회원할인가",
                 "absoluteBoundingBox": {
-                  "x": 53.97,
-                  "y": 625.27,
-                  "width": 53.01,
-                  "height": 14.54
+                  "x": 40.48,
+                  "y": 468.95,
+                  "width": 39.76,
+                  "height": 10.9
                 },
                 "relativeTransform": [
                   [
@@ -9707,7 +9707,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 9,
+                  "fontSize": 8,
                   "fontFamily": "LG스마트체 Regular",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "TOP",
@@ -9727,10 +9727,10 @@
                 "type": "FRAME",
                 "name": "타원 243",
                 "absoluteBoundingBox": {
-                  "x": 110.46,
-                  "y": 627.25,
-                  "width": 10.58,
-                  "height": 10.58
+                  "x": 82.84,
+                  "y": 470.44,
+                  "width": 7.94,
+                  "height": 7.94
                 },
                 "relativeTransform": [
                   [
@@ -9765,10 +9765,10 @@
                     "name": "타원 243",
                     "characters": "?",
                     "absoluteBoundingBox": {
-                      "x": 110.46,
-                      "y": 627.25,
-                      "width": 10.58,
-                      "height": 10.58
+                      "x": 82.84,
+                      "y": 470.44,
+                      "width": 7.94,
+                      "height": 7.94
                     },
                     "relativeTransform": [
                       [
@@ -9828,10 +9828,10 @@
             "type": "FRAME",
             "name": "직사각형 236",
             "absoluteBoundingBox": {
-              "x": 92.0,
-              "y": 652.74,
-              "width": 257.73,
-              "height": 41.92
+              "x": 69.0,
+              "y": 489.56,
+              "width": 193.3,
+              "height": 31.44
             },
             "relativeTransform": [
               [
@@ -9866,10 +9866,10 @@
                 "name": "직사각형 236",
                 "characters": "구매하기",
                 "absoluteBoundingBox": {
-                  "x": 92.0,
-                  "y": 652.74,
-                  "width": 257.73,
-                  "height": 41.92
+                  "x": 69.0,
+                  "y": 489.56,
+                  "width": 193.3,
+                  "height": 31.44
                 },
                 "relativeTransform": [
                   [
@@ -9895,7 +9895,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 12,
+                  "fontSize": 9,
                   "fontFamily": "LG스마트체 Regular",
                   "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
@@ -9922,10 +9922,10 @@
             "type": "RECTANGLE",
             "name": "Like",
             "absoluteBoundingBox": {
-              "x": 56.77,
-              "y": 663.88,
-              "width": 23.85,
-              "height": 21.06
+              "x": 42.58,
+              "y": 497.91,
+              "width": 17.89,
+              "height": 15.79
             },
             "relativeTransform": [
               [
@@ -9974,10 +9974,10 @@
         "name": "TextBox 227",
         "characters": "10,969,600원",
         "absoluteBoundingBox": {
-          "x": 263.09,
-          "y": 618.21,
-          "width": 66.81,
-          "height": 12.93
+          "x": 197.32,
+          "y": 463.66,
+          "width": 50.11,
+          "height": 9.7
         },
         "relativeTransform": [
           [
@@ -10024,10 +10024,10 @@
         "name": "TextBox 226",
         "characters": "9,900,000원",
         "absoluteBoundingBox": {
-          "x": 228.86,
-          "y": 629.94,
-          "width": 105.18,
-          "height": 22.62
+          "x": 171.65,
+          "y": 472.46,
+          "width": 78.89,
+          "height": 16.96
         },
         "relativeTransform": [
           [
@@ -10053,7 +10053,7 @@
           }
         ],
         "style": {
-          "fontSize": 14,
+          "fontSize": 10,
           "fontFamily": "LG스마트체 Bold",
           "textAlignHorizontal": "RIGHT",
           "textAlignVertical": "TOP",
@@ -10074,10 +10074,10 @@
         "name": "TextBox 231",
         "characters": "10%",
         "absoluteBoundingBox": {
-          "x": 185.62,
-          "y": 632.75,
-          "width": 29.79,
-          "height": 17.77
+          "x": 139.22,
+          "y": 474.56,
+          "width": 22.34,
+          "height": 13.33
         },
         "relativeTransform": [
           [
@@ -10103,7 +10103,7 @@
           }
         ],
         "style": {
-          "fontSize": 11,
+          "fontSize": 8,
           "fontFamily": "LG스마트체 SemiBold",
           "textAlignHorizontal": "RIGHT",
           "textAlignVertical": "TOP",
@@ -10123,10 +10123,10 @@
         "type": "GROUP",
         "name": "그룹 228",
         "absoluteBoundingBox": {
-          "x": 62.45,
-          "y": 633.01,
-          "width": 77.47,
-          "height": 15.58
+          "x": 46.84,
+          "y": 474.76,
+          "width": 58.1,
+          "height": 11.69
         },
         "relativeTransform": [
           [
@@ -10147,10 +10147,10 @@
             "name": "TextBox 229",
             "characters": "회원할인가",
             "absoluteBoundingBox": {
-              "x": 62.45,
-              "y": 633.01,
-              "width": 54.7,
-              "height": 14.54
+              "x": 46.84,
+              "y": 474.76,
+              "width": 41.03,
+              "height": 10.9
             },
             "relativeTransform": [
               [
@@ -10176,7 +10176,7 @@
               }
             ],
             "style": {
-              "fontSize": 9,
+              "fontSize": 8,
               "fontFamily": "LG스마트체 SemiBold",
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
@@ -10196,10 +10196,10 @@
             "type": "RECTANGLE",
             "name": "Info",
             "absoluteBoundingBox": {
-              "x": 127.27,
-              "y": 635.94,
-              "width": 12.65,
-              "height": 12.65
+              "x": 95.45,
+              "y": 476.96,
+              "width": 9.49,
+              "height": 9.49
             },
             "relativeTransform": [
               [
@@ -10247,10 +10247,10 @@
         "type": "RECTANGLE",
         "name": "그림 314",
         "absoluteBoundingBox": {
-          "x": 843.05,
-          "y": 636.55,
-          "width": 26.49,
-          "height": 58.46
+          "x": 632.29,
+          "y": 477.41,
+          "width": 19.87,
+          "height": 43.84
         },
         "relativeTransform": [
           [
@@ -10295,10 +10295,10 @@
         "type": "FRAME",
         "name": "타원 250",
         "absoluteBoundingBox": {
-          "x": 430.36,
-          "y": 646.42,
-          "width": 17.44,
-          "height": 17.44
+          "x": 322.77,
+          "y": 484.81,
+          "width": 13.08,
+          "height": 13.08
         },
         "relativeTransform": [
           [
@@ -10333,10 +10333,10 @@
             "name": "타원 250",
             "characters": "2e",
             "absoluteBoundingBox": {
-              "x": 430.36,
-              "y": 646.42,
-              "width": 17.44,
-              "height": 17.44
+              "x": 322.77,
+              "y": 484.81,
+              "width": 13.08,
+              "height": 13.08
             },
             "relativeTransform": [
               [
@@ -10389,10 +10389,10 @@
         "type": "FRAME",
         "name": "직사각형 252",
         "absoluteBoundingBox": {
-          "x": 457.06,
-          "y": 648.59,
-          "width": 172.16,
-          "height": 31.0
+          "x": 342.8,
+          "y": 486.44,
+          "width": 129.12,
+          "height": 23.25
         },
         "relativeTransform": [
           [
@@ -10427,10 +10427,10 @@
             "name": "직사각형 252",
             "characters": "V.5.0",
             "absoluteBoundingBox": {
-              "x": 457.06,
-              "y": 648.59,
-              "width": 172.16,
-              "height": 31.0
+              "x": 342.8,
+              "y": 486.44,
+              "width": 129.12,
+              "height": 23.25
             },
             "relativeTransform": [
               [
@@ -10484,10 +10484,10 @@
         "name": "TextBox 215",
         "characters": "9,400,000원",
         "absoluteBoundingBox": {
-          "x": 227.82,
-          "y": 654.01,
-          "width": 105.18,
-          "height": 22.62
+          "x": 170.87,
+          "y": 490.51,
+          "width": 78.89,
+          "height": 16.96
         },
         "relativeTransform": [
           [
@@ -10513,7 +10513,7 @@
           }
         ],
         "style": {
-          "fontSize": 14,
+          "fontSize": 10,
           "fontFamily": "LG스마트체 Bold",
           "textAlignHorizontal": "RIGHT",
           "textAlignVertical": "TOP",
@@ -10534,10 +10534,10 @@
         "name": "직사각형 249",
         "characters": "※ 소비자의 이해를 돕기 위해 연출된 이미지입니다.",
         "absoluteBoundingBox": {
-          "x": 455.31,
-          "y": 655.66,
-          "width": 175.06,
-          "height": 17.77
+          "x": 341.48,
+          "y": 491.75,
+          "width": 131.3,
+          "height": 13.33
         },
         "relativeTransform": [
           [
@@ -10583,10 +10583,10 @@
         "type": "GROUP",
         "name": "그룹 222",
         "absoluteBoundingBox": {
-          "x": 61.42,
-          "y": 659.17,
-          "width": 79.05,
-          "height": 15.88
+          "x": 46.06,
+          "y": 494.38,
+          "width": 59.29,
+          "height": 11.91
         },
         "relativeTransform": [
           [
@@ -10607,10 +10607,10 @@
             "name": "TextBox 224",
             "characters": "최대할인가",
             "absoluteBoundingBox": {
-              "x": 61.42,
-              "y": 659.17,
-              "width": 54.7,
-              "height": 14.54
+              "x": 46.06,
+              "y": 494.38,
+              "width": 41.03,
+              "height": 10.9
             },
             "relativeTransform": [
               [
@@ -10636,7 +10636,7 @@
               }
             ],
             "style": {
-              "fontSize": 9,
+              "fontSize": 8,
               "fontFamily": "LG스마트체 SemiBold",
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
@@ -10656,10 +10656,10 @@
             "type": "RECTANGLE",
             "name": "Info",
             "absoluteBoundingBox": {
-              "x": 127.82,
-              "y": 662.4,
-              "width": 12.65,
-              "height": 12.65
+              "x": 95.86,
+              "y": 496.8,
+              "width": 9.49,
+              "height": 9.49
             },
             "relativeTransform": [
               [
@@ -10707,10 +10707,10 @@
         "type": "FRAME",
         "name": "직사각형 181",
         "absoluteBoundingBox": {
-          "x": 914.2,
-          "y": 667.94,
-          "width": 327.26,
-          "height": 90.84
+          "x": 685.65,
+          "y": 500.96,
+          "width": 245.44,
+          "height": 68.13
         },
         "relativeTransform": [
           [
@@ -10745,10 +10745,10 @@
             "name": "직사각형 181",
             "characters": "V.2.2",
             "absoluteBoundingBox": {
-              "x": 914.2,
-              "y": 667.94,
-              "width": 327.26,
-              "height": 90.84
+              "x": 685.65,
+              "y": 500.96,
+              "width": 245.44,
+              "height": 68.13
             },
             "relativeTransform": [
               [
@@ -10801,10 +10801,10 @@
         "type": "GROUP",
         "name": "그룹 207",
         "absoluteBoundingBox": {
-          "x": 430.97,
-          "y": 672.61,
-          "width": 23.48,
-          "height": 23.48
+          "x": 323.23,
+          "y": 504.46,
+          "width": 17.61,
+          "height": 17.61
         },
         "relativeTransform": [
           [
@@ -10824,10 +10824,10 @@
             "type": "VECTOR",
             "name": "타원 208",
             "absoluteBoundingBox": {
-              "x": 430.97,
-              "y": 672.61,
-              "width": 23.48,
-              "height": 23.48
+              "x": 323.23,
+              "y": 504.46,
+              "width": 17.61,
+              "height": 17.61
             },
             "relativeTransform": [
               [
@@ -10843,7 +10843,7 @@
             ],
             "fillGeometry": [
               {
-                "path": "M 11.74 0 A 11.74 11.74 0 1 1 11.74 23.48 A 11.74 11.74 0 1 1 11.74 0 Z",
+                "path": "M 8.805 0 A 8.805 8.805 0 1 1 8.805 17.61 A 8.805 8.805 0 1 1 8.805 0 Z",
                 "windingRule": "NONZERO"
               }
             ],
@@ -10860,7 +10860,7 @@
               }
             ],
             "strokes": [],
-            "strokeWeight": 1.33,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_76/child_1",
@@ -10874,10 +10874,10 @@
             "type": "GROUP",
             "name": "그룹 209",
             "absoluteBoundingBox": {
-              "x": 438.8,
-              "y": 679.01,
-              "width": 7.83,
-              "height": 10.67
+              "x": 329.1,
+              "y": 509.26,
+              "width": 5.87,
+              "height": 8.0
             },
             "relativeTransform": [
               [
@@ -10897,10 +10897,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 210",
                 "absoluteBoundingBox": {
-                  "x": 438.8,
-                  "y": 679.01,
-                  "width": 2.61,
-                  "height": 10.67
+                  "x": 329.1,
+                  "y": 509.26,
+                  "width": 1.96,
+                  "height": 8.0
                 },
                 "relativeTransform": [
                   [
@@ -10941,10 +10941,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 211",
                 "absoluteBoundingBox": {
-                  "x": 444.02,
-                  "y": 679.01,
-                  "width": 2.61,
-                  "height": 10.67
+                  "x": 333.01,
+                  "y": 509.26,
+                  "width": 1.96,
+                  "height": 8.0
                 },
                 "relativeTransform": [
                   [
@@ -10999,10 +10999,10 @@
         "type": "RECTANGLE",
         "name": "직사각형 140",
         "absoluteBoundingBox": {
-          "x": 504.26,
-          "y": 673.84,
-          "width": 97.19,
-          "height": 20.1
+          "x": 378.19,
+          "y": 505.38,
+          "width": 72.89,
+          "height": 15.08
         },
         "relativeTransform": [
           [
@@ -11043,10 +11043,10 @@
         "type": "GROUP",
         "name": "그룹 217",
         "absoluteBoundingBox": {
-          "x": 685.97,
-          "y": 680.43,
-          "width": 15.66,
-          "height": 15.66
+          "x": 514.48,
+          "y": 510.32,
+          "width": 11.75,
+          "height": 11.75
         },
         "relativeTransform": [
           [
@@ -11066,10 +11066,10 @@
             "type": "VECTOR",
             "name": "타원 218",
             "absoluteBoundingBox": {
-              "x": 685.97,
-              "y": 680.43,
-              "width": 15.66,
-              "height": 15.66
+              "x": 514.48,
+              "y": 510.32,
+              "width": 11.75,
+              "height": 11.75
             },
             "relativeTransform": [
               [
@@ -11085,7 +11085,7 @@
             ],
             "fillGeometry": [
               {
-                "path": "M 7.83 0 A 7.83 7.83 0 1 1 7.83 15.66 A 7.83 7.83 0 1 1 7.83 0 Z",
+                "path": "M 5.875 0 A 5.875 5.875 0 1 1 5.875 11.75 A 5.875 5.875 0 1 1 5.875 0 Z",
                 "windingRule": "NONZERO"
               }
             ],
@@ -11102,7 +11102,7 @@
               }
             ],
             "strokes": [],
-            "strokeWeight": 1.33,
+            "strokeWeight": 1.0,
             "children": [],
             "debug": {
               "source_path": "slide_29/element_77/child_1",
@@ -11116,10 +11116,10 @@
             "type": "GROUP",
             "name": "그룹 219",
             "absoluteBoundingBox": {
-              "x": 691.19,
-              "y": 684.7,
-              "width": 5.22,
-              "height": 7.11
+              "x": 518.39,
+              "y": 513.53,
+              "width": 3.92,
+              "height": 5.33
             },
             "relativeTransform": [
               [
@@ -11139,10 +11139,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 220",
                 "absoluteBoundingBox": {
-                  "x": 691.19,
-                  "y": 684.7,
-                  "width": 1.74,
-                  "height": 7.11
+                  "x": 518.39,
+                  "y": 513.53,
+                  "width": 1.3,
+                  "height": 5.33
                 },
                 "relativeTransform": [
                   [
@@ -11183,10 +11183,10 @@
                 "type": "RECTANGLE",
                 "name": "직사각형 221",
                 "absoluteBoundingBox": {
-                  "x": 694.67,
-                  "y": 684.7,
-                  "width": 1.74,
-                  "height": 7.11
+                  "x": 521.0,
+                  "y": 513.53,
+                  "width": 1.3,
+                  "height": 5.33
                 },
                 "relativeTransform": [
                   [
@@ -11241,10 +11241,10 @@
         "type": "FRAME",
         "name": "Google Shape;1032;p23",
         "absoluteBoundingBox": {
-          "x": 518.34,
-          "y": 682.73,
-          "width": 50.27,
-          "height": 15.47
+          "x": 388.75,
+          "y": 512.05,
+          "width": 37.7,
+          "height": 11.6
         },
         "relativeTransform": [
           [
@@ -11279,10 +11279,10 @@
             "name": "Google Shape;1032;p23",
             "characters": "< 1 / 19 >",
             "absoluteBoundingBox": {
-              "x": 518.34,
-              "y": 682.73,
-              "width": 50.27,
-              "height": 15.47
+              "x": 388.75,
+              "y": 512.05,
+              "width": 37.7,
+              "height": 11.6
             },
             "relativeTransform": [
               [
@@ -11335,10 +11335,10 @@
         "type": "FRAME",
         "name": "Google Shape;1032;p23",
         "absoluteBoundingBox": {
-          "x": 761.63,
-          "y": 682.83,
-          "width": 34.91,
-          "height": 10.74
+          "x": 571.22,
+          "y": 512.12,
+          "width": 26.18,
+          "height": 8.05
         },
         "relativeTransform": [
           [
@@ -11373,10 +11373,10 @@
             "name": "Google Shape;1032;p23",
             "characters": "< 1 / 5 >",
             "absoluteBoundingBox": {
-              "x": 761.63,
-              "y": 682.83,
-              "width": 34.91,
-              "height": 10.74
+              "x": 571.22,
+              "y": 512.12,
+              "width": 26.18,
+              "height": 8.05
             },
             "relativeTransform": [
               [
@@ -11429,10 +11429,10 @@
         "type": "FRAME",
         "name": "직사각형 212",
         "absoluteBoundingBox": {
-          "x": 914.7,
-          "y": 995.71,
-          "width": 326.76,
-          "height": 18.21
+          "x": 686.03,
+          "y": 746.78,
+          "width": 245.07,
+          "height": 13.66
         },
         "relativeTransform": [
           [
@@ -11467,10 +11467,10 @@
             "name": "직사각형 212",
             "characters": "V 4.7",
             "absoluteBoundingBox": {
-              "x": 914.7,
-              "y": 995.71,
-              "width": 326.76,
-              "height": 18.21
+              "x": 686.03,
+              "y": 746.78,
+              "width": 245.07,
+              "height": 13.66
             },
             "relativeTransform": [
               [

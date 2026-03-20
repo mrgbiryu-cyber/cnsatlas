@@ -9,6 +9,8 @@ from typing import Any
 
 
 SLIDE_GAP = 120
+TARGET_SLIDE_WIDTH = 960.0
+TARGET_SLIDE_HEIGHT = 540.0
 
 
 def identity_affine() -> list[list[float]]:
@@ -21,6 +23,38 @@ def make_bounds(x: float, y: float, width: float, height: float) -> dict[str, fl
         "y": round(float(y), 2),
         "width": round(max(float(width), 1.0), 2),
         "height": round(max(float(height), 1.0), 2),
+    }
+
+
+def build_page_scale(page: dict[str, Any]) -> tuple[float, float]:
+    slide_size = page.get("slide_size") or {}
+    width = float(slide_size.get("width_px") or TARGET_SLIDE_WIDTH)
+    height = float(slide_size.get("height_px") or TARGET_SLIDE_HEIGHT)
+    scale_x = TARGET_SLIDE_WIDTH / width if width else 1.0
+    scale_y = TARGET_SLIDE_HEIGHT / height if height else 1.0
+    return scale_x, scale_y
+
+
+def scale_value(value: float | int | None, scale: float) -> float:
+    return float(value or 0) * scale
+
+
+def scale_bounds(bounds: dict[str, Any] | None, scale_x: float, scale_y: float) -> dict[str, float]:
+    bounds = bounds or {}
+    return make_bounds(
+        scale_value(bounds.get("x"), scale_x),
+        scale_value(bounds.get("y"), scale_y),
+        scale_value(bounds.get("width", 120), scale_x),
+        scale_value(bounds.get("height", 24), scale_y),
+    )
+
+
+def scale_point(point: dict[str, Any] | None, scale_x: float, scale_y: float) -> dict[str, float] | None:
+    if not point:
+        return None
+    return {
+        "x": round(scale_value(point.get("x"), scale_x), 2),
+        "y": round(scale_value(point.get("y"), scale_y), 2),
     }
 
 
@@ -127,10 +161,10 @@ def clamp_font_size(value: float) -> int:
     return max(8, min(int(round(value)), 72))
 
 
-def estimate_text_font_size(text_value: str, text_style: dict[str, Any], bounds: dict[str, Any], *, table_cell: bool = False) -> int:
+def estimate_text_font_size(text_value: str, text_style: dict[str, Any], bounds: dict[str, Any], *, table_cell: bool = False, scale: float = 1.0) -> int:
     explicit = text_style.get("font_size_max") or text_style.get("font_size_avg") or 0
     if explicit:
-        return clamp_font_size(float(explicit))
+        return clamp_font_size(float(explicit) * scale)
     width = max(float(bounds.get("width", 120)), 1.0)
     height = max(float(bounds.get("height", 24)), 1.0)
     base_by_height = height * 0.42
@@ -155,12 +189,12 @@ def derive_wrap_mode(text_value: str, text_style: dict[str, Any], bounds: dict[s
     return "none"
 
 
-def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t") -> dict[str, Any]:
+def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
     text_style = (candidate.get("extra") or {}).get("text_style") or {}
     text_value = candidate.get("text") or candidate.get("title") or ""
     wrap_mode = derive_wrap_mode(text_value, text_style, bounds, force_wrap=force_wrap)
     return {
-        "fontSize": estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell),
+        "fontSize": estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale),
         "fontFamily": text_style.get("font_family") or "Inter",
         "textAlignHorizontal": map_horizontal_align(text_style.get("horizontal_align"), horizontal_fallback),
         "textAlignVertical": map_vertical_align(text_style.get("vertical_align"), vertical_fallback),
@@ -169,9 +203,9 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     }
 
 
-def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: float, min_height: float) -> float:
+def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: float, min_height: float, scale: float = 1.0) -> float:
     text_style = (candidate.get("extra") or {}).get("text_style") or {}
-    font_size = estimate_text_font_size(text_value, text_style, {"width": width, "height": min_height}, table_cell=True)
+    font_size = estimate_text_font_size(text_value, text_style, {"width": width, "height": min_height}, table_cell=True, scale=scale)
     average_char_width = max(font_size * 0.55, 4)
     chars_per_line = max(int((width - 10) / average_char_width), 1)
     explicit_lines = str(text_value or "").split("\n")
@@ -183,7 +217,7 @@ def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: f
     return max(math.ceil(rendered_lines * line_height + 8), int(min_height))
 
 
-def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t") -> dict[str, Any]:
+def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
     return {
         "id": f"{candidate['candidate_id']}:text",
         "type": "TEXT",
@@ -192,7 +226,7 @@ def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, fo
         "absoluteBoundingBox": abs_bounds,
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
         "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
-        "style": build_text_style(candidate, abs_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback),
+        "style": build_text_style(candidate, abs_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback, scale=scale),
         "children": [],
         "debug": {
             "source_path": candidate.get("source_path", ""),
@@ -236,7 +270,7 @@ def ellipse_path(width: float, height: float) -> str:
     return f"M {rx} 0 A {rx} {ry} 0 1 1 {rx} {height} A {rx} {ry} 0 1 1 {rx} 0 Z"
 
 
-def build_shape_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> dict[str, Any]:
+def build_shape_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scale: float = 1.0) -> dict[str, Any]:
     extra = candidate.get("extra") or {}
     shape_style = extra.get("shape_style") or {}
     shape_kind = extra.get("shape_kind") or ""
@@ -267,7 +301,7 @@ def build_shape_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> d
             stroke_geometry=[{"path": path}] if strokes else [],
             fills=fills,
             strokes=strokes,
-            stroke_weight=max(float(((shape_style.get("line") or {}).get("width_px") or 1)), 1.0),
+            stroke_weight=max(float(((shape_style.get("line") or {}).get("width_px") or 1)) * scale, 1.0),
             debug=debug,
             relative_transform=relative_transform,
         )
@@ -279,21 +313,21 @@ def build_shape_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> d
         "relativeTransform": relative_transform,
         "fills": build_fill_array(shape_style, {"r": 0.94, "g": 0.95, "b": 0.97}),
         "strokes": build_stroke_array(shape_style, {"r": 0.75, "g": 0.78, "b": 0.82}),
-        "strokeWeight": max(float(((shape_style.get("line") or {}).get("width_px") or 1)), 1.0),
+        "strokeWeight": max(float(((shape_style.get("line") or {}).get("width_px") or 1)) * scale, 1.0),
         "cornerRadius": 8 if shape_kind == "roundRect" else None,
         "children": [],
         "debug": debug,
     }
 
 
-def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> dict[str, Any]:
+def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scale_x: float, scale_y: float) -> dict[str, Any]:
     extra = candidate.get("extra") or {}
     shape_style = extra.get("shape_style") or {}
     kind = extra.get("shape_kind") or "connector"
-    stroke_weight = max(float(((shape_style.get("line") or {}).get("width_px") or 1.5)), 1.5)
+    stroke_weight = max(float(((shape_style.get("line") or {}).get("width_px") or 1.5)) * min(scale_x, scale_y), 1.0)
     local_width = max(abs_bounds["width"], 6)
     local_height = max(abs_bounds["height"], 6)
-    relative_transform = relative_transform_from_bounds(candidate.get("bounds_px"))
+    relative_transform = identity_affine()
 
     def rel_point(point: dict[str, Any]) -> dict[str, float]:
         return {
@@ -324,8 +358,8 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) 
         route_x = start["x"] + (lead_margin if dx >= 0 else -lead_margin)
         return [start, {"x": route_x, "y": start["y"]}, {"x": route_x, "y": end["y"]}, end]
 
-    start_px = extra.get("start_point_px")
-    end_px = extra.get("end_point_px")
+    start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
+    end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
     adjusts = extra.get("connector_adjusts") or {}
     if start_px and end_px:
         points = readable_elbow(rel_point(start_px), rel_point(end_px), kind, adjusts)
@@ -353,7 +387,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) 
         dx = tip["x"] - prev["x"]
         dy = tip["y"] - prev["y"]
         angle = math.atan2(dy, dx)
-        size = 10
+        size = max(8 * min(scale_x, scale_y), 6)
         back_x = tip["x"] - math.cos(angle) * size
         back_y = tip["y"] - math.sin(angle) * size
         left_x = back_x + math.cos(angle + math.pi / 2) * (size * 0.5)
@@ -385,7 +419,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any]) 
     )
 
 
-def build_image_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+def build_image_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], assets: dict[str, Any], scale: float = 1.0) -> dict[str, Any]:
     extra = candidate.get("extra") or {}
     image_ref = f"pptx-image:{candidate['candidate_id']}"
     image_base64 = extra.get("image_base64")
@@ -404,7 +438,7 @@ def build_image_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], asse
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
         "fills": fills,
         "strokes": [{"type": "SOLID", "color": {"r": 0.64, "g": 0.68, "b": 0.74}}],
-        "strokeWeight": 1,
+        "strokeWeight": max(scale, 1),
         "children": [],
         "debug": {
             "source_path": candidate.get("source_path", ""),
@@ -415,9 +449,9 @@ def build_image_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], asse
     }
 
 
-def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offset_y: float, children_map: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
+def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offset_y: float, children_map: dict[str, list[dict[str, Any]]], scale_x: float, scale_y: float) -> dict[str, Any]:
     bounds = candidate.get("bounds_px") or {"x": 0, "y": 0, "width": 400, "height": 240}
-    abs_bounds = make_bounds(page_offset_x + bounds["x"], page_offset_y + bounds["y"], bounds["width"], bounds["height"])
+    abs_bounds = make_bounds(page_offset_x + scale_value(bounds["x"], scale_x), page_offset_y + scale_value(bounds["y"], scale_y), scale_value(bounds["width"], scale_x), scale_value(bounds["height"], scale_y))
     extra = candidate.get("extra") or {}
     shape_style = extra.get("shape_style") or {}
     table_node = {
@@ -428,7 +462,7 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
         "fills": build_fill_array(shape_style, {"r": 1, "g": 1, "b": 1}),
         "strokes": build_stroke_array(shape_style, {"r": 0.45, "g": 0.45, "b": 0.45}),
-        "strokeWeight": max(float(((shape_style.get("line") or {}).get("width_px") or 1)), 1.0),
+        "strokeWeight": max(float(((shape_style.get("line") or {}).get("width_px") or 1)) * min(scale_x, scale_y), 1.0),
         "children": [],
         "debug": {
             "source_path": candidate.get("source_path", ""),
@@ -441,13 +475,13 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
     row_cursor_y = abs_bounds["y"]
     for row_candidate in rows:
         cell_candidates = [child for child in children_map.get(row_candidate["candidate_id"], []) if child.get("subtype") == "table_cell"]
-        row_height = max(float(((row_candidate.get("extra") or {}).get("row_height_px") or 28)), 28.0)
+        row_height = max(scale_value((row_candidate.get("extra") or {}).get("row_height_px") or 28, scale_y), 21.0)
         for cell_candidate in cell_candidates:
             cell_extra = cell_candidate.get("extra") or {}
             if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
                 continue
-            cell_width = float(cell_extra.get("width_px") or (abs_bounds["width"] / max(len(cell_candidates), 1)))
-            row_height = max(row_height, estimate_wrapped_height(cell_candidate.get("text") or cell_candidate.get("title") or "", cell_candidate, cell_width, row_height))
+            cell_width = scale_value(cell_extra.get("width_px") or (abs_bounds["width"] / max(len(cell_candidates), 1)), scale_x if cell_extra.get("width_px") else 1.0)
+            row_height = max(row_height, estimate_wrapped_height(cell_candidate.get("text") or cell_candidate.get("title") or "", cell_candidate, cell_width, row_height, min(scale_x, scale_y)))
         row_node = {
             "id": row_candidate["candidate_id"],
             "type": "FRAME",
@@ -469,9 +503,9 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
             if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
                 continue
             start_column_index = int(cell_extra.get("start_column_index") or 1)
-            cell_width = float(cell_extra.get("width_px") or (row_node["absoluteBoundingBox"]["width"] / max(len(cell_candidates), 1)))
+            cell_width = scale_value(cell_extra.get("width_px") or (row_node["absoluteBoundingBox"]["width"] / max(len(cell_candidates), 1)), scale_x if cell_extra.get("width_px") else 1.0)
             if grid_columns:
-                cell_x = sum(float(column.get("width_px") or 0) for column in grid_columns if int(column.get("column_index") or 0) < start_column_index)
+                cell_x = sum(scale_value(column.get("width_px") or 0, scale_x) for column in grid_columns if int(column.get("column_index") or 0) < start_column_index)
             else:
                 cell_x = sum(float(child["absoluteBoundingBox"]["width"]) for child in row_node["children"])
             cell_abs_bounds = make_bounds(row_node["absoluteBoundingBox"]["x"] + cell_x, row_node["absoluteBoundingBox"]["y"], cell_width, row_height)
@@ -485,7 +519,7 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
                 "relativeTransform": relative_transform_from_bounds(cell_candidate.get("bounds_px")),
                 "fills": fills,
                 "strokes": [{"type": "SOLID", "color": {"r": 0.75, "g": 0.75, "b": 0.75}}],
-                "strokeWeight": 1,
+                "strokeWeight": max(min(scale_x, scale_y), 1),
                 "children": [],
                 "debug": {
                     "source_path": cell_candidate.get("source_path", ""),
@@ -494,7 +528,7 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
                 },
             }
             if cell_candidate.get("text"):
-                cell_node["children"].append(build_text_node(cell_candidate, cell_abs_bounds, force_wrap=True, table_cell=True, horizontal_fallback="l", vertical_fallback=(cell_style.get("anchor") or "ctr")))
+                cell_node["children"].append(build_text_node(cell_candidate, cell_abs_bounds, force_wrap=True, table_cell=True, horizontal_fallback="l", vertical_fallback=(cell_style.get("anchor") or "ctr"), scale=min(scale_x, scale_y)))
             row_node["children"].append(cell_node)
         table_node["children"].append(row_node)
         row_cursor_y += row_height
@@ -513,20 +547,20 @@ def build_children_map(candidates: list[dict[str, Any]]) -> dict[str, list[dict[
     return by_parent
 
 
-def build_node_from_candidate(candidate: dict[str, Any], page_offset_x: float, page_offset_y: float, children_map: dict[str, list[dict[str, Any]]], assets: dict[str, Any]) -> dict[str, Any] | None:
+def build_node_from_candidate(candidate: dict[str, Any], page_offset_x: float, page_offset_y: float, children_map: dict[str, list[dict[str, Any]]], assets: dict[str, Any], scale_x: float, scale_y: float) -> dict[str, Any] | None:
     bounds = candidate.get("bounds_px") or {"x": 0, "y": 0, "width": 120, "height": 24}
-    abs_bounds = make_bounds(page_offset_x + bounds["x"], page_offset_y + bounds["y"], bounds["width"], bounds["height"])
+    abs_bounds = make_bounds(page_offset_x + scale_value(bounds["x"], scale_x), page_offset_y + scale_value(bounds["y"], scale_y), scale_value(bounds["width"], scale_x), scale_value(bounds["height"], scale_y))
     subtype = candidate.get("subtype")
     node_type = candidate.get("node_type")
 
     if node_type == "asset" and subtype == "image":
-        return build_image_node(candidate, abs_bounds, assets)
+        return build_image_node(candidate, abs_bounds, assets, min(scale_x, scale_y))
     if subtype == "text_block":
-        return build_text_node(candidate, abs_bounds, force_wrap=False, table_cell=False, horizontal_fallback="l", vertical_fallback="t")
+        return build_text_node(candidate, abs_bounds, force_wrap=False, table_cell=False, horizontal_fallback="l", vertical_fallback="t", scale=min(scale_x, scale_y))
     if subtype == "connector":
-        return build_connector_node(candidate, abs_bounds)
+        return build_connector_node(candidate, abs_bounds, scale_x, scale_y)
     if subtype == "table":
-        return build_table_node(candidate, page_offset_x, page_offset_y, children_map)
+        return build_table_node(candidate, page_offset_x, page_offset_y, children_map, scale_x, scale_y)
     if subtype in {"table_row", "table_cell"}:
         return None
     if subtype in {"group", "section_block"}:
@@ -544,14 +578,14 @@ def build_node_from_candidate(candidate: dict[str, Any], page_offset_x: float, p
             },
         }
         for child in sorted(children_map.get(candidate["candidate_id"], []), key=sort_by_position_key):
-            child_node = build_node_from_candidate(child, page_offset_x, page_offset_y, children_map, assets)
+            child_node = build_node_from_candidate(child, page_offset_x, page_offset_y, children_map, assets, scale_x, scale_y)
             if child_node:
                 node["children"].append(child_node)
         return node
     if subtype == "labeled_shape":
         extra = candidate.get("extra") or {}
         shape_kind = extra.get("shape_kind") or ""
-        child_text = build_text_node(candidate, abs_bounds, force_wrap=False, table_cell=False, horizontal_fallback="ctr", vertical_fallback="ctr")
+        child_text = build_text_node(candidate, abs_bounds, force_wrap=False, table_cell=False, horizontal_fallback="ctr", vertical_fallback="ctr", scale=min(scale_x, scale_y))
         if shape_kind == "flowChartDecision":
             return {
                 "id": candidate["candidate_id"],
@@ -559,7 +593,7 @@ def build_node_from_candidate(candidate: dict[str, Any], page_offset_x: float, p
                 "name": candidate.get("title") or subtype or "labeled_shape",
                 "absoluteBoundingBox": abs_bounds,
                 "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
-                "children": [build_shape_node(candidate, abs_bounds), child_text],
+                "children": [build_shape_node(candidate, abs_bounds, min(scale_x, scale_y)), child_text],
                 "debug": {
                     "source_path": candidate.get("source_path", ""),
                     "source_node_id": candidate.get("source_node_id", ""),
@@ -575,7 +609,7 @@ def build_node_from_candidate(candidate: dict[str, Any], page_offset_x: float, p
             "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
             "fills": build_fill_array(shape_style, {"r": 1, "g": 1, "b": 1}),
             "strokes": build_stroke_array(shape_style, {"r": 0.28, "g": 0.28, "b": 0.28}),
-            "strokeWeight": max(float(((shape_style.get("line") or {}).get("width_px") or 1)), 1.0),
+            "strokeWeight": max(float(((shape_style.get("line") or {}).get("width_px") or 1)) * min(scale_x, scale_y), 1.0),
             "cornerRadius": 8 if shape_kind == "roundRect" else None,
             "children": [child_text],
             "debug": {
@@ -585,15 +619,15 @@ def build_node_from_candidate(candidate: dict[str, Any], page_offset_x: float, p
             },
         }
     if subtype == "shape":
-        return build_shape_node(candidate, abs_bounds)
+        return build_shape_node(candidate, abs_bounds, min(scale_x, scale_y))
     return None
 
 
 def build_page_bundle(page: dict[str, Any], source_file: str) -> dict[str, Any]:
     assets: dict[str, Any] = {}
-    page_bounds = page.get("slide_size") or {}
-    width = float(page_bounds.get("width_px") or 960)
-    height = float(page_bounds.get("height_px") or 540)
+    scale_x, scale_y = build_page_scale(page)
+    width = TARGET_SLIDE_WIDTH
+    height = TARGET_SLIDE_HEIGHT
     page_frame = {
         "id": page.get("page_id") or f"page:{page.get('slide_no')}",
         "type": "FRAME",
@@ -613,7 +647,7 @@ def build_page_bundle(page: dict[str, Any], source_file: str) -> dict[str, Any]:
     children_map = build_children_map(page.get("candidates") or [])
     roots = sorted(children_map.get(page.get("page_id"), []), key=sort_by_position_key)
     for candidate in roots:
-        child = build_node_from_candidate(candidate, 0, 0, children_map, assets)
+        child = build_node_from_candidate(candidate, 0, 0, children_map, assets, scale_x, scale_y)
         if child:
             page_frame["children"].append(child)
     return {

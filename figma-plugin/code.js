@@ -1386,22 +1386,43 @@ async function renderFigmaReplayBundle(bundle) {
   clearPreviousVisualTests();
   resetReplayDebugState();
 
-  const rootBounds = computeReplayRootBounds(bundle.document);
+  const documentNode = bundle.document;
+  const documentBounds = getReplayBounds(documentNode);
+  const rootBounds = documentBounds || computeReplayRootBounds(documentNode);
   const rootFrame = figma.createFrame();
   rootFrame.name = `CNS Atlas Replay (${bundle.page_name || bundle.node_id || "page"})`;
   rootFrame.x = 0;
   rootFrame.y = 0;
   rootFrame.resize(rootBounds.width, rootBounds.height);
-  rootFrame.fills = [];
-  rootFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
-  rootFrame.strokeWeight = 1;
+  rootFrame.fills = (documentNode && documentNode.fills ? documentNode.fills : []).filter((fill) => fill && (fill.type === "SOLID" || fill.type === "IMAGE")).map((fill) => {
+    if (fill.type === "SOLID") {
+      return {
+        type: "SOLID",
+        color: fill.color,
+        opacity: typeof fill.opacity === "number" ? fill.opacity : (fill.color && typeof fill.color.a === "number" ? fill.color.a : 1),
+      };
+    }
+    return fill;
+  });
+  rootFrame.strokes = (documentNode && documentNode.strokes ? documentNode.strokes : []).filter((stroke) => stroke && stroke.type === "SOLID").map((stroke) => ({
+    type: "SOLID",
+    color: stroke.color,
+    opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
+  }));
+  rootFrame.strokeWeight = documentNode && documentNode.strokeWeight ? documentNode.strokeWeight : 1;
+  if (rootFrame.fills.length === 0) {
+    rootFrame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+  }
+  if (rootFrame.strokes.length === 0) {
+    rootFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
+    rootFrame.strokeWeight = 1;
+  }
 
-  const documentNode = bundle.document;
   const replayOrigin = Object.assign({}, rootBounds, {
     pageId: bundle.node_id || "",
     referenceParentId: documentNode && documentNode.id ? documentNode.id : "",
     sourceTransform: identityAffine(),
-    pageBounds: getReplayBounds(documentNode) || rootBounds,
+    pageBounds: documentBounds || rootBounds,
   });
   if (documentNode && documentNode.type === "FRAME") {
     for (const child of documentNode.children || []) {
