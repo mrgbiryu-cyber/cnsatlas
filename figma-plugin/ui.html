@@ -1437,6 +1437,9 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         if (payload && payload.kind === "pptx-replay-bundle" && Array.isArray(payload.pages)) {
           return "pptx-replay-bundle";
         }
+        if (payload && payload.source_kind === "pptx" && Array.isArray(payload.pages)) {
+          return "pptx-replay-bundle";
+        }
         if (payload && Array.isArray(payload.pages)) {
           return "intermediate";
         }
@@ -1562,7 +1565,10 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         }
         setStatus(`${file.name} 분석 중...`);
         const buffer = await file.arrayBuffer();
-        const payload = await window.CnsPptxParser.parsePptxArrayBuffer(buffer, file.name);
+        let payload = await window.CnsPptxParser.parsePptxArrayBuffer(buffer, file.name);
+        if (payload && Array.isArray(payload.pages) && (!payload.kind || payload.kind === "intermediate")) {
+          payload = buildPptxReplayBundle(payload);
+        }
         const result = validatePayload(payload);
         loadedJsonText = JSON.stringify(result.payload);
         jsonText.value = "";
