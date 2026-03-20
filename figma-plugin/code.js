@@ -575,15 +575,26 @@ async function renderIntermediatePayload(payload) {
   rootFrame.strokes = [];
 
   let cursorX = 0;
-  let maxHeight = MIN_PAGE_HEIGHT;
+  let cursorY = 0;
+  let rowHeight = MIN_PAGE_HEIGHT;
+  let maxWidth = 0;
 
-  for (const page of payload.pages) {
+  for (const [index, page] of payload.pages.entries()) {
     const pageFrame = figma.createFrame();
     const pageBounds = pageCanvasSize(page);
+    const dividerPage = isDividerLikePage(page);
+
+    if (dividerPage && index > 0 && cursorX > 0) {
+      maxWidth = Math.max(maxWidth, Math.max(cursorX - SLIDE_GAP, 1));
+      cursorX = 0;
+      cursorY += rowHeight + SLIDE_GAP;
+      rowHeight = MIN_PAGE_HEIGHT;
+    }
+
     pageFrame.name = `Slide ${page.slide_no} - ${page.title_or_label}`;
     pageFrame.resize(pageBounds.width, pageBounds.height);
     pageFrame.x = cursorX;
-    pageFrame.y = 0;
+    pageFrame.y = cursorY;
     pageFrame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
     pageFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
     pageFrame.strokeWeight = 1;
@@ -596,12 +607,59 @@ async function renderIntermediatePayload(payload) {
     }
 
     cursorX += pageBounds.width + SLIDE_GAP;
-    maxHeight = Math.max(maxHeight, pageBounds.height);
+    rowHeight = Math.max(rowHeight, pageBounds.height);
+    maxWidth = Math.max(maxWidth, Math.max(cursorX - SLIDE_GAP, 1));
   }
 
-  rootFrame.resize(Math.max(cursorX - SLIDE_GAP, 1), maxHeight);
+  rootFrame.resize(maxWidth, Math.max(cursorY + rowHeight, MIN_PAGE_HEIGHT));
   figma.currentPage.appendChild(rootFrame);
   figma.viewport.scrollAndZoomIntoView([rootFrame]);
+}
+
+function isDividerLikePage(page) {
+  if (!page || !Array.isArray(page.candidates)) {
+    return false;
+  }
+
+  let connectorCount = 0;
+  let tableCount = 0;
+  let imageCount = 0;
+  let largeTextCount = 0;
+  let totalTextish = 0;
+
+  for (const candidate of page.candidates) {
+    if (!candidate || candidate.node_type !== "node") {
+      if (candidate && candidate.node_type === "asset") {
+        imageCount += 1;
+      }
+      continue;
+    }
+
+    if (candidate.subtype === "connector") {
+      connectorCount += 1;
+    }
+    if (candidate.subtype === "table" || candidate.subtype === "table_row" || candidate.subtype === "table_cell") {
+      tableCount += 1;
+    }
+    if (candidate.subtype === "text_block" || candidate.subtype === "labeled_shape") {
+      totalTextish += 1;
+      const textStyle = candidate.extra && candidate.extra.text_style ? candidate.extra.text_style : null;
+      const fontSize = textStyle && (textStyle.font_size_max || textStyle.font_size_avg) ? Number(textStyle.font_size_max || textStyle.font_size_avg) : 0;
+      if (fontSize >= 20) {
+        largeTextCount += 1;
+      }
+    }
+  }
+
+  if (tableCount > 0 || connectorCount > 0) {
+    return false;
+  }
+
+  if (imageCount > 2) {
+    return false;
+  }
+
+  return page.candidates.length <= 12 && totalTextish >= 1 && largeTextCount >= 1;
 }
 
 function colorToSvg(color, opacity) {
