@@ -118,7 +118,6 @@
         <button class="secondary" id="clearButton" type="button">초기화</button>
       </div>
       <div class="status" id="status">PPTX 또는 JSON 파일을 선택하세요.</div>
-      <div class="status hint" id="runtimeStatus"></div>
     </div>
 
     <div class="panel">
@@ -151,7 +150,6 @@
       const fileInput = document.getElementById("fileInput");
       const jsonText = document.getElementById("jsonText");
       const status = document.getElementById("status");
-      const runtimeStatus = document.getElementById("runtimeStatus");
       const summary = document.getElementById("summary");
       const renderButton = document.getElementById("renderButton");
       const exportActualButton = document.getElementById("exportActualButton");
@@ -172,20 +170,6 @@
 
       function setSummary(text) {
         summary.textContent = text;
-      }
-
-      function getRuntimeSummary() {
-        return {
-          jszipLoaded: !!window.JSZip,
-          pptxParserLoaded: !!(window.CnsPptxParser && typeof window.CnsPptxParser.parsePptxArrayBuffer === "function")
-        };
-      }
-
-      function refreshRuntimeStatus() {
-        const runtime = getRuntimeSummary();
-        runtimeStatus.textContent =
-          `런타임 상태: JSZip=${runtime.jszipLoaded ? "loaded" : "missing"}, ` +
-          `PPTX Parser=${runtime.pptxParserLoaded ? "loaded" : "missing"}`;
       }
 
       function getPayloadKind(payload) {
@@ -250,14 +234,8 @@
       }
 
       async function loadPptxFile(file) {
-        const runtime = getRuntimeSummary();
-        if (!runtime.pptxParserLoaded) {
-          throw new Error(
-            "PPTX parser is not loaded. " +
-            `JSZip=${runtime.jszipLoaded ? "loaded" : "missing"}, ` +
-            `Parser=${runtime.pptxParserLoaded ? "loaded" : "missing"}. ` +
-            "Figma에서 Development > Reload plugin 또는 manifest 재import 후 다시 시도하세요."
-          );
+        if (!window.CnsPptxParser || typeof window.CnsPptxParser.parsePptxArrayBuffer !== "function") {
+          throw new Error("PPTX parser is not loaded.");
         }
         setStatus(`${file.name} 분석 중...`);
         const buffer = await file.arrayBuffer();
@@ -289,7 +267,6 @@
           updateRenderAvailability();
           setSummary("아직 파일이 없습니다.");
           setStatus(error instanceof Error ? error.message : String(error), true);
-          refreshRuntimeStatus();
         }
       });
 
@@ -303,7 +280,6 @@
         loadedJsonText = "";
         setSummary("아직 파일이 없습니다.");
         setStatus("초기화되었습니다.");
-        refreshRuntimeStatus();
         updateRenderAvailability();
       });
 
@@ -377,8 +353,6 @@
           setStatus(`${message.filename} 다운로드 완료`);
         }
       };
-
-      refreshRuntimeStatus();
     </script>
   </body>
 </html>
