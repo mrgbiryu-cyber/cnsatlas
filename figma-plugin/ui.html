@@ -113,11 +113,11 @@
         <input
           id="fileInput"
           type="file"
-          accept=".ppt,.pptx,.json,application/json,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation"
+          accept=".pptx,.json,application/json,application/vnd.openxmlformats-officedocument.presentationml.presentation"
         />
         <button class="secondary" id="clearButton" type="button">초기화</button>
       </div>
-      <div class="status" id="status">PPT, PPTX 또는 JSON 파일을 선택하세요.</div>
+      <div class="status" id="status">PPTX 또는 JSON 파일을 선택하세요.</div>
       <div class="status hint" id="runtimeStatus"></div>
     </div>
 
@@ -1365,11 +1365,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         return name.endsWith(".pptx") || file.type === "application/vnd.openxmlformats-officedocument.presentationml.presentation";
       }
 
-      function isLegacyPptFile(file) {
-        const name = String(file && file.name || "").toLowerCase();
-        return name.endsWith(".ppt") || file.type === "application/vnd.ms-powerpoint";
-      }
-
       function setStatus(message, isError = false) {
         status.textContent = message;
         status.className = isError ? "status danger" : "status";
@@ -1503,9 +1498,6 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         }
 
         try {
-          if (isLegacyPptFile(file)) {
-            throw new Error("현재 ppt파일은 지원하지 않습니다. pptx로 변환 후 다시시도해주세요");
-          }
           if (isPptxFile(file)) {
             await loadPptxFile(file);
             return;
