@@ -1,0 +1,206 @@
+{
+  "kind": "replay-generator-qa-gate",
+  "status": "FAIL",
+  "page_reports": [
+    {
+      "page_id": "1:4",
+      "page_name": "Page 1",
+      "status": "FAIL",
+      "score": 47.4,
+      "fail_reasons": [
+        "canvas_size_mismatch",
+        "connector_missing_ratio_high"
+      ],
+      "counts": {
+        "reference_target_nodes": 384,
+        "generated_target_nodes": 197,
+        "extra_generated_nodes": 108,
+        "matched_proxy_count": 89
+      },
+      "metrics": {
+        "canvas": {
+          "reference_page_bounds": {
+            "x": -198.0,
+            "y": -279.0,
+            "width": 960.0,
+            "height": 540.0
+          },
+          "generated_page_bounds": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.739990234375
+          },
+          "size_match": false,
+          "width_delta": 320.0,
+          "height_delta": 180.74,
+          "score": 0
+        },
+        "text": {
+          "score": 34,
+          "coverage_ratio": 0.26,
+          "mean_bbox_delta": 371.26,
+          "mean_font_size_delta": 0.04
+        },
+        "vector": {
+          "score": 24,
+          "reference_vector_count": 233,
+          "generated_vector_count": 55,
+          "vector_count_ratio": 0.24
+        },
+        "connector": {
+          "score": 10,
+          "reference_connector_proxy_count": 186,
+          "generated_connector_proxy_count": 18,
+          "missing_connector_ratio": 0.9
+        },
+        "table": {
+          "score": 100,
+          "cell_presence_ratio": 1.0
+        },
+        "shape": {
+          "score": 100,
+          "decision_shape_present": true
+        },
+        "overlay": {
+          "score": 100,
+          "blocking_overlay_count": 0
+        }
+      }
+    },
+    {
+      "page_id": "1:543",
+      "page_name": "Page 2",
+      "status": "FAIL",
+      "score": 24.0,
+      "fail_reasons": [
+        "canvas_size_mismatch",
+        "connector_missing_ratio_high",
+        "table_cell_presence_low"
+      ],
+      "counts": {
+        "reference_target_nodes": 398,
+        "generated_target_nodes": 419,
+        "extra_generated_nodes": 266,
+        "matched_proxy_count": 153
+      },
+      "metrics": {
+        "canvas": {
+          "reference_page_bounds": {
+            "x": 782.0,
+            "y": -279.0,
+            "width": 960.0,
+            "height": 540.0
+          },
+          "generated_page_bounds": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 972.0700073242188
+          },
+          "size_match": false,
+          "width_delta": 320.0,
+          "height_delta": 432.07,
+          "score": 0
+        },
+        "text": {
+          "score": 42,
+          "coverage_ratio": 0.58,
+          "mean_bbox_delta": 670.01,
+          "mean_font_size_delta": 1.91
+        },
+        "vector": {
+          "score": 4,
+          "reference_vector_count": 114,
+          "generated_vector_count": 4,
+          "vector_count_ratio": 0.04
+        },
+        "connector": {
+          "score": 0,
+          "reference_connector_proxy_count": 95,
+          "generated_connector_proxy_count": 0,
+          "missing_connector_ratio": 1.0
+        },
+        "table": {
+          "score": 0,
+          "cell_presence_ratio": 0.0
+        },
+        "shape": {
+          "score": 100,
+          "decision_shape_present": true
+        },
+        "overlay": {
+          "score": 100,
+          "blocking_overlay_count": 0
+        }
+      }
+    },
+    {
+      "page_id": "1:1440",
+      "page_name": "Page 3",
+      "status": "FAIL",
+      "score": 20.2,
+      "fail_reasons": [
+        "canvas_size_mismatch",
+        "connector_missing_ratio_high",
+        "table_cell_presence_low"
+      ],
+      "counts": {
+        "reference_target_nodes": 513,
+        "generated_target_nodes": 205,
+        "extra_generated_nodes": 133,
+        "matched_proxy_count": 72
+      },
+      "metrics": {
+        "canvas": {
+          "reference_page_bounds": {
+            "x": 1762.0,
+            "y": -279.0,
+            "width": 960.0,
+            "height": 540.0
+          },
+          "generated_page_bounds": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 1056.1300048828125
+          },
+          "size_match": false,
+          "width_delta": 320.0,
+          "height_delta": 516.13,
+          "score": 0
+        },
+        "text": {
+          "score": 18,
+          "coverage_ratio": 0.25,
+          "mean_bbox_delta": 1719.88,
+          "mean_font_size_delta": 3.19
+        },
+        "vector": {
+          "score": 8,
+          "reference_vector_count": 182,
+          "generated_vector_count": 15,
+          "vector_count_ratio": 0.08
+        },
+        "connector": {
+          "score": 2,
+          "reference_connector_proxy_count": 103,
+          "generated_connector_proxy_count": 2,
+          "missing_connector_ratio": 0.98
+        },
+        "table": {
+          "score": 0,
+          "cell_presence_ratio": 0.0
+        },
+        "shape": {
+          "score": 100,
+          "decision_shape_present": true
+        },
+        "overlay": {
+          "score": 100,
+          "blocking_overlay_count": 0
+        }
+      }
+    }
+  ]
+}
