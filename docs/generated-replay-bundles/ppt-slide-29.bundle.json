@@ -1989,10 +1989,10 @@
             "type": "VECTOR",
             "name": "직선 연결선[R] 4",
             "absoluteBoundingBox": {
-              "x": 29.77,
-              "y": 55.41,
-              "width": 236.12,
-              "height": 261.11
+              "x": 143.83,
+              "y": 52.11,
+              "width": 24.0,
+              "height": 268.78
             },
             "relativeTransform": [
               [
@@ -2009,7 +2009,7 @@
             "fillGeometry": [],
             "strokeGeometry": [
               {
-                "path": "M 118.06 261.48 L 134.06 261.48 L 134.06 0.7 L 118.43 0.7"
+                "path": "M 4.0 264.78 L 20.0 264.78 L 20.0 4.0 L 4.37 4.0"
               }
             ],
             "fills": [
@@ -2048,10 +2048,10 @@
             "type": "VECTOR",
             "name": "직선 연결선[R] 25",
             "absoluteBoundingBox": {
-              "x": 29.77,
-              "y": 55.41,
-              "width": 236.08,
-              "height": 261.11
+              "x": 143.83,
+              "y": 52.11,
+              "width": 24.0,
+              "height": 268.78
             },
             "relativeTransform": [
               [
@@ -2068,7 +2068,7 @@
             "fillGeometry": [],
             "strokeGeometry": [
               {
-                "path": "M 118.06 261.48 L 134.06 261.48 L 134.06 0.7 L 118.43 0.7"
+                "path": "M 4.0 264.78 L 20.0 264.78 L 20.0 4.0 L 4.37 4.0"
               }
             ],
             "fills": [
@@ -3955,10 +3955,10 @@
             "type": "VECTOR",
             "name": "직선 화살표 연결선 18",
             "absoluteBoundingBox": {
-              "x": 128.51,
-              "y": 209.56,
-              "width": 61.99,
-              "height": 1.0
+              "x": 133.45,
+              "y": 210.12,
+              "width": 69.81,
+              "height": 25.51
             },
             "relativeTransform": [
               [
@@ -3974,13 +3974,17 @@
             ],
             "fillGeometry": [
               {
-                "path": "M 17.7 13.32 L 23.7 10.32 L 23.7 16.32 Z",
+                "path": "M 12.76 12.76 L 18.76 9.76 L 18.76 15.76 Z",
+                "windingRule": "NONZERO"
+              },
+              {
+                "path": "M 57.06 12.76 L 51.06 15.76 L 51.06 9.76 Z",
                 "windingRule": "NONZERO"
               }
             ],
             "strokeGeometry": [
               {
-                "path": "M 62.0 13.32 L 17.7 13.32"
+                "path": "M 57.06 12.76 L 12.76 12.76"
               }
             ],
             "fills": [
@@ -6560,10 +6564,10 @@
         "type": "VECTOR",
         "name": "직선 화살표 연결선 198",
         "absoluteBoundingBox": {
-          "x": 559.31,
-          "y": 316.19,
-          "width": 20.28,
-          "height": 1.0
+          "x": 547.74,
+          "y": 310.52,
+          "width": 37.65,
+          "height": 9.05
         },
         "relativeTransform": [
           [
@@ -6579,13 +6583,17 @@
         ],
         "fillGeometry": [
           {
-            "path": "M 22.08 -0.62 L 15.98 2.17 L 16.19 -3.83 Z",
+            "path": "M 33.65 5.05 L 27.55 7.84 L 27.76 1.84 Z",
+            "windingRule": "NONZERO"
+          },
+          {
+            "path": "M 4.0 4.0 L 10.1 1.21 L 9.89 7.21 Z",
             "windingRule": "NONZERO"
           }
         ],
         "strokeGeometry": [
           {
-            "path": "M -7.57 -1.67 L 22.08 -0.62"
+            "path": "M 4.0 4.0 L 33.65 5.05"
           }
         ],
         "fills": [

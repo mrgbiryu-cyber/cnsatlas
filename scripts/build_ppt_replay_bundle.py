@@ -362,28 +362,61 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
     end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
     adjusts = extra.get("connector_adjusts") or {}
     if start_px and end_px:
-        points = readable_elbow(rel_point(start_px), rel_point(end_px), kind, adjusts)
+        points = readable_elbow(start_px, end_px, kind, adjusts)
     elif kind == "straightConnector1":
-        points = [{"x": 0, "y": local_height / 2}, {"x": local_width, "y": local_height / 2}]
+        points = [
+            {"x": abs_bounds["x"], "y": abs_bounds["y"] + local_height / 2},
+            {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height / 2},
+        ]
     elif kind == "bentConnector2":
-        points = [{"x": 0, "y": 0}, {"x": 0, "y": local_height}, {"x": local_width, "y": local_height}]
+        points = [
+            {"x": abs_bounds["x"], "y": abs_bounds["y"]},
+            {"x": abs_bounds["x"], "y": abs_bounds["y"] + local_height},
+            {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height},
+        ]
     elif kind == "bentConnector4":
         points = [
-            {"x": 0, "y": 0},
-            {"x": 0, "y": local_height * 0.35},
-            {"x": local_width * 0.5, "y": local_height * 0.35},
-            {"x": local_width * 0.5, "y": local_height},
-            {"x": local_width, "y": local_height},
+            {"x": abs_bounds["x"], "y": abs_bounds["y"]},
+            {"x": abs_bounds["x"], "y": abs_bounds["y"] + local_height * 0.35},
+            {"x": abs_bounds["x"] + local_width * 0.5, "y": abs_bounds["y"] + local_height * 0.35},
+            {"x": abs_bounds["x"] + local_width * 0.5, "y": abs_bounds["y"] + local_height},
+            {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height},
         ]
     else:
-        points = [{"x": 0, "y": 0}, {"x": 0, "y": local_height * 0.5}, {"x": local_width, "y": local_height * 0.5}, {"x": local_width, "y": local_height}]
+        points = [
+            {"x": abs_bounds["x"], "y": abs_bounds["y"]},
+            {"x": abs_bounds["x"], "y": abs_bounds["y"] + local_height * 0.5},
+            {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height * 0.5},
+            {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height},
+        ]
 
-    path = " ".join(("M" if i == 0 else "L") + f" {round(p['x'],2)} {round(p['y'],2)}" for i, p in enumerate(points))
+    min_x = min(point["x"] for point in points)
+    min_y = min(point["y"] for point in points)
+    max_x = max(point["x"] for point in points)
+    max_y = max(point["y"] for point in points)
+    arrow_margin = max(stroke_weight * 6, 8)
+    absolute_bounds = make_bounds(
+        min_x - arrow_margin / 2,
+        min_y - arrow_margin / 2,
+        (max_x - min_x) + arrow_margin,
+        (max_y - min_y) + arrow_margin,
+    )
+    localized_points = [
+        {
+            "x": round(point["x"] - absolute_bounds["x"], 2),
+            "y": round(point["y"] - absolute_bounds["y"], 2),
+        }
+        for point in points
+    ]
+
+    path = " ".join(("M" if i == 0 else "L") + f" {round(p['x'],2)} {round(p['y'],2)}" for i, p in enumerate(localized_points))
     fill_geometry: list[dict[str, Any]] = []
     tail_end = (shape_style.get("line") or {}).get("tail_end") or {}
-    if tail_end.get("type") == "triangle" and len(points) >= 2:
-        tip = points[-1]
-        prev = points[-2]
+    head_end = (shape_style.get("line") or {}).get("head_end") or {}
+
+    def append_arrow(points_for_head: list[dict[str, float]], point_index: int, prev_index: int) -> None:
+        tip = points_for_head[point_index]
+        prev = points_for_head[prev_index]
         dx = tip["x"] - prev["x"]
         dy = tip["y"] - prev["y"]
         angle = math.atan2(dy, dx)
@@ -399,11 +432,16 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             "windingRule": "NONZERO",
         })
 
+    if tail_end.get("type") == "triangle" and len(localized_points) >= 2:
+        append_arrow(localized_points, -1, -2)
+    if head_end.get("type") == "triangle" and len(localized_points) >= 2:
+        append_arrow(localized_points, 0, 1)
+
     line_paint = build_stroke_array(shape_style, {"r": 0.35, "g": 0.35, "b": 0.35})
     return build_vector_node(
         candidate["candidate_id"],
         candidate.get("title") or candidate.get("subtype") or "connector",
-        abs_bounds,
+        absolute_bounds,
         fill_geometry=fill_geometry,
         stroke_geometry=[{"path": path}],
         fills=[line_paint[0]] if line_paint else [],
@@ -473,9 +511,13 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
     rows = sorted([child for child in children_map.get(candidate["candidate_id"], []) if child.get("subtype") == "table_row"], key=sort_by_position_key)
     grid_columns = extra.get("grid_columns") or []
     row_cursor_y = abs_bounds["y"]
+    scaled_row_heights: dict[str, float] = {}
+    for row_candidate in rows:
+        scaled_row_heights[row_candidate["candidate_id"]] = max(scale_value((row_candidate.get("extra") or {}).get("row_height_px") or 28, scale_y), 21.0)
+
     for row_candidate in rows:
         cell_candidates = [child for child in children_map.get(row_candidate["candidate_id"], []) if child.get("subtype") == "table_cell"]
-        row_height = max(scale_value((row_candidate.get("extra") or {}).get("row_height_px") or 28, scale_y), 21.0)
+        row_height = scaled_row_heights[row_candidate["candidate_id"]]
         for cell_candidate in cell_candidates:
             cell_extra = cell_candidate.get("extra") or {}
             if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
@@ -508,7 +550,12 @@ def build_table_node(candidate: dict[str, Any], page_offset_x: float, page_offse
                 cell_x = sum(scale_value(column.get("width_px") or 0, scale_x) for column in grid_columns if int(column.get("column_index") or 0) < start_column_index)
             else:
                 cell_x = sum(float(child["absoluteBoundingBox"]["width"]) for child in row_node["children"])
-            cell_abs_bounds = make_bounds(row_node["absoluteBoundingBox"]["x"] + cell_x, row_node["absoluteBoundingBox"]["y"], cell_width, row_height)
+            row_span = int(cell_extra.get("row_span") or 1)
+            spanned_height = row_height
+            if row_span > 1:
+                current_index = rows.index(row_candidate)
+                spanned_height = sum(scaled_row_heights[rows[i]["candidate_id"]] for i in range(current_index, min(current_index + row_span, len(rows))))
+            cell_abs_bounds = make_bounds(row_node["absoluteBoundingBox"]["x"] + cell_x, row_node["absoluteBoundingBox"]["y"], cell_width, spanned_height)
             cell_style = cell_extra.get("cell_style") or {}
             fills = [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)] if cell_style.get("fill") else [{"type": "SOLID", "color": {"r": 1, "g": 1, "b": 1}}]
             cell_node = {

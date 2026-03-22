@@ -496,7 +496,7 @@
                   "x": 449.24,
                   "y": 77.75,
                   "width": 56.82,
-                  "height": 21.0
+                  "height": 42.0
                 },
                 "relativeTransform": [
                   [
@@ -542,7 +542,7 @@
                       "x": 449.24,
                       "y": 77.75,
                       "width": 56.82,
-                      "height": 21.0
+                      "height": 42.0
                     },
                     "relativeTransform": [
                       [
@@ -568,7 +568,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 14,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -7028,7 +7028,7 @@
                   "x": 38.66,
                   "y": 99.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 63.0
                 },
                 "relativeTransform": [
                   [
@@ -7073,7 +7073,7 @@
                       "x": 38.66,
                       "y": 99.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 63.0
                     },
                     "relativeTransform": [
                       [
@@ -7099,7 +7099,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 17,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -8137,7 +8137,7 @@
                   "x": 38.66,
                   "y": 162.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 63.0
                 },
                 "relativeTransform": [
                   [
@@ -8182,7 +8182,7 @@
                       "x": 38.66,
                       "y": 162.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 63.0
                     },
                     "relativeTransform": [
                       [
@@ -8208,7 +8208,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 17,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -9246,7 +9246,7 @@
                   "x": 38.66,
                   "y": 225.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 147.0
                 },
                 "relativeTransform": [
                   [
@@ -9291,7 +9291,7 @@
                       "x": 38.66,
                       "y": 225.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 147.0
                     },
                     "relativeTransform": [
                       [
@@ -9317,7 +9317,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 48,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -11699,7 +11699,7 @@
                   "x": 38.66,
                   "y": 372.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 126.0
                 },
                 "relativeTransform": [
                   [
@@ -11744,7 +11744,7 @@
                       "x": 38.66,
                       "y": 372.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 126.0
                     },
                     "relativeTransform": [
                       [
@@ -11770,7 +11770,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 41,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -13816,7 +13816,7 @@
                   "x": 38.66,
                   "y": 498.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 84.0
                 },
                 "relativeTransform": [
                   [
@@ -13861,7 +13861,7 @@
                       "x": 38.66,
                       "y": 498.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 84.0
                     },
                     "relativeTransform": [
                       [
@@ -13887,7 +13887,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 22,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -15261,7 +15261,7 @@
                   "x": 38.66,
                   "y": 582.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 84.0
                 },
                 "relativeTransform": [
                   [
@@ -15306,7 +15306,7 @@
                       "x": 38.66,
                       "y": 582.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 84.0
                     },
                     "relativeTransform": [
                       [
@@ -15332,7 +15332,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 27,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -16034,7 +16034,7 @@
                   "x": 109.52,
                   "y": 624.05,
                   "width": 72.42,
-                  "height": 21.0
+                  "height": 42.0
                 },
                 "relativeTransform": [
                   [
@@ -16079,7 +16079,7 @@
                       "x": 109.52,
                       "y": 624.05,
                       "width": 72.42,
-                      "height": 21.0
+                      "height": 42.0
                     },
                     "relativeTransform": [
                       [
@@ -16105,7 +16105,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 11,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -16605,7 +16605,7 @@
                   "x": 38.66,
                   "y": 666.05,
                   "width": 70.86,
-                  "height": 21.0
+                  "height": 63.0
                 },
                 "relativeTransform": [
                   [
@@ -16650,7 +16650,7 @@
                       "x": 38.66,
                       "y": 666.05,
                       "width": 70.86,
-                      "height": 21.0
+                      "height": 63.0
                     },
                     "relativeTransform": [
                       [
@@ -16676,7 +16676,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 17,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
@@ -17736,10 +17736,10 @@
         "type": "VECTOR",
         "name": "연결선: 꺾임 9",
         "absoluteBoundingBox": {
-          "x": 426.25,
-          "y": 176.7,
-          "width": 23.0,
-          "height": 99.5
+          "x": 422.25,
+          "y": 172.7,
+          "width": 30.99,
+          "height": 107.5
         },
         "relativeTransform": [
           [
@@ -17755,13 +17755,13 @@
         ],
         "fillGeometry": [
           {
-            "path": "M 22.99 0.0 L 16.99 3.0 L 16.99 -3.0 Z",
+            "path": "M 26.99 4.0 L 20.99 7.0 L 20.99 1.0 Z",
             "windingRule": "NONZERO"
           }
         ],
         "strokeGeometry": [
           {
-            "path": "M 0.0 99.5 L 16.0 99.5 L 16.0 0.0 L 22.99 0.0"
+            "path": "M 4.0 103.5 L 20.0 103.5 L 20.0 4.0 L 26.99 4.0"
           }
         ],
         "fills": [
@@ -17800,10 +17800,10 @@
         "type": "VECTOR",
         "name": "연결선: 꺾임 10",
         "absoluteBoundingBox": {
-          "x": 426.25,
-          "y": 276.21,
-          "width": 23.0,
-          "height": 141.78
+          "x": 422.25,
+          "y": 272.2,
+          "width": 30.99,
+          "height": 149.79
         },
         "relativeTransform": [
           [
@@ -17819,13 +17819,13 @@
         ],
         "fillGeometry": [
           {
-            "path": "M 22.99 141.78 L 16.99 144.78 L 16.99 138.78 Z",
+            "path": "M 26.99 145.79 L 20.99 148.79 L 20.99 142.79 Z",
             "windingRule": "NONZERO"
           }
         ],
         "strokeGeometry": [
           {
-            "path": "M 0.0 -0.01 L 16.0 -0.01 L 16.0 141.78 L 22.99 141.78"
+            "path": "M 4.0 4.0 L 20.0 4.0 L 20.0 145.79 L 26.99 145.79"
           }
         ],
         "fills": [
@@ -17919,7 +17919,7 @@
                   "x": 449.24,
                   "y": 319.04,
                   "width": 72.55,
-                  "height": 21.0
+                  "height": 42.0
                 },
                 "relativeTransform": [
                   [
@@ -17965,7 +17965,7 @@
                       "x": 449.24,
                       "y": 319.04,
                       "width": 72.55,
-                      "height": 21.0
+                      "height": 42.0
                     },
                     "relativeTransform": [
                       [
@@ -17991,7 +17991,7 @@
                       }
                     ],
                     "style": {
-                      "fontSize": 8,
+                      "fontSize": 14,
                       "fontFamily": "Inter",
                       "textAlignHorizontal": "LEFT",
                       "textAlignVertical": "CENTER",
