@@ -100,7 +100,9 @@
               "source_node_id": "53",
               "source_subtype": "shape",
               "source_scope": "layout",
-              "full_page_overlay_candidate": false
+              "full_page_overlay_candidate": false,
+              "visual_strategy": "table-heavy",
+              "role": "shape_vector"
             }
           },
           {
@@ -149,7 +151,9 @@
               "source_path": "layout_19/element_4",
               "source_node_id": "57",
               "source_subtype": "connector",
-              "source_scope": "layout"
+              "source_scope": "layout",
+              "visual_strategy": "table-heavy",
+              "route_kind": "straightConnector1"
             }
           },
           {
@@ -333,7 +337,9 @@
               "source_path": "slide_19/element_9",
               "source_node_id": "9",
               "source_subtype": "labeled_shape",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy",
+              "role": "labeled_shape_group"
             }
           },
           {
@@ -466,7 +472,9 @@
               "source_path": "slide_19/element_12",
               "source_node_id": "16",
               "source_subtype": "labeled_shape",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy",
+              "role": "labeled_shape_group"
             }
           },
           {
@@ -692,7 +700,9 @@
                   "source_path": "slide_19/element_4/row_1/cell_1",
                   "source_node_id": "6",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -793,7 +803,9 @@
                   "source_path": "slide_19/element_4/row_1/cell_2",
                   "source_node_id": "6",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -894,7 +906,9 @@
                   "source_path": "slide_19/element_4/row_2/cell_2",
                   "source_node_id": "6",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -995,7 +1009,9 @@
                   "source_path": "slide_19/element_4/row_2/cell_3",
                   "source_node_id": "6",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -1096,7 +1112,9 @@
                   "source_path": "slide_19/element_4/row_2/cell_4",
                   "source_node_id": "6",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -1197,7 +1215,9 @@
                   "source_path": "slide_19/element_4/row_2/cell_5",
                   "source_node_id": "6",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -3846,7 +3866,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -3894,7 +3916,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -3942,7 +3966,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -3990,7 +4016,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4038,7 +4066,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4086,7 +4116,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4134,7 +4166,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4182,7 +4216,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4230,7 +4266,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4278,7 +4316,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4326,7 +4366,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4374,7 +4416,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4422,7 +4466,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4470,7 +4516,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4518,7 +4566,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4566,7 +4616,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4614,7 +4666,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4662,7 +4716,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -4710,7 +4766,9 @@
                   "source_path": "slide_19/element_4",
                   "source_node_id": "6",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               }
             ],
@@ -4718,7 +4776,8 @@
               "source_path": "slide_19/element_4",
               "source_node_id": "6",
               "source_subtype": "table",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy"
             }
           },
           {
@@ -4791,7 +4850,9 @@
                   "source_path": "slide_19/element_2/row_1/cell_1",
                   "source_node_id": "4",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -4892,7 +4953,9 @@
                   "source_path": "slide_19/element_2/row_1/cell_2",
                   "source_node_id": "4",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -4993,7 +5056,9 @@
                   "source_path": "slide_19/element_2/row_1/cell_3",
                   "source_node_id": "4",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -5094,7 +5159,9 @@
                   "source_path": "slide_19/element_2/row_1/cell_4",
                   "source_node_id": "4",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -10089,7 +10156,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10137,7 +10206,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10185,7 +10256,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10233,7 +10306,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10281,7 +10356,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10329,7 +10406,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10377,7 +10456,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10425,7 +10506,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10473,7 +10556,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10521,7 +10606,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10569,7 +10656,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10617,7 +10706,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10665,7 +10756,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10713,7 +10806,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10761,7 +10856,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10809,7 +10906,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10857,7 +10956,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10905,7 +11006,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -10953,7 +11056,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11001,7 +11106,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11049,7 +11156,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11097,7 +11206,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11145,7 +11256,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11193,7 +11306,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11241,7 +11356,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11289,7 +11406,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11337,7 +11456,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11385,7 +11506,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11433,7 +11556,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11481,7 +11606,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11529,7 +11656,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11577,7 +11706,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11625,7 +11756,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11673,7 +11806,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11721,7 +11856,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11769,7 +11906,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -11817,7 +11956,9 @@
                   "source_path": "slide_19/element_2",
                   "source_node_id": "4",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               }
             ],
@@ -11825,7 +11966,8 @@
               "source_path": "slide_19/element_2",
               "source_node_id": "4",
               "source_subtype": "table",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy"
             }
           },
           {
@@ -11875,7 +12017,9 @@
               "source_node_id": "8",
               "source_subtype": "shape",
               "source_scope": "slide",
-              "full_page_overlay_candidate": false
+              "full_page_overlay_candidate": false,
+              "visual_strategy": "table-heavy",
+              "role": "shape_vector"
             }
           },
           {
@@ -11947,7 +12091,9 @@
                   "source_path": "slide_19/element_7",
                   "source_node_id": "10",
                   "source_subtype": "connector",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "route_kind": "bentConnector3"
                 }
               },
               {
@@ -11997,7 +12143,9 @@
                   "source_path": "slide_19/element_7",
                   "source_node_id": "10",
                   "source_subtype": "connector",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "route_kind": "bentConnector3"
                 }
               }
             ],
@@ -12005,7 +12153,9 @@
               "source_path": "slide_19/element_7",
               "source_node_id": "10",
               "source_subtype": "connector",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy",
+              "route_kind": "bentConnector3"
             }
           },
           {
@@ -12077,7 +12227,9 @@
                   "source_path": "slide_19/element_11",
                   "source_node_id": "11",
                   "source_subtype": "connector",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "route_kind": "bentConnector3"
                 }
               },
               {
@@ -12127,7 +12279,9 @@
                   "source_path": "slide_19/element_11",
                   "source_node_id": "11",
                   "source_subtype": "connector",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "route_kind": "bentConnector3"
                 }
               }
             ],
@@ -12135,7 +12289,9 @@
               "source_path": "slide_19/element_11",
               "source_node_id": "11",
               "source_subtype": "connector",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy",
+              "route_kind": "bentConnector3"
             }
           },
           {
@@ -12208,7 +12364,9 @@
                   "source_path": "slide_19/element_10/row_1/cell_1",
                   "source_node_id": "12",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -12309,7 +12467,9 @@
                   "source_path": "slide_19/element_10/row_1/cell_2",
                   "source_node_id": "12",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -12410,7 +12570,9 @@
                   "source_path": "slide_19/element_10/row_2/cell_2",
                   "source_node_id": "12",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -12511,7 +12673,9 @@
                   "source_path": "slide_19/element_10/row_2/cell_3",
                   "source_node_id": "12",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -12612,7 +12776,9 @@
                   "source_path": "slide_19/element_10/row_2/cell_4",
                   "source_node_id": "12",
                   "source_subtype": "table_cell",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_cell_fill"
                 }
               },
               {
@@ -14751,7 +14917,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -14799,7 +14967,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -14847,7 +15017,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -14895,7 +15067,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -14943,7 +15117,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -14991,7 +15167,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15039,7 +15217,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15087,7 +15267,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15135,7 +15317,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15183,7 +15367,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15231,7 +15417,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15279,7 +15467,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15327,7 +15517,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15375,7 +15567,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15423,7 +15617,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15471,7 +15667,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15519,7 +15717,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               },
               {
@@ -15567,7 +15767,9 @@
                   "source_path": "slide_19/element_10",
                   "source_node_id": "12",
                   "source_subtype": "table",
-                  "source_scope": "slide"
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "role": "table_grid"
                 }
               }
             ],
@@ -15575,21 +15777,42 @@
               "source_path": "slide_19/element_10",
               "source_node_id": "12",
               "source_subtype": "table",
-              "source_scope": "slide"
+              "source_scope": "slide",
+              "visual_strategy": "table-heavy"
             }
           }
         ],
         "debug": {
           "generator": "visual-first-v1",
           "source_slide_no": 19,
-          "source_title": "리뷰 - 제품 카테고리별 평가 항목"
+          "source_title": "리뷰 - 제품 카테고리별 평가 항목",
+          "visual_strategy": "table-heavy",
+          "strategy_signals": {
+            "table_cell_count": 201,
+            "table_count": 3,
+            "connector_count": 3,
+            "labeled_shape_count": 2,
+            "shape_count": 2,
+            "image_count": 0,
+            "group_count": 0
+          }
         }
       }
     ],
     "debug": {
       "generator": "visual-first-v1",
       "source_slide_no": 19,
-      "source_title": "리뷰 - 제품 카테고리별 평가 항목"
+      "source_title": "리뷰 - 제품 카테고리별 평가 항목",
+      "visual_strategy": "table-heavy",
+      "strategy_signals": {
+        "table_cell_count": 201,
+        "table_count": 3,
+        "connector_count": 3,
+        "labeled_shape_count": 2,
+        "shape_count": 2,
+        "image_count": 0,
+        "group_count": 0
+      }
     }
   },
   "assets": {},
@@ -15597,6 +15820,27 @@
   "debug": {
     "status": "visual_first_generator",
     "candidate_count": 272,
-    "root_candidate_count": 16
+    "root_candidate_count": 16,
+    "visual_strategy": {
+      "page_type": "table-heavy",
+      "counts": {
+        "shape": 2,
+        "text_block": 6,
+        "connector": 3,
+        "table": 3,
+        "table_row": 55,
+        "table_cell": 201,
+        "labeled_shape": 2
+      },
+      "signals": {
+        "table_cell_count": 201,
+        "table_count": 3,
+        "connector_count": 3,
+        "labeled_shape_count": 2,
+        "shape_count": 2,
+        "image_count": 0,
+        "group_count": 0
+      }
+    }
   }
 }

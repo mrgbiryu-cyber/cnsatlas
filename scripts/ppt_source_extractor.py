@@ -100,6 +100,48 @@ def build_children_map(candidates: list[dict[str, Any]]) -> dict[str, list[dict[
     return by_parent
 
 
+def classify_page_visual_strategy(candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    counts: dict[str, int] = {}
+    for candidate in candidates:
+        subtype = str(candidate.get("subtype") or "unknown")
+        counts[subtype] = counts.get(subtype, 0) + 1
+
+    table_cell_count = counts.get("table_cell", 0)
+    table_count = counts.get("table", 0)
+    connector_count = counts.get("connector", 0)
+    labeled_shape_count = counts.get("labeled_shape", 0)
+    shape_count = counts.get("shape", 0)
+    image_count = counts.get("image", 0)
+    group_count = counts.get("group", 0) + counts.get("section_block", 0)
+
+    if image_count >= 5 or (labeled_shape_count >= 20 and shape_count >= 15 and table_cell_count < 40):
+        page_type = "ui-mockup"
+    elif table_cell_count >= 40 or table_count >= 2:
+        page_type = "table-heavy"
+    elif connector_count >= 10 and labeled_shape_count >= 10:
+        page_type = "flow-process"
+    elif image_count >= 3 or (labeled_shape_count >= 20 and shape_count >= 15):
+        page_type = "ui-mockup"
+    elif shape_count + labeled_shape_count + image_count >= 30 and connector_count <= 6:
+        page_type = "ui-mockup"
+    else:
+        page_type = "generic"
+
+    return {
+        "page_type": page_type,
+        "counts": counts,
+        "signals": {
+            "table_cell_count": table_cell_count,
+            "table_count": table_count,
+            "connector_count": connector_count,
+            "labeled_shape_count": labeled_shape_count,
+            "shape_count": shape_count,
+            "image_count": image_count,
+            "group_count": group_count,
+        },
+    }
+
+
 def placeholder_key(placeholder: dict[str, Any] | None) -> str:
     placeholder = placeholder or {}
     ph_type = str(placeholder.get("type") or "").strip().lower()
@@ -147,6 +189,7 @@ def build_page_context(page: dict[str, Any]) -> dict[str, Any]:
         "children_map": children_map,
         "roots": sorted(children_map.get(page.get("page_id"), []), key=sort_by_position_key),
         "placeholder_anchor_map": build_placeholder_anchor_map(candidates),
+        "visual_strategy": classify_page_visual_strategy(candidates),
     }
 
 

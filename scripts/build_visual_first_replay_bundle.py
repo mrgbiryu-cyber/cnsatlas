@@ -276,6 +276,28 @@ def build_vector_node(node_id: str, name: str, abs_bounds: dict[str, Any], *, fi
     }
 
 
+def build_rectangle_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scale: float = 1.0) -> dict[str, Any]:
+    extra = candidate.get("extra") or {}
+    shape_style = extra.get("shape_style") or {}
+    shape_kind = extra.get("shape_kind") or ""
+    corner_radius = 0
+    if shape_kind == "roundRect":
+        corner_radius = round(min(abs_bounds["height"] * 0.18, 12 * scale), 2)
+    return {
+        "id": candidate["candidate_id"],
+        "type": "RECTANGLE",
+        "name": candidate.get("title") or candidate.get("subtype") or "shape",
+        "absoluteBoundingBox": abs_bounds,
+        "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
+        "fills": build_fill_array(shape_style, {"r": 1, "g": 1, "b": 1}),
+        "strokes": build_stroke_array(shape_style, {"r": 0.28, "g": 0.28, "b": 0.28}),
+        "strokeWeight": max(float((((shape_style.get("line") or {}).get("width_px")) or 1)) * scale, 1.0),
+        "cornerRadius": corner_radius,
+        "children": [],
+        "debug": dict(build_source_debug(candidate), shape_kind=shape_kind),
+    }
+
+
 def rect_path(width: float, height: float) -> str:
     return f"M 0 0 H {width} V {height} H 0 Z"
 
@@ -341,7 +363,24 @@ def build_shape_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scal
     )
 
 
-def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scale_x: float, scale_y: float) -> dict[str, Any]:
+def build_frame_shell_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scale: float = 1.0) -> dict[str, Any]:
+    extra = candidate.get("extra") or {}
+    shape_style = extra.get("shape_style") or {}
+    return {
+        "id": candidate["candidate_id"],
+        "type": "FRAME",
+        "name": candidate.get("title") or candidate.get("subtype") or "frame",
+        "absoluteBoundingBox": abs_bounds,
+        "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
+        "fills": build_fill_array(shape_style, {"r": 1, "g": 1, "b": 1}),
+        "strokes": build_stroke_array(shape_style, {"r": 0.28, "g": 0.28, "b": 0.28}),
+        "strokeWeight": max(float((((shape_style.get("line") or {}).get("width_px")) or 1)) * scale, 1.0),
+        "children": [],
+        "debug": dict(build_source_debug(candidate), frame_shell=True, shape_kind=extra.get("shape_kind")),
+    }
+
+
+def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], scale_x: float, scale_y: float, strategy: str = "generic") -> dict[str, Any]:
     extra = candidate.get("extra") or {}
     shape_style = extra.get("shape_style") or {}
     kind = extra.get("shape_kind") or "connector"
@@ -357,6 +396,12 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         if abs(dx) <= 4 or abs(dy) <= 4:
             return [start, end]
         horizontal = abs(dx) >= abs(dy)
+        if strategy == "flow-process":
+            if horizontal:
+                mid_x = start["x"] + dx * 0.5
+                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+            mid_y = start["y"] + dy * 0.5
+            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
         if kind_name == "straightConnector1":
             if horizontal:
                 return [start, {"x": end["x"], "y": start["y"]}, end]
@@ -473,7 +518,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         fills=[],
         strokes=[line_color],
         stroke_weight=stroke_weight,
-        debug=build_source_debug(candidate),
+        debug=dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind),
         relative_transform=relative_transform,
     )
     if not arrow_paths:
@@ -490,7 +535,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
                 fills=[line_color],
                 strokes=[],
                 stroke_weight=stroke_weight,
-                debug=build_source_debug(candidate),
+                debug=dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind),
                 relative_transform=relative_transform,
             )
         )
@@ -501,7 +546,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         "absoluteBoundingBox": absolute_bounds,
         "relativeTransform": relative_transform,
         "children": children,
-        "debug": build_source_debug(candidate),
+        "debug": dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind),
     }
 
 
@@ -543,6 +588,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
     bounds = candidate.get("bounds_px") or {"x": 0, "y": 0, "width": 120, "height": 40}
     abs_bounds = make_bounds(page_offset_x + scale_value(bounds["x"], scale_x), page_offset_y + scale_value(bounds["y"], scale_y), scale_value(bounds["width"], scale_x), scale_value(bounds["height"], scale_y))
     extra = candidate.get("extra") or {}
+    strategy = (context.get("visual_strategy") or {}).get("page_type") or "generic"
     table_node = {
         "id": candidate["candidate_id"],
         "type": "GROUP",
@@ -550,7 +596,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
         "absoluteBoundingBox": abs_bounds,
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
         "children": [],
-        "debug": build_source_debug(candidate),
+        "debug": dict(build_source_debug(candidate), visual_strategy=strategy),
     }
     rows = sorted([child for child in children_map.get(candidate["candidate_id"], []) if child.get("subtype") == "table_row"], key=sort_by_position_key)
     grid_columns = extra.get("grid_columns") or []
@@ -600,21 +646,37 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             cell_abs_bounds = make_bounds(row_abs_bounds["x"] + cell_x, row_abs_bounds["y"], cell_width, spanned_height)
             cell_style = cell_extra.get("cell_style") or {}
             if cell_style.get("fill"):
-                cell_path = rect_path(cell_abs_bounds["width"], cell_abs_bounds["height"])
-                table_node["children"].append(
-                    build_vector_node(
-                        f"{cell_candidate['candidate_id']}:fill",
-                        cell_candidate.get("title") or f"cell {start_column_index}",
-                        cell_abs_bounds,
-                        fill_geometry=[{"path": cell_path, "windingRule": "NONZERO"}],
-                        stroke_geometry=[],
-                        fills=[solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
-                        strokes=[],
-                        stroke_weight=0,
-                        debug=build_source_debug(cell_candidate),
-                        relative_transform=relative_transform_from_bounds(cell_candidate.get("bounds_px")),
+                if strategy == "ui-mockup":
+                    table_node["children"].append(
+                        {
+                            "id": f"{cell_candidate['candidate_id']}:fill",
+                            "type": "RECTANGLE",
+                            "name": cell_candidate.get("title") or f"cell {start_column_index}",
+                            "absoluteBoundingBox": cell_abs_bounds,
+                            "relativeTransform": relative_transform_from_bounds(cell_candidate.get("bounds_px")),
+                            "fills": [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "children": [],
+                            "debug": dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell_fill"),
+                        }
                     )
-                )
+                else:
+                    cell_path = rect_path(cell_abs_bounds["width"], cell_abs_bounds["height"])
+                    table_node["children"].append(
+                        build_vector_node(
+                            f"{cell_candidate['candidate_id']}:fill",
+                            cell_candidate.get("title") or f"cell {start_column_index}",
+                            cell_abs_bounds,
+                            fill_geometry=[{"path": cell_path, "windingRule": "NONZERO"}],
+                            stroke_geometry=[],
+                            fills=[solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
+                            strokes=[],
+                            stroke_weight=0,
+                            debug=dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell_fill"),
+                            relative_transform=relative_transform_from_bounds(cell_candidate.get("bounds_px")),
+                        )
+                    )
             if cell_candidate.get("text"):
                 cell_text = str(cell_candidate.get("text") or "")
                 is_header_cell = bool(cell_style.get("fill"))
@@ -633,6 +695,9 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                 )
         row_cursor_y += row_height
 
+    if strategy == "ui-mockup":
+        return table_node
+
     grid_stroke = [{"type": "SOLID", "color": {"r": 0.75, "g": 0.75, "b": 0.75}}]
     line_weight = max(min(scale_x, scale_y), 1)
     for idx, y in enumerate(row_y_positions):
@@ -647,7 +712,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                 fills=[],
                 strokes=grid_stroke,
                 stroke_weight=line_weight,
-                debug=build_source_debug(candidate),
+                debug=dict(build_source_debug(candidate), visual_strategy=strategy, role="table_grid"),
                 relative_transform=identity_affine(),
             )
         )
@@ -663,7 +728,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                 fills=[],
                 strokes=grid_stroke,
                 stroke_weight=line_weight,
-                debug=build_source_debug(candidate),
+                debug=dict(build_source_debug(candidate), visual_strategy=strategy, role="table_grid"),
                 relative_transform=identity_affine(),
             )
         )
@@ -678,6 +743,7 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
     subtype = candidate.get("subtype")
     node_type = candidate.get("node_type")
     children_map = context["children_map"]
+    strategy = (context.get("visual_strategy") or {}).get("page_type") or "generic"
 
     if node_type == "asset" and subtype == "image":
         return build_image_node(candidate, abs_bounds, assets, min(scale_x, scale_y))
@@ -686,7 +752,7 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
             return None
         return build_text_node(candidate, abs_bounds, context=context, scale=min(scale_x, scale_y))
     if subtype == "connector":
-        return build_connector_node(candidate, abs_bounds, scale_x, scale_y)
+        return build_connector_node(candidate, abs_bounds, scale_x, scale_y, strategy)
     if subtype == "table":
         return build_table_node(candidate, context, assets)
     if subtype in {"table_row", "table_cell"}:
@@ -708,6 +774,11 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
         return node
     if subtype == "labeled_shape":
         child_text = build_text_node(candidate, abs_bounds, context=context, horizontal_fallback="ctr", vertical_fallback="ctr", scale=min(scale_x, scale_y))
+        if strategy == "ui-mockup":
+            frame = build_frame_shell_node(candidate, abs_bounds, min(scale_x, scale_y))
+            frame["children"].append(child_text)
+            frame["debug"] = dict(frame.get("debug") or {}, visual_strategy=strategy, role="labeled_shape_frame")
+            return frame
         return {
             "id": candidate["candidate_id"],
             "type": "GROUP",
@@ -715,10 +786,17 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
             "absoluteBoundingBox": abs_bounds,
             "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
             "children": [build_shape_node(candidate, abs_bounds, min(scale_x, scale_y)), child_text],
-            "debug": build_source_debug(candidate),
+            "debug": dict(build_source_debug(candidate), visual_strategy=strategy, role="labeled_shape_group"),
         }
     if subtype == "shape":
-        return build_shape_node(candidate, abs_bounds, min(scale_x, scale_y))
+        shape_kind = ((candidate.get("extra") or {}).get("shape_kind") or "").lower()
+        if strategy == "ui-mockup" and shape_kind in {"rect", "roundrect"}:
+            rect = build_rectangle_node(candidate, abs_bounds, min(scale_x, scale_y))
+            rect["debug"] = dict(rect.get("debug") or {}, visual_strategy=strategy, role="ui_rect")
+            return rect
+        node = build_shape_node(candidate, abs_bounds, min(scale_x, scale_y))
+        node["debug"] = dict(node.get("debug") or {}, visual_strategy=strategy, role="shape_vector")
+        return node
     return None
 
 
@@ -744,6 +822,8 @@ def build_page_root(context: dict[str, Any], assets: dict[str, Any]) -> dict[str
             "generator": "visual-first-v1",
             "source_slide_no": context["slide_no"],
             "source_title": context["title"],
+            "visual_strategy": (context.get("visual_strategy") or {}).get("page_type"),
+            "strategy_signals": (context.get("visual_strategy") or {}).get("signals"),
         },
     }
     root = {
@@ -760,6 +840,8 @@ def build_page_root(context: dict[str, Any], assets: dict[str, Any]) -> dict[str
             "generator": "visual-first-v1",
             "source_slide_no": context["slide_no"],
             "source_title": context["title"],
+            "visual_strategy": (context.get("visual_strategy") or {}).get("page_type"),
+            "strategy_signals": (context.get("visual_strategy") or {}).get("signals"),
         },
     }
     for candidate in context["roots"]:
@@ -788,6 +870,7 @@ def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, 
             "status": "visual_first_generator",
             "candidate_count": len(context["candidates"]),
             "root_candidate_count": len(context["roots"]),
+            "visual_strategy": context["visual_strategy"],
         },
     }
 
