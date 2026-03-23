@@ -1,27 +1,27 @@
 {
   "name": "Untitled",
-  "lastModified": "2026-03-23T03:08:00Z",
-  "thumbnailUrl": "https://s3-alpha.figma.com/thumbnails/88b34c93-85a9-4351-83f6-2ef28c8638c1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC6RGVDPLF%2F20260322%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260322T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4cfdd0a5d501f425fe4a66fe9fc2a37677fbdaa0663b83a4b83b068fa769bc36",
+  "lastModified": "2026-03-23T03:32:01Z",
+  "thumbnailUrl": "https://s3-alpha.figma.com/thumbnails/a7d982cf-6606-4ef9-bef2-cf2eae8786db?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC6RGVDPLF%2F20260322%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260322T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e798c0a2d7c637fe1866599b370730d71b690e3ad73d78107098239344e203a5",
   "version": "2333970961599153739",
   "role": "owner",
   "editorType": "figma",
   "linkAccess": "org_view",
   "nodes": {
-    "4:8354": {
+    "4:9964": {
       "document": {
-        "id": "4:8354",
+        "id": "4:9964",
         "name": "CNS Atlas Replay (Slide 29 - 옵션 선택)",
         "type": "FRAME",
         "scrollBehavior": "SCROLLS",
         "children": [
           {
-            "id": "4:8355",
+            "id": "4:9965",
             "name": "cell 1-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8356",
+                "id": "4:9966",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -187,7 +187,7 @@
                 }
               },
               {
-                "id": "4:8357",
+                "id": "4:9967",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -436,7 +436,7 @@
             }
           },
           {
-            "id": "4:8358",
+            "id": "4:9968",
             "name": "cell 1-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -465,9 +465,9 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 40.512001037597656,
+              "x": 66.0079345703125,
               "y": 17.81399917602539,
-              "width": 23.03274917602539,
+              "width": 23.032752990722656,
               "height": 7.240001678466797
             },
             "constraints": {
@@ -505,7 +505,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -520,13 +520,13 @@
             }
           },
           {
-            "id": "4:8359",
+            "id": "4:9969",
             "name": "cell 1-2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8360",
+                "id": "4:9970",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -692,7 +692,7 @@
                 }
               },
               {
-                "id": "4:8361",
+                "id": "4:9971",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -941,13 +941,13 @@
             }
           },
           {
-            "id": "4:8362",
+            "id": "4:9972",
             "name": "cell 1-3",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8363",
+                "id": "4:9973",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1113,7 +1113,7 @@
                 }
               },
               {
-                "id": "4:8364",
+                "id": "4:9974",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1362,7 +1362,7 @@
             }
           },
           {
-            "id": "4:8365",
+            "id": "4:9975",
             "name": "cell 1-3",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -1391,7 +1391,7 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 735.0399780273438,
+              "x": 753.56591796875,
               "y": 17.81399917602539,
               "width": 20.71875,
               "height": 7.2480010986328125
@@ -1431,7 +1431,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -1446,13 +1446,13 @@
             }
           },
           {
-            "id": "4:8366",
+            "id": "4:9976",
             "name": "cell 1-4",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8367",
+                "id": "4:9977",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1618,7 +1618,7 @@
                 }
               },
               {
-                "id": "4:8368",
+                "id": "4:9978",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1867,13 +1867,13 @@
             }
           },
           {
-            "id": "4:8369",
+            "id": "4:9979",
             "name": "cell 2-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8370",
+                "id": "4:9980",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2039,7 +2039,7 @@
                 }
               },
               {
-                "id": "4:8371",
+                "id": "4:9981",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2288,7 +2288,7 @@
             }
           },
           {
-            "id": "4:8372",
+            "id": "4:9982",
             "name": "cell 2-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -2317,9 +2317,9 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 40.512001037597656,
+              "x": 63.453250885009766,
               "y": 38.81399917602539,
-              "width": 28.72612762451172,
+              "width": 28.726123809814453,
               "height": 7.240001678466797
             },
             "constraints": {
@@ -2357,7 +2357,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -2372,13 +2372,13 @@
             }
           },
           {
-            "id": "4:8373",
+            "id": "4:9983",
             "name": "cell 2-2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8374",
+                "id": "4:9984",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2544,7 +2544,7 @@
                 }
               },
               {
-                "id": "4:8375",
+                "id": "4:9985",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2793,13 +2793,13 @@
             }
           },
           {
-            "id": "4:8376",
+            "id": "4:9986",
             "name": "cell 2-3",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8377",
+                "id": "4:9987",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2965,7 +2965,7 @@
                 }
               },
               {
-                "id": "4:8378",
+                "id": "4:9988",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3214,7 +3214,7 @@
             }
           },
           {
-            "id": "4:8379",
+            "id": "4:9989",
             "name": "cell 2-3",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -3243,7 +3243,7 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 735.031982421875,
+              "x": 752.1790161132812,
               "y": 38.81399917602539,
               "width": 24.046630859375,
               "height": 7.240001678466797
@@ -3283,7 +3283,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -3298,13 +3298,13 @@
             }
           },
           {
-            "id": "4:8380",
+            "id": "4:9990",
             "name": "cell 2-4",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8381",
+                "id": "4:9991",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3470,7 +3470,7 @@
                 }
               },
               {
-                "id": "4:8382",
+                "id": "4:9992",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3719,7 +3719,7 @@
             }
           },
           {
-            "id": "4:8383",
+            "id": "4:9993",
             "name": "텍스트 개체 틀 4",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
@@ -3807,7 +3807,7 @@
             }
           },
           {
-            "id": "4:8384",
+            "id": "4:9994",
             "name": "텍스트 개체 틀 4",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
@@ -3895,7 +3895,7 @@
             }
           },
           {
-            "id": "4:8385",
+            "id": "4:9995",
             "name": "텍스트 개체 틀 4",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
@@ -3983,7 +3983,7 @@
             }
           },
           {
-            "id": "4:8386",
+            "id": "4:9996",
             "name": "텍스트 개체 틀 1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -4008,8 +4008,8 @@
             "absoluteBoundingBox": {
               "x": 123.83999633789062,
               "y": 9.789999961853027,
-              "width": 33.0,
-              "height": 10.0
+              "width": 601.1400146484375,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 124.54454040527344,
@@ -4034,8 +4034,8 @@
               ]
             ],
             "size": {
-              "x": 33.0,
-              "y": 10.0
+              "x": 601.1400146484375,
+              "y": 16.0
             },
             "characters": "Fold 영역",
             "characterStyleOverrides": [],
@@ -4051,7 +4051,6 @@
               "fontPostScriptName": null,
               "fontStyle": "Regular",
               "fontWeight": 400,
-              "textAutoResize": "WIDTH_AND_HEIGHT",
               "fontSize": 8.0,
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
@@ -4068,7 +4067,7 @@
             }
           },
           {
-            "id": "4:8387",
+            "id": "4:9997",
             "name": "텍스트 개체 틀 4",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -4093,8 +4092,8 @@
             "absoluteBoundingBox": {
               "x": 123.79000091552734,
               "y": 26.790000915527344,
-              "width": 16.0,
-              "height": 10.0
+              "width": 601.1400146484375,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 124.49454498291016,
@@ -4119,8 +4118,8 @@
               ]
             ],
             "size": {
-              "x": 16.0,
-              "y": 10.0
+              "x": 601.1400146484375,
+              "y": 16.0
             },
             "characters": "PDP",
             "characterStyleOverrides": [],
@@ -4136,7 +4135,6 @@
               "fontPostScriptName": null,
               "fontStyle": "Regular",
               "fontWeight": 400,
-              "textAutoResize": "WIDTH_AND_HEIGHT",
               "fontSize": 8.0,
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
@@ -4153,7 +4151,7 @@
             }
           },
           {
-            "id": "4:8388",
+            "id": "4:9998",
             "name": "텍스트 개체 틀 5",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -4182,10 +4180,10 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 803.7373046875,
-              "y": 28.942272186279297,
-              "width": 73.90478515625,
-              "height": 25.977272033691406
+              "x": 803.7969360351562,
+              "y": 29.20505714416504,
+              "width": 83.1429443359375,
+              "height": 28.72443199157715
             },
             "constraints": {
               "vertical": "TOP",
@@ -4225,11 +4223,11 @@
               "fontPostScriptName": null,
               "fontStyle": "Regular",
               "fontWeight": 400,
-              "fontSize": 8.0,
+              "fontSize": 9.0,
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
               "letterSpacing": 0.0,
-              "lineHeightPx": 9.681818008422852,
+              "lineHeightPx": 10.892045021057129,
               "lineHeightPercent": 100.0,
               "lineHeightUnit": "INTRINSIC_%"
             },
@@ -4241,13 +4239,13 @@
             }
           },
           {
-            "id": "4:8389",
+            "id": "4:9999",
             "name": "직사각형 138",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8390",
+                "id": "4:10000",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -4496,7 +4494,7 @@
             }
           },
           {
-            "id": "4:8391",
+            "id": "4:10001",
             "name": "직사각형 138",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -4588,13 +4586,13 @@
             }
           },
           {
-            "id": "4:8392",
+            "id": "4:10002",
             "name": "Display",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8393",
+                "id": "4:10003",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -4843,7 +4841,7 @@
             }
           },
           {
-            "id": "4:8394",
+            "id": "4:10004",
             "name": "Display",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -4927,13 +4925,13 @@
             }
           },
           {
-            "id": "4:8395",
+            "id": "4:10005",
             "name": "직사각형 11",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8396",
+                "id": "4:10006",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5182,7 +5180,7 @@
             }
           },
           {
-            "id": "4:8397",
+            "id": "4:10007",
             "name": "직사각형 11",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -5270,13 +5268,13 @@
             }
           },
           {
-            "id": "4:8398",
+            "id": "4:10008",
             "name": "직사각형 150",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8399",
+                "id": "4:10009",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5525,7 +5523,7 @@
             }
           },
           {
-            "id": "4:8400",
+            "id": "4:10010",
             "name": "직사각형 150",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -5613,13 +5611,13 @@
             }
           },
           {
-            "id": "4:8401",
+            "id": "4:10011",
             "name": "직사각형 239",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8402",
+                "id": "4:10012",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5868,7 +5866,7 @@
             }
           },
           {
-            "id": "4:8403",
+            "id": "4:10013",
             "name": "직사각형 239",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -5956,13 +5954,13 @@
             }
           },
           {
-            "id": "4:8404",
+            "id": "4:10014",
             "name": "cell 1-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8405",
+                "id": "4:10015",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6128,7 +6126,7 @@
                 }
               },
               {
-                "id": "4:8406",
+                "id": "4:10016",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6377,7 +6375,7 @@
             }
           },
           {
-            "id": "4:8407",
+            "id": "4:10017",
             "name": "cell 1-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -6406,7 +6404,7 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 664.1420288085938,
+              "x": 782.6282958984375,
               "y": 51.58399963378906,
               "width": 30.39208984375,
               "height": 7.240001678466797
@@ -6446,7 +6444,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -6461,13 +6459,13 @@
             }
           },
           {
-            "id": "4:8408",
+            "id": "4:10018",
             "name": "cell 2-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8409",
+                "id": "4:10019",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6633,7 +6631,7 @@
                 }
               },
               {
-                "id": "4:8410",
+                "id": "4:10020",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6882,7 +6880,7 @@
             }
           },
           {
-            "id": "4:8411",
+            "id": "4:10021",
             "name": "cell 2-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -6911,9 +6909,9 @@
               "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 664.5345458984375,
+              "x": 773.8880004882812,
               "y": 72.58399963378906,
-              "width": 48.18524169921875,
+              "width": 48.1851806640625,
               "height": 7.2480010986328125
             },
             "constraints": {
@@ -6951,7 +6949,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -6966,13 +6964,13 @@
             }
           },
           {
-            "id": "4:8412",
+            "id": "4:10022",
             "name": "cell 3-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8413",
+                "id": "4:10023",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7138,7 +7136,7 @@
                 }
               },
               {
-                "id": "4:8414",
+                "id": "4:10024",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7387,7 +7385,7 @@
             }
           },
           {
-            "id": "4:8415",
+            "id": "4:10025",
             "name": "cell 3-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -7416,9 +7414,9 @@
               "height": 21.780000686645508
             },
             "absoluteRenderBounds": {
-              "x": 664.3186645507812,
+              "x": 672.0692749023438,
               "y": 97.3818130493164,
-              "width": 2.1590576171875,
+              "width": 2.15911865234375,
               "height": 5.818183898925781
             },
             "constraints": {
@@ -7456,7 +7454,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -7471,13 +7469,13 @@
             }
           },
           {
-            "id": "4:8416",
+            "id": "4:10026",
             "name": "cell 3-2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8417",
+                "id": "4:10027",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7643,7 +7641,7 @@
                 }
               },
               {
-                "id": "4:8418",
+                "id": "4:10028",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7892,7 +7890,7 @@
             }
           },
           {
-            "id": "4:8419",
+            "id": "4:10029",
             "name": "cell 3-2",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -7921,9 +7919,9 @@
               "height": 23.040000915527344
             },
             "absoluteRenderBounds": {
-              "x": 689.91455078125,
+              "x": 692.78271484375,
               "y": 85.9219970703125,
-              "width": 236.9990234375,
+              "width": 236.2603759765625,
               "height": 28.28436279296875
             },
             "constraints": {
@@ -7961,7 +7959,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -7976,13 +7974,13 @@
             }
           },
           {
-            "id": "4:8420",
+            "id": "4:10030",
             "name": "cell 4-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8421",
+                "id": "4:10031",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8148,7 +8146,7 @@
                 }
               },
               {
-                "id": "4:8422",
+                "id": "4:10032",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8397,7 +8395,7 @@
             }
           },
           {
-            "id": "4:8423",
+            "id": "4:10033",
             "name": "cell 4-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -8426,9 +8424,9 @@
               "height": 194.77999877929688
             },
             "absoluteRenderBounds": {
-              "x": 668.5729370117188,
+              "x": 659.1106567382812,
               "y": 192.75538635253906,
-              "width": 28.90478515625,
+              "width": 28.90484619140625,
               "height": 46.444610595703125
             },
             "constraints": {
@@ -8466,7 +8464,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 63.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 76.24431610107422,
@@ -8481,13 +8479,13 @@
             }
           },
           {
-            "id": "4:8424",
+            "id": "4:10034",
             "name": "cell 4-2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8425",
+                "id": "4:10035",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8653,7 +8651,7 @@
                 }
               },
               {
-                "id": "4:8426",
+                "id": "4:10036",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8902,7 +8900,7 @@
             }
           },
           {
-            "id": "4:8427",
+            "id": "4:10037",
             "name": "cell 4-2",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -8931,9 +8929,9 @@
               "height": 196.0399932861328
             },
             "absoluteRenderBounds": {
-              "x": 690.6901245117188,
+              "x": 693.572265625,
               "y": 0.0,
-              "width": 238.04510498046875,
+              "width": 235.80517578125,
               "height": 540.0
             },
             "constraints": {
@@ -8971,7 +8969,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 46.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 55.67045211791992,
@@ -8986,13 +8984,13 @@
             }
           },
           {
-            "id": "4:8428",
+            "id": "4:10038",
             "name": "cell 5-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8429",
+                "id": "4:10039",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9158,7 +9156,7 @@
                 }
               },
               {
-                "id": "4:8430",
+                "id": "4:10040",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9407,7 +9405,7 @@
             }
           },
           {
-            "id": "4:8431",
+            "id": "4:10041",
             "name": "cell 5-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -9436,7 +9434,7 @@
               "height": 237.77999877929688
             },
             "absoluteRenderBounds": {
-              "x": 669.148193359375,
+              "x": 655.8363037109375,
               "y": 414.1204528808594,
               "width": 35.4886474609375,
               "height": 53.79547119140625
@@ -9476,7 +9474,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 72.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 87.13636016845703,
@@ -9491,13 +9489,13 @@
             }
           },
           {
-            "id": "4:8432",
+            "id": "4:10042",
             "name": "cell 5-2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8433",
+                "id": "4:10043",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9663,7 +9661,7 @@
                 }
               },
               {
-                "id": "4:8434",
+                "id": "4:10044",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9912,7 +9910,7 @@
             }
           },
           {
-            "id": "4:8435",
+            "id": "4:10045",
             "name": "cell 5-2",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -9941,9 +9939,9 @@
               "height": 239.0399932861328
             },
             "absoluteRenderBounds": {
-              "x": 689.6304931640625,
+              "x": 692.6942138671875,
               "y": 0.0,
-              "width": 240.530517578125,
+              "width": 237.8424072265625,
               "height": 540.0
             },
             "constraints": {
@@ -9981,7 +9979,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 56.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 67.7727279663086,
@@ -9996,13 +9994,13 @@
             }
           },
           {
-            "id": "4:8436",
+            "id": "4:10046",
             "name": "cell 6-1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8437",
+                "id": "4:10047",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -10163,7 +10161,7 @@
                 }
               },
               {
-                "id": "4:8438",
+                "id": "4:10048",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -10402,7 +10400,7 @@
             }
           },
           {
-            "id": "4:8439",
+            "id": "4:10049",
             "name": "cell 6-1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -10466,7 +10464,7 @@
               "fontStyle": "Regular",
               "fontWeight": 400,
               "fontSize": 8.0,
-              "textAlignHorizontal": "LEFT",
+              "textAlignHorizontal": "CENTER",
               "textAlignVertical": "CENTER",
               "letterSpacing": 0.0,
               "lineHeightPx": 9.681818008422852,
@@ -10481,7 +10479,7 @@
             }
           },
           {
-            "id": "4:8440",
+            "id": "4:10050",
             "name": "TextBox 281",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -10565,13 +10563,13 @@
             }
           },
           {
-            "id": "4:8441",
+            "id": "4:10051",
             "name": "직사각형 145",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8442",
+                "id": "4:10052",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -10820,7 +10818,7 @@
             }
           },
           {
-            "id": "4:8443",
+            "id": "4:10053",
             "name": "직사각형 145",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -10908,13 +10906,13 @@
             }
           },
           {
-            "id": "4:8444",
+            "id": "4:10054",
             "name": "직선 연결선[R] 4:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8445",
+                "id": "4:10055",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11107,13 +11105,13 @@
             }
           },
           {
-            "id": "4:8446",
+            "id": "4:10056",
             "name": "직선 연결선[R] 25:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8447",
+                "id": "4:10057",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11306,13 +11304,13 @@
             }
           },
           {
-            "id": "4:8448",
+            "id": "4:10058",
             "name": "직사각형 127",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8449",
+                "id": "4:10059",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11478,7 +11476,7 @@
                 }
               },
               {
-                "id": "4:8450",
+                "id": "4:10060",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11727,13 +11725,13 @@
             }
           },
           {
-            "id": "4:8451",
+            "id": "4:10061",
             "name": "Google Shape;64;p67",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8452",
+                "id": "4:10062",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11982,7 +11980,7 @@
             }
           },
           {
-            "id": "4:8453",
+            "id": "4:10063",
             "name": "TextBox 24",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -12066,13 +12064,13 @@
             }
           },
           {
-            "id": "4:8454",
+            "id": "4:10064",
             "name": "타원 157",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8455",
+                "id": "4:10065",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -12573,7 +12571,7 @@
             }
           },
           {
-            "id": "4:8456",
+            "id": "4:10066",
             "name": "타원 157",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -12658,7 +12656,7 @@
             }
           },
           {
-            "id": "4:8457",
+            "id": "4:10067",
             "name": "그림 183",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -12720,7 +12718,7 @@
             }
           },
           {
-            "id": "4:8458",
+            "id": "4:10068",
             "name": "Picture 3",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -12782,7 +12780,7 @@
             }
           },
           {
-            "id": "4:8459",
+            "id": "4:10069",
             "name": "그림 187",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -12844,13 +12842,13 @@
             }
           },
           {
-            "id": "4:8460",
+            "id": "4:10070",
             "name": "직사각형 190",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8461",
+                "id": "4:10071",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13099,7 +13097,7 @@
             }
           },
           {
-            "id": "4:8462",
+            "id": "4:10072",
             "name": "직사각형 190",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -13187,13 +13185,13 @@
             }
           },
           {
-            "id": "4:8463",
+            "id": "4:10073",
             "name": "Search",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8464",
+                "id": "4:10074",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13359,7 +13357,7 @@
                 }
               },
               {
-                "id": "4:8465",
+                "id": "4:10075",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13608,7 +13606,7 @@
             }
           },
           {
-            "id": "4:8466",
+            "id": "4:10076",
             "name": "그림 192",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -13670,13 +13668,13 @@
             }
           },
           {
-            "id": "4:8467",
+            "id": "4:10077",
             "name": "직사각형 152",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8468",
+                "id": "4:10078",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13925,7 +13923,7 @@
             }
           },
           {
-            "id": "4:8469",
+            "id": "4:10079",
             "name": "직사각형 152",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -14011,13 +14009,13 @@
             }
           },
           {
-            "id": "4:8470",
+            "id": "4:10080",
             "name": "Google Shape;105;p2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8471",
+                "id": "4:10081",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14183,7 +14181,7 @@
                 }
               },
               {
-                "id": "4:8472",
+                "id": "4:10082",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14432,7 +14430,7 @@
             }
           },
           {
-            "id": "4:8473",
+            "id": "4:10083",
             "name": "Google Shape;105;p2",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -14520,13 +14518,13 @@
             }
           },
           {
-            "id": "4:8474",
+            "id": "4:10084",
             "name": "타원 156",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8475",
+                "id": "4:10085",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -15027,7 +15025,7 @@
             }
           },
           {
-            "id": "4:8476",
+            "id": "4:10086",
             "name": "타원 156",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -15112,13 +15110,13 @@
             }
           },
           {
-            "id": "4:8477",
+            "id": "4:10087",
             "name": "직사각형 149",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8478",
+                "id": "4:10088",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -15367,7 +15365,7 @@
             }
           },
           {
-            "id": "4:8479",
+            "id": "4:10089",
             "name": "직사각형 149",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -15455,7 +15453,7 @@
             }
           },
           {
-            "id": "4:8480",
+            "id": "4:10090",
             "name": "TextBox 176",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -15541,13 +15539,13 @@
             }
           },
           {
-            "id": "4:8481",
+            "id": "4:10091",
             "name": "타원 175",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8482",
+                "id": "4:10092",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -15797,7 +15795,7 @@
                 }
               },
               {
-                "id": "4:8483",
+                "id": "4:10093",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16130,13 +16128,13 @@
             }
           },
           {
-            "id": "4:8484",
+            "id": "4:10094",
             "name": "직사각형 174",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8485",
+                "id": "4:10095",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16385,7 +16383,7 @@
             }
           },
           {
-            "id": "4:8486",
+            "id": "4:10096",
             "name": "직사각형 174",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -16473,13 +16471,13 @@
             }
           },
           {
-            "id": "4:8487",
+            "id": "4:10097",
             "name": "타원 214",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8488",
+                "id": "4:10098",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16980,7 +16978,7 @@
             }
           },
           {
-            "id": "4:8489",
+            "id": "4:10099",
             "name": "타원 214",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -17065,13 +17063,13 @@
             }
           },
           {
-            "id": "4:8490",
+            "id": "4:10100",
             "name": "직사각형 195",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8491",
+                "id": "4:10101",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -17320,7 +17318,7 @@
             }
           },
           {
-            "id": "4:8492",
+            "id": "4:10102",
             "name": "직사각형 195",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -17412,13 +17410,13 @@
             }
           },
           {
-            "id": "4:8493",
+            "id": "4:10103",
             "name": "직사각형 191",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8494",
+                "id": "4:10104",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -17667,7 +17665,7 @@
             }
           },
           {
-            "id": "4:8495",
+            "id": "4:10105",
             "name": "직사각형 191",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -17759,13 +17757,13 @@
             }
           },
           {
-            "id": "4:8496",
+            "id": "4:10106",
             "name": "직사각형 9",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8497",
+                "id": "4:10107",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18014,7 +18012,7 @@
             }
           },
           {
-            "id": "4:8498",
+            "id": "4:10108",
             "name": "직사각형 9",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -18100,13 +18098,13 @@
             }
           },
           {
-            "id": "4:8499",
+            "id": "4:10109",
             "name": "직사각형 248",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8500",
+                "id": "4:10110",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18355,7 +18353,7 @@
             }
           },
           {
-            "id": "4:8501",
+            "id": "4:10111",
             "name": "직사각형 248",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -18447,13 +18445,13 @@
             }
           },
           {
-            "id": "4:8502",
+            "id": "4:10112",
             "name": "모서리가 둥근 직사각형 8",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8503",
+                "id": "4:10113",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18787,7 +18785,7 @@
             }
           },
           {
-            "id": "4:8504",
+            "id": "4:10114",
             "name": "모서리가 둥근 직사각형 8",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -18872,7 +18870,7 @@
             }
           },
           {
-            "id": "4:8505",
+            "id": "4:10115",
             "name": "Picture 6",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -18934,13 +18932,13 @@
             }
           },
           {
-            "id": "4:8506",
+            "id": "4:10116",
             "name": "직선 화살표 연결선 18:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8507",
+                "id": "4:10117",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19134,13 +19132,13 @@
             }
           },
           {
-            "id": "4:8508",
+            "id": "4:10118",
             "name": "직선 화살표 연결선 18:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8509",
+                "id": "4:10119",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19369,13 +19367,13 @@
             }
           },
           {
-            "id": "4:8510",
+            "id": "4:10120",
             "name": "직선 화살표 연결선 18:arrow_2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8511",
+                "id": "4:10121",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19604,7 +19602,7 @@
             }
           },
           {
-            "id": "4:8512",
+            "id": "4:10122",
             "name": "Google Shape;741;p20",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -19688,13 +19686,13 @@
             }
           },
           {
-            "id": "4:8513",
+            "id": "4:10123",
             "name": "타원 141",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8514",
+                "id": "4:10124",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20195,7 +20193,7 @@
             }
           },
           {
-            "id": "4:8515",
+            "id": "4:10125",
             "name": "타원 141",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -20280,13 +20278,13 @@
             }
           },
           {
-            "id": "4:8516",
+            "id": "4:10126",
             "name": "타원 108",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8517",
+                "id": "4:10127",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20620,7 +20618,7 @@
             }
           },
           {
-            "id": "4:8518",
+            "id": "4:10128",
             "name": "타원 108",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -20705,13 +20703,13 @@
             }
           },
           {
-            "id": "4:8519",
+            "id": "4:10129",
             "name": "직사각형 246",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8520",
+                "id": "4:10130",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20961,7 +20959,7 @@
             }
           },
           {
-            "id": "4:8521",
+            "id": "4:10131",
             "name": "직사각형 246",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -21046,7 +21044,7 @@
             }
           },
           {
-            "id": "4:8522",
+            "id": "4:10132",
             "name": "TextBox 247",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -21131,13 +21129,13 @@
             }
           },
           {
-            "id": "4:8523",
+            "id": "4:10133",
             "name": "타원 173",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8524",
+                "id": "4:10134",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -21638,7 +21636,7 @@
             }
           },
           {
-            "id": "4:8525",
+            "id": "4:10135",
             "name": "타원 173",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -21723,13 +21721,13 @@
             }
           },
           {
-            "id": "4:8526",
+            "id": "4:10136",
             "name": "직사각형 2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8527",
+                "id": "4:10137",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -21978,13 +21976,13 @@
             }
           },
           {
-            "id": "4:8528",
+            "id": "4:10138",
             "name": "직사각형 234",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8529",
+                "id": "4:10139",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -22234,7 +22232,7 @@
             }
           },
           {
-            "id": "4:8530",
+            "id": "4:10140",
             "name": "직사각형 234",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -22319,13 +22317,13 @@
             }
           },
           {
-            "id": "4:8531",
+            "id": "4:10141",
             "name": "직사각형 6",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8532",
+                "id": "4:10142",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -22574,13 +22572,13 @@
             }
           },
           {
-            "id": "4:8533",
+            "id": "4:10143",
             "name": "타원 3",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8534",
+                "id": "4:10144",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -22914,7 +22912,7 @@
             }
           },
           {
-            "id": "4:8535",
+            "id": "4:10145",
             "name": "타원 3",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -23000,13 +22998,13 @@
             }
           },
           {
-            "id": "4:8536",
+            "id": "4:10146",
             "name": "Google Shape;1032;p23",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8537",
+                "id": "4:10147",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -23340,7 +23338,7 @@
             }
           },
           {
-            "id": "4:8538",
+            "id": "4:10148",
             "name": "Google Shape;1032;p23",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -23424,13 +23422,13 @@
             }
           },
           {
-            "id": "4:8539",
+            "id": "4:10149",
             "name": "직사각형 216",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8540",
+                "id": "4:10150",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -23680,7 +23678,7 @@
             }
           },
           {
-            "id": "4:8541",
+            "id": "4:10151",
             "name": "직사각형 216",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -23765,7 +23763,7 @@
             }
           },
           {
-            "id": "4:8542",
+            "id": "4:10152",
             "name": "TextBox 245",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -23850,13 +23848,13 @@
             }
           },
           {
-            "id": "4:8543",
+            "id": "4:10153",
             "name": "타원 151",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8544",
+                "id": "4:10154",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -24357,7 +24355,7 @@
             }
           },
           {
-            "id": "4:8545",
+            "id": "4:10155",
             "name": "타원 151",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -24442,13 +24440,13 @@
             }
           },
           {
-            "id": "4:8546",
+            "id": "4:10156",
             "name": "직사각형 162",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8547",
+                "id": "4:10157",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -24698,7 +24696,7 @@
             }
           },
           {
-            "id": "4:8548",
+            "id": "4:10158",
             "name": "직사각형 10",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -24782,13 +24780,13 @@
             }
           },
           {
-            "id": "4:8549",
+            "id": "4:10159",
             "name": "타원 104",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8550",
+                "id": "4:10160",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25122,7 +25120,7 @@
             }
           },
           {
-            "id": "4:8551",
+            "id": "4:10161",
             "name": "타원 104",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -25145,13 +25143,13 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 230.63999938964844,
+              "x": 231.63999938964844,
               "y": 280.489990234375,
               "width": 40.0,
               "height": 10.0
             },
             "absoluteRenderBounds": {
-              "x": 231.5165557861328,
+              "x": 232.5165557861328,
               "y": 281.80999755859375,
               "width": 37.63951110839844,
               "height": 7.303985595703125
@@ -25164,7 +25162,7 @@
               [
                 1.0,
                 0.0,
-                230.63999938964844
+                231.63999938964844
               ],
               [
                 0.0,
@@ -25207,13 +25205,13 @@
             }
           },
           {
-            "id": "4:8552",
+            "id": "4:10162",
             "name": "타원 204",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8553",
+                "id": "4:10163",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25714,7 +25712,7 @@
             }
           },
           {
-            "id": "4:8554",
+            "id": "4:10164",
             "name": "타원 204",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -25799,13 +25797,13 @@
             }
           },
           {
-            "id": "4:8555",
+            "id": "4:10165",
             "name": "타원 163",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8556",
+                "id": "4:10166",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -26306,7 +26304,7 @@
             }
           },
           {
-            "id": "4:8557",
+            "id": "4:10167",
             "name": "타원 163",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -26391,7 +26389,7 @@
             }
           },
           {
-            "id": "4:8558",
+            "id": "4:10168",
             "name": "TextBox 153",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -26475,13 +26473,13 @@
             }
           },
           {
-            "id": "4:8559",
+            "id": "4:10169",
             "name": "타원 178",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8560",
+                "id": "4:10170",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -26983,13 +26981,13 @@
             }
           },
           {
-            "id": "4:8561",
+            "id": "4:10171",
             "name": "직사각형 193",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8562",
+                "id": "4:10172",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27238,13 +27236,13 @@
             }
           },
           {
-            "id": "4:8563",
+            "id": "4:10173",
             "name": "직사각형 194",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8564",
+                "id": "4:10174",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27493,13 +27491,13 @@
             }
           },
           {
-            "id": "4:8565",
+            "id": "4:10175",
             "name": "Google Shape;1032;p23",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8566",
+                "id": "4:10176",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27833,7 +27831,7 @@
             }
           },
           {
-            "id": "4:8567",
+            "id": "4:10177",
             "name": "Google Shape;1032;p23",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -27917,13 +27915,13 @@
             }
           },
           {
-            "id": "4:8568",
+            "id": "4:10178",
             "name": "직사각형 253",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8569",
+                "id": "4:10179",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -28173,7 +28171,7 @@
             }
           },
           {
-            "id": "4:8570",
+            "id": "4:10180",
             "name": "직사각형 253",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -28258,13 +28256,13 @@
             }
           },
           {
-            "id": "4:8571",
+            "id": "4:10181",
             "name": "타원 200",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8572",
+                "id": "4:10182",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -28683,7 +28681,7 @@
                 }
               },
               {
-                "id": "4:8573",
+                "id": "4:10183",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29184,13 +29182,13 @@
             }
           },
           {
-            "id": "4:8574",
+            "id": "4:10184",
             "name": "직사각형 202",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8575",
+                "id": "4:10185",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29439,13 +29437,13 @@
             }
           },
           {
-            "id": "4:8576",
+            "id": "4:10186",
             "name": "직사각형 203",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8577",
+                "id": "4:10187",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29694,7 +29692,7 @@
             }
           },
           {
-            "id": "4:8578",
+            "id": "4:10188",
             "name": "TextBox 155",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -29779,13 +29777,13 @@
             }
           },
           {
-            "id": "4:8579",
+            "id": "4:10189",
             "name": "타원 197",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8580",
+                "id": "4:10190",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -30119,7 +30117,7 @@
             }
           },
           {
-            "id": "4:8581",
+            "id": "4:10191",
             "name": "타원 197",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -30204,13 +30202,13 @@
             }
           },
           {
-            "id": "4:8582",
+            "id": "4:10192",
             "name": "직사각형 196",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8583",
+                "id": "4:10193",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -30460,7 +30458,7 @@
             }
           },
           {
-            "id": "4:8584",
+            "id": "4:10194",
             "name": "직사각형 196",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -30545,13 +30543,13 @@
             }
           },
           {
-            "id": "4:8585",
+            "id": "4:10195",
             "name": "타원 205",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8586",
+                "id": "4:10196",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31052,7 +31050,7 @@
             }
           },
           {
-            "id": "4:8587",
+            "id": "4:10197",
             "name": "타원 205",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -31137,13 +31135,13 @@
             }
           },
           {
-            "id": "4:8588",
+            "id": "4:10198",
             "name": "직사각형 180",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8589",
+                "id": "4:10199",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31393,7 +31391,7 @@
             }
           },
           {
-            "id": "4:8590",
+            "id": "4:10200",
             "name": "직사각형 180",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -31478,13 +31476,13 @@
             }
           },
           {
-            "id": "4:8591",
+            "id": "4:10201",
             "name": "직선 화살표 연결선 198:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8592",
+                "id": "4:10202",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31677,13 +31675,13 @@
             }
           },
           {
-            "id": "4:8593",
+            "id": "4:10203",
             "name": "직선 화살표 연결선 198:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8594",
+                "id": "4:10204",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31911,13 +31909,13 @@
             }
           },
           {
-            "id": "4:8595",
+            "id": "4:10205",
             "name": "직선 화살표 연결선 198:arrow_2",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8596",
+                "id": "4:10206",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32145,13 +32143,13 @@
             }
           },
           {
-            "id": "4:8597",
+            "id": "4:10207",
             "name": "타원 168",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8598",
+                "id": "4:10208",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32652,7 +32650,7 @@
             }
           },
           {
-            "id": "4:8599",
+            "id": "4:10209",
             "name": "타원 168",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -32737,13 +32735,13 @@
             }
           },
           {
-            "id": "4:8600",
+            "id": "4:10210",
             "name": "직사각형 179",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8601",
+                "id": "4:10211",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32993,7 +32991,7 @@
             }
           },
           {
-            "id": "4:8602",
+            "id": "4:10212",
             "name": "직사각형 179",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -33078,7 +33076,7 @@
             }
           },
           {
-            "id": "4:8603",
+            "id": "4:10213",
             "name": "직사각형 237",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -33163,13 +33161,13 @@
             }
           },
           {
-            "id": "4:8604",
+            "id": "4:10214",
             "name": "직사각형 241",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8605",
+                "id": "4:10215",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -33419,7 +33417,7 @@
             }
           },
           {
-            "id": "4:8606",
+            "id": "4:10216",
             "name": "직사각형 241",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -33504,21 +33502,21 @@
             }
           },
           {
-            "id": "4:8607",
+            "id": "4:10217",
             "name": "오른쪽 대괄호 164",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "rotation": -3.141592653589793,
             "children": [
               {
-                "id": "4:8608",
+                "id": "4:10218",
                 "name": "Group",
                 "type": "GROUP",
                 "scrollBehavior": "SCROLLS",
                 "rotation": 3.141592653589793,
                 "children": [
                   {
-                    "id": "4:8609",
+                    "id": "4:10219",
                     "name": "Vector",
                     "type": "VECTOR",
                     "scrollBehavior": "SCROLLS",
@@ -33807,7 +33805,7 @@
             }
           },
           {
-            "id": "4:8610",
+            "id": "4:10220",
             "name": "그림 15",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -33869,13 +33867,13 @@
             }
           },
           {
-            "id": "4:8611",
+            "id": "4:10221",
             "name": "타원 164",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8612",
+                "id": "4:10222",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -34376,7 +34374,7 @@
             }
           },
           {
-            "id": "4:8613",
+            "id": "4:10223",
             "name": "타원 164",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -34461,13 +34459,13 @@
             }
           },
           {
-            "id": "4:8614",
+            "id": "4:10224",
             "name": "타원 172",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8615",
+                "id": "4:10225",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -34968,7 +34966,7 @@
             }
           },
           {
-            "id": "4:8616",
+            "id": "4:10226",
             "name": "타원 172",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -35053,7 +35051,7 @@
             }
           },
           {
-            "id": "4:8617",
+            "id": "4:10227",
             "name": "TextBox 303",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -35139,7 +35137,7 @@
             }
           },
           {
-            "id": "4:8618",
+            "id": "4:10228",
             "name": "TextBox 159",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -35224,13 +35222,13 @@
             }
           },
           {
-            "id": "4:8619",
+            "id": "4:10229",
             "name": "직사각형 223",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8620",
+                "id": "4:10230",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -35479,13 +35477,13 @@
             }
           },
           {
-            "id": "4:8621",
+            "id": "4:10231",
             "name": "직사각형 171",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8622",
+                "id": "4:10232",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -35734,13 +35732,13 @@
             }
           },
           {
-            "id": "4:8623",
+            "id": "4:10233",
             "name": "직사각형 160",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8624",
+                "id": "4:10234",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -35989,7 +35987,7 @@
             }
           },
           {
-            "id": "4:8625",
+            "id": "4:10235",
             "name": "그림 165",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -36055,13 +36053,13 @@
             }
           },
           {
-            "id": "4:8626",
+            "id": "4:10236",
             "name": "Like",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8627",
+                "id": "4:10237",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -36310,7 +36308,7 @@
             }
           },
           {
-            "id": "4:8628",
+            "id": "4:10238",
             "name": "TextBox 136",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -36395,13 +36393,13 @@
             }
           },
           {
-            "id": "4:8629",
+            "id": "4:10239",
             "name": "타원 161",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8630",
+                "id": "4:10240",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -36902,7 +36900,7 @@
             }
           },
           {
-            "id": "4:8631",
+            "id": "4:10241",
             "name": "타원 161",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -36987,7 +36985,7 @@
             }
           },
           {
-            "id": "4:8632",
+            "id": "4:10242",
             "name": "TextBox 144",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -37072,13 +37070,13 @@
             }
           },
           {
-            "id": "4:8633",
+            "id": "4:10243",
             "name": "직사각형 148",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8634",
+                "id": "4:10244",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -37327,13 +37325,13 @@
             }
           },
           {
-            "id": "4:8635",
+            "id": "4:10245",
             "name": "직사각형 233",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8636",
+                "id": "4:10246",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -37583,7 +37581,7 @@
             }
           },
           {
-            "id": "4:8637",
+            "id": "4:10247",
             "name": "직사각형 233",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -37668,13 +37666,13 @@
             }
           },
           {
-            "id": "4:8638",
+            "id": "4:10248",
             "name": "타원 158",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8639",
+                "id": "4:10249",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -38175,7 +38173,7 @@
             }
           },
           {
-            "id": "4:8640",
+            "id": "4:10250",
             "name": "타원 158",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -38260,13 +38258,13 @@
             }
           },
           {
-            "id": "4:8641",
+            "id": "4:10251",
             "name": "직사각형 7",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8642",
+                "id": "4:10252",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -38515,13 +38513,13 @@
             }
           },
           {
-            "id": "4:8643",
+            "id": "4:10253",
             "name": "직사각형 306",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8644",
+                "id": "4:10254",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -38770,7 +38768,7 @@
             }
           },
           {
-            "id": "4:8645",
+            "id": "4:10255",
             "name": "그림 308",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -38832,7 +38830,7 @@
             }
           },
           {
-            "id": "4:8646",
+            "id": "4:10256",
             "name": "Picture 3",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -38894,7 +38892,7 @@
             }
           },
           {
-            "id": "4:8647",
+            "id": "4:10257",
             "name": "그림 310",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -38956,13 +38954,13 @@
             }
           },
           {
-            "id": "4:8648",
+            "id": "4:10258",
             "name": "Search",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8649",
+                "id": "4:10259",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -39128,7 +39126,7 @@
                 }
               },
               {
-                "id": "4:8650",
+                "id": "4:10260",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -39377,13 +39375,13 @@
             }
           },
           {
-            "id": "4:8651",
+            "id": "4:10261",
             "name": "직사각형 305",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8652",
+                "id": "4:10262",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -39633,7 +39631,7 @@
             }
           },
           {
-            "id": "4:8653",
+            "id": "4:10263",
             "name": "직사각형 305",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -39721,13 +39719,13 @@
             }
           },
           {
-            "id": "4:8654",
+            "id": "4:10264",
             "name": "직사각형 116",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8655",
+                "id": "4:10265",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -39976,13 +39974,13 @@
             }
           },
           {
-            "id": "4:8656",
+            "id": "4:10266",
             "name": "직사각형 170",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8657",
+                "id": "4:10267",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -40231,13 +40229,13 @@
             }
           },
           {
-            "id": "4:8658",
+            "id": "4:10268",
             "name": "직사각형 107",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8659",
+                "id": "4:10269",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -40486,13 +40484,13 @@
             }
           },
           {
-            "id": "4:8660",
+            "id": "4:10270",
             "name": "타원 117",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8661",
+                "id": "4:10271",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -40993,7 +40991,7 @@
             }
           },
           {
-            "id": "4:8662",
+            "id": "4:10272",
             "name": "타원 117",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -41078,13 +41076,13 @@
             }
           },
           {
-            "id": "4:8663",
+            "id": "4:10273",
             "name": "타원 114",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8664",
+                "id": "4:10274",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -41585,13 +41583,13 @@
             }
           },
           {
-            "id": "4:8665",
+            "id": "4:10275",
             "name": "Accept",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8666",
+                "id": "4:10276",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -41840,7 +41838,7 @@
             }
           },
           {
-            "id": "4:8667",
+            "id": "4:10277",
             "name": "TextBox 113",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -41925,13 +41923,13 @@
             }
           },
           {
-            "id": "4:8668",
+            "id": "4:10278",
             "name": "타원 169",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8669",
+                "id": "4:10279",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -42432,7 +42430,7 @@
             }
           },
           {
-            "id": "4:8670",
+            "id": "4:10280",
             "name": "타원 169",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -42517,7 +42515,7 @@
             }
           },
           {
-            "id": "4:8671",
+            "id": "4:10281",
             "name": "TextBox 142",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -42601,13 +42599,13 @@
             }
           },
           {
-            "id": "4:8672",
+            "id": "4:10282",
             "name": "Edit File",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8673",
+                "id": "4:10283",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -42856,7 +42854,7 @@
             }
           },
           {
-            "id": "4:8674",
+            "id": "4:10284",
             "name": "TextBox 147",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -42940,13 +42938,13 @@
             }
           },
           {
-            "id": "4:8675",
+            "id": "4:10285",
             "name": "모서리가 둥근 직사각형 128",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8676",
+                "id": "4:10286",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -43279,13 +43277,13 @@
             }
           },
           {
-            "id": "4:8677",
+            "id": "4:10287",
             "name": "직사각형 182",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8678",
+                "id": "4:10288",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -43535,7 +43533,7 @@
             }
           },
           {
-            "id": "4:8679",
+            "id": "4:10289",
             "name": "직사각형 182",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -43620,13 +43618,13 @@
             }
           },
           {
-            "id": "4:8680",
+            "id": "4:10290",
             "name": "직사각형 206",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8681",
+                "id": "4:10291",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -43876,7 +43874,7 @@
             }
           },
           {
-            "id": "4:8682",
+            "id": "4:10292",
             "name": "직사각형 206",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -43961,7 +43959,7 @@
             }
           },
           {
-            "id": "4:8683",
+            "id": "4:10293",
             "name": "TextBox 129",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -44046,7 +44044,7 @@
             }
           },
           {
-            "id": "4:8684",
+            "id": "4:10294",
             "name": "TextBox 131",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -44131,7 +44129,7 @@
             }
           },
           {
-            "id": "4:8685",
+            "id": "4:10295",
             "name": "직사각형 134",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -44216,13 +44214,13 @@
             }
           },
           {
-            "id": "4:8686",
+            "id": "4:10296",
             "name": "모서리가 둥근 직사각형 232",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8687",
+                "id": "4:10297",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -44555,13 +44553,13 @@
             }
           },
           {
-            "id": "4:8688",
+            "id": "4:10298",
             "name": "직사각형 213",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8689",
+                "id": "4:10299",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -44727,7 +44725,7 @@
                 }
               },
               {
-                "id": "4:8690",
+                "id": "4:10300",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -44976,7 +44974,7 @@
             }
           },
           {
-            "id": "4:8691",
+            "id": "4:10301",
             "name": "TextBox 242",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -45061,7 +45059,7 @@
             }
           },
           {
-            "id": "4:8692",
+            "id": "4:10302",
             "name": "TextBox 240",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -45146,13 +45144,13 @@
             }
           },
           {
-            "id": "4:8693",
+            "id": "4:10303",
             "name": "타원 243",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8694",
+                "id": "4:10304",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -45485,7 +45483,7 @@
             }
           },
           {
-            "id": "4:8695",
+            "id": "4:10305",
             "name": "타원 243",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -45570,13 +45568,13 @@
             }
           },
           {
-            "id": "4:8696",
+            "id": "4:10306",
             "name": "직사각형 236",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8697",
+                "id": "4:10307",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -45825,7 +45823,7 @@
             }
           },
           {
-            "id": "4:8698",
+            "id": "4:10308",
             "name": "직사각형 236",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -45848,13 +45846,13 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 69.0,
+              "x": 70.0,
               "y": 489.55999755859375,
               "width": 34.0,
               "height": 11.0
             },
             "absoluteRenderBounds": {
-              "x": 69.89140319824219,
+              "x": 70.89140319824219,
               "y": 491.11700439453125,
               "width": 31.515892028808594,
               "height": 8.15399169921875
@@ -45867,7 +45865,7 @@
               [
                 1.0,
                 0.0,
-                69.0
+                70.0
               ],
               [
                 0.0,
@@ -45910,13 +45908,13 @@
             }
           },
           {
-            "id": "4:8699",
+            "id": "4:10309",
             "name": "Like",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8700",
+                "id": "4:10310",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -46165,7 +46163,7 @@
             }
           },
           {
-            "id": "4:8701",
+            "id": "4:10311",
             "name": "TextBox 227",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -46188,13 +46186,13 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 197.32000732421875,
+              "x": 198.32000732421875,
               "y": 463.6600036621094,
               "width": 50.0,
               "height": 10.0
             },
             "absoluteRenderBounds": {
-              "x": 197.9414520263672,
+              "x": 198.9414520263672,
               "y": 465.052001953125,
               "width": 48.51518249511719,
               "height": 8.0284423828125
@@ -46207,7 +46205,7 @@
               [
                 1.0,
                 0.0,
-                197.32000732421875
+                198.32000732421875
               ],
               [
                 0.0,
@@ -46250,7 +46248,7 @@
             }
           },
           {
-            "id": "4:8702",
+            "id": "4:10312",
             "name": "TextBox 226",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -46273,13 +46271,13 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 171.64999389648438,
+              "x": 172.64999389648438,
               "y": 472.4599914550781,
               "width": 58.0,
               "height": 12.0
             },
             "absoluteRenderBounds": {
-              "x": 172.58412170410156,
+              "x": 173.58412170410156,
               "y": 474.1999816894531,
               "width": 55.98664855957031,
               "height": 10.03558349609375
@@ -46292,7 +46290,7 @@
               [
                 1.0,
                 0.0,
-                171.64999389648438
+                172.64999389648438
               ],
               [
                 0.0,
@@ -46335,7 +46333,7 @@
             }
           },
           {
-            "id": "4:8703",
+            "id": "4:10313",
             "name": "TextBox 231",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -46420,7 +46418,7 @@
             }
           },
           {
-            "id": "4:8704",
+            "id": "4:10314",
             "name": "TextBox 229",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -46505,13 +46503,13 @@
             }
           },
           {
-            "id": "4:8705",
+            "id": "4:10315",
             "name": "Info",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8706",
+                "id": "4:10316",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -46760,7 +46758,7 @@
             }
           },
           {
-            "id": "4:8707",
+            "id": "4:10317",
             "name": "그림 314",
             "type": "RECTANGLE",
             "scrollBehavior": "SCROLLS",
@@ -46822,13 +46820,13 @@
             }
           },
           {
-            "id": "4:8708",
+            "id": "4:10318",
             "name": "타원 250",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8709",
+                "id": "4:10319",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -47329,7 +47327,7 @@
             }
           },
           {
-            "id": "4:8710",
+            "id": "4:10320",
             "name": "타원 250",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -47414,13 +47412,13 @@
             }
           },
           {
-            "id": "4:8711",
+            "id": "4:10321",
             "name": "직사각형 252",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8712",
+                "id": "4:10322",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -47670,7 +47668,7 @@
             }
           },
           {
-            "id": "4:8713",
+            "id": "4:10323",
             "name": "직사각형 252",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -47755,7 +47753,7 @@
             }
           },
           {
-            "id": "4:8714",
+            "id": "4:10324",
             "name": "TextBox 215",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -47778,13 +47776,13 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 170.8699951171875,
+              "x": 171.8699951171875,
               "y": 490.510009765625,
               "width": 58.0,
               "height": 12.0
             },
             "absoluteRenderBounds": {
-              "x": 171.5599822998047,
+              "x": 172.5599822998047,
               "y": 492.25,
               "width": 56.23078918457031,
               "height": 10.03558349609375
@@ -47797,7 +47795,7 @@
               [
                 1.0,
                 0.0,
-                170.8699951171875
+                171.8699951171875
               ],
               [
                 0.0,
@@ -47840,7 +47838,7 @@
             }
           },
           {
-            "id": "4:8715",
+            "id": "4:10325",
             "name": "직사각형 249",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -47924,7 +47922,7 @@
             }
           },
           {
-            "id": "4:8716",
+            "id": "4:10326",
             "name": "TextBox 224",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -48009,13 +48007,13 @@
             }
           },
           {
-            "id": "4:8717",
+            "id": "4:10327",
             "name": "Info",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8718",
+                "id": "4:10328",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -48264,13 +48262,13 @@
             }
           },
           {
-            "id": "4:8719",
+            "id": "4:10329",
             "name": "직사각형 181",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8720",
+                "id": "4:10330",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -48520,7 +48518,7 @@
             }
           },
           {
-            "id": "4:8721",
+            "id": "4:10331",
             "name": "직사각형 181",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -48605,13 +48603,13 @@
             }
           },
           {
-            "id": "4:8722",
+            "id": "4:10332",
             "name": "타원 208",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8723",
+                "id": "4:10333",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -48945,13 +48943,13 @@
             }
           },
           {
-            "id": "4:8724",
+            "id": "4:10334",
             "name": "직사각형 210",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8725",
+                "id": "4:10335",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -49200,13 +49198,13 @@
             }
           },
           {
-            "id": "4:8726",
+            "id": "4:10336",
             "name": "직사각형 211",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8727",
+                "id": "4:10337",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -49455,13 +49453,13 @@
             }
           },
           {
-            "id": "4:8728",
+            "id": "4:10338",
             "name": "직사각형 140",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8729",
+                "id": "4:10339",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -49710,13 +49708,13 @@
             }
           },
           {
-            "id": "4:8730",
+            "id": "4:10340",
             "name": "타원 218",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8731",
+                "id": "4:10341",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -50050,13 +50048,13 @@
             }
           },
           {
-            "id": "4:8732",
+            "id": "4:10342",
             "name": "직사각형 220",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8733",
+                "id": "4:10343",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -50305,13 +50303,13 @@
             }
           },
           {
-            "id": "4:8734",
+            "id": "4:10344",
             "name": "직사각형 221",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8735",
+                "id": "4:10345",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -50560,13 +50558,13 @@
             }
           },
           {
-            "id": "4:8736",
+            "id": "4:10346",
             "name": "Google Shape;1032;p23",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8737",
+                "id": "4:10347",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -50900,7 +50898,7 @@
             }
           },
           {
-            "id": "4:8738",
+            "id": "4:10348",
             "name": "Google Shape;1032;p23",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -50984,13 +50982,13 @@
             }
           },
           {
-            "id": "4:8739",
+            "id": "4:10349",
             "name": "Google Shape;1032;p23",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8740",
+                "id": "4:10350",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -51324,7 +51322,7 @@
             }
           },
           {
-            "id": "4:8741",
+            "id": "4:10351",
             "name": "Google Shape;1032;p23",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -51408,13 +51406,13 @@
             }
           },
           {
-            "id": "4:8742",
+            "id": "4:10352",
             "name": "직사각형 212",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "4:8743",
+                "id": "4:10353",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -51654,7 +51652,7 @@
             }
           },
           {
-            "id": "4:8744",
+            "id": "4:10354",
             "name": "직사각형 212",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
