@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import textwrap
 from pathlib import Path
 from typing import Any
 
@@ -114,6 +115,58 @@ def svg_escape(text: str) -> str:
     return html.escape(str(text or ""), quote=False)
 
 
+def wrap_text_lines(text: str, max_chars: int) -> list[str]:
+    raw_lines = str(text or "").splitlines() or [str(text or "")]
+    output: list[str] = []
+    for line in raw_lines:
+        if len(line) <= max_chars:
+            output.append(line)
+            continue
+        output.extend(textwrap.wrap(line, width=max_chars, break_long_words=False, break_on_hyphens=False) or [line])
+    return output
+
+
+def text_svg_markup(
+    text_value: str,
+    bounds: dict[str, float],
+    *,
+    font_size: float,
+    fill_hex: str,
+    fill_opacity: float,
+    font_family: str,
+    horizontal_align: str = "LEFT",
+    vertical_align: str = "TOP",
+    l_ins: float = 2.0,
+    r_ins: float = 2.0,
+    t_ins: float = 2.0,
+    b_ins: float = 2.0,
+) -> str:
+    lines = wrap_text_lines(text_value, max(1, int(max((bounds["width"] - l_ins - r_ins) / max(font_size * 0.62, 4), 1))))
+    line_height = font_size * 1.25
+    content_height = len(lines) * line_height
+    x = bounds["x"] + l_ins
+    anchor = "start"
+    if horizontal_align == "CENTER":
+        x = bounds["x"] + bounds["width"] / 2
+        anchor = "middle"
+    elif horizontal_align == "RIGHT":
+        x = bounds["x"] + bounds["width"] - r_ins
+        anchor = "end"
+    y = bounds["y"] + t_ins + font_size
+    if vertical_align == "CENTER":
+        y = bounds["y"] + (bounds["height"] - content_height) / 2 + font_size
+    elif vertical_align == "BOTTOM":
+        y = bounds["y"] + bounds["height"] - b_ins - content_height + font_size
+    parts = [
+        f'<text x="{round(x,2)}" y="{round(y,2)}" font-size="{font_size}" fill="{fill_hex}" fill-opacity="{fill_opacity}" text-anchor="{anchor}" font-family="{svg_escape(font_family)}">'
+    ]
+    for idx, line in enumerate(lines):
+        dy = 0 if idx == 0 else line_height
+        parts.append(f'<tspan x="{round(x,2)}" dy="{round(dy,2)}">{svg_escape(line)}</tspan>')
+    parts.append("</text>")
+    return "".join(parts)
+
+
 def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], block_bounds: dict[str, Any], context: dict[str, Any]) -> str:
     subtype = candidate.get("subtype")
     extra = candidate.get("extra") or {}
@@ -126,23 +179,21 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             return ""
         style = build_text_style(candidate, abs_bounds, scale=min(context["scale_x"], context["scale_y"]))
         fill_hex, fill_opacity = style_color_to_svg((extra.get("text_style") or {}).get("fill"), "#111111")
-        lines = text_value.splitlines() or [text_value]
-        font_size = style.get("fontSize") or 12
-        line_height = (style.get("lineHeightPx") or (font_size * 1.25))
-        anchor = "middle" if style.get("textAlignHorizontal") == "CENTER" else "end" if style.get("textAlignHorizontal") == "RIGHT" else "start"
-        if anchor == "middle":
-            x = local["x"] + local["width"] / 2
-        elif anchor == "end":
-            x = local["x"] + local["width"] - 2
-        else:
-            x = local["x"] + 2
-        y = local["y"] + font_size
-        parts = [f'<text x="{round(x,2)}" y="{round(y,2)}" font-size="{font_size}" fill="{fill_hex}" fill-opacity="{fill_opacity}" text-anchor="{anchor}" font-family="{svg_escape(style.get("fontFamily") or "Arial")}">']
-        for idx, line in enumerate(lines):
-            dy = 0 if idx == 0 else line_height
-            parts.append(f'<tspan x="{round(x,2)}" dy="{round(dy,2)}">{svg_escape(line)}</tspan>')
-        parts.append("</text>")
-        return "".join(parts)
+        text_style = extra.get("text_style") or {}
+        return text_svg_markup(
+            text_value,
+            local,
+            font_size=style.get("fontSize") or 12,
+            fill_hex=fill_hex,
+            fill_opacity=fill_opacity,
+            font_family=style.get("fontFamily") or "Arial",
+            horizontal_align=style.get("textAlignHorizontal") or "LEFT",
+            vertical_align=style.get("textAlignVertical") or "TOP",
+            l_ins=float(text_style.get("lIns") or 2),
+            r_ins=float(text_style.get("rIns") or 2),
+            t_ins=float(text_style.get("tIns") or 2),
+            b_ins=float(text_style.get("bIns") or 2),
+        )
     if subtype == "connector":
         raw = candidate.get("bounds_px") or {}
         stroke_hex, stroke_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("line") or {}), "#777777")
@@ -155,6 +206,38 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             start = {"x": round(start_px["x"] - block_bounds["x"], 2), "y": round(start_px["y"] - block_bounds["y"], 2)}
             end = {"x": round(end_px["x"] - block_bounds["x"], 2), "y": round(end_px["y"] - block_bounds["y"], 2)}
             points = [start]
+            start_conn = extra.get("start_connection") or {}
+            end_conn = extra.get("end_connection") or {}
+
+            def dir_from_idx(value: Any) -> str:
+                mapping = {0: "up", 1: "right", 2: "down", 3: "left", 4: "up", 5: "right", 6: "down", 7: "left"}
+                try:
+                    return mapping.get(int(value), "")
+                except Exception:
+                    return ""
+
+            def offset_point(point: dict[str, float], direction: str, amount: float) -> dict[str, float]:
+                if direction == "up":
+                    return {"x": point["x"], "y": point["y"] - amount}
+                if direction == "down":
+                    return {"x": point["x"], "y": point["y"] + amount}
+                if direction == "left":
+                    return {"x": point["x"] - amount, "y": point["y"]}
+                if direction == "right":
+                    return {"x": point["x"] + amount, "y": point["y"]}
+                return {"x": point["x"], "y": point["y"]}
+
+            start_dir = dir_from_idx(start_conn.get("idx"))
+            end_dir = dir_from_idx(end_conn.get("idx"))
+            lead = 10.0
+            if start_dir or end_dir:
+                start_exit = offset_point(start, start_dir, lead)
+                end_entry = offset_point(end, end_dir, -lead)
+                points = [start, start_exit]
+                if abs(end_entry["x"] - start_exit["x"]) >= abs(end_entry["y"] - start_exit["y"]):
+                    points.extend([{"x": end_entry["x"], "y": start_exit["y"]}, end_entry])
+                else:
+                    points.extend([{"x": start_exit["x"], "y": end_entry["y"]}, end_entry])
             if kind == "bentConnector2":
                 points.append({"x": start["x"], "y": end["y"]})
             elif kind in {"bentConnector3", "bentConnector4"}:
@@ -173,6 +256,14 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
                 dx = p2["x"] - p1["x"]
                 dy = p2["y"] - p1["y"]
                 size = 6
+                if end_dir == "left":
+                    dx, dy = -1, 0
+                elif end_dir == "right":
+                    dx, dy = 1, 0
+                elif end_dir == "up":
+                    dx, dy = 0, -1
+                elif end_dir == "down":
+                    dx, dy = 0, 1
                 if abs(dx) >= abs(dy):
                     if dx >= 0:
                         arrow = [(p2["x"], p2["y"]), (p2["x"] - size, p2["y"] - size / 2), (p2["x"] - size, p2["y"] + size / 2)]
@@ -272,17 +363,16 @@ def render_generated_node_svg(node: dict[str, Any], block_bounds: dict[str, Any]
         style = node.get("style") or {}
         fills = node.get("fills") or []
         fill_hex, fill_opacity = style_color_to_svg(fills[0] if fills else None, "#111111")
-        font_size = style.get("fontSize") or 12
-        lines = text_value.splitlines() or [text_value]
-        x = local["x"] + 2
-        y = local["y"] + font_size
-        parts = [f'<text x="{round(x,2)}" y="{round(y,2)}" font-size="{font_size}" fill="{fill_hex}" fill-opacity="{fill_opacity}" font-family="{svg_escape(style.get("fontFamily") or "Arial")}">']
-        line_height = style.get("lineHeightPx") or (font_size * 1.25)
-        for idx, line in enumerate(lines):
-            dy = 0 if idx == 0 else line_height
-            parts.append(f'<tspan x="{round(x,2)}" dy="{round(dy,2)}">{svg_escape(line)}</tspan>')
-        parts.append("</text>")
-        return "".join(parts)
+        return text_svg_markup(
+            text_value,
+            local,
+            font_size=style.get("fontSize") or 12,
+            fill_hex=fill_hex,
+            fill_opacity=fill_opacity,
+            font_family=style.get("fontFamily") or "Arial",
+            horizontal_align=style.get("textAlignHorizontal") or "LEFT",
+            vertical_align=style.get("textAlignVertical") or "TOP",
+        )
     return ""
 
 
@@ -455,9 +545,20 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
                     fill = (child.get("fills") or [{}])[0]
                     fill_hex, fill_opacity = style_color_to_svg(fill, "#111111")
                     parts.append(
-                        f'<text x="{round(local["x"] + 2,2)}" y="{round(local["y"] + (style.get("fontSize") or 12),2)}" '
-                        f'font-size="{style.get("fontSize") or 12}" fill="{fill_hex}" fill-opacity="{fill_opacity}" '
-                        f'font-family="{svg_escape(style.get("fontFamily") or "Arial")}">{svg_escape(text_value)}</text>'
+                        text_svg_markup(
+                            text_value,
+                            local,
+                            font_size=style.get("fontSize") or 12,
+                            fill_hex=fill_hex,
+                            fill_opacity=fill_opacity,
+                            font_family=style.get("fontFamily") or "Arial",
+                            horizontal_align=style.get("textAlignHorizontal") or "LEFT",
+                            vertical_align=style.get("textAlignVertical") or "TOP",
+                            l_ins=4,
+                            r_ins=4,
+                            t_ins=2,
+                            b_ins=2,
+                        )
                     )
                 elif child.get("type") == "RECTANGLE":
                     local = local_bounds(bounds, block["bounds"])
@@ -480,8 +581,20 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
                     fill = (child.get("fills") or [{}])[0]
                     fill_hex, fill_opacity = style_color_to_svg(fill, "#111111")
                     parts.append(
-                        f'<text x="{round(local["x"] + 2,2)}" y="{round(local["y"] + (style.get("fontSize") or 12),2)}" '
-                        f'font-size="{style.get("fontSize") or 12}" fill="{fill_hex}" fill-opacity="{fill_opacity}">{svg_escape(child.get("characters") or child.get("name") or "")}</text>'
+                        text_svg_markup(
+                            child.get("characters") or child.get("name") or "",
+                            local,
+                            font_size=style.get("fontSize") or 12,
+                            fill_hex=fill_hex,
+                            fill_opacity=fill_opacity,
+                            font_family=style.get("fontFamily") or "Arial",
+                            horizontal_align=style.get("textAlignHorizontal") or "LEFT",
+                            vertical_align=style.get("textAlignVertical") or "TOP",
+                            l_ins=4,
+                            r_ins=4,
+                            t_ins=2,
+                            b_ins=2,
+                        )
                     )
     return build_svg_block_node(block, "".join(parts), "table_block_svg")
 
