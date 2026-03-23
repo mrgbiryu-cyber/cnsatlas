@@ -1180,6 +1180,7 @@ function createReplayContainer(node, parentNode, origin) {
   frame.strokes = [];
   frame.clipsContent = false;
   parentNode.appendChild(frame);
+  annotateReplayNode(frame, node, origin, "frame-container");
   return frame;
 }
 
@@ -1377,6 +1378,21 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
       renderReplayRectangle(node, parentNode, currentNodeOrigin, bundle);
       return;
     case "FRAME":
+      if (node.clipsContent) {
+        const clipFrame = createReplayContainer(node, parentNode, currentNodeOrigin);
+        clipFrame.clipsContent = true;
+        const childBounds = getReplayBounds(node) || origin;
+        const clipOrigin = Object.assign({}, nextOriginBase, {
+          x: childBounds.x,
+          y: childBounds.y,
+          width: childBounds.width,
+          height: childBounds.height,
+        });
+        for (const child of node.children || []) {
+          await renderReplayNode(child, clipFrame, clipOrigin, bundle);
+        }
+        return;
+      }
       if (!isClipLikeReplayNode(node) && (hasVisibleSolidPaint(node) || hasVisibleStroke(node))) {
         createReplayFrameShell(node, parentNode, currentNodeOrigin);
       }
