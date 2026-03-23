@@ -91,7 +91,7 @@
             ],
             "children": [
               {
-                "id": "s29:layout_29/element_1:row_1:cell_1:cell",
+                "id": "s29:layout_29/element_1:row_1:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 1-1",
                 "absoluteBoundingBox": {
@@ -118,11 +118,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 93.04 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -134,17 +130,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "layout_29/element_1/row_1/cell_1",
@@ -205,69 +192,7 @@
                 }
               },
               {
-                "id": "s29:layout_29/element_1:row_1:cell_2:cell",
-                "type": "VECTOR",
-                "name": "cell 1-2",
-                "absoluteBoundingBox": {
-                  "x": 124.38,
-                  "y": 8.63,
-                  "width": 601.49,
-                  "height": 21.0
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "fillGeometry": [
-                  {
-                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z",
-                    "windingRule": "NONZERO"
-                  }
-                ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z"
-                  }
-                ],
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
-                    }
-                  }
-                ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
-                "children": [],
-                "debug": {
-                  "source_path": "layout_29/element_1/row_1/cell_2",
-                  "source_node_id": "20",
-                  "source_subtype": "table_cell",
-                  "source_scope": "layout"
-                }
-              },
-              {
-                "id": "s29:layout_29/element_1:row_1:cell_3:cell",
+                "id": "s29:layout_29/element_1:row_1:cell_3:fill",
                 "type": "VECTOR",
                 "name": "cell 1-3",
                 "absoluteBoundingBox": {
@@ -294,11 +219,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 76.85 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -310,17 +231,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "layout_29/element_1/row_1/cell_3",
@@ -381,69 +293,7 @@
                 }
               },
               {
-                "id": "s29:layout_29/element_1:row_1:cell_4:cell",
-                "type": "VECTOR",
-                "name": "cell 1-4",
-                "absoluteBoundingBox": {
-                  "x": 802.72,
-                  "y": 8.63,
-                  "width": 133.66,
-                  "height": 21.0
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "fillGeometry": [
-                  {
-                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z",
-                    "windingRule": "NONZERO"
-                  }
-                ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z"
-                  }
-                ],
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
-                    }
-                  }
-                ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
-                "children": [],
-                "debug": {
-                  "source_path": "layout_29/element_1/row_1/cell_4",
-                  "source_node_id": "20",
-                  "source_subtype": "table_cell",
-                  "source_scope": "layout"
-                }
-              },
-              {
-                "id": "s29:layout_29/element_1:row_2:cell_1:cell",
+                "id": "s29:layout_29/element_1:row_2:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 2-1",
                 "absoluteBoundingBox": {
@@ -470,11 +320,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 93.04 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -486,17 +332,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "layout_29/element_1/row_2/cell_1",
@@ -557,69 +394,7 @@
                 }
               },
               {
-                "id": "s29:layout_29/element_1:row_2:cell_2:cell",
-                "type": "VECTOR",
-                "name": "cell 2-2",
-                "absoluteBoundingBox": {
-                  "x": 124.38,
-                  "y": 29.63,
-                  "width": 601.49,
-                  "height": 21.0
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "fillGeometry": [
-                  {
-                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z",
-                    "windingRule": "NONZERO"
-                  }
-                ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z"
-                  }
-                ],
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
-                    }
-                  }
-                ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
-                "children": [],
-                "debug": {
-                  "source_path": "layout_29/element_1/row_2/cell_2",
-                  "source_node_id": "20",
-                  "source_subtype": "table_cell",
-                  "source_scope": "layout"
-                }
-              },
-              {
-                "id": "s29:layout_29/element_1:row_2:cell_3:cell",
+                "id": "s29:layout_29/element_1:row_2:cell_3:fill",
                 "type": "VECTOR",
                 "name": "cell 2-3",
                 "absoluteBoundingBox": {
@@ -646,11 +421,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 76.85 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -662,17 +433,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "layout_29/element_1/row_2/cell_3",
@@ -733,14 +495,14 @@
                 }
               },
               {
-                "id": "s29:layout_29/element_1:row_2:cell_4:cell",
+                "id": "s29:layout_29/element_1:hline:0",
                 "type": "VECTOR",
-                "name": "cell 2-4",
+                "name": "table:hline:0",
                 "absoluteBoundingBox": {
-                  "x": 802.72,
-                  "y": 29.63,
-                  "width": 133.66,
-                  "height": 21.0
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
                 },
                 "relativeTransform": [
                   [
@@ -754,27 +516,13 @@
                     0
                   ]
                 ],
-                "fillGeometry": [
-                  {
-                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z",
-                    "windingRule": "NONZERO"
-                  }
-                ],
+                "fillGeometry": [],
                 "strokeGeometry": [
                   {
-                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z"
+                    "path": "M 0 0.0 L 905.04 0.0"
                   }
                 ],
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
-                    }
-                  }
-                ],
+                "fills": [],
                 "strokes": [
                   {
                     "type": "SOLID",
@@ -788,9 +536,345 @@
                 "strokeWeight": 1,
                 "children": [],
                 "debug": {
-                  "source_path": "layout_29/element_1/row_2/cell_4",
+                  "source_path": "layout_29/element_1",
                   "source_node_id": "20",
-                  "source_subtype": "table_cell",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:hline:1",
+                "type": "VECTOR",
+                "name": "table:hline:1",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 21.0 L 905.04 21.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:hline:2",
+                "type": "VECTOR",
+                "name": "table:hline:2",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 42.0 L 905.04 42.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:vline:0",
+                "type": "VECTOR",
+                "name": "table:vline:0",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0.0 0 L 0.0 33.59"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:vline:1",
+                "type": "VECTOR",
+                "name": "table:vline:1",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 93.04 0 L 93.04 33.59"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:vline:2",
+                "type": "VECTOR",
+                "name": "table:vline:2",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 694.52 0 L 694.52 33.59"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:vline:3",
+                "type": "VECTOR",
+                "name": "table:vline:3",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 771.37 0 L 771.37 33.59"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:vline:4",
+                "type": "VECTOR",
+                "name": "table:vline:4",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 905.04,
+                  "height": 33.59
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 905.04 0 L 905.04 33.59"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table",
                   "source_scope": "layout"
                 }
               }
@@ -1752,7 +1836,7 @@
             ],
             "children": [
               {
-                "id": "s29:slide_29/element_37:row_1:cell_1:cell",
+                "id": "s29:slide_29/element_37:row_1:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 1-1",
                 "absoluteBoundingBox": {
@@ -1779,11 +1863,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 275.0 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -1795,17 +1875,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_1/cell_1",
@@ -1866,7 +1937,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_2:cell_1:cell",
+                "id": "s29:slide_29/element_37:row_2:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 2-1",
                 "absoluteBoundingBox": {
@@ -1893,11 +1964,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 275.0 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -1909,17 +1976,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_2/cell_1",
@@ -1980,7 +2038,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_3:cell_1:cell",
+                "id": "s29:slide_29/element_37:row_3:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 3-1",
                 "absoluteBoundingBox": {
@@ -2007,11 +2065,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 25.56 V 30.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2023,17 +2077,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_3/cell_1",
@@ -2094,7 +2139,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_3:cell_2:cell",
+                "id": "s29:slide_29/element_37:row_3:cell_2:fill",
                 "type": "VECTOR",
                 "name": "cell 3-2",
                 "absoluteBoundingBox": {
@@ -2121,11 +2166,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 249.45 V 30.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2137,17 +2178,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_3/cell_2",
@@ -2208,7 +2240,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_4:cell_1:cell",
+                "id": "s29:slide_29/element_37:row_4:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 4-1",
                 "absoluteBoundingBox": {
@@ -2235,11 +2267,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 25.56 V 203.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2251,17 +2279,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_4/cell_1",
@@ -2322,7 +2341,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_4:cell_2:cell",
+                "id": "s29:slide_29/element_37:row_4:cell_2:fill",
                 "type": "VECTOR",
                 "name": "cell 4-2",
                 "absoluteBoundingBox": {
@@ -2349,11 +2368,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 249.45 V 203.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2365,17 +2380,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_4/cell_2",
@@ -2436,7 +2442,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_5:cell_1:cell",
+                "id": "s29:slide_29/element_37:row_5:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 5-1",
                 "absoluteBoundingBox": {
@@ -2463,11 +2469,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 25.56 V 246.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2479,17 +2481,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_5/cell_1",
@@ -2550,7 +2543,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_5:cell_2:cell",
+                "id": "s29:slide_29/element_37:row_5:cell_2:fill",
                 "type": "VECTOR",
                 "name": "cell 5-2",
                 "absoluteBoundingBox": {
@@ -2577,11 +2570,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 249.45 V 246.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2593,17 +2582,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_5/cell_2",
@@ -2664,7 +2644,7 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_37:row_6:cell_1:cell",
+                "id": "s29:slide_29/element_37:row_6:cell_1:fill",
                 "type": "VECTOR",
                 "name": "cell 6-1",
                 "absoluteBoundingBox": {
@@ -2691,11 +2671,7 @@
                     "windingRule": "NONZERO"
                   }
                 ],
-                "strokeGeometry": [
-                  {
-                    "path": "M 0 0 H 275.0 V 21.0 H 0 Z"
-                  }
-                ],
+                "strokeGeometry": [],
                 "fills": [
                   {
                     "type": "SOLID",
@@ -2707,17 +2683,8 @@
                     "opacity": null
                   }
                 ],
-                "strokes": [
-                  {
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.75,
-                      "g": 0.75,
-                      "b": 0.75
-                    }
-                  }
-                ],
-                "strokeWeight": 1,
+                "strokes": [],
+                "strokeWeight": 0,
                 "children": [],
                 "debug": {
                   "source_path": "slide_29/element_37/row_6/cell_1",
@@ -2775,6 +2742,486 @@
                   "source_subtype": "table_cell",
                   "source_scope": "slide",
                   "rotation_degrees": 0.0
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:0",
+                "type": "VECTOR",
+                "name": "table:hline:0",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0.0 L 275.0 0.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:1",
+                "type": "VECTOR",
+                "name": "table:hline:1",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 21.0 L 275.0 21.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:2",
+                "type": "VECTOR",
+                "name": "table:hline:2",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 42.0 L 275.0 42.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:3",
+                "type": "VECTOR",
+                "name": "table:hline:3",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 63.0 L 275.0 63.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:4",
+                "type": "VECTOR",
+                "name": "table:hline:4",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 84.0 L 275.0 84.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:5",
+                "type": "VECTOR",
+                "name": "table:hline:5",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 105.0 L 275.0 105.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:hline:6",
+                "type": "VECTOR",
+                "name": "table:hline:6",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 126.0 L 275.0 126.0"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:vline:0",
+                "type": "VECTOR",
+                "name": "table:vline:0",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0.0 0 L 0.0 749.01"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:vline:1",
+                "type": "VECTOR",
+                "name": "table:vline:1",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 25.56 0 L 25.56 749.01"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_37:vline:2",
+                "type": "VECTOR",
+                "name": "table:vline:2",
+                "absoluteBoundingBox": {
+                  "x": 660.66,
+                  "y": 43.09,
+                  "width": 275.0,
+                  "height": 749.01
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 275.01 0 L 275.01 749.01"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_37",
+                  "source_node_id": "49",
+                  "source_subtype": "table",
+                  "source_scope": "slide"
                 }
               }
             ],

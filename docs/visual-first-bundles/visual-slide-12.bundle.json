@@ -108,10 +108,10 @@
             "type": "VECTOR",
             "name": "Google Shape;57;p66:line",
             "absoluteBoundingBox": {
-              "x": 461.95,
-              "y": 54.96,
-              "width": 9.99,
-              "height": 8.48
+              "x": 27.34,
+              "y": 37.47,
+              "width": 904.54,
+              "height": 8.0
             },
             "relativeTransform": [
               [
@@ -128,7 +128,7 @@
             "fillGeometry": [],
             "strokeGeometry": [
               {
-                "path": "M 4.0 4.48 L 5.99 4.0"
+                "path": "M 4.0 4.0 L 900.54 4.0"
               }
             ],
             "fills": [],

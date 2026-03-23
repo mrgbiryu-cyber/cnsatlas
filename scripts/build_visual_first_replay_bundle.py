@@ -388,7 +388,22 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
     start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
     end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
     adjusts = extra.get("connector_adjusts") or {}
-    if start_px and end_px:
+    bounds = candidate.get("bounds_px") or {}
+    raw_width = float(bounds.get("width") or 0)
+    raw_height = float(bounds.get("height") or 0)
+    is_wide_straight = kind == "straightConnector1" and raw_width >= max(raw_height * 8, 100)
+    is_tall_straight = kind == "straightConnector1" and raw_height >= max(raw_width * 8, 100)
+    if is_wide_straight:
+        points = [
+            {"x": abs_bounds["x"], "y": abs_bounds["y"] + (abs_bounds["height"] / 2)},
+            {"x": abs_bounds["x"] + abs_bounds["width"], "y": abs_bounds["y"] + (abs_bounds["height"] / 2)},
+        ]
+    elif is_tall_straight:
+        points = [
+            {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"]},
+            {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"] + abs_bounds["height"]},
+        ]
+    elif start_px and end_px:
         points = readable_elbow(start_px, end_px, kind, adjusts)
     elif kind == "straightConnector1":
         points = [
@@ -528,7 +543,6 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
     bounds = candidate.get("bounds_px") or {"x": 0, "y": 0, "width": 120, "height": 40}
     abs_bounds = make_bounds(page_offset_x + scale_value(bounds["x"], scale_x), page_offset_y + scale_value(bounds["y"], scale_y), scale_value(bounds["width"], scale_x), scale_value(bounds["height"], scale_y))
     extra = candidate.get("extra") or {}
-    shape_style = extra.get("shape_style") or {}
     table_node = {
         "id": candidate["candidate_id"],
         "type": "GROUP",
@@ -544,6 +558,18 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
     scaled_row_heights: dict[str, float] = {}
     for row_candidate in rows:
         scaled_row_heights[row_candidate["candidate_id"]] = max(scale_value((row_candidate.get("extra") or {}).get("row_height_px") or 28, scale_y), 21.0)
+
+    row_y_positions = [abs_bounds["y"]]
+    for row_candidate in rows:
+        row_y_positions.append(row_y_positions[-1] + scaled_row_heights[row_candidate["candidate_id"]])
+    if grid_columns:
+        column_widths = [scale_value(column.get("width_px") or 0, scale_x) for column in grid_columns]
+    else:
+        max_cols = max((len([child for child in children_map.get(row["candidate_id"], []) if child.get("subtype") == "table_cell"]) for row in rows), default=1)
+        column_widths = [abs_bounds["width"] / max(max_cols, 1)] * max_cols
+    column_x_positions = [abs_bounds["x"]]
+    for width in column_widths:
+        column_x_positions.append(column_x_positions[-1] + width)
 
     for row_candidate in rows:
         cell_candidates = [child for child in children_map.get(row_candidate["candidate_id"], []) if child.get("subtype") == "table_cell"]
@@ -573,21 +599,22 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                 spanned_height = sum(scaled_row_heights[rows[i]["candidate_id"]] for i in range(current_index, min(current_index + row_span, len(rows))))
             cell_abs_bounds = make_bounds(row_abs_bounds["x"] + cell_x, row_abs_bounds["y"], cell_width, spanned_height)
             cell_style = cell_extra.get("cell_style") or {}
-            fills = [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)] if cell_style.get("fill") else [{"type": "SOLID", "color": {"r": 1, "g": 1, "b": 1}}]
-            cell_path = rect_path(cell_abs_bounds["width"], cell_abs_bounds["height"])
-            cell_node = build_vector_node(
-                f"{cell_candidate['candidate_id']}:cell",
-                cell_candidate.get("title") or f"cell {start_column_index}",
-                cell_abs_bounds,
-                fill_geometry=[{"path": cell_path, "windingRule": "NONZERO"}] if fills else [],
-                stroke_geometry=[{"path": cell_path}],
-                fills=fills,
-                strokes=[{"type": "SOLID", "color": {"r": 0.75, "g": 0.75, "b": 0.75}}],
-                stroke_weight=max(min(scale_x, scale_y), 1),
-                debug=build_source_debug(cell_candidate),
-                relative_transform=relative_transform_from_bounds(cell_candidate.get("bounds_px")),
-            )
-            table_node["children"].append(cell_node)
+            if cell_style.get("fill"):
+                cell_path = rect_path(cell_abs_bounds["width"], cell_abs_bounds["height"])
+                table_node["children"].append(
+                    build_vector_node(
+                        f"{cell_candidate['candidate_id']}:fill",
+                        cell_candidate.get("title") or f"cell {start_column_index}",
+                        cell_abs_bounds,
+                        fill_geometry=[{"path": cell_path, "windingRule": "NONZERO"}],
+                        stroke_geometry=[],
+                        fills=[solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
+                        strokes=[],
+                        stroke_weight=0,
+                        debug=build_source_debug(cell_candidate),
+                        relative_transform=relative_transform_from_bounds(cell_candidate.get("bounds_px")),
+                    )
+                )
             if cell_candidate.get("text"):
                 cell_text = str(cell_candidate.get("text") or "")
                 is_header_cell = bool(cell_style.get("fill"))
@@ -605,6 +632,41 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                     )
                 )
         row_cursor_y += row_height
+
+    grid_stroke = [{"type": "SOLID", "color": {"r": 0.75, "g": 0.75, "b": 0.75}}]
+    line_weight = max(min(scale_x, scale_y), 1)
+    for idx, y in enumerate(row_y_positions):
+        local_y = round(y - abs_bounds["y"], 2)
+        path = f"M 0 {local_y} L {round(abs_bounds['width'], 2)} {local_y}"
+        table_node["children"].append(
+            build_vector_node(
+                f"{candidate['candidate_id']}:hline:{idx}",
+                f"table:hline:{idx}",
+                abs_bounds,
+                stroke_geometry=[{"path": path}],
+                fills=[],
+                strokes=grid_stroke,
+                stroke_weight=line_weight,
+                debug=build_source_debug(candidate),
+                relative_transform=identity_affine(),
+            )
+        )
+    for idx, x in enumerate(column_x_positions):
+        local_x = round(x - abs_bounds["x"], 2)
+        path = f"M {local_x} 0 L {local_x} {round(abs_bounds['height'], 2)}"
+        table_node["children"].append(
+            build_vector_node(
+                f"{candidate['candidate_id']}:vline:{idx}",
+                f"table:vline:{idx}",
+                abs_bounds,
+                stroke_geometry=[{"path": path}],
+                fills=[],
+                strokes=grid_stroke,
+                stroke_weight=line_weight,
+                debug=build_source_debug(candidate),
+                relative_transform=identity_affine(),
+            )
+        )
     return table_node
 
 
