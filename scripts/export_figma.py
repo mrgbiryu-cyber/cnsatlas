@@ -18,13 +18,13 @@ sys.stderr.reconfigure(encoding='utf-8')
 # ==========================================
 # 🛑 아래 4가지 변수를 본인 피그마 정보로 변경하세요!
 # ==========================================
-FIGMA_TOKEN = ".."
+FIGMA_TOKEN = "figd_"
 FILE_KEY = "VdhL71dZBwFoqFeuPCuG1l"
 
 # 추출할 3개 페이지(프레임)의 노드 아이디 (예: "12:345")
-PAGE_1_NODE_ID = "3:5714"
-PAGE_2_NODE_ID = "3:6010"
-PAGE_3_NODE_ID = "3:6840"
+PAGE_1_NODE_ID = "4:7232"
+PAGE_2_NODE_ID = "4:7526"
+PAGE_3_NODE_ID = "4:8354"
 # ==========================================
 
 HEADERS = {
