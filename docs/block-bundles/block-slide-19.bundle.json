@@ -1,0 +1,846 @@
+{
+  "kind": "figma-replay-bundle",
+  "source_kind": "ppt-block-prototype",
+  "visual_model_version": "block-v1",
+  "source_file": "/mnt/c/Users/mrgbi/OneDrive/Desktop/cnsatlas/docs/ppt-intermediate-candidates-12-19-29.json",
+  "file_name": "ppt-intermediate-candidates-12-19-29.json",
+  "page_name": "Slide 19 - 리뷰 - 제품 카테고리별 평가 항목",
+  "node_id": "page:19",
+  "document": {
+    "id": "page:19",
+    "type": "FRAME",
+    "name": "Slide 19 - 리뷰 - 제품 카테고리별 평가 항목",
+    "absoluteBoundingBox": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    "relativeTransform": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "fills": [
+      {
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        }
+      }
+    ],
+    "strokes": [],
+    "strokeWeight": 0,
+    "children": [
+      {
+        "id": "page:19:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 960.0,
+          "height": 540.0
+        },
+        "relativeTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "fills": [],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [
+          {
+            "id": "page:19:header_block",
+            "type": "SVG_BLOCK",
+            "name": "header_block",
+            "absoluteBoundingBox": {
+              "x": 31.34,
+              "y": 0.04,
+              "width": 928.66,
+              "height": 71.67
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"928.66\" height=\"71.67\" viewBox=\"0 0 928.66 71.67\"><rect x=\"0\" y=\"0\" width=\"928.66\" height=\"42\" fill=\"white\" fill-opacity=\"0\" /><rect x=\"0.0\" y=\"15.42\" width=\"897.33\" height=\"25.52\" rx=\"0\" ry=\"0\" fill=\"none\" stroke=\"none\" /><line x1=\"0.0\" y1=\"41.43\" x2=\"896.54\" y2=\"41.43\" stroke=\"#7F7F7F\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><text x=\"-29.34\" y=\"13.96\" font-size=\"14\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Inter\"><tspan x=\"-29.34\" dy=\"0\">리뷰 - 제품 카테고리별 평가 항목</tspan></text><rect x=\"731.18\" y=\"0.0\" width=\"197.48\" height=\"15.46\" rx=\"0\" ry=\"0\" fill=\"#B3486D\" fill-opacity=\"1.0\" stroke=\"none\" /><text x=\"733.18\" y=\"8.0\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체2.0 Light\"><tspan x=\"733.18\" dy=\"0\">V0.98 제품 카테고리별 평가 항목 현행화</tspan></text><rect x=\"731.18\" y=\"9.54\" width=\"197.48\" height=\"11.89\" rx=\"0\" ry=\"0\" fill=\"#A4990A\" fill-opacity=\"1.0\" stroke=\"none\" /><text x=\"733.18\" y=\"17.54\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체2.0 Light\"><tspan x=\"733.18\" dy=\"0\">V1.01 as-is 맞춰 중카 기준으로 승계, 카테고리ID 추가</tspan></text><text x=\"720.46\" y=\"53.01\" font-size=\"8\" fill=\"#C00000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체2.0 Regular\"><tspan x=\"720.46\" dy=\"0\">※ 카테고리 개편내용 현행화하여 평가항목 정리</tspan><tspan x=\"720.46\" dy=\"10.0\">※ 기존 평가 항목 승계</tspan></text><text x=\"9.32\" y=\"59.28\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체2.0 Regular\"><tspan x=\"9.32\" dy=\"0\">카테고리별 평가 항목 (중카 기준)</tspan></text><text x=\"418.49\" y=\"59.28\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체2.0 Regular\"><tspan x=\"418.49\" dy=\"0\">항목별 평가 지표</tspan></text></svg>",
+            "children": [],
+            "debug": {
+              "generator": "block-prototype-v1",
+              "block_type": "header_block",
+              "render_mode": "vector",
+              "page_type": "table-heavy",
+              "role": "header_block_svg",
+              "root_candidate_ids": [
+                "s19:layout_19/element_1",
+                "s19:layout_19/element_4",
+                "s19:slide_19/element_1",
+                "s19:slide_19/element_9",
+                "s19:slide_19/element_12",
+                "s19:slide_19/element_8",
+                "s19:slide_19/element_6",
+                "s19:slide_19/element_3"
+              ]
+            }
+          },
+          {
+            "id": "page:19:table_block",
+            "type": "SVG_BLOCK",
+            "name": "table_block",
+            "absoluteBoundingBox": {
+              "x": 38.66,
+              "y": 77.75,
+              "width": 890.01,
+              "height": 439.19
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"890.01\" height=\"439.19\" viewBox=\"0 0 890.01 439.19\"><rect x=\"410.58\" y=\"0.0\" width=\"56.82\" height=\"36.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"421.44\" y=\"13.43\" font-size=\"9\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">항목</text><rect x=\"467.4\" y=\"0.0\" width=\"104.76\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"478.26\" y=\"12.43\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">3 점 척도 평가 ( 리뷰 작성 팝업 노출 )</text><rect x=\"467.4\" y=\"18.0\" width=\"104.76\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"478.26\" y=\"30.43\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">노출 문구</text><rect x=\"572.16\" y=\"18.0\" width=\"105.95\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"583.02\" y=\"30.43\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">긍정</text><rect x=\"678.11\" y=\"18.0\" width=\"105.94\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"688.97\" y=\"30.43\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통</text><rect x=\"784.05\" y=\"18.0\" width=\"105.94\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"794.91\" y=\"30.43\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부정</text><rect x=\"410.58\" y=\"36.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"46.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질</text><rect x=\"467.4\" y=\"36.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"46.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질 은 어떤가요 ?</text><rect x=\"572.16\" y=\"36.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"46.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">선명해요</text><rect x=\"678.11\" y=\"36.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"46.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"36.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"46.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">아쉬워요</text><rect x=\"410.58\" y=\"54.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"64.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질</text><rect x=\"467.4\" y=\"54.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"64.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질 은 어떤가요 ?</text><rect x=\"572.16\" y=\"54.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"64.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">뛰어나요</text><rect x=\"678.11\" y=\"54.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"64.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"54.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"64.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">아쉬워요</text><rect x=\"410.58\" y=\"72.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"82.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능</text><rect x=\"467.4\" y=\"72.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"82.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 은 어떤가요 ?</text><rect x=\"572.16\" y=\"72.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"82.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">좋아요</text><rect x=\"678.11\" y=\"72.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"82.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"72.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"82.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">별로예요</text><rect x=\"410.58\" y=\"90.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"100.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사운드</text><rect x=\"467.4\" y=\"90.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"100.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사운드 는 어떤가요 ?</text><rect x=\"572.16\" y=\"90.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"100.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">우수해요</text><rect x=\"678.11\" y=\"90.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"100.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"90.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"100.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">별로예요</text><rect x=\"410.58\" y=\"108.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"118.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">디자인</text><rect x=\"467.4\" y=\"108.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"118.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">디자인 은 어떤가요 ?</text><rect x=\"572.16\" y=\"108.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"118.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">뛰어나요</text><rect x=\"678.11\" y=\"108.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"118.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"108.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"118.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">별로예요</text><rect x=\"410.58\" y=\"126.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"136.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">기능</text><rect x=\"467.4\" y=\"126.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"136.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">기능 은 어떤가요 ?</text><rect x=\"572.16\" y=\"126.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"136.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">다양해요</text><rect x=\"678.11\" y=\"126.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"136.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"126.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"136.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">아쉬워요</text><rect x=\"410.58\" y=\"144.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"154.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">휴대성</text><rect x=\"467.4\" y=\"144.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"154.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">휴대성 은 어떤가요 ?</text><rect x=\"572.16\" y=\"144.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"154.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">좋아요</text><rect x=\"678.11\" y=\"144.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"154.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"144.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"154.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">떨어져요</text><rect x=\"410.58\" y=\"162.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"172.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">용량 효율성</text><rect x=\"467.4\" y=\"162.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"172.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">용량 효율성 은 어떤가요 ?</text><rect x=\"572.16\" y=\"162.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"172.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">높아요</text><rect x=\"678.11\" y=\"162.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"172.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"162.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"172.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">떨어져요</text><rect x=\"410.58\" y=\"180.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"190.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부가기능</text><rect x=\"467.4\" y=\"180.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"190.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부가기능 은 어떤가요 ?</text><rect x=\"572.16\" y=\"180.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"190.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">많아요</text><rect x=\"678.11\" y=\"180.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"190.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"180.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"190.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">아쉬워요</text><rect x=\"410.58\" y=\"198.0\" width=\"56.82\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"208.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사용성</text><rect x=\"467.4\" y=\"198.0\" width=\"104.76\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"475.25\" y=\"208.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사용성 은 어떤가요 ?</text><rect x=\"572.16\" y=\"198.0\" width=\"105.95\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"580.01\" y=\"208.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">좋아요</text><rect x=\"678.11\" y=\"198.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"685.96\" y=\"208.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통이예요</text><rect x=\"784.05\" y=\"198.0\" width=\"105.94\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"791.9\" y=\"208.92\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">별로예요</text><rect x=\"0.0\" y=\"0.3\" width=\"70.86\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"8.3\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">대카테고리</text><rect x=\"70.86\" y=\"0.3\" width=\"72.42\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"8.3\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">중카테고리</text><rect x=\"143.28\" y=\"0.3\" width=\"98.17\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"8.3\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">카테고리 ID</text><rect x=\"241.45\" y=\"0.3\" width=\"146.15\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"0.0\" y=\"18.3\" width=\"70.86\" height=\"54.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"33.19\" font-size=\"13\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">TV/AV</text><rect x=\"70.86\" y=\"18.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"28.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">TV</text><rect x=\"143.28\" y=\"18.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"28.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000025</text><rect x=\"241.45\" y=\"18.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"28.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질 | 사운드| 부가기능</text><rect x=\"70.86\" y=\"36.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"46.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">프로젝터</text><rect x=\"143.28\" y=\"36.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"46.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000032</text><rect x=\"241.45\" y=\"36.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"46.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"54.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"64.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">오디오 / 비디오</text><rect x=\"143.28\" y=\"54.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"64.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000036</text><rect x=\"241.45\" y=\"54.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"64.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질 | 디자인 | 사용성</text><rect x=\"0.0\" y=\"72.3\" width=\"70.86\" height=\"54.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"87.19\" font-size=\"13\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">PC / 모니터</text><rect x=\"70.86\" y=\"72.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"82.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">노트북 / 태블릿</text><rect x=\"143.28\" y=\"72.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"82.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000046</text><rect x=\"241.45\" y=\"72.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"82.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 휴대성</text><rect x=\"70.86\" y=\"90.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"100.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">일체형 / 테스트톱</text><rect x=\"143.28\" y=\"90.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"100.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000051</text><rect x=\"241.45\" y=\"90.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"100.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인</text><rect x=\"70.86\" y=\"108.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"118.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">모니터</text><rect x=\"143.28\" y=\"108.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"118.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000055</text><rect x=\"241.45\" y=\"108.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"118.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질 | 기능 | 디자인</text><rect x=\"0.0\" y=\"126.3\" width=\"70.86\" height=\"126.67\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"168.19\" font-size=\"40\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">주방가전</text><rect x=\"70.86\" y=\"126.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"136.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">냉장고</text><rect x=\"143.28\" y=\"126.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"136.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000065</text><rect x=\"241.45\" y=\"126.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"136.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 용량 효율성</text><rect x=\"70.86\" y=\"144.3\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"154.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">김치냉장고</text><rect x=\"143.28\" y=\"144.3\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"154.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000072</text><rect x=\"241.45\" y=\"144.3\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"154.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 용량 효율성</text><rect x=\"70.86\" y=\"162.3\" width=\"72.42\" height=\"18.67\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"172.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">전자레인지/오븐</text><rect x=\"143.28\" y=\"162.3\" width=\"98.17\" height=\"18.67\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"172.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50019018</text><rect x=\"241.45\" y=\"162.3\" width=\"146.15\" height=\"18.67\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"172.19\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 부가기능</text><rect x=\"70.86\" y=\"180.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"190.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">전기레인지</text><rect x=\"143.28\" y=\"180.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"190.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000076</text><rect x=\"241.45\" y=\"180.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"190.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 부가기능</text><rect x=\"70.86\" y=\"198.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"208.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">식기세척기</text><rect x=\"143.28\" y=\"198.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"208.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000086</text><rect x=\"241.45\" y=\"198.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"208.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"216.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"226.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">정수기</text><rect x=\"143.28\" y=\"216.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"226.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000094</text><rect x=\"241.45\" y=\"216.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"226.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"234.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"244.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">맥주제조기</text><rect x=\"143.28\" y=\"234.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"244.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000087</text><rect x=\"241.45\" y=\"234.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"244.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"0.0\" y=\"252.97\" width=\"70.86\" height=\"108.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"288.86\" font-size=\"34\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">생활가전</text><rect x=\"70.86\" y=\"252.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"262.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">워시타워</text><rect x=\"143.28\" y=\"252.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"262.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000110</text><rect x=\"241.45\" y=\"252.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"262.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"270.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"280.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">세탁기</text><rect x=\"143.28\" y=\"270.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"280.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000101</text><rect x=\"241.45\" y=\"270.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"280.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"288.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"298.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">의류건조기</text><rect x=\"143.28\" y=\"288.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"298.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000107</text><rect x=\"241.45\" y=\"288.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"298.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"306.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"316.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">의류관리기</text><rect x=\"143.28\" y=\"306.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"316.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000106</text><rect x=\"241.45\" y=\"306.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"316.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"324.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"334.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">청소기</text><rect x=\"143.28\" y=\"324.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"334.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000111</text><rect x=\"241.45\" y=\"324.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"334.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 휴대성</text><rect x=\"70.86\" y=\"342.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"352.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">안마의자</text><rect x=\"143.28\" y=\"342.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"352.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000123</text><rect x=\"241.45\" y=\"342.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"352.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 부가기능</text><rect x=\"0.0\" y=\"360.97\" width=\"70.86\" height=\"72.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"380.86\" font-size=\"18\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">에어컨/에어케어</text><rect x=\"70.86\" y=\"360.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"370.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">에어컨</text><rect x=\"143.28\" y=\"360.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"370.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000131</text><rect x=\"241.45\" y=\"360.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"370.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"378.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"388.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">공기청정기</text><rect x=\"143.28\" y=\"378.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"388.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000143</text><rect x=\"241.45\" y=\"378.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"388.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"396.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"406.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제습기</text><rect x=\"143.28\" y=\"396.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"406.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000142</text><rect x=\"241.45\" y=\"396.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"406.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"414.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"424.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">가습기</text><rect x=\"143.28\" y=\"414.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"424.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000139</text><rect x=\"241.45\" y=\"414.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"424.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"0.0\" y=\"432.97\" width=\"70.86\" height=\"72.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"456.86\" font-size=\"22\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">모바일</text><rect x=\"70.86\" y=\"432.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"442.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">스마트폰</text><rect x=\"143.28\" y=\"432.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"442.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제외</text><rect x=\"241.45\" y=\"432.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"442.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"450.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"460.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">피처폰</text><rect x=\"143.28\" y=\"450.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"460.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제외</text><rect x=\"241.45\" y=\"450.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"460.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"468.97\" width=\"72.42\" height=\"36.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"479.86\" font-size=\"9\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">스마트 디바이스</text><rect x=\"143.28\" y=\"468.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"478.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제외</text><rect x=\"241.45\" y=\"468.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"478.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"143.28\" y=\"486.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"496.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제외</text><rect x=\"241.45\" y=\"486.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"496.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"0.0\" y=\"504.97\" width=\"70.86\" height=\"54.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"9.56\" y=\"519.86\" font-size=\"13\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">뷰티 / 의료기기</text><rect x=\"70.86\" y=\"504.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"514.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">LED 마스크</text><rect x=\"143.28\" y=\"504.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"514.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제외</text><rect x=\"241.45\" y=\"504.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"514.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"522.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"532.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">LED 넥케어</text><rect x=\"143.28\" y=\"522.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"532.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">제외</text><rect x=\"241.45\" y=\"522.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"532.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"70.86\" y=\"540.97\" width=\"72.42\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"80.42\" y=\"550.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">뷰티 디바이스</text><rect x=\"143.28\" y=\"540.97\" width=\"98.17\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"152.84\" y=\"550.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">CT50000165</text><rect x=\"241.45\" y=\"540.97\" width=\"146.15\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"251.01\" y=\"550.86\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능 | 디자인 | 사용성</text><rect x=\"410.58\" y=\"241.29\" width=\"72.55\" height=\"36.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"421.44\" y=\"254.72\" font-size=\"9\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">항목</text><rect x=\"483.13\" y=\"241.29\" width=\"135.29\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"493.99\" y=\"253.72\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">3점 척도 평가 (PDP 상단 노출 문구 )</text><rect x=\"483.13\" y=\"259.29\" width=\"135.29\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"493.99\" y=\"271.72\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">긍정</text><rect x=\"618.43\" y=\"259.29\" width=\"135.29\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"629.29\" y=\"271.72\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">보통</text><rect x=\"753.72\" y=\"259.29\" width=\"135.29\" height=\"18.0\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"764.58\" y=\"271.72\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부정</text><rect x=\"410.58\" y=\"277.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"288.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질</text><rect x=\"483.13\" y=\"277.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"288.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질이 선명해요</text><rect x=\"618.43\" y=\"277.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"288.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질이 보통이예요</text><rect x=\"753.72\" y=\"277.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"288.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">화질이 아쉬워요</text><rect x=\"410.58\" y=\"295.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"306.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질</text><rect x=\"483.13\" y=\"295.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"306.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질이 뛰어나요</text><rect x=\"618.43\" y=\"295.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"306.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질이 보통이예요</text><rect x=\"753.72\" y=\"295.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"306.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">음질이 아쉬워요</text><rect x=\"410.58\" y=\"313.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"324.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능</text><rect x=\"483.13\" y=\"313.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"324.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능이 좋아요</text><rect x=\"618.43\" y=\"313.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"324.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능이 보통이예요</text><rect x=\"753.72\" y=\"313.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"324.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">성능이 별로예요</text><rect x=\"410.58\" y=\"331.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"342.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사운드</text><rect x=\"483.13\" y=\"331.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"342.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사운드가 우수해요</text><rect x=\"618.43\" y=\"331.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"342.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사운드가 보통이예요</text><rect x=\"753.72\" y=\"331.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"342.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사운드가 별로예요</text><rect x=\"410.58\" y=\"349.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"360.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">디자인</text><rect x=\"483.13\" y=\"349.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"360.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">디자인이 뛰어나요</text><rect x=\"618.43\" y=\"349.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"360.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">디자인이 보통이예요</text><rect x=\"753.72\" y=\"349.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"360.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">디자인이 별로예요</text><rect x=\"410.58\" y=\"367.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"378.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">기능</text><rect x=\"483.13\" y=\"367.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"378.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">기능이 다양해요</text><rect x=\"618.43\" y=\"367.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"378.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">기능이 보통이예요</text><rect x=\"753.72\" y=\"367.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"378.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">기능이 아쉬워요</text><rect x=\"410.58\" y=\"385.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"396.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">휴대성</text><rect x=\"483.13\" y=\"385.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"396.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">휴대성이 좋아요</text><rect x=\"618.43\" y=\"385.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"396.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">휴대성이 보통이예요</text><rect x=\"753.72\" y=\"385.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"396.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">휴대성이 떨어져요</text><rect x=\"410.58\" y=\"403.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"414.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">용량 효율성</text><rect x=\"483.13\" y=\"403.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"414.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">효율성이 높아요</text><rect x=\"618.43\" y=\"403.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"414.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">효율성이 보통이예요</text><rect x=\"753.72\" y=\"403.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"414.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">효율성이 떨어져요</text><rect x=\"410.58\" y=\"421.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"432.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부가기능</text><rect x=\"483.13\" y=\"421.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"432.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부가기능이 많아요</text><rect x=\"618.43\" y=\"421.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"432.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부가기능이 보통이예요</text><rect x=\"753.72\" y=\"421.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"432.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">부가기능이 아쉬워요</text><rect x=\"410.58\" y=\"439.29\" width=\"72.55\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"418.43\" y=\"450.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사용성</text><rect x=\"483.13\" y=\"439.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"490.98\" y=\"450.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사용성이 좋아요</text><rect x=\"618.43\" y=\"439.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.28\" y=\"450.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사용성이 보통이예요</text><rect x=\"753.72\" y=\"439.29\" width=\"135.29\" height=\"18.0\" fill=\"none\" stroke=\"#c7c7c7\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"761.57\" y=\"450.21\" font-size=\"8\" fill=\"#111111\" fill-opacity=\"1.0\" font-family=\"Inter\">사용성이 별로예요</text></svg>",
+            "children": [],
+            "debug": {
+              "generator": "block-prototype-v1",
+              "block_type": "table_block",
+              "render_mode": "vector",
+              "page_type": "table-heavy",
+              "role": "table_block_svg",
+              "root_candidate_ids": [
+                "s19:slide_19/element_4",
+                "s19:slide_19/element_2",
+                "s19:slide_19/element_10"
+              ]
+            }
+          },
+          {
+            "id": "page:19:content_block",
+            "type": "FRAME",
+            "name": "content_block",
+            "absoluteBoundingBox": {
+              "x": 282.27,
+              "y": 78.39,
+              "width": 664.1,
+              "height": 454.61
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 0,
+            "children": [
+              {
+                "id": "s19:slide_19/element_5",
+                "type": "VECTOR",
+                "name": "Google Shape;723;p19",
+                "absoluteBoundingBox": {
+                  "x": 282.27,
+                  "y": 78.39,
+                  "width": 143.98,
+                  "height": 395.96
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    -0.0,
+                    0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0
+                  ]
+                ],
+                "fillGeometry": [],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 143.98 V 395.96 H 0 Z"
+                  }
+                ],
+                "fills": [],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7529,
+                      "g": 0.0,
+                      "b": 0.0
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokeWeight": 2.4975,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_19/element_5",
+                  "source_node_id": "8",
+                  "source_subtype": "shape",
+                  "source_scope": "slide",
+                  "full_page_overlay_candidate": false,
+                  "visual_strategy": "table-heavy",
+                  "role": "shape_vector"
+                }
+              },
+              {
+                "id": "s19:slide_19/element_7",
+                "type": "GROUP",
+                "name": "연결선: 꺾임 9",
+                "absoluteBoundingBox": {
+                  "x": 422.25,
+                  "y": 172.7,
+                  "width": 30.99,
+                  "height": 107.5
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "children": [
+                  {
+                    "id": "s19:slide_19/element_7:line",
+                    "type": "VECTOR",
+                    "name": "연결선: 꺾임 9:line",
+                    "absoluteBoundingBox": {
+                      "x": 422.25,
+                      "y": 172.7,
+                      "width": 30.99,
+                      "height": 107.5
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fillGeometry": [],
+                    "strokeGeometry": [
+                      {
+                        "path": "M 4.0 103.5 L 4.0 53.75 L 26.99 53.75 L 26.99 4.0"
+                      }
+                    ],
+                    "fills": [],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.7529,
+                          "g": 0.0,
+                          "b": 0.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "strokeWeight": 1.0,
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_19/element_7",
+                      "source_node_id": "10",
+                      "source_subtype": "connector",
+                      "source_scope": "slide",
+                      "visual_strategy": "table-heavy",
+                      "route_kind": "bentConnector3",
+                      "role": "connector_line"
+                    }
+                  },
+                  {
+                    "id": "s19:slide_19/element_7:arrow_1",
+                    "type": "VECTOR",
+                    "name": "연결선: 꺾임 9:arrow_1",
+                    "absoluteBoundingBox": {
+                      "x": 422.25,
+                      "y": 172.7,
+                      "width": 30.99,
+                      "height": 107.5
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M 26.99 4.0 L 29.69 10.0 L 24.29 10.0 Z",
+                        "windingRule": "NONZERO"
+                      }
+                    ],
+                    "strokeGeometry": [],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.7529,
+                          "g": 0.0,
+                          "b": 0.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1.0,
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_19/element_7",
+                      "source_node_id": "10",
+                      "source_subtype": "connector",
+                      "source_scope": "slide",
+                      "visual_strategy": "table-heavy",
+                      "route_kind": "bentConnector3",
+                      "role": "connector_arrow"
+                    }
+                  }
+                ],
+                "debug": {
+                  "source_path": "slide_19/element_7",
+                  "source_node_id": "10",
+                  "source_subtype": "connector",
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "route_kind": "bentConnector3",
+                  "role": "connector_group"
+                }
+              },
+              {
+                "id": "s19:slide_19/element_11",
+                "type": "GROUP",
+                "name": "연결선: 꺾임 10",
+                "absoluteBoundingBox": {
+                  "x": 422.25,
+                  "y": 272.2,
+                  "width": 30.99,
+                  "height": 149.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "children": [
+                  {
+                    "id": "s19:slide_19/element_11:line",
+                    "type": "VECTOR",
+                    "name": "연결선: 꺾임 10:line",
+                    "absoluteBoundingBox": {
+                      "x": 422.25,
+                      "y": 272.2,
+                      "width": 30.99,
+                      "height": 149.79
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fillGeometry": [],
+                    "strokeGeometry": [
+                      {
+                        "path": "M 4.0 4.0 L 4.0 74.9 L 26.99 74.9 L 26.99 145.79"
+                      }
+                    ],
+                    "fills": [],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.7529,
+                          "g": 0.0,
+                          "b": 0.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "strokeWeight": 1.0,
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_19/element_11",
+                      "source_node_id": "11",
+                      "source_subtype": "connector",
+                      "source_scope": "slide",
+                      "visual_strategy": "table-heavy",
+                      "route_kind": "bentConnector3",
+                      "role": "connector_line"
+                    }
+                  },
+                  {
+                    "id": "s19:slide_19/element_11:arrow_1",
+                    "type": "VECTOR",
+                    "name": "연결선: 꺾임 10:arrow_1",
+                    "absoluteBoundingBox": {
+                      "x": 422.25,
+                      "y": 272.2,
+                      "width": 30.99,
+                      "height": 149.79
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M 26.99 145.79 L 24.29 139.79 L 29.69 139.79 Z",
+                        "windingRule": "NONZERO"
+                      }
+                    ],
+                    "strokeGeometry": [],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.7529,
+                          "g": 0.0,
+                          "b": 0.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1.0,
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_19/element_11",
+                      "source_node_id": "11",
+                      "source_subtype": "connector",
+                      "source_scope": "slide",
+                      "visual_strategy": "table-heavy",
+                      "route_kind": "bentConnector3",
+                      "role": "connector_arrow"
+                    }
+                  }
+                ],
+                "debug": {
+                  "source_path": "slide_19/element_11",
+                  "source_node_id": "11",
+                  "source_subtype": "connector",
+                  "source_scope": "slide",
+                  "visual_strategy": "table-heavy",
+                  "route_kind": "bentConnector3",
+                  "role": "connector_group"
+                }
+              }
+            ],
+            "debug": {
+              "generator": "block-prototype-v1",
+              "block_type": "content_block",
+              "render_mode": "native",
+              "page_type": "table-heavy",
+              "root_candidate_ids": [
+                "s19:layout_19/element_2",
+                "s19:layout_19/element_3",
+                "s19:slide_19/element_5",
+                "s19:slide_19/element_7",
+                "s19:slide_19/element_11"
+              ]
+            }
+          }
+        ],
+        "debug": {
+          "generator": "block-prototype-v1",
+          "source_slide_no": 19,
+          "source_title": "리뷰 - 제품 카테고리별 평가 항목",
+          "visual_strategy": "table-heavy",
+          "strategy_signals": {
+            "table_cell_count": 201,
+            "table_text_cell_count": 201,
+            "table_count": 3,
+            "connector_count": 3,
+            "labeled_shape_count": 2,
+            "shape_count": 2,
+            "image_count": 0,
+            "group_count": 0
+          }
+        }
+      }
+    ],
+    "debug": {
+      "generator": "block-prototype-v1",
+      "source_slide_no": 19,
+      "source_title": "리뷰 - 제품 카테고리별 평가 항목",
+      "visual_strategy": "table-heavy",
+      "strategy_signals": {
+        "table_cell_count": 201,
+        "table_text_cell_count": 201,
+        "table_count": 3,
+        "connector_count": 3,
+        "labeled_shape_count": 2,
+        "shape_count": 2,
+        "image_count": 0,
+        "group_count": 0
+      }
+    }
+  },
+  "assets": {},
+  "missing_assets": [],
+  "debug": {
+    "status": "block_prototype_generator",
+    "candidate_count": 272,
+    "root_candidate_count": 16,
+    "visual_strategy": {
+      "page_type": "table-heavy",
+      "counts": {
+        "shape": 2,
+        "text_block": 6,
+        "connector": 3,
+        "table": 3,
+        "table_row": 55,
+        "table_cell": 201,
+        "labeled_shape": 2
+      },
+      "signals": {
+        "table_cell_count": 201,
+        "table_text_cell_count": 201,
+        "table_count": 3,
+        "connector_count": 3,
+        "labeled_shape_count": 2,
+        "shape_count": 2,
+        "image_count": 0,
+        "group_count": 0
+      }
+    },
+    "blocks": [
+      {
+        "block_id": "page:19:header_block",
+        "block_type": "header_block",
+        "page_id": "page:19",
+        "render_mode": "vector",
+        "bounds": {
+          "x": 31.34,
+          "y": 0.04,
+          "width": 928.66,
+          "height": 71.67
+        },
+        "root_candidate_ids": [
+          "s19:layout_19/element_1",
+          "s19:layout_19/element_4",
+          "s19:slide_19/element_1",
+          "s19:slide_19/element_9",
+          "s19:slide_19/element_12",
+          "s19:slide_19/element_8",
+          "s19:slide_19/element_6",
+          "s19:slide_19/element_3"
+        ],
+        "root_candidates": [
+          {
+            "candidate_id": "s19:layout_19/element_1",
+            "subtype": "shape",
+            "title": "Google Shape;53;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 25.52
+            }
+          },
+          {
+            "candidate_id": "s19:layout_19/element_4",
+            "subtype": "connector",
+            "title": "Google Shape;57;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 31.34,
+              "y": 40.97,
+              "width": 896.54,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_1",
+            "subtype": "text_block",
+            "title": "제목 1",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 25.52
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_9",
+            "subtype": "labeled_shape",
+            "title": "직사각형 8",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 762.52,
+              "y": 0.04,
+              "width": 197.48,
+              "height": 15.46
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_12",
+            "subtype": "labeled_shape",
+            "title": "직사각형 15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 762.52,
+              "y": 9.58,
+              "width": 197.48,
+              "height": 11.89
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_8",
+            "subtype": "text_block",
+            "title": "TextBox 12",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 749.8,
+              "y": 45.05,
+              "width": 177.87,
+              "height": 26.66
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_6",
+            "subtype": "text_block",
+            "title": "Google Shape;720;p19",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 38.66,
+              "y": 51.32,
+              "width": 206.83,
+              "height": 20.0
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_3",
+            "subtype": "text_block",
+            "title": "Google Shape;720;p19",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 447.83,
+              "y": 51.32,
+              "width": 206.83,
+              "height": 20.0
+            }
+          }
+        ],
+        "page_type": "table-heavy"
+      },
+      {
+        "block_id": "page:19:table_block",
+        "block_type": "table_block",
+        "page_id": "page:19",
+        "render_mode": "vector",
+        "bounds": {
+          "x": 38.66,
+          "y": 77.75,
+          "width": 890.01,
+          "height": 439.19
+        },
+        "root_candidate_ids": [
+          "s19:slide_19/element_4",
+          "s19:slide_19/element_2",
+          "s19:slide_19/element_10"
+        ],
+        "root_candidates": [
+          {
+            "candidate_id": "s19:slide_19/element_4",
+            "subtype": "table",
+            "title": "Google Shape;721;p19",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 449.24,
+              "y": 77.75,
+              "width": 479.43,
+              "height": 197.9
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_2",
+            "subtype": "table",
+            "title": "Google Shape;675;p18",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 38.66,
+              "y": 78.05,
+              "width": 387.59,
+              "height": 396.3
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_10",
+            "subtype": "table",
+            "title": "Google Shape;721;p19",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 449.24,
+              "y": 319.04,
+              "width": 478.43,
+              "height": 197.9
+            }
+          }
+        ],
+        "page_type": "table-heavy"
+      },
+      {
+        "block_id": "page:19:content_block",
+        "block_type": "content_block",
+        "page_id": "page:19",
+        "render_mode": "native",
+        "bounds": {
+          "x": 282.27,
+          "y": 78.39,
+          "width": 664.1,
+          "height": 454.61
+        },
+        "root_candidate_ids": [
+          "s19:layout_19/element_2",
+          "s19:layout_19/element_3",
+          "s19:slide_19/element_5",
+          "s19:slide_19/element_7",
+          "s19:slide_19/element_11"
+        ],
+        "root_candidates": [
+          {
+            "candidate_id": "s19:layout_19/element_2",
+            "subtype": "text_block",
+            "title": "Google Shape;54;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 730.37,
+              "y": 518.62,
+              "width": 216.0,
+              "height": 14.38
+            }
+          },
+          {
+            "candidate_id": "s19:layout_19/element_3",
+            "subtype": "text_block",
+            "title": "Google Shape;56;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 730.37,
+              "y": 518.62,
+              "width": 216.0,
+              "height": 14.38
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_5",
+            "subtype": "shape",
+            "title": "Google Shape;723;p19",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 282.27,
+              "y": 78.39,
+              "width": 143.98,
+              "height": 395.96
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_7",
+            "subtype": "connector",
+            "title": "연결선: 꺾임 9",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 426.25,
+              "y": 176.7,
+              "width": 23.0,
+              "height": 99.5
+            }
+          },
+          {
+            "candidate_id": "s19:slide_19/element_11",
+            "subtype": "connector",
+            "title": "연결선: 꺾임 10",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 426.25,
+              "y": 276.21,
+              "width": 23.0,
+              "height": 141.78
+            }
+          }
+        ],
+        "page_type": "table-heavy"
+      }
+    ]
+  }
+}

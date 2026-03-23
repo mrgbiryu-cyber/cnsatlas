@@ -1,0 +1,1288 @@
+{
+  "kind": "figma-replay-bundle",
+  "source_kind": "ppt-block-prototype",
+  "visual_model_version": "block-v1",
+  "source_file": "/mnt/c/Users/mrgbi/OneDrive/Desktop/cnsatlas/docs/ppt-intermediate-candidates-12-19-29.json",
+  "file_name": "ppt-intermediate-candidates-12-19-29.json",
+  "page_name": "Slide 12 - 일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+  "node_id": "page:12",
+  "document": {
+    "id": "page:12",
+    "type": "FRAME",
+    "name": "Slide 12 - 일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+    "absoluteBoundingBox": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 960.0,
+      "height": 540.0
+    },
+    "relativeTransform": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "fills": [
+      {
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        }
+      }
+    ],
+    "strokes": [],
+    "strokeWeight": 0,
+    "children": [
+      {
+        "id": "page:12:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 960.0,
+          "height": 540.0
+        },
+        "relativeTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "fills": [],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [
+          {
+            "id": "page:12:header_block",
+            "type": "SVG_BLOCK",
+            "name": "header_block",
+            "absoluteBoundingBox": {
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 81.87
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"897.33\" height=\"81.87\" viewBox=\"0 0 897.33 81.87\"><rect x=\"0\" y=\"0\" width=\"897.33\" height=\"42\" fill=\"white\" fill-opacity=\"0\" /><rect x=\"0.0\" y=\"0.0\" width=\"897.33\" height=\"25.52\" rx=\"0\" ry=\"0\" fill=\"none\" stroke=\"none\" /><line x1=\"0.0\" y1=\"26.01\" x2=\"896.54\" y2=\"26.01\" stroke=\"#7F7F7F\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><text x=\"-29.34\" y=\"-3.46\" font-size=\"12\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Inter\"><tspan x=\"-29.34\" dy=\"0\">일반제품 + 케어십 신청에 따른 프로세스(유상 케어십)</tspan></text><text x=\"206.5\" y=\"47.72\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"206.5\" dy=\"0\">※ 케어십 가능 제품</tspan></text><text x=\"30.64\" y=\"58.42\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"30.64\" dy=\"0\">사용자</tspan></text><ellipse cx=\"72.45\" cy=\"67.7\" rx=\"14.18\" ry=\"14.18\" fill=\"#000000\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"72.45\" y=\"61.52\" font-size=\"8\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"72.45\" dy=\"0\">홈</tspan></text><rect x=\"625.09\" y=\"35.06\" width=\"59.97\" height=\"16.48\" rx=\"0\" ry=\"0\" fill=\"#EAF1DD\" fill-opacity=\"1.0\" stroke=\"#9BBB59\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"655.08\" y=\"43.06\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"655.08\" dy=\"0\">케어솔루션</tspan><tspan x=\"655.08\" dy=\"10.0\">(대표사이트개발)</tspan></text><rect x=\"436.6\" y=\"35.46\" width=\"59.97\" height=\"16.09\" rx=\"0\" ry=\"0\" fill=\"#FBD4B4\" fill-opacity=\"1.0\" stroke=\"#E36C09\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"466.59\" y=\"43.46\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"466.59\" dy=\"0\">CSMS</tspan><tspan x=\"466.59\" dy=\"10.0\">(계약정보)</tspan></text><rect x=\"499.41\" y=\"35.46\" width=\"59.97\" height=\"16.09\" rx=\"0\" ry=\"0\" fill=\"#CCC0D9\" fill-opacity=\"1.0\" stroke=\"#5F497A\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"529.39\" y=\"43.46\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"529.39\" dy=\"0\">멤버십</tspan><tspan x=\"529.39\" dy=\"10.0\">(회원)</tspan></text><rect x=\"562.58\" y=\"35.46\" width=\"59.97\" height=\"16.09\" rx=\"0\" ry=\"0\" fill=\"#DAEEF3\" fill-opacity=\"1.0\" stroke=\"#4F81BD\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"592.57\" y=\"43.46\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"592.57\" dy=\"0\">OBS(마젠토)</tspan></text><rect x=\"369.29\" y=\"35.94\" width=\"65.32\" height=\"16.09\" rx=\"0\" ry=\"0\" fill=\"#C4BD97\" fill-opacity=\"1.0\" stroke=\"#4F81BD\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"401.95\" y=\"43.94\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"401.95\" dy=\"0\">외부인증 모듈</tspan></text></svg>",
+            "children": [],
+            "debug": {
+              "generator": "block-prototype-v1",
+              "block_type": "header_block",
+              "render_mode": "vector",
+              "page_type": "flow-process",
+              "role": "header_block_svg",
+              "root_candidate_ids": [
+                "s12:layout_12/element_1",
+                "s12:layout_12/element_4",
+                "s12:slide_12/element_1",
+                "s12:slide_12/element_68",
+                "s12:slide_12/element_11",
+                "s12:slide_12/element_5",
+                "s12:slide_12/element_2"
+              ]
+            }
+          },
+          {
+            "id": "page:12:flow_block",
+            "type": "SVG_BLOCK",
+            "name": "flow_block",
+            "absoluteBoundingBox": {
+              "x": 40.71,
+              "y": 72.35,
+              "width": 905.66,
+              "height": 468.2
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"905.66\" height=\"468.2\" viewBox=\"0 0 905.66 468.2\"><polygon points=\"260.12,39.57 313.98,51.58 260.12,63.58 206.25,51.58\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><polygon points=\"152.96,72.53 206.82,84.53 152.96,96.54 99.09,84.53\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><polygon points=\"518.66,108.09 572.53,120.09 518.66,132.1 464.8,120.09\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><polygon points=\"217.0,132.92 270.86,144.92 217.0,156.93 163.13,144.92\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"0.0\" y=\"151.06\" width=\"90.73\" height=\"31.76\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><polygon points=\"566.45,161.31 620.31,173.31 566.45,185.32 512.58,173.31\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"374.39\" y=\"180.11\" width=\"90.73\" height=\"31.76\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"99.65\" y=\"194.84\" width=\"90.73\" height=\"154.93\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"257.2\" y=\"220.75\" width=\"90.73\" height=\"103.03\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"583.76\" y=\"242.71\" width=\"86.08\" height=\"61.81\" rx=\"0\" ry=\"0\" fill=\"#EAF1DD\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><polygon points=\"626.57,326.66 681.12,339.64 626.57,352.61 572.03,339.64\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><polygon points=\"459.5,350.6 514.05,363.58 459.5,376.55 404.96,363.58\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"316.89\" y=\"371.73\" width=\"86.08\" height=\"88.84\" rx=\"0\" ry=\"0\" fill=\"#EAF1DD\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"99.82\" y=\"0.0\" width=\"66.68\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"133.16\" y=\"8.0\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"133.16\" dy=\"0\">제품 탐색</tspan></text><rect x=\"226.75\" y=\"0.0\" width=\"66.68\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"260.09\" y=\"8.0\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"260.09\" dy=\"0\">제품선택</tspan><tspan x=\"260.09\" dy=\"10.0\">(PDP)</tspan></text><rect x=\"480.78\" y=\"70.34\" width=\"76.06\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"518.81\" y=\"78.34\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"518.81\" dy=\"0\">케어십 요금 표시</tspan></text><rect x=\"0.24\" y=\"132.34\" width=\"90.5\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#DAEEF3\" fill-opacity=\"1.0\" stroke=\"#4BACC6\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"45.49\" y=\"140.34\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"45.49\" dy=\"0\">일반제품 장바구니</tspan></text><rect x=\"5.06\" y=\"156.27\" width=\"80.17\" height=\"21.52\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"45.15\" y=\"164.27\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"45.15\" dy=\"0\">제품 추가</tspan></text><rect x=\"374.63\" y=\"161.39\" width=\"90.5\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#EAF1DD\" fill-opacity=\"1.0\" stroke=\"#9BBB59\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"419.88\" y=\"169.39\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"419.88\" dy=\"0\">케어솔루션 장바구니</tspan></text><rect x=\"258.58\" y=\"163.89\" width=\"90.5\" height=\"20.73\" rx=\"0\" ry=\"0\" fill=\"#B2A0C7\" fill-opacity=\"1.0\" stroke=\"#5F497A\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"303.83\" y=\"171.89\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"303.83\" dy=\"0\">멤버십 로그인</tspan></text><rect x=\"99.9\" y=\"173.27\" width=\"90.5\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#DAEEF3\" fill-opacity=\"1.0\" stroke=\"#4BACC6\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"145.15\" y=\"181.27\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"145.15\" dy=\"0\">비회원 주문(구매하기)</tspan></text><rect x=\"379.45\" y=\"185.32\" width=\"80.17\" height=\"21.52\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"419.53\" y=\"193.32\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"419.53\" dy=\"0\">케어십 제품 추가</tspan></text><rect x=\"257.45\" y=\"199.18\" width=\"90.5\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#DAEEF3\" fill-opacity=\"1.0\" stroke=\"#4BACC6\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"302.7\" y=\"207.18\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"302.7\" dy=\"0\">회원 구매하기</tspan></text><rect x=\"104.65\" y=\"201.11\" width=\"80.17\" height=\"21.52\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"144.74\" y=\"209.11\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"144.74\" dy=\"0\">비회원 주문 동의</tspan></text><rect x=\"475.95\" y=\"201.9\" width=\"90.5\" height=\"20.73\" rx=\"0\" ry=\"0\" fill=\"#B2A0C7\" fill-opacity=\"1.0\" stroke=\"#5F497A\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"521.2\" y=\"209.9\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"521.2\" dy=\"0\">멤버십 로그인</tspan></text><rect x=\"262.18\" y=\"223.21\" width=\"80.17\" height=\"21.52\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"302.26\" y=\"231.21\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"302.26\" dy=\"0\">주문자 정보</tspan></text><rect x=\"104.76\" y=\"225.39\" width=\"79.34\" height=\"20.73\" rx=\"0\" ry=\"0\" fill=\"#C4BD97\" fill-opacity=\"1.0\" stroke=\"#4F81BD\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"144.43\" y=\"233.39\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"144.43\" dy=\"0\">휴대폰 본인 인증</tspan></text><rect x=\"262.18\" y=\"248.0\" width=\"80.17\" height=\"20.89\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"302.26\" y=\"256.0\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"302.26\" dy=\"0\">주문제품 확인</tspan></text><rect x=\"589.25\" y=\"248.91\" width=\"76.06\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"627.28\" y=\"256.91\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"627.28\" dy=\"0\">계약자정보</tspan></text><rect x=\"104.65\" y=\"250.05\" width=\"80.17\" height=\"21.52\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"144.74\" y=\"258.05\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"144.74\" dy=\"0\">주문자 정보</tspan></text><rect x=\"262.18\" y=\"271.91\" width=\"80.17\" height=\"20.89\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"302.26\" y=\"279.91\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"302.26\" dy=\"0\">PG 이용 결제</tspan></text><rect x=\"104.65\" y=\"274.84\" width=\"80.17\" height=\"20.89\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"144.74\" y=\"282.84\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"144.74\" dy=\"0\">주문제품 확인</tspan></text><rect x=\"589.25\" y=\"277.69\" width=\"76.06\" height=\"21.25\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#938953\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"627.28\" y=\"285.69\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"627.28\" dy=\"0\">신용정보조회</tspan><tspan x=\"627.28\" dy=\"10.0\">(SAFE KEY발급)</tspan></text><rect x=\"262.18\" y=\"296.25\" width=\"80.17\" height=\"20.89\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"302.26\" y=\"304.25\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"302.26\" dy=\"0\">주문완료</tspan></text><rect x=\"104.65\" y=\"298.76\" width=\"80.17\" height=\"20.89\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"144.74\" y=\"306.76\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"144.74\" dy=\"0\">PG 이용 결제</tspan></text><rect x=\"104.65\" y=\"323.1\" width=\"80.17\" height=\"20.89\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"144.74\" y=\"331.1\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"144.74\" dy=\"0\">주문완료</tspan></text><rect x=\"321.69\" y=\"376.01\" width=\"76.06\" height=\"23.04\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"359.72\" y=\"384.01\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"359.72\" dy=\"0\">월납부금액 확인, 정기결제 동의</tspan></text><rect x=\"588.63\" y=\"392.71\" width=\"76.06\" height=\"45.8\" rx=\"0\" ry=\"0\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"626.66\" y=\"400.71\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"626.66\" dy=\"0\">청약실패 </tspan><tspan x=\"626.66\" dy=\"10.0\">제품 주문 관련</tspan><tspan x=\"626.66\" dy=\"10.0\">안내</tspan></text><rect x=\"321.69\" y=\"401.34\" width=\"76.06\" height=\"17.1\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"359.72\" y=\"409.34\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"359.72\" dy=\"0\">납부방법</tspan></text><rect x=\"321.69\" y=\"420.92\" width=\"76.06\" height=\"17.1\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"359.72\" y=\"428.92\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"359.72\" dy=\"0\">계좌 유효성확인</tspan></text><rect x=\"321.69\" y=\"441.41\" width=\"76.06\" height=\"17.1\" rx=\"0\" ry=\"0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"359.72\" y=\"449.41\" font-size=\"8\" fill=\"#0C0C0C\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"359.72\" dy=\"0\">청약완료(주문안내)</tspan></text><line x1=\"77.25\" y1=\"11.12\" x2=\"99.81\" y2=\"11.12\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"166.5\" y1=\"11.13\" x2=\"226.73\" y2=\"11.13\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"479.07\" y1=\"10.63\" x2=\"479.07\" y2=\"415.61\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"4.96\" y1=\"11.68\" x2=\"44.65\" y2=\"11.68\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"250.95\" y1=\"30.89\" x2=\"269.28\" y2=\"30.89\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"152.96\" y1=\"62.05\" x2=\"206.26\" y2=\"62.05\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"313.97\" y1=\"60.96\" x2=\"518.8\" y2=\"60.96\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"45.49\" y1=\"108.44\" x2=\"99.08\" y2=\"108.44\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"211.63\" y1=\"84.53\" x2=\"211.63\" y2=\"135.88\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"510.5\" y1=\"100.27\" x2=\"526.98\" y2=\"100.27\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"419.89\" y1=\"140.75\" x2=\"464.79\" y2=\"140.75\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"542.56\" y1=\"122.82\" x2=\"542.56\" y2=\"170.6\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"154.15\" y1=\"144.92\" x2=\"154.15\" y2=\"173.27\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"270.86\" y1=\"154.4\" x2=\"303.84\" y2=\"154.4\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"543.83\" y1=\"170.99\" x2=\"543.83\" y2=\"216.22\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"626.8\" y1=\"173.32\" x2=\"626.8\" y2=\"244.37\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"577.26\" y1=\"176.0\" x2=\"577.26\" y2=\"288.11\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"295.97\" y1=\"191.91\" x2=\"310.54\" y2=\"191.91\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"183.29\" y1=\"335.2\" x2=\"434.06\" y2=\"335.2\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"543.09\" y1=\"301.05\" x2=\"543.09\" y2=\"468.2\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"615.62\" y1=\"315.98\" x2=\"637.75\" y2=\"315.98\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"459.52\" y1=\"345.12\" x2=\"572.04\" y2=\"345.12\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"359.92\" y1=\"367.64\" x2=\"404.97\" y2=\"367.64\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><line x1=\"606.57\" y1=\"373.12\" x2=\"646.66\" y2=\"373.12\" stroke=\"#000000\" stroke-opacity=\"1.0\" stroke-width=\"1.5\" /><text x=\"183.38\" y=\"43.06\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"183.38\" dy=\"0\">NO</tspan></text><text x=\"306.05\" y=\"43.08\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"306.05\" dy=\"0\">YES</tspan></text><text x=\"261.76\" y=\"50.55\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"261.76\" dy=\"0\">케어십 신청</tspan></text><text x=\"81.97\" y=\"75.02\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"81.97\" dy=\"0\">NO</tspan></text><text x=\"199.6\" y=\"77.45\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"199.6\" dy=\"0\">YES</tspan></text><text x=\"152.4\" y=\"83.49\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"152.4\" dy=\"0\">구매하기</tspan></text><text x=\"440.62\" y=\"112.71\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"440.62\" dy=\"0\">NO</tspan></text><text x=\"518.11\" y=\"121.19\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"518.11\" dy=\"0\">구매하기?</tspan></text><text x=\"128.29\" y=\"138.15\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"128.29\" dy=\"0\">비회원주문</tspan></text><text x=\"267.44\" y=\"138.15\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"267.44\" dy=\"0\">회원 로그인</tspan></text><text x=\"551.57\" y=\"140.1\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"551.57\" dy=\"0\">YES</tspan></text><text x=\"216.44\" y=\"143.88\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"216.44\" dy=\"0\">로그인?비회원주문</tspan></text><text x=\"565.88\" y=\"172.27\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"565.88\" dy=\"0\">로그인?</tspan></text><text x=\"613.44\" y=\"177.31\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"613.44\" dy=\"0\">YES</tspan></text><text x=\"531.91\" y=\"184.84\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"531.91\" dy=\"0\">NO</tspan></text><text x=\"302.73\" y=\"191.84\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"302.73\" dy=\"0\">로그인 성공 시</tspan></text><text x=\"707.82\" y=\"230.48\" font-size=\"8\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"707.82\" dy=\"0\">서비스 가능여부 = 설치 가능 여부</tspan><tspan x=\"707.82\" dy=\"10.0\">설치가능여부 3가지 API 호출을 통해 가능여부 판단</tspan><tspan x=\"707.82\" dy=\"10.0\">서비스 가능 지역 조회(0057)</tspan><tspan x=\"707.82\" dy=\"10.0\">기존 중복청약 여부(0058)</tspan><tspan x=\"707.82\" dy=\"10.0\">청약모델조회(0050) – 요금제 유효 여부</tspan><tspan x=\"707.82\" dy=\"10.0\">&lt;서비스 가능 여부 NO case&gt;</tspan><tspan x=\"707.82\" dy=\"10.0\">우편번호가 입력되지 않을 때</tspan><tspan x=\"707.82\" dy=\"10.0\">서비스 가능지역조회(0057) 결과 없음</tspan><tspan x=\"707.82\" dy=\"10.0\">2-1. 서비스 가능 지역 조회 결과에서 서비스 가능여부(serviceYn)가 ‘Y가 아닐경우.</tspan><tspan x=\"707.82\" dy=\"10.0\">3. 기존 중복청약 여부(0058) 확인 시 중복청약인 경우</tspan><tspan x=\"707.82\" dy=\"10.0\">4. ‘청약모델조회(0050) – 요금제 유효 여부‘ 조회 시 미제공 요금제 일 경우</tspan><tspan x=\"707.82\" dy=\"10.0\">5. 얼음정수기냉장고, 정수기 일경우 수질검사대상여부 인지 확인 후 수질검사대상이면 설치불가능 (수질검사대상여부는 서비스 가능지역조회(0057)의 결과에 있음)</tspan><tspan x=\"707.82\" dy=\"10.0\">이때 복수제품을 신청하는 경우이면 정수기, 얼음정수기 냉장고를 제외한 설치가능한 제품만 청약 신청가능</tspan></text><text x=\"549.99\" y=\"331.09\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"549.99\" dy=\"0\">성공</tspan></text><text x=\"626.58\" y=\"338.47\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"626.58\" dy=\"0\">성공?</tspan></text><text x=\"382.62\" y=\"355.33\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"382.62\" dy=\"0\">YES</tspan></text><text x=\"624.6\" y=\"360.49\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"624.6\" dy=\"0\">실패</tspan></text><text x=\"459.52\" y=\"362.41\" font-size=\"8\" fill=\"#7F7F7F\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Malgun Gothic\"><tspan x=\"459.52\" dy=\"0\">서비스 가능여부?</tspan></text><text x=\"463.75\" y=\"380.2\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"463.75\" dy=\"0\">NO</tspan></text><text x=\"571.5\" y=\"444.84\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"571.5\" dy=\"0\">청약실패, 구매취소</tspan><tspan x=\"571.5\" dy=\"10.0\">(장바구니에 담기지 않음)</tspan></text><text x=\"8.95\" y=\"446.19\" font-size=\"8\" fill=\"#FF0000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"Malgun Gothic\"><tspan x=\"8.95\" dy=\"0\">청약 성공</tspan><tspan x=\"8.95\" dy=\"10.0\">청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶</tspan></text></svg>",
+            "children": [],
+            "debug": {
+              "generator": "block-prototype-v1",
+              "block_type": "flow_block",
+              "render_mode": "image",
+              "page_type": "flow-process",
+              "role": "flow_block_svg",
+              "root_candidate_ids": [
+                "s12:layout_12/element_2",
+                "s12:layout_12/element_3",
+                "s12:slide_12/element_9",
+                "s12:slide_12/element_3",
+                "s12:slide_12/element_6",
+                "s12:slide_12/element_7",
+                "s12:slide_12/element_56",
+                "s12:slide_12/element_4",
+                "s12:slide_12/element_12",
+                "s12:slide_12/element_14",
+                "s12:slide_12/element_13",
+                "s12:slide_12/element_8",
+                "s12:slide_12/element_10",
+                "s12:slide_12/element_16",
+                "s12:slide_12/element_36",
+                "s12:slide_12/element_19",
+                "s12:slide_12/element_20",
+                "s12:slide_12/element_35",
+                "s12:slide_12/element_15",
+                "s12:slide_12/element_34",
+                "s12:slide_12/element_69",
+                "s12:slide_12/element_38",
+                "s12:slide_12/element_41",
+                "s12:slide_12/element_37",
+                "s12:slide_12/element_42",
+                "s12:slide_12/element_43",
+                "s12:slide_12/element_22",
+                "s12:slide_12/element_31",
+                "s12:slide_12/element_70",
+                "s12:slide_12/element_33",
+                "s12:slide_12/element_17",
+                "s12:slide_12/element_21",
+                "s12:slide_12/element_29",
+                "s12:slide_12/element_39",
+                "s12:slide_12/element_40",
+                "s12:slide_12/element_23",
+                "s12:slide_12/element_48",
+                "s12:slide_12/element_45",
+                "s12:slide_12/element_18",
+                "s12:slide_12/element_46",
+                "s12:slide_12/element_49",
+                "s12:slide_12/element_47",
+                "s12:slide_12/element_32",
+                "s12:slide_12/element_30",
+                "s12:slide_12/element_24",
+                "s12:slide_12/element_44",
+                "s12:slide_12/element_71",
+                "s12:slide_12/element_25",
+                "s12:slide_12/element_50",
+                "s12:slide_12/element_26",
+                "s12:slide_12/element_27",
+                "s12:slide_12/element_66",
+                "s12:slide_12/element_28",
+                "s12:slide_12/element_62",
+                "s12:slide_12/element_52",
+                "s12:slide_12/element_64",
+                "s12:slide_12/element_51",
+                "s12:slide_12/element_59",
+                "s12:slide_12/element_65",
+                "s12:slide_12/element_58",
+                "s12:slide_12/element_55",
+                "s12:slide_12/element_61",
+                "s12:slide_12/element_60",
+                "s12:slide_12/element_63",
+                "s12:slide_12/element_54",
+                "s12:slide_12/element_53",
+                "s12:slide_12/element_57",
+                "s12:slide_12/element_67"
+              ]
+            }
+          }
+        ],
+        "debug": {
+          "generator": "block-prototype-v1",
+          "source_slide_no": 12,
+          "source_title": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+          "visual_strategy": "flow-process",
+          "strategy_signals": {
+            "table_cell_count": 0,
+            "table_text_cell_count": 0,
+            "table_count": 0,
+            "connector_count": 25,
+            "labeled_shape_count": 34,
+            "shape_count": 14,
+            "image_count": 0,
+            "group_count": 16
+          }
+        }
+      }
+    ],
+    "debug": {
+      "generator": "block-prototype-v1",
+      "source_slide_no": 12,
+      "source_title": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+      "visual_strategy": "flow-process",
+      "strategy_signals": {
+        "table_cell_count": 0,
+        "table_text_cell_count": 0,
+        "table_count": 0,
+        "connector_count": 25,
+        "labeled_shape_count": 34,
+        "shape_count": 14,
+        "image_count": 0,
+        "group_count": 16
+      }
+    }
+  },
+  "assets": {},
+  "missing_assets": [],
+  "debug": {
+    "status": "block_prototype_generator",
+    "candidate_count": 119,
+    "root_candidate_count": 75,
+    "visual_strategy": {
+      "page_type": "flow-process",
+      "counts": {
+        "shape": 14,
+        "text_block": 30,
+        "connector": 25,
+        "labeled_shape": 34,
+        "group": 13,
+        "section_block": 3
+      },
+      "signals": {
+        "table_cell_count": 0,
+        "table_text_cell_count": 0,
+        "table_count": 0,
+        "connector_count": 25,
+        "labeled_shape_count": 34,
+        "shape_count": 14,
+        "image_count": 0,
+        "group_count": 16
+      }
+    },
+    "blocks": [
+      {
+        "block_id": "page:12:header_block",
+        "block_type": "header_block",
+        "page_id": "page:12",
+        "render_mode": "vector",
+        "bounds": {
+          "x": 31.34,
+          "y": 15.46,
+          "width": 897.33,
+          "height": 81.87
+        },
+        "root_candidate_ids": [
+          "s12:layout_12/element_1",
+          "s12:layout_12/element_4",
+          "s12:slide_12/element_1",
+          "s12:slide_12/element_68",
+          "s12:slide_12/element_11",
+          "s12:slide_12/element_5",
+          "s12:slide_12/element_2"
+        ],
+        "root_candidates": [
+          {
+            "candidate_id": "s12:layout_12/element_1",
+            "subtype": "shape",
+            "title": "Google Shape;53;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 25.52
+            }
+          },
+          {
+            "candidate_id": "s12:layout_12/element_4",
+            "subtype": "connector",
+            "title": "Google Shape;57;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 31.34,
+              "y": 40.97,
+              "width": 896.54,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_1",
+            "subtype": "text_block",
+            "title": "제목 1",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 25.52
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_68",
+            "subtype": "section_block",
+            "title": "Google Shape;572;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 400.63,
+              "y": 50.52,
+              "width": 315.76,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_11",
+            "subtype": "text_block",
+            "title": "Google Shape;474;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 235.84,
+              "y": 55.18,
+              "width": 86.23,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_5",
+            "subtype": "text_block",
+            "title": "Google Shape;468;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 34.35,
+              "y": 65.88,
+              "width": 55.26,
+              "height": 18.17
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_2",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;465;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 89.62,
+              "y": 68.98,
+              "width": 28.35,
+              "height": 28.35
+            }
+          }
+        ],
+        "page_type": "flow-process"
+      },
+      {
+        "block_id": "page:12:flow_block",
+        "block_type": "flow_block",
+        "page_id": "page:12",
+        "render_mode": "image",
+        "bounds": {
+          "x": 40.71,
+          "y": 72.35,
+          "width": 905.66,
+          "height": 468.2
+        },
+        "root_candidate_ids": [
+          "s12:layout_12/element_2",
+          "s12:layout_12/element_3",
+          "s12:slide_12/element_9",
+          "s12:slide_12/element_3",
+          "s12:slide_12/element_6",
+          "s12:slide_12/element_7",
+          "s12:slide_12/element_56",
+          "s12:slide_12/element_4",
+          "s12:slide_12/element_12",
+          "s12:slide_12/element_14",
+          "s12:slide_12/element_13",
+          "s12:slide_12/element_8",
+          "s12:slide_12/element_10",
+          "s12:slide_12/element_16",
+          "s12:slide_12/element_36",
+          "s12:slide_12/element_19",
+          "s12:slide_12/element_20",
+          "s12:slide_12/element_35",
+          "s12:slide_12/element_15",
+          "s12:slide_12/element_34",
+          "s12:slide_12/element_69",
+          "s12:slide_12/element_38",
+          "s12:slide_12/element_41",
+          "s12:slide_12/element_37",
+          "s12:slide_12/element_42",
+          "s12:slide_12/element_43",
+          "s12:slide_12/element_22",
+          "s12:slide_12/element_31",
+          "s12:slide_12/element_70",
+          "s12:slide_12/element_33",
+          "s12:slide_12/element_17",
+          "s12:slide_12/element_21",
+          "s12:slide_12/element_29",
+          "s12:slide_12/element_39",
+          "s12:slide_12/element_40",
+          "s12:slide_12/element_23",
+          "s12:slide_12/element_48",
+          "s12:slide_12/element_45",
+          "s12:slide_12/element_18",
+          "s12:slide_12/element_46",
+          "s12:slide_12/element_49",
+          "s12:slide_12/element_47",
+          "s12:slide_12/element_32",
+          "s12:slide_12/element_30",
+          "s12:slide_12/element_24",
+          "s12:slide_12/element_44",
+          "s12:slide_12/element_71",
+          "s12:slide_12/element_25",
+          "s12:slide_12/element_50",
+          "s12:slide_12/element_26",
+          "s12:slide_12/element_27",
+          "s12:slide_12/element_66",
+          "s12:slide_12/element_28",
+          "s12:slide_12/element_62",
+          "s12:slide_12/element_52",
+          "s12:slide_12/element_64",
+          "s12:slide_12/element_51",
+          "s12:slide_12/element_59",
+          "s12:slide_12/element_65",
+          "s12:slide_12/element_58",
+          "s12:slide_12/element_55",
+          "s12:slide_12/element_61",
+          "s12:slide_12/element_60",
+          "s12:slide_12/element_63",
+          "s12:slide_12/element_54",
+          "s12:slide_12/element_53",
+          "s12:slide_12/element_57",
+          "s12:slide_12/element_67"
+        ],
+        "root_candidates": [
+          {
+            "candidate_id": "s12:layout_12/element_2",
+            "subtype": "text_block",
+            "title": "Google Shape;54;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 730.37,
+              "y": 518.62,
+              "width": 216.0,
+              "height": 14.38
+            }
+          },
+          {
+            "candidate_id": "s12:layout_12/element_3",
+            "subtype": "text_block",
+            "title": "Google Shape;56;p66",
+            "source_scope": "layout",
+            "bounds": {
+              "x": 730.37,
+              "y": 518.62,
+              "width": 216.0,
+              "height": 14.38
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_9",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;470;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 140.53,
+              "y": 72.35,
+              "width": 66.68,
+              "height": 21.25
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_3",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;466;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 267.46,
+              "y": 72.35,
+              "width": 66.68,
+              "height": 21.25
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_6",
+            "subtype": "connector",
+            "title": "Google Shape;469;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 117.96,
+              "y": 82.97,
+              "width": 22.56,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_7",
+            "subtype": "connector",
+            "title": "Google Shape;471;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 207.21,
+              "y": 82.98,
+              "width": 60.23,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_56",
+            "subtype": "connector",
+            "title": "Google Shape;553;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 334.16,
+              "y": 82.98,
+              "width": 371.24,
+              "height": 404.98
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_4",
+            "subtype": "connector",
+            "title": "Google Shape;467;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 45.67,
+              "y": 83.53,
+              "width": 39.69,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_12",
+            "subtype": "connector",
+            "title": "Google Shape;475;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 291.66,
+              "y": 102.74,
+              "width": 18.33,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_14",
+            "subtype": "text_block",
+            "title": "Google Shape;477;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 222.09,
+              "y": 107.41,
+              "width": 27.29,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_13",
+            "subtype": "text_block",
+            "title": "Google Shape;476;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 344.76,
+              "y": 107.43,
+              "width": 28.3,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_8",
+            "subtype": "shape",
+            "title": "Google Shape;472;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 246.96,
+              "y": 111.92,
+              "width": 107.73,
+              "height": 24.01
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_10",
+            "subtype": "text_block",
+            "title": "Google Shape;473;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 270.9,
+              "y": 114.9,
+              "width": 63.14,
+              "height": 18.17
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_16",
+            "subtype": "connector",
+            "title": "Google Shape;481;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 193.67,
+              "y": 123.92,
+              "width": 53.3,
+              "height": 20.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_36",
+            "subtype": "connector",
+            "title": "Google Shape;518;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 354.68,
+              "y": 123.92,
+              "width": 204.83,
+              "height": 18.78
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_19",
+            "subtype": "text_block",
+            "title": "Google Shape;495;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 120.68,
+              "y": 139.37,
+              "width": 27.29,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_20",
+            "subtype": "text_block",
+            "title": "Google Shape;496;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 238.31,
+              "y": 141.8,
+              "width": 28.3,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_35",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;517;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 521.49,
+              "y": 142.69,
+              "width": 76.06,
+              "height": 21.25
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_15",
+            "subtype": "group",
+            "title": "Google Shape;478;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 139.8,
+              "y": 144.88,
+              "width": 107.73,
+              "height": 24.01
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_34",
+            "subtype": "connector",
+            "title": "Google Shape;516;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 86.2,
+              "y": 156.88,
+              "width": 53.59,
+              "height": 47.81
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_69",
+            "subtype": "connector",
+            "title": "Google Shape;582;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 247.53,
+              "y": 156.88,
+              "width": 9.62,
+              "height": 51.35
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_38",
+            "subtype": "connector",
+            "title": "Google Shape;522;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 551.21,
+              "y": 172.12,
+              "width": 16.48,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_41",
+            "subtype": "text_block",
+            "title": "Google Shape;531;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 479.33,
+              "y": 177.06,
+              "width": 27.29,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_37",
+            "subtype": "group",
+            "title": "Google Shape;519;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 505.51,
+              "y": 180.44,
+              "width": 107.73,
+              "height": 24.01
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_42",
+            "subtype": "connector",
+            "title": "Google Shape;532;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 460.6,
+              "y": 192.45,
+              "width": 44.9,
+              "height": 41.3
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_43",
+            "subtype": "connector",
+            "title": "Google Shape;533;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 568.66,
+              "y": 195.17,
+              "width": 29.21,
+              "height": 47.78
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_22",
+            "subtype": "text_block",
+            "title": "Google Shape;498;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 167.0,
+              "y": 202.5,
+              "width": 54.93,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_31",
+            "subtype": "text_block",
+            "title": "Google Shape;509;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 306.15,
+              "y": 202.5,
+              "width": 57.83,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_70",
+            "subtype": "text_block",
+            "title": "Google Shape;591;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 590.28,
+              "y": 204.45,
+              "width": 28.3,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_33",
+            "subtype": "group",
+            "title": "Google Shape;511;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 40.71,
+              "y": 204.69,
+              "width": 90.73,
+              "height": 50.47
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_17",
+            "subtype": "group",
+            "title": "Google Shape;482;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 203.84,
+              "y": 205.27,
+              "width": 107.73,
+              "height": 24.01
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_21",
+            "subtype": "connector",
+            "title": "Google Shape;497;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 185.87,
+              "y": 217.27,
+              "width": 17.98,
+              "height": 28.35
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_29",
+            "subtype": "connector",
+            "title": "Google Shape;507;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 311.57,
+              "y": 217.27,
+              "width": 32.98,
+              "height": 18.97
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_39",
+            "subtype": "group",
+            "title": "Google Shape;523;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 553.29,
+              "y": 233.66,
+              "width": 107.73,
+              "height": 24.01
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_40",
+            "subtype": "group",
+            "title": "Google Shape;526;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 415.1,
+              "y": 233.74,
+              "width": 90.73,
+              "height": 50.47
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_23",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;499;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 299.29,
+              "y": 236.24,
+              "width": 90.5,
+              "height": 20.73
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_48",
+            "subtype": "text_block",
+            "title": "Google Shape;540;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 652.15,
+              "y": 241.66,
+              "width": 28.3,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_45",
+            "subtype": "connector",
+            "title": "Google Shape;537;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 576.25,
+              "y": 243.34,
+              "width": 16.58,
+              "height": 45.23
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_18",
+            "subtype": "section_block",
+            "title": "Google Shape;485;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 140.36,
+              "y": 245.62,
+              "width": 90.73,
+              "height": 176.49
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_46",
+            "subtype": "connector",
+            "title": "Google Shape;538;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 661.02,
+              "y": 245.67,
+              "width": 12.99,
+              "height": 71.05
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_49",
+            "subtype": "connector",
+            "title": "Google Shape;541;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 608.53,
+              "y": 248.35,
+              "width": 18.88,
+              "height": 112.11
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_47",
+            "subtype": "text_block",
+            "title": "Google Shape;539;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 570.62,
+              "y": 249.19,
+              "width": 27.29,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_32",
+            "subtype": "text_block",
+            "title": "Google Shape;510;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 341.44,
+              "y": 256.19,
+              "width": 68.81,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_30",
+            "subtype": "connector",
+            "title": "Google Shape;508;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 336.68,
+              "y": 263.69,
+              "width": 14.57,
+              "height": 1.13
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_24",
+            "subtype": "group",
+            "title": "Google Shape;500;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 297.91,
+              "y": 271.53,
+              "width": 90.73,
+              "height": 124.6
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_44",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;536;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 516.66,
+              "y": 274.25,
+              "width": 90.5,
+              "height": 20.73
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_71",
+            "subtype": "text_block",
+            "title": "TextBox 71",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 746.53,
+              "y": 294.83,
+              "width": 199.14,
+              "height": 201.14
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_25",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;503;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 302.89,
+              "y": 295.56,
+              "width": 80.17,
+              "height": 21.52
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_50",
+            "subtype": "group",
+            "title": "Google Shape;542;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 624.47,
+              "y": 315.06,
+              "width": 86.08,
+              "height": 61.81
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_26",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;504;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 302.89,
+              "y": 320.35,
+              "width": 80.17,
+              "height": 20.89
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_27",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;505;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 302.89,
+              "y": 344.26,
+              "width": 80.17,
+              "height": 20.89
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_66",
+            "subtype": "connector",
+            "title": "Google Shape;570;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 224.0,
+              "y": 356.3,
+              "width": 250.77,
+              "height": 102.5
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_28",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;506;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 302.89,
+              "y": 368.6,
+              "width": 80.17,
+              "height": 20.89
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_62",
+            "subtype": "connector",
+            "title": "Google Shape;566;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 575.72,
+              "y": 373.4,
+              "width": 16.16,
+              "height": 167.15
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_52",
+            "subtype": "connector",
+            "title": "Google Shape;549;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 656.33,
+              "y": 387.83,
+              "width": 22.13,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_64",
+            "subtype": "text_block",
+            "title": "Google Shape;568;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 588.7,
+              "y": 395.44,
+              "width": 30.7,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_51",
+            "subtype": "group",
+            "title": "Google Shape;546;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 612.74,
+              "y": 399.01,
+              "width": 109.09,
+              "height": 25.95
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_59",
+            "subtype": "connector",
+            "title": "Google Shape;558;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 500.23,
+              "y": 411.99,
+              "width": 112.52,
+              "height": 10.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_65",
+            "subtype": "text_block",
+            "title": "Google Shape;569;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 421.33,
+              "y": 419.68,
+              "width": 28.3,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_58",
+            "subtype": "group",
+            "title": "Google Shape;555;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 445.67,
+              "y": 422.95,
+              "width": 109.09,
+              "height": 25.95
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_55",
+            "subtype": "text_block",
+            "title": "Google Shape;552;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 663.31,
+              "y": 424.84,
+              "width": 30.7,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_61",
+            "subtype": "connector",
+            "title": "Google Shape;565;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 400.63,
+              "y": 435.92,
+              "width": 45.05,
+              "height": 8.15
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_60",
+            "subtype": "section_block",
+            "title": "Google Shape;559;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 357.6,
+              "y": 444.08,
+              "width": 86.08,
+              "height": 88.84
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_63",
+            "subtype": "text_block",
+            "title": "Google Shape;567;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 502.46,
+              "y": 444.55,
+              "width": 27.29,
+              "height": 16.96
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_54",
+            "subtype": "connector",
+            "title": "Google Shape;551;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 647.28,
+              "y": 444.97,
+              "width": 40.09,
+              "height": 1.0
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_53",
+            "subtype": "labeled_shape",
+            "title": "Google Shape;550;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 629.34,
+              "y": 465.06,
+              "width": 76.06,
+              "height": 45.8
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_57",
+            "subtype": "text_block",
+            "title": "Google Shape;554;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 610.21,
+              "y": 509.19,
+              "width": 106.18,
+              "height": 26.66
+            }
+          },
+          {
+            "candidate_id": "s12:slide_12/element_67",
+            "subtype": "text_block",
+            "title": "Google Shape;571;p15",
+            "source_scope": "slide",
+            "bounds": {
+              "x": 47.66,
+              "y": 510.54,
+              "width": 239.59,
+              "height": 26.66
+            }
+          }
+        ],
+        "page_type": "flow-process"
+      }
+    ]
+  }
+}

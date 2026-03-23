@@ -1343,6 +1343,24 @@ function renderReplayVector(node, parentNode, origin) {
   }), "render-node");
 }
 
+function renderReplaySvgBlock(node, parentNode, origin) {
+  const bounds = getReplayBounds(node);
+  if (!bounds || !node.svgMarkup) {
+    return;
+  }
+  const local = boundsRelativeToOrigin(bounds, origin);
+  const svgNode = figma.createNodeFromSvg(node.svgMarkup);
+  svgNode.name = node.name || "SvgBlock";
+  svgNode.x = local.x;
+  svgNode.y = local.y;
+  const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
+  if (rotation) {
+    svgNode.rotation = rotation;
+  }
+  parentNode.appendChild(svgNode);
+  annotateReplayNode(svgNode, node, origin, "render-node");
+}
+
 async function renderReplayNode(node, parentNode, origin, bundle) {
   if (!node || typeof node !== "object") {
     return;
@@ -1373,6 +1391,9 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
       return;
     case "VECTOR":
       renderReplayVector(node, parentNode, currentNodeOrigin);
+      return;
+    case "SVG_BLOCK":
+      renderReplaySvgBlock(node, parentNode, currentNodeOrigin);
       return;
     case "RECTANGLE":
       renderReplayRectangle(node, parentNode, currentNodeOrigin, bundle);
