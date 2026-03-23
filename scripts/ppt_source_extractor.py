@@ -100,9 +100,40 @@ def build_children_map(candidates: list[dict[str, Any]]) -> dict[str, list[dict[
     return by_parent
 
 
+def placeholder_key(placeholder: dict[str, Any] | None) -> str:
+    placeholder = placeholder or {}
+    ph_type = str(placeholder.get("type") or "").strip().lower()
+    ph_idx = str(placeholder.get("idx") or "").strip().lower()
+    ph_sz = str(placeholder.get("sz") or "").strip().lower()
+    return "|".join([ph_type, ph_idx, ph_sz])
+
+
+def build_placeholder_anchor_map(candidates: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    anchors: dict[str, dict[str, Any]] = {}
+    scope_rank = {"master": 0, "layout": 1, "slide": 2}
+    for candidate in candidates:
+        extra = candidate.get("extra") or {}
+        placeholder = extra.get("placeholder") or {}
+        key = placeholder_key(placeholder)
+        bounds = candidate.get("bounds_px")
+        scope = str(extra.get("source_scope") or "slide").lower()
+        if not key or not bounds or scope not in {"master", "layout"}:
+            continue
+        existing = anchors.get(key)
+        if existing is None or scope_rank[scope] < scope_rank[existing["scope"]]:
+            anchors[key] = {
+                "scope": scope,
+                "candidate_id": candidate.get("candidate_id"),
+                "bounds_px": bounds,
+                "placeholder": placeholder,
+            }
+    return anchors
+
+
 def build_page_context(page: dict[str, Any]) -> dict[str, Any]:
     scale_x, scale_y = build_page_scale(page)
     candidates = page.get("candidates") or []
+    children_map = build_children_map(candidates)
     return {
         "page": page,
         "page_id": page.get("page_id") or f"page:{page.get('slide_no')}",
@@ -113,8 +144,9 @@ def build_page_context(page: dict[str, Any]) -> dict[str, Any]:
         "width": TARGET_SLIDE_WIDTH,
         "height": TARGET_SLIDE_HEIGHT,
         "candidates": candidates,
-        "children_map": build_children_map(candidates),
-        "roots": sorted(build_children_map(candidates).get(page.get("page_id"), []), key=sort_by_position_key),
+        "children_map": children_map,
+        "roots": sorted(children_map.get(page.get("page_id"), []), key=sort_by_position_key),
+        "placeholder_anchor_map": build_placeholder_anchor_map(candidates),
     }
 
 

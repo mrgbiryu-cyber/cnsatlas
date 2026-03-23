@@ -153,117 +153,15 @@
             }
           },
           {
-            "id": "s19:layout_19/element_2:text",
-            "type": "TEXT",
-            "name": "Google Shape;54;p66",
-            "characters": "‹#›",
-            "absoluteBoundingBox": {
-              "x": 739.97,
-              "y": 523.42,
-              "width": 196.8,
-              "height": 4.78
-            },
-            "relativeTransform": [
-              [
-                1.0,
-                -0.0,
-                0
-              ],
-              [
-                0.0,
-                1.0,
-                0
-              ]
-            ],
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": {
-                  "r": 0.498,
-                  "g": 0.498,
-                  "b": 0.498
-                },
-                "opacity": null
-              }
-            ],
-            "style": {
-              "fontSize": 8,
-              "fontFamily": "+mn-ea",
-              "textAlignHorizontal": "RIGHT",
-              "textAlignVertical": "CENTER",
-              "textAutoResize": "HEIGHT",
-              "lineHeightPx": null
-            },
-            "children": [],
-            "debug": {
-              "source_path": "layout_19/element_2",
-              "source_node_id": "54",
-              "source_subtype": "text_block",
-              "source_scope": "layout",
-              "rotation_degrees": 0.0
-            }
-          },
-          {
-            "id": "s19:layout_19/element_3:text",
-            "type": "TEXT",
-            "name": "Google Shape;56;p66",
-            "characters": "‹#›",
-            "absoluteBoundingBox": {
-              "x": 739.97,
-              "y": 523.42,
-              "width": 196.8,
-              "height": 4.78
-            },
-            "relativeTransform": [
-              [
-                1.0,
-                -0.0,
-                0
-              ],
-              [
-                0.0,
-                1.0,
-                0
-              ]
-            ],
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
-                },
-                "opacity": 1.0
-              }
-            ],
-            "style": {
-              "fontSize": 8,
-              "fontFamily": "Inter",
-              "textAlignHorizontal": "LEFT",
-              "textAlignVertical": "TOP",
-              "textAutoResize": "HEIGHT",
-              "lineHeightPx": null
-            },
-            "children": [],
-            "debug": {
-              "source_path": "layout_19/element_3",
-              "source_node_id": "56",
-              "source_subtype": "text_block",
-              "source_scope": "layout",
-              "rotation_degrees": 0.0
-            }
-          },
-          {
             "id": "s19:slide_19/element_1:text",
             "type": "TEXT",
             "name": "제목 1",
             "characters": "리뷰 - 제품 카테고리별 평가 항목",
             "absoluteBoundingBox": {
-              "x": 0.0,
-              "y": 0.0,
-              "width": 90.0,
-              "height": 18.0
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 25.52
             },
             "relativeTransform": [
               [
@@ -293,7 +191,7 @@
               "fontFamily": "Inter",
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
-              "textAutoResize": "HEIGHT",
+              "textAutoResize": "WIDTH_AND_HEIGHT",
               "lineHeightPx": null
             },
             "children": [],
@@ -816,10 +714,10 @@
                 "name": "cell 1-1",
                 "characters": "항목",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 77.75,
-                  "width": 56.82,
-                  "height": 42.0
+                  "x": 458.1,
+                  "y": 82.18,
+                  "width": 39.1,
+                  "height": 33.14
                 },
                 "relativeTransform": [
                   [
@@ -845,7 +743,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 14,
+                  "fontSize": 11,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -930,10 +828,10 @@
                 "name": "cell 1-2",
                 "characters": "3 점 척도 평가 ( 리뷰 작성 팝업 노출 )",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 77.75,
-                  "width": 422.61,
-                  "height": 21.0
+                  "x": 514.92,
+                  "y": 82.18,
+                  "width": 404.89,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -1044,10 +942,10 @@
                 "name": "cell 2-2",
                 "characters": "노출 문구",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 98.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 514.92,
+                  "y": 103.18,
+                  "width": 87.04,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -1158,10 +1056,10 @@
                 "name": "cell 2-3",
                 "characters": "긍정",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 98.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 619.68,
+                  "y": 103.18,
+                  "width": 88.22,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -1272,10 +1170,10 @@
                 "name": "cell 2-4",
                 "characters": "보통",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 98.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 725.62,
+                  "y": 103.18,
+                  "width": 88.22,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -1386,10 +1284,10 @@
                 "name": "cell 2-5",
                 "characters": "부정",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 98.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 831.57,
+                  "y": 103.18,
+                  "width": 88.22,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -1499,10 +1397,10 @@
                 "name": "cell 3-1",
                 "characters": "화질",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 119.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 122.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -1612,10 +1510,10 @@
                 "name": "cell 3-2",
                 "characters": "화질 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 119.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 122.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -1725,10 +1623,10 @@
                 "name": "cell 3-3",
                 "characters": "선명해요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 119.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 122.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -1838,10 +1736,10 @@
                 "name": "cell 3-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 119.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 122.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -1951,10 +1849,10 @@
                 "name": "cell 3-5",
                 "characters": "아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 119.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 122.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2064,10 +1962,10 @@
                 "name": "cell 4-1",
                 "characters": "음질",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 140.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 143.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2177,10 +2075,10 @@
                 "name": "cell 4-2",
                 "characters": "음질 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 140.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 143.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2290,10 +2188,10 @@
                 "name": "cell 4-3",
                 "characters": "뛰어나요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 140.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 143.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2403,10 +2301,10 @@
                 "name": "cell 4-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 140.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 143.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2516,10 +2414,10 @@
                 "name": "cell 4-5",
                 "characters": "아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 140.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 143.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2629,10 +2527,10 @@
                 "name": "cell 5-1",
                 "characters": "성능",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 161.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 164.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2742,10 +2640,10 @@
                 "name": "cell 5-2",
                 "characters": "성능 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 161.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 164.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2855,10 +2753,10 @@
                 "name": "cell 5-3",
                 "characters": "좋아요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 161.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 164.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -2968,10 +2866,10 @@
                 "name": "cell 5-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 161.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 164.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3081,10 +2979,10 @@
                 "name": "cell 5-5",
                 "characters": "별로예요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 161.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 164.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3194,10 +3092,10 @@
                 "name": "cell 6-1",
                 "characters": "사운드",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 182.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 185.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3307,10 +3205,10 @@
                 "name": "cell 6-2",
                 "characters": "사운드 는 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 182.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 185.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3420,10 +3318,10 @@
                 "name": "cell 6-3",
                 "characters": "우수해요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 182.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 185.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3533,10 +3431,10 @@
                 "name": "cell 6-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 182.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 185.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3646,10 +3544,10 @@
                 "name": "cell 6-5",
                 "characters": "별로예요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 182.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 185.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3759,10 +3657,10 @@
                 "name": "cell 7-1",
                 "characters": "디자인",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 203.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 206.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3872,10 +3770,10 @@
                 "name": "cell 7-2",
                 "characters": "디자인 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 203.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 206.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -3985,10 +3883,10 @@
                 "name": "cell 7-3",
                 "characters": "뛰어나요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 203.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 206.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4098,10 +3996,10 @@
                 "name": "cell 7-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 203.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 206.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4211,10 +4109,10 @@
                 "name": "cell 7-5",
                 "characters": "별로예요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 203.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 206.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4324,10 +4222,10 @@
                 "name": "cell 8-1",
                 "characters": "기능",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 224.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 227.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4437,10 +4335,10 @@
                 "name": "cell 8-2",
                 "characters": "기능 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 224.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 227.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4550,10 +4448,10 @@
                 "name": "cell 8-3",
                 "characters": "다양해요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 224.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 227.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4663,10 +4561,10 @@
                 "name": "cell 8-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 224.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 227.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4776,10 +4674,10 @@
                 "name": "cell 8-5",
                 "characters": "아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 224.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 227.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -4889,10 +4787,10 @@
                 "name": "cell 9-1",
                 "characters": "휴대성",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 245.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 248.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5002,10 +4900,10 @@
                 "name": "cell 9-2",
                 "characters": "휴대성 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 245.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 248.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5115,10 +5013,10 @@
                 "name": "cell 9-3",
                 "characters": "좋아요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 245.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 248.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5228,10 +5126,10 @@
                 "name": "cell 9-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 245.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 248.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5341,10 +5239,10 @@
                 "name": "cell 9-5",
                 "characters": "떨어져요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 245.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 248.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5454,10 +5352,10 @@
                 "name": "cell 10-1",
                 "characters": "용량 효율성",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 266.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 269.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5567,10 +5465,10 @@
                 "name": "cell 10-2",
                 "characters": "용량 효율성 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 266.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 269.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5680,10 +5578,10 @@
                 "name": "cell 10-3",
                 "characters": "높아요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 266.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 269.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5793,10 +5691,10 @@
                 "name": "cell 10-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 266.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 269.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -5906,10 +5804,10 @@
                 "name": "cell 10-5",
                 "characters": "떨어져요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 266.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 269.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6019,10 +5917,10 @@
                 "name": "cell 11-1",
                 "characters": "부가기능",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 287.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 290.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6132,10 +6030,10 @@
                 "name": "cell 11-2",
                 "characters": "부가기능 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 287.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 290.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6245,10 +6143,10 @@
                 "name": "cell 11-3",
                 "characters": "많아요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 287.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 290.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6358,10 +6256,10 @@
                 "name": "cell 11-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 287.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 290.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6471,10 +6369,10 @@
                 "name": "cell 11-5",
                 "characters": "아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 287.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 290.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6584,10 +6482,10 @@
                 "name": "cell 12-1",
                 "characters": "사용성",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 308.75,
-                  "width": 56.82,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 311.67,
+                  "width": 45.12,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6697,10 +6595,10 @@
                 "name": "cell 12-2",
                 "characters": "사용성 은 어떤가요 ?",
                 "absoluteBoundingBox": {
-                  "x": 506.06,
-                  "y": 308.75,
-                  "width": 104.76,
-                  "height": 21.0
+                  "x": 511.91,
+                  "y": 311.67,
+                  "width": 93.06,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6810,10 +6708,10 @@
                 "name": "cell 12-3",
                 "characters": "좋아요",
                 "absoluteBoundingBox": {
-                  "x": 610.82,
-                  "y": 308.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 616.67,
+                  "y": 311.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -6923,10 +6821,10 @@
                 "name": "cell 12-4",
                 "characters": "보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 716.76,
-                  "y": 308.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 722.61,
+                  "y": 311.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -7036,10 +6934,10 @@
                 "name": "cell 12-5",
                 "characters": "별로예요",
                 "absoluteBoundingBox": {
-                  "x": 822.71,
-                  "y": 308.75,
-                  "width": 105.94,
-                  "height": 21.0
+                  "x": 828.56,
+                  "y": 311.67,
+                  "width": 94.24,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -7181,9 +7079,9 @@
                 "name": "cell 1-1",
                 "characters": "대카테고리",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
+                  "x": 46.22,
                   "y": 78.05,
-                  "width": 70.86,
+                  "width": 55.74,
                   "height": 21.0
                 },
                 "relativeTransform": [
@@ -7295,9 +7193,9 @@
                 "name": "cell 1-2",
                 "characters": "중카테고리",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
+                  "x": 117.08,
                   "y": 78.05,
-                  "width": 72.42,
+                  "width": 57.3,
                   "height": 21.0
                 },
                 "relativeTransform": [
@@ -7409,9 +7307,9 @@
                 "name": "cell 1-3",
                 "characters": "카테고리 ID",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
+                  "x": 189.5,
                   "y": 78.05,
-                  "width": 98.17,
+                  "width": 83.05,
                   "height": 21.0
                 },
                 "relativeTransform": [
@@ -7523,9 +7421,9 @@
                 "name": "cell 1-4",
                 "characters": "평가 항목",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
+                  "x": 287.67,
                   "y": 78.05,
-                  "width": 146.15,
+                  "width": 131.03,
                   "height": 21.0
                 },
                 "relativeTransform": [
@@ -7636,10 +7534,10 @@
                 "name": "cell 2-1",
                 "characters": "TV/AV",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 99.05,
-                  "width": 70.86,
-                  "height": 63.0
+                  "x": 46.22,
+                  "y": 100.94,
+                  "width": 55.74,
+                  "height": 59.22
                 },
                 "relativeTransform": [
                   [
@@ -7665,7 +7563,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -7749,10 +7647,10 @@
                 "name": "cell 2-2",
                 "characters": "TV",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 99.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 100.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -7862,10 +7760,10 @@
                 "name": "cell 2-3",
                 "characters": "CT50000025",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 99.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 100.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -7975,10 +7873,10 @@
                 "name": "cell 2-4",
                 "characters": "화질 | 사운드| 부가기능",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 99.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 100.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8088,10 +7986,10 @@
                 "name": "cell 3-2",
                 "characters": "프로젝터",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 120.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 121.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8201,10 +8099,10 @@
                 "name": "cell 3-3",
                 "characters": "CT50000032",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 120.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 121.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8314,10 +8212,10 @@
                 "name": "cell 3-4",
                 "characters": "화질 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 120.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 121.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8427,10 +8325,10 @@
                 "name": "cell 4-2",
                 "characters": "오디오 / 비디오",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 141.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 142.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8540,10 +8438,10 @@
                 "name": "cell 4-3",
                 "characters": "CT50000036",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 141.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 142.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8653,10 +8551,10 @@
                 "name": "cell 4-4",
                 "characters": "음질 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 141.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 142.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8766,10 +8664,10 @@
                 "name": "cell 5-1",
                 "characters": "PC / 모니터",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 162.05,
-                  "width": 70.86,
-                  "height": 63.0
+                  "x": 46.22,
+                  "y": 163.94,
+                  "width": 55.74,
+                  "height": 59.22
                 },
                 "relativeTransform": [
                   [
@@ -8795,7 +8693,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -8879,10 +8777,10 @@
                 "name": "cell 5-2",
                 "characters": "노트북 / 태블릿",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 162.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 163.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -8992,10 +8890,10 @@
                 "name": "cell 5-3",
                 "characters": "CT50000046",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 162.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 163.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9105,10 +9003,10 @@
                 "name": "cell 5-4",
                 "characters": "성능 | 디자인 | 휴대성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 162.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 163.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9218,10 +9116,10 @@
                 "name": "cell 6-2",
                 "characters": "일체형 / 테스트톱",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 183.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 184.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9331,10 +9229,10 @@
                 "name": "cell 6-3",
                 "characters": "CT50000051",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 183.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 184.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9444,10 +9342,10 @@
                 "name": "cell 6-4",
                 "characters": "성능 | 디자인",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 183.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 184.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9557,10 +9455,10 @@
                 "name": "cell 7-2",
                 "characters": "모니터",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 204.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 205.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9670,10 +9568,10 @@
                 "name": "cell 7-3",
                 "characters": "CT50000055",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 204.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 205.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9783,10 +9681,10 @@
                 "name": "cell 7-4",
                 "characters": "화질 | 기능 | 디자인",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 204.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 205.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -9896,10 +9794,10 @@
                 "name": "cell 8-1",
                 "characters": "주방가전",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 225.05,
-                  "width": 70.86,
-                  "height": 147.0
+                  "x": 46.22,
+                  "y": 226.94,
+                  "width": 55.74,
+                  "height": 143.22
                 },
                 "relativeTransform": [
                   [
@@ -9925,7 +9823,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 48,
+                  "fontSize": 47,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -10009,10 +9907,10 @@
                 "name": "cell 8-2",
                 "characters": "냉장고",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 225.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 226.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10122,10 +10020,10 @@
                 "name": "cell 8-3",
                 "characters": "CT50000065",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 225.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 226.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10235,10 +10133,10 @@
                 "name": "cell 8-4",
                 "characters": "성능 | 디자인 | 용량 효율성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 225.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 226.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10348,10 +10246,10 @@
                 "name": "cell 9-2",
                 "characters": "김치냉장고",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 246.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 247.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10461,10 +10359,10 @@
                 "name": "cell 9-3",
                 "characters": "CT50000072",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 246.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 247.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10574,10 +10472,10 @@
                 "name": "cell 9-4",
                 "characters": "성능 | 디자인 | 용량 효율성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 246.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 247.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10687,10 +10585,10 @@
                 "name": "cell 10-2",
                 "characters": "전자레인지/오븐",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 267.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 268.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10800,10 +10698,10 @@
                 "name": "cell 10-3",
                 "characters": "CT50019018",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 267.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 268.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -10913,10 +10811,10 @@
                 "name": "cell 10-4",
                 "characters": "성능 | 디자인 | 부가기능",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 267.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 268.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11026,10 +10924,10 @@
                 "name": "cell 11-2",
                 "characters": "전기레인지",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 288.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 289.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11139,10 +11037,10 @@
                 "name": "cell 11-3",
                 "characters": "CT50000076",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 288.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 289.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11252,10 +11150,10 @@
                 "name": "cell 11-4",
                 "characters": "성능 | 디자인 | 부가기능",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 288.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 289.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11365,10 +11263,10 @@
                 "name": "cell 12-2",
                 "characters": "식기세척기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 309.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 310.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11478,10 +11376,10 @@
                 "name": "cell 12-3",
                 "characters": "CT50000086",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 309.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 310.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11591,10 +11489,10 @@
                 "name": "cell 12-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 309.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 310.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11704,10 +11602,10 @@
                 "name": "cell 13-2",
                 "characters": "정수기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 330.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 331.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11817,10 +11715,10 @@
                 "name": "cell 13-3",
                 "characters": "CT50000094",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 330.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 331.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -11930,10 +11828,10 @@
                 "name": "cell 13-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 330.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 331.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12043,10 +11941,10 @@
                 "name": "cell 14-2",
                 "characters": "맥주제조기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 351.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 352.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12156,10 +12054,10 @@
                 "name": "cell 14-3",
                 "characters": "CT50000087",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 351.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 352.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12269,10 +12167,10 @@
                 "name": "cell 14-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 351.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 352.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12382,10 +12280,10 @@
                 "name": "cell 15-1",
                 "characters": "생활가전",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 372.05,
-                  "width": 70.86,
-                  "height": 126.0
+                  "x": 46.22,
+                  "y": 373.94,
+                  "width": 55.74,
+                  "height": 122.22
                 },
                 "relativeTransform": [
                   [
@@ -12411,7 +12309,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 41,
+                  "fontSize": 40,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -12495,10 +12393,10 @@
                 "name": "cell 15-2",
                 "characters": "워시타워",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 372.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 373.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12608,10 +12506,10 @@
                 "name": "cell 15-3",
                 "characters": "CT50000110",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 372.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 373.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12721,10 +12619,10 @@
                 "name": "cell 15-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 372.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 373.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12834,10 +12732,10 @@
                 "name": "cell 16-2",
                 "characters": "세탁기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 393.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 394.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -12947,10 +12845,10 @@
                 "name": "cell 16-3",
                 "characters": "CT50000101",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 393.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 394.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13060,10 +12958,10 @@
                 "name": "cell 16-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 393.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 394.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13173,10 +13071,10 @@
                 "name": "cell 17-2",
                 "characters": "의류건조기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 414.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 415.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13286,10 +13184,10 @@
                 "name": "cell 17-3",
                 "characters": "CT50000107",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 414.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 415.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13399,10 +13297,10 @@
                 "name": "cell 17-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 414.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 415.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13512,10 +13410,10 @@
                 "name": "cell 18-2",
                 "characters": "의류관리기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 435.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 436.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13625,10 +13523,10 @@
                 "name": "cell 18-3",
                 "characters": "CT50000106",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 435.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 436.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13738,10 +13636,10 @@
                 "name": "cell 18-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 435.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 436.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13851,10 +13749,10 @@
                 "name": "cell 19-2",
                 "characters": "청소기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 456.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 457.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -13964,10 +13862,10 @@
                 "name": "cell 19-3",
                 "characters": "CT50000111",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 456.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 457.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14077,10 +13975,10 @@
                 "name": "cell 19-4",
                 "characters": "성능 | 디자인 | 휴대성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 456.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 457.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14190,10 +14088,10 @@
                 "name": "cell 20-2",
                 "characters": "안마의자",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 477.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 478.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14303,10 +14201,10 @@
                 "name": "cell 20-3",
                 "characters": "CT50000123",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 477.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 478.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14416,10 +14314,10 @@
                 "name": "cell 20-4",
                 "characters": "성능 | 디자인 | 부가기능",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 477.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 478.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14529,10 +14427,10 @@
                 "name": "cell 21-1",
                 "characters": "에어컨/에어케어",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 498.05,
-                  "width": 70.86,
-                  "height": 84.0
+                  "x": 46.22,
+                  "y": 499.94,
+                  "width": 55.74,
+                  "height": 80.22
                 },
                 "relativeTransform": [
                   [
@@ -14558,7 +14456,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 22,
+                  "fontSize": 21,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -14642,10 +14540,10 @@
                 "name": "cell 21-2",
                 "characters": "에어컨",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 498.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 499.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14755,10 +14653,10 @@
                 "name": "cell 21-3",
                 "characters": "CT50000131",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 498.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 499.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14868,10 +14766,10 @@
                 "name": "cell 21-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 498.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 499.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -14981,10 +14879,10 @@
                 "name": "cell 22-2",
                 "characters": "공기청정기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 519.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 520.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15094,10 +14992,10 @@
                 "name": "cell 22-3",
                 "characters": "CT50000143",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 519.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 520.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15207,10 +15105,10 @@
                 "name": "cell 22-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 519.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 520.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15320,10 +15218,10 @@
                 "name": "cell 23-2",
                 "characters": "제습기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 540.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 541.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15433,10 +15331,10 @@
                 "name": "cell 23-3",
                 "characters": "CT50000142",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 540.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 541.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15546,10 +15444,10 @@
                 "name": "cell 23-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 540.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 541.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15659,10 +15557,10 @@
                 "name": "cell 24-2",
                 "characters": "가습기",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 561.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 562.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15772,10 +15670,10 @@
                 "name": "cell 24-3",
                 "characters": "CT50000139",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 561.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 562.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15885,10 +15783,10 @@
                 "name": "cell 24-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 561.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 562.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -15998,10 +15896,10 @@
                 "name": "cell 25-1",
                 "characters": "모바일",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 582.05,
-                  "width": 70.86,
-                  "height": 84.0
+                  "x": 46.22,
+                  "y": 583.94,
+                  "width": 55.74,
+                  "height": 80.22
                 },
                 "relativeTransform": [
                   [
@@ -16027,7 +15925,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 27,
+                  "fontSize": 26,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -16111,10 +16009,10 @@
                 "name": "cell 25-2",
                 "characters": "스마트폰",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 582.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 583.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -16224,10 +16122,10 @@
                 "name": "cell 25-3",
                 "characters": "제외",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 582.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 583.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -16337,10 +16235,10 @@
                 "name": "cell 25-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 582.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 583.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -16450,10 +16348,10 @@
                 "name": "cell 26-2",
                 "characters": "피처폰",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 603.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 604.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -16563,10 +16461,10 @@
                 "name": "cell 26-3",
                 "characters": "제외",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 603.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 604.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -16676,10 +16574,10 @@
                 "name": "cell 26-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 603.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 604.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -16789,10 +16687,10 @@
                 "name": "cell 27-2",
                 "characters": "스마트 디바이스",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 624.05,
-                  "width": 72.42,
-                  "height": 42.0
+                  "x": 117.08,
+                  "y": 625.94,
+                  "width": 57.3,
+                  "height": 38.22
                 },
                 "relativeTransform": [
                   [
@@ -16818,7 +16716,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 11,
+                  "fontSize": 10,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -16902,10 +16800,10 @@
                 "name": "cell 27-3",
                 "characters": "제외",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 624.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 625.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17015,10 +16913,10 @@
                 "name": "cell 27-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 624.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 625.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17128,10 +17026,10 @@
                 "name": "cell 28-3",
                 "characters": "제외",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 645.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 646.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17241,10 +17139,10 @@
                 "name": "cell 28-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 645.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 646.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17354,10 +17252,10 @@
                 "name": "cell 29-1",
                 "characters": "뷰티 / 의료기기",
                 "absoluteBoundingBox": {
-                  "x": 38.66,
-                  "y": 666.05,
-                  "width": 70.86,
-                  "height": 63.0
+                  "x": 46.22,
+                  "y": 667.94,
+                  "width": 55.74,
+                  "height": 59.22
                 },
                 "relativeTransform": [
                   [
@@ -17383,7 +17281,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -17467,10 +17365,10 @@
                 "name": "cell 29-2",
                 "characters": "LED 마스크",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 666.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 667.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17580,10 +17478,10 @@
                 "name": "cell 29-3",
                 "characters": "제외",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 666.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 667.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17693,10 +17591,10 @@
                 "name": "cell 29-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 666.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 667.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17806,10 +17704,10 @@
                 "name": "cell 30-2",
                 "characters": "LED 넥케어",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 687.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 688.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -17919,10 +17817,10 @@
                 "name": "cell 30-3",
                 "characters": "제외",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 687.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 688.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -18032,10 +17930,10 @@
                 "name": "cell 30-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 687.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 688.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -18145,10 +18043,10 @@
                 "name": "cell 31-2",
                 "characters": "뷰티 디바이스",
                 "absoluteBoundingBox": {
-                  "x": 109.52,
-                  "y": 708.05,
-                  "width": 72.42,
-                  "height": 21.0
+                  "x": 117.08,
+                  "y": 709.94,
+                  "width": 57.3,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -18258,10 +18156,10 @@
                 "name": "cell 31-3",
                 "characters": "CT50000165",
                 "absoluteBoundingBox": {
-                  "x": 181.94,
-                  "y": 708.05,
-                  "width": 98.17,
-                  "height": 21.0
+                  "x": 189.5,
+                  "y": 709.94,
+                  "width": 83.05,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -18371,10 +18269,10 @@
                 "name": "cell 31-4",
                 "characters": "성능 | 디자인 | 사용성",
                 "absoluteBoundingBox": {
-                  "x": 280.11,
-                  "y": 708.05,
-                  "width": 146.15,
-                  "height": 21.0
+                  "x": 287.67,
+                  "y": 709.94,
+                  "width": 131.03,
+                  "height": 17.22
                 },
                 "relativeTransform": [
                   [
@@ -18522,7 +18420,7 @@
                 "fillGeometry": [],
                 "strokeGeometry": [
                   {
-                    "path": "M 4.0 103.5 L 20.0 103.5 L 20.0 4.0 L 26.99 4.0"
+                    "path": "M 4.0 103.5 L 4.0 53.75 L 26.99 53.75 L 26.99 4.0"
                   }
                 ],
                 "fills": [],
@@ -18570,7 +18468,7 @@
                 ],
                 "fillGeometry": [
                   {
-                    "path": "M 26.99 4.0 L 20.99 6.7 L 20.99 1.3 Z",
+                    "path": "M 26.99 4.0 L 29.69 10.0 L 24.29 10.0 Z",
                     "windingRule": "NONZERO"
                   }
                 ],
@@ -18652,7 +18550,7 @@
                 "fillGeometry": [],
                 "strokeGeometry": [
                   {
-                    "path": "M 4.0 4.0 L 20.0 4.0 L 20.0 145.79 L 26.99 145.79"
+                    "path": "M 4.0 4.0 L 4.0 74.9 L 26.99 74.9 L 26.99 145.79"
                   }
                 ],
                 "fills": [],
@@ -18700,7 +18598,7 @@
                 ],
                 "fillGeometry": [
                   {
-                    "path": "M 26.99 145.79 L 20.99 148.49 L 20.99 143.09 Z",
+                    "path": "M 26.99 145.79 L 24.29 139.79 L 29.69 139.79 Z",
                     "windingRule": "NONZERO"
                   }
                 ],
@@ -18826,10 +18724,10 @@
                 "name": "cell 1-1",
                 "characters": "항목",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 319.04,
-                  "width": 72.55,
-                  "height": 42.0
+                  "x": 458.1,
+                  "y": 323.47,
+                  "width": 54.83,
+                  "height": 33.14
                 },
                 "relativeTransform": [
                   [
@@ -18855,7 +18753,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 14,
+                  "fontSize": 11,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -18940,10 +18838,10 @@
                 "name": "cell 1-2",
                 "characters": "3점 척도 평가 (PDP 상단 노출 문구 )",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 319.04,
-                  "width": 405.88,
-                  "height": 21.0
+                  "x": 530.65,
+                  "y": 323.47,
+                  "width": 388.16,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -19054,10 +18952,10 @@
                 "name": "cell 2-2",
                 "characters": "긍정",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 340.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 530.65,
+                  "y": 344.47,
+                  "width": 117.57,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -19168,10 +19066,10 @@
                 "name": "cell 2-3",
                 "characters": "보통",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 340.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 665.95,
+                  "y": 344.47,
+                  "width": 117.57,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -19282,10 +19180,10 @@
                 "name": "cell 2-4",
                 "characters": "부정",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 340.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 801.24,
+                  "y": 344.47,
+                  "width": 117.57,
+                  "height": 12.14
                 },
                 "relativeTransform": [
                   [
@@ -19395,10 +19293,10 @@
                 "name": "cell 3-1",
                 "characters": "화질",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 361.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 363.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -19508,10 +19406,10 @@
                 "name": "cell 3-2",
                 "characters": "화질이 선명해요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 361.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 363.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -19621,10 +19519,10 @@
                 "name": "cell 3-3",
                 "characters": "화질이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 361.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 363.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -19734,10 +19632,10 @@
                 "name": "cell 3-4",
                 "characters": "화질이 아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 361.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 363.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -19847,10 +19745,10 @@
                 "name": "cell 4-1",
                 "characters": "음질",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 382.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 384.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -19960,10 +19858,10 @@
                 "name": "cell 4-2",
                 "characters": "음질이 뛰어나요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 382.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 384.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20073,10 +19971,10 @@
                 "name": "cell 4-3",
                 "characters": "음질이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 382.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 384.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20186,10 +20084,10 @@
                 "name": "cell 4-4",
                 "characters": "음질이 아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 382.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 384.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20299,10 +20197,10 @@
                 "name": "cell 5-1",
                 "characters": "성능",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 403.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 405.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20412,10 +20310,10 @@
                 "name": "cell 5-2",
                 "characters": "성능이 좋아요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 403.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 405.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20525,10 +20423,10 @@
                 "name": "cell 5-3",
                 "characters": "성능이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 403.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 405.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20638,10 +20536,10 @@
                 "name": "cell 5-4",
                 "characters": "성능이 별로예요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 403.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 405.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20751,10 +20649,10 @@
                 "name": "cell 6-1",
                 "characters": "사운드",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 424.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 426.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20864,10 +20762,10 @@
                 "name": "cell 6-2",
                 "characters": "사운드가 우수해요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 424.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 426.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -20977,10 +20875,10 @@
                 "name": "cell 6-3",
                 "characters": "사운드가 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 424.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 426.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21090,10 +20988,10 @@
                 "name": "cell 6-4",
                 "characters": "사운드가 별로예요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 424.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 426.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21203,10 +21101,10 @@
                 "name": "cell 7-1",
                 "characters": "디자인",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 445.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 447.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21316,10 +21214,10 @@
                 "name": "cell 7-2",
                 "characters": "디자인이 뛰어나요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 445.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 447.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21429,10 +21327,10 @@
                 "name": "cell 7-3",
                 "characters": "디자인이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 445.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 447.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21542,10 +21440,10 @@
                 "name": "cell 7-4",
                 "characters": "디자인이 별로예요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 445.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 447.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21655,10 +21553,10 @@
                 "name": "cell 8-1",
                 "characters": "기능",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 466.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 468.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21768,10 +21666,10 @@
                 "name": "cell 8-2",
                 "characters": "기능이 다양해요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 466.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 468.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21881,10 +21779,10 @@
                 "name": "cell 8-3",
                 "characters": "기능이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 466.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 468.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -21994,10 +21892,10 @@
                 "name": "cell 8-4",
                 "characters": "기능이 아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 466.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 468.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22107,10 +22005,10 @@
                 "name": "cell 9-1",
                 "characters": "휴대성",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 487.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 489.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22220,10 +22118,10 @@
                 "name": "cell 9-2",
                 "characters": "휴대성이 좋아요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 487.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 489.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22333,10 +22231,10 @@
                 "name": "cell 9-3",
                 "characters": "휴대성이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 487.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 489.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22446,10 +22344,10 @@
                 "name": "cell 9-4",
                 "characters": "휴대성이 떨어져요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 487.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 489.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22559,10 +22457,10 @@
                 "name": "cell 10-1",
                 "characters": "용량 효율성",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 508.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 510.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22672,10 +22570,10 @@
                 "name": "cell 10-2",
                 "characters": "효율성이 높아요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 508.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 510.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22785,10 +22683,10 @@
                 "name": "cell 10-3",
                 "characters": "효율성이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 508.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 510.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -22898,10 +22796,10 @@
                 "name": "cell 10-4",
                 "characters": "효율성이 떨어져요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 508.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 510.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23011,10 +22909,10 @@
                 "name": "cell 11-1",
                 "characters": "부가기능",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 529.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 531.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23124,10 +23022,10 @@
                 "name": "cell 11-2",
                 "characters": "부가기능이 많아요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 529.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 531.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23237,10 +23135,10 @@
                 "name": "cell 11-3",
                 "characters": "부가기능이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 529.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 531.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23350,10 +23248,10 @@
                 "name": "cell 11-4",
                 "characters": "부가기능이 아쉬워요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 529.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 531.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23463,10 +23361,10 @@
                 "name": "cell 12-1",
                 "characters": "사용성",
                 "absoluteBoundingBox": {
-                  "x": 449.24,
-                  "y": 550.04,
-                  "width": 72.55,
-                  "height": 21.0
+                  "x": 455.09,
+                  "y": 552.96,
+                  "width": 60.85,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23576,10 +23474,10 @@
                 "name": "cell 12-2",
                 "characters": "사용성이 좋아요",
                 "absoluteBoundingBox": {
-                  "x": 521.79,
-                  "y": 550.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 527.64,
+                  "y": 552.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23689,10 +23587,10 @@
                 "name": "cell 12-3",
                 "characters": "사용성이 보통이예요",
                 "absoluteBoundingBox": {
-                  "x": 657.09,
-                  "y": 550.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 662.94,
+                  "y": 552.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [
@@ -23802,10 +23700,10 @@
                 "name": "cell 12-4",
                 "characters": "사용성이 별로예요",
                 "absoluteBoundingBox": {
-                  "x": 792.38,
-                  "y": 550.04,
-                  "width": 135.29,
-                  "height": 21.0
+                  "x": 798.23,
+                  "y": 552.96,
+                  "width": 123.59,
+                  "height": 15.16
                 },
                 "relativeTransform": [
                   [

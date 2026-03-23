@@ -17,7 +17,9 @@ from ppt_source_extractor import (
     load_intermediate_payload,
     make_bounds,
     normalize_degrees,
+    placeholder_key,
     relative_transform_from_bounds,
+    scale_bounds,
     scale_point,
     scale_value,
     sort_by_position_key,
@@ -161,6 +163,22 @@ def inset_text_bounds(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> 
     }
 
 
+def inset_table_text_bounds(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> dict[str, Any]:
+    cell_style = (candidate.get("extra") or {}).get("cell_style") or {}
+    left = float(cell_style.get("marL") or 0)
+    right = float(cell_style.get("marR") or 0)
+    top = float(cell_style.get("marT") or 0)
+    bottom = float(cell_style.get("marB") or 0)
+    width = max(float(abs_bounds.get("width", 0)) - left - right, 1.0)
+    height = max(float(abs_bounds.get("height", 0)) - top - bottom, 1.0)
+    return {
+        "x": round(float(abs_bounds.get("x", 0)) + left, 2),
+        "y": round(float(abs_bounds.get("y", 0)) + top, 2),
+        "width": round(width, 2),
+        "height": round(height, 2),
+    }
+
+
 def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: float, min_height: float, scale: float = 1.0) -> float:
     text_style = (candidate.get("extra") or {}).get("text_style") or {}
     font_size = estimate_text_font_size(text_value, text_style, {"width": width, "height": min_height}, table_cell=True, scale=scale)
@@ -175,8 +193,36 @@ def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: f
     return max(math.ceil(rendered_lines * line_height + 8), int(min_height))
 
 
-def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
-    text_bounds = inset_text_bounds(candidate, abs_bounds) if not table_cell else abs_bounds
+def resolve_text_bounds(candidate: dict[str, Any], abs_bounds: dict[str, Any], context: dict[str, Any] | None, table_cell: bool) -> dict[str, Any]:
+    if table_cell:
+        return inset_table_text_bounds(candidate, abs_bounds)
+    bounds = candidate.get("bounds_px")
+    placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
+    source_scope = str(((candidate.get("extra") or {}).get("source_scope") or "slide")).lower()
+    if context and source_scope == "slide" and not bounds and placeholder:
+        anchor = context.get("placeholder_anchor_map", {}).get(placeholder_key(placeholder))
+        if anchor and anchor.get("bounds_px"):
+            return scale_bounds(anchor["bounds_px"], context["scale_x"], context["scale_y"])
+    return inset_text_bounds(candidate, abs_bounds)
+
+
+def should_skip_layout_placeholder_text(candidate: dict[str, Any]) -> bool:
+    extra = candidate.get("extra") or {}
+    placeholder = extra.get("placeholder") or {}
+    source_scope = str(extra.get("source_scope") or "slide").lower()
+    if source_scope not in {"layout", "master"} or candidate.get("subtype") != "text_block":
+        return False
+    text_value = str(candidate.get("text") or candidate.get("title") or "").strip()
+    placeholder_type = str(placeholder.get("type") or "").lower()
+    if text_value in {"‹#›", "<#>", "Click to edit Master title style"}:
+        return True
+    if placeholder_type in {"title", "sldnum", "dt", "hdr", "ftr", "body"}:
+        return True
+    return False
+
+
+def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, context: dict[str, Any] | None = None, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
+    text_bounds = resolve_text_bounds(candidate, abs_bounds, context, table_cell)
     return {
         "id": f"{candidate['candidate_id']}:text",
         "type": "TEXT",
@@ -286,19 +332,31 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         lead_margin = 16
         dx = end["x"] - start["x"]
         dy = end["y"] - start["y"]
+        if abs(dx) <= 4 or abs(dy) <= 4:
+            return [start, end]
         horizontal = abs(dx) >= abs(dy)
         if kind_name == "straightConnector1":
-            if abs(start["y"] - end["y"]) <= 3 or abs(start["x"] - end["x"]) <= 3:
-                return [start, end]
             if horizontal:
                 return [start, {"x": end["x"], "y": start["y"]}, end]
             return [start, {"x": start["x"], "y": end["y"]}, end]
         if kind_name == "bentConnector2":
+            if horizontal:
+                return [start, {"x": end["x"], "y": start["y"]}, end]
             return [start, {"x": start["x"], "y": end["y"]}, end]
+        if kind_name == "bentConnector3":
+            adj1 = adjusts.get("adj1", 50000) / 100000
+            if horizontal:
+                mid_x = start["x"] + (end["x"] - start["x"]) * adj1
+                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+            mid_y = start["y"] + (end["y"] - start["y"]) * adj1
+            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
         if kind_name == "bentConnector4":
             adj1 = adjusts.get("adj1", 50000) / 100000
-            mid_x = start["x"] + (end["x"] - start["x"]) * adj1
-            return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+            if horizontal:
+                mid_x = start["x"] + (end["x"] - start["x"]) * adj1
+                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+            mid_y = start["y"] + (end["y"] - start["y"]) * adj1
+            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
         if horizontal:
             route_y = start["y"] + (lead_margin if dy >= 0 else -lead_margin)
             return [start, {"x": start["x"], "y": route_y}, {"x": end["x"], "y": route_y}, end]
@@ -509,7 +567,18 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             )
             table_node["children"].append(cell_node)
             if cell_candidate.get("text"):
-                table_node["children"].append(build_text_node(cell_candidate, cell_abs_bounds, force_wrap=True, table_cell=True, horizontal_fallback="l", vertical_fallback=(cell_style.get("anchor") or "ctr"), scale=min(scale_x, scale_y)))
+                table_node["children"].append(
+                    build_text_node(
+                        cell_candidate,
+                        cell_abs_bounds,
+                        context=context,
+                        force_wrap=True,
+                        table_cell=True,
+                        horizontal_fallback="l",
+                        vertical_fallback=(cell_style.get("anchor") or "ctr"),
+                        scale=min(scale_x, scale_y),
+                    )
+                )
         row_cursor_y += row_height
     return table_node
 
@@ -526,7 +595,9 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
     if node_type == "asset" and subtype == "image":
         return build_image_node(candidate, abs_bounds, assets, min(scale_x, scale_y))
     if subtype == "text_block":
-        return build_text_node(candidate, abs_bounds, scale=min(scale_x, scale_y))
+        if should_skip_layout_placeholder_text(candidate):
+            return None
+        return build_text_node(candidate, abs_bounds, context=context, scale=min(scale_x, scale_y))
     if subtype == "connector":
         return build_connector_node(candidate, abs_bounds, scale_x, scale_y)
     if subtype == "table":
@@ -549,9 +620,7 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
                 node["children"].append(child_node)
         return node
     if subtype == "labeled_shape":
-        extra = candidate.get("extra") or {}
-        shape_kind = extra.get("shape_kind") or ""
-        child_text = build_text_node(candidate, abs_bounds, horizontal_fallback="ctr", vertical_fallback="ctr", scale=min(scale_x, scale_y))
+        child_text = build_text_node(candidate, abs_bounds, context=context, horizontal_fallback="ctr", vertical_fallback="ctr", scale=min(scale_x, scale_y))
         return {
             "id": candidate["candidate_id"],
             "type": "GROUP",
