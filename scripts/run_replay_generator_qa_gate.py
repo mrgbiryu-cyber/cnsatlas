@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import re
 from pathlib import Path
 
 
@@ -16,6 +17,33 @@ def key_by(rows, field):
         if value:
             result[value] = row
     return result
+
+
+def normalized_text_tokens(value):
+    raw = " ".join(str(value or "").replace("\n", " ").split()).strip()
+    if not raw:
+        return set()
+    cleaned = re.sub(r"[\[\]\(\)\-\+\*•★,:;/]+", " ", raw)
+    return {token for token in cleaned.split() if len(token) >= 2}
+
+
+def text_similarity(reference_row, generated_row):
+    ref_text = reference_row.get("text_characters") or reference_row.get("node_name") or ""
+    gen_text = generated_row.get("text_characters") or generated_row.get("node_name") or ""
+    if not ref_text or not gen_text:
+        return 0.0
+    if ref_text == gen_text:
+        return 1.0
+    ref_tokens = normalized_text_tokens(ref_text)
+    gen_tokens = normalized_text_tokens(gen_text)
+    if not ref_tokens or not gen_tokens:
+        if ref_text in gen_text or gen_text in ref_text:
+            shorter = min(len(ref_text), len(gen_text))
+            longer = max(len(ref_text), len(gen_text))
+            return shorter / max(longer, 1)
+        return 0.0
+    overlap = len(ref_tokens.intersection(gen_tokens))
+    return overlap / max(1, min(len(ref_tokens), len(gen_tokens)))
 
 
 def normalize_bbox(bbox, origin):
@@ -37,12 +65,35 @@ def mean(values):
     return round(sum(values) / len(values), 2) if values else None
 
 
+def bundle_signals(manifest):
+    bundle_debug = manifest.get("bundle_debug") or {}
+    visual_strategy = bundle_debug.get("visual_strategy") or {}
+    if isinstance(visual_strategy, dict):
+        return visual_strategy.get("signals") or {}
+    document_debug = manifest.get("document_debug") or {}
+    return document_debug.get("strategy_signals") or {}
+
+
+def top_band_rows(rows, page_bounds, ratio=0.18):
+    cutoff = float((page_bounds or {}).get("y", 0)) + float((page_bounds or {}).get("height", 0)) * ratio
+    result = []
+    for row in rows:
+        bbox = row.get("bbox_absolute") or {}
+        top = float(bbox.get("y", 0))
+        if top <= cutoff:
+            result.append(row)
+    return result
+
+
 def build_mapping(reference_rows, generated_rows):
     generated_by_semantic = {}
     generated_by_name_type = {}
+    generated_text_rows = []
     for row in generated_rows:
         generated_by_semantic.setdefault(row.get("semantic_key"), []).append(row)
         generated_by_name_type.setdefault((row.get("node_type"), row.get("node_name")), []).append(row)
+        if row.get("node_type") == "TEXT":
+            generated_text_rows.append(row)
 
     pairs = []
     used_generated = set()
@@ -71,6 +122,19 @@ def build_mapping(reference_rows, generated_rows):
             cand_score = abs(cand_bbox.get("x", 0) - ref_bbox.get("x", 0)) + abs(cand_bbox.get("y", 0) - ref_bbox.get("y", 0))
             if cand_score < cur_score:
                 picked = candidate
+
+        if picked is None and ref.get("node_type") == "TEXT":
+            best_score = 0.0
+            for candidate in generated_text_rows:
+                gen_id = candidate.get("reference_node_id")
+                if gen_id in used_generated:
+                    continue
+                similarity = text_similarity(ref, candidate)
+                if similarity < 0.55:
+                    continue
+                if similarity > best_score:
+                    best_score = similarity
+                    picked = candidate
 
         if picked:
             used_generated.add(picked.get("reference_node_id"))
@@ -144,36 +208,105 @@ def score_vector(reference_rows, generated_rows):
     }
 
 
-def score_connector(reference_rows, generated_rows):
+def score_connector(reference_rows, generated_rows, generated_manifest):
     ref_connectors = [r for r in reference_rows if r.get("node_type") == "VECTOR" and r.get("bbox_aspect_bucket") in {"ULTRA_WIDE", "WIDE"}]
-    gen_connectors = [r for r in generated_rows if r.get("node_type") == "VECTOR" and r.get("bbox_aspect_bucket") in {"ULTRA_WIDE", "WIDE"}]
-    if not ref_connectors:
-        return {"score": 100, "missing_connector_ratio": 0.0}
-    ratio = round(len(gen_connectors) / len(ref_connectors), 2)
-    missing_ratio = round(max(0, 1.0 - ratio), 2)
-    score = max(0, min(100, round((1.0 - missing_ratio) * 100)))
+    signals = bundle_signals(generated_manifest)
+    expected_connectors = int(signals.get("connector_count") or 0)
+    generated_connector_roots = []
+    seen = set()
+    for row in generated_rows:
+        if row.get("source_subtype") != "connector":
+            continue
+        role = row.get("replay_role") or ""
+        if role not in {"connector_group", "connector_line"}:
+            continue
+        stable_id = row.get("source_node_id") or row.get("source_path") or row.get("reference_node_id")
+        if stable_id in seen:
+            continue
+        seen.add(stable_id)
+        generated_connector_roots.append(row)
+    if expected_connectors > 0:
+        ratio = round(len(generated_connector_roots) / expected_connectors, 2)
+        missing_ratio = round(max(0, 1.0 - ratio), 2)
+        score = max(0, min(100, round((1.0 - missing_ratio) * 100)))
+    elif not ref_connectors:
+        ratio = 1.0
+        missing_ratio = 0.0
+        score = 100
+    else:
+        gen_connectors = [r for r in generated_rows if r.get("node_type") == "VECTOR" and r.get("bbox_aspect_bucket") in {"ULTRA_WIDE", "WIDE"}]
+        ratio = round(len(gen_connectors) / len(ref_connectors), 2)
+        missing_ratio = round(max(0, 1.0 - ratio), 2)
+        score = max(0, min(100, round((1.0 - missing_ratio) * 100)))
     return {
         "score": score,
         "reference_connector_proxy_count": len(ref_connectors),
-        "generated_connector_proxy_count": len(gen_connectors),
+        "generated_connector_root_count": len(generated_connector_roots),
+        "expected_connector_count": expected_connectors,
         "missing_connector_ratio": missing_ratio,
     }
 
 
-def score_table(reference_rows, generated_rows):
-    ref_cells = [r for r in reference_rows if r.get("node_name", "").startswith("cell ")]
-    gen_cells = [r for r in generated_rows if r.get("node_name", "").startswith("cell ")]
-    if not ref_cells and not gen_cells:
-        return {"score": 100, "cell_presence_ratio": 1.0}
-    if not ref_cells:
-        return {"score": 0, "cell_presence_ratio": 0.0}
-    ratio = round(len(gen_cells) / len(ref_cells), 2)
-    score = max(0, min(100, round(min(ratio, 1.0) * 100)))
+def score_table(reference_rows, generated_rows, reference_manifest, generated_manifest):
+    signals = bundle_signals(generated_manifest)
+    expected_cells = int(signals.get("table_cell_count") or 0)
+    expected_text_cells = int(signals.get("table_text_cell_count") or expected_cells)
+    generated_cell_frames = [r for r in generated_rows if r.get("node_type") == "FRAME" and str(r.get("node_name", "")).startswith("cell ")]
+    generated_cell_text_rows = [r for r in generated_rows if r.get("node_type") == "TEXT" and r.get("source_subtype") == "table_cell"]
+    generated_cell_text_sources = {
+        (r.get("source_path") or r.get("source_node_id") or r.get("reference_parent_id") or r.get("reference_node_id"))
+        for r in generated_cell_text_rows
+        if (r.get("source_path") or r.get("source_node_id") or r.get("reference_parent_id") or r.get("reference_node_id"))
+    }
+    if expected_cells > 0:
+        frame_ratio = round(len(generated_cell_frames) / expected_cells, 2)
+        text_ratio = round(len(generated_cell_text_sources) / max(expected_text_cells, 1), 2)
+        clamped_frame_ratio = min(frame_ratio, 1.0)
+        clamped_text_ratio = min(text_ratio, 1.0)
+        header_ref = top_band_rows(reference_rows, reference_manifest.get("page_bounds"), ratio=0.2)
+        header_gen = top_band_rows(generated_rows, generated_manifest.get("page_bounds"), ratio=0.2)
+        header_ref_text = sum(1 for row in header_ref if row.get("node_type") == "TEXT")
+        header_gen_text = sum(1 for row in header_gen if row.get("node_type") == "TEXT")
+        header_ratio = 1.0 if header_ref_text == 0 else min(round(header_gen_text / header_ref_text, 2), 1.0)
+        score = max(0, min(100, round((clamped_frame_ratio * 55 + clamped_text_ratio * 25 + header_ratio * 20) * 100 / 100)))
+        ratio = clamped_frame_ratio
+    else:
+        ref_cells = [r for r in reference_rows if r.get("node_name", "").startswith("cell ")]
+        gen_cells = [r for r in generated_rows if r.get("node_name", "").startswith("cell ")]
+        if not ref_cells and not gen_cells:
+            return {"score": 100, "cell_presence_ratio": 1.0}
+        if not ref_cells:
+            return {"score": 0, "cell_presence_ratio": 0.0}
+        ratio = round(len(gen_cells) / len(ref_cells), 2)
+        score = max(0, min(100, round(min(ratio, 1.0) * 100)))
     return {
         "score": score,
-        "reference_cell_count": len(ref_cells),
-        "generated_cell_count": len(gen_cells),
+        "expected_cell_count": expected_cells,
+        "expected_text_cell_count": expected_text_cells,
+        "generated_cell_frame_count": len(generated_cell_frames),
+        "generated_cell_text_count": len(generated_cell_text_sources),
         "cell_presence_ratio": ratio,
+    }
+
+
+def score_header(reference_rows, generated_rows, reference_manifest, generated_manifest):
+    header_ref = top_band_rows(reference_rows, reference_manifest.get("page_bounds"), ratio=0.2)
+    header_gen = top_band_rows(generated_rows, generated_manifest.get("page_bounds"), ratio=0.2)
+    ref_text = sum(1 for row in header_ref if row.get("node_type") == "TEXT")
+    gen_text = sum(1 for row in header_gen if row.get("node_type") == "TEXT")
+    ref_shape = sum(1 for row in header_ref if row.get("node_type") in {"VECTOR", "RECTANGLE", "FRAME", "GROUP"} and row.get("node_name") != reference_manifest.get("page_name"))
+    gen_shape = sum(1 for row in header_gen if row.get("node_type") in {"VECTOR", "RECTANGLE", "FRAME", "GROUP"} and row.get("node_name") != generated_manifest.get("page_name"))
+    text_ratio = 1.0 if ref_text == 0 else min(round(gen_text / ref_text, 2), 1.0)
+    shape_ratio = 1.0 if ref_shape == 0 else min(round(gen_shape / ref_shape, 2), 1.0)
+    score = round((text_ratio * 60 + shape_ratio * 40) * 100 / 100)
+    return {
+        "score": score,
+        "reference_header_text_count": ref_text,
+        "generated_header_text_count": gen_text,
+        "reference_header_shape_count": ref_shape,
+        "generated_header_shape_count": gen_shape,
+        "header_text_ratio": text_ratio,
+        "header_shape_ratio": shape_ratio,
     }
 
 
@@ -220,8 +353,9 @@ def evaluate_page(reference_manifest, generated_manifest):
         "canvas": canvas_metrics(reference_manifest, generated_manifest),
         "text": score_text(reference_rows, generated_rows, pairs, reference_origin, generated_origin),
         "vector": score_vector(reference_rows, generated_rows),
-        "connector": score_connector(reference_rows, generated_rows),
-        "table": score_table(reference_rows, generated_rows),
+        "connector": score_connector(reference_rows, generated_rows, generated_manifest),
+        "table": score_table(reference_rows, generated_rows, reference_manifest, generated_manifest),
+        "header": score_header(reference_rows, generated_rows, reference_manifest, generated_manifest),
         "shape": score_shape(reference_rows, generated_rows, reference_origin, generated_origin),
         "overlay": score_overlay(reference_rows, generated_rows),
     }
@@ -230,10 +364,11 @@ def evaluate_page(reference_manifest, generated_manifest):
     weights = {
         "canvas": 10,
         "text": 20,
-        "vector": 15,
+        "vector": 10,
         "connector": 20,
         "table": 20,
-        "shape": 10,
+        "header": 10,
+        "shape": 5,
         "overlay": 5,
     }
     total_score = round(sum(metrics[name]["score"] * weight for name, weight in weights.items()) / 100, 2)
@@ -247,6 +382,8 @@ def evaluate_page(reference_manifest, generated_manifest):
         fail_reasons.append("connector_missing_ratio_high")
     if metrics["table"].get("cell_presence_ratio", 1.0) < 0.9:
         fail_reasons.append("table_cell_presence_low")
+    if metrics["header"].get("header_text_ratio", 1.0) < 0.8:
+        fail_reasons.append("header_text_presence_low")
     if not metrics["shape"]["decision_shape_present"]:
         fail_reasons.append("decision_shape_missing")
 

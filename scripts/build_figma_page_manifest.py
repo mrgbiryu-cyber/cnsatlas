@@ -183,6 +183,7 @@ def walk(node, page_id, page_bounds, rows, parent_id="", depth=0, sibling_index=
     t = transform_signature(composed)
     fills = node.get("fills") or []
     strokes = node.get("strokes") or []
+    debug = node.get("debug") or {}
     row = {
         "page_id": page_id,
         "reference_node_id": node.get("id", ""),
@@ -213,6 +214,12 @@ def walk(node, page_id, page_bounds, rows, parent_id="", depth=0, sibling_index=
         "font_family": ((node.get("style") or {}).get("fontFamily")) if node.get("type") == "TEXT" else "",
         "font_style": ((node.get("style") or {}).get("fontStyle")) if node.get("type") == "TEXT" else "",
         "font_size": ((node.get("style") or {}).get("fontSize")) if node.get("type") == "TEXT" else None,
+        "replay_role": debug.get("role", ""),
+        "source_node_id": debug.get("source_node_id", ""),
+        "source_path": debug.get("source_path", ""),
+        "source_subtype": debug.get("source_subtype", ""),
+        "source_scope": debug.get("source_scope", ""),
+        "visual_strategy": debug.get("visual_strategy", ""),
         "is_mask_like": is_mask_like(node),
         "is_clip_like": is_clip_like(node),
         "is_fullpage_overlay_candidate": is_fullpage_overlay_candidate(node, page_bounds),

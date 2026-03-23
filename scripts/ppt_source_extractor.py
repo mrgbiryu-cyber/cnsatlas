@@ -102,9 +102,12 @@ def build_children_map(candidates: list[dict[str, Any]]) -> dict[str, list[dict[
 
 def classify_page_visual_strategy(candidates: list[dict[str, Any]]) -> dict[str, Any]:
     counts: dict[str, int] = {}
+    table_text_cell_count = 0
     for candidate in candidates:
         subtype = str(candidate.get("subtype") or "unknown")
         counts[subtype] = counts.get(subtype, 0) + 1
+        if subtype == "table_cell" and str(candidate.get("text") or "").strip():
+            table_text_cell_count += 1
 
     table_cell_count = counts.get("table_cell", 0)
     table_count = counts.get("table", 0)
@@ -132,6 +135,7 @@ def classify_page_visual_strategy(candidates: list[dict[str, Any]]) -> dict[str,
         "counts": counts,
         "signals": {
             "table_cell_count": table_cell_count,
+            "table_text_cell_count": table_text_cell_count,
             "table_count": table_count,
             "connector_count": connector_count,
             "labeled_shape_count": labeled_shape_count,

@@ -4,6 +4,8 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
+import textwrap
 from pathlib import Path
 from typing import Any
 
@@ -121,6 +123,23 @@ def estimate_text_font_size(text_value: str, text_style: dict[str, Any], bounds:
     return clamp_font_size(base_by_height * multiline_penalty * width_penalty * local_scale * scale)
 
 
+def estimate_text_run_width(text_value: str, font_size: float) -> float:
+    total = 0.0
+    for char in str(text_value or ""):
+        if char == " ":
+            total += font_size * 0.34
+        elif ord(char) < 128:
+            if char.isupper():
+                total += font_size * 0.66
+            elif char.isdigit():
+                total += font_size * 0.58
+            else:
+                total += font_size * 0.56
+        else:
+            total += font_size * 0.96
+    return total
+
+
 def infer_placeholder_font_size(candidate: dict[str, Any], bounds: dict[str, Any], scale: float = 1.0) -> int | None:
     placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
     ph_type = str(placeholder.get("type") or "").lower()
@@ -166,6 +185,33 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
         "textAlignVertical": map_vertical_align(text_style.get("vertical_align"), vertical_fallback),
         "textAutoResize": text_auto_resize,
         "lineHeightPx": None,
+    }
+
+
+def fit_text_bounds_to_content(text_value: str, bounds: dict[str, Any], style: dict[str, Any], *, allow_shrink: bool = True, is_table_cell: bool = False) -> dict[str, Any]:
+    if not allow_shrink:
+        return bounds
+    if "\n" in str(text_value or ""):
+        return bounds
+    font_size = float(style.get("fontSize") or 12)
+    estimated_width = estimate_text_run_width(text_value, font_size)
+    if estimated_width <= 0:
+        return bounds
+    padding = max(font_size * (0.9 if is_table_cell else 1.2), 10.0)
+    target_width = min(float(bounds.get("width", 0)), max(estimated_width + padding, 12.0))
+    if target_width >= float(bounds.get("width", 0)) - 2:
+        return bounds
+    align = str(style.get("textAlignHorizontal") or "LEFT").upper()
+    x = float(bounds.get("x", 0))
+    if align == "CENTER":
+        x += (float(bounds.get("width", 0)) - target_width) / 2
+    elif align == "RIGHT":
+        x += float(bounds.get("width", 0)) - target_width
+    return {
+        "x": round(x, 2),
+        "y": round(float(bounds.get("y", 0)), 2),
+        "width": round(target_width, 2),
+        "height": round(float(bounds.get("height", 0)), 2),
     }
 
 
@@ -245,17 +291,240 @@ def should_skip_layout_placeholder_text(candidate: dict[str, Any]) -> bool:
 
 def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, context: dict[str, Any] | None = None, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
     text_bounds = resolve_text_bounds(candidate, abs_bounds, context, table_cell)
+    text_value = candidate.get("text") or candidate.get("title") or ""
+    style = build_text_style(candidate, text_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback, scale=scale)
+    text_bounds = fit_text_bounds_to_content(
+        text_value,
+        text_bounds,
+        style,
+        allow_shrink=not force_wrap,
+        is_table_cell=table_cell,
+    )
+    fragments, layout_mode = header_text_fragments(text_value, candidate, text_bounds, table_cell=table_cell)
+    if len(fragments) <= 1:
+        fragments, layout_mode = content_text_fragments(
+            text_value,
+            candidate,
+            text_bounds,
+            style,
+            context=context,
+            table_cell=table_cell,
+        )
+    if len(fragments) > 1:
+        return build_fragment_text_group(
+            candidate,
+            text_bounds,
+            style,
+            fragments,
+            layout_mode,
+            scale=min(scale, 1.0),
+        )
     return {
         "id": f"{candidate['candidate_id']}:text",
         "type": "TEXT",
         "name": candidate.get("title") or candidate.get("subtype") or "text",
-        "characters": candidate.get("text") or candidate.get("title") or "",
+        "characters": text_value,
         "absoluteBoundingBox": text_bounds,
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
         "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
-        "style": build_text_style(candidate, text_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback, scale=scale),
+        "style": style,
         "children": [],
         "debug": dict(build_source_debug(candidate), rotation_degrees=normalize_degrees((candidate.get("bounds_px") or {}).get("rotation", 0))),
+    }
+
+
+def header_text_fragments(text_value: str, candidate: dict[str, Any], bounds: dict[str, Any], *, table_cell: bool = False) -> tuple[list[str], str]:
+    raw = str(text_value or "").strip()
+    if not raw:
+        return [raw], "none"
+    source_scope = str(((candidate.get("extra") or {}).get("source_scope") or "slide")).lower()
+    if source_scope not in {"slide", "layout"}:
+        return [raw], "none"
+    if float(bounds.get("y", 9999)) > 95:
+        return [raw], "none"
+    if "\n" in raw:
+        parts = [part.strip() for part in raw.splitlines() if part.strip()]
+        return (parts, "vertical") if len(parts) > 1 else ([raw], "none")
+    if len(raw) > (80 if table_cell else 36):
+        return [raw], "none"
+    if " + " in raw:
+        first, second = raw.split("+", 1)
+        return [first.strip(), f"+ {second.strip()}"], "horizontal"
+    if raw.endswith(")") and "(" in raw and " " not in raw:
+        left, right = raw.split("(", 1)
+        left = f"{left.strip()}("
+        right = right.strip()
+        if left and right:
+            return [left, right], "horizontal"
+    if raw.endswith(" ID"):
+        return [raw.replace(" ", "")], "none"
+    if " " in raw and len(raw) <= 20:
+        parts = [part.strip() for part in raw.split(" ") if part.strip()]
+        if len(parts) > 1:
+            return parts, "horizontal"
+    return [raw], "none"
+
+
+def wrap_text_fragments(parts: list[str], max_chars: int) -> list[str]:
+    wrapped: list[str] = []
+    for part in parts:
+        cleaned = " ".join(str(part or "").split()).strip()
+        if not cleaned:
+            continue
+        if len(cleaned) <= max_chars:
+            wrapped.append(cleaned)
+            continue
+        for line in textwrap.wrap(cleaned, width=max_chars, break_long_words=False, break_on_hyphens=False):
+            line = line.strip()
+            if line:
+                wrapped.append(line)
+    return wrapped
+
+
+def cap_fragment_lines(parts: list[str], max_lines: int) -> list[str]:
+    if len(parts) <= max_lines:
+        return parts
+    if max_lines <= 1:
+        return [" ".join(parts)]
+    head = parts[: max_lines - 1]
+    tail = " ".join(parts[max_lines - 1 :]).strip()
+    return head + ([tail] if tail else [])
+
+
+def content_text_fragments(
+    text_value: str,
+    candidate: dict[str, Any],
+    bounds: dict[str, Any],
+    style: dict[str, Any],
+    *,
+    context: dict[str, Any] | None = None,
+    table_cell: bool = False,
+) -> tuple[list[str], str]:
+    raw = str(text_value or "").strip()
+    if not raw:
+        return [raw], "none"
+    strategy = str(((context or {}).get("visual_strategy") or {}).get("page_type") or "")
+    subtype = str(candidate.get("subtype") or "")
+    if strategy != "ui-mockup":
+        return [raw], "none"
+    if subtype not in {"table_cell", "labeled_shape", "text_block"} and not table_cell:
+        return [raw], "none"
+    if len(raw) < (90 if table_cell else 110):
+        return [raw], "none"
+    width = float(bounds.get("width", 0))
+    height = float(bounds.get("height", 0))
+    if width <= 0 or height <= 0:
+        return [raw], "none"
+
+    normalized = raw
+    markers = [
+        "[참고사항",
+        "★",
+        "•",
+        "ㄴ ",
+        " 2a)",
+        " 2b)",
+        " 2c)",
+        " 2C)",
+        " 2d)",
+        " 2e)",
+        " 문서명 :",
+        " 동영상 :",
+        " 이미지 :",
+        " 버튼 선택 시",
+        " 현재 노출",
+        " 이전 / 다음",
+        " 노출순서 변경됨 :",
+        " 디자인 변경됨 :",
+        " 신규 추가됨",
+        " [BTOCSITE-",
+    ]
+    for marker in markers:
+        normalized = normalized.replace(marker, "\n" + marker)
+    normalized = re.sub(r"\s+(?=\[[^\]]+\])", "\n", normalized)
+    normalized = normalized.lstrip("\n")
+
+    pieces = [piece.strip(" -") for piece in normalized.splitlines() if piece.strip(" -")]
+    font_size = float(style.get("fontSize") or 12)
+    max_chars = max(18, min(44, int((width - 12) / max(font_size * 0.62, 5.5))))
+    wrapped = wrap_text_fragments(pieces, max_chars)
+    max_lines = max(int(height / max(font_size * 1.45, 10.0)), 2)
+    wrapped = cap_fragment_lines(wrapped, max_lines)
+    if len(wrapped) <= 1:
+        return [raw], "none"
+    return wrapped, "vertical"
+
+
+def build_fragment_text_group(candidate: dict[str, Any], bounds: dict[str, Any], style: dict[str, Any], fragments: list[str], layout_mode: str, *, scale: float = 1.0) -> dict[str, Any]:
+    total_width = float(bounds.get("width", 0))
+    total_height = float(bounds.get("height", 0))
+    origin_x = float(bounds.get("x", 0))
+    origin_y = float(bounds.get("y", 0))
+    font_size = float(style.get("fontSize") or 12)
+    children = []
+    if layout_mode == "vertical":
+        row_height = total_height / max(len(fragments), 1)
+        for index, fragment in enumerate(fragments):
+            frag_bounds = {
+                "x": round(origin_x, 2),
+                "y": round(origin_y + row_height * index, 2),
+                "width": round(total_width, 2),
+                "height": round(row_height, 2),
+            }
+            children.append(
+                {
+                    "id": f"{candidate['candidate_id']}:text:{index + 1}",
+                    "type": "TEXT",
+                    "name": candidate.get("title") or candidate.get("subtype") or "text",
+                    "characters": fragment,
+                    "absoluteBoundingBox": frag_bounds,
+                    "relativeTransform": identity_affine(),
+                    "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
+                    "style": dict(style),
+                    "children": [],
+                    "debug": dict(build_source_debug(candidate), role="header_text_fragment"),
+                }
+            )
+    else:
+        widths = [max(estimate_text_run_width(fragment, font_size), font_size * 1.6) for fragment in fragments]
+        gap = max(font_size * 0.5 * scale, 6.0)
+        total_est = sum(widths) + gap * max(len(widths) - 1, 0)
+        usable = total_width
+        scale_ratio = min(1.0, usable / total_est) if total_est > 0 else 1.0
+        cursor_x = origin_x
+        for index, (fragment, estimated_width) in enumerate(zip(fragments, widths)):
+            frag_width = estimated_width * scale_ratio
+            if index == len(fragments) - 1:
+                frag_width = max(origin_x + total_width - cursor_x, frag_width)
+            frag_bounds = {
+                "x": round(cursor_x, 2),
+                "y": round(origin_y, 2),
+                "width": round(frag_width, 2),
+                "height": round(total_height, 2),
+            }
+            children.append(
+                {
+                    "id": f"{candidate['candidate_id']}:text:{index + 1}",
+                    "type": "TEXT",
+                    "name": candidate.get("title") or candidate.get("subtype") or "text",
+                    "characters": fragment,
+                    "absoluteBoundingBox": frag_bounds,
+                    "relativeTransform": identity_affine(),
+                    "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
+                    "style": dict(style),
+                    "children": [],
+                    "debug": dict(build_source_debug(candidate), role="header_text_fragment"),
+                }
+            )
+            cursor_x += frag_width + gap * scale_ratio
+    return {
+        "id": f"{candidate['candidate_id']}:text_group",
+        "type": "GROUP",
+        "name": candidate.get("title") or candidate.get("subtype") or "text_group",
+        "absoluteBoundingBox": bounds,
+        "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
+        "children": children,
+        "debug": dict(build_source_debug(candidate), role="header_text_group"),
     }
 
 
@@ -389,40 +658,52 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
     local_height = max(abs_bounds["height"], 6)
     relative_transform = identity_affine()
 
-    def readable_elbow(start: dict[str, float], end: dict[str, float], kind_name: str, adjusts: dict[str, Any]) -> list[dict[str, float]]:
+    def readable_elbow(start: dict[str, float], end: dict[str, float], kind_name: str, adjusts: dict[str, Any], raw_bounds: dict[str, Any]) -> list[dict[str, float]]:
         lead_margin = 16
         dx = end["x"] - start["x"]
         dy = end["y"] - start["y"]
+        flip_h = bool(raw_bounds.get("flipH"))
+        flip_v = bool(raw_bounds.get("flipV"))
+        adj1 = (adjusts.get("adj1", 50000) or 50000) / 100000
         if abs(dx) <= 4 or abs(dy) <= 4:
             return [start, end]
         horizontal = abs(dx) >= abs(dy)
         if strategy == "flow-process":
+            if kind_name == "bentConnector2":
+                elbow_a = {"x": start["x"], "y": end["y"]}
+                elbow_b = {"x": end["x"], "y": start["y"]}
+                corner_x = abs_bounds["x"] + (abs_bounds["width"] if flip_h else 0)
+                corner_y = abs_bounds["y"] + (abs_bounds["height"] if flip_v else 0)
+                score_a = abs(elbow_a["x"] - corner_x) + abs(elbow_a["y"] - corner_y)
+                score_b = abs(elbow_b["x"] - corner_x) + abs(elbow_b["y"] - corner_y)
+                elbow = elbow_a if score_a <= score_b else elbow_b
+                return [start, elbow, end]
             if horizontal:
-                mid_x = start["x"] + dx * 0.5
+                mid_x = abs_bounds["x"] + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
                 return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
-            mid_y = start["y"] + dy * 0.5
+            mid_y = abs_bounds["y"] + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
             return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
         if kind_name == "straightConnector1":
             if horizontal:
                 return [start, {"x": end["x"], "y": start["y"]}, end]
             return [start, {"x": start["x"], "y": end["y"]}, end]
         if kind_name == "bentConnector2":
-            if horizontal:
-                return [start, {"x": end["x"], "y": start["y"]}, end]
-            return [start, {"x": start["x"], "y": end["y"]}, end]
+            elbow_a = {"x": start["x"], "y": end["y"]}
+            elbow_b = {"x": end["x"], "y": start["y"]}
+            score_a = abs(elbow_a["x"] - abs_bounds["x"]) + abs(elbow_a["y"] - abs_bounds["y"])
+            score_b = abs(elbow_b["x"] - abs_bounds["x"]) + abs(elbow_b["y"] - abs_bounds["y"])
+            return [start, elbow_a if score_a <= score_b else elbow_b, end]
         if kind_name == "bentConnector3":
-            adj1 = adjusts.get("adj1", 50000) / 100000
             if horizontal:
-                mid_x = start["x"] + (end["x"] - start["x"]) * adj1
+                mid_x = abs_bounds["x"] + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
                 return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
-            mid_y = start["y"] + (end["y"] - start["y"]) * adj1
+            mid_y = abs_bounds["y"] + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
             return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
         if kind_name == "bentConnector4":
-            adj1 = adjusts.get("adj1", 50000) / 100000
             if horizontal:
-                mid_x = start["x"] + (end["x"] - start["x"]) * adj1
+                mid_x = abs_bounds["x"] + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
                 return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
-            mid_y = start["y"] + (end["y"] - start["y"]) * adj1
+            mid_y = abs_bounds["y"] + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
             return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
         if horizontal:
             route_y = start["y"] + (lead_margin if dy >= 0 else -lead_margin)
@@ -436,6 +717,40 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
     bounds = candidate.get("bounds_px") or {}
     raw_width = float(bounds.get("width") or 0)
     raw_height = float(bounds.get("height") or 0)
+    flip_h = bool(bounds.get("flipH"))
+    flip_v = bool(bounds.get("flipV"))
+
+    def bounds_connector_points(kind_name: str) -> list[dict[str, float]]:
+        x0 = abs_bounds["x"]
+        y0 = abs_bounds["y"]
+        x1 = abs_bounds["x"] + abs_bounds["width"]
+        y1 = abs_bounds["y"] + abs_bounds["height"]
+        mx = abs_bounds["x"] + abs_bounds["width"] / 2
+        my = abs_bounds["y"] + abs_bounds["height"] / 2
+        adj1 = (adjusts.get("adj1", 50000) or 50000) / 100000
+        if kind_name == "straightConnector1":
+            if abs_bounds["width"] >= abs_bounds["height"]:
+                start = {"x": x1 if flip_h else x0, "y": my}
+                end = {"x": x0 if flip_h else x1, "y": my}
+            else:
+                start = {"x": mx, "y": y1 if flip_v else y0}
+                end = {"x": mx, "y": y0 if flip_v else y1}
+            return [start, end]
+        if kind_name == "bentConnector2":
+            start = {"x": x1 if flip_h else x0, "y": y1 if flip_v else y0}
+            end = {"x": x0 if flip_h else x1, "y": y0 if flip_v else y1}
+            elbow = {"x": start["x"], "y": end["y"]}
+            return [start, elbow, end]
+        if abs_bounds["width"] >= abs_bounds["height"]:
+            start = {"x": x1 if flip_h else x0, "y": y1 if flip_v else y0}
+            end = {"x": x0 if flip_h else x1, "y": y0 if flip_v else y1}
+            mid_x = x0 + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
+            return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+        start = {"x": x1 if flip_h else x0, "y": y1 if flip_v else y0}
+        end = {"x": x0 if flip_h else x1, "y": y0 if flip_v else y1}
+        mid_y = y0 + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
+        return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
+
     is_wide_straight = kind == "straightConnector1" and raw_width >= max(raw_height * 8, 100)
     is_tall_straight = kind == "straightConnector1" and raw_height >= max(raw_width * 8, 100)
     if is_wide_straight:
@@ -448,8 +763,10 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"]},
             {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"] + abs_bounds["height"]},
         ]
+    elif strategy == "flow-process":
+        points = bounds_connector_points(kind)
     elif start_px and end_px:
-        points = readable_elbow(start_px, end_px, kind, adjusts)
+        points = readable_elbow(start_px, end_px, kind, adjusts, bounds)
     elif kind == "straightConnector1":
         points = [
             {"x": abs_bounds["x"], "y": abs_bounds["y"] + local_height / 2},
@@ -501,15 +818,73 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             f"M {round(tip['x'],2)} {round(tip['y'],2)} L {round(left_x,2)} {round(left_y,2)} L {round(right_x,2)} {round(right_y,2)} Z"
         )
 
-    # PPT connector arrow metadata tends to indicate the visible head at the
-    # line end even when tail_end is set. Prefer visual fidelity here.
-    if head_end.get("type") == "triangle" and len(localized_points) >= 2:
+    # Prefer a visible terminal arrow on flow/process pages even when source
+    # metadata is incomplete.
+    has_any_arrow = head_end.get("type") == "triangle" or tail_end.get("type") == "triangle"
+    if (head_end.get("type") == "triangle" or (strategy == "flow-process" and not has_any_arrow)) and len(localized_points) >= 2:
         append_arrow(localized_points, 0, 1)
     if tail_end.get("type") == "triangle" and len(localized_points) >= 2:
         append_arrow(localized_points, len(localized_points) - 1, len(localized_points) - 2)
 
     line_color = solid_paint((shape_style.get("line") or {}), {"r": 0, "g": 0, "b": 0}, 1.0)
     connector_name = candidate.get("title") or candidate.get("subtype") or "connector"
+    debug_payload = dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind)
+
+    if strategy == "flow-process" and len(localized_points) >= 2:
+        children = []
+        for index in range(len(localized_points) - 1):
+            start = localized_points[index]
+            end = localized_points[index + 1]
+            seg_min_x = min(start["x"], end["x"])
+            seg_min_y = min(start["y"], end["y"])
+            seg_max_x = max(start["x"], end["x"])
+            seg_max_y = max(start["y"], end["y"])
+            seg_bounds = make_bounds(
+                absolute_bounds["x"] + seg_min_x - stroke_weight / 2,
+                absolute_bounds["y"] + seg_min_y - stroke_weight / 2,
+                max(seg_max_x - seg_min_x, 1) + stroke_weight,
+                max(seg_max_y - seg_min_y, 1) + stroke_weight,
+            )
+            local_start = {"x": round(start["x"] - seg_min_x + stroke_weight / 2, 2), "y": round(start["y"] - seg_min_y + stroke_weight / 2, 2)}
+            local_end = {"x": round(end["x"] - seg_min_x + stroke_weight / 2, 2), "y": round(end["y"] - seg_min_y + stroke_weight / 2, 2)}
+            children.append(
+                build_vector_node(
+                    f"{candidate['candidate_id']}:segment_{index + 1}",
+                    f"{connector_name}:segment_{index + 1}",
+                    seg_bounds,
+                    stroke_geometry=[{"path": f"M {local_start['x']} {local_start['y']} L {local_end['x']} {local_end['y']}"}],
+                    fills=[],
+                    strokes=[line_color],
+                    stroke_weight=stroke_weight,
+                    debug=dict(debug_payload, role="connector_segment"),
+                    relative_transform=identity_affine(),
+                )
+            )
+        for index, path in enumerate(arrow_paths, start=1):
+            children.append(
+                build_vector_node(
+                    f"{candidate['candidate_id']}:arrow_{index}",
+                    f"{connector_name}:arrow_{index}",
+                    absolute_bounds,
+                    fill_geometry=[{"path": path, "windingRule": "NONZERO"}],
+                    stroke_geometry=[],
+                    fills=[line_color],
+                    strokes=[],
+                    stroke_weight=stroke_weight,
+                    debug=dict(debug_payload, role="connector_arrow"),
+                    relative_transform=identity_affine(),
+                )
+            )
+        return {
+            "id": candidate["candidate_id"],
+            "type": "GROUP",
+            "name": connector_name,
+            "absoluteBoundingBox": absolute_bounds,
+            "relativeTransform": relative_transform,
+            "children": children,
+            "debug": dict(debug_payload, role="connector_group"),
+        }
+
     line_node = build_vector_node(
         f"{candidate['candidate_id']}:line",
         f"{connector_name}:line",
@@ -518,7 +893,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         fills=[],
         strokes=[line_color],
         stroke_weight=stroke_weight,
-        debug=dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind),
+        debug=dict(debug_payload, role="connector_line"),
         relative_transform=relative_transform,
     )
     if not arrow_paths:
@@ -535,7 +910,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
                 fills=[line_color],
                 strokes=[],
                 stroke_weight=stroke_weight,
-                debug=dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind),
+                debug=dict(debug_payload, role="connector_arrow"),
                 relative_transform=relative_transform,
             )
         )
@@ -546,7 +921,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         "absoluteBoundingBox": absolute_bounds,
         "relativeTransform": relative_transform,
         "children": children,
-        "debug": dict(build_source_debug(candidate), visual_strategy=strategy, route_kind=kind),
+        "debug": dict(debug_payload, role="connector_group"),
     }
 
 
@@ -617,7 +992,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
     for width in column_widths:
         column_x_positions.append(column_x_positions[-1] + width)
 
-    for row_candidate in rows:
+    for row_index, row_candidate in enumerate(rows, start=1):
         cell_candidates = [child for child in children_map.get(row_candidate["candidate_id"], []) if child.get("subtype") == "table_cell"]
         row_height = scaled_row_heights[row_candidate["candidate_id"]]
         for cell_candidate in cell_candidates:
@@ -625,7 +1000,10 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
                 continue
             cell_width = scale_value(cell_extra.get("width_px") or (abs_bounds["width"] / max(len(cell_candidates), 1)), scale_x if cell_extra.get("width_px") else 1.0)
-            row_height = max(row_height, estimate_wrapped_height(cell_candidate.get("text") or cell_candidate.get("title") or "", cell_candidate, cell_width, row_height, min(scale_x, scale_y)))
+            estimated_height = estimate_wrapped_height(cell_candidate.get("text") or cell_candidate.get("title") or "", cell_candidate, cell_width, row_height, min(scale_x, scale_y))
+            if strategy == "table-heavy":
+                estimated_height = min(estimated_height, row_height * 1.25)
+            row_height = max(row_height, estimated_height)
         row_abs_bounds = make_bounds(abs_bounds["x"], row_cursor_y, abs_bounds["width"], row_height)
         for cell_candidate in cell_candidates:
             cell_extra = cell_candidate.get("extra") or {}
@@ -645,57 +1023,69 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                 spanned_height = sum(scaled_row_heights[rows[i]["candidate_id"]] for i in range(current_index, min(current_index + row_span, len(rows))))
             cell_abs_bounds = make_bounds(row_abs_bounds["x"] + cell_x, row_abs_bounds["y"], cell_width, spanned_height)
             cell_style = cell_extra.get("cell_style") or {}
-            if cell_style.get("fill"):
-                if strategy == "ui-mockup":
-                    table_node["children"].append(
-                        {
-                            "id": f"{cell_candidate['candidate_id']}:fill",
-                            "type": "RECTANGLE",
-                            "name": cell_candidate.get("title") or f"cell {start_column_index}",
-                            "absoluteBoundingBox": cell_abs_bounds,
-                            "relativeTransform": relative_transform_from_bounds(cell_candidate.get("bounds_px")),
-                            "fills": [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
-                            "strokes": [],
-                            "strokeWeight": 0,
-                            "children": [],
-                            "debug": dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell_fill"),
-                        }
+            cell_name = f"cell {row_index}-{start_column_index}"
+            if strategy in {"table-heavy", "ui-mockup"}:
+                cell_frame = {
+                    "id": f"{cell_candidate['candidate_id']}:frame",
+                    "type": "FRAME",
+                    "name": cell_name,
+                    "absoluteBoundingBox": cell_abs_bounds,
+                    "relativeTransform": relative_transform_from_bounds(cell_candidate.get("bounds_px")),
+                    "fills": [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)] if cell_style.get("fill") else [],
+                    "strokes": [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": 1.0}],
+                    "strokeWeight": 1,
+                    "children": [],
+                    "debug": dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell"),
+                }
+            elif cell_style.get("fill"):
+                cell_path = rect_path(cell_abs_bounds["width"], cell_abs_bounds["height"])
+                table_node["children"].append(
+                    build_vector_node(
+                        f"{cell_candidate['candidate_id']}:fill",
+                        cell_name,
+                        cell_abs_bounds,
+                        fill_geometry=[{"path": cell_path, "windingRule": "NONZERO"}],
+                        stroke_geometry=[],
+                        fills=[solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
+                        strokes=[],
+                        stroke_weight=0,
+                        debug=dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell_fill"),
+                        relative_transform=relative_transform_from_bounds(cell_candidate.get("bounds_px")),
                     )
-                else:
-                    cell_path = rect_path(cell_abs_bounds["width"], cell_abs_bounds["height"])
-                    table_node["children"].append(
-                        build_vector_node(
-                            f"{cell_candidate['candidate_id']}:fill",
-                            cell_candidate.get("title") or f"cell {start_column_index}",
-                            cell_abs_bounds,
-                            fill_geometry=[{"path": cell_path, "windingRule": "NONZERO"}],
-                            stroke_geometry=[],
-                            fills=[solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)],
-                            strokes=[],
-                            stroke_weight=0,
-                            debug=dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell_fill"),
-                            relative_transform=relative_transform_from_bounds(cell_candidate.get("bounds_px")),
-                        )
-                    )
+                )
             if cell_candidate.get("text"):
                 cell_text = str(cell_candidate.get("text") or "")
                 is_header_cell = bool(cell_style.get("fill"))
-                horizontal_fallback = "ctr" if is_header_cell or (len(cell_text) <= 18 and "\n" not in cell_text) else "l"
-                table_node["children"].append(
-                    build_text_node(
-                        cell_candidate,
-                        cell_abs_bounds,
-                        context=context,
-                        force_wrap=True,
-                        table_cell=True,
-                        horizontal_fallback=horizontal_fallback,
-                        vertical_fallback=(cell_style.get("anchor") or "ctr"),
-                        scale=min(scale_x, scale_y),
-                    )
+                if is_header_cell:
+                    horizontal_fallback = "ctr"
+                elif strategy == "table-heavy":
+                    if start_column_index == 1:
+                        horizontal_fallback = "ctr"
+                    elif len(cell_text) <= 14 and "|" not in cell_text and "/" not in cell_text:
+                        horizontal_fallback = "ctr"
+                    else:
+                        horizontal_fallback = "l"
+                else:
+                    horizontal_fallback = "ctr" if len(cell_text) <= 18 and "\n" not in cell_text else "l"
+                text_node = build_text_node(
+                    cell_candidate,
+                    cell_abs_bounds,
+                    context=context,
+                    force_wrap=True,
+                    table_cell=True,
+                    horizontal_fallback=horizontal_fallback,
+                    vertical_fallback=(cell_style.get("anchor") or ("ctr" if strategy == "table-heavy" else "t")),
+                    scale=min(scale_x, scale_y),
                 )
+                if strategy in {"table-heavy", "ui-mockup"}:
+                    cell_frame["children"].append(text_node)
+                else:
+                    table_node["children"].append(text_node)
+            if strategy in {"table-heavy", "ui-mockup"}:
+                table_node["children"].append(cell_frame)
         row_cursor_y += row_height
 
-    if strategy == "ui-mockup":
+    if strategy in {"table-heavy", "ui-mockup"}:
         return table_node
 
     grid_stroke = [{"type": "SOLID", "color": {"r": 0.75, "g": 0.75, "b": 0.75}}]
