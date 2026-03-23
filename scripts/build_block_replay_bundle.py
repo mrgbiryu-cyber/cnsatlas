@@ -26,6 +26,7 @@ from ppt_source_extractor import (
     iter_selected_pages,
     load_intermediate_payload,
     make_bounds,
+    scale_point,
     scale_value,
     sort_by_position_key,
 )
@@ -145,6 +146,46 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
     if subtype == "connector":
         raw = candidate.get("bounds_px") or {}
         stroke_hex, stroke_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("line") or {}), "#777777")
+        scale_x = context["scale_x"]
+        scale_y = context["scale_y"]
+        start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
+        end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
+        kind = str(extra.get("shape_kind") or "straightConnector1")
+        if start_px and end_px:
+            start = {"x": round(start_px["x"] - block_bounds["x"], 2), "y": round(start_px["y"] - block_bounds["y"], 2)}
+            end = {"x": round(end_px["x"] - block_bounds["x"], 2), "y": round(end_px["y"] - block_bounds["y"], 2)}
+            points = [start]
+            if kind == "bentConnector2":
+                points.append({"x": start["x"], "y": end["y"]})
+            elif kind in {"bentConnector3", "bentConnector4"}:
+                if abs(end["x"] - start["x"]) >= abs(end["y"] - start["y"]):
+                    mid_x = round((start["x"] + end["x"]) / 2, 2)
+                    points.extend([{"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}])
+                else:
+                    mid_y = round((start["y"] + end["y"]) / 2, 2)
+                    points.extend([{"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}])
+            points.append(end)
+            path = "M " + " L ".join(f"{p['x']} {p['y']}" for p in points)
+            arrow_svg = ""
+            if len(points) >= 2:
+                p1 = points[-2]
+                p2 = points[-1]
+                dx = p2["x"] - p1["x"]
+                dy = p2["y"] - p1["y"]
+                size = 6
+                if abs(dx) >= abs(dy):
+                    if dx >= 0:
+                        arrow = [(p2["x"], p2["y"]), (p2["x"] - size, p2["y"] - size / 2), (p2["x"] - size, p2["y"] + size / 2)]
+                    else:
+                        arrow = [(p2["x"], p2["y"]), (p2["x"] + size, p2["y"] - size / 2), (p2["x"] + size, p2["y"] + size / 2)]
+                else:
+                    if dy >= 0:
+                        arrow = [(p2["x"], p2["y"]), (p2["x"] - size / 2, p2["y"] - size), (p2["x"] + size / 2, p2["y"] - size)]
+                    else:
+                        arrow = [(p2["x"], p2["y"]), (p2["x"] - size / 2, p2["y"] + size), (p2["x"] + size / 2, p2["y"] + size)]
+                arrow_points = " ".join(f"{round(x,2)},{round(y,2)}" for x, y in arrow)
+                arrow_svg = f'<polygon points="{arrow_points}" fill="{stroke_hex}" fill-opacity="{stroke_opacity}" />'
+            return f'<path d="{path}" fill="none" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="1.5" />{arrow_svg}'
         width = max(local["width"], 1.0)
         height = max(local["height"], 1.0)
         x0 = local["x"]
@@ -520,6 +561,34 @@ def build_generic_block_node(block: dict[str, Any], context: dict[str, Any], ass
     return frame
 
 
+def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+    candidates = collect_block_candidates(block, context)
+    layers: list[tuple[int, float, float, str]] = []
+    for candidate in candidates:
+        subtype = candidate.get("subtype")
+        if subtype in {"group", "section_block", "table_row", "table_cell"}:
+            continue
+        abs_bounds = make_bounds(
+            scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
+            scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
+            scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
+            scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
+        )
+        svg = render_candidate_svg(candidate, abs_bounds, block["bounds"], context)
+        if not svg:
+            continue
+        role = 1
+        if subtype == "shape":
+            role = 0
+        elif subtype == "connector":
+            role = 2
+        elif subtype == "text_block":
+            role = 3
+        layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
+    markup = "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
+    return build_svg_block_node(block, markup, "content_block_svg")
+
+
 def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     if block["block_type"] == "header_block":
         return build_header_block_node(block, context, assets)
@@ -529,6 +598,8 @@ def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dic
         return build_flow_block_node(block, context, assets)
     if block["block_type"] == "right_panel_block":
         return build_right_panel_block_node(block, context, assets)
+    if block["block_type"] == "content_block" and block["page_type"] == "ui-mockup":
+        return build_content_svg_block_node(block, context, assets)
     return build_generic_block_node(block, context, assets)
 
 

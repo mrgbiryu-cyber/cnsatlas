@@ -43,7 +43,7 @@
 - `table_block`도 이제 `SVG_BLOCK`으로 렌더된다
 - `flow_block`은 이제 `SVG_BLOCK`으로 렌더된다
 - `right_panel_block`도 이제 `SVG_BLOCK`으로 렌더된다
-- `content_block`만 아직 기존 요소 빌더 재사용 비중이 높다
+- `ui-mockup`의 `content_block`도 이제 `SVG_BLOCK`으로 렌더된다
 
 즉 이번 버전은:
 
@@ -79,7 +79,7 @@
    - `native`
    - `vector`
    - `image`
-3. `content_block`의 block-specific renderer 여부 결정
+3. `table-heavy`의 `content_block` renderer 여부 결정
 4. `SVG_BLOCK`와 image fallback의 분기 기준 정리
 5. block 이미지 fallback이 실제로 필요한 영역 정의
 
