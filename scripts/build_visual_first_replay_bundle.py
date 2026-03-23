@@ -121,6 +121,24 @@ def estimate_text_font_size(text_value: str, text_style: dict[str, Any], bounds:
     return clamp_font_size(base_by_height * multiline_penalty * width_penalty * local_scale * scale)
 
 
+def infer_placeholder_font_size(candidate: dict[str, Any], bounds: dict[str, Any], scale: float = 1.0) -> int | None:
+    placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
+    ph_type = str(placeholder.get("type") or "").lower()
+    if not ph_type:
+        return None
+    height = max(float(bounds.get("height", 0)), 1.0)
+    text_value = str(candidate.get("text") or candidate.get("title") or "")
+    if ph_type == "title":
+        if len(text_value) <= 24:
+            return clamp_font_size(max(height * 0.78, 18) * scale)
+        return clamp_font_size(max(height * 0.72, 16) * scale)
+    if ph_type == "body":
+        if "\n" in text_value:
+            return clamp_font_size(max(height * 0.82, 10) * scale)
+        return clamp_font_size(max(height * 0.7, 10) * scale)
+    return None
+
+
 def derive_wrap_mode(text_value: str, text_style: dict[str, Any], bounds: dict[str, Any], *, force_wrap: bool = False) -> str:
     if force_wrap or "\n" in (text_value or ""):
         return "wrap"
@@ -137,12 +155,16 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     text_style = (candidate.get("extra") or {}).get("text_style") or {}
     text_value = candidate.get("text") or candidate.get("title") or ""
     wrap_mode = derive_wrap_mode(text_value, text_style, bounds, force_wrap=force_wrap)
+    inferred_placeholder_size = None if table_cell else infer_placeholder_font_size(candidate, bounds, scale)
+    font_size = inferred_placeholder_size or estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale)
+    placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
+    text_auto_resize = "HEIGHT" if wrap_mode != "none" or placeholder else "WIDTH_AND_HEIGHT"
     return {
-        "fontSize": estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale),
+        "fontSize": font_size,
         "fontFamily": text_style.get("font_family") or "Inter",
         "textAlignHorizontal": map_horizontal_align(text_style.get("horizontal_align"), horizontal_fallback),
         "textAlignVertical": map_vertical_align(text_style.get("vertical_align"), vertical_fallback),
-        "textAutoResize": "HEIGHT" if wrap_mode != "none" else "WIDTH_AND_HEIGHT",
+        "textAutoResize": text_auto_resize,
         "lineHeightPx": None,
     }
 
@@ -567,6 +589,9 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             )
             table_node["children"].append(cell_node)
             if cell_candidate.get("text"):
+                cell_text = str(cell_candidate.get("text") or "")
+                is_header_cell = bool(cell_style.get("fill"))
+                horizontal_fallback = "ctr" if is_header_cell or (len(cell_text) <= 18 and "\n" not in cell_text) else "l"
                 table_node["children"].append(
                     build_text_node(
                         cell_candidate,
@@ -574,7 +599,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                         context=context,
                         force_wrap=True,
                         table_cell=True,
-                        horizontal_fallback="l",
+                        horizontal_fallback=horizontal_fallback,
                         vertical_fallback=(cell_style.get("anchor") or "ctr"),
                         scale=min(scale_x, scale_y),
                     )

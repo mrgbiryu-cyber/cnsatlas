@@ -187,11 +187,11 @@
               }
             ],
             "style": {
-              "fontSize": 8,
+              "fontSize": 15,
               "fontFamily": "Inter",
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
-              "textAutoResize": "WIDTH_AND_HEIGHT",
+              "textAutoResize": "HEIGHT",
               "lineHeightPx": null
             },
             "children": [],
@@ -745,7 +745,7 @@
                 "style": {
                   "fontSize": 11,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -859,7 +859,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -973,7 +973,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1087,7 +1087,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1201,7 +1201,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1315,7 +1315,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1428,7 +1428,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1541,7 +1541,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1654,7 +1654,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1767,7 +1767,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1880,7 +1880,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -1993,7 +1993,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2106,7 +2106,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2219,7 +2219,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2332,7 +2332,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2445,7 +2445,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2558,7 +2558,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2671,7 +2671,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2784,7 +2784,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -2897,7 +2897,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3010,7 +3010,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3123,7 +3123,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3236,7 +3236,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3349,7 +3349,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3462,7 +3462,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3575,7 +3575,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3688,7 +3688,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3801,7 +3801,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -3914,7 +3914,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4027,7 +4027,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4140,7 +4140,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4253,7 +4253,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4366,7 +4366,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4479,7 +4479,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4592,7 +4592,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4705,7 +4705,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4818,7 +4818,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -4931,7 +4931,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5044,7 +5044,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5157,7 +5157,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5270,7 +5270,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5383,7 +5383,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5496,7 +5496,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5609,7 +5609,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5722,7 +5722,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5835,7 +5835,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -5948,7 +5948,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6061,7 +6061,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6174,7 +6174,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6287,7 +6287,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6400,7 +6400,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6513,7 +6513,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6626,7 +6626,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6739,7 +6739,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6852,7 +6852,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -6965,7 +6965,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7110,7 +7110,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7224,7 +7224,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7338,7 +7338,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7452,7 +7452,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7565,7 +7565,7 @@
                 "style": {
                   "fontSize": 16,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7678,7 +7678,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7791,7 +7791,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -7904,7 +7904,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8017,7 +8017,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8130,7 +8130,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8243,7 +8243,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8356,7 +8356,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8469,7 +8469,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8582,7 +8582,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8695,7 +8695,7 @@
                 "style": {
                   "fontSize": 16,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8808,7 +8808,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -8921,7 +8921,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9034,7 +9034,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9147,7 +9147,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9260,7 +9260,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9373,7 +9373,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9486,7 +9486,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9599,7 +9599,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9712,7 +9712,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9825,7 +9825,7 @@
                 "style": {
                   "fontSize": 47,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -9938,7 +9938,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10051,7 +10051,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10164,7 +10164,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10277,7 +10277,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10390,7 +10390,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10503,7 +10503,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10616,7 +10616,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10729,7 +10729,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10842,7 +10842,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -10955,7 +10955,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11068,7 +11068,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11181,7 +11181,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11294,7 +11294,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11407,7 +11407,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11520,7 +11520,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11633,7 +11633,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11746,7 +11746,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11859,7 +11859,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -11972,7 +11972,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12085,7 +12085,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12198,7 +12198,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12311,7 +12311,7 @@
                 "style": {
                   "fontSize": 40,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12424,7 +12424,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12537,7 +12537,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12650,7 +12650,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12763,7 +12763,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12876,7 +12876,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -12989,7 +12989,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13102,7 +13102,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13215,7 +13215,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13328,7 +13328,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13441,7 +13441,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13554,7 +13554,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13667,7 +13667,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13780,7 +13780,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -13893,7 +13893,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14006,7 +14006,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14119,7 +14119,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14232,7 +14232,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14345,7 +14345,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14458,7 +14458,7 @@
                 "style": {
                   "fontSize": 21,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14571,7 +14571,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14684,7 +14684,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14797,7 +14797,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -14910,7 +14910,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15023,7 +15023,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15136,7 +15136,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15249,7 +15249,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15362,7 +15362,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15475,7 +15475,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15588,7 +15588,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15701,7 +15701,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15814,7 +15814,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -15927,7 +15927,7 @@
                 "style": {
                   "fontSize": 26,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16040,7 +16040,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16153,7 +16153,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16266,7 +16266,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16379,7 +16379,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16492,7 +16492,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16605,7 +16605,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16718,7 +16718,7 @@
                 "style": {
                   "fontSize": 10,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16831,7 +16831,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -16944,7 +16944,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17057,7 +17057,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17170,7 +17170,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17283,7 +17283,7 @@
                 "style": {
                   "fontSize": 16,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17396,7 +17396,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17509,7 +17509,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17622,7 +17622,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17735,7 +17735,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17848,7 +17848,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -17961,7 +17961,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -18074,7 +18074,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -18187,7 +18187,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -18300,7 +18300,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -18755,7 +18755,7 @@
                 "style": {
                   "fontSize": 11,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -18869,7 +18869,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -18983,7 +18983,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19097,7 +19097,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19211,7 +19211,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19324,7 +19324,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19437,7 +19437,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19550,7 +19550,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19663,7 +19663,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19776,7 +19776,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -19889,7 +19889,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20002,7 +20002,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20115,7 +20115,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20228,7 +20228,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20341,7 +20341,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20454,7 +20454,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20567,7 +20567,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20680,7 +20680,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20793,7 +20793,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -20906,7 +20906,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21019,7 +21019,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21132,7 +21132,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21245,7 +21245,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21358,7 +21358,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21471,7 +21471,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21584,7 +21584,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21697,7 +21697,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21810,7 +21810,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -21923,7 +21923,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22036,7 +22036,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22149,7 +22149,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22262,7 +22262,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22375,7 +22375,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22488,7 +22488,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22601,7 +22601,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22714,7 +22714,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22827,7 +22827,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -22940,7 +22940,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23053,7 +23053,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23166,7 +23166,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23279,7 +23279,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23392,7 +23392,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23505,7 +23505,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23618,7 +23618,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null
@@ -23731,7 +23731,7 @@
                 "style": {
                   "fontSize": 8,
                   "fontFamily": "Inter",
-                  "textAlignHorizontal": "LEFT",
+                  "textAlignHorizontal": "CENTER",
                   "textAlignVertical": "CENTER",
                   "textAutoResize": "HEIGHT",
                   "lineHeightPx": null

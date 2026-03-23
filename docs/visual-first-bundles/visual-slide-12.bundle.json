@@ -187,11 +187,11 @@
               }
             ],
             "style": {
-              "fontSize": 8,
+              "fontSize": 14,
               "fontFamily": "Inter",
               "textAlignHorizontal": "LEFT",
               "textAlignVertical": "TOP",
-              "textAutoResize": "WIDTH_AND_HEIGHT",
+              "textAutoResize": "HEIGHT",
               "lineHeightPx": null
             },
             "children": [],
