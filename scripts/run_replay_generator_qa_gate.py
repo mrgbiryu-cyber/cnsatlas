@@ -27,6 +27,12 @@ def normalize_bbox(bbox, origin):
     }
 
 
+def bbox_delta(ref_bbox, gen_bbox, ref_origin, gen_origin):
+    ref_local = normalize_bbox(ref_bbox, ref_origin)
+    gen_local = normalize_bbox(gen_bbox, gen_origin)
+    return max(abs(gen_local.get("x", 0) - ref_local.get("x", 0)), abs(gen_local.get("y", 0) - ref_local.get("y", 0)))
+
+
 def mean(values):
     return round(sum(values) / len(values), 2) if values else None
 
@@ -93,7 +99,7 @@ def score_canvas(metrics):
     return 100 if metrics["size_match"] else 0
 
 
-def score_text(reference_rows, generated_rows, pairs):
+def score_text(reference_rows, generated_rows, pairs, reference_origin, generated_origin):
     ref_text = [r for r in reference_rows if r.get("node_type") == "TEXT"]
     pair_text = [(r, g) for r, g in pairs if r.get("node_type") == "TEXT"]
     if not ref_text:
@@ -107,7 +113,7 @@ def score_text(reference_rows, generated_rows, pairs):
             continue
         rb = ref.get("bbox_absolute") or {}
         gb = gen.get("bbox_absolute") or {}
-        bbox_deltas.append(max(abs(gb.get("x", 0) - rb.get("x", 0)), abs(gb.get("y", 0) - rb.get("y", 0))))
+        bbox_deltas.append(bbox_delta(rb, gb, reference_origin, generated_origin))
         rf = ref.get("font_size")
         gf = gen.get("font_size")
         if rf is not None and gf is not None:
@@ -171,7 +177,7 @@ def score_table(reference_rows, generated_rows):
     }
 
 
-def score_shape(reference_rows, generated_rows):
+def score_shape(reference_rows, generated_rows, reference_origin, generated_origin):
     ref_diamond = [r for r in reference_rows if r.get("node_type") == "VECTOR" and "Google Shape;472" in (r.get("node_name") or "")]
     gen_diamond = [r for r in generated_rows if "Google Shape;472" in (r.get("node_name") or "")]
     if not ref_diamond:
@@ -179,8 +185,8 @@ def score_shape(reference_rows, generated_rows):
     present = bool(gen_diamond)
     center_delta = None
     if present:
-        rb = ref_diamond[0].get("bbox_absolute") or {}
-        gb = gen_diamond[0].get("bbox_absolute") or {}
+        rb = normalize_bbox(ref_diamond[0].get("bbox_absolute") or {}, reference_origin)
+        gb = normalize_bbox(gen_diamond[0].get("bbox_absolute") or {}, generated_origin)
         rcx = rb.get("x", 0) + rb.get("width", 0) / 2
         rcy = rb.get("y", 0) + rb.get("height", 0) / 2
         gcx = gb.get("x", 0) + gb.get("width", 0) / 2
@@ -208,13 +214,15 @@ def evaluate_page(reference_manifest, generated_manifest):
     generated_rows = [row for row in generated_manifest.get("nodes", []) if row.get("comparison_target")]
     pairs, extra_rows = build_mapping(reference_rows, generated_rows)
 
+    reference_origin = reference_manifest.get("page_bounds") or {}
+    generated_origin = generated_manifest.get("page_bounds") or {}
     metrics = {
         "canvas": canvas_metrics(reference_manifest, generated_manifest),
-        "text": score_text(reference_rows, generated_rows, pairs),
+        "text": score_text(reference_rows, generated_rows, pairs, reference_origin, generated_origin),
         "vector": score_vector(reference_rows, generated_rows),
         "connector": score_connector(reference_rows, generated_rows),
         "table": score_table(reference_rows, generated_rows),
-        "shape": score_shape(reference_rows, generated_rows),
+        "shape": score_shape(reference_rows, generated_rows, reference_origin, generated_origin),
         "overlay": score_overlay(reference_rows, generated_rows),
     }
     metrics["canvas"]["score"] = score_canvas(metrics["canvas"])

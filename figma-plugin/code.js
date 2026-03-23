@@ -1213,6 +1213,10 @@ function createReplayFrameShell(node, parentNode, origin) {
     opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
   }));
   shell.strokeWeight = node.strokeWeight || 1;
+  const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
+  if (rotation) {
+    shell.rotation = rotation;
+  }
   parentNode.appendChild(shell);
   annotateReplayNode(shell, node, origin, "frame-shell");
   return shell;
@@ -1253,6 +1257,10 @@ async function renderReplayText(node, parentNode, origin) {
   }
   text.x = local.x;
   text.y = local.y;
+  const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
+  if (rotation) {
+    text.rotation = rotation;
+  }
   parentNode.appendChild(text);
   annotateReplayNode(text, node, origin, "render-node");
 }
@@ -1297,6 +1305,10 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
     opacity: typeof stroke.opacity === "number" ? stroke.opacity : (stroke.color && typeof stroke.color.a === "number" ? stroke.color.a : 1),
   }));
   rect.strokeWeight = node.strokeWeight || 1;
+  const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
+  if (rotation) {
+    rect.rotation = rotation;
+  }
   parentNode.appendChild(rect);
   annotateReplayNode(rect, node, origin, "render-node");
 }
@@ -1319,6 +1331,9 @@ function renderReplayVector(node, parentNode, origin) {
   svgNode.name = node.name || "Vector";
   svgNode.x = local.x;
   svgNode.y = local.y;
+  if (signs.rotation) {
+    svgNode.rotation = signs.rotation;
+  }
   parentNode.appendChild(svgNode);
   annotateReplayNode(svgNode, node, Object.assign({}, origin, {
     renderFlipX: signs.flipX,

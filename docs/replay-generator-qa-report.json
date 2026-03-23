@@ -6,16 +6,15 @@
       "page_id": "1:4",
       "page_name": "Page 1",
       "status": "FAIL",
-      "score": 47.4,
+      "score": 57.4,
       "fail_reasons": [
-        "canvas_size_mismatch",
         "connector_missing_ratio_high"
       ],
       "counts": {
         "reference_target_nodes": 384,
-        "generated_target_nodes": 197,
+        "generated_target_nodes": 189,
         "extra_generated_nodes": 108,
-        "matched_proxy_count": 89
+        "matched_proxy_count": 81
       },
       "metrics": {
         "canvas": {
@@ -28,19 +27,19 @@
           "generated_page_bounds": {
             "x": 0.0,
             "y": 0.0,
-            "width": 1280.0,
-            "height": 720.739990234375
+            "width": 960.0,
+            "height": 540.0
           },
-          "size_match": false,
-          "width_delta": 320.0,
-          "height_delta": 180.74,
-          "score": 0
+          "size_match": true,
+          "width_delta": 0.0,
+          "height_delta": 0.0,
+          "score": 100
         },
         "text": {
           "score": 34,
           "coverage_ratio": 0.26,
-          "mean_bbox_delta": 371.26,
-          "mean_font_size_delta": 0.04
+          "mean_bbox_delta": 46.82,
+          "mean_font_size_delta": 0.15
         },
         "vector": {
           "score": 24,
@@ -72,17 +71,16 @@
       "page_id": "1:543",
       "page_name": "Page 2",
       "status": "FAIL",
-      "score": 24.0,
+      "score": 34.8,
       "fail_reasons": [
-        "canvas_size_mismatch",
         "connector_missing_ratio_high",
         "table_cell_presence_low"
       ],
       "counts": {
         "reference_target_nodes": 398,
-        "generated_target_nodes": 419,
+        "generated_target_nodes": 418,
         "extra_generated_nodes": 266,
-        "matched_proxy_count": 153
+        "matched_proxy_count": 152
       },
       "metrics": {
         "canvas": {
@@ -95,19 +93,19 @@
           "generated_page_bounds": {
             "x": 0.0,
             "y": 0.0,
-            "width": 1280.0,
-            "height": 972.0700073242188
+            "width": 960.0,
+            "height": 540.0
           },
-          "size_match": false,
-          "width_delta": 320.0,
-          "height_delta": 432.07,
-          "score": 0
+          "size_match": true,
+          "width_delta": 0.0,
+          "height_delta": 0.0,
+          "score": 100
         },
         "text": {
-          "score": 42,
+          "score": 46,
           "coverage_ratio": 0.58,
-          "mean_bbox_delta": 670.01,
-          "mean_font_size_delta": 1.91
+          "mean_bbox_delta": 77.67,
+          "mean_font_size_delta": 1.21
         },
         "vector": {
           "score": 4,
@@ -139,17 +137,16 @@
       "page_id": "1:1440",
       "page_name": "Page 3",
       "status": "FAIL",
-      "score": 20.2,
+      "score": 29.95,
       "fail_reasons": [
-        "canvas_size_mismatch",
         "connector_missing_ratio_high",
         "table_cell_presence_low"
       ],
       "counts": {
         "reference_target_nodes": 513,
-        "generated_target_nodes": 205,
-        "extra_generated_nodes": 133,
-        "matched_proxy_count": 72
+        "generated_target_nodes": 203,
+        "extra_generated_nodes": 130,
+        "matched_proxy_count": 73
       },
       "metrics": {
         "canvas": {
@@ -162,25 +159,25 @@
           "generated_page_bounds": {
             "x": 0.0,
             "y": 0.0,
-            "width": 1280.0,
-            "height": 1056.1300048828125
+            "width": 960.0,
+            "height": 540.0
           },
-          "size_match": false,
-          "width_delta": 320.0,
-          "height_delta": 516.13,
-          "score": 0
+          "size_match": true,
+          "width_delta": 0.0,
+          "height_delta": 0.0,
+          "score": 100
         },
         "text": {
-          "score": 18,
+          "score": 16,
           "coverage_ratio": 0.25,
-          "mean_bbox_delta": 1719.88,
-          "mean_font_size_delta": 3.19
+          "mean_bbox_delta": 211.97,
+          "mean_font_size_delta": 3.49
         },
         "vector": {
-          "score": 8,
+          "score": 9,
           "reference_vector_count": 182,
-          "generated_vector_count": 15,
-          "vector_count_ratio": 0.08
+          "generated_vector_count": 17,
+          "vector_count_ratio": 0.09
         },
         "connector": {
           "score": 2,
