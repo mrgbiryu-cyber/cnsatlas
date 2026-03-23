@@ -18,13 +18,13 @@ sys.stderr.reconfigure(encoding='utf-8')
 # ==========================================
 # 🛑 아래 4가지 변수를 본인 피그마 정보로 변경하세요!
 # ==========================================
-FIGMA_TOKEN = ".."
+FIGMA_TOKEN = "figd_여기에_발급받은_토큰을_넣어주세요"
 FILE_KEY = "VdhL71dZBwFoqFeuPCuG1l"
 
 # 추출할 3개 페이지(프레임)의 노드 아이디 (예: "12:345")
-PAGE_1_NODE_ID = "3:2542"
-PAGE_2_NODE_ID = "3:2731"
-PAGE_3_NODE_ID = "3:3149"
+PAGE_1_NODE_ID = "3:4238"
+PAGE_2_NODE_ID = "3:4529"
+PAGE_3_NODE_ID = "3:5354"
 # ==========================================
 
 HEADERS = {
@@ -60,9 +60,9 @@ def main():
 
     # 2. 1/2/3 페이지 개별 JSON 다운로드 (geometry=paths 포함)
     page_nodes = {
-        "figma-page-1.json": PAGE_1_NODE_ID,
-        "figma-page-2.json": PAGE_2_NODE_ID,
-        "figma-page-3.json": PAGE_3_NODE_ID,
+        "generated-visual-page-1": PAGE_1_NODE_ID,
+        "generated-visual-page-2": PAGE_2_NODE_ID,
+        "generated-visual-page-3": PAGE_3_NODE_ID,
     }
     
     print("\n2️⃣ 페이지별 개별 노드 JSON 가져오는 중...")
