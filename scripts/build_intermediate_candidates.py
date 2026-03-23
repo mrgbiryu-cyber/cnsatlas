@@ -313,6 +313,8 @@ def append_element_candidates(
     candidate_id = f"s{slide_no}:{source_path}"
     title = element.get("name") or element.get("text") or element_type or "element"
     text = (element.get("text") or "").strip()
+    source_scope = element.get("source_scope") or "slide"
+    placeholder = element.get("placeholder")
 
     if element_type == "group":
         subtype = classify_group(element)
@@ -332,6 +334,8 @@ def append_element_candidates(
                     "child_count": len(element.get("children", []) or []),
                     "shape_style": element.get("shape_style"),
                     "transform": emu_bounds_to_px(element.get("bounds")),
+                    "source_scope": source_scope,
+                    "placeholder": placeholder,
                 },
             )
         )
@@ -364,6 +368,8 @@ def append_element_candidates(
                     "row_count": table.get("row_count", 0),
                     "column_count": len(table.get("grid_columns", [])),
                     "grid_columns": table.get("grid_columns", []),
+                    "source_scope": source_scope,
+                    "placeholder": placeholder,
                 },
             )
         )
@@ -385,6 +391,8 @@ def append_element_candidates(
                         "height": row.get("height"),
                         "row_height_px": row.get("height_px"),
                         "cell_count": len(row.get("cells", [])),
+                        "source_scope": source_scope,
+                        "placeholder": placeholder,
                     },
                 )
             )
@@ -413,6 +421,8 @@ def append_element_candidates(
                             "start_column_index": cell.get("start_column_index"),
                             "width_px": cell.get("width_px"),
                             "cell_style": cell.get("style"),
+                            "source_scope": source_scope,
+                            "placeholder": placeholder,
                         },
                     )
                 )
@@ -436,6 +446,8 @@ def append_element_candidates(
                     "resolved_target": element.get("resolved_target"),
                     "mime_type": element.get("mime_type"),
                     "image_base64": element.get("image_base64"),
+                    "source_scope": source_scope,
+                    "placeholder": placeholder,
                 },
             )
         )
@@ -481,6 +493,8 @@ def append_element_candidates(
                 "shape_kind": shape_subtype,
                 "shape_style": element.get("shape_style"),
                 "text_style": element.get("text_style"),
+                "source_scope": source_scope,
+                "placeholder": placeholder,
                 **connector_extra,
             },
         )
@@ -494,13 +508,28 @@ def build_intermediate_model(detail_payload: dict[str, Any]) -> dict[str, Any]:
         slide_no = slide["slide_no"]
         page_id = f"page:{slide_no}"
         candidates: list[dict[str, Any]] = []
-        element_index = build_element_index(slide["elements"])
+        source_elements = [
+            *(slide.get("master_elements") or []),
+            *(slide.get("layout_elements") or []),
+            *(slide.get("elements") or []),
+        ]
+        element_index = build_element_index(source_elements)
 
-        for index, element in enumerate(slide["elements"], start=1):
+        scope_counts = {"master": 0, "layout": 0, "slide": 0}
+        for element in source_elements:
+            scope = element.get("source_scope") or "slide"
+            scope_counts.setdefault(scope, 0)
+            scope_counts[scope] += 1
+            if scope == "master":
+                source_path = f"master_{slide_no}/element_{scope_counts[scope]}"
+            elif scope == "layout":
+                source_path = f"layout_{slide_no}/element_{scope_counts[scope]}"
+            else:
+                source_path = f"slide_{slide_no}/element_{scope_counts[scope]}"
             append_element_candidates(
                 slide_no=slide_no,
                 element=element,
-                source_path=f"slide_{slide_no}/element_{index}",
+                source_path=source_path,
                 parent_candidate_id=page_id,
                 candidates=candidates,
                 element_index=element_index,

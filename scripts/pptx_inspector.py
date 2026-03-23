@@ -237,6 +237,17 @@ def _extract_cnvpr(container: ET.Element | None) -> dict[str, Any]:
     }
 
 
+def _extract_placeholder(node: ET.Element) -> dict[str, Any] | None:
+    placeholder = node.find(".//p:nvPr/p:ph", NS)
+    if placeholder is None:
+        return None
+    payload: dict[str, Any] = {}
+    for key in ("type", "idx", "sz", "orient"):
+        if placeholder.attrib.get(key) is not None:
+            payload[key] = placeholder.attrib.get(key)
+    return payload or None
+
+
 def _extract_text_runs(node: ET.Element, theme_colors: dict[str, str] | None = None) -> list[dict[str, Any]]:
     runs: list[dict[str, Any]] = []
     paragraphs = node.findall(".//a:p", NS)
@@ -459,6 +470,7 @@ def _extract_element(
     slide_path: str,
     theme_colors: dict[str, str],
     group_context: dict[str, int] | None = None,
+    source_scope: str = "slide",
 ) -> dict[str, Any]:
     tag = _local_name(node.tag)
     meta = _extract_cnvpr(node)
@@ -474,7 +486,7 @@ def _extract_element(
             "chExtCy": raw_group_xfrm.get("chExtCy", raw_group_xfrm.get("cy", 0)) if raw_group_xfrm else 0,
         } if raw_group_xfrm else None
         children = [
-            _extract_element(child, rel_targets, archive, slide_path, theme_colors, child_group_context)
+            _extract_element(child, rel_targets, archive, slide_path, theme_colors, child_group_context, source_scope)
             for child in list(node)
             if _local_name(child.tag) not in {"nvGrpSpPr", "grpSpPr"}
         ]
@@ -486,6 +498,7 @@ def _extract_element(
             "descr": meta.get("descr"),
             "bounds": absolute_group_bounds,
             "children": children,
+            "source_scope": source_scope,
         }
 
     payload: dict[str, Any] = {
@@ -500,6 +513,8 @@ def _extract_element(
         "name": meta.get("name"),
         "descr": meta.get("descr"),
         "children": [],
+        "source_scope": source_scope,
+        "placeholder": _extract_placeholder(node),
     }
 
     if tag in {"sp", "cxnSp"}:
@@ -528,7 +543,8 @@ def _extract_element(
 
 
 def _slide_rel_targets(archive: ZipFile, slide_path: str) -> dict[str, str]:
-    rel_path = slide_path.replace("/slides/", "/slides/_rels/") + ".rels"
+    part = PurePosixPath(slide_path)
+    rel_path = str(part.parent / "_rels" / (part.name + ".rels"))
     if rel_path not in archive.namelist():
         return {}
     rel_root = ET.fromstring(archive.read(rel_path))
@@ -539,6 +555,30 @@ def _slide_rel_targets(archive: ZipFile, slide_path: str) -> dict[str, str]:
         if rel_id and target:
             mapping[rel_id] = target
     return mapping
+
+
+def _part_relationships(archive: ZipFile, part_path: str) -> list[dict[str, str]]:
+    rel_path = str(PurePosixPath(part_path).parent / "_rels" / (PurePosixPath(part_path).name + ".rels"))
+    if rel_path not in archive.namelist():
+        return []
+    rel_root = ET.fromstring(archive.read(rel_path))
+    relationships: list[dict[str, str]] = []
+    for rel in rel_root.findall("{*}Relationship"):
+        rel_id = rel.attrib.get("Id")
+        target = rel.attrib.get("Target")
+        rel_type = rel.attrib.get("Type")
+        if rel_id and target and rel_type:
+            relationships.append({"id": rel_id, "target": target, "type": rel_type})
+    return relationships
+
+
+def _resolve_related_part(archive: ZipFile, part_path: str, relationship_suffix: str) -> str | None:
+    for rel in _part_relationships(archive, part_path):
+        if rel["type"].endswith(relationship_suffix):
+            resolved = _resolve_part_path(part_path, rel["target"])
+            if resolved in archive.namelist():
+                return resolved
+    return None
 
 
 def _presentation_slide_size(archive: ZipFile) -> dict[str, Any]:
@@ -572,7 +612,37 @@ def _extract_theme_colors(archive: ZipFile) -> dict[str, str]:
             colors[name] = first.attrib.get("val", "")
         elif _local_name(first.tag) == "sysClr":
             colors[name] = first.attrib.get("lastClr", "")
+    alias_map = {
+        "bg1": colors.get("lt1") or colors.get("dk1", ""),
+        "tx1": colors.get("dk1") or colors.get("lt1", ""),
+        "bg2": colors.get("lt2") or colors.get("dk2", ""),
+        "tx2": colors.get("dk2") or colors.get("lt2", ""),
+    }
+    for alias, value in alias_map.items():
+        if value:
+            colors[alias] = value
     return colors
+
+
+def _extract_part_elements(
+    archive: ZipFile,
+    part_path: str | None,
+    theme_colors: dict[str, str],
+    *,
+    source_scope: str,
+) -> list[dict[str, Any]]:
+    if not part_path or part_path not in archive.namelist():
+        return []
+    part_root = ET.fromstring(archive.read(part_path))
+    sp_tree = part_root.find("p:cSld/p:spTree", NS)
+    if sp_tree is None:
+        return []
+    rel_targets = _slide_rel_targets(archive, part_path)
+    return [
+        _extract_element(child, rel_targets, archive, part_path, theme_colors, None, source_scope)
+        for child in list(sp_tree)
+        if _local_name(child.tag) not in {"nvGrpSpPr", "grpSpPr"}
+    ]
 
 
 def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str, Any]:
@@ -594,21 +664,29 @@ def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str
                 raise ValueError(f"Missing spTree in {inspection.slide_path}")
 
             rel_targets = _slide_rel_targets(archive, inspection.slide_path)
+            layout_path = _resolve_related_part(archive, inspection.slide_path, "/slideLayout")
+            master_path = _resolve_related_part(archive, layout_path, "/slideMaster") if layout_path else None
             elements = [
-                _extract_element(child, rel_targets, archive, inspection.slide_path, theme_colors)
+                _extract_element(child, rel_targets, archive, inspection.slide_path, theme_colors, None, "slide")
                 for child in list(sp_tree)
                 if _local_name(child.tag) not in {"nvGrpSpPr", "grpSpPr"}
             ]
+            layout_elements = _extract_part_elements(archive, layout_path, theme_colors, source_scope="layout")
+            master_elements = _extract_part_elements(archive, master_path, theme_colors, source_scope="master")
 
             slides_payload.append(
                 {
                     "slide_no": slide_no,
                     "title_or_label": inspection.title_or_label,
                     "slide_path": inspection.slide_path,
+                    "layout_path": layout_path,
+                    "master_path": master_path,
                     "slide_size": slide_size,
                     "theme_colors": theme_colors,
                     "summary": asdict(inspection),
                     "elements": elements,
+                    "layout_elements": layout_elements,
+                    "master_elements": master_elements,
                 }
             )
 

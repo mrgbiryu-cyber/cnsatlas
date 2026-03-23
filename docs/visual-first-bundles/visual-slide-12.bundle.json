@@ -68,6 +68,193 @@
         "strokeWeight": 0,
         "children": [
           {
+            "id": "s12:layout_12/element_1",
+            "type": "VECTOR",
+            "name": "Google Shape;53;p66",
+            "absoluteBoundingBox": {
+              "x": 31.34,
+              "y": 15.46,
+              "width": 897.33,
+              "height": 25.52
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fillGeometry": [],
+            "strokeGeometry": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "children": [],
+            "debug": {
+              "source_path": "layout_12/element_1",
+              "source_node_id": "53",
+              "source_subtype": "shape",
+              "source_scope": "layout",
+              "full_page_overlay_candidate": false
+            }
+          },
+          {
+            "id": "s12:layout_12/element_4:line",
+            "type": "VECTOR",
+            "name": "Google Shape;57;p66:line",
+            "absoluteBoundingBox": {
+              "x": 461.95,
+              "y": 54.96,
+              "width": 9.99,
+              "height": 8.48
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "fillGeometry": [],
+            "strokeGeometry": [
+              {
+                "path": "M 4.0 4.48 L 5.99 4.0"
+              }
+            ],
+            "fills": [],
+            "strokes": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.498,
+                  "g": 0.498,
+                  "b": 0.498
+                },
+                "opacity": null
+              }
+            ],
+            "strokeWeight": 1.0,
+            "children": [],
+            "debug": {
+              "source_path": "layout_12/element_4",
+              "source_node_id": "57",
+              "source_subtype": "connector",
+              "source_scope": "layout"
+            }
+          },
+          {
+            "id": "s12:layout_12/element_2:text",
+            "type": "TEXT",
+            "name": "Google Shape;54;p66",
+            "characters": "‹#›",
+            "absoluteBoundingBox": {
+              "x": 739.97,
+              "y": 523.42,
+              "width": 196.8,
+              "height": 4.78
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.498,
+                  "g": 0.498,
+                  "b": 0.498
+                },
+                "opacity": null
+              }
+            ],
+            "style": {
+              "fontSize": 8,
+              "fontFamily": "+mn-ea",
+              "textAlignHorizontal": "RIGHT",
+              "textAlignVertical": "CENTER",
+              "textAutoResize": "HEIGHT",
+              "lineHeightPx": null
+            },
+            "children": [],
+            "debug": {
+              "source_path": "layout_12/element_2",
+              "source_node_id": "54",
+              "source_subtype": "text_block",
+              "source_scope": "layout",
+              "rotation_degrees": 0.0
+            }
+          },
+          {
+            "id": "s12:layout_12/element_3:text",
+            "type": "TEXT",
+            "name": "Google Shape;56;p66",
+            "characters": "‹#›",
+            "absoluteBoundingBox": {
+              "x": 739.97,
+              "y": 523.42,
+              "width": 196.8,
+              "height": 4.78
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.12,
+                  "g": 0.12,
+                  "b": 0.12
+                },
+                "opacity": 1.0
+              }
+            ],
+            "style": {
+              "fontSize": 8,
+              "fontFamily": "Inter",
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "TOP",
+              "textAutoResize": "HEIGHT",
+              "lineHeightPx": null
+            },
+            "children": [],
+            "debug": {
+              "source_path": "layout_12/element_3",
+              "source_node_id": "56",
+              "source_subtype": "text_block",
+              "source_scope": "layout",
+              "rotation_degrees": 0.0
+            }
+          },
+          {
             "id": "s12:slide_12/element_1:text",
             "type": "TEXT",
             "name": "제목 1",
@@ -114,6 +301,7 @@
               "source_path": "slide_12/element_1",
               "source_node_id": "2",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -224,6 +412,7 @@
                       "source_path": "slide_12/element_68/child_2",
                       "source_node_id": "111",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -233,10 +422,10 @@
                     "name": "Google Shape;574;p15",
                     "characters": "케어솔루션\n(대표사이트개발)",
                     "absoluteBoundingBox": {
-                      "x": 656.43,
-                      "y": 50.52,
-                      "width": 59.97,
-                      "height": 16.48
+                      "x": 660.21,
+                      "y": 55.32,
+                      "width": 52.41,
+                      "height": 6.88
                     },
                     "relativeTransform": [
                       [
@@ -274,6 +463,7 @@
                       "source_path": "slide_12/element_68/child_2",
                       "source_node_id": "111",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -281,7 +471,8 @@
                 "debug": {
                   "source_path": "slide_12/element_68/child_2",
                   "source_node_id": "111",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -368,6 +559,7 @@
                       "source_path": "slide_12/element_68/child_4",
                       "source_node_id": "113",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -377,10 +569,10 @@
                     "name": "Google Shape;576;p15",
                     "characters": "CSMS\n(계약정보)",
                     "absoluteBoundingBox": {
-                      "x": 467.94,
-                      "y": 50.92,
-                      "width": 59.97,
-                      "height": 16.09
+                      "x": 471.72,
+                      "y": 55.72,
+                      "width": 52.41,
+                      "height": 6.49
                     },
                     "relativeTransform": [
                       [
@@ -418,6 +610,7 @@
                       "source_path": "slide_12/element_68/child_4",
                       "source_node_id": "113",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -425,7 +618,8 @@
                 "debug": {
                   "source_path": "slide_12/element_68/child_4",
                   "source_node_id": "113",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -512,6 +706,7 @@
                       "source_path": "slide_12/element_68/child_3",
                       "source_node_id": "112",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -521,10 +716,10 @@
                     "name": "Google Shape;575;p15",
                     "characters": "멤버십\n(회원)",
                     "absoluteBoundingBox": {
-                      "x": 530.75,
-                      "y": 50.92,
-                      "width": 59.97,
-                      "height": 16.09
+                      "x": 534.53,
+                      "y": 55.72,
+                      "width": 52.41,
+                      "height": 6.49
                     },
                     "relativeTransform": [
                       [
@@ -562,6 +757,7 @@
                       "source_path": "slide_12/element_68/child_3",
                       "source_node_id": "112",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -569,7 +765,8 @@
                 "debug": {
                   "source_path": "slide_12/element_68/child_3",
                   "source_node_id": "112",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -656,6 +853,7 @@
                       "source_path": "slide_12/element_68/child_1",
                       "source_node_id": "110",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -665,10 +863,10 @@
                     "name": "Google Shape;573;p15",
                     "characters": "OBS(마젠토)",
                     "absoluteBoundingBox": {
-                      "x": 593.92,
-                      "y": 50.92,
-                      "width": 59.97,
-                      "height": 16.09
+                      "x": 597.7,
+                      "y": 55.72,
+                      "width": 52.41,
+                      "height": 6.49
                     },
                     "relativeTransform": [
                       [
@@ -706,6 +904,7 @@
                       "source_path": "slide_12/element_68/child_1",
                       "source_node_id": "110",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -713,7 +912,8 @@
                 "debug": {
                   "source_path": "slide_12/element_68/child_1",
                   "source_node_id": "110",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -800,6 +1000,7 @@
                       "source_path": "slide_12/element_68/child_5",
                       "source_node_id": "114",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -809,10 +1010,10 @@
                     "name": "Google Shape;577;p15",
                     "characters": "외부인증 모듈",
                     "absoluteBoundingBox": {
-                      "x": 400.63,
-                      "y": 51.4,
-                      "width": 65.32,
-                      "height": 16.09
+                      "x": 404.41,
+                      "y": 56.2,
+                      "width": 57.76,
+                      "height": 6.49
                     },
                     "relativeTransform": [
                       [
@@ -850,6 +1051,7 @@
                       "source_path": "slide_12/element_68/child_5",
                       "source_node_id": "114",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -857,14 +1059,16 @@
                 "debug": {
                   "source_path": "slide_12/element_68/child_5",
                   "source_node_id": "114",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_68",
               "source_node_id": "109",
-              "source_subtype": "section_block"
+              "source_subtype": "section_block",
+              "source_scope": "slide"
             }
           },
           {
@@ -873,10 +1077,10 @@
             "name": "Google Shape;474;p15",
             "characters": "※ 케어십 가능 제품",
             "absoluteBoundingBox": {
-              "x": 235.84,
-              "y": 55.18,
-              "width": 86.23,
-              "height": 16.96
+              "x": 245.44,
+              "y": 59.98,
+              "width": 67.03,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -914,6 +1118,7 @@
               "source_path": "slide_12/element_11",
               "source_node_id": "12",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -923,10 +1128,10 @@
             "name": "Google Shape;468;p15",
             "characters": "사용자",
             "absoluteBoundingBox": {
-              "x": 34.35,
-              "y": 65.88,
-              "width": 55.26,
-              "height": 18.17
+              "x": 43.95,
+              "y": 70.68,
+              "width": 36.06,
+              "height": 8.57
             },
             "relativeTransform": [
               [
@@ -964,6 +1169,7 @@
               "source_path": "slide_12/element_5",
               "source_node_id": "6",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -1051,6 +1257,7 @@
                   "source_path": "slide_12/element_2",
                   "source_node_id": "3",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -1060,10 +1267,10 @@
                 "name": "Google Shape;465;p15",
                 "characters": "홈",
                 "absoluteBoundingBox": {
-                  "x": 89.62,
-                  "y": 68.98,
-                  "width": 28.35,
-                  "height": 28.35
+                  "x": 93.4,
+                  "y": 72.76,
+                  "width": 20.79,
+                  "height": 20.79
                 },
                 "relativeTransform": [
                   [
@@ -1101,6 +1308,7 @@
                   "source_path": "slide_12/element_2",
                   "source_node_id": "3",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -1108,7 +1316,8 @@
             "debug": {
               "source_path": "slide_12/element_2",
               "source_node_id": "3",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -1195,6 +1404,7 @@
                   "source_path": "slide_12/element_9",
                   "source_node_id": "10",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -1204,10 +1414,10 @@
                 "name": "Google Shape;470;p15",
                 "characters": "제품 탐색",
                 "absoluteBoundingBox": {
-                  "x": 140.53,
-                  "y": 72.35,
-                  "width": 66.68,
-                  "height": 21.25
+                  "x": 144.31,
+                  "y": 77.15,
+                  "width": 59.12,
+                  "height": 11.65
                 },
                 "relativeTransform": [
                   [
@@ -1245,6 +1455,7 @@
                   "source_path": "slide_12/element_9",
                   "source_node_id": "10",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -1252,7 +1463,8 @@
             "debug": {
               "source_path": "slide_12/element_9",
               "source_node_id": "10",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -1339,6 +1551,7 @@
                   "source_path": "slide_12/element_3",
                   "source_node_id": "4",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -1348,10 +1561,10 @@
                 "name": "Google Shape;466;p15",
                 "characters": "제품선택\n(PDP)",
                 "absoluteBoundingBox": {
-                  "x": 267.46,
-                  "y": 72.35,
-                  "width": 66.68,
-                  "height": 21.25
+                  "x": 271.24,
+                  "y": 77.15,
+                  "width": 59.12,
+                  "height": 11.65
                 },
                 "relativeTransform": [
                   [
@@ -1389,6 +1602,7 @@
                   "source_path": "slide_12/element_3",
                   "source_node_id": "4",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -1396,7 +1610,8 @@
             "debug": {
               "source_path": "slide_12/element_3",
               "source_node_id": "4",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -1467,7 +1682,8 @@
                 "debug": {
                   "source_path": "slide_12/element_6",
                   "source_node_id": "7",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1516,14 +1732,16 @@
                 "debug": {
                   "source_path": "slide_12/element_6",
                   "source_node_id": "7",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_6",
               "source_node_id": "7",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -1594,7 +1812,8 @@
                 "debug": {
                   "source_path": "slide_12/element_7",
                   "source_node_id": "8",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1643,14 +1862,16 @@
                 "debug": {
                   "source_path": "slide_12/element_7",
                   "source_node_id": "8",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_7",
               "source_node_id": "8",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -1721,7 +1942,8 @@
                 "debug": {
                   "source_path": "slide_12/element_56",
                   "source_node_id": "90",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1770,14 +1992,16 @@
                 "debug": {
                   "source_path": "slide_12/element_56",
                   "source_node_id": "90",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_56",
               "source_node_id": "90",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -1848,7 +2072,8 @@
                 "debug": {
                   "source_path": "slide_12/element_4",
                   "source_node_id": "5",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1897,14 +2122,16 @@
                 "debug": {
                   "source_path": "slide_12/element_4",
                   "source_node_id": "5",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_4",
               "source_node_id": "5",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -1975,7 +2202,8 @@
                 "debug": {
                   "source_path": "slide_12/element_12",
                   "source_node_id": "13",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -2024,14 +2252,16 @@
                 "debug": {
                   "source_path": "slide_12/element_12",
                   "source_node_id": "13",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_12",
               "source_node_id": "13",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -2040,10 +2270,10 @@
             "name": "Google Shape;477;p15",
             "characters": "NO",
             "absoluteBoundingBox": {
-              "x": 222.09,
-              "y": 107.41,
-              "width": 27.29,
-              "height": 16.96
+              "x": 231.69,
+              "y": 112.21,
+              "width": 8.09,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -2081,6 +2311,7 @@
               "source_path": "slide_12/element_14",
               "source_node_id": "15",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2090,10 +2321,10 @@
             "name": "Google Shape;476;p15",
             "characters": "YES",
             "absoluteBoundingBox": {
-              "x": 344.76,
-              "y": 107.43,
-              "width": 28.3,
-              "height": 16.96
+              "x": 354.36,
+              "y": 112.23,
+              "width": 9.1,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -2131,6 +2362,7 @@
               "source_path": "slide_12/element_13",
               "source_node_id": "14",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2180,6 +2412,7 @@
               "source_path": "slide_12/element_8",
               "source_node_id": "9",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -2189,10 +2422,10 @@
             "name": "Google Shape;473;p15",
             "characters": "케어십 신청",
             "absoluteBoundingBox": {
-              "x": 270.9,
-              "y": 114.9,
-              "width": 63.14,
-              "height": 18.17
+              "x": 280.5,
+              "y": 119.7,
+              "width": 43.94,
+              "height": 8.57
             },
             "relativeTransform": [
               [
@@ -2230,6 +2463,7 @@
               "source_path": "slide_12/element_10",
               "source_node_id": "11",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2301,7 +2535,8 @@
                 "debug": {
                   "source_path": "slide_12/element_16",
                   "source_node_id": "19",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -2350,14 +2585,16 @@
                 "debug": {
                   "source_path": "slide_12/element_16",
                   "source_node_id": "19",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_16",
               "source_node_id": "19",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -2428,7 +2665,8 @@
                 "debug": {
                   "source_path": "slide_12/element_36",
                   "source_node_id": "56",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -2477,14 +2715,16 @@
                 "debug": {
                   "source_path": "slide_12/element_36",
                   "source_node_id": "56",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_36",
               "source_node_id": "56",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -2493,10 +2733,10 @@
             "name": "Google Shape;495;p15",
             "characters": "NO",
             "absoluteBoundingBox": {
-              "x": 120.68,
-              "y": 139.37,
-              "width": 27.29,
-              "height": 16.96
+              "x": 130.28,
+              "y": 144.17,
+              "width": 8.09,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -2534,6 +2774,7 @@
               "source_path": "slide_12/element_19",
               "source_node_id": "33",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2543,10 +2784,10 @@
             "name": "Google Shape;496;p15",
             "characters": "YES",
             "absoluteBoundingBox": {
-              "x": 238.31,
-              "y": 141.8,
-              "width": 28.3,
-              "height": 16.96
+              "x": 247.91,
+              "y": 146.6,
+              "width": 9.1,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -2584,6 +2825,7 @@
               "source_path": "slide_12/element_20",
               "source_node_id": "34",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2656,6 +2898,7 @@
                   "source_path": "slide_12/element_35",
                   "source_node_id": "55",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -2665,10 +2908,10 @@
                 "name": "Google Shape;517;p15",
                 "characters": "케어십 요금 표시",
                 "absoluteBoundingBox": {
-                  "x": 521.49,
-                  "y": 142.69,
-                  "width": 76.06,
-                  "height": 21.25
+                  "x": 525.27,
+                  "y": 147.49,
+                  "width": 68.5,
+                  "height": 11.65
                 },
                 "relativeTransform": [
                   [
@@ -2706,6 +2949,7 @@
                   "source_path": "slide_12/element_35",
                   "source_node_id": "55",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -2713,7 +2957,8 @@
             "debug": {
               "source_path": "slide_12/element_35",
               "source_node_id": "55",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -2785,6 +3030,7 @@
                   "source_path": "slide_12/element_15/child_1",
                   "source_node_id": "17",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -2794,10 +3040,10 @@
                 "name": "Google Shape;480;p15",
                 "characters": "구매하기",
                 "absoluteBoundingBox": {
-                  "x": 167.66,
-                  "y": 147.84,
-                  "width": 50.89,
-                  "height": 18.17
+                  "x": 177.26,
+                  "y": 152.64,
+                  "width": 31.69,
+                  "height": 8.57
                 },
                 "relativeTransform": [
                   [
@@ -2835,6 +3081,7 @@
                   "source_path": "slide_12/element_15/child_2",
                   "source_node_id": "18",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -2842,7 +3089,8 @@
             "debug": {
               "source_path": "slide_12/element_15",
               "source_node_id": "16",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -2913,7 +3161,8 @@
                 "debug": {
                   "source_path": "slide_12/element_34",
                   "source_node_id": "54",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -2962,14 +3211,16 @@
                 "debug": {
                   "source_path": "slide_12/element_34",
                   "source_node_id": "54",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_34",
               "source_node_id": "54",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -3040,7 +3291,8 @@
                 "debug": {
                   "source_path": "slide_12/element_69",
                   "source_node_id": "118",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -3089,14 +3341,16 @@
                 "debug": {
                   "source_path": "slide_12/element_69",
                   "source_node_id": "118",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_69",
               "source_node_id": "118",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -3167,7 +3421,8 @@
                 "debug": {
                   "source_path": "slide_12/element_38",
                   "source_node_id": "60",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -3216,14 +3471,16 @@
                 "debug": {
                   "source_path": "slide_12/element_38",
                   "source_node_id": "60",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_38",
               "source_node_id": "60",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -3232,10 +3489,10 @@
             "name": "Google Shape;531;p15",
             "characters": "NO",
             "absoluteBoundingBox": {
-              "x": 479.33,
-              "y": 177.06,
-              "width": 27.29,
-              "height": 16.96
+              "x": 488.93,
+              "y": 181.86,
+              "width": 8.09,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -3273,6 +3530,7 @@
               "source_path": "slide_12/element_41",
               "source_node_id": "69",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -3345,6 +3603,7 @@
                   "source_path": "slide_12/element_37/child_1",
                   "source_node_id": "58",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3354,10 +3613,10 @@
                 "name": "Google Shape;521;p15",
                 "characters": "구매하기?",
                 "absoluteBoundingBox": {
-                  "x": 533.56,
-                  "y": 185.54,
-                  "width": 50.51,
-                  "height": 16.96
+                  "x": 543.16,
+                  "y": 190.34,
+                  "width": 31.31,
+                  "height": 7.36
                 },
                 "relativeTransform": [
                   [
@@ -3395,6 +3654,7 @@
                   "source_path": "slide_12/element_37/child_2",
                   "source_node_id": "59",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3402,7 +3662,8 @@
             "debug": {
               "source_path": "slide_12/element_37",
               "source_node_id": "57",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -3473,7 +3734,8 @@
                 "debug": {
                   "source_path": "slide_12/element_42",
                   "source_node_id": "70",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -3522,14 +3784,16 @@
                 "debug": {
                   "source_path": "slide_12/element_42",
                   "source_node_id": "70",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_42",
               "source_node_id": "70",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -3600,7 +3864,8 @@
                 "debug": {
                   "source_path": "slide_12/element_43",
                   "source_node_id": "71",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -3649,14 +3914,16 @@
                 "debug": {
                   "source_path": "slide_12/element_43",
                   "source_node_id": "71",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_43",
               "source_node_id": "71",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -3665,10 +3932,10 @@
             "name": "Google Shape;498;p15",
             "characters": "비회원주문",
             "absoluteBoundingBox": {
-              "x": 167.0,
-              "y": 202.5,
-              "width": 54.93,
-              "height": 16.96
+              "x": 176.6,
+              "y": 207.3,
+              "width": 35.73,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -3706,6 +3973,7 @@
               "source_path": "slide_12/element_22",
               "source_node_id": "36",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -3715,10 +3983,10 @@
             "name": "Google Shape;509;p15",
             "characters": "회원 로그인",
             "absoluteBoundingBox": {
-              "x": 306.15,
-              "y": 202.5,
-              "width": 57.83,
-              "height": 16.96
+              "x": 315.75,
+              "y": 207.3,
+              "width": 38.63,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -3756,6 +4024,7 @@
               "source_path": "slide_12/element_31",
               "source_node_id": "47",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -3765,10 +4034,10 @@
             "name": "Google Shape;591;p15",
             "characters": "YES",
             "absoluteBoundingBox": {
-              "x": 590.28,
-              "y": 204.45,
-              "width": 28.3,
-              "height": 16.96
+              "x": 599.88,
+              "y": 209.25,
+              "width": 9.1,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -3806,6 +4075,7 @@
               "source_path": "slide_12/element_70",
               "source_node_id": "129",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -3916,6 +4186,7 @@
                       "source_path": "slide_12/element_33/child_1",
                       "source_node_id": "50",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -3925,10 +4196,10 @@
                     "name": "Google Shape;512;p15",
                     "characters": "일반제품 장바구니",
                     "absoluteBoundingBox": {
-                      "x": 40.95,
-                      "y": 204.69,
-                      "width": 90.5,
-                      "height": 21.25
+                      "x": 44.73,
+                      "y": 209.49,
+                      "width": 82.94,
+                      "height": 11.65
                     },
                     "relativeTransform": [
                       [
@@ -3966,6 +4237,7 @@
                       "source_path": "slide_12/element_33/child_1",
                       "source_node_id": "50",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -3973,7 +4245,8 @@
                 "debug": {
                   "source_path": "slide_12/element_33/child_1",
                   "source_node_id": "50",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -4060,6 +4333,7 @@
                       "source_path": "slide_12/element_33/child_2/child_1",
                       "source_node_id": "52",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -4147,6 +4421,7 @@
                           "source_path": "slide_12/element_33/child_2/child_2",
                           "source_node_id": "53",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "full_page_overlay_candidate": false
                         }
                       },
@@ -4156,10 +4431,10 @@
                         "name": "Google Shape;515;p15",
                         "characters": "제품 추가",
                         "absoluteBoundingBox": {
-                          "x": 45.77,
-                          "y": 228.62,
-                          "width": 80.17,
-                          "height": 21.52
+                          "x": 49.55,
+                          "y": 233.42,
+                          "width": 72.61,
+                          "height": 11.92
                         },
                         "relativeTransform": [
                           [
@@ -4197,6 +4472,7 @@
                           "source_path": "slide_12/element_33/child_2/child_2",
                           "source_node_id": "53",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "rotation_degrees": 0.0
                         }
                       }
@@ -4204,21 +4480,24 @@
                     "debug": {
                       "source_path": "slide_12/element_33/child_2/child_2",
                       "source_node_id": "53",
-                      "source_subtype": "labeled_shape"
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide"
                     }
                   }
                 ],
                 "debug": {
                   "source_path": "slide_12/element_33/child_2",
                   "source_node_id": "51",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_33",
               "source_node_id": "49",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -4290,6 +4569,7 @@
                   "source_path": "slide_12/element_17/child_1",
                   "source_node_id": "21",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4299,10 +4579,10 @@
                 "name": "Google Shape;484;p15",
                 "characters": "로그인?비회원주문",
                 "absoluteBoundingBox": {
-                  "x": 211.45,
-                  "y": 208.23,
-                  "width": 91.41,
-                  "height": 18.17
+                  "x": 221.05,
+                  "y": 213.03,
+                  "width": 72.21,
+                  "height": 8.57
                 },
                 "relativeTransform": [
                   [
@@ -4340,6 +4620,7 @@
                   "source_path": "slide_12/element_17/child_2",
                   "source_node_id": "22",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4347,7 +4628,8 @@
             "debug": {
               "source_path": "slide_12/element_17",
               "source_node_id": "20",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -4418,7 +4700,8 @@
                 "debug": {
                   "source_path": "slide_12/element_21",
                   "source_node_id": "35",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -4467,14 +4750,16 @@
                 "debug": {
                   "source_path": "slide_12/element_21",
                   "source_node_id": "35",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_21",
               "source_node_id": "35",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -4545,7 +4830,8 @@
                 "debug": {
                   "source_path": "slide_12/element_29",
                   "source_node_id": "45",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -4594,14 +4880,16 @@
                 "debug": {
                   "source_path": "slide_12/element_29",
                   "source_node_id": "45",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_29",
               "source_node_id": "45",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -4673,6 +4961,7 @@
                   "source_path": "slide_12/element_39/child_1",
                   "source_node_id": "62",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4682,10 +4971,10 @@
                 "name": "Google Shape;525;p15",
                 "characters": "로그인?",
                 "absoluteBoundingBox": {
-                  "x": 583.61,
-                  "y": 236.62,
-                  "width": 45.97,
-                  "height": 18.17
+                  "x": 593.21,
+                  "y": 241.42,
+                  "width": 26.77,
+                  "height": 8.57
                 },
                 "relativeTransform": [
                   [
@@ -4723,6 +5012,7 @@
                   "source_path": "slide_12/element_39/child_2",
                   "source_node_id": "63",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4730,7 +5020,8 @@
             "debug": {
               "source_path": "slide_12/element_39",
               "source_node_id": "61",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -4840,6 +5131,7 @@
                       "source_path": "slide_12/element_40/child_1",
                       "source_node_id": "65",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -4849,10 +5141,10 @@
                     "name": "Google Shape;527;p15",
                     "characters": "케어솔루션 장바구니",
                     "absoluteBoundingBox": {
-                      "x": 415.34,
-                      "y": 233.74,
-                      "width": 90.5,
-                      "height": 21.25
+                      "x": 419.12,
+                      "y": 238.54,
+                      "width": 82.94,
+                      "height": 11.65
                     },
                     "relativeTransform": [
                       [
@@ -4890,6 +5182,7 @@
                       "source_path": "slide_12/element_40/child_1",
                       "source_node_id": "65",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -4897,7 +5190,8 @@
                 "debug": {
                   "source_path": "slide_12/element_40/child_1",
                   "source_node_id": "65",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -4984,6 +5278,7 @@
                       "source_path": "slide_12/element_40/child_2/child_1",
                       "source_node_id": "67",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -5071,6 +5366,7 @@
                           "source_path": "slide_12/element_40/child_2/child_2",
                           "source_node_id": "68",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "full_page_overlay_candidate": false
                         }
                       },
@@ -5080,10 +5376,10 @@
                         "name": "Google Shape;530;p15",
                         "characters": "케어십 제품 추가",
                         "absoluteBoundingBox": {
-                          "x": 420.16,
-                          "y": 257.67,
-                          "width": 80.17,
-                          "height": 21.52
+                          "x": 423.94,
+                          "y": 262.47,
+                          "width": 72.61,
+                          "height": 11.92
                         },
                         "relativeTransform": [
                           [
@@ -5121,6 +5417,7 @@
                           "source_path": "slide_12/element_40/child_2/child_2",
                           "source_node_id": "68",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "rotation_degrees": 0.0
                         }
                       }
@@ -5128,21 +5425,24 @@
                     "debug": {
                       "source_path": "slide_12/element_40/child_2/child_2",
                       "source_node_id": "68",
-                      "source_subtype": "labeled_shape"
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide"
                     }
                   }
                 ],
                 "debug": {
                   "source_path": "slide_12/element_40/child_2",
                   "source_node_id": "66",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_40",
               "source_node_id": "64",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -5229,6 +5529,7 @@
                   "source_path": "slide_12/element_23",
                   "source_node_id": "37",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5238,10 +5539,10 @@
                 "name": "Google Shape;499;p15",
                 "characters": "멤버십 로그인",
                 "absoluteBoundingBox": {
-                  "x": 299.29,
-                  "y": 236.24,
-                  "width": 90.5,
-                  "height": 20.73
+                  "x": 303.07,
+                  "y": 241.04,
+                  "width": 82.94,
+                  "height": 11.13
                 },
                 "relativeTransform": [
                   [
@@ -5279,6 +5580,7 @@
                   "source_path": "slide_12/element_23",
                   "source_node_id": "37",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -5286,7 +5588,8 @@
             "debug": {
               "source_path": "slide_12/element_23",
               "source_node_id": "37",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5295,10 +5598,10 @@
             "name": "Google Shape;540;p15",
             "characters": "YES",
             "absoluteBoundingBox": {
-              "x": 652.15,
-              "y": 241.66,
-              "width": 28.3,
-              "height": 16.96
+              "x": 661.75,
+              "y": 246.46,
+              "width": 9.1,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -5336,6 +5639,7 @@
               "source_path": "slide_12/element_48",
               "source_node_id": "77",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -5407,7 +5711,8 @@
                 "debug": {
                   "source_path": "slide_12/element_45",
                   "source_node_id": "74",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -5456,14 +5761,16 @@
                 "debug": {
                   "source_path": "slide_12/element_45",
                   "source_node_id": "74",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_45",
               "source_node_id": "74",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -5596,6 +5903,7 @@
                           "source_path": "slide_12/element_18/child_1/child_1",
                           "source_node_id": "31",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "full_page_overlay_candidate": false
                         }
                       },
@@ -5605,10 +5913,10 @@
                         "name": "Google Shape;487;p15",
                         "characters": "비회원 주문(구매하기)",
                         "absoluteBoundingBox": {
-                          "x": 140.61,
-                          "y": 245.62,
-                          "width": 90.5,
-                          "height": 21.25
+                          "x": 144.39,
+                          "y": 250.42,
+                          "width": 82.94,
+                          "height": 11.65
                         },
                         "relativeTransform": [
                           [
@@ -5646,6 +5954,7 @@
                           "source_path": "slide_12/element_18/child_1/child_1",
                           "source_node_id": "31",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "rotation_degrees": 0.0
                         }
                       }
@@ -5653,7 +5962,8 @@
                     "debug": {
                       "source_path": "slide_12/element_18/child_1/child_1",
                       "source_node_id": "31",
-                      "source_subtype": "labeled_shape"
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide"
                     }
                   },
                   {
@@ -5717,6 +6027,7 @@
                       "source_path": "slide_12/element_18/child_1/child_2",
                       "source_node_id": "32",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   }
@@ -5724,7 +6035,8 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_1",
                   "source_node_id": "24",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -5811,6 +6123,7 @@
                       "source_path": "slide_12/element_18/child_6",
                       "source_node_id": "29",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -5820,10 +6133,10 @@
                     "name": "Google Shape;493;p15",
                     "characters": "비회원 주문 동의",
                     "absoluteBoundingBox": {
-                      "x": 145.36,
-                      "y": 273.46,
-                      "width": 80.17,
-                      "height": 21.52
+                      "x": 149.14,
+                      "y": 278.26,
+                      "width": 72.61,
+                      "height": 11.92
                     },
                     "relativeTransform": [
                       [
@@ -5861,6 +6174,7 @@
                       "source_path": "slide_12/element_18/child_6",
                       "source_node_id": "29",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -5868,7 +6182,8 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_6",
                   "source_node_id": "29",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -5955,6 +6270,7 @@
                       "source_path": "slide_12/element_18/child_7",
                       "source_node_id": "30",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -5964,10 +6280,10 @@
                     "name": "Google Shape;494;p15",
                     "characters": "휴대폰 본인 인증",
                     "absoluteBoundingBox": {
-                      "x": 145.47,
-                      "y": 297.74,
-                      "width": 79.34,
-                      "height": 20.73
+                      "x": 149.25,
+                      "y": 302.54,
+                      "width": 71.78,
+                      "height": 11.13
                     },
                     "relativeTransform": [
                       [
@@ -6005,6 +6321,7 @@
                       "source_path": "slide_12/element_18/child_7",
                       "source_node_id": "30",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -6012,7 +6329,8 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_7",
                   "source_node_id": "30",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -6099,6 +6417,7 @@
                       "source_path": "slide_12/element_18/child_2",
                       "source_node_id": "25",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -6108,10 +6427,10 @@
                     "name": "Google Shape;489;p15",
                     "characters": "주문자 정보",
                     "absoluteBoundingBox": {
-                      "x": 145.36,
-                      "y": 322.4,
-                      "width": 80.17,
-                      "height": 21.52
+                      "x": 149.14,
+                      "y": 327.2,
+                      "width": 72.61,
+                      "height": 11.92
                     },
                     "relativeTransform": [
                       [
@@ -6149,6 +6468,7 @@
                       "source_path": "slide_12/element_18/child_2",
                       "source_node_id": "25",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -6156,7 +6476,8 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_2",
                   "source_node_id": "25",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -6243,6 +6564,7 @@
                       "source_path": "slide_12/element_18/child_3",
                       "source_node_id": "26",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -6252,10 +6574,10 @@
                     "name": "Google Shape;490;p15",
                     "characters": "주문제품 확인",
                     "absoluteBoundingBox": {
-                      "x": 145.36,
-                      "y": 347.19,
-                      "width": 80.17,
-                      "height": 20.89
+                      "x": 149.14,
+                      "y": 351.99,
+                      "width": 72.61,
+                      "height": 11.29
                     },
                     "relativeTransform": [
                       [
@@ -6293,6 +6615,7 @@
                       "source_path": "slide_12/element_18/child_3",
                       "source_node_id": "26",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -6300,7 +6623,8 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_3",
                   "source_node_id": "26",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -6387,6 +6711,7 @@
                       "source_path": "slide_12/element_18/child_4",
                       "source_node_id": "27",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -6396,10 +6721,10 @@
                     "name": "Google Shape;491;p15",
                     "characters": "PG 이용 결제",
                     "absoluteBoundingBox": {
-                      "x": 145.36,
-                      "y": 371.11,
-                      "width": 80.17,
-                      "height": 20.89
+                      "x": 149.14,
+                      "y": 375.91,
+                      "width": 72.61,
+                      "height": 11.29
                     },
                     "relativeTransform": [
                       [
@@ -6437,6 +6762,7 @@
                       "source_path": "slide_12/element_18/child_4",
                       "source_node_id": "27",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -6444,7 +6770,8 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_4",
                   "source_node_id": "27",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -6531,6 +6858,7 @@
                       "source_path": "slide_12/element_18/child_5",
                       "source_node_id": "28",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -6540,10 +6868,10 @@
                     "name": "Google Shape;492;p15",
                     "characters": "주문완료",
                     "absoluteBoundingBox": {
-                      "x": 145.36,
-                      "y": 395.45,
-                      "width": 80.17,
-                      "height": 20.89
+                      "x": 149.14,
+                      "y": 400.25,
+                      "width": 72.61,
+                      "height": 11.29
                     },
                     "relativeTransform": [
                       [
@@ -6581,6 +6909,7 @@
                       "source_path": "slide_12/element_18/child_5",
                       "source_node_id": "28",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -6588,14 +6917,16 @@
                 "debug": {
                   "source_path": "slide_12/element_18/child_5",
                   "source_node_id": "28",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_18",
               "source_node_id": "23",
-              "source_subtype": "section_block"
+              "source_subtype": "section_block",
+              "source_scope": "slide"
             }
           },
           {
@@ -6666,7 +6997,8 @@
                 "debug": {
                   "source_path": "slide_12/element_46",
                   "source_node_id": "75",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -6715,14 +7047,16 @@
                 "debug": {
                   "source_path": "slide_12/element_46",
                   "source_node_id": "75",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_46",
               "source_node_id": "75",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -6793,7 +7127,8 @@
                 "debug": {
                   "source_path": "slide_12/element_49",
                   "source_node_id": "78",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -6842,14 +7177,16 @@
                 "debug": {
                   "source_path": "slide_12/element_49",
                   "source_node_id": "78",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_49",
               "source_node_id": "78",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -6858,10 +7195,10 @@
             "name": "Google Shape;539;p15",
             "characters": "NO",
             "absoluteBoundingBox": {
-              "x": 570.62,
-              "y": 249.19,
-              "width": 27.29,
-              "height": 16.96
+              "x": 580.22,
+              "y": 253.99,
+              "width": 8.09,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -6899,6 +7236,7 @@
               "source_path": "slide_12/element_47",
               "source_node_id": "76",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -6908,10 +7246,10 @@
             "name": "Google Shape;510;p15",
             "characters": "로그인 성공 시",
             "absoluteBoundingBox": {
-              "x": 341.44,
-              "y": 256.19,
-              "width": 68.81,
-              "height": 16.96
+              "x": 351.04,
+              "y": 260.99,
+              "width": 49.61,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -6949,6 +7287,7 @@
               "source_path": "slide_12/element_32",
               "source_node_id": "48",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -7020,7 +7359,8 @@
                 "debug": {
                   "source_path": "slide_12/element_30",
                   "source_node_id": "46",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -7069,14 +7409,16 @@
                 "debug": {
                   "source_path": "slide_12/element_30",
                   "source_node_id": "46",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_30",
               "source_node_id": "46",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -7186,6 +7528,7 @@
                       "source_path": "slide_12/element_24/child_1",
                       "source_node_id": "39",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -7195,10 +7538,10 @@
                     "name": "Google Shape;501;p15",
                     "characters": "회원 구매하기",
                     "absoluteBoundingBox": {
-                      "x": 298.16,
-                      "y": 271.53,
-                      "width": 90.5,
-                      "height": 21.25
+                      "x": 301.94,
+                      "y": 276.33,
+                      "width": 82.94,
+                      "height": 11.65
                     },
                     "relativeTransform": [
                       [
@@ -7236,6 +7579,7 @@
                       "source_path": "slide_12/element_24/child_1",
                       "source_node_id": "39",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -7243,7 +7587,8 @@
                 "debug": {
                   "source_path": "slide_12/element_24/child_1",
                   "source_node_id": "39",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -7307,6 +7652,7 @@
                   "source_path": "slide_12/element_24/child_2",
                   "source_node_id": "40",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -7314,7 +7660,8 @@
             "debug": {
               "source_path": "slide_12/element_24",
               "source_node_id": "38",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -7401,6 +7748,7 @@
                   "source_path": "slide_12/element_44",
                   "source_node_id": "73",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7410,10 +7758,10 @@
                 "name": "Google Shape;536;p15",
                 "characters": "멤버십 로그인",
                 "absoluteBoundingBox": {
-                  "x": 516.66,
-                  "y": 274.25,
-                  "width": 90.5,
-                  "height": 20.73
+                  "x": 520.44,
+                  "y": 279.05,
+                  "width": 82.94,
+                  "height": 11.13
                 },
                 "relativeTransform": [
                   [
@@ -7451,6 +7799,7 @@
                   "source_path": "slide_12/element_44",
                   "source_node_id": "73",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7458,7 +7807,8 @@
             "debug": {
               "source_path": "slide_12/element_44",
               "source_node_id": "73",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7488,9 +7838,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -7508,6 +7858,7 @@
               "source_path": "slide_12/element_71",
               "source_node_id": "72",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -7595,6 +7946,7 @@
                   "source_path": "slide_12/element_25",
                   "source_node_id": "41",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7604,10 +7956,10 @@
                 "name": "Google Shape;503;p15",
                 "characters": "주문자 정보",
                 "absoluteBoundingBox": {
-                  "x": 302.89,
-                  "y": 295.56,
-                  "width": 80.17,
-                  "height": 21.52
+                  "x": 306.67,
+                  "y": 300.36,
+                  "width": 72.61,
+                  "height": 11.92
                 },
                 "relativeTransform": [
                   [
@@ -7645,6 +7997,7 @@
                   "source_path": "slide_12/element_25",
                   "source_node_id": "41",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7652,7 +8005,8 @@
             "debug": {
               "source_path": "slide_12/element_25",
               "source_node_id": "41",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7739,6 +8093,7 @@
                   "source_path": "slide_12/element_50/child_1",
                   "source_node_id": "80",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7826,6 +8181,7 @@
                       "source_path": "slide_12/element_50/child_2",
                       "source_node_id": "81",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -7835,10 +8191,10 @@
                     "name": "Google Shape;544;p15",
                     "characters": "계약자정보",
                     "absoluteBoundingBox": {
-                      "x": 629.96,
-                      "y": 321.26,
-                      "width": 76.06,
-                      "height": 21.25
+                      "x": 633.74,
+                      "y": 326.06,
+                      "width": 68.5,
+                      "height": 11.65
                     },
                     "relativeTransform": [
                       [
@@ -7876,6 +8232,7 @@
                       "source_path": "slide_12/element_50/child_2",
                       "source_node_id": "81",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -7883,7 +8240,8 @@
                 "debug": {
                   "source_path": "slide_12/element_50/child_2",
                   "source_node_id": "81",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -7970,6 +8328,7 @@
                       "source_path": "slide_12/element_50/child_3",
                       "source_node_id": "82",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -7979,10 +8338,10 @@
                     "name": "Google Shape;545;p15",
                     "characters": "신용정보조회\n(SAFE KEY발급)",
                     "absoluteBoundingBox": {
-                      "x": 629.96,
-                      "y": 350.04,
-                      "width": 76.06,
-                      "height": 21.25
+                      "x": 633.74,
+                      "y": 354.84,
+                      "width": 68.5,
+                      "height": 11.65
                     },
                     "relativeTransform": [
                       [
@@ -8020,6 +8379,7 @@
                       "source_path": "slide_12/element_50/child_3",
                       "source_node_id": "82",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -8027,14 +8387,16 @@
                 "debug": {
                   "source_path": "slide_12/element_50/child_3",
                   "source_node_id": "82",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_50",
               "source_node_id": "79",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -8121,6 +8483,7 @@
                   "source_path": "slide_12/element_26",
                   "source_node_id": "42",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8130,10 +8493,10 @@
                 "name": "Google Shape;504;p15",
                 "characters": "주문제품 확인",
                 "absoluteBoundingBox": {
-                  "x": 302.89,
-                  "y": 320.35,
-                  "width": 80.17,
-                  "height": 20.89
+                  "x": 306.67,
+                  "y": 325.15,
+                  "width": 72.61,
+                  "height": 11.29
                 },
                 "relativeTransform": [
                   [
@@ -8171,6 +8534,7 @@
                   "source_path": "slide_12/element_26",
                   "source_node_id": "42",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8178,7 +8542,8 @@
             "debug": {
               "source_path": "slide_12/element_26",
               "source_node_id": "42",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8265,6 +8630,7 @@
                   "source_path": "slide_12/element_27",
                   "source_node_id": "43",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8274,10 +8640,10 @@
                 "name": "Google Shape;505;p15",
                 "characters": "PG 이용 결제",
                 "absoluteBoundingBox": {
-                  "x": 302.89,
-                  "y": 344.26,
-                  "width": 80.17,
-                  "height": 20.89
+                  "x": 306.67,
+                  "y": 349.06,
+                  "width": 72.61,
+                  "height": 11.29
                 },
                 "relativeTransform": [
                   [
@@ -8315,6 +8681,7 @@
                   "source_path": "slide_12/element_27",
                   "source_node_id": "43",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8322,7 +8689,8 @@
             "debug": {
               "source_path": "slide_12/element_27",
               "source_node_id": "43",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8393,7 +8761,8 @@
                 "debug": {
                   "source_path": "slide_12/element_66",
                   "source_node_id": "107",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -8442,14 +8811,16 @@
                 "debug": {
                   "source_path": "slide_12/element_66",
                   "source_node_id": "107",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_66",
               "source_node_id": "107",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -8536,6 +8907,7 @@
                   "source_path": "slide_12/element_28",
                   "source_node_id": "44",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8545,10 +8917,10 @@
                 "name": "Google Shape;506;p15",
                 "characters": "주문완료",
                 "absoluteBoundingBox": {
-                  "x": 302.89,
-                  "y": 368.6,
-                  "width": 80.17,
-                  "height": 20.89
+                  "x": 306.67,
+                  "y": 373.4,
+                  "width": 72.61,
+                  "height": 11.29
                 },
                 "relativeTransform": [
                   [
@@ -8586,6 +8958,7 @@
                   "source_path": "slide_12/element_28",
                   "source_node_id": "44",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8593,7 +8966,8 @@
             "debug": {
               "source_path": "slide_12/element_28",
               "source_node_id": "44",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8664,7 +9038,8 @@
                 "debug": {
                   "source_path": "slide_12/element_62",
                   "source_node_id": "103",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -8713,14 +9088,16 @@
                 "debug": {
                   "source_path": "slide_12/element_62",
                   "source_node_id": "103",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_62",
               "source_node_id": "103",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -8791,7 +9168,8 @@
                 "debug": {
                   "source_path": "slide_12/element_52",
                   "source_node_id": "86",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -8840,14 +9218,16 @@
                 "debug": {
                   "source_path": "slide_12/element_52",
                   "source_node_id": "86",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_52",
               "source_node_id": "86",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -8856,10 +9236,10 @@
             "name": "Google Shape;568;p15",
             "characters": "성공",
             "absoluteBoundingBox": {
-              "x": 588.7,
-              "y": 395.44,
-              "width": 30.7,
-              "height": 16.96
+              "x": 598.3,
+              "y": 400.24,
+              "width": 11.5,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -8897,6 +9277,7 @@
               "source_path": "slide_12/element_64",
               "source_node_id": "105",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -8969,6 +9350,7 @@
                   "source_path": "slide_12/element_51/child_1",
                   "source_node_id": "84",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8978,10 +9360,10 @@
                 "name": "Google Shape;548;p15",
                 "characters": "성공?",
                 "absoluteBoundingBox": {
-                  "x": 648.85,
-                  "y": 402.82,
-                  "width": 36.88,
-                  "height": 18.17
+                  "x": 658.45,
+                  "y": 407.62,
+                  "width": 17.68,
+                  "height": 8.57
                 },
                 "relativeTransform": [
                   [
@@ -9019,6 +9401,7 @@
                   "source_path": "slide_12/element_51/child_2",
                   "source_node_id": "85",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -9026,7 +9409,8 @@
             "debug": {
               "source_path": "slide_12/element_51",
               "source_node_id": "83",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -9097,7 +9481,8 @@
                 "debug": {
                   "source_path": "slide_12/element_59",
                   "source_node_id": "95",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -9146,14 +9531,16 @@
                 "debug": {
                   "source_path": "slide_12/element_59",
                   "source_node_id": "95",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_59",
               "source_node_id": "95",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -9162,10 +9549,10 @@
             "name": "Google Shape;569;p15",
             "characters": "YES",
             "absoluteBoundingBox": {
-              "x": 421.33,
-              "y": 419.68,
-              "width": 28.3,
-              "height": 16.96
+              "x": 430.93,
+              "y": 424.48,
+              "width": 9.1,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -9203,6 +9590,7 @@
               "source_path": "slide_12/element_65",
               "source_node_id": "106",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -9275,6 +9663,7 @@
                   "source_path": "slide_12/element_58/child_1",
                   "source_node_id": "93",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -9284,10 +9673,10 @@
                 "name": "Google Shape;557;p15",
                 "characters": "서비스 가능여부?",
                 "absoluteBoundingBox": {
-                  "x": 457.49,
-                  "y": 426.76,
-                  "width": 85.48,
-                  "height": 18.17
+                  "x": 467.09,
+                  "y": 431.56,
+                  "width": 66.28,
+                  "height": 8.57
                 },
                 "relativeTransform": [
                   [
@@ -9325,6 +9714,7 @@
                   "source_path": "slide_12/element_58/child_2",
                   "source_node_id": "94",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -9332,7 +9722,8 @@
             "debug": {
               "source_path": "slide_12/element_58",
               "source_node_id": "92",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -9341,10 +9732,10 @@
             "name": "Google Shape;552;p15",
             "characters": "실패",
             "absoluteBoundingBox": {
-              "x": 663.31,
-              "y": 424.84,
-              "width": 30.7,
-              "height": 16.96
+              "x": 672.91,
+              "y": 429.64,
+              "width": 11.5,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -9382,6 +9773,7 @@
               "source_path": "slide_12/element_55",
               "source_node_id": "89",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -9453,7 +9845,8 @@
                 "debug": {
                   "source_path": "slide_12/element_61",
                   "source_node_id": "102",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -9502,14 +9895,16 @@
                 "debug": {
                   "source_path": "slide_12/element_61",
                   "source_node_id": "102",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_61",
               "source_node_id": "102",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -9596,6 +9991,7 @@
                   "source_path": "slide_12/element_60/child_1",
                   "source_node_id": "97",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -9683,6 +10079,7 @@
                       "source_path": "slide_12/element_60/child_2",
                       "source_node_id": "98",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -9692,10 +10089,10 @@
                     "name": "Google Shape;561;p15",
                     "characters": "월납부금액 확인, 정기결제 동의",
                     "absoluteBoundingBox": {
-                      "x": 362.4,
-                      "y": 448.36,
-                      "width": 76.06,
-                      "height": 23.04
+                      "x": 366.18,
+                      "y": 453.16,
+                      "width": 68.5,
+                      "height": 13.44
                     },
                     "relativeTransform": [
                       [
@@ -9733,6 +10130,7 @@
                       "source_path": "slide_12/element_60/child_2",
                       "source_node_id": "98",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -9740,7 +10138,8 @@
                 "debug": {
                   "source_path": "slide_12/element_60/child_2",
                   "source_node_id": "98",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -9827,6 +10226,7 @@
                       "source_path": "slide_12/element_60/child_3",
                       "source_node_id": "99",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -9836,10 +10236,10 @@
                     "name": "Google Shape;562;p15",
                     "characters": "납부방법",
                     "absoluteBoundingBox": {
-                      "x": 362.4,
-                      "y": 473.69,
-                      "width": 76.06,
-                      "height": 17.1
+                      "x": 366.18,
+                      "y": 478.49,
+                      "width": 68.5,
+                      "height": 7.5
                     },
                     "relativeTransform": [
                       [
@@ -9877,6 +10277,7 @@
                       "source_path": "slide_12/element_60/child_3",
                       "source_node_id": "99",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -9884,7 +10285,8 @@
                 "debug": {
                   "source_path": "slide_12/element_60/child_3",
                   "source_node_id": "99",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -9971,6 +10373,7 @@
                       "source_path": "slide_12/element_60/child_4",
                       "source_node_id": "100",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -9980,10 +10383,10 @@
                     "name": "Google Shape;563;p15",
                     "characters": "계좌 유효성확인",
                     "absoluteBoundingBox": {
-                      "x": 362.4,
-                      "y": 493.27,
-                      "width": 76.06,
-                      "height": 17.1
+                      "x": 366.18,
+                      "y": 498.07,
+                      "width": 68.5,
+                      "height": 7.5
                     },
                     "relativeTransform": [
                       [
@@ -10021,6 +10424,7 @@
                       "source_path": "slide_12/element_60/child_4",
                       "source_node_id": "100",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -10028,7 +10432,8 @@
                 "debug": {
                   "source_path": "slide_12/element_60/child_4",
                   "source_node_id": "100",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -10115,6 +10520,7 @@
                       "source_path": "slide_12/element_60/child_5",
                       "source_node_id": "101",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -10124,10 +10530,10 @@
                     "name": "Google Shape;564;p15",
                     "characters": "청약완료(주문안내)",
                     "absoluteBoundingBox": {
-                      "x": 362.4,
-                      "y": 513.76,
-                      "width": 76.06,
-                      "height": 17.1
+                      "x": 366.18,
+                      "y": 518.56,
+                      "width": 68.5,
+                      "height": 7.5
                     },
                     "relativeTransform": [
                       [
@@ -10165,6 +10571,7 @@
                       "source_path": "slide_12/element_60/child_5",
                       "source_node_id": "101",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -10172,14 +10579,16 @@
                 "debug": {
                   "source_path": "slide_12/element_60/child_5",
                   "source_node_id": "101",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_60",
               "source_node_id": "96",
-              "source_subtype": "section_block"
+              "source_subtype": "section_block",
+              "source_scope": "slide"
             }
           },
           {
@@ -10188,10 +10597,10 @@
             "name": "Google Shape;567;p15",
             "characters": "NO",
             "absoluteBoundingBox": {
-              "x": 502.46,
-              "y": 444.55,
-              "width": 27.29,
-              "height": 16.96
+              "x": 512.06,
+              "y": 449.35,
+              "width": 8.09,
+              "height": 7.36
             },
             "relativeTransform": [
               [
@@ -10229,6 +10638,7 @@
               "source_path": "slide_12/element_63",
               "source_node_id": "104",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -10300,7 +10710,8 @@
                 "debug": {
                   "source_path": "slide_12/element_54",
                   "source_node_id": "88",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -10349,14 +10760,16 @@
                 "debug": {
                   "source_path": "slide_12/element_54",
                   "source_node_id": "88",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_12/element_54",
               "source_node_id": "88",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -10428,6 +10841,7 @@
                   "source_path": "slide_12/element_53",
                   "source_node_id": "87",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -10437,10 +10851,10 @@
                 "name": "Google Shape;550;p15",
                 "characters": "청약실패 \n제품 주문 관련\n안내",
                 "absoluteBoundingBox": {
-                  "x": 629.34,
-                  "y": 465.06,
-                  "width": 76.06,
-                  "height": 45.8
+                  "x": 633.12,
+                  "y": 469.86,
+                  "width": 68.5,
+                  "height": 36.2
                 },
                 "relativeTransform": [
                   [
@@ -10478,6 +10892,7 @@
                   "source_path": "slide_12/element_53",
                   "source_node_id": "87",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -10485,7 +10900,8 @@
             "debug": {
               "source_path": "slide_12/element_53",
               "source_node_id": "87",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -10494,10 +10910,10 @@
             "name": "Google Shape;554;p15",
             "characters": "청약실패, 구매취소\n(장바구니에 담기지 않음)",
             "absoluteBoundingBox": {
-              "x": 610.21,
-              "y": 509.19,
-              "width": 106.18,
-              "height": 26.66
+              "x": 619.81,
+              "y": 513.99,
+              "width": 86.98,
+              "height": 17.06
             },
             "relativeTransform": [
               [
@@ -10535,6 +10951,7 @@
               "source_path": "slide_12/element_57",
               "source_node_id": "91",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -10544,10 +10961,10 @@
             "name": "Google Shape;571;p15",
             "characters": "청약 성공\n청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶",
             "absoluteBoundingBox": {
-              "x": 47.66,
-              "y": 510.54,
-              "width": 239.59,
-              "height": 26.66
+              "x": 57.26,
+              "y": 515.34,
+              "width": 220.39,
+              "height": 17.06
             },
             "relativeTransform": [
               [
@@ -10585,6 +11002,7 @@
               "source_path": "slide_12/element_67",
               "source_node_id": "108",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           }
@@ -10606,7 +11024,7 @@
   "missing_assets": [],
   "debug": {
     "status": "visual_first_generator",
-    "candidate_count": 115,
-    "root_candidate_count": 71
+    "candidate_count": 119,
+    "root_candidate_count": 75
   }
 }

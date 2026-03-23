@@ -68,6 +68,900 @@
         "strokeWeight": 0,
         "children": [
           {
+            "id": "s29:layout_29/element_1",
+            "type": "GROUP",
+            "name": "표 19",
+            "absoluteBoundingBox": {
+              "x": 31.34,
+              "y": 8.63,
+              "width": 905.04,
+              "height": 33.59
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "children": [
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_1:cell",
+                "type": "VECTOR",
+                "name": "cell 1-1",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 93.04,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 93.04 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 93.04 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_1/cell_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_1:text",
+                "type": "TEXT",
+                "name": "cell 1-1",
+                "characters": "화면 명",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 93.04,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.12,
+                      "g": 0.12,
+                      "b": 0.12
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontSize": 8,
+                  "fontFamily": "Inter",
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": null
+                },
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_1/cell_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout",
+                  "rotation_degrees": 0.0
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_2:cell",
+                "type": "VECTOR",
+                "name": "cell 1-2",
+                "absoluteBoundingBox": {
+                  "x": 124.38,
+                  "y": 8.63,
+                  "width": 601.49,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    }
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_1/cell_2",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_3:cell",
+                "type": "VECTOR",
+                "name": "cell 1-3",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 8.63,
+                  "width": 76.85,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 76.85 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 76.85 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_1/cell_3",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_3:text",
+                "type": "TEXT",
+                "name": "cell 1-3",
+                "characters": "페이지",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 8.63,
+                  "width": 76.85,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.12,
+                      "g": 0.12,
+                      "b": 0.12
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontSize": 8,
+                  "fontFamily": "Inter",
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": null
+                },
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_1/cell_3",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout",
+                  "rotation_degrees": 0.0
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_4:cell",
+                "type": "VECTOR",
+                "name": "cell 1-4",
+                "absoluteBoundingBox": {
+                  "x": 802.72,
+                  "y": 8.63,
+                  "width": 133.66,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    }
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_1/cell_4",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_1:cell",
+                "type": "VECTOR",
+                "name": "cell 2-1",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 29.63,
+                  "width": 93.04,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 93.04 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 93.04 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_2/cell_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_1:text",
+                "type": "TEXT",
+                "name": "cell 2-1",
+                "characters": "화면경로",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 29.63,
+                  "width": 93.04,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.12,
+                      "g": 0.12,
+                      "b": 0.12
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontSize": 8,
+                  "fontFamily": "Inter",
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": null
+                },
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_2/cell_1",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout",
+                  "rotation_degrees": 0.0
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_2:cell",
+                "type": "VECTOR",
+                "name": "cell 2-2",
+                "absoluteBoundingBox": {
+                  "x": 124.38,
+                  "y": 29.63,
+                  "width": 601.49,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 601.49 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    }
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_2/cell_2",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_3:cell",
+                "type": "VECTOR",
+                "name": "cell 2-3",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 29.63,
+                  "width": 76.85,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 76.85 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 76.85 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_2/cell_3",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_3:text",
+                "type": "TEXT",
+                "name": "cell 2-3",
+                "characters": "화면 ID",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 29.63,
+                  "width": 76.85,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.12,
+                      "g": 0.12,
+                      "b": 0.12
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontSize": 8,
+                  "fontFamily": "Inter",
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": null
+                },
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_2/cell_3",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout",
+                  "rotation_degrees": 0.0
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_4:cell",
+                "type": "VECTOR",
+                "name": "cell 2-4",
+                "absoluteBoundingBox": {
+                  "x": 802.72,
+                  "y": 29.63,
+                  "width": 133.66,
+                  "height": 21.0
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokeGeometry": [
+                  {
+                    "path": "M 0 0 H 133.66 V 21.0 H 0 Z"
+                  }
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    }
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.75,
+                      "g": 0.75,
+                      "b": 0.75
+                    }
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [],
+                "debug": {
+                  "source_path": "layout_29/element_1/row_2/cell_4",
+                  "source_node_id": "20",
+                  "source_subtype": "table_cell",
+                  "source_scope": "layout"
+                }
+              }
+            ],
+            "debug": {
+              "source_path": "layout_29/element_1",
+              "source_node_id": "20",
+              "source_subtype": "table",
+              "source_scope": "layout"
+            }
+          },
+          {
+            "id": "s29:layout_29/element_2",
+            "type": "VECTOR",
+            "name": "텍스트 개체 틀 4",
+            "absoluteBoundingBox": {
+              "x": 123.84,
+              "y": 9.79,
+              "width": 601.14,
+              "height": 14.17
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fillGeometry": [],
+            "strokeGeometry": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "children": [],
+            "debug": {
+              "source_path": "layout_29/element_2",
+              "source_node_id": "21",
+              "source_subtype": "shape",
+              "source_scope": "layout",
+              "full_page_overlay_candidate": false
+            }
+          },
+          {
+            "id": "s29:layout_29/element_5:text",
+            "type": "TEXT",
+            "name": "Slide Number Placeholder 3",
+            "characters": "‹#›",
+            "absoluteBoundingBox": {
+              "x": 859.74,
+              "y": 11.77,
+              "width": 17.84,
+              "height": 8.97
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
+                },
+                "opacity": null
+              }
+            ],
+            "style": {
+              "fontSize": 8,
+              "fontFamily": "LG스마트체 Regular",
+              "textAlignHorizontal": "CENTER",
+              "textAlignVertical": "TOP",
+              "textAutoResize": "HEIGHT",
+              "lineHeightPx": null
+            },
+            "children": [],
+            "debug": {
+              "source_path": "layout_29/element_5",
+              "source_node_id": "24",
+              "source_subtype": "text_block",
+              "source_scope": "layout",
+              "rotation_degrees": 0.0
+            }
+          },
+          {
+            "id": "s29:layout_29/element_3",
+            "type": "VECTOR",
+            "name": "텍스트 개체 틀 4",
+            "absoluteBoundingBox": {
+              "x": 123.79,
+              "y": 26.79,
+              "width": 601.14,
+              "height": 14.17
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fillGeometry": [],
+            "strokeGeometry": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "children": [],
+            "debug": {
+              "source_path": "layout_29/element_3",
+              "source_node_id": "22",
+              "source_subtype": "shape",
+              "source_scope": "layout",
+              "full_page_overlay_candidate": false
+            }
+          },
+          {
+            "id": "s29:layout_29/element_4",
+            "type": "VECTOR",
+            "name": "텍스트 개체 틀 4",
+            "absoluteBoundingBox": {
+              "x": 803.26,
+              "y": 26.84,
+              "width": 133.23,
+              "height": 14.17
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                -0.0,
+                0
+              ],
+              [
+                0.0,
+                1.0,
+                0
+              ]
+            ],
+            "fillGeometry": [],
+            "strokeGeometry": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "children": [],
+            "debug": {
+              "source_path": "layout_29/element_4",
+              "source_node_id": "23",
+              "source_subtype": "shape",
+              "source_scope": "layout",
+              "full_page_overlay_candidate": false
+            }
+          },
+          {
             "id": "s29:slide_29/element_35:text",
             "type": "TEXT",
             "name": "텍스트 개체 틀 1",
@@ -114,6 +1008,7 @@
               "source_path": "slide_29/element_35",
               "source_node_id": "2",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -164,6 +1059,7 @@
               "source_path": "slide_29/element_36",
               "source_node_id": "5",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -214,6 +1110,7 @@
               "source_path": "slide_29/element_100",
               "source_node_id": "6",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -287,6 +1184,7 @@
                   "source_path": "slide_29/element_79",
                   "source_node_id": "139",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -317,9 +1215,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -337,6 +1235,7 @@
                   "source_path": "slide_29/element_79",
                   "source_node_id": "139",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -344,7 +1243,8 @@
             "debug": {
               "source_path": "slide_29/element_79",
               "source_node_id": "139",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -417,6 +1317,7 @@
                   "source_path": "slide_29/element_38",
                   "source_node_id": "136",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -426,10 +1327,10 @@
                 "name": "Display",
                 "characters": "일반PDP",
                 "absoluteBoundingBox": {
-                  "x": 0.0,
-                  "y": 8.07,
-                  "width": 57.59,
-                  "height": 35.02
+                  "x": 9.6,
+                  "y": 12.87,
+                  "width": 38.39,
+                  "height": 25.42
                 },
                 "relativeTransform": [
                   [
@@ -467,6 +1368,7 @@
                   "source_path": "slide_29/element_38",
                   "source_node_id": "136",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -474,7 +1376,8 @@
             "debug": {
               "source_path": "slide_29/element_38",
               "source_node_id": "136",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -547,6 +1450,7 @@
                   "source_path": "slide_29/element_80",
                   "source_node_id": "12",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -577,9 +1481,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -597,6 +1501,7 @@
                   "source_path": "slide_29/element_80",
                   "source_node_id": "12",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -604,7 +1509,8 @@
             "debug": {
               "source_path": "slide_29/element_80",
               "source_node_id": "12",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -677,6 +1583,7 @@
                   "source_path": "slide_29/element_84",
                   "source_node_id": "151",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -707,9 +1614,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -727,6 +1634,7 @@
                   "source_path": "slide_29/element_84",
                   "source_node_id": "151",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -734,7 +1642,8 @@
             "debug": {
               "source_path": "slide_29/element_84",
               "source_node_id": "151",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -807,6 +1716,7 @@
                   "source_path": "slide_29/element_85",
                   "source_node_id": "240",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -837,9 +1747,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -857,6 +1767,7 @@
                   "source_path": "slide_29/element_85",
                   "source_node_id": "240",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -864,7 +1775,8 @@
             "debug": {
               "source_path": "slide_29/element_85",
               "source_node_id": "240",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -949,7 +1861,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_1/cell_1",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -999,6 +1912,7 @@
                   "source_path": "slide_29/element_37/row_1/cell_1",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1061,7 +1975,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_2/cell_1",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1111,6 +2026,7 @@
                   "source_path": "slide_29/element_37/row_2/cell_1",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1173,7 +2089,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_3/cell_1",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1211,7 +2128,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 8,
+                  "fontSize": 10,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -1223,6 +2140,7 @@
                   "source_path": "slide_29/element_37/row_3/cell_1",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1285,7 +2203,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_3/cell_2",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1335,6 +2254,7 @@
                   "source_path": "slide_29/element_37/row_3/cell_2",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1397,7 +2317,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_4/cell_1",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1435,7 +2356,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 49,
+                  "fontSize": 66,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -1447,6 +2368,7 @@
                   "source_path": "slide_29/element_37/row_4/cell_1",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1509,7 +2431,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_4/cell_2",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1559,6 +2482,7 @@
                   "source_path": "slide_29/element_37/row_4/cell_2",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1621,7 +2545,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_5/cell_1",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1659,7 +2584,7 @@
                   }
                 ],
                 "style": {
-                  "fontSize": 60,
+                  "fontSize": 72,
                   "fontFamily": "Inter",
                   "textAlignHorizontal": "LEFT",
                   "textAlignVertical": "CENTER",
@@ -1671,6 +2596,7 @@
                   "source_path": "slide_29/element_37/row_5/cell_1",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1733,7 +2659,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_5/cell_2",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1783,6 +2710,7 @@
                   "source_path": "slide_29/element_37/row_5/cell_2",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -1845,7 +2773,8 @@
                 "debug": {
                   "source_path": "slide_29/element_37/row_6/cell_1",
                   "source_node_id": "49",
-                  "source_subtype": "table_cell"
+                  "source_subtype": "table_cell",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -1895,6 +2824,7 @@
                   "source_path": "slide_29/element_37/row_6/cell_1",
                   "source_node_id": "49",
                   "source_subtype": "table_cell",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -1902,7 +2832,8 @@
             "debug": {
               "source_path": "slide_29/element_37",
               "source_node_id": "49",
-              "source_subtype": "table"
+              "source_subtype": "table",
+              "source_scope": "slide"
             }
           },
           {
@@ -1932,9 +2863,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -1952,6 +2883,7 @@
               "source_path": "slide_29/element_49",
               "source_node_id": "282",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2025,6 +2957,7 @@
                   "source_path": "slide_29/element_86",
                   "source_node_id": "146",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -2055,9 +2988,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2075,6 +3008,7 @@
                   "source_path": "slide_29/element_86",
                   "source_node_id": "146",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -2082,7 +3016,8 @@
             "debug": {
               "source_path": "slide_29/element_86",
               "source_node_id": "146",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -2141,9 +3076,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0,
-                      "g": 0,
-                      "b": 0
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2153,7 +3088,8 @@
                 "debug": {
                   "source_path": "slide_29/element_13/child_2",
                   "source_node_id": "131",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -2189,9 +3125,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0,
-                      "g": 0,
-                      "b": 0
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2201,7 +3137,8 @@
                 "debug": {
                   "source_path": "slide_29/element_13/child_3",
                   "source_node_id": "133",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -2241,9 +3178,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2252,9 +3189,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.28,
-                      "g": 0.28,
-                      "b": 0.28
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2265,6 +3202,7 @@
                   "source_path": "slide_29/element_13/child_1",
                   "source_node_id": "128",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -2272,7 +3210,8 @@
             "debug": {
               "source_path": "slide_29/element_13",
               "source_node_id": "125",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -2321,6 +3260,7 @@
               "source_path": "slide_29/element_17",
               "source_node_id": "147",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -2351,9 +3291,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -2371,6 +3311,7 @@
               "source_path": "slide_29/element_54",
               "source_node_id": "25",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -2430,9 +3371,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -2444,6 +3385,7 @@
                   "source_path": "slide_29/element_20",
                   "source_node_id": "158",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -2474,9 +3416,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2494,6 +3436,7 @@
                   "source_path": "slide_29/element_20",
                   "source_node_id": "158",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -2501,7 +3444,8 @@
             "debug": {
               "source_path": "slide_29/element_20",
               "source_node_id": "158",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -2539,7 +3483,8 @@
             "debug": {
               "source_path": "slide_29/element_32",
               "source_node_id": "184",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -2577,7 +3522,8 @@
             "debug": {
               "source_path": "slide_29/element_14",
               "source_node_id": "134",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -2615,7 +3561,8 @@
             "debug": {
               "source_path": "slide_29/element_34",
               "source_node_id": "188",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -2688,6 +3635,7 @@
                   "source_path": "slide_29/element_91",
                   "source_node_id": "191",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -2718,9 +3666,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2738,6 +3686,7 @@
                   "source_path": "slide_29/element_91",
                   "source_node_id": "191",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -2745,7 +3694,8 @@
             "debug": {
               "source_path": "slide_29/element_91",
               "source_node_id": "191",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -2809,6 +3759,7 @@
               "source_path": "slide_29/element_33",
               "source_node_id": "185",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -2847,7 +3798,8 @@
             "debug": {
               "source_path": "slide_29/element_55",
               "source_node_id": "193",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -2920,6 +3872,7 @@
                   "source_path": "slide_29/element_94",
                   "source_node_id": "153",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -2950,9 +3903,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -2970,6 +3923,7 @@
                   "source_path": "slide_29/element_94",
                   "source_node_id": "153",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -2977,7 +3931,8 @@
             "debug": {
               "source_path": "slide_29/element_94",
               "source_node_id": "153",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3064,6 +4019,7 @@
                   "source_path": "slide_29/element_81",
                   "source_node_id": "14",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3073,10 +4029,10 @@
                 "name": "Google Shape;105;p2",
                 "characters": "ISSUE\n‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요)\n[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)",
                 "absoluteBoundingBox": {
-                  "x": 725.68,
-                  "y": 95.56,
-                  "width": 234.32,
-                  "height": 54.34
+                  "x": 735.28,
+                  "y": 100.36,
+                  "width": 215.12,
+                  "height": 44.74
                 },
                 "relativeTransform": [
                   [
@@ -3094,9 +4050,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -3114,6 +4070,7 @@
                   "source_path": "slide_29/element_81",
                   "source_node_id": "14",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3121,7 +4078,8 @@
             "debug": {
               "source_path": "slide_29/element_81",
               "source_node_id": "14",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3180,9 +4138,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -3194,6 +4152,7 @@
                   "source_path": "slide_29/element_19",
                   "source_node_id": "157",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3224,9 +4183,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -3244,6 +4203,7 @@
                   "source_path": "slide_29/element_19",
                   "source_node_id": "157",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3251,7 +4211,8 @@
             "debug": {
               "source_path": "slide_29/element_19",
               "source_node_id": "157",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3324,6 +4285,7 @@
                   "source_path": "slide_29/element_98",
                   "source_node_id": "150",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3354,9 +4316,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -3374,6 +4336,7 @@
                   "source_path": "slide_29/element_98",
                   "source_node_id": "150",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3381,7 +4344,8 @@
             "debug": {
               "source_path": "slide_29/element_98",
               "source_node_id": "150",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3434,9 +4398,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -3454,6 +4418,7 @@
                   "source_path": "slide_29/element_90/child_2",
                   "source_node_id": "177",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -3494,9 +4459,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -3505,9 +4470,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.28,
-                      "g": 0.28,
-                      "b": 0.28
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -3518,6 +4483,7 @@
                   "source_path": "slide_29/element_90/child_1",
                   "source_node_id": "176",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -3525,7 +4491,8 @@
             "debug": {
               "source_path": "slide_29/element_90",
               "source_node_id": "167",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -3598,6 +4565,7 @@
                   "source_path": "slide_29/element_101",
                   "source_node_id": "175",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3628,9 +4596,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -3648,6 +4616,7 @@
                   "source_path": "slide_29/element_101",
                   "source_node_id": "175",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3655,7 +4624,8 @@
             "debug": {
               "source_path": "slide_29/element_101",
               "source_node_id": "175",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3714,9 +4684,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -3728,6 +4698,7 @@
                   "source_path": "slide_29/element_92",
                   "source_node_id": "215",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3758,9 +4729,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -3778,6 +4749,7 @@
                   "source_path": "slide_29/element_92",
                   "source_node_id": "215",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3785,7 +4757,8 @@
             "debug": {
               "source_path": "slide_29/element_92",
               "source_node_id": "215",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3858,6 +4831,7 @@
                   "source_path": "slide_29/element_106",
                   "source_node_id": "196",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -3888,9 +4862,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -3908,6 +4882,7 @@
                   "source_path": "slide_29/element_106",
                   "source_node_id": "196",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -3915,7 +4890,8 @@
             "debug": {
               "source_path": "slide_29/element_106",
               "source_node_id": "196",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -3974,9 +4950,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.9333,
+                      "g": 0.9255,
+                      "b": 0.8824
                     },
                     "opacity": null
                   }
@@ -3988,6 +4964,7 @@
                   "source_path": "slide_29/element_109",
                   "source_node_id": "192",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4038,6 +5015,7 @@
                   "source_path": "slide_29/element_109",
                   "source_node_id": "192",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4045,7 +5023,8 @@
             "debug": {
               "source_path": "slide_29/element_109",
               "source_node_id": "192",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -4118,6 +5097,7 @@
                   "source_path": "slide_29/element_64",
                   "source_node_id": "10",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4148,9 +5128,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -4168,6 +5148,7 @@
                   "source_path": "slide_29/element_64",
                   "source_node_id": "10",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4175,7 +5156,8 @@
             "debug": {
               "source_path": "slide_29/element_64",
               "source_node_id": "10",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -4248,6 +5230,7 @@
                   "source_path": "slide_29/element_115",
                   "source_node_id": "249",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4278,9 +5261,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -4298,6 +5281,7 @@
                   "source_path": "slide_29/element_115",
                   "source_node_id": "249",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4305,7 +5289,8 @@
             "debug": {
               "source_path": "slide_29/element_115",
               "source_node_id": "249",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -4364,9 +5349,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": 0.6
                   }
@@ -4378,6 +5363,7 @@
                   "source_path": "slide_29/element_65",
                   "source_node_id": "9",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4428,6 +5414,7 @@
                   "source_path": "slide_29/element_65",
                   "source_node_id": "9",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4435,7 +5422,8 @@
             "debug": {
               "source_path": "slide_29/element_65",
               "source_node_id": "9",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -4496,7 +5484,8 @@
                 "debug": {
                   "source_path": "slide_29/element_39/child_2",
                   "source_node_id": "1030",
-                  "source_subtype": "image"
+                  "source_subtype": "image",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -4567,7 +5556,8 @@
                     "debug": {
                       "source_path": "slide_29/element_39/child_1",
                       "source_node_id": "19",
-                      "source_subtype": "connector"
+                      "source_subtype": "connector",
+                      "source_scope": "slide"
                     }
                   },
                   {
@@ -4616,7 +5606,8 @@
                     "debug": {
                       "source_path": "slide_29/element_39/child_1",
                       "source_node_id": "19",
-                      "source_subtype": "connector"
+                      "source_subtype": "connector",
+                      "source_scope": "slide"
                     }
                   },
                   {
@@ -4665,14 +5656,16 @@
                     "debug": {
                       "source_path": "slide_29/element_39/child_1",
                       "source_node_id": "19",
-                      "source_subtype": "connector"
+                      "source_subtype": "connector",
+                      "source_scope": "slide"
                     }
                   }
                 ],
                 "debug": {
                   "source_path": "slide_29/element_39/child_1",
                   "source_node_id": "19",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -4681,10 +5674,10 @@
                 "name": "Google Shape;741;p20",
                 "characters": "swipe",
                 "absoluteBoundingBox": {
-                  "x": 147.51,
-                  "y": 224.82,
-                  "width": 34.1,
-                  "height": 16.63
+                  "x": 151.29,
+                  "y": 228.6,
+                  "width": 26.54,
+                  "height": 9.07
                 },
                 "relativeTransform": [
                   [
@@ -4722,6 +5715,7 @@
                   "source_path": "slide_29/element_39/child_3",
                   "source_node_id": "126",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4729,7 +5723,8 @@
             "debug": {
               "source_path": "slide_29/element_39",
               "source_node_id": "22",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -4788,9 +5783,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -4802,6 +5797,7 @@
                   "source_path": "slide_29/element_57",
                   "source_node_id": "142",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4832,9 +5828,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -4852,6 +5848,7 @@
                   "source_path": "slide_29/element_57",
                   "source_node_id": "142",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4859,7 +5856,8 @@
             "debug": {
               "source_path": "slide_29/element_57",
               "source_node_id": "142",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -4918,9 +5916,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": 0.5
                   }
@@ -4932,6 +5930,7 @@
                   "source_path": "slide_29/element_56",
                   "source_node_id": "109",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -4982,6 +5981,7 @@
                   "source_path": "slide_29/element_56",
                   "source_node_id": "109",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -4989,7 +5989,8 @@
             "debug": {
               "source_path": "slide_29/element_56",
               "source_node_id": "109",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5062,6 +6063,7 @@
                   "source_path": "slide_29/element_113",
                   "source_node_id": "247",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5092,9 +6094,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -5112,6 +6114,7 @@
                   "source_path": "slide_29/element_113",
                   "source_node_id": "247",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -5119,7 +6122,8 @@
             "debug": {
               "source_path": "slide_29/element_113",
               "source_node_id": "247",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5149,9 +6153,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -5169,6 +6173,7 @@
               "source_path": "slide_29/element_114",
               "source_node_id": "248",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -5228,9 +6233,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -5242,6 +6247,7 @@
                   "source_path": "slide_29/element_43",
                   "source_node_id": "174",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5272,9 +6278,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -5292,6 +6298,7 @@
                   "source_path": "slide_29/element_43",
                   "source_node_id": "174",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -5299,7 +6306,8 @@
             "debug": {
               "source_path": "slide_29/element_43",
               "source_node_id": "174",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5349,6 +6357,7 @@
               "source_path": "slide_29/element_58",
               "source_node_id": "3",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -5422,6 +6431,7 @@
                   "source_path": "slide_29/element_111",
                   "source_node_id": "235",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5452,9 +6462,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -5472,6 +6482,7 @@
                   "source_path": "slide_29/element_111",
                   "source_node_id": "235",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -5479,7 +6490,8 @@
             "debug": {
               "source_path": "slide_29/element_111",
               "source_node_id": "235",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5528,6 +6540,7 @@
               "source_path": "slide_29/element_42",
               "source_node_id": "7",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -5587,9 +6600,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": 0.5
                   }
@@ -5601,6 +6614,7 @@
                   "source_path": "slide_29/element_40",
                   "source_node_id": "4",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5651,6 +6665,7 @@
                   "source_path": "slide_29/element_40",
                   "source_node_id": "4",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -5658,7 +6673,8 @@
             "debug": {
               "source_path": "slide_29/element_40",
               "source_node_id": "4",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5731,6 +6747,7 @@
                   "source_path": "slide_29/element_62",
                   "source_node_id": "187",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5761,9 +6778,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -5781,6 +6798,7 @@
                   "source_path": "slide_29/element_62",
                   "source_node_id": "187",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 180.0
                 }
               }
@@ -5788,7 +6806,8 @@
             "debug": {
               "source_path": "slide_29/element_62",
               "source_node_id": "187",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5861,6 +6880,7 @@
                   "source_path": "slide_29/element_93",
                   "source_node_id": "217",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -5891,9 +6911,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -5911,6 +6931,7 @@
                   "source_path": "slide_29/element_93",
                   "source_node_id": "217",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -5918,7 +6939,8 @@
             "debug": {
               "source_path": "slide_29/element_93",
               "source_node_id": "217",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -5948,9 +6970,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -5968,6 +6990,7 @@
               "source_path": "slide_29/element_112",
               "source_node_id": "246",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -6027,9 +7050,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -6041,6 +7064,7 @@
                   "source_path": "slide_29/element_88",
                   "source_node_id": "152",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -6071,9 +7095,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -6091,6 +7115,7 @@
                   "source_path": "slide_29/element_88",
                   "source_node_id": "152",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -6098,7 +7123,8 @@
             "debug": {
               "source_path": "slide_29/element_88",
               "source_node_id": "152",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -6148,6 +7174,7 @@
               "source_path": "slide_29/element_89",
               "source_node_id": "163",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -6178,9 +7205,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -6198,6 +7225,7 @@
               "source_path": "slide_29/element_87",
               "source_node_id": "11",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -6257,9 +7285,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": 0.5
                   }
@@ -6271,6 +7299,7 @@
                   "source_path": "slide_29/element_41",
                   "source_node_id": "105",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -6321,6 +7350,7 @@
                   "source_path": "slide_29/element_41",
                   "source_node_id": "105",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -6328,7 +7358,8 @@
             "debug": {
               "source_path": "slide_29/element_41",
               "source_node_id": "105",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -6387,9 +7418,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -6401,6 +7432,7 @@
                   "source_path": "slide_29/element_74",
                   "source_node_id": "205",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -6431,9 +7463,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -6451,6 +7483,7 @@
                   "source_path": "slide_29/element_74",
                   "source_node_id": "205",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -6458,7 +7491,8 @@
             "debug": {
               "source_path": "slide_29/element_74",
               "source_node_id": "205",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -6517,9 +7551,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -6531,6 +7565,7 @@
                   "source_path": "slide_29/element_61",
                   "source_node_id": "164",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -6561,9 +7596,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -6581,6 +7616,7 @@
                   "source_path": "slide_29/element_61",
                   "source_node_id": "164",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -6588,7 +7624,8 @@
             "debug": {
               "source_path": "slide_29/element_61",
               "source_node_id": "164",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -6618,9 +7655,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -6638,6 +7675,7 @@
               "source_path": "slide_29/element_66",
               "source_node_id": "154",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -6697,9 +7735,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": 0.6
                   }
@@ -6711,6 +7749,7 @@
                   "source_path": "slide_29/element_69/child_1",
                   "source_node_id": "179",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -6770,9 +7809,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -6784,6 +7823,7 @@
                       "source_path": "slide_29/element_69/child_2/child_1",
                       "source_node_id": "194",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -6820,9 +7860,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -6834,6 +7874,7 @@
                       "source_path": "slide_29/element_69/child_2/child_2",
                       "source_node_id": "195",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   }
@@ -6841,14 +7882,16 @@
                 "debug": {
                   "source_path": "slide_29/element_69/child_2",
                   "source_node_id": "190",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_29/element_69",
               "source_node_id": "178",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -6921,6 +7964,7 @@
                   "source_path": "slide_29/element_60",
                   "source_node_id": "155",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -6951,9 +7995,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -6971,6 +8015,7 @@
                   "source_path": "slide_29/element_60",
                   "source_node_id": "155",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 180.0
                 }
               }
@@ -6978,7 +8023,8 @@
             "debug": {
               "source_path": "slide_29/element_60",
               "source_node_id": "155",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7051,6 +8097,7 @@
                   "source_path": "slide_29/element_119",
                   "source_node_id": "254",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7081,9 +8128,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -7101,6 +8148,7 @@
                   "source_path": "slide_29/element_119",
                   "source_node_id": "254",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7108,7 +8156,8 @@
             "debug": {
               "source_path": "slide_29/element_119",
               "source_node_id": "254",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7171,9 +8220,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": 0.6
                   }
@@ -7182,9 +8231,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.28,
-                      "g": 0.28,
-                      "b": 0.28
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -7195,6 +8244,7 @@
                   "source_path": "slide_29/element_73/child_1",
                   "source_node_id": "201",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7254,9 +8304,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -7268,6 +8318,7 @@
                       "source_path": "slide_29/element_73/child_2/child_1",
                       "source_node_id": "203",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -7304,9 +8355,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -7318,6 +8369,7 @@
                       "source_path": "slide_29/element_73/child_2/child_2",
                       "source_node_id": "204",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   }
@@ -7325,14 +8377,16 @@
                 "debug": {
                   "source_path": "slide_29/element_73/child_2",
                   "source_node_id": "202",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_29/element_73",
               "source_node_id": "200",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -7362,9 +8416,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -7382,6 +8436,7 @@
               "source_path": "slide_29/element_67",
               "source_node_id": "156",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -7441,9 +8496,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": 0.6
                   }
@@ -7455,6 +8510,7 @@
                   "source_path": "slide_29/element_71",
                   "source_node_id": "198",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7505,6 +8561,7 @@
                   "source_path": "slide_29/element_71",
                   "source_node_id": "198",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7512,7 +8569,8 @@
             "debug": {
               "source_path": "slide_29/element_71",
               "source_node_id": "198",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7585,6 +8643,7 @@
                   "source_path": "slide_29/element_107",
                   "source_node_id": "197",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7615,9 +8674,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -7635,6 +8694,7 @@
                   "source_path": "slide_29/element_107",
                   "source_node_id": "197",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7642,7 +8702,8 @@
             "debug": {
               "source_path": "slide_29/element_107",
               "source_node_id": "197",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7701,9 +8762,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -7715,6 +8776,7 @@
                   "source_path": "slide_29/element_75",
                   "source_node_id": "206",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7745,9 +8807,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -7765,6 +8827,7 @@
                   "source_path": "slide_29/element_75",
                   "source_node_id": "206",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7772,7 +8835,8 @@
             "debug": {
               "source_path": "slide_29/element_75",
               "source_node_id": "206",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7845,6 +8909,7 @@
                   "source_path": "slide_29/element_103",
                   "source_node_id": "181",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -7875,9 +8940,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -7895,6 +8960,7 @@
                   "source_path": "slide_29/element_103",
                   "source_node_id": "181",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -7902,7 +8968,8 @@
             "debug": {
               "source_path": "slide_29/element_103",
               "source_node_id": "181",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -7973,7 +9040,8 @@
                 "debug": {
                   "source_path": "slide_29/element_72",
                   "source_node_id": "199",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -8022,7 +9090,8 @@
                 "debug": {
                   "source_path": "slide_29/element_72",
                   "source_node_id": "199",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -8071,14 +9140,16 @@
                 "debug": {
                   "source_path": "slide_29/element_72",
                   "source_node_id": "199",
-                  "source_subtype": "connector"
+                  "source_subtype": "connector",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_29/element_72",
               "source_node_id": "199",
-              "source_subtype": "connector"
+              "source_subtype": "connector",
+              "source_scope": "slide"
             }
           },
           {
@@ -8137,9 +9208,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -8151,6 +9222,7 @@
                   "source_path": "slide_29/element_27",
                   "source_node_id": "169",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8181,9 +9253,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -8201,6 +9273,7 @@
                   "source_path": "slide_29/element_27",
                   "source_node_id": "169",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8208,7 +9281,8 @@
             "debug": {
               "source_path": "slide_29/element_27",
               "source_node_id": "169",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8281,6 +9355,7 @@
                   "source_path": "slide_29/element_102",
                   "source_node_id": "180",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8311,9 +9386,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -8331,6 +9406,7 @@
                   "source_path": "slide_29/element_102",
                   "source_node_id": "180",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8338,7 +9414,8 @@
             "debug": {
               "source_path": "slide_29/element_102",
               "source_node_id": "180",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8368,9 +9445,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -8388,6 +9465,7 @@
               "source_path": "slide_29/element_96",
               "source_node_id": "238",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -8461,6 +9539,7 @@
                   "source_path": "slide_29/element_97",
                   "source_node_id": "242",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8491,9 +9570,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -8511,6 +9590,7 @@
                   "source_path": "slide_29/element_97",
                   "source_node_id": "242",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8518,7 +9598,8 @@
             "debug": {
               "source_path": "slide_29/element_97",
               "source_node_id": "242",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8567,6 +9648,7 @@
               "source_path": "slide_29/element_26",
               "source_node_id": "168",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -8605,7 +9687,8 @@
             "debug": {
               "source_path": "slide_29/element_50",
               "source_node_id": "16",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -8664,9 +9747,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -8678,6 +9761,7 @@
                   "source_path": "slide_29/element_24",
                   "source_node_id": "165",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8708,9 +9792,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -8728,6 +9812,7 @@
                   "source_path": "slide_29/element_24",
                   "source_node_id": "165",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8735,7 +9820,8 @@
             "debug": {
               "source_path": "slide_29/element_24",
               "source_node_id": "165",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8794,9 +9880,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -8808,6 +9894,7 @@
                   "source_path": "slide_29/element_31",
                   "source_node_id": "173",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -8838,9 +9925,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -8858,6 +9945,7 @@
                   "source_path": "slide_29/element_31",
                   "source_node_id": "173",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -8865,7 +9953,8 @@
             "debug": {
               "source_path": "slide_29/element_31",
               "source_node_id": "173",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -8915,6 +10004,7 @@
               "source_path": "slide_29/element_51",
               "source_node_id": "304",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -8924,9 +10014,9 @@
             "name": "TextBox 159",
             "characters": "매립배관형",
             "absoluteBoundingBox": {
-              "x": 107.98,
+              "x": 111.76,
               "y": 340.19,
-              "width": 41.7,
+              "width": 34.14,
               "height": 16.96
             },
             "relativeTransform": [
@@ -8945,9 +10035,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -8965,6 +10055,7 @@
               "source_path": "slide_29/element_21",
               "source_node_id": "160",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -9014,6 +10105,7 @@
               "source_path": "slide_29/element_78",
               "source_node_id": "224",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -9063,6 +10155,7 @@
               "source_path": "slide_29/element_30",
               "source_node_id": "172",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -9112,6 +10205,7 @@
               "source_path": "slide_29/element_22",
               "source_node_id": "161",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -9150,7 +10244,8 @@
             "debug": {
               "source_path": "slide_29/element_25",
               "source_node_id": "166",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -9200,6 +10295,7 @@
               "source_path": "slide_29/element_68",
               "source_node_id": "140",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -9250,6 +10346,7 @@
               "source_path": "slide_29/element_15",
               "source_node_id": "137",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -9309,9 +10406,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -9323,6 +10420,7 @@
                   "source_path": "slide_29/element_23",
                   "source_node_id": "162",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -9353,9 +10451,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -9373,6 +10471,7 @@
                   "source_path": "slide_29/element_23",
                   "source_node_id": "162",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -9380,7 +10479,8 @@
             "debug": {
               "source_path": "slide_29/element_23",
               "source_node_id": "162",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -9410,9 +10510,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -9430,6 +10530,7 @@
               "source_path": "slide_29/element_82",
               "source_node_id": "145",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -9479,6 +10580,7 @@
               "source_path": "slide_29/element_83",
               "source_node_id": "149",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -9552,6 +10654,7 @@
                   "source_path": "slide_29/element_95",
                   "source_node_id": "234",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -9582,9 +10685,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -9602,6 +10705,7 @@
                   "source_path": "slide_29/element_95",
                   "source_node_id": "234",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -9609,7 +10713,8 @@
             "debug": {
               "source_path": "slide_29/element_95",
               "source_node_id": "234",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -9668,9 +10773,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -9682,6 +10787,7 @@
                   "source_path": "slide_29/element_45",
                   "source_node_id": "159",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -9712,9 +10818,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -9732,6 +10838,7 @@
                   "source_path": "slide_29/element_45",
                   "source_node_id": "159",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -9739,7 +10846,8 @@
             "debug": {
               "source_path": "slide_29/element_45",
               "source_node_id": "159",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -9789,6 +10897,7 @@
               "source_path": "slide_29/element_12",
               "source_node_id": "8",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -9848,9 +10957,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.28,
-                      "g": 0.28,
-                      "b": 0.28
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -9861,6 +10970,7 @@
                   "source_path": "slide_29/element_52/child_2",
                   "source_node_id": "307",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -9899,7 +11009,8 @@
                 "debug": {
                   "source_path": "slide_29/element_52/child_4",
                   "source_node_id": "309",
-                  "source_subtype": "image"
+                  "source_subtype": "image",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -9937,7 +11048,8 @@
                 "debug": {
                   "source_path": "slide_29/element_52/child_3",
                   "source_node_id": "308",
-                  "source_subtype": "image"
+                  "source_subtype": "image",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -9975,7 +11087,8 @@
                 "debug": {
                   "source_path": "slide_29/element_52/child_6",
                   "source_node_id": "311",
-                  "source_subtype": "image"
+                  "source_subtype": "image",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -10039,6 +11152,7 @@
                   "source_path": "slide_29/element_52/child_5",
                   "source_node_id": "310",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -10112,6 +11226,7 @@
                       "source_path": "slide_29/element_52/child_1",
                       "source_node_id": "306",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -10142,9 +11257,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.12,
-                          "g": 0.12,
-                          "b": 0.12
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0
                         },
                         "opacity": null
                       }
@@ -10162,6 +11277,7 @@
                       "source_path": "slide_29/element_52/child_1",
                       "source_node_id": "306",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -10169,14 +11285,16 @@
                 "debug": {
                   "source_path": "slide_29/element_52/child_1",
                   "source_node_id": "306",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_29/element_52",
               "source_node_id": "305",
-              "source_subtype": "section_block"
+              "source_subtype": "section_block",
+              "source_scope": "slide"
             }
           },
           {
@@ -10225,6 +11343,7 @@
               "source_path": "slide_29/element_47",
               "source_node_id": "117",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -10274,6 +11393,7 @@
               "source_path": "slide_29/element_29",
               "source_node_id": "171",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -10323,6 +11443,7 @@
               "source_path": "slide_29/element_44",
               "source_node_id": "108",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -10382,9 +11503,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -10396,6 +11517,7 @@
                   "source_path": "slide_29/element_48",
                   "source_node_id": "118",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -10426,9 +11548,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -10446,6 +11568,7 @@
                   "source_path": "slide_29/element_48",
                   "source_node_id": "118",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -10453,7 +11576,8 @@
             "debug": {
               "source_path": "slide_29/element_48",
               "source_node_id": "118",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -10535,9 +11659,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.28,
-                          "g": 0.28,
-                          "b": 0.28
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -10548,6 +11672,7 @@
                       "source_path": "slide_29/element_46/child_1/child_1",
                       "source_node_id": "115",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -10598,6 +11723,7 @@
                       "source_path": "slide_29/element_46/child_1/child_2",
                       "source_node_id": "116",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   }
@@ -10605,7 +11731,8 @@
                 "debug": {
                   "source_path": "slide_29/element_46/child_1",
                   "source_node_id": "113",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -10635,9 +11762,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -10655,6 +11782,7 @@
                   "source_path": "slide_29/element_46/child_2",
                   "source_node_id": "114",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -10662,7 +11790,8 @@
             "debug": {
               "source_path": "slide_29/element_46",
               "source_node_id": "112",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -10721,9 +11850,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -10735,6 +11864,7 @@
                   "source_path": "slide_29/element_28",
                   "source_node_id": "170",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -10765,9 +11895,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -10785,6 +11915,7 @@
                   "source_path": "slide_29/element_28",
                   "source_node_id": "170",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -10792,7 +11923,8 @@
             "debug": {
               "source_path": "slide_29/element_28",
               "source_node_id": "170",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -10865,6 +11997,7 @@
                   "source_path": "slide_29/element_16/child_1",
                   "source_node_id": "143",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -10915,6 +12048,7 @@
                   "source_path": "slide_29/element_16/child_2",
                   "source_node_id": "144",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -10922,7 +12056,8 @@
             "debug": {
               "source_path": "slide_29/element_16",
               "source_node_id": "138",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -10972,6 +12107,7 @@
               "source_path": "slide_29/element_18",
               "source_node_id": "148",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -11008,9 +12144,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.28,
-                  "g": 0.28,
-                  "b": 0.28
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0
                 },
                 "opacity": null
               }
@@ -11021,6 +12157,7 @@
               "source_path": "slide_29/element_1",
               "source_node_id": "129",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -11094,6 +12231,7 @@
                   "source_path": "slide_29/element_105",
                   "source_node_id": "183",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -11124,9 +12262,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -11144,6 +12282,7 @@
                   "source_path": "slide_29/element_105",
                   "source_node_id": "183",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -11151,7 +12290,8 @@
             "debug": {
               "source_path": "slide_29/element_105",
               "source_node_id": "183",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -11224,6 +12364,7 @@
                   "source_path": "slide_29/element_108",
                   "source_node_id": "207",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -11254,9 +12395,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -11274,6 +12415,7 @@
                   "source_path": "slide_29/element_108",
                   "source_node_id": "207",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -11281,7 +12423,8 @@
             "debug": {
               "source_path": "slide_29/element_108",
               "source_node_id": "207",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -11311,9 +12454,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0
                 },
                 "opacity": null
               }
@@ -11331,6 +12474,7 @@
               "source_path": "slide_29/element_2",
               "source_node_id": "130",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -11381,6 +12525,7 @@
               "source_path": "slide_29/element_3",
               "source_node_id": "132",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -11431,6 +12576,7 @@
               "source_path": "slide_29/element_4",
               "source_node_id": "135",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -11467,9 +12613,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.28,
-                  "g": 0.28,
-                  "b": 0.28
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0
                 },
                 "opacity": null
               }
@@ -11480,6 +12626,7 @@
               "source_path": "slide_29/element_11",
               "source_node_id": "233",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -11543,9 +12690,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -11554,9 +12701,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.28,
-                      "g": 0.28,
-                      "b": 0.28
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -11567,6 +12714,7 @@
                   "source_path": "slide_29/element_99/child_1",
                   "source_node_id": "214",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -11620,9 +12768,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.12,
-                          "g": 0.12,
-                          "b": 0.12
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0
                         },
                         "opacity": null
                       }
@@ -11640,6 +12788,7 @@
                       "source_path": "slide_29/element_99/child_4/child_2",
                       "source_node_id": "243",
                       "source_subtype": "text_block",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   },
@@ -11690,6 +12839,7 @@
                       "source_path": "slide_29/element_99/child_4/child_1",
                       "source_node_id": "241",
                       "source_subtype": "text_block",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   },
@@ -11749,9 +12899,9 @@
                           {
                             "type": "SOLID",
                             "color": {
-                              "r": 0.28,
-                              "g": 0.28,
-                              "b": 0.28
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0
                             },
                             "opacity": null
                           }
@@ -11762,6 +12912,7 @@
                           "source_path": "slide_29/element_99/child_4/child_3",
                           "source_node_id": "244",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "full_page_overlay_candidate": false
                         }
                       },
@@ -11792,9 +12943,9 @@
                           {
                             "type": "SOLID",
                             "color": {
-                              "r": 0.12,
-                              "g": 0.12,
-                              "b": 0.12
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0
                             },
                             "opacity": null
                           }
@@ -11812,6 +12963,7 @@
                           "source_path": "slide_29/element_99/child_4/child_3",
                           "source_node_id": "244",
                           "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
                           "rotation_degrees": 0.0
                         }
                       }
@@ -11819,14 +12971,16 @@
                     "debug": {
                       "source_path": "slide_29/element_99/child_4/child_3",
                       "source_node_id": "244",
-                      "source_subtype": "labeled_shape"
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide"
                     }
                   }
                 ],
                 "debug": {
                   "source_path": "slide_29/element_99/child_4",
                   "source_node_id": "239",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -11885,9 +13039,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0
                         },
                         "opacity": null
                       }
@@ -11899,6 +13053,7 @@
                       "source_path": "slide_29/element_99/child_3",
                       "source_node_id": "237",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -11949,6 +13104,7 @@
                       "source_path": "slide_29/element_99/child_3",
                       "source_node_id": "237",
                       "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
                       "rotation_degrees": 0.0
                     }
                   }
@@ -11956,7 +13112,8 @@
                 "debug": {
                   "source_path": "slide_29/element_99/child_3",
                   "source_node_id": "237",
-                  "source_subtype": "labeled_shape"
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide"
                 }
               },
               {
@@ -12006,6 +13163,7 @@
                   "source_path": "slide_29/element_99/child_2",
                   "source_node_id": "236",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -12013,7 +13171,8 @@
             "debug": {
               "source_path": "slide_29/element_99",
               "source_node_id": "13",
-              "source_subtype": "section_block"
+              "source_subtype": "section_block",
+              "source_scope": "slide"
             }
           },
           {
@@ -12043,9 +13202,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0
                 },
                 "opacity": null
               }
@@ -12063,6 +13222,7 @@
               "source_path": "slide_29/element_8",
               "source_node_id": "228",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -12113,6 +13273,7 @@
               "source_path": "slide_29/element_7",
               "source_node_id": "227",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -12163,6 +13324,7 @@
               "source_path": "slide_29/element_10",
               "source_node_id": "232",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -12236,6 +13398,7 @@
                   "source_path": "slide_29/element_9/child_1",
                   "source_node_id": "230",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -12286,6 +13449,7 @@
                   "source_path": "slide_29/element_9/child_2",
                   "source_node_id": "231",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -12293,7 +13457,8 @@
             "debug": {
               "source_path": "slide_29/element_9",
               "source_node_id": "229",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -12331,7 +13496,8 @@
             "debug": {
               "source_path": "slide_29/element_53",
               "source_node_id": "315",
-              "source_subtype": "image"
+              "source_subtype": "image",
+              "source_scope": "slide"
             }
           },
           {
@@ -12390,9 +13556,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
                     },
                     "opacity": null
                   }
@@ -12404,6 +13570,7 @@
                   "source_path": "slide_29/element_117",
                   "source_node_id": "251",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -12434,9 +13601,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -12454,6 +13621,7 @@
                   "source_path": "slide_29/element_117",
                   "source_node_id": "251",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -12461,7 +13629,8 @@
             "debug": {
               "source_path": "slide_29/element_117",
               "source_node_id": "251",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -12534,6 +13703,7 @@
                   "source_path": "slide_29/element_118",
                   "source_node_id": "253",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -12564,9 +13734,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -12584,6 +13754,7 @@
                   "source_path": "slide_29/element_118",
                   "source_node_id": "253",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -12591,7 +13762,8 @@
             "debug": {
               "source_path": "slide_29/element_118",
               "source_node_id": "253",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -12641,6 +13813,7 @@
               "source_path": "slide_29/element_5",
               "source_node_id": "216",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -12671,9 +13844,9 @@
               {
                 "type": "SOLID",
                 "color": {
-                  "r": 0.12,
-                  "g": 0.12,
-                  "b": 0.12
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0
                 },
                 "opacity": null
               }
@@ -12691,6 +13864,7 @@
               "source_path": "slide_29/element_116",
               "source_node_id": "250",
               "source_subtype": "text_block",
+              "source_scope": "slide",
               "rotation_degrees": 0.0
             }
           },
@@ -12764,6 +13938,7 @@
                   "source_path": "slide_29/element_6/child_1",
                   "source_node_id": "225",
                   "source_subtype": "text_block",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               },
@@ -12814,6 +13989,7 @@
                   "source_path": "slide_29/element_6/child_2",
                   "source_node_id": "226",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               }
@@ -12821,7 +13997,8 @@
             "debug": {
               "source_path": "slide_29/element_6",
               "source_node_id": "223",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -12894,6 +14071,7 @@
                   "source_path": "slide_29/element_104",
                   "source_node_id": "182",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -12924,9 +14102,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -12944,6 +14122,7 @@
                   "source_path": "slide_29/element_104",
                   "source_node_id": "182",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -12951,7 +14130,8 @@
             "debug": {
               "source_path": "slide_29/element_104",
               "source_node_id": "182",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -13010,9 +14190,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": 0.6
                   }
@@ -13024,6 +14204,7 @@
                   "source_path": "slide_29/element_76/child_1",
                   "source_node_id": "209",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -13083,9 +14264,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -13097,6 +14278,7 @@
                       "source_path": "slide_29/element_76/child_2/child_1",
                       "source_node_id": "211",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -13133,9 +14315,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -13147,6 +14329,7 @@
                       "source_path": "slide_29/element_76/child_2/child_2",
                       "source_node_id": "212",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   }
@@ -13154,14 +14337,16 @@
                 "debug": {
                   "source_path": "slide_29/element_76/child_2",
                   "source_node_id": "210",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_29/element_76",
               "source_node_id": "208",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -13211,6 +14396,7 @@
               "source_path": "slide_29/element_59",
               "source_node_id": "141",
               "source_subtype": "shape",
+              "source_scope": "slide",
               "full_page_overlay_candidate": false
             }
           },
@@ -13270,9 +14456,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": 0.6
                   }
@@ -13284,6 +14470,7 @@
                   "source_path": "slide_29/element_77/child_1",
                   "source_node_id": "219",
                   "source_subtype": "shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -13343,9 +14530,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -13357,6 +14544,7 @@
                       "source_path": "slide_29/element_77/child_2/child_1",
                       "source_node_id": "221",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   },
@@ -13393,9 +14581,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 1,
-                          "g": 1,
-                          "b": 1
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
                         },
                         "opacity": null
                       }
@@ -13407,6 +14595,7 @@
                       "source_path": "slide_29/element_77/child_2/child_2",
                       "source_node_id": "222",
                       "source_subtype": "shape",
+                      "source_scope": "slide",
                       "full_page_overlay_candidate": false
                     }
                   }
@@ -13414,14 +14603,16 @@
                 "debug": {
                   "source_path": "slide_29/element_77/child_2",
                   "source_node_id": "220",
-                  "source_subtype": "group"
+                  "source_subtype": "group",
+                  "source_scope": "slide"
                 }
               }
             ],
             "debug": {
               "source_path": "slide_29/element_77",
               "source_node_id": "218",
-              "source_subtype": "group"
+              "source_subtype": "group",
+              "source_scope": "slide"
             }
           },
           {
@@ -13494,6 +14685,7 @@
                   "source_path": "slide_29/element_63",
                   "source_node_id": "189",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -13524,9 +14716,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -13544,6 +14736,7 @@
                   "source_path": "slide_29/element_63",
                   "source_node_id": "189",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 180.0
                 }
               }
@@ -13551,7 +14744,8 @@
             "debug": {
               "source_path": "slide_29/element_63",
               "source_node_id": "189",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -13624,6 +14818,7 @@
                   "source_path": "slide_29/element_70",
                   "source_node_id": "186",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -13654,9 +14849,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.12,
-                      "g": 0.12,
-                      "b": 0.12
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
                     },
                     "opacity": null
                   }
@@ -13674,6 +14869,7 @@
                   "source_path": "slide_29/element_70",
                   "source_node_id": "186",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 180.0
                 }
               }
@@ -13681,7 +14877,8 @@
             "debug": {
               "source_path": "slide_29/element_70",
               "source_node_id": "186",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           },
           {
@@ -13740,9 +14937,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 1,
-                      "g": 1,
-                      "b": 1
+                      "r": 0.9333,
+                      "g": 0.9255,
+                      "b": 0.8824
                     },
                     "opacity": 0.5
                   }
@@ -13754,6 +14951,7 @@
                   "source_path": "slide_29/element_110",
                   "source_node_id": "213",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "full_page_overlay_candidate": false
                 }
               },
@@ -13804,6 +15002,7 @@
                   "source_path": "slide_29/element_110",
                   "source_node_id": "213",
                   "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
                   "rotation_degrees": 0.0
                 }
               }
@@ -13811,7 +15010,8 @@
             "debug": {
               "source_path": "slide_29/element_110",
               "source_node_id": "213",
-              "source_subtype": "labeled_shape"
+              "source_subtype": "labeled_shape",
+              "source_scope": "slide"
             }
           }
         ],
@@ -13883,7 +15083,7 @@
   "missing_assets": [],
   "debug": {
     "status": "visual_first_generator",
-    "candidate_count": 181,
-    "root_candidate_count": 119
+    "candidate_count": 196,
+    "root_candidate_count": 124
   }
 }

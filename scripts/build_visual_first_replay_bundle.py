@@ -109,7 +109,9 @@ def estimate_text_font_size(text_value: str, text_style: dict[str, Any], bounds:
         return clamp_font_size(float(explicit) * scale)
     width = max(float(bounds.get("width", 120)), 1.0)
     height = max(float(bounds.get("height", 24)), 1.0)
-    base_by_height = height * 0.42
+    single_line = "\n" not in (text_value or "")
+    short_text = len((text_value or "").strip()) <= 18
+    base_by_height = height * (0.56 if single_line and short_text else 0.42)
     rough_capacity = max(int((width - 12) / max(base_by_height * 0.55, 4)), 4)
     multiline_penalty = 0.82 if len(text_value or "") > rough_capacity else 1.0
     width_penalty = 0.86 if width < 120 else 0.94 if width < 220 else 1.0
@@ -143,6 +145,22 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     }
 
 
+def inset_text_bounds(candidate: dict[str, Any], abs_bounds: dict[str, Any]) -> dict[str, Any]:
+    text_style = (candidate.get("extra") or {}).get("text_style") or {}
+    left = float(text_style.get("lIns") or 0)
+    right = float(text_style.get("rIns") or 0)
+    top = float(text_style.get("tIns") or 0)
+    bottom = float(text_style.get("bIns") or 0)
+    width = max(float(abs_bounds.get("width", 0)) - left - right, 1.0)
+    height = max(float(abs_bounds.get("height", 0)) - top - bottom, 1.0)
+    return {
+        "x": round(float(abs_bounds.get("x", 0)) + left, 2),
+        "y": round(float(abs_bounds.get("y", 0)) + top, 2),
+        "width": round(width, 2),
+        "height": round(height, 2),
+    }
+
+
 def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: float, min_height: float, scale: float = 1.0) -> float:
     text_style = (candidate.get("extra") or {}).get("text_style") or {}
     font_size = estimate_text_font_size(text_value, text_style, {"width": width, "height": min_height}, table_cell=True, scale=scale)
@@ -158,15 +176,16 @@ def estimate_wrapped_height(text_value: str, candidate: dict[str, Any], width: f
 
 
 def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
+    text_bounds = inset_text_bounds(candidate, abs_bounds) if not table_cell else abs_bounds
     return {
         "id": f"{candidate['candidate_id']}:text",
         "type": "TEXT",
         "name": candidate.get("title") or candidate.get("subtype") or "text",
         "characters": candidate.get("text") or candidate.get("title") or "",
-        "absoluteBoundingBox": abs_bounds,
+        "absoluteBoundingBox": text_bounds,
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
         "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
-        "style": build_text_style(candidate, abs_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback, scale=scale),
+        "style": build_text_style(candidate, text_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback, scale=scale),
         "children": [],
         "debug": dict(build_source_debug(candidate), rotation_degrees=normalize_degrees((candidate.get("bounds_px") or {}).get("rotation", 0))),
     }
