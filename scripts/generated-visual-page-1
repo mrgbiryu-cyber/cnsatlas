@@ -1,21 +1,476 @@
 {
   "name": "Untitled",
-  "lastModified": "2026-03-23T01:40:31Z",
-  "thumbnailUrl": "https://s3-alpha.figma.com/thumbnails/0a672e8a-d7e2-4f79-8ec6-06bdb84bfb57?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC3LO4T7JF%2F20260322%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260322T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9f02f976c108606f2c865e6bf9b8197212170ae8f6c98c8d81533103674f6975",
-  "version": "2333940969816803188",
+  "lastModified": "2026-03-23T02:05:11Z",
+  "thumbnailUrl": "https://s3-alpha.figma.com/thumbnails/85eda6fa-f836-4cc3-ae5e-00cd5e32837d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC3LO4T7JF%2F20260322%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260322T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=831395bb82dd3ff6d15af1aa0c71f42d28ca7769f1c070787f1556a3dc921eab",
+  "version": "2333944529806911755",
   "role": "owner",
   "editorType": "figma",
   "linkAccess": "org_view",
   "nodes": {
-    "3:4238": {
+    "3:5714": {
       "document": {
-        "id": "3:4238",
+        "id": "3:5714",
         "name": "CNS Atlas Replay (Slide 12 - 일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 ))",
         "type": "FRAME",
         "scrollBehavior": "SCROLLS",
         "children": [
           {
-            "id": "3:4239",
+            "id": "3:5715",
+            "name": "Google Shape;53;p66",
+            "type": "FRAME",
+            "scrollBehavior": "SCROLLS",
+            "children": [],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": true,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "visible": false,
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "visible": false,
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 0.0
+            },
+            "fillGeometry": [
+              {
+                "path": "M0 0L897.33 0L897.33 25.52L0 25.52L0 0Z",
+                "windingRule": "NONZERO"
+              }
+            ],
+            "strokeGeometry": [],
+            "absoluteBoundingBox": {
+              "x": 31.34000015258789,
+              "y": 15.460000038146973,
+              "width": 897.3300170898438,
+              "height": 25.520000457763672
+            },
+            "absoluteRenderBounds": {
+              "x": 31.34000015258789,
+              "y": 15.460000038146973,
+              "width": 897.3300170898438,
+              "height": 25.520000457763672
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                0.0,
+                31.34000015258789
+              ],
+              [
+                0.0,
+                1.0,
+                15.460000038146973
+              ]
+            ],
+            "size": {
+              "x": 897.3300170898438,
+              "y": 25.520000457763672
+            },
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "3:5716",
+            "name": "Google Shape;57;p66:line",
+            "type": "FRAME",
+            "scrollBehavior": "SCROLLS",
+            "children": [
+              {
+                "id": "3:5717",
+                "name": "Vector",
+                "type": "VECTOR",
+                "scrollBehavior": "SCROLLS",
+                "blendMode": "PASS_THROUGH",
+                "fills": [],
+                "vectorNetwork": {
+                  "vertices": [
+                    {
+                      "position": {
+                        "x": 0.0,
+                        "y": 0.48000001907348633
+                      },
+                      "meta": 0
+                    },
+                    {
+                      "position": {
+                        "x": 1.989999771118164,
+                        "y": 0.0
+                      },
+                      "meta": 0
+                    }
+                  ],
+                  "segments": [
+                    {
+                      "start": 0,
+                      "startTangent": {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      "endTangent": {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      "end": 1,
+                      "meta": 0
+                    }
+                  ],
+                  "regions": [
+                    {
+                      "loops": [
+                        [
+                          0
+                        ]
+                      ],
+                      "windingRule": "nonzero",
+                      "meta": 0
+                    }
+                  ]
+                },
+                "fillGeometry": [],
+                "strokes": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.49799999594688416,
+                      "g": 0.49799999594688416,
+                      "b": 0.49799999594688416,
+                      "a": 1.0
+                    }
+                  }
+                ],
+                "strokeWeight": 1.0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [
+                  {
+                    "path": "M0 0.48L0.117241 0.96606L2.10724 0.48606L1.99 0L1.87276 -0.48606L-0.117241 -0.00606029L0 0.48Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "absoluteBoundingBox": {
+                  "x": 465.95001220703125,
+                  "y": 58.959999084472656,
+                  "width": 1.989999771118164,
+                  "height": 0.48000001907348633
+                },
+                "absoluteRenderBounds": {
+                  "x": 465.832763671875,
+                  "y": 58.47393798828125,
+                  "width": 2.2244873046875,
+                  "height": 1.4521217346191406
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    0.0,
+                    4.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    4.0
+                  ]
+                ],
+                "size": {
+                  "x": 1.989999771118164,
+                  "y": 0.48000001907348633
+                },
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": true,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "visible": false,
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "visible": false,
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 0.0
+            },
+            "fillGeometry": [
+              {
+                "path": "M0 0L9.99 0L9.99 8.48L0 8.48L0 0Z",
+                "windingRule": "NONZERO"
+              }
+            ],
+            "strokeGeometry": [],
+            "absoluteBoundingBox": {
+              "x": 461.95001220703125,
+              "y": 54.959999084472656,
+              "width": 9.989999771118164,
+              "height": 8.479999542236328
+            },
+            "absoluteRenderBounds": {
+              "x": 461.95001220703125,
+              "y": 54.959999084472656,
+              "width": 9.989999771118164,
+              "height": 8.479999542236328
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                0.0,
+                461.95001220703125
+              ],
+              [
+                0.0,
+                1.0,
+                54.959999084472656
+              ]
+            ],
+            "size": {
+              "x": 9.989999771118164,
+              "y": 8.479999542236328
+            },
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "3:5718",
+            "name": "Google Shape;54;p66",
+            "type": "TEXT",
+            "scrollBehavior": "SCROLLS",
+            "blendMode": "PASS_THROUGH",
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.49799999594688416,
+                  "g": 0.49799999594688416,
+                  "b": 0.49799999594688416,
+                  "a": 1.0
+                }
+              }
+            ],
+            "fillGeometry": [],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "strokeAlign": "OUTSIDE",
+            "strokeGeometry": [],
+            "absoluteBoundingBox": {
+              "x": 739.969970703125,
+              "y": 523.4199829101562,
+              "width": 196.8000030517578,
+              "height": 16.0
+            },
+            "absoluteRenderBounds": {
+              "x": 927.1410522460938,
+              "y": 528.6660766601562,
+              "width": 9.26953125,
+              "height": 5.2578125
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                0.0,
+                739.969970703125
+              ],
+              [
+                0.0,
+                1.0,
+                523.4199829101562
+              ]
+            ],
+            "size": {
+              "x": 196.8000030517578,
+              "y": 16.0
+            },
+            "characters": "‹#›",
+            "characterStyleOverrides": [],
+            "styleOverrideTable": {},
+            "lineTypes": [
+              "NONE"
+            ],
+            "lineIndentations": [
+              0
+            ],
+            "style": {
+              "fontFamily": "Malgun Gothic",
+              "fontPostScriptName": "MalgunGothic",
+              "fontStyle": "Regular",
+              "fontWeight": 400,
+              "fontSize": 8.0,
+              "textAlignHorizontal": "RIGHT",
+              "textAlignVertical": "CENTER",
+              "letterSpacing": 0.0,
+              "lineHeightPx": 10.640625,
+              "lineHeightPercent": 100.0,
+              "lineHeightUnit": "INTRINSIC_%"
+            },
+            "layoutVersion": 5,
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "3:5719",
+            "name": "Google Shape;56;p66",
+            "type": "TEXT",
+            "scrollBehavior": "SCROLLS",
+            "blendMode": "PASS_THROUGH",
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.11999999731779099,
+                  "g": 0.11999999731779099,
+                  "b": 0.11999999731779099,
+                  "a": 1.0
+                }
+              }
+            ],
+            "fillGeometry": [],
+            "strokes": [],
+            "strokeWeight": 1.0,
+            "strokeAlign": "OUTSIDE",
+            "strokeGeometry": [],
+            "absoluteBoundingBox": {
+              "x": 739.969970703125,
+              "y": 523.4199829101562,
+              "width": 196.8000030517578,
+              "height": 16.0
+            },
+            "absoluteRenderBounds": {
+              "x": 740.5040893554688,
+              "y": 525.601806640625,
+              "width": 9.65264892578125,
+              "height": 5.81817626953125
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "relativeTransform": [
+              [
+                1.0,
+                0.0,
+                739.969970703125
+              ],
+              [
+                0.0,
+                1.0,
+                523.4199829101562
+              ]
+            ],
+            "size": {
+              "x": 196.8000030517578,
+              "y": 16.0
+            },
+            "characters": "‹#›",
+            "characterStyleOverrides": [],
+            "styleOverrideTable": {},
+            "lineTypes": [
+              "NONE"
+            ],
+            "lineIndentations": [
+              0
+            ],
+            "style": {
+              "fontFamily": "Inter",
+              "fontPostScriptName": null,
+              "fontStyle": "Regular",
+              "fontWeight": 400,
+              "fontSize": 8.0,
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "TOP",
+              "letterSpacing": 0.0,
+              "lineHeightPx": 9.681818008422852,
+              "lineHeightPercent": 100.0,
+              "lineHeightUnit": "INTRINSIC_%"
+            },
+            "layoutVersion": 5,
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "3:5720",
             "name": "제목 1",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -99,13 +554,13 @@
             }
           },
           {
-            "id": "3:4240",
+            "id": "3:5721",
             "name": "Google Shape;574;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4241",
+                "id": "3:5722",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -271,7 +726,7 @@
                 }
               },
               {
-                "id": "3:4242",
+                "id": "3:5723",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -520,7 +975,7 @@
             }
           },
           {
-            "id": "3:4243",
+            "id": "3:5724",
             "name": "Google Shape;574;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -543,16 +998,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 656.4299926757812,
-              "y": 50.52000045776367,
-              "width": 59.970001220703125,
-              "height": 16.479999542236328
+              "x": 660.2100219726562,
+              "y": 55.31999969482422,
+              "width": 52.40999984741211,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 661.7548217773438,
-              "y": 44.68796920776367,
+              "x": 661.7548828125,
+              "y": 48.48796844482422,
               "width": 48.7578125,
-              "height": 30.136722564697266
+              "height": 30.13671875
             },
             "constraints": {
               "vertical": "TOP",
@@ -562,17 +1017,17 @@
               [
                 1.0,
                 0.0,
-                656.4299926757812
+                660.2100219726562
               ],
               [
                 0.0,
                 1.0,
-                50.52000045776367
+                55.31999969482422
               ]
             ],
             "size": {
-              "x": 59.970001220703125,
-              "y": 16.479999542236328
+              "x": 52.40999984741211,
+              "y": 16.0
             },
             "characters": "케어솔루션\n(대표사이트개발)",
             "characterStyleOverrides": [],
@@ -606,13 +1061,13 @@
             }
           },
           {
-            "id": "3:4244",
+            "id": "3:5725",
             "name": "Google Shape;576;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4245",
+                "id": "3:5726",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -778,7 +1233,7 @@
                 }
               },
               {
-                "id": "3:4246",
+                "id": "3:5727",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1027,7 +1482,7 @@
             }
           },
           {
-            "id": "3:4247",
+            "id": "3:5728",
             "name": "Google Shape;576;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -1050,14 +1505,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 467.94000244140625,
-              "y": 50.91999816894531,
-              "width": 59.970001220703125,
-              "height": 16.09000015258789
+              "x": 471.7200012207031,
+              "y": 55.720001220703125,
+              "width": 52.40999984741211,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 480.04608154296875,
-              "y": 51.07624816894531,
+              "y": 55.876251220703125,
               "width": 35.78125,
               "height": 18.1484375
             },
@@ -1069,17 +1524,17 @@
               [
                 1.0,
                 0.0,
-                467.94000244140625
+                471.7200012207031
               ],
               [
                 0.0,
                 1.0,
-                50.91999816894531
+                55.720001220703125
               ]
             ],
             "size": {
-              "x": 59.970001220703125,
-              "y": 16.09000015258789
+              "x": 52.40999984741211,
+              "y": 16.0
             },
             "characters": "CSMS\n(계약정보)",
             "characterStyleOverrides": [],
@@ -1113,13 +1568,13 @@
             }
           },
           {
-            "id": "3:4248",
+            "id": "3:5729",
             "name": "Google Shape;575;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4249",
+                "id": "3:5730",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1285,7 +1740,7 @@
                 }
               },
               {
-                "id": "3:4250",
+                "id": "3:5731",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1534,7 +1989,7 @@
             }
           },
           {
-            "id": "3:4251",
+            "id": "3:5732",
             "name": "Google Shape;575;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -1557,14 +2012,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 530.75,
-              "y": 50.91999816894531,
-              "width": 59.970001220703125,
-              "height": 16.09000015258789
+              "x": 534.530029296875,
+              "y": 55.720001220703125,
+              "width": 52.40999984741211,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 549.6881103515625,
-              "y": 50.08796691894531,
+              "x": 549.6881713867188,
+              "y": 54.887969970703125,
               "width": 21.734375,
               "height": 19.13671875
             },
@@ -1576,17 +2031,17 @@
               [
                 1.0,
                 0.0,
-                530.75
+                534.530029296875
               ],
               [
                 0.0,
                 1.0,
-                50.91999816894531
+                55.720001220703125
               ]
             ],
             "size": {
-              "x": 59.970001220703125,
-              "y": 16.09000015258789
+              "x": 52.40999984741211,
+              "y": 16.0
             },
             "characters": "멤버십\n(회원)",
             "characterStyleOverrides": [],
@@ -1620,13 +2075,13 @@
             }
           },
           {
-            "id": "3:4252",
+            "id": "3:5733",
             "name": "Google Shape;573;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4253",
+                "id": "3:5734",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -1792,7 +2247,7 @@
                 }
               },
               {
-                "id": "3:4254",
+                "id": "3:5735",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2041,7 +2496,7 @@
             }
           },
           {
-            "id": "3:4255",
+            "id": "3:5736",
             "name": "Google Shape;573;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -2064,14 +2519,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 593.9199829101562,
-              "y": 50.91999816894531,
-              "width": 59.970001220703125,
-              "height": 16.09000015258789
+              "x": 597.7000122070312,
+              "y": 55.720001220703125,
+              "width": 52.40999984741211,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 602.2487182617188,
-              "y": 55.08796691894531,
+              "x": 602.248779296875,
+              "y": 59.887969970703125,
               "width": 43.16015625,
               "height": 8.13671875
             },
@@ -2083,17 +2538,17 @@
               [
                 1.0,
                 0.0,
-                593.9199829101562
+                597.7000122070312
               ],
               [
                 0.0,
                 1.0,
-                50.91999816894531
+                55.720001220703125
               ]
             ],
             "size": {
-              "x": 59.970001220703125,
-              "y": 16.09000015258789
+              "x": 52.40999984741211,
+              "y": 16.0
             },
             "characters": "OBS(마젠토)",
             "characterStyleOverrides": [],
@@ -2125,13 +2580,13 @@
             }
           },
           {
-            "id": "3:4256",
+            "id": "3:5737",
             "name": "Google Shape;577;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4257",
+                "id": "3:5738",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2297,7 +2752,7 @@
                 }
               },
               {
-                "id": "3:4258",
+                "id": "3:5739",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -2546,7 +3001,7 @@
             }
           },
           {
-            "id": "3:4259",
+            "id": "3:5740",
             "name": "Google Shape;577;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -2569,16 +3024,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 400.6300048828125,
-              "y": 51.400001525878906,
-              "width": 65.31999969482422,
-              "height": 16.09000015258789
+              "x": 404.4100036621094,
+              "y": 56.20000076293945,
+              "width": 57.7599983215332,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 408.4931335449219,
-              "y": 55.567970275878906,
+              "y": 60.36796951293945,
               "width": 49.69921875,
-              "height": 7.53515625
+              "height": 7.535152435302734
             },
             "constraints": {
               "vertical": "TOP",
@@ -2588,17 +3043,17 @@
               [
                 1.0,
                 0.0,
-                400.6300048828125
+                404.4100036621094
               ],
               [
                 0.0,
                 1.0,
-                51.400001525878906
+                56.20000076293945
               ]
             ],
             "size": {
-              "x": 65.31999969482422,
-              "y": 16.09000015258789
+              "x": 57.7599983215332,
+              "y": 16.0
             },
             "characters": "외부인증 모듈",
             "characterStyleOverrides": [],
@@ -2630,7 +3085,7 @@
             }
           },
           {
-            "id": "3:4260",
+            "id": "3:5741",
             "name": "Google Shape;474;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -2653,16 +3108,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 235.83999633789062,
-              "y": 55.18000030517578,
-              "width": 86.2300033569336,
-              "height": 16.959999084472656
+              "x": 245.44000244140625,
+              "y": 59.97999954223633,
+              "width": 67.02999877929688,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 236.05874633789062,
-              "y": 57.34796905517578,
-              "width": 70.11328125,
-              "height": 7.53515625
+              "x": 245.65875244140625,
+              "y": 62.14796829223633,
+              "width": 61.49609375,
+              "height": 18.312496185302734
             },
             "constraints": {
               "vertical": "TOP",
@@ -2672,17 +3127,17 @@
               [
                 1.0,
                 0.0,
-                235.83999633789062
+                245.44000244140625
               ],
               [
                 0.0,
                 1.0,
-                55.18000030517578
+                59.97999954223633
               ]
             ],
             "size": {
-              "x": 86.2300033569336,
-              "y": 16.959999084472656
+              "x": 67.02999877929688,
+              "y": 16.0
             },
             "characters": "※ 케어십 가능 제품",
             "characterStyleOverrides": [],
@@ -2714,7 +3169,7 @@
             }
           },
           {
-            "id": "3:4261",
+            "id": "3:5742",
             "name": "Google Shape;468;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -2737,14 +3192,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 34.349998474121094,
-              "y": 65.87999725341797,
-              "width": 55.2599983215332,
-              "height": 18.170000076293945
+              "x": 43.95000076293945,
+              "y": 70.68000030517578,
+              "width": 36.060001373291016,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 50.45265197753906,
-              "y": 68.04796600341797,
+              "x": 50.452659606933594,
+              "y": 72.84796905517578,
               "width": 23.19921875,
               "height": 7.53515625
             },
@@ -2756,17 +3211,17 @@
               [
                 1.0,
                 0.0,
-                34.349998474121094
+                43.95000076293945
               ],
               [
                 0.0,
                 1.0,
-                65.87999725341797
+                70.68000030517578
               ]
             ],
             "size": {
-              "x": 55.2599983215332,
-              "y": 18.170000076293945
+              "x": 36.060001373291016,
+              "y": 16.0
             },
             "characters": "사용자",
             "characterStyleOverrides": [],
@@ -2798,13 +3253,13 @@
             }
           },
           {
-            "id": "3:4262",
+            "id": "3:5743",
             "name": "Google Shape;465;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4263",
+                "id": "3:5744",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3054,7 +3509,7 @@
                 }
               },
               {
-                "id": "3:4264",
+                "id": "3:5745",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3387,7 +3842,7 @@
             }
           },
           {
-            "id": "3:4265",
+            "id": "3:5746",
             "name": "Google Shape;465;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -3410,14 +3865,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 89.62000274658203,
-              "y": 68.9800033569336,
-              "width": 28.350000381469727,
-              "height": 28.350000381469727
+              "x": 93.4000015258789,
+              "y": 72.76000213623047,
+              "width": 20.790000915527344,
+              "height": 20.790000915527344
             },
             "absoluteRenderBounds": {
-              "x": 100.29891204833984,
-              "y": 80.0581283569336,
+              "x": 100.29890441894531,
+              "y": 79.83812713623047,
               "width": 6.9921875,
               "height": 7.59375
             },
@@ -3429,17 +3884,17 @@
               [
                 1.0,
                 0.0,
-                89.62000274658203
+                93.4000015258789
               ],
               [
                 0.0,
                 1.0,
-                68.9800033569336
+                72.76000213623047
               ]
             ],
             "size": {
-              "x": 28.350000381469727,
-              "y": 28.350000381469727
+              "x": 20.790000915527344,
+              "y": 20.790000915527344
             },
             "characters": "홈",
             "characterStyleOverrides": [],
@@ -3471,13 +3926,13 @@
             }
           },
           {
-            "id": "3:4266",
+            "id": "3:5747",
             "name": "Google Shape;470;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4267",
+                "id": "3:5748",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3643,7 +4098,7 @@
                 }
               },
               {
-                "id": "3:4268",
+                "id": "3:5749",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -3892,7 +4347,7 @@
             }
           },
           {
-            "id": "3:4269",
+            "id": "3:5750",
             "name": "Google Shape;470;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -3915,14 +4370,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 140.52999877929688,
-              "y": 72.3499984741211,
-              "width": 66.68000030517578,
-              "height": 21.25
+              "x": 144.30999755859375,
+              "y": 77.1500015258789,
+              "width": 59.119998931884766,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 156.9754638671875,
-              "y": 79.5179672241211,
+              "y": 81.3179702758789,
               "width": 33.203125,
               "height": 7.53515625
             },
@@ -3934,17 +4389,17 @@
               [
                 1.0,
                 0.0,
-                140.52999877929688
+                144.30999755859375
               ],
               [
                 0.0,
                 1.0,
-                72.3499984741211
+                77.1500015258789
               ]
             ],
             "size": {
-              "x": 66.68000030517578,
-              "y": 21.25
+              "x": 59.119998931884766,
+              "y": 16.0
             },
             "characters": "제품 탐색",
             "characterStyleOverrides": [],
@@ -3976,13 +4431,13 @@
             }
           },
           {
-            "id": "3:4270",
+            "id": "3:5751",
             "name": "Google Shape;466;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4271",
+                "id": "3:5752",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -4148,7 +4603,7 @@
                 }
               },
               {
-                "id": "3:4272",
+                "id": "3:5753",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -4397,7 +4852,7 @@
             }
           },
           {
-            "id": "3:4273",
+            "id": "3:5754",
             "name": "Google Shape;466;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -4420,14 +4875,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 267.4599914550781,
-              "y": 72.3499984741211,
-              "width": 66.68000030517578,
-              "height": 21.25
+              "x": 271.239990234375,
+              "y": 77.1500015258789,
+              "width": 59.119998931884766,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 285.31170654296875,
-              "y": 74.5179672241211,
+              "y": 76.3179702758789,
               "width": 30.390625,
               "height": 19.13671875
             },
@@ -4439,17 +4894,17 @@
               [
                 1.0,
                 0.0,
-                267.4599914550781
+                271.239990234375
               ],
               [
                 0.0,
                 1.0,
-                72.3499984741211
+                77.1500015258789
               ]
             ],
             "size": {
-              "x": 66.68000030517578,
-              "y": 21.25
+              "x": 59.119998931884766,
+              "y": 16.0
             },
             "characters": "제품선택\n(PDP)",
             "characterStyleOverrides": [],
@@ -4483,13 +4938,13 @@
             }
           },
           {
-            "id": "3:4274",
+            "id": "3:5755",
             "name": "Google Shape;469;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4275",
+                "id": "3:5756",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -4724,13 +5179,13 @@
             }
           },
           {
-            "id": "3:4276",
+            "id": "3:5757",
             "name": "Google Shape;469;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4277",
+                "id": "3:5758",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -4958,13 +5413,13 @@
             }
           },
           {
-            "id": "3:4278",
+            "id": "3:5759",
             "name": "Google Shape;471;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4279",
+                "id": "3:5760",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5199,13 +5654,13 @@
             }
           },
           {
-            "id": "3:4280",
+            "id": "3:5761",
             "name": "Google Shape;471;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4281",
+                "id": "3:5762",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5433,13 +5888,13 @@
             }
           },
           {
-            "id": "3:4282",
+            "id": "3:5763",
             "name": "Google Shape;553;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4283",
+                "id": "3:5764",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5674,13 +6129,13 @@
             }
           },
           {
-            "id": "3:4284",
+            "id": "3:5765",
             "name": "Google Shape;553;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4285",
+                "id": "3:5766",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -5908,13 +6363,13 @@
             }
           },
           {
-            "id": "3:4286",
+            "id": "3:5767",
             "name": "Google Shape;467;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4287",
+                "id": "3:5768",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6107,13 +6562,13 @@
             }
           },
           {
-            "id": "3:4288",
+            "id": "3:5769",
             "name": "Google Shape;467;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4289",
+                "id": "3:5770",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6341,13 +6796,13 @@
             }
           },
           {
-            "id": "3:4290",
+            "id": "3:5771",
             "name": "Google Shape;475;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4291",
+                "id": "3:5772",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6582,13 +7037,13 @@
             }
           },
           {
-            "id": "3:4292",
+            "id": "3:5773",
             "name": "Google Shape;475;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4293",
+                "id": "3:5774",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -6816,7 +7271,7 @@
             }
           },
           {
-            "id": "3:4294",
+            "id": "3:5775",
             "name": "Google Shape;477;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -6839,16 +7294,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 222.08999633789062,
-              "y": 107.41000366210938,
-              "width": 27.290000915527344,
-              "height": 16.959999084472656
+              "x": 231.69000244140625,
+              "y": 112.20999908447266,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 222.85171508789062,
-              "y": 110.56625366210938,
-              "width": 11.16796875,
-              "height": 5.94140625
+              "x": 232.07281494140625,
+              "y": 115.45999908447266,
+              "width": 5.421875,
+              "height": 16.84764862060547
             },
             "constraints": {
               "vertical": "TOP",
@@ -6858,17 +7313,17 @@
               [
                 1.0,
                 0.0,
-                222.08999633789062
+                231.69000244140625
               ],
               [
                 0.0,
                 1.0,
-                107.41000366210938
+                112.20999908447266
               ]
             ],
             "size": {
-              "x": 27.290000915527344,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "NO",
             "characterStyleOverrides": [],
@@ -6900,7 +7355,7 @@
             }
           },
           {
-            "id": "3:4295",
+            "id": "3:5776",
             "name": "Google Shape;476;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -6923,16 +7378,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 344.760009765625,
-              "y": 107.43000030517578,
-              "width": 28.299999237060547,
-              "height": 16.959999084472656
+              "x": 354.3599853515625,
+              "y": 112.2300033569336,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 344.834228515625,
-              "y": 110.58625030517578,
-              "width": 12.51953125,
-              "height": 5.94140625
+              "x": 354.4342041015625,
+              "y": 115.4800033569336,
+              "width": 8.21484375,
+              "height": 16.84766387939453
             },
             "constraints": {
               "vertical": "TOP",
@@ -6942,17 +7397,17 @@
               [
                 1.0,
                 0.0,
-                344.760009765625
+                354.3599853515625
               ],
               [
                 0.0,
                 1.0,
-                107.43000030517578
+                112.2300033569336
               ]
             ],
             "size": {
-              "x": 28.299999237060547,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "YES",
             "characterStyleOverrides": [],
@@ -6984,13 +7439,13 @@
             }
           },
           {
-            "id": "3:4296",
+            "id": "3:5777",
             "name": "Google Shape;472;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4297",
+                "id": "3:5778",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7239,7 +7694,7 @@
             }
           },
           {
-            "id": "3:4298",
+            "id": "3:5779",
             "name": "Google Shape;473;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -7262,14 +7717,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 270.8999938964844,
-              "y": 114.9000015258789,
-              "width": 63.13999938964844,
-              "height": 18.170000076293945
+              "x": 280.5,
+              "y": 119.69999694824219,
+              "width": 43.939998626708984,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 281.6145324707031,
-              "y": 116.9976577758789,
+              "y": 121.79765319824219,
               "width": 41.1015625,
               "height": 7.60546875
             },
@@ -7281,17 +7736,17 @@
               [
                 1.0,
                 0.0,
-                270.8999938964844
+                280.5
               ],
               [
                 0.0,
                 1.0,
-                114.9000015258789
+                119.69999694824219
               ]
             ],
             "size": {
-              "x": 63.13999938964844,
-              "y": 18.170000076293945
+              "x": 43.939998626708984,
+              "y": 16.0
             },
             "characters": "케어십 신청",
             "characterStyleOverrides": [],
@@ -7323,13 +7778,13 @@
             }
           },
           {
-            "id": "3:4299",
+            "id": "3:5780",
             "name": "Google Shape;481;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4300",
+                "id": "3:5781",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7543,13 +7998,13 @@
             }
           },
           {
-            "id": "3:4301",
+            "id": "3:5782",
             "name": "Google Shape;481;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4302",
+                "id": "3:5783",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7777,13 +8232,13 @@
             }
           },
           {
-            "id": "3:4303",
+            "id": "3:5784",
             "name": "Google Shape;518;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4304",
+                "id": "3:5785",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -7997,13 +8452,13 @@
             }
           },
           {
-            "id": "3:4305",
+            "id": "3:5786",
             "name": "Google Shape;518;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4306",
+                "id": "3:5787",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8231,7 +8686,7 @@
             }
           },
           {
-            "id": "3:4307",
+            "id": "3:5788",
             "name": "Google Shape;495;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -8254,16 +8709,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 120.68000030517578,
-              "y": 139.3699951171875,
-              "width": 27.290000915527344,
-              "height": 16.959999084472656
+              "x": 130.27999877929688,
+              "y": 144.1699981689453,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 121.44171905517578,
-              "y": 142.5262451171875,
-              "width": 11.167961120605469,
-              "height": 5.94140625
+              "x": 130.66281127929688,
+              "y": 147.4199981689453,
+              "width": 5.421875,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -8273,17 +8728,17 @@
               [
                 1.0,
                 0.0,
-                120.68000030517578
+                130.27999877929688
               ],
               [
                 0.0,
                 1.0,
-                139.3699951171875
+                144.1699981689453
               ]
             ],
             "size": {
-              "x": 27.290000915527344,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "NO",
             "characterStyleOverrides": [],
@@ -8315,7 +8770,7 @@
             }
           },
           {
-            "id": "3:4308",
+            "id": "3:5789",
             "name": "Google Shape;496;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -8338,16 +8793,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 238.30999755859375,
-              "y": 141.8000030517578,
-              "width": 28.299999237060547,
-              "height": 16.959999084472656
+              "x": 247.91000366210938,
+              "y": 146.60000610351562,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 238.38421630859375,
-              "y": 144.9562530517578,
-              "width": 12.51953125,
-              "height": 5.94140625
+              "x": 247.98422241210938,
+              "y": 149.85000610351562,
+              "width": 8.21484375,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -8357,17 +8812,17 @@
               [
                 1.0,
                 0.0,
-                238.30999755859375
+                247.91000366210938
               ],
               [
                 0.0,
                 1.0,
-                141.8000030517578
+                146.60000610351562
               ]
             ],
             "size": {
-              "x": 28.299999237060547,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "YES",
             "characterStyleOverrides": [],
@@ -8399,13 +8854,13 @@
             }
           },
           {
-            "id": "3:4309",
+            "id": "3:5790",
             "name": "Google Shape;517;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4310",
+                "id": "3:5791",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8654,7 +9109,7 @@
             }
           },
           {
-            "id": "3:4311",
+            "id": "3:5792",
             "name": "Google Shape;517;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -8677,14 +9132,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 521.489990234375,
-              "y": 142.69000244140625,
-              "width": 76.05999755859375,
-              "height": 21.25
+              "x": 525.27001953125,
+              "y": 147.49000549316406,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 529.25830078125,
-              "y": 149.85797119140625,
+              "y": 151.65797424316406,
               "width": 59.84375,
               "height": 7.53515625
             },
@@ -8696,17 +9151,17 @@
               [
                 1.0,
                 0.0,
-                521.489990234375
+                525.27001953125
               ],
               [
                 0.0,
                 1.0,
-                142.69000244140625
+                147.49000549316406
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 21.25
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "케어십 요금 표시",
             "characterStyleOverrides": [],
@@ -8738,13 +9193,13 @@
             }
           },
           {
-            "id": "3:4312",
+            "id": "3:5793",
             "name": "Google Shape;479;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4313",
+                "id": "3:5794",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -8993,7 +9448,7 @@
             }
           },
           {
-            "id": "3:4314",
+            "id": "3:5795",
             "name": "Google Shape;480;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -9016,16 +9471,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 167.66000366210938,
-              "y": 147.83999633789062,
-              "width": 50.88999938964844,
-              "height": 18.170000076293945
+              "x": 177.25999450683594,
+              "y": 152.63999938964844,
+              "width": 31.690000534057617,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 177.60891723632812,
-              "y": 150.00796508789062,
-              "width": 30.18359375,
-              "height": 7.53515625
+              "x": 181.60890197753906,
+              "y": 154.80796813964844,
+              "width": 23.13671875,
+              "height": 18.53515625
             },
             "constraints": {
               "vertical": "TOP",
@@ -9035,17 +9490,17 @@
               [
                 1.0,
                 0.0,
-                167.66000366210938
+                177.25999450683594
               ],
               [
                 0.0,
                 1.0,
-                147.83999633789062
+                152.63999938964844
               ]
             ],
             "size": {
-              "x": 50.88999938964844,
-              "y": 18.170000076293945
+              "x": 31.690000534057617,
+              "y": 16.0
             },
             "characters": "구매하기",
             "characterStyleOverrides": [],
@@ -9077,13 +9532,13 @@
             }
           },
           {
-            "id": "3:4315",
+            "id": "3:5796",
             "name": "Google Shape;516;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4316",
+                "id": "3:5797",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9176,15 +9631,15 @@
                   }
                 ],
                 "absoluteBoundingBox": {
-                  "x": 46.0,
-                  "y": 125.0,
+                  "x": 86.19999694824219,
+                  "y": 156.88999938964844,
                   "width": 53.599998474121094,
                   "height": 47.79999923706055
                 },
                 "absoluteRenderBounds": {
-                  "x": 46.0,
-                  "y": 125.0,
-                  "width": 54.099998474121094,
+                  "x": 86.19999694824219,
+                  "y": 156.88999938964844,
+                  "width": 54.09999084472656,
                   "height": 48.30000305175781
                 },
                 "constraints": {
@@ -9259,14 +9714,14 @@
             ],
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 42.0,
-              "y": 121.0,
+              "x": 82.19999694824219,
+              "y": 152.88999938964844,
               "width": 61.599998474121094,
               "height": 55.79999923706055
             },
             "absoluteRenderBounds": {
-              "x": 42.0,
-              "y": 121.0,
+              "x": 82.19999694824219,
+              "y": 152.88999938964844,
               "width": 61.599998474121094,
               "height": 55.80000305175781
             },
@@ -9278,12 +9733,12 @@
               [
                 1.0,
                 0.0,
-                42.0
+                82.19999694824219
               ],
               [
                 0.0,
                 1.0,
-                121.0
+                152.88999938964844
               ]
             ],
             "size": {
@@ -9297,13 +9752,13 @@
             }
           },
           {
-            "id": "3:4317",
+            "id": "3:5798",
             "name": "Google Shape;516;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4318",
+                "id": "3:5799",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9410,14 +9865,14 @@
                 "strokeAlign": "INSIDE",
                 "strokeGeometry": [],
                 "absoluteBoundingBox": {
-                  "x": 7.0,
-                  "y": 164.10000610351562,
+                  "x": 86.19999694824219,
+                  "y": 201.989990234375,
                   "width": 6.0,
                   "height": 5.400001525878906
                 },
                 "absoluteRenderBounds": {
-                  "x": 7.0,
-                  "y": 164.10000610351562,
+                  "x": 86.19999694824219,
+                  "y": 201.989990234375,
                   "width": 6.0,
                   "height": 5.399993896484375
                 },
@@ -9493,14 +9948,14 @@
             ],
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 3.0,
-              "y": 115.0,
+              "x": 82.19999694824219,
+              "y": 152.88999938964844,
               "width": 61.599998474121094,
               "height": 55.79999923706055
             },
             "absoluteRenderBounds": {
-              "x": 3.0,
-              "y": 115.0,
+              "x": 82.19999694824219,
+              "y": 152.88999938964844,
               "width": 61.599998474121094,
               "height": 55.80000305175781
             },
@@ -9512,12 +9967,12 @@
               [
                 1.0,
                 0.0,
-                3.0
+                82.19999694824219
               ],
               [
                 0.0,
                 1.0,
-                115.0
+                152.88999938964844
               ]
             ],
             "size": {
@@ -9531,13 +9986,13 @@
             }
           },
           {
-            "id": "3:4319",
+            "id": "3:5800",
             "name": "Google Shape;582;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4320",
+                "id": "3:5801",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9751,13 +10206,13 @@
             }
           },
           {
-            "id": "3:4321",
+            "id": "3:5802",
             "name": "Google Shape;582;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4322",
+                "id": "3:5803",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -9985,13 +10440,13 @@
             }
           },
           {
-            "id": "3:4323",
+            "id": "3:5804",
             "name": "Google Shape;522;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4324",
+                "id": "3:5805",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -10226,13 +10681,13 @@
             }
           },
           {
-            "id": "3:4325",
+            "id": "3:5806",
             "name": "Google Shape;522;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4326",
+                "id": "3:5807",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -10460,7 +10915,7 @@
             }
           },
           {
-            "id": "3:4327",
+            "id": "3:5808",
             "name": "Google Shape;531;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -10483,16 +10938,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 479.3299865722656,
-              "y": 177.05999755859375,
-              "width": 27.290000915527344,
-              "height": 16.959999084472656
+              "x": 488.92999267578125,
+              "y": 181.86000061035156,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 480.0917053222656,
-              "y": 180.21624755859375,
-              "width": 11.16796875,
-              "height": 5.94140625
+              "x": 489.31280517578125,
+              "y": 185.11000061035156,
+              "width": 5.421875,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -10502,17 +10957,17 @@
               [
                 1.0,
                 0.0,
-                479.3299865722656
+                488.92999267578125
               ],
               [
                 0.0,
                 1.0,
-                177.05999755859375
+                181.86000061035156
               ]
             ],
             "size": {
-              "x": 27.290000915527344,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "NO",
             "characterStyleOverrides": [],
@@ -10544,13 +10999,13 @@
             }
           },
           {
-            "id": "3:4328",
+            "id": "3:5809",
             "name": "Google Shape;520;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4329",
+                "id": "3:5810",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -10799,7 +11254,7 @@
             }
           },
           {
-            "id": "3:4330",
+            "id": "3:5811",
             "name": "Google Shape;521;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -10822,16 +11277,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 533.5599975585938,
-              "y": 185.5399932861328,
-              "width": 50.5099983215332,
-              "height": 16.959999084472656
+              "x": 543.1599731445312,
+              "y": 190.33999633789062,
+              "width": 31.309999465942383,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 541.4790649414062,
-              "y": 187.7079620361328,
-              "width": 34.7578125,
-              "height": 7.53515625
+              "x": 547.3189086914062,
+              "y": 192.50796508789062,
+              "width": 23.13665771484375,
+              "height": 18.53515625
             },
             "constraints": {
               "vertical": "TOP",
@@ -10841,17 +11296,17 @@
               [
                 1.0,
                 0.0,
-                533.5599975585938
+                543.1599731445312
               ],
               [
                 0.0,
                 1.0,
-                185.5399932861328
+                190.33999633789062
               ]
             ],
             "size": {
-              "x": 50.5099983215332,
-              "y": 16.959999084472656
+              "x": 31.309999465942383,
+              "y": 16.0
             },
             "characters": "구매하기?",
             "characterStyleOverrides": [],
@@ -10883,13 +11338,13 @@
             }
           },
           {
-            "id": "3:4331",
+            "id": "3:5812",
             "name": "Google Shape;532;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4332",
+                "id": "3:5813",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11103,13 +11558,13 @@
             }
           },
           {
-            "id": "3:4333",
+            "id": "3:5814",
             "name": "Google Shape;532;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4334",
+                "id": "3:5815",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11337,13 +11792,13 @@
             }
           },
           {
-            "id": "3:4335",
+            "id": "3:5816",
             "name": "Google Shape;533;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4336",
+                "id": "3:5817",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11578,13 +12033,13 @@
             }
           },
           {
-            "id": "3:4337",
+            "id": "3:5818",
             "name": "Google Shape;533;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4338",
+                "id": "3:5819",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -11812,7 +12267,7 @@
             }
           },
           {
-            "id": "3:4339",
+            "id": "3:5820",
             "name": "Google Shape;498;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -11835,16 +12290,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 167.0,
-              "y": 202.5,
-              "width": 54.93000030517578,
-              "height": 16.959999084472656
+              "x": 176.60000610351562,
+              "y": 207.3000030517578,
+              "width": 35.72999954223633,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 168.03125,
-              "y": 204.66796875,
-              "width": 38.46484375,
-              "height": 7.53515625
+              "x": 177.10391235351562,
+              "y": 209.4679718017578,
+              "width": 30.9921875,
+              "height": 18.296875
             },
             "constraints": {
               "vertical": "TOP",
@@ -11854,17 +12309,17 @@
               [
                 1.0,
                 0.0,
-                167.0
+                176.60000610351562
               ],
               [
                 0.0,
                 1.0,
-                202.5
+                207.3000030517578
               ]
             ],
             "size": {
-              "x": 54.93000030517578,
-              "y": 16.959999084472656
+              "x": 35.72999954223633,
+              "y": 16.0
             },
             "characters": "비회원주문",
             "characterStyleOverrides": [],
@@ -11896,7 +12351,7 @@
             }
           },
           {
-            "id": "3:4340",
+            "id": "3:5821",
             "name": "Google Shape;509;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -11919,16 +12374,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 306.1499938964844,
-              "y": 202.5,
-              "width": 57.83000183105469,
-              "height": 16.959999084472656
+              "x": 315.75,
+              "y": 207.3000030517578,
+              "width": 38.630001068115234,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 306.7359313964844,
-              "y": 204.66796875,
-              "width": 41.1953125,
-              "height": 7.53515625
+              "x": 316.3359375,
+              "y": 209.4679718017578,
+              "width": 33.72265625,
+              "height": 18.24609375
             },
             "constraints": {
               "vertical": "TOP",
@@ -11938,17 +12393,17 @@
               [
                 1.0,
                 0.0,
-                306.1499938964844
+                315.75
               ],
               [
                 0.0,
                 1.0,
-                202.5
+                207.3000030517578
               ]
             ],
             "size": {
-              "x": 57.83000183105469,
-              "y": 16.959999084472656
+              "x": 38.630001068115234,
+              "y": 16.0
             },
             "characters": "회원 로그인",
             "characterStyleOverrides": [],
@@ -11980,7 +12435,7 @@
             }
           },
           {
-            "id": "3:4341",
+            "id": "3:5822",
             "name": "Google Shape;591;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -12003,16 +12458,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 590.280029296875,
-              "y": 204.4499969482422,
-              "width": 28.299999237060547,
-              "height": 16.959999084472656
+              "x": 599.8800048828125,
+              "y": 209.25,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 590.354248046875,
-              "y": 207.6062469482422,
-              "width": 12.51953125,
-              "height": 5.94140625
+              "x": 599.9542236328125,
+              "y": 212.5,
+              "width": 8.21484375,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -12022,17 +12477,17 @@
               [
                 1.0,
                 0.0,
-                590.280029296875
+                599.8800048828125
               ],
               [
                 0.0,
                 1.0,
-                204.4499969482422
+                209.25
               ]
             ],
             "size": {
-              "x": 28.299999237060547,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "YES",
             "characterStyleOverrides": [],
@@ -12064,13 +12519,13 @@
             }
           },
           {
-            "id": "3:4342",
+            "id": "3:5823",
             "name": "Google Shape;512;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4343",
+                "id": "3:5824",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -12236,7 +12691,7 @@
                 }
               },
               {
-                "id": "3:4344",
+                "id": "3:5825",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -12485,7 +12940,7 @@
             }
           },
           {
-            "id": "3:4345",
+            "id": "3:5826",
             "name": "Google Shape;512;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -12508,14 +12963,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 40.95000076293945,
-              "y": 204.69000244140625,
-              "width": 90.5,
-              "height": 21.25
+              "x": 44.72999954223633,
+              "y": 209.49000549316406,
+              "width": 82.94000244140625,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 53.90703201293945,
-              "y": 211.85797119140625,
+              "y": 213.65797424316406,
               "width": 64.46875,
               "height": 7.53515625
             },
@@ -12527,17 +12982,17 @@
               [
                 1.0,
                 0.0,
-                40.95000076293945
+                44.72999954223633
               ],
               [
                 0.0,
                 1.0,
-                204.69000244140625
+                209.49000549316406
               ]
             ],
             "size": {
-              "x": 90.5,
-              "y": 21.25
+              "x": 82.94000244140625,
+              "y": 16.0
             },
             "characters": "일반제품 장바구니",
             "characterStyleOverrides": [],
@@ -12569,13 +13024,13 @@
             }
           },
           {
-            "id": "3:4346",
+            "id": "3:5827",
             "name": "Google Shape;514;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4347",
+                "id": "3:5828",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -12741,7 +13196,7 @@
                 }
               },
               {
-                "id": "3:4348",
+                "id": "3:5829",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -12990,13 +13445,13 @@
             }
           },
           {
-            "id": "3:4349",
+            "id": "3:5830",
             "name": "Google Shape;515;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4350",
+                "id": "3:5831",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13162,7 +13617,7 @@
                 }
               },
               {
-                "id": "3:4351",
+                "id": "3:5832",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13411,7 +13866,7 @@
             }
           },
           {
-            "id": "3:4352",
+            "id": "3:5833",
             "name": "Google Shape;515;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -13434,14 +13889,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 45.77000045776367,
-              "y": 228.6199951171875,
-              "width": 80.16999816894531,
-              "height": 21.520000457763672
+              "x": 49.54999923706055,
+              "y": 233.4199981689453,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 68.96046447753906,
-              "y": 235.6668701171875,
+              "y": 237.4668731689453,
               "width": 34.01953125,
               "height": 7.65625
             },
@@ -13453,17 +13908,17 @@
               [
                 1.0,
                 0.0,
-                45.77000045776367
+                49.54999923706055
               ],
               [
                 0.0,
                 1.0,
-                228.6199951171875
+                233.4199981689453
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 21.520000457763672
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "제품 추가",
             "characterStyleOverrides": [],
@@ -13495,13 +13950,13 @@
             }
           },
           {
-            "id": "3:4353",
+            "id": "3:5834",
             "name": "Google Shape;483;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4354",
+                "id": "3:5835",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -13750,7 +14205,7 @@
             }
           },
           {
-            "id": "3:4355",
+            "id": "3:5836",
             "name": "Google Shape;484;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -13773,14 +14228,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 211.4499969482422,
-              "y": 208.22999572753906,
-              "width": 91.41000366210938,
-              "height": 18.170000076293945
+              "x": 221.0500030517578,
+              "y": 213.02999877929688,
+              "width": 72.20999908447266,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 223.81906127929688,
-              "y": 210.39796447753906,
+              "y": 215.19796752929688,
               "width": 66.671875,
               "height": 7.53515625
             },
@@ -13792,17 +14247,17 @@
               [
                 1.0,
                 0.0,
-                211.4499969482422
+                221.0500030517578
               ],
               [
                 0.0,
                 1.0,
-                208.22999572753906
+                213.02999877929688
               ]
             ],
             "size": {
-              "x": 91.41000366210938,
-              "y": 18.170000076293945
+              "x": 72.20999908447266,
+              "y": 16.0
             },
             "characters": "로그인?비회원주문",
             "characterStyleOverrides": [],
@@ -13834,13 +14289,13 @@
             }
           },
           {
-            "id": "3:4356",
+            "id": "3:5837",
             "name": "Google Shape;497;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4357",
+                "id": "3:5838",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14054,13 +14509,13 @@
             }
           },
           {
-            "id": "3:4358",
+            "id": "3:5839",
             "name": "Google Shape;497;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4359",
+                "id": "3:5840",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14288,13 +14743,13 @@
             }
           },
           {
-            "id": "3:4360",
+            "id": "3:5841",
             "name": "Google Shape;507;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4361",
+                "id": "3:5842",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14508,13 +14963,13 @@
             }
           },
           {
-            "id": "3:4362",
+            "id": "3:5843",
             "name": "Google Shape;507;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4363",
+                "id": "3:5844",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14742,13 +15197,13 @@
             }
           },
           {
-            "id": "3:4364",
+            "id": "3:5845",
             "name": "Google Shape;524;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4365",
+                "id": "3:5846",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -14997,7 +15452,7 @@
             }
           },
           {
-            "id": "3:4366",
+            "id": "3:5847",
             "name": "Google Shape;525;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -15020,16 +15475,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 583.6099853515625,
-              "y": 236.6199951171875,
-              "width": 45.970001220703125,
-              "height": 18.170000076293945
+              "x": 593.2100219726562,
+              "y": 241.4199981689453,
+              "width": 26.770000457763672,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 593.259033203125,
-              "y": 238.7879638671875,
-              "width": 26.7578125,
-              "height": 7.24609375
+              "x": 599.0989379882812,
+              "y": 244.2442169189453,
+              "width": 14.9921875,
+              "height": 17.589828491210938
             },
             "constraints": {
               "vertical": "TOP",
@@ -15039,17 +15494,17 @@
               [
                 1.0,
                 0.0,
-                583.6099853515625
+                593.2100219726562
               ],
               [
                 0.0,
                 1.0,
-                236.6199951171875
+                241.4199981689453
               ]
             ],
             "size": {
-              "x": 45.970001220703125,
-              "y": 18.170000076293945
+              "x": 26.770000457763672,
+              "y": 16.0
             },
             "characters": "로그인?",
             "characterStyleOverrides": [],
@@ -15081,13 +15536,13 @@
             }
           },
           {
-            "id": "3:4367",
+            "id": "3:5848",
             "name": "Google Shape;527;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4368",
+                "id": "3:5849",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -15253,7 +15708,7 @@
                 }
               },
               {
-                "id": "3:4369",
+                "id": "3:5850",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -15502,7 +15957,7 @@
             }
           },
           {
-            "id": "3:4370",
+            "id": "3:5851",
             "name": "Google Shape;527;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -15525,14 +15980,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 415.3399963378906,
-              "y": 233.74000549316406,
-              "width": 90.5,
-              "height": 21.25
+              "x": 419.1199951171875,
+              "y": 238.5399932861328,
+              "width": 82.94000244140625,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 423.7345275878906,
-              "y": 240.90797424316406,
+              "y": 242.7079620361328,
               "width": 73.03125,
               "height": 7.53515625
             },
@@ -15544,17 +15999,17 @@
               [
                 1.0,
                 0.0,
-                415.3399963378906
+                419.1199951171875
               ],
               [
                 0.0,
                 1.0,
-                233.74000549316406
+                238.5399932861328
               ]
             ],
             "size": {
-              "x": 90.5,
-              "y": 21.25
+              "x": 82.94000244140625,
+              "y": 16.0
             },
             "characters": "케어솔루션 장바구니",
             "characterStyleOverrides": [],
@@ -15586,13 +16041,13 @@
             }
           },
           {
-            "id": "3:4371",
+            "id": "3:5852",
             "name": "Google Shape;529;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4372",
+                "id": "3:5853",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -15758,7 +16213,7 @@
                 }
               },
               {
-                "id": "3:4373",
+                "id": "3:5854",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16007,13 +16462,13 @@
             }
           },
           {
-            "id": "3:4374",
+            "id": "3:5855",
             "name": "Google Shape;530;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4375",
+                "id": "3:5856",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16179,7 +16634,7 @@
                 }
               },
               {
-                "id": "3:4376",
+                "id": "3:5857",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16428,7 +16883,7 @@
             }
           },
           {
-            "id": "3:4377",
+            "id": "3:5858",
             "name": "Google Shape;530;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -16451,14 +16906,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 420.1600036621094,
-              "y": 257.6700134277344,
-              "width": 80.16999816894531,
-              "height": 21.520000457763672
+              "x": 423.94000244140625,
+              "y": 262.4700012207031,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 429.9832763671875,
-              "y": 264.7168884277344,
+              "y": 266.5168762207031,
               "width": 60.79296875,
               "height": 7.65625
             },
@@ -16470,17 +16925,17 @@
               [
                 1.0,
                 0.0,
-                420.1600036621094
+                423.94000244140625
               ],
               [
                 0.0,
                 1.0,
-                257.6700134277344
+                262.4700012207031
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 21.520000457763672
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "케어십 제품 추가",
             "characterStyleOverrides": [],
@@ -16512,13 +16967,13 @@
             }
           },
           {
-            "id": "3:4378",
+            "id": "3:5859",
             "name": "Google Shape;499;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4379",
+                "id": "3:5860",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16684,7 +17139,7 @@
                 }
               },
               {
-                "id": "3:4380",
+                "id": "3:5861",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -16933,7 +17388,7 @@
             }
           },
           {
-            "id": "3:4381",
+            "id": "3:5862",
             "name": "Google Shape;499;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -16956,14 +17411,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 299.2900085449219,
-              "y": 236.24000549316406,
-              "width": 90.5,
-              "height": 20.729999542236328
+              "x": 303.07000732421875,
+              "y": 241.0399932861328,
+              "width": 82.94000244140625,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 320.0868835449219,
-              "y": 243.40797424316406,
+              "y": 245.2079620361328,
               "width": 48.828125,
               "height": 7.53515625
             },
@@ -16975,17 +17430,17 @@
               [
                 1.0,
                 0.0,
-                299.2900085449219
+                303.07000732421875
               ],
               [
                 0.0,
                 1.0,
-                236.24000549316406
+                241.0399932861328
               ]
             ],
             "size": {
-              "x": 90.5,
-              "y": 20.729999542236328
+              "x": 82.94000244140625,
+              "y": 16.0
             },
             "characters": "멤버십 로그인",
             "characterStyleOverrides": [],
@@ -17017,7 +17472,7 @@
             }
           },
           {
-            "id": "3:4382",
+            "id": "3:5863",
             "name": "Google Shape;540;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -17040,16 +17495,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 652.1500244140625,
-              "y": 241.66000366210938,
-              "width": 28.299999237060547,
-              "height": 16.959999084472656
+              "x": 661.75,
+              "y": 246.4600067138672,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 652.2242431640625,
-              "y": 244.81625366210938,
-              "width": 12.51953125,
-              "height": 5.94140625
+              "x": 661.82421875,
+              "y": 249.7100067138672,
+              "width": 8.21484375,
+              "height": 16.847671508789062
             },
             "constraints": {
               "vertical": "TOP",
@@ -17059,17 +17514,17 @@
               [
                 1.0,
                 0.0,
-                652.1500244140625
+                661.75
               ],
               [
                 0.0,
                 1.0,
-                241.66000366210938
+                246.4600067138672
               ]
             ],
             "size": {
-              "x": 28.299999237060547,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "YES",
             "characterStyleOverrides": [],
@@ -17101,13 +17556,13 @@
             }
           },
           {
-            "id": "3:4383",
+            "id": "3:5864",
             "name": "Google Shape;537;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4384",
+                "id": "3:5865",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -17342,13 +17797,13 @@
             }
           },
           {
-            "id": "3:4385",
+            "id": "3:5866",
             "name": "Google Shape;537;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4386",
+                "id": "3:5867",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -17576,13 +18031,13 @@
             }
           },
           {
-            "id": "3:4387",
+            "id": "3:5868",
             "name": "Google Shape;487;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4388",
+                "id": "3:5869",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -17748,7 +18203,7 @@
                 }
               },
               {
-                "id": "3:4389",
+                "id": "3:5870",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -17997,7 +18452,7 @@
             }
           },
           {
-            "id": "3:4390",
+            "id": "3:5871",
             "name": "Google Shape;487;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -18020,16 +18475,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 140.61000061035156,
-              "y": 245.6199951171875,
-              "width": 90.5,
-              "height": 21.25
+              "x": 144.38999938964844,
+              "y": 250.4199981689453,
+              "width": 82.94000244140625,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 147.04750061035156,
-              "y": 252.7879638671875,
+              "y": 254.5879669189453,
               "width": 78.12109375,
-              "height": 8.13671875
+              "height": 8.136703491210938
             },
             "constraints": {
               "vertical": "TOP",
@@ -18039,17 +18494,17 @@
               [
                 1.0,
                 0.0,
-                140.61000061035156
+                144.38999938964844
               ],
               [
                 0.0,
                 1.0,
-                245.6199951171875
+                250.4199981689453
               ]
             ],
             "size": {
-              "x": 90.5,
-              "y": 21.25
+              "x": 82.94000244140625,
+              "y": 16.0
             },
             "characters": "비회원 주문(구매하기)",
             "characterStyleOverrides": [],
@@ -18081,13 +18536,13 @@
             }
           },
           {
-            "id": "3:4391",
+            "id": "3:5872",
             "name": "Google Shape;488;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4392",
+                "id": "3:5873",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18253,7 +18708,7 @@
                 }
               },
               {
-                "id": "3:4393",
+                "id": "3:5874",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18502,13 +18957,13 @@
             }
           },
           {
-            "id": "3:4394",
+            "id": "3:5875",
             "name": "Google Shape;493;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4395",
+                "id": "3:5876",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18674,7 +19129,7 @@
                 }
               },
               {
-                "id": "3:4396",
+                "id": "3:5877",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -18923,7 +19378,7 @@
             }
           },
           {
-            "id": "3:4397",
+            "id": "3:5878",
             "name": "Google Shape;493;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -18946,14 +19401,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 145.36000061035156,
-              "y": 273.4599914550781,
-              "width": 80.16999816894531,
-              "height": 21.520000457763672
+              "x": 149.13999938964844,
+              "y": 278.260009765625,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 155.66375732421875,
-              "y": 280.6279602050781,
+              "y": 282.427978515625,
               "width": 59.44140625,
               "height": 7.53515625
             },
@@ -18965,17 +19420,17 @@
               [
                 1.0,
                 0.0,
-                145.36000061035156
+                149.13999938964844
               ],
               [
                 0.0,
                 1.0,
-                273.4599914550781
+                278.260009765625
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 21.520000457763672
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "비회원 주문 동의",
             "characterStyleOverrides": [],
@@ -19007,13 +19462,13 @@
             }
           },
           {
-            "id": "3:4398",
+            "id": "3:5879",
             "name": "Google Shape;494;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4399",
+                "id": "3:5880",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19179,7 +19634,7 @@
                 }
               },
               {
-                "id": "3:4400",
+                "id": "3:5881",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19428,7 +19883,7 @@
             }
           },
           {
-            "id": "3:4401",
+            "id": "3:5882",
             "name": "Google Shape;494;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -19451,14 +19906,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 145.47000122070312,
-              "y": 297.739990234375,
-              "width": 79.33999633789062,
-              "height": 20.729999542236328
+              "x": 149.25,
+              "y": 302.5400085449219,
+              "width": 71.77999877929688,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 154.83140563964844,
-              "y": 304.907958984375,
+              "y": 306.7079772949219,
               "width": 60.6171875,
               "height": 7.53515625
             },
@@ -19470,17 +19925,17 @@
               [
                 1.0,
                 0.0,
-                145.47000122070312
+                149.25
               ],
               [
                 0.0,
                 1.0,
-                297.739990234375
+                302.5400085449219
               ]
             ],
             "size": {
-              "x": 79.33999633789062,
-              "y": 20.729999542236328
+              "x": 71.77999877929688,
+              "y": 16.0
             },
             "characters": "휴대폰 본인 인증",
             "characterStyleOverrides": [],
@@ -19512,13 +19967,13 @@
             }
           },
           {
-            "id": "3:4402",
+            "id": "3:5883",
             "name": "Google Shape;489;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4403",
+                "id": "3:5884",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19684,7 +20139,7 @@
                 }
               },
               {
-                "id": "3:4404",
+                "id": "3:5885",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -19933,7 +20388,7 @@
             }
           },
           {
-            "id": "3:4405",
+            "id": "3:5886",
             "name": "Google Shape;489;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -19956,14 +20411,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 145.36000061035156,
-              "y": 322.3999938964844,
-              "width": 80.16999816894531,
-              "height": 21.520000457763672
+              "x": 149.13999938964844,
+              "y": 327.20001220703125,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 164.54266357421875,
-              "y": 329.5679626464844,
+              "y": 331.36798095703125,
               "width": 41.8046875,
               "height": 7.53515625
             },
@@ -19975,17 +20430,17 @@
               [
                 1.0,
                 0.0,
-                145.36000061035156
+                149.13999938964844
               ],
               [
                 0.0,
                 1.0,
-                322.3999938964844
+                327.20001220703125
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 21.520000457763672
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "주문자 정보",
             "characterStyleOverrides": [],
@@ -20017,13 +20472,13 @@
             }
           },
           {
-            "id": "3:4406",
+            "id": "3:5887",
             "name": "Google Shape;490;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4407",
+                "id": "3:5888",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20189,7 +20644,7 @@
                 }
               },
               {
-                "id": "3:4408",
+                "id": "3:5889",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20438,7 +20893,7 @@
             }
           },
           {
-            "id": "3:4409",
+            "id": "3:5890",
             "name": "Google Shape;490;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -20461,14 +20916,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 145.36000061035156,
-              "y": 347.19000244140625,
-              "width": 80.16999816894531,
-              "height": 20.889999389648438
+              "x": 149.13999938964844,
+              "y": 351.989990234375,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 160.54266357421875,
-              "y": 354.29547119140625,
+              "y": 356.095458984375,
               "width": 49.27734375,
               "height": 7.59765625
             },
@@ -20480,17 +20935,17 @@
               [
                 1.0,
                 0.0,
-                145.36000061035156
+                149.13999938964844
               ],
               [
                 0.0,
                 1.0,
-                347.19000244140625
+                351.989990234375
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 20.889999389648438
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "주문제품 확인",
             "characterStyleOverrides": [],
@@ -20522,13 +20977,13 @@
             }
           },
           {
-            "id": "3:4410",
+            "id": "3:5891",
             "name": "Google Shape;491;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4411",
+                "id": "3:5892",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20694,7 +21149,7 @@
                 }
               },
               {
-                "id": "3:4412",
+                "id": "3:5893",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -20943,7 +21398,7 @@
             }
           },
           {
-            "id": "3:4413",
+            "id": "3:5894",
             "name": "Google Shape;491;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -20966,14 +21421,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 145.36000061035156,
-              "y": 371.1099853515625,
-              "width": 80.16999816894531,
-              "height": 20.889999389648438
+              "x": 149.13999938964844,
+              "y": 375.9100036621094,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 162.30047607421875,
-              "y": 378.2779541015625,
+              "y": 380.0779724121094,
               "width": 45.9296875,
               "height": 7.53515625
             },
@@ -20985,17 +21440,17 @@
               [
                 1.0,
                 0.0,
-                145.36000061035156
+                149.13999938964844
               ],
               [
                 0.0,
                 1.0,
-                371.1099853515625
+                375.9100036621094
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 20.889999389648438
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "PG 이용 결제",
             "characterStyleOverrides": [],
@@ -21027,13 +21482,13 @@
             }
           },
           {
-            "id": "3:4414",
+            "id": "3:5895",
             "name": "Google Shape;492;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4415",
+                "id": "3:5896",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -21199,7 +21654,7 @@
                 }
               },
               {
-                "id": "3:4416",
+                "id": "3:5897",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -21448,7 +21903,7 @@
             }
           },
           {
-            "id": "3:4417",
+            "id": "3:5898",
             "name": "Google Shape;492;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -21471,14 +21926,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 145.36000061035156,
-              "y": 395.45001220703125,
-              "width": 80.16999816894531,
-              "height": 20.889999389648438
+              "x": 149.13999938964844,
+              "y": 400.25,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 169.94891357421875,
-              "y": 402.61798095703125,
+              "y": 404.41796875,
               "width": 30.9921875,
               "height": 7.53515625
             },
@@ -21490,17 +21945,17 @@
               [
                 1.0,
                 0.0,
-                145.36000061035156
+                149.13999938964844
               ],
               [
                 0.0,
                 1.0,
-                395.45001220703125
+                400.25
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 20.889999389648438
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "주문완료",
             "characterStyleOverrides": [],
@@ -21532,13 +21987,13 @@
             }
           },
           {
-            "id": "3:4418",
+            "id": "3:5899",
             "name": "Google Shape;538;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4419",
+                "id": "3:5900",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -21752,13 +22207,13 @@
             }
           },
           {
-            "id": "3:4420",
+            "id": "3:5901",
             "name": "Google Shape;538;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4421",
+                "id": "3:5902",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -21986,13 +22441,13 @@
             }
           },
           {
-            "id": "3:4422",
+            "id": "3:5903",
             "name": "Google Shape;541;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4423",
+                "id": "3:5904",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -22227,13 +22682,13 @@
             }
           },
           {
-            "id": "3:4424",
+            "id": "3:5905",
             "name": "Google Shape;541;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4425",
+                "id": "3:5906",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -22461,7 +22916,7 @@
             }
           },
           {
-            "id": "3:4426",
+            "id": "3:5907",
             "name": "Google Shape;539;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -22484,16 +22939,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 570.6199951171875,
-              "y": 249.19000244140625,
-              "width": 27.290000915527344,
-              "height": 16.959999084472656
+              "x": 580.219970703125,
+              "y": 253.99000549316406,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 571.3817138671875,
-              "y": 252.34625244140625,
-              "width": 11.16796875,
-              "height": 5.94140625
+              "x": 580.602783203125,
+              "y": 257.239990234375,
+              "width": 5.421875,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -22503,17 +22958,17 @@
               [
                 1.0,
                 0.0,
-                570.6199951171875
+                580.219970703125
               ],
               [
                 0.0,
                 1.0,
-                249.19000244140625
+                253.99000549316406
               ]
             ],
             "size": {
-              "x": 27.290000915527344,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "NO",
             "characterStyleOverrides": [],
@@ -22545,7 +23000,7 @@
             }
           },
           {
-            "id": "3:4427",
+            "id": "3:5908",
             "name": "Google Shape;510;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -22568,16 +23023,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 341.44000244140625,
-              "y": 256.19000244140625,
-              "width": 68.80999755859375,
-              "height": 16.959999084472656
+              "x": 351.0400085449219,
+              "y": 260.989990234375,
+              "width": 49.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 341.94390869140625,
-              "y": 258.35797119140625,
-              "width": 51.890625,
-              "height": 7.53515625
+              "x": 351.5361022949219,
+              "y": 263.157958984375,
+              "width": 41.8125,
+              "height": 18.53515625
             },
             "constraints": {
               "vertical": "TOP",
@@ -22587,17 +23042,17 @@
               [
                 1.0,
                 0.0,
-                341.44000244140625
+                351.0400085449219
               ],
               [
                 0.0,
                 1.0,
-                256.19000244140625
+                260.989990234375
               ]
             ],
             "size": {
-              "x": 68.80999755859375,
-              "y": 16.959999084472656
+              "x": 49.61000061035156,
+              "y": 16.0
             },
             "characters": "로그인 성공 시",
             "characterStyleOverrides": [],
@@ -22629,13 +23084,13 @@
             }
           },
           {
-            "id": "3:4428",
+            "id": "3:5909",
             "name": "Google Shape;508;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4429",
+                "id": "3:5910",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -22870,13 +23325,13 @@
             }
           },
           {
-            "id": "3:4430",
+            "id": "3:5911",
             "name": "Google Shape;508;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4431",
+                "id": "3:5912",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -23104,13 +23559,13 @@
             }
           },
           {
-            "id": "3:4432",
+            "id": "3:5913",
             "name": "Google Shape;501;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4433",
+                "id": "3:5914",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -23276,7 +23731,7 @@
                 }
               },
               {
-                "id": "3:4434",
+                "id": "3:5915",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -23525,7 +23980,7 @@
             }
           },
           {
-            "id": "3:4435",
+            "id": "3:5916",
             "name": "Google Shape;501;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -23548,14 +24003,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 298.1600036621094,
-              "y": 271.5299987792969,
-              "width": 90.5,
-              "height": 21.25
+              "x": 301.94000244140625,
+              "y": 276.3299865722656,
+              "width": 82.94000244140625,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 318.5896911621094,
-              "y": 278.6979675292969,
+              "y": 280.4979553222656,
               "width": 48.9140625,
               "height": 7.53515625
             },
@@ -23567,17 +24022,17 @@
               [
                 1.0,
                 0.0,
-                298.1600036621094
+                301.94000244140625
               ],
               [
                 0.0,
                 1.0,
-                271.5299987792969
+                276.3299865722656
               ]
             ],
             "size": {
-              "x": 90.5,
-              "y": 21.25
+              "x": 82.94000244140625,
+              "y": 16.0
             },
             "characters": "회원 구매하기",
             "characterStyleOverrides": [],
@@ -23609,13 +24064,13 @@
             }
           },
           {
-            "id": "3:4436",
+            "id": "3:5917",
             "name": "Google Shape;502;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4437",
+                "id": "3:5918",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -23781,7 +24236,7 @@
                 }
               },
               {
-                "id": "3:4438",
+                "id": "3:5919",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -24030,13 +24485,13 @@
             }
           },
           {
-            "id": "3:4439",
+            "id": "3:5920",
             "name": "Google Shape;536;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4440",
+                "id": "3:5921",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -24202,7 +24657,7 @@
                 }
               },
               {
-                "id": "3:4441",
+                "id": "3:5922",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -24451,7 +24906,7 @@
             }
           },
           {
-            "id": "3:4442",
+            "id": "3:5923",
             "name": "Google Shape;536;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -24474,14 +24929,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 516.6599731445312,
-              "y": 274.25,
-              "width": 90.5,
-              "height": 20.729999542236328
+              "x": 520.4400024414062,
+              "y": 279.04998779296875,
+              "width": 82.94000244140625,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 537.4568481445312,
-              "y": 281.41796875,
+              "x": 537.4569091796875,
+              "y": 283.21795654296875,
               "width": 48.828125,
               "height": 7.53515625
             },
@@ -24493,17 +24948,17 @@
               [
                 1.0,
                 0.0,
-                516.6599731445312
+                520.4400024414062
               ],
               [
                 0.0,
                 1.0,
-                274.25
+                279.04998779296875
               ]
             ],
             "size": {
-              "x": 90.5,
-              "y": 20.729999542236328
+              "x": 82.94000244140625,
+              "y": 16.0
             },
             "characters": "멤버십 로그인",
             "characterStyleOverrides": [],
@@ -24535,7 +24990,7 @@
             }
           },
           {
-            "id": "3:4443",
+            "id": "3:5924",
             "name": "TextBox 71",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -24545,9 +25000,9 @@
                 "blendMode": "NORMAL",
                 "type": "SOLID",
                 "color": {
-                  "r": 0.11999999731779099,
-                  "g": 0.11999999731779099,
-                  "b": 0.11999999731779099,
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
                   "a": 1.0
                 }
               }
@@ -24643,13 +25098,13 @@
             }
           },
           {
-            "id": "3:4444",
+            "id": "3:5925",
             "name": "Google Shape;503;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4445",
+                "id": "3:5926",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -24815,7 +25270,7 @@
                 }
               },
               {
-                "id": "3:4446",
+                "id": "3:5927",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25064,7 +25519,7 @@
             }
           },
           {
-            "id": "3:4447",
+            "id": "3:5928",
             "name": "Google Shape;503;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -25087,14 +25542,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 302.8900146484375,
-              "y": 295.55999755859375,
-              "width": 80.16999816894531,
-              "height": 21.520000457763672
+              "x": 306.6700134277344,
+              "y": 300.3599853515625,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 322.0726623535156,
-              "y": 302.72796630859375,
+              "y": 304.5279541015625,
               "width": 41.8046875,
               "height": 7.53515625
             },
@@ -25106,17 +25561,17 @@
               [
                 1.0,
                 0.0,
-                302.8900146484375
+                306.6700134277344
               ],
               [
                 0.0,
                 1.0,
-                295.55999755859375
+                300.3599853515625
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 21.520000457763672
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "주문자 정보",
             "characterStyleOverrides": [],
@@ -25148,13 +25603,13 @@
             }
           },
           {
-            "id": "3:4448",
+            "id": "3:5929",
             "name": "Google Shape;543;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4449",
+                "id": "3:5930",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25320,7 +25775,7 @@
                 }
               },
               {
-                "id": "3:4450",
+                "id": "3:5931",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25569,13 +26024,13 @@
             }
           },
           {
-            "id": "3:4451",
+            "id": "3:5932",
             "name": "Google Shape;544;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4452",
+                "id": "3:5933",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25741,7 +26196,7 @@
                 }
               },
               {
-                "id": "3:4453",
+                "id": "3:5934",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -25990,7 +26445,7 @@
             }
           },
           {
-            "id": "3:4454",
+            "id": "3:5935",
             "name": "Google Shape;544;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -26013,14 +26468,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 629.9600219726562,
-              "y": 321.260009765625,
-              "width": 76.05999755859375,
-              "height": 21.25
+              "x": 633.739990234375,
+              "y": 326.05999755859375,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 648.540771484375,
-              "y": 328.427978515625,
+              "y": 330.22796630859375,
               "width": 38.9453125,
               "height": 7.53515625
             },
@@ -26032,17 +26487,17 @@
               [
                 1.0,
                 0.0,
-                629.9600219726562
+                633.739990234375
               ],
               [
                 0.0,
                 1.0,
-                321.260009765625
+                326.05999755859375
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 21.25
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "계약자정보",
             "characterStyleOverrides": [],
@@ -26074,13 +26529,13 @@
             }
           },
           {
-            "id": "3:4455",
+            "id": "3:5936",
             "name": "Google Shape;545;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4456",
+                "id": "3:5937",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -26246,7 +26701,7 @@
                 }
               },
               {
-                "id": "3:4457",
+                "id": "3:5938",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -26495,7 +26950,7 @@
             }
           },
           {
-            "id": "3:4458",
+            "id": "3:5939",
             "name": "Google Shape;545;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -26518,14 +26973,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 629.9600219726562,
-              "y": 350.0400085449219,
-              "width": 76.05999755859375,
-              "height": 21.25
+              "x": 633.739990234375,
+              "y": 354.8399963378906,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 641.146240234375,
-              "y": 352.2079772949219,
+              "y": 354.0079650878906,
               "width": 53.7109375,
               "height": 19.13671875
             },
@@ -26537,17 +26992,17 @@
               [
                 1.0,
                 0.0,
-                629.9600219726562
+                633.739990234375
               ],
               [
                 0.0,
                 1.0,
-                350.0400085449219
+                354.8399963378906
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 21.25
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "신용정보조회\n(SAFE KEY발급)",
             "characterStyleOverrides": [],
@@ -26581,13 +27036,13 @@
             }
           },
           {
-            "id": "3:4459",
+            "id": "3:5940",
             "name": "Google Shape;504;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4460",
+                "id": "3:5941",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -26753,7 +27208,7 @@
                 }
               },
               {
-                "id": "3:4461",
+                "id": "3:5942",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27002,7 +27457,7 @@
             }
           },
           {
-            "id": "3:4462",
+            "id": "3:5943",
             "name": "Google Shape;504;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -27025,14 +27480,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 302.8900146484375,
-              "y": 320.3500061035156,
-              "width": 80.16999816894531,
-              "height": 20.889999389648438
+              "x": 306.6700134277344,
+              "y": 325.1499938964844,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 318.0726623535156,
-              "y": 327.4554748535156,
+              "y": 329.2554626464844,
               "width": 49.27734375,
               "height": 7.59765625
             },
@@ -27044,17 +27499,17 @@
               [
                 1.0,
                 0.0,
-                302.8900146484375
+                306.6700134277344
               ],
               [
                 0.0,
                 1.0,
-                320.3500061035156
+                325.1499938964844
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 20.889999389648438
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "주문제품 확인",
             "characterStyleOverrides": [],
@@ -27086,13 +27541,13 @@
             }
           },
           {
-            "id": "3:4463",
+            "id": "3:5944",
             "name": "Google Shape;505;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4464",
+                "id": "3:5945",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27258,7 +27713,7 @@
                 }
               },
               {
-                "id": "3:4465",
+                "id": "3:5946",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27507,7 +27962,7 @@
             }
           },
           {
-            "id": "3:4466",
+            "id": "3:5947",
             "name": "Google Shape;505;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -27530,14 +27985,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 302.8900146484375,
-              "y": 344.260009765625,
-              "width": 80.16999816894531,
-              "height": 20.889999389648438
+              "x": 306.6700134277344,
+              "y": 349.05999755859375,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 319.8304748535156,
-              "y": 351.427978515625,
+              "y": 353.22796630859375,
               "width": 45.9296875,
               "height": 7.53515625
             },
@@ -27549,17 +28004,17 @@
               [
                 1.0,
                 0.0,
-                302.8900146484375
+                306.6700134277344
               ],
               [
                 0.0,
                 1.0,
-                344.260009765625
+                349.05999755859375
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 20.889999389648438
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "PG 이용 결제",
             "characterStyleOverrides": [],
@@ -27591,13 +28046,13 @@
             }
           },
           {
-            "id": "3:4467",
+            "id": "3:5948",
             "name": "Google Shape;570;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4468",
+                "id": "3:5949",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -27832,13 +28287,13 @@
             }
           },
           {
-            "id": "3:4469",
+            "id": "3:5950",
             "name": "Google Shape;570;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4470",
+                "id": "3:5951",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -28066,13 +28521,13 @@
             }
           },
           {
-            "id": "3:4471",
+            "id": "3:5952",
             "name": "Google Shape;506;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4472",
+                "id": "3:5953",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -28238,7 +28693,7 @@
                 }
               },
               {
-                "id": "3:4473",
+                "id": "3:5954",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -28487,7 +28942,7 @@
             }
           },
           {
-            "id": "3:4474",
+            "id": "3:5955",
             "name": "Google Shape;506;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -28510,14 +28965,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 302.8900146484375,
-              "y": 368.6000061035156,
-              "width": 80.16999816894531,
-              "height": 20.889999389648438
+              "x": 306.6700134277344,
+              "y": 373.3999938964844,
+              "width": 72.61000061035156,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 327.4789123535156,
-              "y": 375.7679748535156,
+              "y": 377.5679626464844,
               "width": 30.9921875,
               "height": 7.53515625
             },
@@ -28529,17 +28984,17 @@
               [
                 1.0,
                 0.0,
-                302.8900146484375
+                306.6700134277344
               ],
               [
                 0.0,
                 1.0,
-                368.6000061035156
+                373.3999938964844
               ]
             ],
             "size": {
-              "x": 80.16999816894531,
-              "y": 20.889999389648438
+              "x": 72.61000061035156,
+              "y": 16.0
             },
             "characters": "주문완료",
             "characterStyleOverrides": [],
@@ -28571,13 +29026,13 @@
             }
           },
           {
-            "id": "3:4475",
+            "id": "3:5956",
             "name": "Google Shape;566;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4476",
+                "id": "3:5957",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -28812,13 +29267,13 @@
             }
           },
           {
-            "id": "3:4477",
+            "id": "3:5958",
             "name": "Google Shape;566;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4478",
+                "id": "3:5959",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29046,13 +29501,13 @@
             }
           },
           {
-            "id": "3:4479",
+            "id": "3:5960",
             "name": "Google Shape;549;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4480",
+                "id": "3:5961",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29287,13 +29742,13 @@
             }
           },
           {
-            "id": "3:4481",
+            "id": "3:5962",
             "name": "Google Shape;549;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4482",
+                "id": "3:5963",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29521,7 +29976,7 @@
             }
           },
           {
-            "id": "3:4483",
+            "id": "3:5964",
             "name": "Google Shape;568;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -29544,16 +29999,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 588.7000122070312,
-              "y": 395.44000244140625,
-              "width": 30.700000762939453,
-              "height": 16.959999084472656
+              "x": 598.2999877929688,
+              "y": 400.239990234375,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 589.3093872070312,
-              "y": 397.60797119140625,
-              "width": 14.88671875,
-              "height": 7.42578125
+              "x": 598.8038940429688,
+              "y": 402.407958984375,
+              "width": 6.9921875,
+              "height": 18.4140625
             },
             "constraints": {
               "vertical": "TOP",
@@ -29563,17 +30018,17 @@
               [
                 1.0,
                 0.0,
-                588.7000122070312
+                598.2999877929688
               ],
               [
                 0.0,
                 1.0,
-                395.44000244140625
+                400.239990234375
               ]
             ],
             "size": {
-              "x": 30.700000762939453,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "성공",
             "characterStyleOverrides": [],
@@ -29605,13 +30060,13 @@
             }
           },
           {
-            "id": "3:4484",
+            "id": "3:5965",
             "name": "Google Shape;547;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4485",
+                "id": "3:5966",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -29860,7 +30315,7 @@
             }
           },
           {
-            "id": "3:4486",
+            "id": "3:5967",
             "name": "Google Shape;548;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -29883,16 +30338,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 648.8499755859375,
-              "y": 402.82000732421875,
-              "width": 36.880001068115234,
-              "height": 18.170000076293945
+              "x": 658.4500122070312,
+              "y": 407.6199951171875,
+              "width": 17.68000030517578,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 658.0595092773438,
-              "y": 404.98797607421875,
-              "width": 18.65234375,
-              "height": 7.42578125
+              "x": 661.9541015625,
+              "y": 409.7879638671875,
+              "width": 10.7578125,
+              "height": 18.4140625
             },
             "constraints": {
               "vertical": "TOP",
@@ -29902,17 +30357,17 @@
               [
                 1.0,
                 0.0,
-                648.8499755859375
+                658.4500122070312
               ],
               [
                 0.0,
                 1.0,
-                402.82000732421875
+                407.6199951171875
               ]
             ],
             "size": {
-              "x": 36.880001068115234,
-              "y": 18.170000076293945
+              "x": 17.68000030517578,
+              "y": 16.0
             },
             "characters": "성공?",
             "characterStyleOverrides": [],
@@ -29944,13 +30399,13 @@
             }
           },
           {
-            "id": "3:4487",
+            "id": "3:5968",
             "name": "Google Shape;558;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4488",
+                "id": "3:5969",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -30164,13 +30619,13 @@
             }
           },
           {
-            "id": "3:4489",
+            "id": "3:5970",
             "name": "Google Shape;558;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4490",
+                "id": "3:5971",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -30398,7 +30853,7 @@
             }
           },
           {
-            "id": "3:4491",
+            "id": "3:5972",
             "name": "Google Shape;569;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -30421,16 +30876,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 421.3299865722656,
-              "y": 419.67999267578125,
-              "width": 28.299999237060547,
-              "height": 16.959999084472656
+              "x": 430.92999267578125,
+              "y": 424.4800109863281,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 421.4042053222656,
-              "y": 422.83624267578125,
-              "width": 12.51953125,
-              "height": 5.94140625
+              "x": 431.00421142578125,
+              "y": 427.7300109863281,
+              "width": 8.21484375,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -30440,17 +30895,17 @@
               [
                 1.0,
                 0.0,
-                421.3299865722656
+                430.92999267578125
               ],
               [
                 0.0,
                 1.0,
-                419.67999267578125
+                424.4800109863281
               ]
             ],
             "size": {
-              "x": 28.299999237060547,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "YES",
             "characterStyleOverrides": [],
@@ -30482,13 +30937,13 @@
             }
           },
           {
-            "id": "3:4492",
+            "id": "3:5973",
             "name": "Google Shape;556;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4493",
+                "id": "3:5974",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -30737,7 +31192,7 @@
             }
           },
           {
-            "id": "3:4494",
+            "id": "3:5975",
             "name": "Google Shape;557;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -30760,14 +31215,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 457.489990234375,
-              "y": 426.760009765625,
-              "width": 85.4800033569336,
-              "height": 18.170000076293945
+              "x": 467.0899963378906,
+              "y": 431.55999755859375,
+              "width": 66.27999877929688,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 469.48779296875,
-              "y": 428.927978515625,
+              "y": 433.72796630859375,
               "width": 61.5703125,
               "height": 7.53515625
             },
@@ -30779,17 +31234,17 @@
               [
                 1.0,
                 0.0,
-                457.489990234375
+                467.0899963378906
               ],
               [
                 0.0,
                 1.0,
-                426.760009765625
+                431.55999755859375
               ]
             ],
             "size": {
-              "x": 85.4800033569336,
-              "y": 18.170000076293945
+              "x": 66.27999877929688,
+              "y": 16.0
             },
             "characters": "서비스 가능여부?",
             "characterStyleOverrides": [],
@@ -30821,7 +31276,7 @@
             }
           },
           {
-            "id": "3:4495",
+            "id": "3:5976",
             "name": "Google Shape;552;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -30844,16 +31299,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 663.3099975585938,
-              "y": 424.8399963378906,
-              "width": 30.700000762939453,
-              "height": 16.959999084472656
+              "x": 672.9099731445312,
+              "y": 429.6400146484375,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 663.8959350585938,
-              "y": 427.0079650878906,
-              "width": 14.3359375,
-              "height": 7.53515625
+              "x": 673.3670043945312,
+              "y": 431.8079833984375,
+              "width": 6.46484375,
+              "height": 18.53515625
             },
             "constraints": {
               "vertical": "TOP",
@@ -30863,17 +31318,17 @@
               [
                 1.0,
                 0.0,
-                663.3099975585938
+                672.9099731445312
               ],
               [
                 0.0,
                 1.0,
-                424.8399963378906
+                429.6400146484375
               ]
             ],
             "size": {
-              "x": 30.700000762939453,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "실패",
             "characterStyleOverrides": [],
@@ -30905,13 +31360,13 @@
             }
           },
           {
-            "id": "3:4496",
+            "id": "3:5977",
             "name": "Google Shape;565;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4497",
+                "id": "3:5978",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31125,13 +31580,13 @@
             }
           },
           {
-            "id": "3:4498",
+            "id": "3:5979",
             "name": "Google Shape;565;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4499",
+                "id": "3:5980",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31359,13 +31814,13 @@
             }
           },
           {
-            "id": "3:4500",
+            "id": "3:5981",
             "name": "Google Shape;560;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4501",
+                "id": "3:5982",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31531,7 +31986,7 @@
                 }
               },
               {
-                "id": "3:4502",
+                "id": "3:5983",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31780,13 +32235,13 @@
             }
           },
           {
-            "id": "3:4503",
+            "id": "3:5984",
             "name": "Google Shape;561;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4504",
+                "id": "3:5985",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -31952,7 +32407,7 @@
                 }
               },
               {
-                "id": "3:4505",
+                "id": "3:5986",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32201,7 +32656,7 @@
             }
           },
           {
-            "id": "3:4506",
+            "id": "3:5987",
             "name": "Google Shape;561;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -32224,15 +32679,15 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 362.3999938964844,
-              "y": 448.3599853515625,
-              "width": 76.05999755859375,
-              "height": 23.040000915527344
+              "x": 366.17999267578125,
+              "y": 453.1600036621094,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 365.46905517578125,
-              "y": 450.4654541015625,
-              "width": 69.5703125,
+              "x": 370.87530517578125,
+              "y": 452.2654724121094,
+              "width": 59.3203125,
               "height": 18.59765625
             },
             "constraints": {
@@ -32243,17 +32698,17 @@
               [
                 1.0,
                 0.0,
-                362.3999938964844
+                366.17999267578125
               ],
               [
                 0.0,
                 1.0,
-                448.3599853515625
+                453.1600036621094
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 23.040000915527344
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "월납부금액 확인, 정기결제 동의",
             "characterStyleOverrides": [],
@@ -32285,13 +32740,13 @@
             }
           },
           {
-            "id": "3:4507",
+            "id": "3:5988",
             "name": "Google Shape;562;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4508",
+                "id": "3:5989",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32457,7 +32912,7 @@
                 }
               },
               {
-                "id": "3:4509",
+                "id": "3:5990",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32706,7 +33161,7 @@
             }
           },
           {
-            "id": "3:4510",
+            "id": "3:5991",
             "name": "Google Shape;562;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -32729,14 +33184,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 362.3999938964844,
-              "y": 473.69000244140625,
-              "width": 76.05999755859375,
-              "height": 17.100000381469727
+              "x": 366.17999267578125,
+              "y": 478.489990234375,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 385.57452392578125,
-              "y": 478.85797119140625,
+              "y": 482.657958984375,
               "width": 29.6328125,
               "height": 7.53515625
             },
@@ -32748,17 +33203,17 @@
               [
                 1.0,
                 0.0,
-                362.3999938964844
+                366.17999267578125
               ],
               [
                 0.0,
                 1.0,
-                473.69000244140625
+                478.489990234375
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 17.100000381469727
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "납부방법",
             "characterStyleOverrides": [],
@@ -32790,13 +33245,13 @@
             }
           },
           {
-            "id": "3:4511",
+            "id": "3:5992",
             "name": "Google Shape;563;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4512",
+                "id": "3:5993",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -32962,7 +33417,7 @@
                 }
               },
               {
-                "id": "3:4513",
+                "id": "3:5994",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -33211,7 +33666,7 @@
             }
           },
           {
-            "id": "3:4514",
+            "id": "3:5995",
             "name": "Google Shape;563;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -33234,14 +33689,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 362.3999938964844,
-              "y": 493.2699890136719,
-              "width": 76.05999755859375,
-              "height": 17.100000381469727
+              "x": 366.17999267578125,
+              "y": 498.07000732421875,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
               "x": 371.57452392578125,
-              "y": 498.3754577636719,
+              "y": 502.17547607421875,
               "width": 57.23046875,
               "height": 7.59765625
             },
@@ -33253,17 +33708,17 @@
               [
                 1.0,
                 0.0,
-                362.3999938964844
+                366.17999267578125
               ],
               [
                 0.0,
                 1.0,
-                493.2699890136719
+                498.07000732421875
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 17.100000381469727
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "계좌 유효성확인",
             "characterStyleOverrides": [],
@@ -33295,13 +33750,13 @@
             }
           },
           {
-            "id": "3:4515",
+            "id": "3:5996",
             "name": "Google Shape;564;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4516",
+                "id": "3:5997",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -33467,7 +33922,7 @@
                 }
               },
               {
-                "id": "3:4517",
+                "id": "3:5998",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -33716,7 +34171,7 @@
             }
           },
           {
-            "id": "3:4518",
+            "id": "3:5999",
             "name": "Google Shape;564;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -33739,16 +34194,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 362.3999938964844,
-              "y": 513.760009765625,
-              "width": 76.05999755859375,
-              "height": 17.100000381469727
+              "x": 366.17999267578125,
+              "y": 518.5599975585938,
+              "width": 68.5,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 366.60968017578125,
-              "y": 518.857666015625,
-              "width": 67.72265625,
-              "height": 8.20703125
+              "x": 371.82843017578125,
+              "y": 517.6576538085938,
+              "width": 57.37109375,
+              "height": 19.20703125
             },
             "constraints": {
               "vertical": "TOP",
@@ -33758,17 +34213,17 @@
               [
                 1.0,
                 0.0,
-                362.3999938964844
+                366.17999267578125
               ],
               [
                 0.0,
                 1.0,
-                513.760009765625
+                518.5599975585938
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 17.100000381469727
+              "x": 68.5,
+              "y": 16.0
             },
             "characters": "청약완료(주문안내)",
             "characterStyleOverrides": [],
@@ -33800,7 +34255,7 @@
             }
           },
           {
-            "id": "3:4519",
+            "id": "3:6000",
             "name": "Google Shape;567;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -33823,16 +34278,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 502.4599914550781,
-              "y": 444.54998779296875,
-              "width": 27.290000915527344,
-              "height": 16.959999084472656
+              "x": 512.0599975585938,
+              "y": 449.3500061035156,
+              "width": 12.0,
+              "height": 16.0
             },
             "absoluteRenderBounds": {
-              "x": 503.2217102050781,
-              "y": 447.70623779296875,
-              "width": 11.167938232421875,
-              "height": 5.94140625
+              "x": 512.4428100585938,
+              "y": 452.6000061035156,
+              "width": 5.421875,
+              "height": 16.84765625
             },
             "constraints": {
               "vertical": "TOP",
@@ -33842,17 +34297,17 @@
               [
                 1.0,
                 0.0,
-                502.4599914550781
+                512.0599975585938
               ],
               [
                 0.0,
                 1.0,
-                444.54998779296875
+                449.3500061035156
               ]
             ],
             "size": {
-              "x": 27.290000915527344,
-              "y": 16.959999084472656
+              "x": 12.0,
+              "y": 16.0
             },
             "characters": "NO",
             "characterStyleOverrides": [],
@@ -33884,13 +34339,13 @@
             }
           },
           {
-            "id": "3:4520",
+            "id": "3:6001",
             "name": "Google Shape;551;p15:line",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4521",
+                "id": "3:6002",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -34125,13 +34580,13 @@
             }
           },
           {
-            "id": "3:4522",
+            "id": "3:6003",
             "name": "Google Shape;551;p15:arrow_1",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4523",
+                "id": "3:6004",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -34359,13 +34814,13 @@
             }
           },
           {
-            "id": "3:4524",
+            "id": "3:6005",
             "name": "Google Shape;550;p15",
             "type": "FRAME",
             "scrollBehavior": "SCROLLS",
             "children": [
               {
-                "id": "3:4525",
+                "id": "3:6006",
                 "name": "Vector",
                 "type": "VECTOR",
                 "scrollBehavior": "SCROLLS",
@@ -34614,7 +35069,7 @@
             }
           },
           {
-            "id": "3:4526",
+            "id": "3:6007",
             "name": "Google Shape;550;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -34637,14 +35092,14 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 629.3400268554688,
-              "y": 465.05999755859375,
-              "width": 76.05999755859375,
-              "height": 45.79999923706055
+              "x": 633.1199951171875,
+              "y": 469.8599853515625,
+              "width": 68.5,
+              "height": 36.20000076293945
             },
             "absoluteRenderBounds": {
               "x": 641.0692138671875,
-              "y": 473.15765380859375,
+              "y": 472.9576416015625,
               "width": 52.08203125,
               "height": 29.60546875
             },
@@ -34656,17 +35111,17 @@
               [
                 1.0,
                 0.0,
-                629.3400268554688
+                633.1199951171875
               ],
               [
                 0.0,
                 1.0,
-                465.05999755859375
+                469.8599853515625
               ]
             ],
             "size": {
-              "x": 76.05999755859375,
-              "y": 45.79999923706055
+              "x": 68.5,
+              "y": 36.20000076293945
             },
             "characters": "청약실패 \n제품 주문 관련\n안내",
             "characterStyleOverrides": [],
@@ -34702,7 +35157,7 @@
             }
           },
           {
-            "id": "3:4527",
+            "id": "3:6008",
             "name": "Google Shape;554;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -34725,16 +35180,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 610.2100219726562,
-              "y": 509.19000244140625,
-              "width": 106.18000030517578,
-              "height": 26.65999984741211
+              "x": 619.8099975585938,
+              "y": 513.989990234375,
+              "width": 86.9800033569336,
+              "height": 17.059999465942383
             },
             "absoluteRenderBounds": {
-              "x": 610.7686157226562,
-              "y": 511.28765869140625,
-              "width": 89.40625,
-              "height": 19.20703125
+              "x": 620.3139038085938,
+              "y": 516.087646484375,
+              "width": 79.109375,
+              "height": 23.912353515625
             },
             "constraints": {
               "vertical": "TOP",
@@ -34744,17 +35199,17 @@
               [
                 1.0,
                 0.0,
-                610.2100219726562
+                619.8099975585938
               ],
               [
                 0.0,
                 1.0,
-                509.19000244140625
+                513.989990234375
               ]
             ],
             "size": {
-              "x": 106.18000030517578,
-              "y": 26.65999984741211
+              "x": 86.9800033569336,
+              "y": 17.059999465942383
             },
             "characters": "청약실패, 구매취소\n(장바구니에 담기지 않음)",
             "characterStyleOverrides": [],
@@ -34788,7 +35243,7 @@
             }
           },
           {
-            "id": "3:4528",
+            "id": "3:6009",
             "name": "Google Shape;571;p15",
             "type": "TEXT",
             "scrollBehavior": "SCROLLS",
@@ -34811,16 +35266,16 @@
             "strokeAlign": "OUTSIDE",
             "strokeGeometry": [],
             "absoluteBoundingBox": {
-              "x": 47.65999984741211,
-              "y": 510.5400085449219,
-              "width": 239.58999633789062,
-              "height": 26.65999984741211
+              "x": 57.2599983215332,
+              "y": 515.3400268554688,
+              "width": 220.38999938964844,
+              "height": 17.059999465942383
             },
             "absoluteRenderBounds": {
-              "x": 48.27718734741211,
-              "y": 512.6376953125,
-              "width": 219.6796875,
-              "height": 18.7265625
+              "x": 57.8771858215332,
+              "y": 517.4376831054688,
+              "width": 209.24220275878906,
+              "height": 22.56231689453125
             },
             "constraints": {
               "vertical": "TOP",
@@ -34830,17 +35285,17 @@
               [
                 1.0,
                 0.0,
-                47.65999984741211
+                57.2599983215332
               ],
               [
                 0.0,
                 1.0,
-                510.5400085449219
+                515.3400268554688
               ]
             ],
             "size": {
-              "x": 239.58999633789062,
-              "y": 26.65999984741211
+              "x": 220.38999938964844,
+              "y": 17.059999465942383
             },
             "characters": "청약 성공\n청약한 제품에 대한 주문정보를 OBS에 전송하여 자동 진행 ▶",
             "characterStyleOverrides": [],
