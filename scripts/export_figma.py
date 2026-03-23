@@ -22,9 +22,9 @@ FIGMA_TOKEN = "figd_"
 FILE_KEY = "VdhL71dZBwFoqFeuPCuG1l"
 
 # 추출할 3개 페이지(프레임)의 노드 아이디 (예: "12:345")
-PAGE_1_NODE_ID = "4:11183"
-PAGE_2_NODE_ID = "4:10355"
-PAGE_3_NODE_ID = "4:9964"
+PAGE_1_NODE_ID = "4:12282"
+PAGE_2_NODE_ID = "4:11879"
+PAGE_3_NODE_ID = "4:11477"
 # ==========================================
 
 HEADERS = {
