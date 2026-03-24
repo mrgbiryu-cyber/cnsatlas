@@ -1452,6 +1452,128 @@ def select_right_panel_candidates(block: dict[str, Any], context: dict[str, Any]
     }
 
 
+def collect_table_description_cells(table_candidate: dict[str, Any], context: dict[str, Any]) -> list[dict[str, Any]]:
+    children_map = context.get("children_map") or {}
+    rows = [
+        child for child in children_map.get(table_candidate["candidate_id"], [])
+        if child.get("subtype") == "table_row"
+    ]
+    rows = sorted(rows, key=sort_by_position_key)
+    description_cells: list[dict[str, Any]] = []
+    for row_index, row in enumerate(rows):
+        cells = [
+            child for child in children_map.get(row["candidate_id"], [])
+            if child.get("subtype") == "table_cell"
+        ]
+        cells = sorted(
+            cells,
+            key=lambda cell: (
+                int(((cell.get("extra") or {}).get("start_column_index") or 0)),
+                sort_by_position_key(cell),
+            ),
+        )
+        for cell in cells:
+            text_value = str(cell.get("text") or "").strip()
+            if not text_value:
+                continue
+            if row_index < 3:
+                continue
+            if len(text_value) < 20 and "계속" not in text_value:
+                continue
+            description_cells.append(cell)
+    return description_cells
+
+
+def build_right_panel_description_overlay(
+    block: dict[str, Any],
+    context: dict[str, Any],
+    primary_table: dict[str, Any] | None,
+    selected_candidates: list[dict[str, Any]],
+) -> str:
+    if not primary_table:
+        return ""
+    description_cells = collect_table_description_cells(primary_table, context)
+    if not description_cells:
+        return ""
+    large_cards = []
+    for candidate in selected_candidates:
+        if candidate.get("subtype") != "labeled_shape":
+            continue
+        text_value = str(candidate.get("text") or "").strip()
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        if float(abs_bounds["height"]) < 80 or float(abs_bounds["width"]) < 180:
+            continue
+        if text_value.startswith("ISSUE"):
+            continue
+        large_cards.append((abs_bounds["width"] * abs_bounds["height"], candidate, abs_bounds))
+    if not large_cards:
+        return ""
+    _, anchor_candidate, anchor_bounds = max(large_cards, key=lambda row: row[0])
+    local_anchor = local_bounds_in_block(anchor_bounds, block)
+    text_blocks: list[str] = []
+    usable_x = local_anchor["x"] + 10.0
+    usable_w = max(local_anchor["width"] - 20.0, 40.0)
+    top = local_anchor["y"] + 18.0
+    bottom = local_anchor["y"] + local_anchor["height"] - 12.0
+    major_cells = [cell for cell in description_cells if "계속" not in str(cell.get("text") or "")]
+    tail_cells = [cell for cell in description_cells if "계속" in str(cell.get("text") or "")]
+    lane_count = max(len(major_cells), 1)
+    lane_height = max((bottom - top - (lane_count - 1) * 8.0) / lane_count, 42.0)
+    y_cursor = top
+    for cell in major_cells:
+        text_value = str(cell.get("text") or "").strip()
+        cell_extra = cell.get("extra") or {}
+        style = cell_extra.get("text_style") or {}
+        text_blocks.append(
+            text_svg_markup(
+                text_value,
+                {
+                    "x": usable_x,
+                    "y": y_cursor,
+                    "width": usable_w,
+                    "height": lane_height,
+                },
+                font_size=float(style.get("font_size_max") or style.get("font_size_avg") or 8.0),
+                fill_hex="#111111",
+                fill_opacity=1.0,
+                font_family=str(style.get("font_family") or "LG스마트체 Regular"),
+                horizontal_align="LEFT",
+                vertical_align="TOP",
+                l_ins=0.0,
+                r_ins=0.0,
+                t_ins=0.0,
+                b_ins=0.0,
+                max_lines=max(3, int(lane_height / 10.0)),
+            )
+        )
+        y_cursor += lane_height + 8.0
+    for cell in tail_cells:
+        text_value = str(cell.get("text") or "").strip()
+        text_blocks.append(
+            text_svg_markup(
+                text_value,
+                {
+                    "x": usable_x,
+                    "y": max(bottom - 18.0, y_cursor),
+                    "width": usable_w,
+                    "height": 18.0,
+                },
+                font_size=8.0,
+                fill_hex="#111111",
+                fill_opacity=1.0,
+                font_family="LG스마트체 Regular",
+                horizontal_align="LEFT",
+                vertical_align="BOTTOM",
+                l_ins=0.0,
+                r_ins=0.0,
+                t_ins=0.0,
+                b_ins=0.0,
+                max_lines=1,
+            )
+        )
+    return "".join(text_blocks)
+
+
 def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     ownership = select_right_panel_candidates(block, context)
     primary_table = ownership["dominant_owner"]
@@ -1489,6 +1611,14 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
         if subtype == "shape":
             role = 0
         layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
+    description_overlay = build_right_panel_description_overlay(
+        render_block,
+        context,
+        primary_table,
+        ownership["filtered_candidates"],
+    )
+    if description_overlay:
+        layers.append((3, render_block["bounds"]["y"] + render_block["bounds"]["height"], render_block["bounds"]["x"], description_overlay))
     bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
     markup = bg + "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
     return build_svg_block_node(render_block, markup, "right_panel_block_svg")
