@@ -72,7 +72,7 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
         if (
             bounds["y"] <= 170
             and (right_edge >= context["width"] * 0.74 or center_x >= context["width"] * 0.7)
-            and bounds["width"] <= context["width"] * 0.28
+            and bounds["width"] <= context["width"] * 0.22
             and subtype in {"labeled_shape", "text_block", "shape"}
         ):
             return "top_meta_block"

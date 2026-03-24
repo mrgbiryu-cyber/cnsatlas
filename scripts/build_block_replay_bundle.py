@@ -33,6 +33,7 @@ from ppt_source_extractor import (
     sort_by_position_key,
 )
 from visual_ownership import (
+    build_text_owner_map,
     candidate_abs_bounds,
     filter_block_candidates,
     should_skip_candidate_inside_owner,
@@ -1023,6 +1024,36 @@ def render_generated_node_svg(node: dict[str, Any], block: dict[str, Any]) -> st
     return ""
 
 
+def bounds_overlap_ratio(a: dict[str, Any], b: dict[str, Any]) -> float:
+    ax1 = float(a["x"])
+    ay1 = float(a["y"])
+    ax2 = ax1 + float(a["width"])
+    ay2 = ay1 + float(a["height"])
+    bx1 = float(b["x"])
+    by1 = float(b["y"])
+    bx2 = bx1 + float(b["width"])
+    by2 = by1 + float(b["height"])
+    ix1 = max(ax1, bx1)
+    iy1 = max(ay1, by1)
+    ix2 = min(ax2, bx2)
+    iy2 = min(ay2, by2)
+    if ix2 <= ix1 or iy2 <= iy1:
+        return 0.0
+    inter = (ix2 - ix1) * (iy2 - iy1)
+    area = max((ax2 - ax1) * (ay2 - ay1), 1.0)
+    return inter / area
+
+
+def should_skip_table_child_for_overlays(node: dict[str, Any], overlay_bounds: list[dict[str, Any]]) -> bool:
+    if not overlay_bounds:
+        return False
+    bounds = node.get("absoluteBoundingBox")
+    if not bounds:
+        return False
+    threshold = 0.35 if node.get("type") == "TEXT" else 0.6
+    return any(bounds_overlap_ratio(bounds, overlay) >= threshold for overlay in overlay_bounds)
+
+
 def build_svg_block_node(block: dict[str, Any], markup: str, role: str) -> dict[str, Any]:
     width = round(block["bounds"]["width"], 2)
     height = round(block["bounds"]["height"], 2)
@@ -1360,28 +1391,81 @@ def build_flow_block_node(block: dict[str, Any], context: dict[str, Any], assets
     return build_svg_block_node(block, markup, "flow_block_svg")
 
 
-def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+def select_right_panel_candidates(block: dict[str, Any], context: dict[str, Any]) -> dict[str, Any]:
+    candidates = collect_block_candidates(block, context)
     ownership = filter_block_candidates(
-        collect_block_candidates(block, context),
+        candidates,
         context,
         dominant_owner_subtypes={"table"},
-        candidate_owner_subtypes={"table", "table_cell"},
-        duplicate_subtypes={"labeled_shape", "text_block", "shape", "group", "section_block"},
+        candidate_owner_subtypes=None,
+        duplicate_subtypes={"group", "section_block"},
         overlap_threshold=0.75,
     )
+    dominant_table = ownership["dominant_owner"]
+    dominant_table_bounds = ownership["dominant_owner_bounds"]
+    text_owner_map = build_text_owner_map(candidates)
+
+    selected: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for candidate in sorted(candidates, key=sort_by_position_key):
+        candidate_id = str(candidate.get("candidate_id") or "")
+        subtype = str(candidate.get("subtype") or "")
+        if not candidate_id or candidate_id in seen:
+            continue
+        if subtype in {"group", "section_block", "table_row", "table_cell"}:
+            continue
+        if subtype == "text_block" and should_skip_layout_placeholder_text(candidate):
+            continue
+        if dominant_table and candidate_id == str(dominant_table.get("candidate_id") or ""):
+            selected.append(candidate)
+            seen.add(candidate_id)
+            continue
+
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        if subtype == "text_block":
+            owner = text_owner_map.get(candidate_id) or {}
+            if owner.get("owner_subtype") in {"table", "table_cell", "labeled_shape", "shape"}:
+                continue
+            if not abs_bounds:
+                continue
+            if float(abs_bounds["width"]) < 40 or float(abs_bounds["height"]) < 10:
+                continue
+            selected.append(candidate)
+            seen.add(candidate_id)
+            continue
+
+        if subtype in {"labeled_shape", "shape"}:
+            if abs_bounds and float(abs_bounds["width"]) >= 70 and float(abs_bounds["height"]) >= 12:
+                selected.append(candidate)
+                seen.add(candidate_id)
+                continue
+
+        if subtype in {"image", "connector"}:
+            selected.append(candidate)
+            seen.add(candidate_id)
+
+    return {
+        "dominant_owner": dominant_table,
+        "dominant_owner_bounds": dominant_table_bounds,
+        "filtered_candidates": selected,
+        "text_owner_map": text_owner_map,
+    }
+
+
+def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+    ownership = select_right_panel_candidates(block, context)
     primary_table = ownership["dominant_owner"]
-    primary_table_bounds = ownership["dominant_owner_bounds"]
     render_block = dict(block)
-    if primary_table and primary_table_bounds:
-        render_block["source_bounds"] = dict(primary_table_bounds)
-        render_block["coordinate_mode"] = "viewport_clip"
-    elif primary_table_bounds and (
-        float(primary_table_bounds["height"]) > float(block["bounds"]["height"]) * 1.12
-        or float(primary_table_bounds["width"]) > float(block["bounds"]["width"]) * 1.12
-    ):
-        render_block["coordinate_mode"] = "viewport_clip"
+    render_block["coordinate_mode"] = "viewport_clip"
     seen_tables: set[str] = set()
     layers: list[tuple[int, float, float, str]] = []
+    overlay_bounds: list[dict[str, Any]] = []
+    for candidate in ownership["filtered_candidates"]:
+        if candidate.get("subtype") not in {"labeled_shape", "shape"}:
+            continue
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        if float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20:
+            overlay_bounds.append(abs_bounds)
     for candidate in ownership["filtered_candidates"]:
         subtype = candidate.get("subtype")
         if subtype == "table":
@@ -1389,9 +1473,13 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
                 continue
             seen_tables.add(candidate["candidate_id"])
             table_group = build_table_visual_group(candidate, context, assets)
-            table_svg = render_generated_node_svg(table_group, render_block)
+            table_parts: list[str] = []
+            for child in table_group.get("children", []):
+                if should_skip_table_child_for_overlays(child, overlay_bounds):
+                    continue
+                table_parts.append(render_generated_node_svg(child, render_block))
             bounds = table_group["absoluteBoundingBox"]
-            layers.append((1, bounds["y"], bounds["x"], table_svg))
+            layers.append((1, bounds["y"], bounds["x"], "".join(table_parts)))
             continue
         abs_bounds = candidate_abs_bounds(candidate, context)
         svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
