@@ -121,6 +121,16 @@ def local_bounds(bounds: dict[str, Any], origin: dict[str, Any]) -> dict[str, fl
     }
 
 
+def intersect_bounds(a: dict[str, float], b: dict[str, float]) -> dict[str, float]:
+    x1 = max(float(a["x"]), float(b["x"]))
+    y1 = max(float(a["y"]), float(b["y"]))
+    x2 = min(float(a["x"]) + float(a["width"]), float(b["x"]) + float(b["width"]))
+    y2 = min(float(a["y"]) + float(a["height"]), float(b["y"]) + float(b["height"]))
+    if x2 <= x1 or y2 <= y1:
+        return make_bounds(x1, y1, 1.0, 1.0)
+    return make_bounds(x1, y1, x2 - x1, y2 - y1)
+
+
 def source_bounds_for_block(block: dict[str, Any]) -> dict[str, float]:
     return dict(block.get("source_bounds") or block["bounds"])
 
@@ -1617,7 +1627,14 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     primary_table = ownership["dominant_owner"]
     render_block = dict(block)
     render_block["coordinate_mode"] = "viewport_clip"
-    group = build_block_group_node(render_block, "right_panel_block_group")
+    visible_bounds = intersect_bounds(
+        render_block["bounds"],
+        make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT),
+    )
+    render_block["bounds"] = visible_bounds
+    frame = build_block_frame(render_block)
+    frame["clipsContent"] = True
+    frame["debug"] = dict(frame.get("debug") or {}, role="right_panel_block_frame")
     seen_tables: set[str] = set()
     background_layers: list[tuple[float, float, str]] = []
     foreground_nodes: list[dict[str, Any]] = []
@@ -1642,7 +1659,7 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
                 table_children.append(child)
             if table_children:
                 table_group["children"] = table_children
-                group["children"].append(table_group)
+                frame["children"].append(table_group)
             continue
         abs_bounds = candidate_abs_bounds(candidate, context)
         is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
@@ -1667,11 +1684,11 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     if background_layers:
         bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
         markup = bg + "".join(svg for _, _, svg in sorted(background_layers, key=lambda row: (row[0], row[1])))
-        group["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
+        frame["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
     if description_overlay:
-        group["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
-    group["children"].extend(foreground_nodes)
-    return group
+        frame["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
+    frame["children"].extend(foreground_nodes)
+    return frame
 
 
 def build_generic_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
