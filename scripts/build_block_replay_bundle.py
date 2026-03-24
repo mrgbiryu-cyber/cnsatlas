@@ -858,6 +858,46 @@ def render_candidate_svg(
         )
     if subtype == "connector":
         stroke_hex, stroke_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("line") or {}), "#777777")
+        line_style = ((extra.get("shape_style") or {}).get("line") or {})
+        head_end = (line_style.get("head_end") or {}).get("type")
+        tail_end = (line_style.get("tail_end") or {}).get("type")
+        stroke_width = float(line_style.get("width_px") or 1.5)
+        page_type = str(((context.get("visual_strategy") or {}).get("page_type")) or "generic")
+        start_px = scale_point(extra.get("start_point_px"), context["scale_x"], context["scale_y"])
+        end_px = scale_point(extra.get("end_point_px"), context["scale_x"], context["scale_y"])
+        has_real_connections = bool(extra.get("start_connection") or extra.get("end_connection"))
+
+        def arrow_polygon(point: dict[str, float], direction: str, size: float) -> str:
+            if direction == "right":
+                pts = [(point["x"], point["y"]), (point["x"] - size, point["y"] - size / 2), (point["x"] - size, point["y"] + size / 2)]
+            elif direction == "left":
+                pts = [(point["x"], point["y"]), (point["x"] + size, point["y"] - size / 2), (point["x"] + size, point["y"] + size / 2)]
+            elif direction == "down":
+                pts = [(point["x"], point["y"]), (point["x"] - size / 2, point["y"] - size), (point["x"] + size / 2, point["y"] - size)]
+            else:
+                pts = [(point["x"], point["y"]), (point["x"] - size / 2, point["y"] + size), (point["x"] + size / 2, point["y"] + size)]
+            return " ".join(f"{round(x,2)},{round(y,2)}" for x, y in pts)
+
+        if (
+            page_type == "ui-mockup"
+            and block_type in {"content_block", "right_panel_block", "top_meta_block"}
+            and start_px
+            and end_px
+            and not has_real_connections
+        ):
+            start = transform_point_into_block(start_px, block)
+            end = transform_point_into_block(end_px, block)
+            dx = end["x"] - start["x"]
+            dy = end["y"] - start["y"]
+            if abs(dx) > 0.5 or abs(dy) > 0.5:
+                path = f'M {round(start["x"],2)} {round(start["y"],2)} L {round(end["x"],2)} {round(end["y"],2)}'
+                size = max(4.0, min(stroke_width * 1.2, 7.0))
+                final_direction = "right" if abs(dx) >= abs(dy) and dx >= 0 else "left" if abs(dx) >= abs(dy) else "down" if dy >= 0 else "up"
+                start_direction = "left" if final_direction == "right" else "right" if final_direction == "left" else "up" if final_direction == "down" else "down"
+                head_svg = f'<polygon points="{arrow_polygon(end, final_direction, size)}" fill="{stroke_hex}" fill-opacity="{stroke_opacity}" />' if head_end else ""
+                tail_svg = f'<polygon points="{arrow_polygon(start, start_direction, size)}" fill="{stroke_hex}" fill-opacity="{stroke_opacity}" />' if tail_end else ""
+                return f'<path d="{path}" fill="none" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="{round(stroke_width,2)}" />{tail_svg}{head_svg}'
+
         if block_type == "header_block":
             width = max(local["width"], 1.0)
             height = max(local["height"], 1.0)
@@ -898,7 +938,7 @@ def render_candidate_svg(
                         arrow = [(p2["x"], p2["y"]), (p2["x"] - size / 2, p2["y"] + size), (p2["x"] + size / 2, p2["y"] + size)]
                 arrow_points = " ".join(f"{round(x,2)},{round(y,2)}" for x, y in arrow)
                 arrow_svg = f'<polygon points="{arrow_points}" fill="{stroke_hex}" fill-opacity="{stroke_opacity}" />'
-            return f'<path d="{path}" fill="none" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="1.5" />{arrow_svg}'
+            return f'<path d="{path}" fill="none" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="{round(stroke_width,2)}" />{arrow_svg}'
         width = max(local["width"], 1.0)
         height = max(local["height"], 1.0)
         x0 = local["x"]
@@ -906,8 +946,8 @@ def render_candidate_svg(
         x1 = local["x"] + width
         y1 = local["y"] + height
         if width >= height:
-            return f'<line x1="{round(x0,2)}" y1="{round(y0 + height/2,2)}" x2="{round(x1,2)}" y2="{round(y0 + height/2,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="1.5" />'
-        return f'<line x1="{round(x0 + width/2,2)}" y1="{round(y0,2)}" x2="{round(x0 + width/2,2)}" y2="{round(y1,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="1.5" />'
+            return f'<line x1="{round(x0,2)}" y1="{round(y0 + height/2,2)}" x2="{round(x1,2)}" y2="{round(y0 + height/2,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="{round(stroke_width,2)}" />'
+        return f'<line x1="{round(x0 + width/2,2)}" y1="{round(y0,2)}" x2="{round(x0 + width/2,2)}" y2="{round(y1,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="{round(stroke_width,2)}" />'
     if subtype == "image":
         image_base64 = extra.get("image_base64")
         mime_type = extra.get("mime_type") or "image/png"
@@ -968,6 +1008,53 @@ def render_candidate_svg(
             return shape_svg + text_svg
         return shape_svg
     return ""
+
+
+def build_paired_placeholder_lines(candidates: list[dict[str, Any]], block: dict[str, Any], context: dict[str, Any]) -> tuple[dict[str, str], set[str]]:
+    by_parent: dict[str, list[dict[str, Any]]] = {}
+    for candidate in candidates:
+        if candidate.get("subtype") != "connector":
+            continue
+        extra = candidate.get("extra") or {}
+        if str(extra.get("shape_kind") or "").lower() != "line":
+            continue
+        if not extra.get("inferred_start_point") or not extra.get("inferred_end_point"):
+            continue
+        parent_id = str(candidate.get("parent_candidate_id") or "")
+        if not parent_id:
+            continue
+        by_parent.setdefault(parent_id, []).append(candidate)
+    svg_map: dict[str, str] = {}
+    consumed: set[str] = set()
+    for group in by_parent.values():
+        if len(group) != 2:
+            continue
+        bounds_a = group[0].get("bounds_px") or {}
+        bounds_b = group[1].get("bounds_px") or {}
+        if not bounds_a or not bounds_b:
+            continue
+        if abs(float(bounds_a["x"]) - float(bounds_b["x"])) > 2 or abs(float(bounds_a["y"]) - float(bounds_b["y"])) > 2:
+            continue
+        if abs(float(bounds_a["width"]) - float(bounds_b["width"])) > 2 or abs(float(bounds_a["height"]) - float(bounds_b["height"])) > 2:
+            continue
+        if float(bounds_a["width"]) < 40 or float(bounds_a["height"]) < 40:
+            continue
+        abs_bounds = candidate_abs_bounds(group[0], context)
+        local = local_bounds_in_block(abs_bounds, block)
+        line_style = (((group[0].get("extra") or {}).get("shape_style") or {}).get("line") or {})
+        stroke_hex, stroke_opacity = style_color_to_svg(line_style, "#FFFFFF")
+        stroke_width = round(float(line_style.get("width_px") or 1.0), 2)
+        x = round(local["x"], 2)
+        y = round(local["y"], 2)
+        w = round(local["width"], 2)
+        h = round(local["height"], 2)
+        first = f'<line x1="{x}" y1="{y}" x2="{round(x+w,2)}" y2="{round(y+h,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}" />'
+        second = f'<line x1="{x}" y1="{round(y+h,2)}" x2="{round(x+w,2)}" y2="{y}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}" />'
+        svg_map[group[0]["candidate_id"]] = first
+        svg_map[group[1]["candidate_id"]] = second
+        consumed.add(group[0]["candidate_id"])
+        consumed.add(group[1]["candidate_id"])
+    return svg_map, consumed
 
 
 def render_generated_node_svg(node: dict[str, Any], block: dict[str, Any]) -> str:
@@ -1044,14 +1131,25 @@ def bounds_overlap_ratio(a: dict[str, Any], b: dict[str, Any]) -> float:
     return inter / area
 
 
-def should_skip_table_child_for_overlays(node: dict[str, Any], overlay_bounds: list[dict[str, Any]]) -> bool:
-    if not overlay_bounds:
+def should_skip_table_child_for_overlays(node: dict[str, Any], overlays: list[dict[str, Any]]) -> bool:
+    if not overlays:
         return False
     bounds = node.get("absoluteBoundingBox")
     if not bounds:
         return False
-    threshold = 0.35 if node.get("type") == "TEXT" else 0.6
-    return any(bounds_overlap_ratio(bounds, overlay) >= threshold for overlay in overlay_bounds)
+    node_type = node.get("type")
+    threshold = 0.35 if node_type == "TEXT" else 0.6
+    for overlay in overlays:
+        overlay_bounds = overlay.get("bounds")
+        if not overlay_bounds:
+            continue
+        ratio = bounds_overlap_ratio(bounds, overlay_bounds)
+        if ratio < threshold:
+            continue
+        if node_type == "TEXT" and not overlay.get("suppress_text"):
+            continue
+        return True
+    return False
 
 
 def build_svg_block_node(block: dict[str, Any], markup: str, role: str) -> dict[str, Any]:
@@ -1404,6 +1502,9 @@ def select_right_panel_candidates(block: dict[str, Any], context: dict[str, Any]
     dominant_table = ownership["dominant_owner"]
     dominant_table_bounds = ownership["dominant_owner_bounds"]
     text_owner_map = build_text_owner_map(candidates)
+    right_focus_x = None
+    if dominant_table_bounds:
+        right_focus_x = float(dominant_table_bounds["x"]) + float(dominant_table_bounds["width"]) * 0.35
 
     selected: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -1416,12 +1517,10 @@ def select_right_panel_candidates(block: dict[str, Any], context: dict[str, Any]
             continue
         if subtype == "text_block" and should_skip_layout_placeholder_text(candidate):
             continue
-        if dominant_table and candidate_id == str(dominant_table.get("candidate_id") or ""):
-            selected.append(candidate)
-            seen.add(candidate_id)
-            continue
-
         abs_bounds = candidate_abs_bounds(candidate, context)
+        center_x = float(abs_bounds["x"]) + float(abs_bounds["width"]) / 2.0 if abs_bounds else 0.0
+        if right_focus_x is not None and center_x < right_focus_x:
+            continue
         if subtype == "text_block":
             owner = text_owner_map.get(candidate_id) or {}
             if owner.get("owner_subtype") in {"table", "table_cell", "labeled_shape", "shape"}:
@@ -1459,13 +1558,21 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     render_block["coordinate_mode"] = "viewport_clip"
     seen_tables: set[str] = set()
     layers: list[tuple[int, float, float, str]] = []
-    overlay_bounds: list[dict[str, Any]] = []
+    overlays: list[dict[str, Any]] = []
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
             continue
         abs_bounds = candidate_abs_bounds(candidate, context)
         if float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20:
-            overlay_bounds.append(abs_bounds)
+            text_value = str(candidate.get("text") or "").strip()
+            suppress_text = len(text_value) >= 24 or "\n" in text_value
+            overlays.append(
+                {
+                    "candidate_id": candidate.get("candidate_id"),
+                    "bounds": abs_bounds,
+                    "suppress_text": suppress_text,
+                }
+            )
     for candidate in ownership["filtered_candidates"]:
         subtype = candidate.get("subtype")
         if subtype == "table":
@@ -1475,7 +1582,7 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
             table_group = build_table_visual_group(candidate, context, assets)
             table_parts: list[str] = []
             for child in table_group.get("children", []):
-                if should_skip_table_child_for_overlays(child, overlay_bounds):
+                if should_skip_table_child_for_overlays(child, overlays):
                     continue
                 table_parts.append(render_generated_node_svg(child, render_block))
             bounds = table_group["absoluteBoundingBox"]
@@ -1514,8 +1621,15 @@ def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any],
         dominant_owner_subtypes={"table"},
         candidate_owner_subtypes={"table", "table_cell"},
     )
+    placeholder_svg_map, consumed_placeholders = build_paired_placeholder_lines(ownership["filtered_candidates"], block, context)
     layers: list[tuple[int, float, float, str]] = []
     for candidate in ownership["filtered_candidates"]:
+        if candidate["candidate_id"] in consumed_placeholders:
+            abs_bounds = candidate_abs_bounds(candidate, context)
+            svg = placeholder_svg_map.get(candidate["candidate_id"], "")
+            if svg:
+                layers.append((2, abs_bounds["y"], abs_bounds["x"], svg))
+            continue
         source_scope = str(((candidate.get("extra") or {}).get("source_scope")) or "slide").lower()
         if source_scope in {"layout", "master"}:
             continue
