@@ -1,0 +1,648 @@
+{
+  "kind": "reference-visual-templates",
+  "pages": [
+    {
+      "page_name": "reference-page-1",
+      "page_type": "flow-process",
+      "page_bounds": {
+        "x": -198.0,
+        "y": -279.0,
+        "width": 960.0,
+        "height": 540.0
+      },
+      "header_block": {
+        "block_type": "header_block",
+        "bounds": {
+          "x": -166.68,
+          "y": -257.61,
+          "width": 896.54,
+          "height": 65.13
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.0326,
+          "y_ratio": 0.0396,
+          "width_ratio": 0.9339,
+          "height_ratio": 0.1206
+        },
+        "node_count": 31,
+        "type_counts": {
+          "GROUP": 7,
+          "TEXT": 14,
+          "VECTOR": 10
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "일반제품",
+          "+ 케어십 신청에 따른 프로세스(유상 케어십)",
+          "사용자",
+          "※ 케어십 가능 제품",
+          "OBS(",
+          "마젠토)",
+          "케어솔루션",
+          "(대표사이트개발)"
+        ],
+        "font_size_min": 6.9,
+        "font_size_max": 10.5,
+        "font_size_avg": 7.64
+      },
+      "right_panel_block": {
+        "block_type": "right_panel_block",
+        "bounds": {
+          "x": 360.82,
+          "y": -229.78,
+          "width": 380.43,
+          "height": 483.08
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.5821,
+          "y_ratio": 0.0911,
+          "width_ratio": 0.3963,
+          "height_ratio": 0.8946
+        },
+        "node_count": 173,
+        "type_counts": {
+          "TEXT": 25,
+          "VECTOR": 140,
+          "GROUP": 8
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "1",
+          "?",
+          "로그인",
+          "?",
+          "로그인",
+          "NO",
+          "YES",
+          "계약자정보"
+        ],
+        "font_size_min": 6.9,
+        "font_size_max": 9.0,
+        "font_size_avg": 8.02
+      },
+      "table_block": null,
+      "connector_templates": [
+        {
+          "reference_node_id": "1:120",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:119",
+          "bounds": {
+            "x": 104.8800048828125,
+            "y": 89.63999938964844,
+            "width": 80.16000366210938,
+            "height": 20.8800048828125
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.3155,
+            "y_ratio": 0.6827,
+            "width_ratio": 0.0835,
+            "height_ratio": 0.0387
+          },
+          "segment_signature": "HVHV",
+          "segment_count": 4,
+          "turn_count": 3,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:246",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:245",
+          "bounds": {
+            "x": 247.67999267578125,
+            "y": 144.0,
+            "width": 109.08001708984375,
+            "height": 25.919998168945312
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.4642,
+            "y_ratio": 0.7833,
+            "width_ratio": 0.1136,
+            "height_ratio": 0.048
+          },
+          "segment_signature": "H",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:268",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:267",
+          "bounds": {
+            "x": 164.39999389648438,
+            "y": 234.71989822387695,
+            "width": 76.08001708984375,
+            "height": 17.15999984741211
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.3775,
+            "y_ratio": 0.9513,
+            "width_ratio": 0.0793,
+            "height_ratio": 0.0318
+          },
+          "segment_signature": "HVHV",
+          "segment_count": 4,
+          "turn_count": 3,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:343",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:318",
+          "bounds": {
+            "x": 624.530029296875,
+            "y": 49.27000427246094,
+            "width": 24.62994384765625,
+            "height": 7.839996337890625
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.8568,
+            "y_ratio": 0.6079,
+            "width_ratio": 0.0257,
+            "height_ratio": 0.0145
+          },
+          "segment_signature": "H",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        }
+      ]
+    },
+    {
+      "page_name": "reference-page-2",
+      "page_type": "table-heavy",
+      "page_bounds": {
+        "x": 782.0,
+        "y": -279.0,
+        "width": 960.0,
+        "height": 540.0
+      },
+      "header_block": {
+        "block_type": "header_block",
+        "bounds": {
+          "x": 813.32,
+          "y": -279.0,
+          "width": 928.68,
+          "height": 67.83
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.0326,
+          "y_ratio": 0.0,
+          "width_ratio": 0.9674,
+          "height_ratio": 0.1256
+        },
+        "node_count": 13,
+        "type_counts": {
+          "GROUP": 1,
+          "TEXT": 10,
+          "VECTOR": 2
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "리뷰",
+          "- 제품 카테고리별 평가 항목",
+          "항목별 평가 지표",
+          "카테고리별",
+          "평가 항목 (중카 기준)",
+          "※",
+          "카테고리 개편내용 현행화하여 평가항목 정리",
+          "※ 기존 평가 항목 승계"
+        ],
+        "font_size_min": 7.6,
+        "font_size_max": 10.5,
+        "font_size_avg": 9.0
+      },
+      "right_panel_block": {
+        "block_type": "right_panel_block",
+        "bounds": {
+          "x": 1340.65,
+          "y": -229.79,
+          "width": 380.6,
+          "height": 482.06
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.5819,
+          "y_ratio": 0.0911,
+          "width_ratio": 0.3965,
+          "height_ratio": 0.8927
+        },
+        "node_count": 100,
+        "type_counts": {
+          "TEXT": 88,
+          "VECTOR": 12
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "2",
+          "3점 척도 평가 (리뷰 작성 팝업 노출)",
+          "긍정",
+          "보통",
+          "부정",
+          "선명해요",
+          "보통이예요",
+          "아쉬워요"
+        ],
+        "font_size_min": 7.6,
+        "font_size_max": 9.0,
+        "font_size_avg": 7.63
+      },
+      "table_block": {
+        "block_type": "table_block",
+        "bounds": {
+          "x": 820.53,
+          "y": -201.37,
+          "width": 890.26,
+          "height": 439.43
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.0401,
+          "y_ratio": 0.1438,
+          "width_ratio": 0.9274,
+          "height_ratio": 0.8138
+        },
+        "node_count": 248,
+        "type_counts": {
+          "GROUP": 21,
+          "VECTOR": 90,
+          "TEXT": 137
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "대카테고리",
+          "중카테고리",
+          "카테고리 ID",
+          "평가 항목",
+          "TV/AV",
+          "TV",
+          "CT50000025",
+          "화질 | 사운드| 부가기능"
+        ],
+        "font_size_min": 7.6,
+        "font_size_max": 8.1,
+        "font_size_avg": 7.73,
+        "reference_node_id": "region:fallback"
+      },
+      "connector_templates": [
+        {
+          "reference_node_id": "1:590",
+          "page_name": "reference-page-2",
+          "page_type": "table-heavy",
+          "parent_id": "1:552",
+          "bounds": {
+            "x": 820.6519775390625,
+            "y": -201.07000732421875,
+            "width": 0.0,
+            "height": 396.552001953125
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.0403,
+            "y_ratio": 0.1443,
+            "width_ratio": 0.0,
+            "height_ratio": 0.7344
+          },
+          "segment_signature": "V",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "vertical",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:674",
+          "page_name": "reference-page-2",
+          "page_type": "table-heavy",
+          "parent_id": "1:673",
+          "bounds": {
+            "x": 826.3209838867188,
+            "y": 114.77000427246094,
+            "width": 22.31999969482422,
+            "height": 0.3600006103515625
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.0462,
+            "y_ratio": 0.7292,
+            "width_ratio": 0.0232,
+            "height_ratio": 0.0007
+          },
+          "segment_signature": "H",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        }
+      ]
+    },
+    {
+      "page_name": "reference-page-3",
+      "page_type": "ui-mockup",
+      "page_bounds": {
+        "x": 1762.0,
+        "y": -279.0,
+        "width": 960.0,
+        "height": 540.0
+      },
+      "header_block": {
+        "block_type": "header_block",
+        "bounds": {
+          "x": 1762.0,
+          "y": -279.0,
+          "width": 936.5,
+          "height": 76.56
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.0,
+          "y_ratio": 0.0,
+          "width_ratio": 0.9755,
+          "height_ratio": 0.1418
+        },
+        "node_count": 49,
+        "type_counts": {
+          "GROUP": 7,
+          "VECTOR": 17,
+          "TEXT": 25
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "화면",
+          "명",
+          "페이지",
+          "화면경로",
+          "화면ID",
+          "3",
+          "Fold 영역",
+          "PDP"
+        ],
+        "font_size_min": 6.9,
+        "font_size_max": 8.1,
+        "font_size_avg": 7.88
+      },
+      "right_panel_block": {
+        "block_type": "right_panel_block",
+        "bounds": {
+          "x": 2321.32,
+          "y": -242.73,
+          "width": 400.68,
+          "height": 755.95
+        },
+        "bounds_ratio": {
+          "x_ratio": 0.5826,
+          "y_ratio": 0.0672,
+          "width_ratio": 0.4174,
+          "height_ratio": 1.3999
+        },
+        "node_count": 201,
+        "type_counts": {
+          "GROUP": 24,
+          "VECTOR": 46,
+          "TEXT": 125,
+          "FRAME": 3,
+          "RECTANGLE": 3
+        },
+        "text_sample_count": 8,
+        "text_samples": [
+          "화면",
+          "설명",
+          "•",
+          "Fold 영역 정의",
+          "1",
+          "•",
+          "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조",
+          "-"
+        ],
+        "font_size_min": 6.1,
+        "font_size_max": 10.5,
+        "font_size_avg": 7.23
+      },
+      "table_block": null,
+      "connector_templates": []
+    }
+  ],
+  "connector_route_templates": {
+    "flow-process": {
+      "route_signatures": {
+        "HVHV": 2,
+        "H": 2
+      },
+      "sample_routes": [
+        {
+          "reference_node_id": "1:120",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:119",
+          "bounds": {
+            "x": 104.8800048828125,
+            "y": 89.63999938964844,
+            "width": 80.16000366210938,
+            "height": 20.8800048828125
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.3155,
+            "y_ratio": 0.6827,
+            "width_ratio": 0.0835,
+            "height_ratio": 0.0387
+          },
+          "segment_signature": "HVHV",
+          "segment_count": 4,
+          "turn_count": 3,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:246",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:245",
+          "bounds": {
+            "x": 247.67999267578125,
+            "y": 144.0,
+            "width": 109.08001708984375,
+            "height": 25.919998168945312
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.4642,
+            "y_ratio": 0.7833,
+            "width_ratio": 0.1136,
+            "height_ratio": 0.048
+          },
+          "segment_signature": "H",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:268",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:267",
+          "bounds": {
+            "x": 164.39999389648438,
+            "y": 234.71989822387695,
+            "width": 76.08001708984375,
+            "height": 17.15999984741211
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.3775,
+            "y_ratio": 0.9513,
+            "width_ratio": 0.0793,
+            "height_ratio": 0.0318
+          },
+          "segment_signature": "HVHV",
+          "segment_count": 4,
+          "turn_count": 3,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:343",
+          "page_name": "reference-page-1",
+          "page_type": "flow-process",
+          "parent_id": "1:318",
+          "bounds": {
+            "x": 624.530029296875,
+            "y": 49.27000427246094,
+            "width": 24.62994384765625,
+            "height": 7.839996337890625
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.8568,
+            "y_ratio": 0.6079,
+            "width_ratio": 0.0257,
+            "height_ratio": 0.0145
+          },
+          "segment_signature": "H",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        }
+      ]
+    },
+    "table-heavy": {
+      "route_signatures": {
+        "V": 1,
+        "H": 1
+      },
+      "sample_routes": [
+        {
+          "reference_node_id": "1:590",
+          "page_name": "reference-page-2",
+          "page_type": "table-heavy",
+          "parent_id": "1:552",
+          "bounds": {
+            "x": 820.6519775390625,
+            "y": -201.07000732421875,
+            "width": 0.0,
+            "height": 396.552001953125
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.0403,
+            "y_ratio": 0.1443,
+            "width_ratio": 0.0,
+            "height_ratio": 0.7344
+          },
+          "segment_signature": "V",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "vertical",
+          "node_name": "Vector"
+        },
+        {
+          "reference_node_id": "1:674",
+          "page_name": "reference-page-2",
+          "page_type": "table-heavy",
+          "parent_id": "1:673",
+          "bounds": {
+            "x": 826.3209838867188,
+            "y": 114.77000427246094,
+            "width": 22.31999969482422,
+            "height": 0.3600006103515625
+          },
+          "bounds_ratio": {
+            "x_ratio": 0.0462,
+            "y_ratio": 0.7292,
+            "width_ratio": 0.0232,
+            "height_ratio": 0.0007
+          },
+          "segment_signature": "H",
+          "segment_count": 1,
+          "turn_count": 0,
+          "dominant_axis": "horizontal",
+          "node_name": "Vector"
+        }
+      ]
+    },
+    "ui-mockup": {
+      "route_signatures": {},
+      "sample_routes": []
+    }
+  },
+  "connector_route_cases": {
+    "flow-process": {
+      "straightconnector1|-|-": {
+        "shape_kind": "straightConnector1",
+        "start_direction": "",
+        "end_direction": "",
+        "route_signatures": {
+          "H": 1
+        },
+        "sample_count": 1
+      },
+      "bentconnector3|down|right": {
+        "shape_kind": "bentConnector3",
+        "start_direction": "down",
+        "end_direction": "right",
+        "route_signatures": {
+          "HVHV": 1
+        },
+        "sample_count": 1
+      },
+      "bentconnector3|left|right": {
+        "shape_kind": "bentConnector3",
+        "start_direction": "left",
+        "end_direction": "right",
+        "route_signatures": {
+          "H": 1
+        },
+        "sample_count": 1
+      },
+      "bentconnector2|right|up": {
+        "shape_kind": "bentConnector2",
+        "start_direction": "right",
+        "end_direction": "up",
+        "route_signatures": {
+          "H": 1,
+          "HVHV": 2
+        },
+        "sample_count": 3
+      }
+    },
+    "table-heavy": {
+      "straightconnector1|-|-": {
+        "shape_kind": "straightConnector1",
+        "start_direction": "",
+        "end_direction": "",
+        "route_signatures": {
+          "V": 1
+        },
+        "sample_count": 1
+      },
+      "bentconnector3|left|right": {
+        "shape_kind": "bentConnector3",
+        "start_direction": "left",
+        "end_direction": "right",
+        "route_signatures": {
+          "H": 2
+        },
+        "sample_count": 2
+      }
+    }
+  }
+}

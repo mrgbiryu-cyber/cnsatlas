@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
 import textwrap
 from pathlib import Path
 from typing import Any
@@ -31,6 +32,14 @@ from ppt_source_extractor import (
     scale_value,
     sort_by_position_key,
 )
+from visual_ownership import (
+    candidate_abs_bounds,
+    filter_block_candidates,
+    should_skip_candidate_inside_owner,
+)
+
+REFERENCE_TEMPLATE_PATH = Path(__file__).resolve().parents[1] / "docs" / "reference-visual-templates.json"
+_REFERENCE_TEMPLATES_CACHE: dict[str, Any] | None = None
 
 
 def build_block_frame(block: dict[str, Any]) -> dict[str, Any]:
@@ -111,6 +120,56 @@ def local_bounds(bounds: dict[str, Any], origin: dict[str, Any]) -> dict[str, fl
     }
 
 
+def source_bounds_for_block(block: dict[str, Any]) -> dict[str, float]:
+    return dict(block.get("source_bounds") or block["bounds"])
+
+
+def block_scale(block: dict[str, Any]) -> tuple[float, float]:
+    source = source_bounds_for_block(block)
+    target = block["bounds"]
+    sx = float(target["width"]) / max(float(source["width"]), 1.0)
+    sy = float(target["height"]) / max(float(source["height"]), 1.0)
+    return sx, sy
+
+
+def block_coordinate_mode(block: dict[str, Any]) -> str:
+    return str(block.get("coordinate_mode") or "normalized")
+
+
+def local_bounds_in_block(bounds: dict[str, Any], block: dict[str, Any]) -> dict[str, float]:
+    if block_coordinate_mode(block) == "viewport_clip":
+        target = block["bounds"]
+        return {
+            "x": round(float(bounds["x"]) - float(target["x"]), 2),
+            "y": round(float(bounds["y"]) - float(target["y"]), 2),
+            "width": round(float(bounds["width"]), 2),
+            "height": round(float(bounds["height"]), 2),
+        }
+    source = source_bounds_for_block(block)
+    sx, sy = block_scale(block)
+    return {
+        "x": round((float(bounds["x"]) - float(source["x"])) * sx, 2),
+        "y": round((float(bounds["y"]) - float(source["y"])) * sy, 2),
+        "width": round(float(bounds["width"]) * sx, 2),
+        "height": round(float(bounds["height"]) * sy, 2),
+    }
+
+
+def transform_point_into_block(point: dict[str, Any], block: dict[str, Any]) -> dict[str, float]:
+    if block_coordinate_mode(block) == "viewport_clip":
+        target = block["bounds"]
+        return {
+            "x": round(float(point["x"]) - float(target["x"]), 2),
+            "y": round(float(point["y"]) - float(target["y"]), 2),
+        }
+    source = source_bounds_for_block(block)
+    sx, sy = block_scale(block)
+    return {
+        "x": round((float(point["x"]) - float(source["x"])) * sx, 2),
+        "y": round((float(point["y"]) - float(source["y"])) * sy, 2),
+    }
+
+
 def svg_escape(text: str) -> str:
     return html.escape(str(text or ""), quote=False)
 
@@ -124,6 +183,362 @@ def wrap_text_lines(text: str, max_chars: int) -> list[str]:
             continue
         output.extend(textwrap.wrap(line, width=max_chars, break_long_words=False, break_on_hyphens=False) or [line])
     return output
+
+
+def load_reference_templates() -> dict[str, Any]:
+    global _REFERENCE_TEMPLATES_CACHE
+    if _REFERENCE_TEMPLATES_CACHE is not None:
+        return _REFERENCE_TEMPLATES_CACHE
+    if not REFERENCE_TEMPLATE_PATH.exists():
+        _REFERENCE_TEMPLATES_CACHE = {"connector_route_templates": {}, "pages": []}
+        return _REFERENCE_TEMPLATES_CACHE
+    with REFERENCE_TEMPLATE_PATH.open("r", encoding="utf-8") as handle:
+        _REFERENCE_TEMPLATES_CACHE = json.load(handle)
+    return _REFERENCE_TEMPLATES_CACHE
+
+
+def connector_route_preferences(page_type: str) -> dict[str, int]:
+    templates = load_reference_templates()
+    bucket = (templates.get("connector_route_templates") or {}).get(page_type) or {}
+    return dict(bucket.get("route_signatures") or {})
+
+
+def connector_case_key(kind: str, start_dir: str, end_dir: str) -> str:
+    return f"{(kind or '').lower()}|{start_dir or '-'}|{end_dir or '-'}"
+
+
+def connector_route_case_preferences(page_type: str, kind: str, start_dir: str, end_dir: str) -> dict[str, int]:
+    templates = load_reference_templates()
+    page_bucket = (templates.get("connector_route_cases") or {}).get(page_type) or {}
+    case = page_bucket.get(connector_case_key(kind, start_dir, end_dir)) or {}
+    return dict(case.get("route_signatures") or {})
+
+
+def page_template(page_type: str) -> dict[str, Any]:
+    templates = load_reference_templates()
+    for page in templates.get("pages") or []:
+        if page.get("page_type") == page_type:
+            return page
+    return {}
+
+
+def block_template(page_type: str, block_type: str) -> dict[str, Any]:
+    return dict((page_template(page_type) or {}).get(block_type) or {})
+
+
+def block_text_policy(page_type: str, block_type: str) -> dict[str, Any]:
+    template = block_template(page_type, block_type)
+    avg_font = template.get("font_size_avg")
+    min_font = template.get("font_size_min")
+    max_font = template.get("font_size_max")
+    if block_type == "header_block":
+        return {
+            "font_avg": avg_font or 8.0,
+            "font_min": min_font or 7.0,
+            "font_max": max_font or 11.0,
+            "padding": {"l": 2.0, "r": 2.0, "t": 1.5, "b": 1.5},
+        }
+    if block_type == "table_block":
+        return {
+            "font_avg": avg_font or 7.7,
+            "font_min": min_font or 7.2,
+            "font_max": max_font or 8.3,
+            "padding": {"l": 5.0, "r": 5.0, "t": 2.5, "b": 2.5},
+        }
+    if block_type == "right_panel_block":
+        return {
+            "font_avg": avg_font or 7.2,
+            "font_min": min_font or 6.5,
+            "font_max": max_font or 9.0,
+            "padding": {"l": 6.0, "r": 6.0, "t": 3.0, "b": 3.0},
+        }
+    return {
+        "font_avg": avg_font or 8.0,
+        "font_min": min_font or 7.0,
+        "font_max": max_font or 10.0,
+        "padding": {"l": 4.0, "r": 4.0, "t": 2.0, "b": 2.0},
+    }
+
+
+def clamp_font_size(value: float, policy: dict[str, Any]) -> float:
+    return round(min(max(value, float(policy["font_min"])), float(policy["font_max"])), 2)
+
+
+def resolve_block_font_size(
+    candidate: dict[str, Any],
+    style: dict[str, Any],
+    policy: dict[str, Any],
+    *,
+    block_type: str,
+) -> float:
+    text_style = (candidate.get("extra") or {}).get("text_style") or {}
+    placeholder = (candidate.get("extra") or {}).get("placeholder") or {}
+    placeholder_type = str(placeholder.get("type") or "").lower()
+    explicit = text_style.get("font_size_max") or text_style.get("font_size_avg")
+    style_font = float(style.get("fontSize") or policy["font_avg"])
+    if placeholder_type == "title":
+        return round(style_font, 2)
+    if explicit:
+        explicit_value = float(explicit)
+        if block_type == "header_block":
+            return round(max(explicit_value, float(policy["font_min"])), 2)
+        if block_type in {"table_block", "right_panel_block"}:
+            return round(max(explicit_value, float(policy["font_min"])), 2)
+        return round(explicit_value, 2)
+    return clamp_font_size(style_font, policy)
+
+
+def template_bounds_for_page(page_type: str, block_type: str) -> dict[str, float] | None:
+    template = block_template(page_type, block_type)
+    ratios = template.get("bounds_ratio") or {}
+    if not ratios:
+        return None
+    return {
+        "x": round(TARGET_SLIDE_WIDTH * float(ratios.get("x_ratio", 0.0)), 2),
+        "y": round(TARGET_SLIDE_HEIGHT * float(ratios.get("y_ratio", 0.0)), 2),
+        "width": round(TARGET_SLIDE_WIDTH * float(ratios.get("width_ratio", 0.0)), 2),
+        "height": round(TARGET_SLIDE_HEIGHT * float(ratios.get("height_ratio", 0.0)), 2),
+    }
+
+
+def blend_bounds(actual: dict[str, float], expected: dict[str, float], weight: float) -> dict[str, float]:
+    keep = 1.0 - weight
+    return {
+        "x": round(actual["x"] * keep + expected["x"] * weight, 2),
+        "y": round(actual["y"] * keep + expected["y"] * weight, 2),
+        "width": round(actual["width"] * keep + expected["width"] * weight, 2),
+        "height": round(actual["height"] * keep + expected["height"] * weight, 2),
+    }
+
+
+def normalize_block_bounds(block: dict[str, Any]) -> dict[str, Any]:
+    expected = template_bounds_for_page(block["page_type"], block["block_type"])
+    if not expected:
+        return block
+    weight = {
+        "header_block": 0.45,
+        "table_block": 0.55,
+        "right_panel_block": 0.7,
+    }.get(block["block_type"], 0.0)
+    if weight <= 0:
+        return block
+    normalized = dict(block)
+    normalized["source_bounds"] = dict(block["bounds"])
+    normalized["bounds"] = blend_bounds(block["bounds"], expected, weight)
+    return normalized
+
+
+def direction_from_idx(value: Any) -> str:
+    mapping = {0: "up", 1: "right", 2: "down", 3: "left", 4: "up", 5: "right", 6: "down", 7: "left"}
+    try:
+        return mapping.get(int(value), "")
+    except Exception:
+        return ""
+
+
+def axis_from_direction(direction: str) -> str:
+    if direction in {"left", "right"}:
+        return "H"
+    if direction in {"up", "down"}:
+        return "V"
+    return ""
+
+
+def offset_point(point: dict[str, float], direction: str, amount: float) -> dict[str, float]:
+    if direction == "up":
+        return {"x": point["x"], "y": point["y"] - amount}
+    if direction == "down":
+        return {"x": point["x"], "y": point["y"] + amount}
+    if direction == "left":
+        return {"x": point["x"] - amount, "y": point["y"]}
+    if direction == "right":
+        return {"x": point["x"] + amount, "y": point["y"]}
+    return {"x": point["x"], "y": point["y"]}
+
+
+def route_candidates_for_kind(kind: str, dx: float, dy: float) -> list[str]:
+    kind_name = str(kind or "").lower()
+    if kind_name in {"straightconnector1", "line", "connector"}:
+        return ["H" if abs(dx) >= abs(dy) else "V"]
+    if kind_name == "bentconnector2":
+        return ["HV", "VH", "H", "V", "HVHV", "VHVH"]
+    if kind_name in {"bentconnector3", "bentconnector4"}:
+        return ["HVHV", "VHVH", "HVH", "VHV", "HV", "VH"]
+    return ["HVHV", "HVH", "VHV", "HV", "VH", "H", "V"]
+
+
+def choose_route_signature(kind: str, page_type: str, start_dir: str, end_dir: str, dx: float, dy: float) -> str:
+    start_axis = axis_from_direction(start_dir)
+    end_axis = axis_from_direction(end_dir)
+    pool = route_candidates_for_kind(kind, dx, dy)
+    case_prefs = connector_route_case_preferences(page_type, kind, start_dir, end_dir)
+    if case_prefs:
+        ranked = sorted(case_prefs.items(), key=lambda item: item[1], reverse=True)
+        for signature, _ in ranked:
+            if signature in pool:
+                return signature
+    prefs = connector_route_preferences(page_type)
+    if prefs:
+        best_signature = ""
+        best_score = -10**9
+        for signature in pool:
+            score = prefs.get(signature, 0) * 10
+            if end_axis and signature[-1] == end_axis:
+                score += 6
+            if start_axis and signature[0] == start_axis:
+                score += 3
+            if len(signature) >= 3 and abs(dx) > 24 and abs(dy) > 18:
+                score += 2
+            if len(signature) == 1 and abs(dx) > 24 and abs(dy) > 18:
+                score -= 8
+            if score > best_score:
+                best_score = score
+                best_signature = signature
+        if best_signature:
+            return best_signature
+    for signature in pool:
+        if end_axis and signature[-1] == end_axis:
+            return signature
+    for signature in pool:
+        if start_axis and signature[0] == start_axis:
+            return signature
+    if pool:
+        return pool[0]
+    if abs(dx) >= abs(dy):
+        return "HVH" if start_axis == "H" and end_axis == "H" else "H"
+    return "VHV" if start_axis == "V" and end_axis == "V" else "V"
+
+
+def unique_points(points: list[dict[str, float]]) -> list[dict[str, float]]:
+    output: list[dict[str, float]] = []
+    for point in points:
+        if not output:
+            output.append(point)
+            continue
+        previous = output[-1]
+        if math.isclose(previous["x"], point["x"], abs_tol=0.01) and math.isclose(previous["y"], point["y"], abs_tol=0.01):
+            continue
+        output.append(point)
+    return output
+
+
+def orthogonal_points_from_signature(start: dict[str, float], end: dict[str, float], signature: str) -> list[dict[str, float]]:
+    if signature == "H":
+        return [start, end]
+    if signature == "V":
+        return [start, end]
+    if signature == "HV":
+        return [start, {"x": end["x"], "y": start["y"]}, end]
+    if signature == "VH":
+        return [start, {"x": start["x"], "y": end["y"]}, end]
+    if signature == "HVH":
+        mid_x = round((start["x"] + end["x"]) / 2, 2)
+        return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+    if signature == "VHV":
+        mid_y = round((start["y"] + end["y"]) / 2, 2)
+        return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
+    if signature == "HVHV":
+        mid_y = round((start["y"] + end["y"]) / 2, 2)
+        pivot_x = round(start["x"] + (end["x"] - start["x"]) * 0.62, 2)
+        return [start, {"x": pivot_x, "y": start["y"]}, {"x": pivot_x, "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
+    if signature == "VHVH":
+        mid_x = round((start["x"] + end["x"]) / 2, 2)
+        pivot_y = round(start["y"] + (end["y"] - start["y"]) * 0.62, 2)
+        return [start, {"x": start["x"], "y": pivot_y}, {"x": mid_x, "y": pivot_y}, {"x": mid_x, "y": end["y"]}, end]
+    return [start, end]
+
+
+def build_connector_path_points(
+    start: dict[str, float],
+    end: dict[str, float],
+    *,
+    kind: str,
+    page_type: str,
+    start_dir: str,
+    end_dir: str,
+) -> list[dict[str, float]]:
+    dx = end["x"] - start["x"]
+    dy = end["y"] - start["y"]
+    signature = choose_route_signature(kind, page_type, start_dir, end_dir, dx, dy)
+    lead = max(min(abs(dx), abs(dy), 18.0), 8.0)
+    start_anchor = offset_point(start, start_dir, lead) if start_dir else start
+    end_anchor = offset_point(end, end_dir, -lead) if end_dir else end
+    points = [start]
+    if start_anchor != start:
+        points.append(start_anchor)
+    points.extend(orthogonal_points_from_signature(start_anchor, end_anchor, signature)[1:-1])
+    if end_anchor != end:
+        points.append(end_anchor)
+    points.append(end)
+    return unique_points(points)
+
+
+def segment_direction(previous: dict[str, float], current: dict[str, float]) -> str:
+    dx = current["x"] - previous["x"]
+    dy = current["y"] - previous["y"]
+    if abs(dx) >= abs(dy):
+        return "right" if dx >= 0 else "left"
+    return "down" if dy >= 0 else "up"
+
+
+def build_connector_route_debug(
+    candidate: dict[str, Any],
+    block: dict[str, Any],
+    context: dict[str, Any],
+) -> dict[str, Any] | None:
+    extra = candidate.get("extra") or {}
+    start_px = scale_point(extra.get("start_point_px"), context["scale_x"], context["scale_y"])
+    end_px = scale_point(extra.get("end_point_px"), context["scale_x"], context["scale_y"])
+    if not start_px or not end_px:
+        return None
+    start = transform_point_into_block(start_px, block)
+    end = transform_point_into_block(end_px, block)
+    start_conn = extra.get("start_connection") or {}
+    end_conn = extra.get("end_connection") or {}
+    start_dir = direction_from_idx(start_conn.get("idx"))
+    end_dir = direction_from_idx(end_conn.get("idx"))
+    page_type = str(((context.get("visual_strategy") or {}).get("page_type")) or "generic")
+    kind = str(extra.get("shape_kind") or "straightConnector1")
+    signature = choose_route_signature(kind, page_type, start_dir, end_dir, end["x"] - start["x"], end["y"] - start["y"])
+    points = build_connector_path_points(
+        start,
+        end,
+        kind=kind,
+        page_type=page_type,
+        start_dir=start_dir,
+        end_dir=end_dir,
+    )
+    final_direction = ""
+    if len(points) >= 2:
+        final_direction = segment_direction(points[-2], points[-1])
+    expected_end_direction = end_dir or segment_direction(start, end)
+    bend_points = points[1:-1] if len(points) > 2 else []
+    route_preferences = connector_route_preferences(page_type)
+    ranked_preferences = [
+        {"signature": signature_key, "count": count}
+        for signature_key, count in sorted(route_preferences.items(), key=lambda item: item[1], reverse=True)[:5]
+    ]
+    return {
+        "candidate_id": candidate.get("candidate_id"),
+        "shape_kind": kind,
+        "page_type": page_type,
+        "block_id": block.get("block_id"),
+        "block_type": block.get("block_type"),
+        "start_point": start,
+        "end_point": end,
+        "start_connection_idx": start_conn.get("idx"),
+        "end_connection_idx": end_conn.get("idx"),
+        "start_direction": start_dir,
+        "end_direction": end_dir,
+        "chosen_signature": signature,
+        "route_points": points,
+        "bend_points": bend_points,
+        "bend_count": len(bend_points),
+        "final_direction": final_direction,
+        "expected_end_direction": expected_end_direction,
+        "direction_match": final_direction == expected_end_direction if expected_end_direction else True,
+        "reference_route_preferences": ranked_preferences,
+    }
 
 
 def text_svg_markup(
@@ -140,8 +555,11 @@ def text_svg_markup(
     r_ins: float = 2.0,
     t_ins: float = 2.0,
     b_ins: float = 2.0,
+    max_lines: int | None = None,
 ) -> str:
     lines = wrap_text_lines(text_value, max(1, int(max((bounds["width"] - l_ins - r_ins) / max(font_size * 0.62, 4), 1))))
+    if max_lines is not None and len(lines) > max_lines:
+        lines = lines[:max_lines]
     line_height = font_size * 1.25
     content_height = len(lines) * line_height
     x = bounds["x"] + l_ins
@@ -167,10 +585,17 @@ def text_svg_markup(
     return "".join(parts)
 
 
-def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], block_bounds: dict[str, Any], context: dict[str, Any]) -> str:
+def render_candidate_svg(
+    candidate: dict[str, Any],
+    abs_bounds: dict[str, Any],
+    block: dict[str, Any],
+    context: dict[str, Any],
+    *,
+    block_type: str | None = None,
+) -> str:
     subtype = candidate.get("subtype")
     extra = candidate.get("extra") or {}
-    local = local_bounds(abs_bounds, block_bounds)
+    local = local_bounds_in_block(abs_bounds, block)
     if subtype == "text_block":
         if should_skip_layout_placeholder_text(candidate):
             return ""
@@ -180,74 +605,32 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         style = build_text_style(candidate, abs_bounds, scale=min(context["scale_x"], context["scale_y"]))
         fill_hex, fill_opacity = style_color_to_svg((extra.get("text_style") or {}).get("fill"), "#111111")
         text_style = extra.get("text_style") or {}
+        policy = block_text_policy(str(((context.get("visual_strategy") or {}).get("page_type")) or "generic"), block_type or "content_block")
+        font_size = resolve_block_font_size(candidate, style, policy, block_type=block_type or "content_block")
+        padding = policy["padding"]
+        max_lines = None
+        if block_type == "right_panel_block":
+            max_lines = max(2, int(local["height"] / max(font_size * 1.25, 1)))
         return text_svg_markup(
             text_value,
             local,
-            font_size=style.get("fontSize") or 12,
+            font_size=font_size,
             fill_hex=fill_hex,
             fill_opacity=fill_opacity,
             font_family=style.get("fontFamily") or "Arial",
             horizontal_align=style.get("textAlignHorizontal") or "LEFT",
             vertical_align=style.get("textAlignVertical") or "TOP",
-            l_ins=float(text_style.get("lIns") or 2),
-            r_ins=float(text_style.get("rIns") or 2),
-            t_ins=float(text_style.get("tIns") or 2),
-            b_ins=float(text_style.get("bIns") or 2),
+            l_ins=float(text_style.get("lIns") or padding["l"]),
+            r_ins=float(text_style.get("rIns") or padding["r"]),
+            t_ins=float(text_style.get("tIns") or padding["t"]),
+            b_ins=float(text_style.get("bIns") or padding["b"]),
+            max_lines=max_lines,
         )
     if subtype == "connector":
-        raw = candidate.get("bounds_px") or {}
         stroke_hex, stroke_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("line") or {}), "#777777")
-        scale_x = context["scale_x"]
-        scale_y = context["scale_y"]
-        start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
-        end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
-        kind = str(extra.get("shape_kind") or "straightConnector1")
-        if start_px and end_px:
-            start = {"x": round(start_px["x"] - block_bounds["x"], 2), "y": round(start_px["y"] - block_bounds["y"], 2)}
-            end = {"x": round(end_px["x"] - block_bounds["x"], 2), "y": round(end_px["y"] - block_bounds["y"], 2)}
-            points = [start]
-            start_conn = extra.get("start_connection") or {}
-            end_conn = extra.get("end_connection") or {}
-
-            def dir_from_idx(value: Any) -> str:
-                mapping = {0: "up", 1: "right", 2: "down", 3: "left", 4: "up", 5: "right", 6: "down", 7: "left"}
-                try:
-                    return mapping.get(int(value), "")
-                except Exception:
-                    return ""
-
-            def offset_point(point: dict[str, float], direction: str, amount: float) -> dict[str, float]:
-                if direction == "up":
-                    return {"x": point["x"], "y": point["y"] - amount}
-                if direction == "down":
-                    return {"x": point["x"], "y": point["y"] + amount}
-                if direction == "left":
-                    return {"x": point["x"] - amount, "y": point["y"]}
-                if direction == "right":
-                    return {"x": point["x"] + amount, "y": point["y"]}
-                return {"x": point["x"], "y": point["y"]}
-
-            start_dir = dir_from_idx(start_conn.get("idx"))
-            end_dir = dir_from_idx(end_conn.get("idx"))
-            lead = 10.0
-            if start_dir or end_dir:
-                start_exit = offset_point(start, start_dir, lead)
-                end_entry = offset_point(end, end_dir, -lead)
-                points = [start, start_exit]
-                if abs(end_entry["x"] - start_exit["x"]) >= abs(end_entry["y"] - start_exit["y"]):
-                    points.extend([{"x": end_entry["x"], "y": start_exit["y"]}, end_entry])
-                else:
-                    points.extend([{"x": start_exit["x"], "y": end_entry["y"]}, end_entry])
-            if kind == "bentConnector2":
-                points.append({"x": start["x"], "y": end["y"]})
-            elif kind in {"bentConnector3", "bentConnector4"}:
-                if abs(end["x"] - start["x"]) >= abs(end["y"] - start["y"]):
-                    mid_x = round((start["x"] + end["x"]) / 2, 2)
-                    points.extend([{"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}])
-                else:
-                    mid_y = round((start["y"] + end["y"]) / 2, 2)
-                    points.extend([{"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}])
-            points.append(end)
+        route_debug = build_connector_route_debug(candidate, block, context)
+        if route_debug:
+            points = route_debug["route_points"]
             path = "M " + " L ".join(f"{p['x']} {p['y']}" for p in points)
             arrow_svg = ""
             if len(points) >= 2:
@@ -256,14 +639,6 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
                 dx = p2["x"] - p1["x"]
                 dy = p2["y"] - p1["y"]
                 size = 6
-                if end_dir == "left":
-                    dx, dy = -1, 0
-                elif end_dir == "right":
-                    dx, dy = 1, 0
-                elif end_dir == "up":
-                    dx, dy = 0, -1
-                elif end_dir == "down":
-                    dx, dy = 0, 1
                 if abs(dx) >= abs(dy):
                     if dx >= 0:
                         arrow = [(p2["x"], p2["y"]), (p2["x"] - size, p2["y"] - size / 2), (p2["x"] - size, p2["y"] + size / 2)]
@@ -332,20 +707,21 @@ def render_candidate_svg(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
                     },
                 },
                 abs_bounds,
-                block_bounds,
+                block,
                 context,
+                block_type=block_type,
             )
             return shape_svg + text_svg
         return shape_svg
     return ""
 
 
-def render_generated_node_svg(node: dict[str, Any], block_bounds: dict[str, Any]) -> str:
+def render_generated_node_svg(node: dict[str, Any], block: dict[str, Any]) -> str:
     node_type = node.get("type")
-    bounds = node.get("absoluteBoundingBox") or block_bounds
-    local = local_bounds(bounds, block_bounds)
+    bounds = node.get("absoluteBoundingBox") or block["bounds"]
+    local = local_bounds_in_block(bounds, block)
     if node_type in {"GROUP", "FRAME"}:
-        return "".join(render_generated_node_svg(child, block_bounds) for child in node.get("children", []))
+        return "".join(render_generated_node_svg(child, block) for child in node.get("children", []))
     if node_type == "RECTANGLE":
         fills = node.get("fills") or []
         strokes = node.get("strokes") or []
@@ -403,22 +779,24 @@ def build_svg_block_node(block: dict[str, Any], markup: str, role: str) -> dict[
 
 
 def build_header_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
-    candidates = collect_block_candidates(block, context)
+    ownership = filter_block_candidates(
+        collect_block_candidates(block, context),
+        context,
+        dominant_owner_subtypes={"table"},
+        candidate_owner_subtypes={"table", "table_cell"},
+    )
     parts: list[str] = []
     parts.append(
         f'<rect x="0" y="0" width="{round(block["bounds"]["width"],2)}" height="{round(min(block["bounds"]["height"], 42),2)}" fill="white" fill-opacity="0" />'
     )
-    for candidate in candidates:
-        subtype = candidate.get("subtype")
-        if subtype in {"group", "section_block", "table_row", "table_cell"}:
-            continue
+    for candidate in ownership["filtered_candidates"]:
         abs_bounds = make_bounds(
             scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
             scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
             scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
             scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
         )
-        svg = render_candidate_svg(candidate, abs_bounds, block["bounds"], context)
+        svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="header_block")
         if not svg:
             continue
         parts.append(svg)
@@ -530,10 +908,18 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
 
 
 def build_table_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+    policy = block_text_policy(block["page_type"], "table_block")
     root_candidates = {candidate["candidate_id"]: candidate for candidate in context["roots"]}
     table_roots = [root_candidates[candidate_id] for candidate_id in block["root_candidate_ids"] if candidate_id in root_candidates]
+    ownership = filter_block_candidates(
+        table_roots,
+        context,
+        dominant_owner_subtypes={"table"},
+        candidate_owner_subtypes={"table", "table_cell"},
+        duplicate_subtypes={"labeled_shape", "text_block", "shape", "section_block", "group"},
+    )
     parts: list[str] = []
-    for candidate in table_roots:
+    for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") == "table":
             table_group = build_table_visual_group(candidate, context, assets)
             for child in table_group["children"]:
@@ -541,27 +927,39 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
                 if child.get("type") == "TEXT":
                     text_value = child.get("characters") or child.get("name") or ""
                     style = child.get("style") or {}
-                    local = local_bounds(bounds, block["bounds"])
+                    local = local_bounds_in_block(bounds, block)
                     fill = (child.get("fills") or [{}])[0]
                     fill_hex, fill_opacity = style_color_to_svg(fill, "#111111")
                     parts.append(
                         text_svg_markup(
                             text_value,
                             local,
-                            font_size=style.get("fontSize") or 12,
+                            font_size=resolve_block_font_size(
+                                {
+                                    "extra": {
+                                        "text_style": {
+                                            "font_size_max": style.get("fontSize"),
+                                            "font_size_avg": style.get("fontSize"),
+                                        }
+                                    }
+                                },
+                                style,
+                                policy,
+                                block_type="table_block",
+                            ),
                             fill_hex=fill_hex,
                             fill_opacity=fill_opacity,
                             font_family=style.get("fontFamily") or "Arial",
                             horizontal_align=style.get("textAlignHorizontal") or "LEFT",
                             vertical_align=style.get("textAlignVertical") or "TOP",
-                            l_ins=4,
-                            r_ins=4,
-                            t_ins=2,
-                            b_ins=2,
+                            l_ins=0.0,
+                            r_ins=0.0,
+                            t_ins=0.0,
+                            b_ins=0.0,
                         )
                     )
                 elif child.get("type") == "RECTANGLE":
-                    local = local_bounds(bounds, block["bounds"])
+                    local = local_bounds_in_block(bounds, block)
                     fills = child.get("fills") or []
                     strokes = child.get("strokes") or []
                     fill_hex, fill_opacity = style_color_to_svg(fills[0] if fills else None, "#ffffff")
@@ -576,7 +974,7 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
             if child:
                 bounds = child.get("absoluteBoundingBox") or block["bounds"]
                 if child.get("type") == "TEXT":
-                    local = local_bounds(bounds, block["bounds"])
+                    local = local_bounds_in_block(bounds, block)
                     style = child.get("style") or {}
                     fill = (child.get("fills") or [{}])[0]
                     fill_hex, fill_opacity = style_color_to_svg(fill, "#111111")
@@ -584,35 +982,50 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
                         text_svg_markup(
                             child.get("characters") or child.get("name") or "",
                             local,
-                            font_size=style.get("fontSize") or 12,
+                            font_size=resolve_block_font_size(
+                                {
+                                    "extra": {
+                                        "text_style": {
+                                            "font_size_max": style.get("fontSize"),
+                                            "font_size_avg": style.get("fontSize"),
+                                        }
+                                    }
+                                },
+                                style,
+                                policy,
+                                block_type="table_block",
+                            ),
                             fill_hex=fill_hex,
                             fill_opacity=fill_opacity,
                             font_family=style.get("fontFamily") or "Arial",
                             horizontal_align=style.get("textAlignHorizontal") or "LEFT",
                             vertical_align=style.get("textAlignVertical") or "TOP",
-                            l_ins=4,
-                            r_ins=4,
-                            t_ins=2,
-                            b_ins=2,
+                            l_ins=0.0,
+                            r_ins=0.0,
+                            t_ins=0.0,
+                            b_ins=0.0,
                         )
                     )
     return build_svg_block_node(block, "".join(parts), "table_block_svg")
 
 
 def build_flow_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
-    candidates = collect_block_candidates(block, context)
+    ownership = filter_block_candidates(
+        collect_block_candidates(block, context),
+        context,
+        dominant_owner_subtypes={"table"},
+        candidate_owner_subtypes={"table", "table_cell"},
+    )
     layers: list[tuple[int, float, float, str]] = []
-    for candidate in candidates:
+    for candidate in ownership["filtered_candidates"]:
         subtype = candidate.get("subtype")
-        if subtype in {"group", "section_block", "table_row", "table_cell"}:
-            continue
         abs_bounds = make_bounds(
             scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
             scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
             scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
             scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
         )
-        svg = render_candidate_svg(candidate, abs_bounds, block["bounds"], context)
+        svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="flow_block")
         if not svg:
             continue
         role = 1
@@ -628,37 +1041,46 @@ def build_flow_block_node(block: dict[str, Any], context: dict[str, Any], assets
 
 
 def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
-    candidates = collect_block_candidates(block, context)
+    ownership = filter_block_candidates(
+        collect_block_candidates(block, context),
+        context,
+        dominant_owner_subtypes={"table"},
+        candidate_owner_subtypes={"table", "table_cell"},
+        duplicate_subtypes={"labeled_shape", "text_block", "shape", "group", "section_block"},
+        overlap_threshold=0.75,
+    )
+    primary_table = ownership["dominant_owner"]
+    primary_table_bounds = ownership["dominant_owner_bounds"]
+    render_block = dict(block)
+    if primary_table_bounds and (
+        float(primary_table_bounds["height"]) > float(block["bounds"]["height"]) * 1.12
+        or float(primary_table_bounds["width"]) > float(block["bounds"]["width"]) * 1.12
+    ):
+        render_block["coordinate_mode"] = "viewport_clip"
     seen_tables: set[str] = set()
     layers: list[tuple[int, float, float, str]] = []
-    for candidate in candidates:
+    for candidate in ownership["filtered_candidates"]:
         subtype = candidate.get("subtype")
-        if subtype in {"group", "section_block", "table_row", "table_cell"}:
-            continue
         if subtype == "table":
             if candidate["candidate_id"] in seen_tables:
                 continue
             seen_tables.add(candidate["candidate_id"])
             table_group = build_table_visual_group(candidate, context, assets)
-            table_svg = render_generated_node_svg(table_group, block["bounds"])
+            table_svg = render_generated_node_svg(table_group, render_block)
             bounds = table_group["absoluteBoundingBox"]
             layers.append((1, bounds["y"], bounds["x"], table_svg))
             continue
-        abs_bounds = make_bounds(
-            scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
-            scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
-        )
-        svg = render_candidate_svg(candidate, abs_bounds, block["bounds"], context)
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
         if not svg:
             continue
         role = 2 if subtype == "text_block" else 1
         if subtype == "shape":
             role = 0
         layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
-    markup = "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
-    return build_svg_block_node(block, markup, "right_panel_block_svg")
+    bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
+    markup = bg + "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
+    return build_svg_block_node(render_block, markup, "right_panel_block_svg")
 
 
 def build_generic_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
@@ -675,19 +1097,22 @@ def build_generic_block_node(block: dict[str, Any], context: dict[str, Any], ass
 
 
 def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
-    candidates = collect_block_candidates(block, context)
+    ownership = filter_block_candidates(
+        collect_block_candidates(block, context),
+        context,
+        dominant_owner_subtypes={"table"},
+        candidate_owner_subtypes={"table", "table_cell"},
+    )
     layers: list[tuple[int, float, float, str]] = []
-    for candidate in candidates:
+    for candidate in ownership["filtered_candidates"]:
         subtype = candidate.get("subtype")
-        if subtype in {"group", "section_block", "table_row", "table_cell"}:
-            continue
         abs_bounds = make_bounds(
             scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
             scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
             scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
             scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
         )
-        svg = render_candidate_svg(candidate, abs_bounds, block["bounds"], context)
+        svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="content_block")
         if not svg:
             continue
         role = 1
@@ -768,7 +1193,8 @@ def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, 
     assets: dict[str, Any] = {}
     block_frames = []
     for block in detection["blocks"]:
-        block_frames.append(build_block_node(block, context, assets))
+        normalized_block = normalize_block_bounds(block)
+        block_frames.append(build_block_node(normalized_block, context, assets))
 
     root = build_page_root(context, block_frames)
     return {
@@ -787,7 +1213,7 @@ def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, 
             "candidate_count": len(context["candidates"]),
             "root_candidate_count": len(context["roots"]),
             "visual_strategy": context["visual_strategy"],
-            "blocks": detection["blocks"],
+            "blocks": [normalize_block_bounds(block) for block in detection["blocks"]],
         },
     }
 
