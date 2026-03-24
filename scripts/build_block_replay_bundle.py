@@ -490,6 +490,14 @@ def maybe_shorten_signature(
 ) -> str:
     start_axis = axis_from_direction(start_dir)
     end_axis = axis_from_direction(end_dir)
+    if signature in {"HVHV", "HVH"} and abs(dy) <= 24:
+        return "H"
+    if signature in {"VHVH", "VHV"} and abs(dx) <= 24:
+        return "V"
+    if signature in {"HVHV", "HVH"} and abs(dx) > max(abs(dy) * 1.8, 72):
+        return "H"
+    if signature in {"VHVH", "VHV"} and abs(dy) > max(abs(dx) * 1.8, 72):
+        return "V"
     if signature in {"HVHV", "VHVH"}:
         if abs(dx) < 60 or abs(dy) < 60:
             if start_axis == "H" and end_axis == "H":
@@ -930,6 +938,10 @@ def build_header_block_node(block: dict[str, Any], context: dict[str, Any], asse
         f'<rect x="0" y="0" width="{round(block["bounds"]["width"],2)}" height="{round(min(block["bounds"]["height"], 42),2)}" fill="white" fill-opacity="0" />'
     )
     for candidate in ownership["filtered_candidates"]:
+        if candidate.get("subtype") == "table":
+            table_group = build_table_visual_group(candidate, context, assets)
+            parts.append(render_generated_node_svg(table_group, block))
+            continue
         if candidate.get("subtype") == "connector":
             source_scope = str(((candidate.get("extra") or {}).get("source_scope")) or "slide").lower()
             abs_bounds = candidate_abs_bounds(candidate, context)
@@ -1080,10 +1092,10 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
                     debug = child.get("debug") or {}
                     if debug.get("table_role") == "merged_label_cell":
                         font_size = float(style.get("fontSize") or 18)
-                        horizontal_align = "LEFT"
+                        horizontal_align = "CENTER"
                         vertical_align = "CENTER"
-                        l_ins = 10.0
-                        r_ins = 6.0
+                        l_ins = 2.0
+                        r_ins = 2.0
                         t_ins = 2.0
                         b_ins = 2.0
                     else:
@@ -1293,7 +1305,7 @@ def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dic
         return build_flow_block_node(block, context, assets)
     if block["block_type"] == "right_panel_block":
         return build_right_panel_block_node(block, context, assets)
-    if block["block_type"] == "content_block" and block["page_type"] == "ui-mockup":
+    if block["block_type"] == "content_block" and block["page_type"] in {"ui-mockup", "table-heavy"}:
         return build_content_svg_block_node(block, context, assets)
     return build_generic_block_node(block, context, assets)
 
