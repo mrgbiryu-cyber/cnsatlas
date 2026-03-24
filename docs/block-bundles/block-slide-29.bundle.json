@@ -259,7 +259,8 @@
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
                       "shape_kind": "rect",
-                      "role": "table_cell_rect"
+                      "role": "table_cell_rect",
+                      "source_candidate_id": "s29:slide_29/element_37:row_1:cell_1"
                     }
                   },
                   {
@@ -393,7 +394,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "role": "header_text_group"
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_1:cell_1"
                     }
                   },
                   {
@@ -449,7 +451,8 @@
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
                       "shape_kind": "rect",
-                      "role": "table_cell_rect"
+                      "role": "table_cell_rect",
+                      "source_candidate_id": "s29:slide_29/element_37:row_2:cell_1"
                     }
                   },
                   {
@@ -634,7 +637,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "role": "header_text_group"
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_2:cell_1"
                     }
                   },
                   {
@@ -690,7 +694,8 @@
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
                       "shape_kind": "rect",
-                      "role": "table_cell_rect"
+                      "role": "table_cell_rect",
+                      "source_candidate_id": "s29:slide_29/element_37:row_3:cell_1"
                     }
                   },
                   {
@@ -741,7 +746,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "rotation_degrees": 0.0
+                      "rotation_degrees": 0.0,
+                      "source_candidate_id": "s29:slide_29/element_37:row_3:cell_1"
                     }
                   },
                   {
@@ -797,7 +803,8 @@
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
                       "shape_kind": "rect",
-                      "role": "table_cell_rect"
+                      "role": "table_cell_rect",
+                      "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
                     }
                   },
                   {
@@ -931,7 +938,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "role": "header_text_group"
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
                     }
                   },
                   {
@@ -987,7 +995,8 @@
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
                       "shape_kind": "rect",
-                      "role": "table_cell_rect"
+                      "role": "table_cell_rect",
+                      "source_candidate_id": "s29:slide_29/element_37:row_4:cell_1"
                     }
                   },
                   {
@@ -1038,7 +1047,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "rotation_degrees": 0.0
+                      "rotation_degrees": 0.0,
+                      "source_candidate_id": "s29:slide_29/element_37:row_4:cell_1"
                     }
                   },
                   {
@@ -1172,7 +1182,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "role": "header_text_group"
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2"
                     }
                   },
                   {
@@ -1228,7 +1239,8 @@
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
                       "shape_kind": "rect",
-                      "role": "table_cell_rect"
+                      "role": "table_cell_rect",
+                      "source_candidate_id": "s29:slide_29/element_37:row_5:cell_1"
                     }
                   },
                   {
@@ -1279,7 +1291,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "rotation_degrees": 0.0
+                      "rotation_degrees": 0.0,
+                      "source_candidate_id": "s29:slide_29/element_37:row_5:cell_1"
                     }
                   },
                   {
@@ -1413,58 +1426,8 @@
                       "source_node_id": "49",
                       "source_subtype": "table_cell",
                       "source_scope": "slide",
-                      "role": "header_text_group"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_37:row_6:cell_1:text",
-                    "type": "TEXT",
-                    "name": "cell 6-1",
-                    "characters": "뒷페이지 계속",
-                    "absoluteBoundingBox": {
-                      "x": 663.83,
-                      "y": 137.2,
-                      "width": 268.67,
-                      "height": 9.78
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.12,
-                          "g": 0.12,
-                          "b": 0.12
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontSize": 8,
-                      "fontFamily": "Inter",
-                      "textAlignHorizontal": "LEFT",
-                      "textAlignVertical": "CENTER",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": null
-                    },
-                    "children": [],
-                    "debug": {
-                      "source_path": "slide_29/element_37/row_6/cell_1",
-                      "source_node_id": "49",
-                      "source_subtype": "table_cell",
-                      "source_scope": "slide",
-                      "rotation_degrees": 0.0
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2"
                     }
                   }
                 ],
@@ -1536,7 +1499,7 @@
                     0
                   ]
                 ],
-                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"105.94\" y=\"343.58\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"105.94\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보</tspan><tspan x=\"105.94\" dy=\"10.0\">제공 : 동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 :</tspan><tspan x=\"105.94\" dy=\"10.0\">[PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서</tspan><tspan x=\"105.94\" dy=\"10.0\">정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시</tspan><tspan x=\"105.94\" dy=\"10.0\">, [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube</tspan><tspan x=\"105.94\" dy=\"10.0\">case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video</tspan><tspan x=\"105.94\" dy=\"10.0\">File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 ,</tspan><tspan x=\"105.94\" dy=\"10.0\">[PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개</tspan><tspan x=\"105.94\" dy=\"10.0\">이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 /</tspan><tspan x=\"105.94\" dy=\"10.0\">다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서</tspan><tspan x=\"105.94\" dy=\"10.0\">다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼</tspan><tspan x=\"105.94\" dy=\"10.0\">(Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상</tspan><tspan x=\"105.94\" dy=\"10.0\">(video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서</tspan><tspan x=\"105.94\" dy=\"10.0\">인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷</tspan><tspan x=\"105.94\" dy=\"10.0\">이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 -</tspan><tspan x=\"105.94\" dy=\"10.0\">CMS &gt; 제품 &gt; 모델 &gt; 모델 관리 &gt; 모델기본정보 -&gt; 닷컴 전용 여부</tspan><tspan x=\"105.94\" dy=\"10.0\">‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e)</tspan><tspan x=\"105.94\" dy=\"10.0\">Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두</tspan><tspan x=\"105.94\" dy=\"10.0\">충족 시 문구 제공 1) WCMS &gt; [KRP0008] &gt; 비디오 &gt; Video</tspan></text><text x=\"105.94\" y=\"542.51\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"105.94\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt;</tspan><tspan x=\"105.94\" dy=\"10.0\">UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트</tspan><tspan x=\"105.94\" dy=\"10.0\">Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미</tspan><tspan x=\"105.94\" dy=\"10.0\">노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 ,</tspan><tspan x=\"105.94\" dy=\"10.0\">특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해</tspan><tspan x=\"105.94\" dy=\"10.0\">특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 )</tspan><tspan x=\"105.94\" dy=\"10.0\">노출순서 변경됨 : 으뜸효율환급 &gt; 베스트 랭킹 순위 &gt;YYYY 년 출시 &gt;</tspan><tspan x=\"105.94\" dy=\"10.0\">다품목 할인 &gt; UP 가전 &gt; 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄</tspan><tspan x=\"105.94\" dy=\"10.0\">바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경</tspan><tspan x=\"105.94\" dy=\"10.0\">[ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★</tspan><tspan x=\"105.94\" dy=\"10.0\">YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일</tspan><tspan x=\"105.94\" dy=\"10.0\">(black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는</tspan><tspan x=\"105.94\" dy=\"10.0\">PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS &gt; 제품 &gt; 모델 &gt; 모델관리</tspan><tspan x=\"105.94\" dy=\"10.0\">&gt; 모델기본정보 --&gt; 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지</tspan><tspan x=\"105.94\" dy=\"10.0\">우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위</tspan><tspan x=\"105.94\" dy=\"10.0\">신규 추가됨 ”FRONT &gt; 홈 &gt; 제품 / 소모품 &gt; 베스트 랭킹 &gt; 오늘의</tspan><tspan x=\"105.94\" dy=\"10.0\">랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및</tspan><tspan x=\"105.94\" dy=\"10.0\">용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 )</tspan><tspan x=\"105.94\" dy=\"10.0\">뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크</tspan></text><text x=\"105.94\" y=\"749.45\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"105.94\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"102.51\" y=\"70.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan></text><text x=\"102.51\" y=\"88.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt;</tspan></text><text x=\"76.95\" y=\"108.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"76.95\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
                 "children": [],
                 "debug": {
                   "generator": "block-prototype-v1",

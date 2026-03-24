@@ -1098,6 +1098,59 @@ def build_svg_block_child_node(block: dict[str, Any], markup: str, role: str, su
     return node
 
 
+def iter_table_cell_layouts(table_candidate: dict[str, Any], context: dict[str, Any]):
+    scale_x = context["scale_x"]
+    scale_y = context["scale_y"]
+    bounds = table_candidate.get("bounds_px") or {"x": 0, "y": 0, "width": 120, "height": 40}
+    abs_bounds = make_bounds(
+        scale_value(bounds["x"], scale_x),
+        scale_value(bounds["y"], scale_y),
+        scale_value(bounds["width"], scale_x),
+        scale_value(bounds["height"], scale_y),
+    )
+    children_map = context["children_map"]
+    rows = sorted(
+        [child for child in children_map.get(table_candidate["candidate_id"], []) if child.get("subtype") == "table_row"],
+        key=sort_by_position_key,
+    )
+    grid_columns = (table_candidate.get("extra") or {}).get("grid_columns") or []
+    if grid_columns:
+        column_widths = [scale_value(column.get("width_px") or 0, scale_x) for column in grid_columns]
+    else:
+        max_cols = max(
+            (len([child for child in children_map.get(row["candidate_id"], []) if child.get("subtype") == "table_cell"]) for row in rows),
+            default=1,
+        )
+        column_widths = [abs_bounds["width"] / max(max_cols, 1)] * max_cols
+    column_x = [abs_bounds["x"]]
+    for width in column_widths:
+        column_x.append(column_x[-1] + width)
+    row_heights: list[float] = []
+    for row in rows:
+        base_height = scale_value(((row.get("extra") or {}).get("row_height_px") or 28), scale_y)
+        row_heights.append(max(base_height, 18.0))
+    row_y = [abs_bounds["y"]]
+    for height in row_heights:
+        row_y.append(row_y[-1] + height)
+    for row_index, row in enumerate(rows):
+        row_cells = [child for child in children_map.get(row["candidate_id"], []) if child.get("subtype") == "table_cell"]
+        for cell in row_cells:
+            cell_extra = cell.get("extra") or {}
+            if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
+                continue
+            start_column_index = max(int(cell_extra.get("start_column_index") or 1), 1)
+            col_span = max(int(cell_extra.get("col_span") or cell_extra.get("grid_span") or 1), 1)
+            row_span = max(int(cell_extra.get("row_span") or 1), 1)
+            left = column_x[start_column_index - 1]
+            right_index = min(start_column_index - 1 + col_span, len(column_x) - 1)
+            right = column_x[right_index]
+            top = row_y[row_index]
+            bottom_index = min(row_index + row_span, len(row_y) - 1)
+            bottom = row_y[bottom_index]
+            cell_bounds = make_bounds(left, top, max(right - left, 1.0), max(bottom - top, 1.0))
+            yield row_index, cell, cell_extra, cell_bounds, start_column_index, row_span
+
+
 def ui_mockup_layer_role(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, block_type: str) -> int:
     subtype = str(candidate.get("subtype") or "")
     extra = candidate.get("extra") or {}
@@ -1207,51 +1260,9 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
         },
     }
 
-    children_map = context["children_map"]
-    rows = sorted(
-        [child for child in children_map.get(table_candidate["candidate_id"], []) if child.get("subtype") == "table_row"],
-        key=sort_by_position_key,
-    )
-    grid_columns = (table_candidate.get("extra") or {}).get("grid_columns") or []
-    if grid_columns:
-        column_widths = [scale_value(column.get("width_px") or 0, scale_x) for column in grid_columns]
-    else:
-        max_cols = max(
-            (len([child for child in children_map.get(row["candidate_id"], []) if child.get("subtype") == "table_cell"]) for row in rows),
-            default=1,
-        )
-        column_widths = [abs_bounds["width"] / max(max_cols, 1)] * max_cols
-    column_x = [abs_bounds["x"]]
-    for width in column_widths:
-        column_x.append(column_x[-1] + width)
-
-    row_heights: list[float] = []
-    for row in rows:
-        base_height = scale_value(((row.get("extra") or {}).get("row_height_px") or 28), scale_y)
-        row_heights.append(max(base_height, 18.0))
-    row_y = [abs_bounds["y"]]
-    for height in row_heights:
-        row_y.append(row_y[-1] + height)
-
     line_color = {"r": 0.78, "g": 0.78, "b": 0.78}
     header_fill = {"r": 0.92, "g": 0.92, "b": 0.92}
-    for row_index, row in enumerate(rows):
-        row_cells = [child for child in children_map.get(row["candidate_id"], []) if child.get("subtype") == "table_cell"]
-        for cell in row_cells:
-            cell_extra = cell.get("extra") or {}
-            if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
-                continue
-            start_column_index = max(int(cell_extra.get("start_column_index") or 1), 1)
-            col_span = max(int(cell_extra.get("col_span") or cell_extra.get("grid_span") or 1), 1)
-            row_span = max(int(cell_extra.get("row_span") or 1), 1)
-            left = column_x[start_column_index - 1]
-            right_index = min(start_column_index - 1 + col_span, len(column_x) - 1)
-            right = column_x[right_index]
-            top = row_y[row_index]
-            bottom_index = min(row_index + row_span, len(row_y) - 1)
-            bottom = row_y[bottom_index]
-            cell_bounds = make_bounds(left, top, max(right - left, 1.0), max(bottom - top, 1.0))
-
+    for row_index, cell, cell_extra, cell_bounds, start_column_index, row_span in iter_table_cell_layouts(table_candidate, context):
             cell_style = cell_extra.get("cell_style") or {}
             rect_candidate = dict(cell)
             rect_candidate["extra"] = dict(cell.get("extra") or {})
@@ -1268,7 +1279,7 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
             if row_index == 0 and not rect["fills"]:
                 rect["fills"] = [{"type": "SOLID", "color": header_fill, "opacity": 1.0}]
             rect["name"] = f"cell {row_index + 1}-{start_column_index}"
-            rect["debug"] = dict(rect.get("debug") or {}, role="table_cell_rect")
+            rect["debug"] = dict(rect.get("debug") or {}, role="table_cell_rect", source_candidate_id=cell.get("candidate_id"))
             table_group["children"].append(rect)
 
             if cell.get("text"):
@@ -1289,6 +1300,7 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
                     text_node["style"]["textAlignHorizontal"] = "LEFT"
                     text_node["style"]["textAlignVertical"] = "CENTER"
                     text_node["debug"] = dict(text_node.get("debug") or {}, table_role="merged_label_cell")
+                text_node["debug"] = dict(text_node.get("debug") or {}, source_candidate_id=cell.get("candidate_id"))
                 table_group["children"].append(text_node)
 
     return table_group
@@ -1501,34 +1513,23 @@ def select_right_panel_candidates(block: dict[str, Any], context: dict[str, Any]
 
 
 def collect_table_description_cells(table_candidate: dict[str, Any], context: dict[str, Any]) -> list[dict[str, Any]]:
-    children_map = context.get("children_map") or {}
-    rows = [
-        child for child in children_map.get(table_candidate["candidate_id"], [])
-        if child.get("subtype") == "table_row"
-    ]
-    rows = sorted(rows, key=sort_by_position_key)
     description_cells: list[dict[str, Any]] = []
-    for row_index, row in enumerate(rows):
-        cells = [
-            child for child in children_map.get(row["candidate_id"], [])
-            if child.get("subtype") == "table_cell"
-        ]
-        cells = sorted(
-            cells,
-            key=lambda cell: (
-                int(((cell.get("extra") or {}).get("start_column_index") or 0)),
-                sort_by_position_key(cell),
-            ),
-        )
-        for cell in cells:
-            text_value = str(cell.get("text") or "").strip()
-            if not text_value:
-                continue
-            if row_index < 3:
-                continue
-            if len(text_value) < 20 and "계속" not in text_value:
-                continue
-            description_cells.append(cell)
+    for row_index, cell, cell_extra, cell_bounds, start_column_index, row_span in iter_table_cell_layouts(table_candidate, context):
+        text_value = str(cell.get("text") or "").strip()
+        if not text_value:
+            continue
+        if row_index < 3:
+            continue
+        if len(text_value) < 20 and "계속" not in text_value:
+            continue
+        description_cells.append({
+            "cell": cell,
+            "cell_extra": cell_extra,
+            "cell_bounds": cell_bounds,
+            "row_index": row_index,
+            "start_column_index": start_column_index,
+            "row_span": row_span,
+        })
     return description_cells
 
 
@@ -1543,80 +1544,37 @@ def build_right_panel_description_overlay(
     description_cells = collect_table_description_cells(primary_table, context)
     if not description_cells:
         return ""
-    large_cards = []
-    for candidate in selected_candidates:
-        if candidate.get("subtype") != "labeled_shape":
-            continue
-        text_value = str(candidate.get("text") or "").strip()
-        abs_bounds = candidate_abs_bounds(candidate, context)
-        if float(abs_bounds["height"]) < 80 or float(abs_bounds["width"]) < 180:
-            continue
-        if text_value.startswith("ISSUE"):
-            continue
-        large_cards.append((abs_bounds["width"] * abs_bounds["height"], candidate, abs_bounds))
-    if not large_cards:
-        return ""
-    _, anchor_candidate, anchor_bounds = max(large_cards, key=lambda row: row[0])
-    local_anchor = local_bounds_in_block(anchor_bounds, block)
     text_blocks: list[str] = []
-    usable_x = local_anchor["x"] + 10.0
-    usable_w = max(local_anchor["width"] - 20.0, 40.0)
-    top = local_anchor["y"] + 18.0
-    bottom = local_anchor["y"] + local_anchor["height"] - 12.0
-    major_cells = [cell for cell in description_cells if "계속" not in str(cell.get("text") or "")]
-    tail_cells = [cell for cell in description_cells if "계속" in str(cell.get("text") or "")]
-    lane_count = max(len(major_cells), 1)
-    lane_height = max((bottom - top - (lane_count - 1) * 8.0) / lane_count, 42.0)
-    y_cursor = top
-    for cell in major_cells:
+    for row in description_cells:
+        cell = row["cell"]
         text_value = str(cell.get("text") or "").strip()
-        cell_extra = cell.get("extra") or {}
+        cell_extra = row["cell_extra"] or {}
         style = cell_extra.get("text_style") or {}
+        local_cell = local_bounds_in_block(row["cell_bounds"], block)
+        max_lines = max(1, int(max(local_cell["height"] - 6.0, 10.0) / max(float(style.get("font_size_max") or style.get("font_size_avg") or 8.0) * 1.25, 8.0)))
+        valign = "TOP"
+        if "계속" in text_value:
+            valign = "BOTTOM"
         text_blocks.append(
             text_svg_markup(
                 text_value,
                 {
-                    "x": usable_x,
-                    "y": y_cursor,
-                    "width": usable_w,
-                    "height": lane_height,
+                    "x": local_cell["x"] + 6.0,
+                    "y": local_cell["y"] + 4.0,
+                    "width": max(local_cell["width"] - 12.0, 24.0),
+                    "height": max(local_cell["height"] - 8.0, 12.0),
                 },
                 font_size=float(style.get("font_size_max") or style.get("font_size_avg") or 8.0),
                 fill_hex="#111111",
                 fill_opacity=1.0,
                 font_family=str(style.get("font_family") or "LG스마트체 Regular"),
                 horizontal_align="LEFT",
-                vertical_align="TOP",
+                vertical_align=valign,
                 l_ins=0.0,
                 r_ins=0.0,
                 t_ins=0.0,
                 b_ins=0.0,
-                max_lines=max(3, int(lane_height / 10.0)),
-            )
-        )
-        y_cursor += lane_height + 8.0
-    for cell in tail_cells:
-        text_value = str(cell.get("text") or "").strip()
-        text_blocks.append(
-            text_svg_markup(
-                text_value,
-                {
-                    "x": usable_x,
-                    "y": max(bottom - 18.0, y_cursor),
-                    "width": usable_w,
-                    "height": 18.0,
-                },
-                font_size=8.0,
-                fill_hex="#111111",
-                fill_opacity=1.0,
-                font_family="LG스마트체 Regular",
-                horizontal_align="LEFT",
-                vertical_align="BOTTOM",
-                l_ins=0.0,
-                r_ins=0.0,
-                t_ins=0.0,
-                b_ins=0.0,
-                max_lines=1,
+                max_lines=max_lines,
             )
         )
     return "".join(text_blocks)
@@ -1625,6 +1583,10 @@ def build_right_panel_description_overlay(
 def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     ownership = select_right_panel_candidates(block, context)
     primary_table = ownership["dominant_owner"]
+    description_cell_ids = {
+        str(row["cell"].get("candidate_id") or "")
+        for row in (collect_table_description_cells(primary_table, context) if primary_table else [])
+    }
     render_block = dict(block)
     render_block["coordinate_mode"] = "viewport_clip"
     visible_bounds = intersect_bounds(
@@ -1654,6 +1616,9 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
             table_group = build_table_visual_group(candidate, context, assets)
             table_children: list[dict[str, Any]] = []
             for child in table_group.get("children", []):
+                source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
+                if child.get("type") == "TEXT" and source_candidate_id in description_cell_ids:
+                    continue
                 if child.get("type") == "RECTANGLE" and should_skip_table_child_for_overlays(child, overlay_bounds):
                     continue
                 table_children.append(child)
