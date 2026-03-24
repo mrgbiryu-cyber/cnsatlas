@@ -41,6 +41,7 @@ from visual_ownership import (
 
 REFERENCE_TEMPLATE_PATH = Path(__file__).resolve().parents[1] / "docs" / "reference-visual-templates.json"
 _REFERENCE_TEMPLATES_CACHE: dict[str, Any] | None = None
+RIGHT_PANEL_VARIANTS = {"v1", "v2", "v3"}
 
 
 def build_block_frame(block: dict[str, Any]) -> dict[str, Any]:
@@ -1580,7 +1581,13 @@ def build_right_panel_description_overlay(
     return "".join(text_blocks)
 
 
-def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+def build_right_panel_block_node(
+    block: dict[str, Any],
+    context: dict[str, Any],
+    assets: dict[str, Any],
+    right_panel_variant: str,
+) -> dict[str, Any]:
+    variant = right_panel_variant if right_panel_variant in RIGHT_PANEL_VARIANTS else "v1"
     ownership = select_right_panel_candidates(block, context)
     primary_table = ownership["dominant_owner"]
     description_cell_ids = {
@@ -1589,14 +1596,17 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     }
     render_block = dict(block)
     render_block["coordinate_mode"] = "viewport_clip"
-    visible_bounds = intersect_bounds(
-        render_block["bounds"],
-        make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT),
-    )
-    render_block["bounds"] = visible_bounds
+    if variant == "v2":
+        render_block["bounds"] = dict(render_block["bounds"])
+    else:
+        visible_bounds = intersect_bounds(
+            render_block["bounds"],
+            make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT),
+        )
+        render_block["bounds"] = visible_bounds
     frame = build_block_frame(render_block)
-    frame["clipsContent"] = True
-    frame["debug"] = dict(frame.get("debug") or {}, role="right_panel_block_frame")
+    frame["clipsContent"] = variant != "v2"
+    frame["debug"] = dict(frame.get("debug") or {}, role="right_panel_block_frame", variant=variant)
     seen_tables: set[str] = set()
     background_layers: list[tuple[float, float, str]] = []
     foreground_nodes: list[dict[str, Any]] = []
@@ -1613,18 +1623,19 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
             if candidate["candidate_id"] in seen_tables:
                 continue
             seen_tables.add(candidate["candidate_id"])
-            table_group = build_table_visual_group(candidate, context, assets)
-            table_children: list[dict[str, Any]] = []
-            for child in table_group.get("children", []):
-                source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
-                if child.get("type") == "TEXT" and source_candidate_id in description_cell_ids:
-                    continue
-                if child.get("type") == "RECTANGLE" and should_skip_table_child_for_overlays(child, overlay_bounds):
-                    continue
-                table_children.append(child)
-            if table_children:
-                table_group["children"] = table_children
-                frame["children"].append(table_group)
+            if variant != "v3":
+                table_group = build_table_visual_group(candidate, context, assets)
+                table_children: list[dict[str, Any]] = []
+                for child in table_group.get("children", []):
+                    source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
+                    if child.get("type") == "TEXT" and source_candidate_id in description_cell_ids:
+                        continue
+                    if child.get("type") == "RECTANGLE" and should_skip_table_child_for_overlays(child, overlay_bounds):
+                        continue
+                    table_children.append(child)
+                if table_children:
+                    table_group["children"] = table_children
+                    frame["children"].append(table_group)
             continue
         abs_bounds = candidate_abs_bounds(candidate, context)
         is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
@@ -1717,7 +1728,12 @@ def build_aux_preview_block_node(block: dict[str, Any], context: dict[str, Any],
     return build_svg_block_node(block, markup, "aux_preview_block_svg")
 
 
-def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+def build_block_node(
+    block: dict[str, Any],
+    context: dict[str, Any],
+    assets: dict[str, Any],
+    right_panel_variant: str = "v1",
+) -> dict[str, Any]:
     if block["block_type"] == "header_block":
         return build_header_block_node(block, context, assets)
     if block["block_type"] == "top_meta_block":
@@ -1727,7 +1743,7 @@ def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dic
     if block["block_type"] == "flow_block":
         return build_flow_block_node(block, context, assets)
     if block["block_type"] == "right_panel_block":
-        return build_right_panel_block_node(block, context, assets)
+        return build_right_panel_block_node(block, context, assets, right_panel_variant)
     if block["block_type"] == "aux_preview_block":
         return build_aux_preview_block_node(block, context, assets)
     if block["block_type"] == "content_block" and block["page_type"] in {"ui-mockup", "table-heavy"}:
@@ -1781,14 +1797,14 @@ def build_page_root(context: dict[str, Any], block_frames: list[dict[str, Any]])
     }
 
 
-def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, Any]:
+def build_bundle_from_page(page: dict[str, Any], source_file: str, right_panel_variant: str = "v1") -> dict[str, Any]:
     context = build_page_context(page)
     detection = build_blocks_for_page(page)
     assets: dict[str, Any] = {}
     block_frames = []
     for block in detection["blocks"]:
         normalized_block = normalize_block_bounds(block)
-        block_frames.append(build_block_node(normalized_block, context, assets))
+        block_frames.append(build_block_node(normalized_block, context, assets, right_panel_variant))
 
     root = build_page_root(context, block_frames)
     return {
@@ -1807,6 +1823,7 @@ def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, 
             "candidate_count": len(context["candidates"]),
             "root_candidate_count": len(context["roots"]),
             "visual_strategy": context["visual_strategy"],
+            "right_panel_variant": right_panel_variant,
             "blocks": [normalize_block_bounds(block) for block in detection["blocks"]],
         },
     }
@@ -1817,6 +1834,8 @@ def main() -> None:
     parser.add_argument("--input", required=True, help="Intermediate candidates JSON path")
     parser.add_argument("--output-dir", required=True, help="Output directory")
     parser.add_argument("--slides", nargs="*", type=int, help="Optional slide numbers")
+    parser.add_argument("--right-panel-variant", default="v1", choices=sorted(RIGHT_PANEL_VARIANTS), help="Rendering variant for ui-mockup right panel")
+    parser.add_argument("--output-suffix", default="", help="Optional suffix appended to output file name before .bundle.json")
     args = parser.parse_args()
 
     payload = load_intermediate_payload(args.input)
@@ -1825,8 +1844,9 @@ def main() -> None:
 
     selected = iter_selected_pages(payload, set(args.slides) if args.slides else None)
     for page in selected:
-        bundle = build_bundle_from_page(page, str(Path(args.input).resolve()))
-        output_path = output_dir / f"block-slide-{page['slide_no']}.bundle.json"
+        bundle = build_bundle_from_page(page, str(Path(args.input).resolve()), args.right_panel_variant)
+        suffix = f"-{args.output_suffix}" if args.output_suffix else ""
+        output_path = output_dir / f"block-slide-{page['slide_no']}{suffix}.bundle.json"
         with output_path.open("w", encoding="utf-8") as handle:
             json.dump(bundle, handle, ensure_ascii=False, indent=2)
         print(f"saved {output_path}")
