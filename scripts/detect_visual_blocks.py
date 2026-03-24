@@ -67,6 +67,13 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
         return "header_block"
 
     if page_type == "ui-mockup":
+        if (
+            bounds["y"] <= 170
+            and (right_edge >= context["width"] * 0.74 or center_x >= context["width"] * 0.7)
+            and bounds["width"] <= context["width"] * 0.28
+            and subtype in {"labeled_shape", "text_block", "shape"}
+        ):
+            return "header_block"
         if (bounds["x"] >= context["width"] * 0.58 or center_x >= context["width"] * 0.58 or right_edge >= context["width"] * 0.68) and bounds["y"] >= 36:
             return "right_panel_block"
         if subtype == "table" and (bounds["x"] >= context["width"] * 0.55 or center_x >= context["width"] * 0.58):

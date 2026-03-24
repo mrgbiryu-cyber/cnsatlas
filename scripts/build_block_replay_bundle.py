@@ -1340,6 +1340,9 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     primary_table = ownership["dominant_owner"]
     primary_table_bounds = ownership["dominant_owner_bounds"]
     render_block = dict(block)
+    if primary_table and primary_table_bounds:
+        render_block["source_bounds"] = dict(primary_table_bounds)
+        render_block["bounds"] = dict(primary_table_bounds)
     if primary_table_bounds and (
         float(primary_table_bounds["height"]) > float(block["bounds"]["height"]) * 1.12
         or float(primary_table_bounds["width"]) > float(block["bounds"]["width"]) * 1.12
