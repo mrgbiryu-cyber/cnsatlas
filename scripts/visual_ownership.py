@@ -272,7 +272,8 @@ def should_skip_text_by_owner(
     owner = text_owner_map.get(str(candidate.get("candidate_id") or ""))
     if not owner:
         return False
-    owner_subtypes = owner_subtypes or {"table", "table_cell", "labeled_shape"}
+    if owner_subtypes is None:
+        owner_subtypes = {"table", "table_cell", "labeled_shape"}
     return str(owner.get("owner_subtype") or "") in owner_subtypes
 
 
@@ -285,7 +286,8 @@ def should_skip_candidate_by_owner(
     owner = candidate_owner_map.get(str(candidate.get("candidate_id") or ""))
     if not owner:
         return False
-    owner_subtypes = owner_subtypes or {"table", "table_cell"}
+    if owner_subtypes is None:
+        owner_subtypes = {"table", "table_cell"}
     return str(owner.get("owner_subtype") or "") in owner_subtypes
 
 
@@ -347,9 +349,12 @@ def filter_block_candidates(
     duplicate_subtypes: set[str] | None = None,
     overlap_threshold: float = 0.75,
 ) -> dict[str, Any]:
-    skip_subtypes = skip_subtypes or {"group", "section_block", "table_row", "table_cell"}
-    text_owner_subtypes = text_owner_subtypes or {"table", "table_cell", "labeled_shape"}
-    duplicate_subtypes = duplicate_subtypes or {"labeled_shape", "text_block", "shape", "group", "section_block"}
+    if skip_subtypes is None:
+        skip_subtypes = {"group", "section_block", "table_row", "table_cell"}
+    if text_owner_subtypes is None:
+        text_owner_subtypes = {"table", "table_cell", "labeled_shape"}
+    if duplicate_subtypes is None:
+        duplicate_subtypes = {"labeled_shape", "text_block", "shape", "group", "section_block"}
     candidate_lookup = build_candidate_lookup(candidates)
     rich_containers = build_rich_containers(candidates)
     suppressed_cluster_ids: set[str] = set()

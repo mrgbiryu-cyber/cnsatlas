@@ -369,7 +369,15 @@ def compatible_start_direction(direction: str, dx: float, dy: float) -> str:
 
 
 def compatible_end_direction(direction: str, dx: float, dy: float) -> str:
-    return direction
+    if direction == "right" and dx >= 0:
+        return direction
+    if direction == "left" and dx <= 0:
+        return direction
+    if direction == "down" and dy >= 0:
+        return direction
+    if direction == "up" and dy <= 0:
+        return direction
+    return ""
 
 
 def route_candidates_for_kind(kind: str, dx: float, dy: float) -> list[str]:
@@ -717,6 +725,16 @@ def render_candidate_svg(
         )
     if subtype == "connector":
         stroke_hex, stroke_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("line") or {}), "#777777")
+        if block_type == "header_block":
+            width = max(local["width"], 1.0)
+            height = max(local["height"], 1.0)
+            x0 = local["x"]
+            y0 = local["y"]
+            x1 = local["x"] + width
+            y1 = local["y"] + height
+            if width >= height:
+                return f'<line x1="{round(x0,2)}" y1="{round(y0 + height/2,2)}" x2="{round(x1,2)}" y2="{round(y0 + height/2,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="1.2" />'
+            return f'<line x1="{round(x0 + width/2,2)}" y1="{round(y0,2)}" x2="{round(x0 + width/2,2)}" y2="{round(y1,2)}" stroke="{stroke_hex}" stroke-opacity="{stroke_opacity}" stroke-width="1.2" />'
         route_debug = build_connector_route_debug(candidate, block, context)
         if route_debug:
             points = route_debug["route_points"]
@@ -725,16 +743,23 @@ def render_candidate_svg(
             if len(points) >= 2:
                 p1 = points[-2]
                 p2 = points[-1]
+                forced_direction = route_debug.get("expected_end_direction") or route_debug.get("effective_end_direction") or ""
                 dx = p2["x"] - p1["x"]
                 dy = p2["y"] - p1["y"]
                 size = 6
-                if abs(dx) >= abs(dy):
-                    if dx >= 0:
+                if forced_direction in {"left", "right", "up", "down"}:
+                    final_direction = forced_direction
+                elif abs(dx) >= abs(dy):
+                    final_direction = "right" if dx >= 0 else "left"
+                else:
+                    final_direction = "down" if dy >= 0 else "up"
+                if final_direction in {"left", "right"}:
+                    if final_direction == "right":
                         arrow = [(p2["x"], p2["y"]), (p2["x"] - size, p2["y"] - size / 2), (p2["x"] - size, p2["y"] + size / 2)]
                     else:
                         arrow = [(p2["x"], p2["y"]), (p2["x"] + size, p2["y"] - size / 2), (p2["x"] + size, p2["y"] + size / 2)]
                 else:
-                    if dy >= 0:
+                    if final_direction == "down":
                         arrow = [(p2["x"], p2["y"]), (p2["x"] - size / 2, p2["y"] - size), (p2["x"] + size / 2, p2["y"] - size)]
                     else:
                         arrow = [(p2["x"], p2["y"]), (p2["x"] - size / 2, p2["y"] + size), (p2["x"] + size / 2, p2["y"] + size)]
@@ -764,8 +789,15 @@ def render_candidate_svg(
         shape_kind = str(extra.get("shape_kind") or "").lower()
         fill_hex, fill_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("fill") or {}), "#ffffff")
         line_hex, line_opacity = style_color_to_svg(((extra.get("shape_style") or {}).get("line") or {}), "#444444")
-        has_fill = ((extra.get("shape_style") or {}).get("fill") or {}).get("kind") != "none"
-        has_stroke = ((extra.get("shape_style") or {}).get("line") or {}).get("kind") not in {"none", "default"}
+        fill_style = ((extra.get("shape_style") or {}).get("fill") or {})
+        line_style = ((extra.get("shape_style") or {}).get("line") or {})
+        has_fill = fill_style.get("kind") != "none"
+        line_kind = line_style.get("kind")
+        has_stroke = line_kind not in {"none", "default"}
+        if not has_stroke and line_kind == "default" and block_type in {"right_panel_block", "content_block", "table_block"}:
+            has_stroke = True
+            line_hex = "#C7C7C7"
+            line_opacity = 0.85
         fill_attr = f'fill="{fill_hex}" fill-opacity="{fill_opacity}"' if has_fill else 'fill="none"'
         stroke_attr = f'stroke="{line_hex}" stroke-opacity="{line_opacity}" stroke-width="1"' if has_stroke else 'stroke="none"'
         if shape_kind == "flowchartdecision":
@@ -828,15 +860,33 @@ def render_generated_node_svg(node: dict[str, Any], block: dict[str, Any]) -> st
         style = node.get("style") or {}
         fills = node.get("fills") or []
         fill_hex, fill_opacity = style_color_to_svg(fills[0] if fills else None, "#111111")
+        debug = node.get("debug") or {}
+        font_size = float(style.get("fontSize") or 12)
+        l_ins = r_ins = 0.0
+        t_ins = b_ins = 0.0
+        max_lines = None
+        if debug.get("role") in {"table_cell", "header_text_fragment"} or debug.get("source_subtype") == "table_cell":
+            l_ins = r_ins = 4.0
+            t_ins = b_ins = 2.0
+            max_lines = max(1, int(max(local["height"] - t_ins - b_ins, 1) / max(font_size * 1.25, 1)))
+        elif block.get("block_type") == "right_panel_block":
+            l_ins = r_ins = 4.0
+            t_ins = b_ins = 2.0
+            max_lines = max(1, int(max(local["height"] - t_ins - b_ins, 1) / max(font_size * 1.25, 1)))
         return text_svg_markup(
             text_value,
             local,
-            font_size=style.get("fontSize") or 12,
+            font_size=font_size,
             fill_hex=fill_hex,
             fill_opacity=fill_opacity,
             font_family=style.get("fontFamily") or "Arial",
             horizontal_align=style.get("textAlignHorizontal") or "LEFT",
             vertical_align=style.get("textAlignVertical") or "TOP",
+            l_ins=l_ins,
+            r_ins=r_ins,
+            t_ins=t_ins,
+            b_ins=b_ins,
+            max_lines=max_lines,
         )
     return ""
 
@@ -871,14 +921,20 @@ def build_header_block_node(block: dict[str, Any], context: dict[str, Any], asse
     ownership = filter_block_candidates(
         collect_block_candidates(block, context),
         context,
-        dominant_owner_subtypes={"table"},
-        candidate_owner_subtypes={"table", "table_cell"},
+        dominant_owner_subtypes=None,
+        text_owner_subtypes={"labeled_shape"},
+        candidate_owner_subtypes=set(),
     )
     parts: list[str] = []
     parts.append(
         f'<rect x="0" y="0" width="{round(block["bounds"]["width"],2)}" height="{round(min(block["bounds"]["height"], 42),2)}" fill="white" fill-opacity="0" />'
     )
     for candidate in ownership["filtered_candidates"]:
+        if candidate.get("subtype") == "connector":
+            source_scope = str(((candidate.get("extra") or {}).get("source_scope")) or "slide").lower()
+            abs_bounds = candidate_abs_bounds(candidate, context)
+            if source_scope not in {"layout", "master"} and abs_bounds["y"] + abs_bounds["height"] > block["bounds"]["height"] + 6:
+                continue
         abs_bounds = candidate_abs_bounds(candidate, context)
         svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="header_block")
         if not svg:
