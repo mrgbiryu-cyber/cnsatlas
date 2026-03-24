@@ -1596,19 +1596,17 @@ def build_right_panel_block_node(
     }
     render_block = dict(block)
     render_block["coordinate_mode"] = "viewport_clip"
-    if variant == "v2":
-        render_block["bounds"] = dict(render_block["bounds"])
-    else:
-        visible_bounds = intersect_bounds(
-            render_block["bounds"],
-            make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT),
-        )
-        render_block["bounds"] = visible_bounds
+    visible_bounds = intersect_bounds(
+        render_block["bounds"],
+        make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT),
+    )
+    render_block["bounds"] = visible_bounds
     frame = build_block_frame(render_block)
-    frame["clipsContent"] = variant != "v2"
+    frame["clipsContent"] = True
     frame["debug"] = dict(frame.get("debug") or {}, role="right_panel_block_frame", variant=variant)
     seen_tables: set[str] = set()
     background_layers: list[tuple[float, float, str]] = []
+    background_nodes: list[dict[str, Any]] = []
     foreground_nodes: list[dict[str, Any]] = []
     overlay_bounds: list[dict[str, Any]] = []
     for candidate in ownership["filtered_candidates"]:
@@ -1640,9 +1638,19 @@ def build_right_panel_block_node(
         abs_bounds = candidate_abs_bounds(candidate, context)
         is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
         if is_large_overlay:
-            svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
-            if svg:
-                background_layers.append((abs_bounds["y"], abs_bounds["x"], svg))
+            if variant == "v2":
+                child = build_visual_node_from_candidate(candidate, context, assets)
+                if child and child.get("type") != "TEXT":
+                    background_nodes.append(child)
+                    continue
+                svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
+                if svg:
+                    suffix = str(candidate.get("candidate_id") or f"bg-{len(background_nodes)+1}").replace(":", "_").replace("/", "_")
+                    background_nodes.append(build_svg_block_child_node(render_block, svg, "right_panel_background_svg", suffix))
+            else:
+                svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
+                if svg:
+                    background_layers.append((abs_bounds["y"], abs_bounds["x"], svg))
             continue
         child = build_visual_node_from_candidate(candidate, context, assets)
         if child:
@@ -1661,6 +1669,7 @@ def build_right_panel_block_node(
         bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
         markup = bg + "".join(svg for _, _, svg in sorted(background_layers, key=lambda row: (row[0], row[1])))
         frame["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
+    frame["children"].extend(background_nodes)
     if description_overlay:
         frame["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
     frame["children"].extend(foreground_nodes)

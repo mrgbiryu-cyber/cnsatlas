@@ -165,7 +165,7 @@
               "x": 589.71,
               "y": 38.33,
               "width": 370.29,
-              "height": 753.87
+              "height": 501.67
             },
             "relativeTransform": [
               [
@@ -1438,43 +1438,543 @@
                 }
               },
               {
-                "id": "page:29:right_panel_block:background",
-                "type": "SVG_BLOCK",
-                "name": "right_panel_block:background",
+                "id": "s29:slide_29/element_81",
+                "type": "FRAME",
+                "name": "Google Shape;105;p2",
                 "absoluteBoundingBox": {
-                  "x": 589.71,
-                  "y": 38.33,
-                  "width": 370.29,
-                  "height": 753.87
+                  "x": 725.68,
+                  "y": 95.56,
+                  "width": 234.32,
+                  "height": 54.34
                 },
                 "relativeTransform": [
                   [
-                    1,
-                    0,
+                    1.0,
+                    -0.0,
                     0
                   ],
                   [
-                    0,
-                    1,
+                    0.0,
+                    1.0,
                     0
                   ]
                 ],
-                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"753.87\" viewBox=\"0 0 370.29 753.87\"><rect x=\"0\" y=\"0\" width=\"370.29\" height=\"753.87\" fill=\"white\" fill-opacity=\"0\" /><rect x=\"135.97\" y=\"57.23\" width=\"234.32\" height=\"54.34\" rx=\"0\" ry=\"0\" fill=\"#FF33CC\" fill-opacity=\"1.0\" stroke=\"#FF33CC\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"145.57\" y=\"70.03\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"145.57\" dy=\"0\">ISSUE</tspan><tspan x=\"145.57\" dy=\"10.0\">‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정</tspan><tspan x=\"145.57\" dy=\"10.0\">필요)</tspan><tspan x=\"145.57\" dy=\"10.0\">[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 -</tspan><tspan x=\"145.57\" dy=\"10.0\">인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)</tspan></text><rect x=\"96.32\" y=\"225.95\" width=\"249.91\" height=\"38.1\" rx=\"0\" ry=\"0\" fill=\"#EE8772\" fill-opacity=\"0.3\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"340.23\" y=\"259.3\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"end\" font-family=\"+mj-ea\"><tspan x=\"340.23\" dy=\"0\">V.2.4</tspan></text><rect x=\"95.94\" y=\"264.04\" width=\"250.84\" height=\"41.29\" rx=\"0\" ry=\"0\" fill=\"#00FF00\" fill-opacity=\"0.3\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"340.78\" y=\"300.58\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"end\" font-family=\"+mj-ea\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text><rect x=\"95.94\" y=\"317.58\" width=\"245.44\" height=\"419.87\" rx=\"0\" ry=\"0\" fill=\"#F79646\" fill-opacity=\"0.4\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"101.94\" y=\"328.58\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"101.94\" dy=\"0\">V 2.9</tspan></text></svg>",
-                "children": [],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 0.2,
+                      "b": 0.8
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 0.2,
+                      "b": 0.8
+                    },
+                    "opacity": null
+                  }
+                ],
+                "strokeWeight": 1.0,
+                "children": [
+                  {
+                    "id": "s29:slide_29/element_81:text_group",
+                    "type": "GROUP",
+                    "name": "Google Shape;105;p2",
+                    "absoluteBoundingBox": {
+                      "x": 735.28,
+                      "y": 100.36,
+                      "width": 215.12,
+                      "height": 44.74
+                    },
+                    "relativeTransform": [
+                      [
+                        1.0,
+                        -0.0,
+                        0
+                      ],
+                      [
+                        0.0,
+                        1.0,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "s29:slide_29/element_81:text:1",
+                        "type": "TEXT",
+                        "name": "Google Shape;105;p2",
+                        "characters": "ISSUE",
+                        "absoluteBoundingBox": {
+                          "x": 735.28,
+                          "y": 100.36,
+                          "width": 215.12,
+                          "height": 14.91
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0
+                            },
+                            "opacity": null
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "LG스마트체 Regular",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_81",
+                          "source_node_id": "14",
+                          "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "s29:slide_29/element_81:text:2",
+                        "type": "TEXT",
+                        "name": "Google Shape;105;p2",
+                        "characters": "‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제",
+                        "absoluteBoundingBox": {
+                          "x": 735.28,
+                          "y": 115.27,
+                          "width": 215.12,
+                          "height": 14.91
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0
+                            },
+                            "opacity": null
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "LG스마트체 Regular",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_81",
+                          "source_node_id": "14",
+                          "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "s29:slide_29/element_81:text:3",
+                        "type": "TEXT",
+                        "name": "Google Shape;105;p2",
+                        "characters": "예정(제품명 수정 필요) [BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)",
+                        "absoluteBoundingBox": {
+                          "x": 735.28,
+                          "y": 130.19,
+                          "width": 215.12,
+                          "height": 14.91
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0
+                            },
+                            "opacity": null
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "LG스마트체 Regular",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_81",
+                          "source_node_id": "14",
+                          "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "source_path": "slide_29/element_81",
+                      "source_node_id": "14",
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
+                      "role": "header_text_group"
+                    }
+                  }
+                ],
                 "debug": {
-                  "generator": "block-prototype-v1",
-                  "block_type": "right_panel_block",
-                  "render_mode": "image",
-                  "page_type": "ui-mockup",
-                  "role": "right_panel_background_svg",
-                  "root_candidate_ids": [
-                    "s29:slide_29/element_37",
-                    "s29:slide_29/element_81",
-                    "s29:slide_29/element_93",
-                    "s29:slide_29/element_119",
-                    "s29:slide_29/element_95"
+                  "source_path": "slide_29/element_81",
+                  "source_node_id": "14",
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
+                  "frame_shell": true,
+                  "shape_kind": "rect",
+                  "visual_strategy": "ui-mockup",
+                  "role": "labeled_shape_frame"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_93",
+                "type": "FRAME",
+                "name": "직사각형 216",
+                "absoluteBoundingBox": {
+                  "x": 686.03,
+                  "y": 264.28,
+                  "width": 249.91,
+                  "height": 38.1
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    -0.0,
+                    0
                   ],
-                  "child_suffix": "background"
+                  [
+                    0.0,
+                    1.0,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9333,
+                      "g": 0.5294,
+                      "b": 0.4471
+                    },
+                    "opacity": 0.3
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1.0,
+                "children": [
+                  {
+                    "id": "s29:slide_29/element_93:text",
+                    "type": "TEXT",
+                    "name": "직사각형 216",
+                    "characters": "V.2.4",
+                    "absoluteBoundingBox": {
+                      "x": 902.42,
+                      "y": 264.28,
+                      "width": 33.52,
+                      "height": 38.1
+                    },
+                    "relativeTransform": [
+                      [
+                        1.0,
+                        -0.0,
+                        0
+                      ],
+                      [
+                        0.0,
+                        1.0,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "style": {
+                      "fontSize": 8,
+                      "fontFamily": "+mj-ea",
+                      "textAlignHorizontal": "RIGHT",
+                      "textAlignVertical": "BOTTOM",
+                      "textAutoResize": "WIDTH_AND_HEIGHT",
+                      "lineHeightPx": null
+                    },
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_29/element_93",
+                      "source_node_id": "217",
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
+                      "rotation_degrees": 0.0
+                    }
+                  }
+                ],
+                "debug": {
+                  "source_path": "slide_29/element_93",
+                  "source_node_id": "217",
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
+                  "frame_shell": true,
+                  "shape_kind": "rect",
+                  "visual_strategy": "ui-mockup",
+                  "role": "labeled_shape_frame"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_119",
+                "type": "FRAME",
+                "name": "직사각형 253",
+                "absoluteBoundingBox": {
+                  "x": 685.65,
+                  "y": 302.37,
+                  "width": 250.84,
+                  "height": 41.29
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    -0.0,
+                    0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.0,
+                      "g": 1.0,
+                      "b": 0.0
+                    },
+                    "opacity": 0.3
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1.0,
+                "children": [
+                  {
+                    "id": "s29:slide_29/element_119:text",
+                    "type": "TEXT",
+                    "name": "직사각형 253",
+                    "characters": "V.5.0",
+                    "absoluteBoundingBox": {
+                      "x": 902.97,
+                      "y": 302.37,
+                      "width": 33.52,
+                      "height": 41.29
+                    },
+                    "relativeTransform": [
+                      [
+                        1.0,
+                        -0.0,
+                        0
+                      ],
+                      [
+                        0.0,
+                        1.0,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "style": {
+                      "fontSize": 8,
+                      "fontFamily": "+mj-ea",
+                      "textAlignHorizontal": "RIGHT",
+                      "textAlignVertical": "BOTTOM",
+                      "textAutoResize": "WIDTH_AND_HEIGHT",
+                      "lineHeightPx": null
+                    },
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_29/element_119",
+                      "source_node_id": "254",
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
+                      "rotation_degrees": 0.0
+                    }
+                  }
+                ],
+                "debug": {
+                  "source_path": "slide_29/element_119",
+                  "source_node_id": "254",
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
+                  "frame_shell": true,
+                  "shape_kind": "rect",
+                  "visual_strategy": "ui-mockup",
+                  "role": "labeled_shape_frame"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_95",
+                "type": "FRAME",
+                "name": "직사각형 233",
+                "absoluteBoundingBox": {
+                  "x": 685.65,
+                  "y": 355.91,
+                  "width": 245.44,
+                  "height": 419.87
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    -0.0,
+                    0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9686,
+                      "g": 0.5882,
+                      "b": 0.2745
+                    },
+                    "opacity": 0.4
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1.0,
+                "children": [
+                  {
+                    "id": "s29:slide_29/element_95:text",
+                    "type": "TEXT",
+                    "name": "직사각형 233",
+                    "characters": "V 2.9",
+                    "absoluteBoundingBox": {
+                      "x": 792.49,
+                      "y": 355.91,
+                      "width": 31.76,
+                      "height": 419.87
+                    },
+                    "relativeTransform": [
+                      [
+                        1.0,
+                        -0.0,
+                        0
+                      ],
+                      [
+                        0.0,
+                        1.0,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1.0,
+                          "g": 1.0,
+                          "b": 1.0
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "style": {
+                      "fontSize": 8,
+                      "fontFamily": "LG스마트체 Regular",
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "TOP",
+                      "textAutoResize": "WIDTH_AND_HEIGHT",
+                      "lineHeightPx": null
+                    },
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_29/element_95",
+                      "source_node_id": "234",
+                      "source_subtype": "labeled_shape",
+                      "source_scope": "slide",
+                      "rotation_degrees": 0.0
+                    }
+                  }
+                ],
+                "debug": {
+                  "source_path": "slide_29/element_95",
+                  "source_node_id": "234",
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
+                  "frame_shell": true,
+                  "shape_kind": "rect",
+                  "visual_strategy": "ui-mockup",
+                  "role": "labeled_shape_frame"
                 }
               },
               {
@@ -1485,7 +1985,7 @@
                   "x": 589.71,
                   "y": 38.33,
                   "width": 370.29,
-                  "height": 753.87
+                  "height": 501.67
                 },
                 "relativeTransform": [
                   [
@@ -1499,7 +1999,7 @@
                     0
                   ]
                 ],
-                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"753.87\" viewBox=\"0 0 370.29 753.87\"><text x=\"102.51\" y=\"70.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan></text><text x=\"102.51\" y=\"88.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt;</tspan></text><text x=\"76.95\" y=\"108.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"76.95\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"102.51\" y=\"70.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan></text><text x=\"102.51\" y=\"88.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt;</tspan></text><text x=\"76.95\" y=\"108.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"76.95\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
                 "children": [],
                 "debug": {
                   "generator": "block-prototype-v1",
@@ -1533,7 +2033,7 @@
               "role": "right_panel_block_frame",
               "variant": "v2"
             },
-            "clipsContent": false
+            "clipsContent": true
           },
           {
             "id": "page:29:aux_preview_block",
