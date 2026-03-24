@@ -43,6 +43,8 @@ def render_mode_for_block(block_type: str, page_type: str) -> str:
         return "vector"
     if block_type == "top_meta_block":
         return "vector"
+    if block_type == "aux_preview_block":
+        return "image"
     if block_type == "flow_block":
         return "image"
     if block_type == "table_block":
@@ -69,6 +71,11 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
         return "header_block"
 
     if page_type == "ui-mockup":
+        right_panel_x_cutoff = context["width"] * 0.72
+        right_panel_center_cutoff = context["width"] * 0.78
+        aux_preview_x_min = context["width"] * 0.38
+        aux_preview_x_max = context["width"] * 0.82
+        aux_preview_y_min = context["height"] * 0.72
         if (
             bounds["y"] <= 170
             and (right_edge >= context["width"] * 0.74 or center_x >= context["width"] * 0.7)
@@ -76,9 +83,25 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
             and subtype in {"labeled_shape", "text_block", "shape"}
         ):
             return "top_meta_block"
-        if (bounds["x"] >= context["width"] * 0.58 or center_x >= context["width"] * 0.58 or right_edge >= context["width"] * 0.68) and bounds["y"] >= 36:
+        if (
+            bounds["y"] >= aux_preview_y_min
+            and bounds["x"] >= aux_preview_x_min
+            and bounds["x"] < aux_preview_x_max
+            and subtype in {"labeled_shape", "shape", "image", "text_block", "connector", "group", "section_block"}
+        ):
+            return "aux_preview_block"
+        if (
+            bounds["y"] >= 36
+            and (
+                bounds["x"] >= right_panel_x_cutoff
+                or center_x >= right_panel_center_cutoff
+            )
+        ):
             return "right_panel_block"
-        if subtype == "table" and (bounds["x"] >= context["width"] * 0.55 or center_x >= context["width"] * 0.58):
+        if subtype == "table" and (
+            bounds["x"] >= right_panel_x_cutoff
+            or center_x >= right_panel_center_cutoff
+        ):
             return "right_panel_block"
 
     if placeholder_type == "title" or (is_top_band and is_compact_band):
@@ -92,7 +115,10 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
             return "flow_block"
 
     if page_type == "ui-mockup":
-        if bounds["x"] >= context["width"] * 0.58 or center_x >= context["width"] * 0.58 or right_edge >= context["width"] * 0.68:
+        if (
+            bounds["x"] >= context["width"] * 0.72
+            or center_x >= context["width"] * 0.78
+        ):
             return "right_panel_block"
         return "content_block"
 
@@ -144,7 +170,8 @@ def build_blocks_for_page(page: dict[str, Any]) -> dict[str, Any]:
         "flow_block": 2,
         "table_block": 3,
         "right_panel_block": 4,
-        "content_block": 5,
+        "aux_preview_block": 5,
+        "content_block": 6,
     }
     ordered = sorted(blocks.values(), key=lambda row: preferred_order.get(row["block_type"], 99))
     return {

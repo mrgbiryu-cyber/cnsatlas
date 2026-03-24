@@ -1697,6 +1697,22 @@ def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any],
     return build_svg_block_node(block, markup, "content_block_svg")
 
 
+def build_aux_preview_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+    layers: list[tuple[int, float, float, str]] = []
+    for candidate in collect_block_candidates(block, context):
+        source_scope = str(((candidate.get("extra") or {}).get("source_scope")) or "slide").lower()
+        if source_scope in {"layout", "master"}:
+            continue
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="content_block")
+        if not svg:
+            continue
+        role = ui_mockup_layer_role(candidate, abs_bounds, block_type="content_block")
+        layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
+    markup = "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
+    return build_svg_block_node(block, markup, "aux_preview_block_svg")
+
+
 def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     if block["block_type"] == "header_block":
         return build_header_block_node(block, context, assets)
@@ -1708,6 +1724,8 @@ def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dic
         return build_flow_block_node(block, context, assets)
     if block["block_type"] == "right_panel_block":
         return build_right_panel_block_node(block, context, assets)
+    if block["block_type"] == "aux_preview_block":
+        return build_aux_preview_block_node(block, context, assets)
     if block["block_type"] == "content_block" and block["page_type"] in {"ui-mockup", "table-heavy"}:
         return build_content_svg_block_node(block, context, assets)
     return build_generic_block_node(block, context, assets)
