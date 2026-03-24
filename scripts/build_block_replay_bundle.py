@@ -1080,6 +1080,38 @@ def build_svg_block_node(block: dict[str, Any], markup: str, role: str) -> dict[
     }
 
 
+def ui_mockup_layer_role(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, block_type: str) -> int:
+    subtype = str(candidate.get("subtype") or "")
+    extra = candidate.get("extra") or {}
+    shape_kind = str(extra.get("shape_kind") or "").lower()
+    text_value = str(candidate.get("text") or "").strip()
+    width = float(abs_bounds.get("width") or 0.0)
+    height = float(abs_bounds.get("height") or 0.0)
+
+    if subtype == "image":
+        return 5
+    if subtype == "connector":
+        return 6
+    if subtype == "text_block":
+        return 7
+    if subtype == "shape":
+        if width <= 48 and height <= 48:
+            return 4
+        return 0
+    if subtype == "labeled_shape":
+        # Big cards first, small badges/icons above them.
+        if width >= 140 and height >= 40 and len(text_value) >= 20:
+            return 0
+        if width <= 48 and height <= 48:
+            return 4
+        if width <= 90 and height <= 36:
+            return 3
+        if shape_kind == "rect" and width >= 120 and height >= 20:
+            return 1
+        return 2
+    return 2
+
+
 def build_header_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     ownership = filter_block_candidates(
         collect_block_candidates(block, context),
@@ -1125,11 +1157,9 @@ def build_top_meta_block_node(block: dict[str, Any], context: dict[str, Any], as
         if not svg:
             continue
         subtype = candidate.get("subtype")
-        role = 1
-        if subtype == "shape":
-            role = 0
-        elif subtype == "text_block":
-            role = 2
+        role = ui_mockup_layer_role(candidate, abs_bounds, block_type="top_meta_block")
+        if subtype == "text_block":
+            role = max(role, 7)
         layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
     markup = "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
     return build_svg_block_node(block, markup, "top_meta_block_svg")
@@ -1607,9 +1637,7 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
         svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
         if not svg:
             continue
-        role = 2 if subtype == "text_block" else 1
-        if subtype == "shape":
-            role = 0
+        role = ui_mockup_layer_role(candidate, abs_bounds, block_type="right_panel_block")
         layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
     description_overlay = build_right_panel_description_overlay(
         render_block,
@@ -1654,13 +1682,16 @@ def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any],
         svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="content_block")
         if not svg:
             continue
-        role = 1
-        if subtype == "shape":
-            role = 0
-        elif subtype == "connector":
-            role = 2
-        elif subtype == "text_block":
-            role = 3
+        if block.get("page_type") == "ui-mockup":
+            role = ui_mockup_layer_role(candidate, abs_bounds, block_type="content_block")
+        else:
+            role = 1
+            if subtype == "shape":
+                role = 0
+            elif subtype == "connector":
+                role = 2
+            elif subtype == "text_block":
+                role = 3
         layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
     markup = "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
     return build_svg_block_node(block, markup, "content_block_svg")
