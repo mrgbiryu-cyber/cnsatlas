@@ -422,6 +422,18 @@ def compatible_end_direction(direction: str, dx: float, dy: float) -> str:
     return ""
 
 
+def effective_connector_directions(kind: str, start_dir: str, end_dir: str, dx: float, dy: float) -> tuple[str, str]:
+    effective_start = compatible_start_direction(start_dir, dx, dy)
+    effective_end = compatible_end_direction(end_dir, dx, dy)
+    kind_name = str(kind or "").lower()
+    if kind_name.startswith("bentconnector"):
+        if not effective_start and start_dir:
+            effective_start = start_dir
+        if not effective_end and end_dir:
+            effective_end = end_dir
+    return effective_start, effective_end
+
+
 def route_candidates_for_kind(kind: str, dx: float, dy: float) -> list[str]:
     kind_name = str(kind or "").lower()
     if kind_name in {"straightconnector1", "line", "connector"}:
@@ -644,8 +656,7 @@ def build_connector_path_points(
 ) -> list[dict[str, float]]:
     dx = end["x"] - start["x"]
     dy = end["y"] - start["y"]
-    start_dir = compatible_start_direction(start_dir, dx, dy)
-    end_dir = compatible_end_direction(end_dir, dx, dy)
+    start_dir, end_dir = effective_connector_directions(kind, start_dir, end_dir, dx, dy)
     signature = preferred_signature_for_connector_kind(kind, start_dir, end_dir, dx, dy)
     if not signature:
         signature = choose_route_signature(kind, page_type, start_dir, end_dir, dx, dy)
@@ -705,8 +716,7 @@ def build_connector_route_debug(
     kind = str(extra.get("shape_kind") or "straightConnector1")
     dx = end["x"] - start["x"]
     dy = end["y"] - start["y"]
-    effective_start_dir = compatible_start_direction(start_dir, dx, dy)
-    effective_end_dir = compatible_end_direction(end_dir, dx, dy)
+    effective_start_dir, effective_end_dir = effective_connector_directions(kind, start_dir, end_dir, dx, dy)
     signature = choose_route_signature(kind, page_type, effective_start_dir, effective_end_dir, dx, dy)
     signature = maybe_shorten_signature(signature, dx, dy, effective_start_dir, effective_end_dir)
     points = build_connector_path_points(
@@ -1121,7 +1131,7 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
             if cell_extra.get("h_merge") or cell_extra.get("v_merge"):
                 continue
             start_column_index = max(int(cell_extra.get("start_column_index") or 1), 1)
-            col_span = max(int(cell_extra.get("col_span") or 1), 1)
+            col_span = max(int(cell_extra.get("col_span") or cell_extra.get("grid_span") or 1), 1)
             row_span = max(int(cell_extra.get("row_span") or 1), 1)
             left = column_x[start_column_index - 1]
             right_index = min(start_column_index - 1 + col_span, len(column_x) - 1)
