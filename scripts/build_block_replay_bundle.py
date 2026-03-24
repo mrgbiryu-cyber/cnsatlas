@@ -1080,6 +1080,14 @@ def build_svg_block_node(block: dict[str, Any], markup: str, role: str) -> dict[
     }
 
 
+def build_svg_block_child_node(block: dict[str, Any], markup: str, role: str, suffix: str) -> dict[str, Any]:
+    node = build_svg_block_node(block, markup, role)
+    node["id"] = f"{block['block_id']}:{suffix}"
+    node["name"] = f"{block['block_type']}:{suffix}"
+    node["debug"] = dict(node.get("debug") or {}, child_suffix=suffix)
+    return node
+
+
 def ui_mockup_layer_role(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, block_type: str) -> int:
     subtype = str(candidate.get("subtype") or "")
     extra = candidate.get("extra") or {}
@@ -1609,8 +1617,10 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     primary_table = ownership["dominant_owner"]
     render_block = dict(block)
     render_block["coordinate_mode"] = "viewport_clip"
+    group = build_block_group_node(render_block, "right_panel_block_group")
     seen_tables: set[str] = set()
-    layers: list[tuple[int, float, float, str]] = []
+    background_layers: list[tuple[float, float, str]] = []
+    foreground_nodes: list[dict[str, Any]] = []
     overlay_bounds: list[dict[str, Any]] = []
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
@@ -1625,31 +1635,43 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
                 continue
             seen_tables.add(candidate["candidate_id"])
             table_group = build_table_visual_group(candidate, context, assets)
-            table_parts: list[str] = []
+            table_children: list[dict[str, Any]] = []
             for child in table_group.get("children", []):
-                if should_skip_table_child_for_overlays(child, overlay_bounds):
+                if child.get("type") == "RECTANGLE" and should_skip_table_child_for_overlays(child, overlay_bounds):
                     continue
-                table_parts.append(render_generated_node_svg(child, render_block))
-            bounds = table_group["absoluteBoundingBox"]
-            layers.append((1, bounds["y"], bounds["x"], "".join(table_parts)))
+                table_children.append(child)
+            if table_children:
+                table_group["children"] = table_children
+                group["children"].append(table_group)
             continue
         abs_bounds = candidate_abs_bounds(candidate, context)
-        svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
-        if not svg:
+        is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
+        if is_large_overlay:
+            svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
+            if svg:
+                background_layers.append((abs_bounds["y"], abs_bounds["x"], svg))
             continue
-        role = ui_mockup_layer_role(candidate, abs_bounds, block_type="right_panel_block")
-        layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
+        child = build_visual_node_from_candidate(candidate, context, assets)
+        if child:
+            foreground_nodes.append(child)
+            continue
+        svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
+        if svg:
+            foreground_nodes.append(build_svg_block_child_node(render_block, svg, "right_panel_foreground_svg", f"fg-{len(foreground_nodes)+1}"))
     description_overlay = build_right_panel_description_overlay(
         render_block,
         context,
         primary_table,
         ownership["filtered_candidates"],
     )
+    if background_layers:
+        bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
+        markup = bg + "".join(svg for _, _, svg in sorted(background_layers, key=lambda row: (row[0], row[1])))
+        group["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
     if description_overlay:
-        layers.append((3, render_block["bounds"]["y"] + render_block["bounds"]["height"], render_block["bounds"]["x"], description_overlay))
-    bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
-    markup = bg + "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
-    return build_svg_block_node(render_block, markup, "right_panel_block_svg")
+        group["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
+    group["children"].extend(foreground_nodes)
+    return group
 
 
 def build_generic_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
