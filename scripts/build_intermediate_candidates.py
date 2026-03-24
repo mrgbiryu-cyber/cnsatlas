@@ -461,10 +461,12 @@ def append_element_candidates(
         if start_connection:
             start_target = element_index.get(str(start_connection.get("id")))
             connector_extra["start_connection"] = start_connection
+            connector_extra["start_target_bounds_px"] = emu_bounds_to_px(start_target.get("bounds")) if start_target else None
             connector_extra["start_point_px"] = connection_point_px(start_target.get("bounds") if start_target else None, start_connection.get("idx"))
         if end_connection:
             end_target = element_index.get(str(end_connection.get("id")))
             connector_extra["end_connection"] = end_connection
+            connector_extra["end_target_bounds_px"] = emu_bounds_to_px(end_target.get("bounds")) if end_target else None
             connector_extra["end_point_px"] = connection_point_px(end_target.get("bounds") if end_target else None, end_connection.get("idx"))
         if not connector_extra.get("start_point_px") or not connector_extra.get("end_point_px"):
             inferred_start, inferred_end = infer_connector_endpoints(element, element_index)

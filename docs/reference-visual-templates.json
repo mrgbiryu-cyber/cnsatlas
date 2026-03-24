@@ -595,28 +595,28 @@
         },
         "sample_count": 1
       },
-      "bentconnector3|down|right": {
+      "bentconnector3|left|right": {
         "shape_kind": "bentConnector3",
-        "start_direction": "down",
+        "start_direction": "left",
         "end_direction": "right",
         "route_signatures": {
           "HVHV": 1
         },
         "sample_count": 1
       },
-      "bentconnector3|left|right": {
+      "bentconnector3|right|right": {
         "shape_kind": "bentConnector3",
-        "start_direction": "left",
+        "start_direction": "right",
         "end_direction": "right",
         "route_signatures": {
           "H": 1
         },
         "sample_count": 1
       },
-      "bentconnector2|right|up": {
+      "bentconnector2|left|down": {
         "shape_kind": "bentConnector2",
-        "start_direction": "right",
-        "end_direction": "up",
+        "start_direction": "left",
+        "end_direction": "down",
         "route_signatures": {
           "H": 1,
           "HVHV": 2
@@ -634,9 +634,9 @@
         },
         "sample_count": 1
       },
-      "bentconnector3|left|right": {
+      "bentconnector3|right|right": {
         "shape_kind": "bentConnector3",
-        "start_direction": "left",
+        "start_direction": "right",
         "end_direction": "right",
         "route_signatures": {
           "H": 2

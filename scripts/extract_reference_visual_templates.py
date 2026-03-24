@@ -268,11 +268,20 @@ def load_mapped_connector_ids(mapping_report_path: Path | None) -> dict[str, set
 
 
 def connector_direction_from_idx(value: Any) -> str:
-    mapping = {0: "up", 1: "right", 2: "down", 3: "left", 4: "up", 5: "right", 6: "down", 7: "left"}
+    mapping = {0: "up", 1: "left", 2: "down", 3: "right", 4: "left", 5: "right", 6: "left", 7: "right"}
     try:
         return mapping.get(int(value), "")
     except Exception:
         return ""
+
+
+def opposite_direction(direction: str) -> str:
+    return {
+        "up": "down",
+        "down": "up",
+        "left": "right",
+        "right": "left",
+    }.get(direction, "")
 
 
 def connector_case_key(shape_kind: str, start_direction: str, end_direction: str) -> str:
@@ -295,7 +304,9 @@ def load_intermediate_connector_facts(intermediate_path: Path | None) -> dict[in
             bucket[str(candidate.get("candidate_id") or "")] = {
                 "shape_kind": str(extra.get("shape_kind") or ""),
                 "start_direction": connector_direction_from_idx((extra.get("start_connection") or {}).get("idx")),
-                "end_direction": connector_direction_from_idx((extra.get("end_connection") or {}).get("idx")),
+                "end_direction": opposite_direction(
+                    connector_direction_from_idx((extra.get("end_connection") or {}).get("idx"))
+                ),
             }
         pages[slide_no] = bucket
     return pages

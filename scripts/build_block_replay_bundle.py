@@ -329,7 +329,7 @@ def normalize_block_bounds(block: dict[str, Any]) -> dict[str, Any]:
 
 
 def direction_from_idx(value: Any) -> str:
-    mapping = {0: "up", 1: "right", 2: "down", 3: "left", 4: "up", 5: "right", 6: "down", 7: "left"}
+    mapping = {0: "up", 1: "left", 2: "down", 3: "right", 4: "left", 5: "right", 6: "left", 7: "right"}
     try:
         return mapping.get(int(value), "")
     except Exception:
@@ -344,6 +344,15 @@ def axis_from_direction(direction: str) -> str:
     return ""
 
 
+def opposite_direction(direction: str) -> str:
+    return {
+        "up": "down",
+        "down": "up",
+        "left": "right",
+        "right": "left",
+    }.get(direction, "")
+
+
 def offset_point(point: dict[str, float], direction: str, amount: float) -> dict[str, float]:
     if direction == "up":
         return {"x": point["x"], "y": point["y"] - amount}
@@ -354,6 +363,39 @@ def offset_point(point: dict[str, float], direction: str, amount: float) -> dict
     if direction == "right":
         return {"x": point["x"] + amount, "y": point["y"]}
     return {"x": point["x"], "y": point["y"]}
+
+
+def clamp_ratio_from_adjust(value: Any, fallback: float = 0.5) -> float:
+    try:
+        ratio = float(value) / 100000.0
+    except Exception:
+        return fallback
+    if math.isnan(ratio) or math.isinf(ratio):
+        return fallback
+    return min(max(ratio, 0.08), 0.92)
+
+
+def direction_from_connection(point: dict[str, float] | None, bounds: dict[str, Any] | None, idx: Any) -> str:
+    fallback = direction_from_idx(idx)
+    if not point or not bounds:
+        return fallback
+    x = float(point["x"])
+    y = float(point["y"])
+    left = float(bounds["x"])
+    top = float(bounds["y"])
+    right = left + float(bounds["width"])
+    bottom = top + float(bounds["height"])
+    distances = {
+        "left": abs(x - left),
+        "right": abs(x - right),
+        "up": abs(y - top),
+        "down": abs(y - bottom),
+    }
+    ranked = sorted(distances.items(), key=lambda item: item[1])
+    direction, distance = ranked[0]
+    if distance <= 1.5:
+        return direction
+    return fallback
 
 
 def compatible_start_direction(direction: str, dx: float, dy: float) -> str:
@@ -513,7 +555,13 @@ def maybe_shorten_signature(
     return signature
 
 
-def orthogonal_points_from_signature(start: dict[str, float], end: dict[str, float], signature: str) -> list[dict[str, float]]:
+def orthogonal_points_from_signature(
+    start: dict[str, float],
+    end: dict[str, float],
+    signature: str,
+    adjusts: dict[str, Any] | None = None,
+) -> list[dict[str, float]]:
+    adjusts = adjusts or {}
     if signature == "H":
         if not math.isclose(start["y"], end["y"], abs_tol=0.01):
             return [start, {"x": end["x"], "y": start["y"]}, end]
@@ -527,20 +575,61 @@ def orthogonal_points_from_signature(start: dict[str, float], end: dict[str, flo
     if signature == "VH":
         return [start, {"x": start["x"], "y": end["y"]}, end]
     if signature == "HVH":
-        mid_x = round((start["x"] + end["x"]) / 2, 2)
+        mid_x = round(start["x"] + (end["x"] - start["x"]) * clamp_ratio_from_adjust(adjusts.get("adj1"), 0.5), 2)
         return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
     if signature == "VHV":
-        mid_y = round((start["y"] + end["y"]) / 2, 2)
+        mid_y = round(start["y"] + (end["y"] - start["y"]) * clamp_ratio_from_adjust(adjusts.get("adj1"), 0.5), 2)
         return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
     if signature == "HVHV":
-        mid_y = round((start["y"] + end["y"]) / 2, 2)
-        pivot_x = round(start["x"] + (end["x"] - start["x"]) * 0.62, 2)
+        pivot_x = round(start["x"] + (end["x"] - start["x"]) * clamp_ratio_from_adjust(adjusts.get("adj1"), 0.62), 2)
+        mid_y = round(start["y"] + (end["y"] - start["y"]) * clamp_ratio_from_adjust(adjusts.get("adj2"), 0.5), 2)
         return [start, {"x": pivot_x, "y": start["y"]}, {"x": pivot_x, "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
     if signature == "VHVH":
-        mid_x = round((start["x"] + end["x"]) / 2, 2)
-        pivot_y = round(start["y"] + (end["y"] - start["y"]) * 0.62, 2)
+        pivot_y = round(start["y"] + (end["y"] - start["y"]) * clamp_ratio_from_adjust(adjusts.get("adj1"), 0.62), 2)
+        mid_x = round(start["x"] + (end["x"] - start["x"]) * clamp_ratio_from_adjust(adjusts.get("adj2"), 0.5), 2)
         return [start, {"x": start["x"], "y": pivot_y}, {"x": mid_x, "y": pivot_y}, {"x": mid_x, "y": end["y"]}, end]
     return [start, end]
+
+
+def preferred_signature_for_connector_kind(
+    kind: str,
+    start_dir: str,
+    end_dir: str,
+    dx: float,
+    dy: float,
+) -> str:
+    start_axis = axis_from_direction(start_dir)
+    end_axis = axis_from_direction(end_dir)
+    kind = (kind or "").lower()
+    if kind == "straightconnector1" or kind == "line":
+        return "H" if abs(dx) >= abs(dy) else "V"
+    if kind == "bentconnector2":
+        if start_axis == "H" and end_axis == "V":
+            return "HV"
+        if start_axis == "V" and end_axis == "H":
+            return "VH"
+        return "H" if abs(dx) >= abs(dy) else "V"
+    if kind == "bentconnector3":
+        if start_axis == "H" and end_axis == "H":
+            return "HVH"
+        if start_axis == "V" and end_axis == "V":
+            return "VHV"
+        if start_axis == "H" and end_axis == "V":
+            return "HV"
+        if start_axis == "V" and end_axis == "H":
+            return "VH"
+        return "HVH" if abs(dx) >= abs(dy) else "VHV"
+    if kind == "bentconnector4":
+        if start_axis == "H" and end_axis == "H":
+            return "HVHV"
+        if start_axis == "V" and end_axis == "V":
+            return "VHVH"
+        if start_axis == "H" and end_axis == "V":
+            return "HVH"
+        if start_axis == "V" and end_axis == "H":
+            return "VHV"
+        return "HVHV" if abs(dx) >= abs(dy) else "VHVH"
+    return ""
 
 
 def build_connector_path_points(
@@ -551,20 +640,23 @@ def build_connector_path_points(
     page_type: str,
     start_dir: str,
     end_dir: str,
+    adjusts: dict[str, Any] | None = None,
 ) -> list[dict[str, float]]:
     dx = end["x"] - start["x"]
     dy = end["y"] - start["y"]
     start_dir = compatible_start_direction(start_dir, dx, dy)
     end_dir = compatible_end_direction(end_dir, dx, dy)
-    signature = choose_route_signature(kind, page_type, start_dir, end_dir, dx, dy)
-    signature = maybe_shorten_signature(signature, dx, dy, start_dir, end_dir)
+    signature = preferred_signature_for_connector_kind(kind, start_dir, end_dir, dx, dy)
+    if not signature:
+        signature = choose_route_signature(kind, page_type, start_dir, end_dir, dx, dy)
+        signature = maybe_shorten_signature(signature, dx, dy, start_dir, end_dir)
     lead = max(min(abs(dx), abs(dy), 18.0), 8.0)
     start_anchor = offset_point(start, start_dir, lead) if start_dir else start
     end_anchor = offset_point(end, end_dir, -lead) if end_dir else end
     points = [start]
     if start_anchor != start:
         points.append(start_anchor)
-    points.extend(orthogonal_points_from_signature(start_anchor, end_anchor, signature)[1:-1])
+    points.extend(orthogonal_points_from_signature(start_anchor, end_anchor, signature, adjusts)[1:-1])
     if end_anchor != end:
         points.append(end_anchor)
     points.append(end)
@@ -593,8 +685,10 @@ def build_connector_route_debug(
     end = transform_point_into_block(end_px, block)
     start_conn = extra.get("start_connection") or {}
     end_conn = extra.get("end_connection") or {}
-    start_dir = direction_from_idx(start_conn.get("idx"))
-    end_dir = direction_from_idx(end_conn.get("idx"))
+    start_dir = direction_from_connection(extra.get("start_point_px"), extra.get("start_target_bounds_px"), start_conn.get("idx"))
+    end_dir = opposite_direction(
+        direction_from_connection(extra.get("end_point_px"), extra.get("end_target_bounds_px"), end_conn.get("idx"))
+    )
     page_type = str(((context.get("visual_strategy") or {}).get("page_type")) or "generic")
     kind = str(extra.get("shape_kind") or "straightConnector1")
     dx = end["x"] - start["x"]
@@ -610,6 +704,7 @@ def build_connector_route_debug(
         page_type=page_type,
         start_dir=start_dir,
         end_dir=end_dir,
+        adjusts=extra.get("connector_adjusts"),
     )
     final_direction = ""
     if len(points) >= 2:
