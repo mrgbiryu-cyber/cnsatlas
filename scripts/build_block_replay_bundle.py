@@ -238,6 +238,13 @@ def block_text_policy(page_type: str, block_type: str) -> dict[str, Any]:
             "font_max": max_font or 11.0,
             "padding": {"l": 2.0, "r": 2.0, "t": 1.5, "b": 1.5},
         }
+    if block_type == "top_meta_block":
+        return {
+            "font_avg": avg_font or 8.0,
+            "font_min": min_font or 7.0,
+            "font_max": max_font or 11.0,
+            "padding": {"l": 2.0, "r": 2.0, "t": 1.5, "b": 1.5},
+        }
     if block_type == "table_block":
         return {
             "font_avg": avg_font or 7.7,
@@ -1072,6 +1079,31 @@ def build_header_block_node(block: dict[str, Any], context: dict[str, Any], asse
     return build_svg_block_node(block, "".join(parts), "header_block_svg")
 
 
+def build_top_meta_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
+    ownership = filter_block_candidates(
+        collect_block_candidates(block, context),
+        context,
+        dominant_owner_subtypes=None,
+        text_owner_subtypes={"labeled_shape"},
+        candidate_owner_subtypes=set(),
+    )
+    layers: list[tuple[int, float, float, str]] = []
+    for candidate in ownership["filtered_candidates"]:
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="top_meta_block")
+        if not svg:
+            continue
+        subtype = candidate.get("subtype")
+        role = 1
+        if subtype == "shape":
+            role = 0
+        elif subtype == "text_block":
+            role = 2
+        layers.append((role, abs_bounds["y"], abs_bounds["x"], svg))
+    markup = "".join(svg for _, _, _, svg in sorted(layers, key=lambda row: (row[0], row[1], row[2])))
+    return build_svg_block_node(block, markup, "top_meta_block_svg")
+
+
 def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     scale_x = context["scale_x"]
     scale_y = context["scale_y"]
@@ -1342,8 +1374,8 @@ def build_right_panel_block_node(block: dict[str, Any], context: dict[str, Any],
     render_block = dict(block)
     if primary_table and primary_table_bounds:
         render_block["source_bounds"] = dict(primary_table_bounds)
-        render_block["bounds"] = dict(primary_table_bounds)
-    if primary_table_bounds and (
+        render_block["coordinate_mode"] = "viewport_clip"
+    elif primary_table_bounds and (
         float(primary_table_bounds["height"]) > float(block["bounds"]["height"]) * 1.12
         or float(primary_table_bounds["width"]) > float(block["bounds"]["width"]) * 1.12
     ):
@@ -1419,6 +1451,8 @@ def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any],
 def build_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     if block["block_type"] == "header_block":
         return build_header_block_node(block, context, assets)
+    if block["block_type"] == "top_meta_block":
+        return build_top_meta_block_node(block, context, assets)
     if block["block_type"] == "table_block":
         return build_table_block_node(block, context, assets)
     if block["block_type"] == "flow_block":

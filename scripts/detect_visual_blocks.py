@@ -41,6 +41,8 @@ def union_bounds(bounds_list: list[dict[str, float]]) -> dict[str, float]:
 def render_mode_for_block(block_type: str, page_type: str) -> str:
     if block_type == "header_block":
         return "vector"
+    if block_type == "top_meta_block":
+        return "vector"
     if block_type == "flow_block":
         return "image"
     if block_type == "table_block":
@@ -73,7 +75,7 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
             and bounds["width"] <= context["width"] * 0.28
             and subtype in {"labeled_shape", "text_block", "shape"}
         ):
-            return "header_block"
+            return "top_meta_block"
         if (bounds["x"] >= context["width"] * 0.58 or center_x >= context["width"] * 0.58 or right_edge >= context["width"] * 0.68) and bounds["y"] >= 36:
             return "right_panel_block"
         if subtype == "table" and (bounds["x"] >= context["width"] * 0.55 or center_x >= context["width"] * 0.58):
@@ -138,10 +140,11 @@ def build_blocks_for_page(page: dict[str, Any]) -> dict[str, Any]:
 
     preferred_order = {
         "header_block": 0,
-        "flow_block": 1,
-        "table_block": 2,
-        "right_panel_block": 3,
-        "content_block": 4,
+        "top_meta_block": 1,
+        "flow_block": 2,
+        "table_block": 3,
+        "right_panel_block": 4,
+        "content_block": 5,
     }
     ordered = sorted(blocks.values(), key=lambda row: preferred_order.get(row["block_type"], 99))
     return {
