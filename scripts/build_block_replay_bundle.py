@@ -356,6 +356,30 @@ def offset_point(point: dict[str, float], direction: str, amount: float) -> dict
     return {"x": point["x"], "y": point["y"]}
 
 
+def compatible_start_direction(direction: str, dx: float, dy: float) -> str:
+    if direction == "right" and dx <= 0:
+        return ""
+    if direction == "left" and dx >= 0:
+        return ""
+    if direction == "down" and dy <= 0:
+        return ""
+    if direction == "up" and dy >= 0:
+        return ""
+    return direction
+
+
+def compatible_end_direction(direction: str, dx: float, dy: float) -> str:
+    if direction == "right" and dx <= 0:
+        return ""
+    if direction == "left" and dx >= 0:
+        return ""
+    if direction == "down" and dy <= 0:
+        return ""
+    if direction == "up" and dy >= 0:
+        return ""
+    return direction
+
+
 def route_candidates_for_kind(kind: str, dx: float, dy: float) -> list[str]:
     kind_name = str(kind or "").lower()
     if kind_name in {"straightconnector1", "line", "connector"}:
@@ -422,10 +446,73 @@ def unique_points(points: list[dict[str, float]]) -> list[dict[str, float]]:
     return output
 
 
+def same_axis(a: dict[str, float], b: dict[str, float], c: dict[str, float]) -> bool:
+    return (
+        math.isclose(a["x"], b["x"], abs_tol=0.01) and math.isclose(b["x"], c["x"], abs_tol=0.01)
+    ) or (
+        math.isclose(a["y"], b["y"], abs_tol=0.01) and math.isclose(b["y"], c["y"], abs_tol=0.01)
+    )
+
+
+def simplifies_middle(a: dict[str, float], b: dict[str, float], c: dict[str, float]) -> bool:
+    if math.isclose(a["x"], b["x"], abs_tol=0.01) and math.isclose(b["x"], c["x"], abs_tol=0.01):
+        return min(a["y"], c["y"]) - 0.01 <= b["y"] <= max(a["y"], c["y"]) + 0.01
+    if math.isclose(a["y"], b["y"], abs_tol=0.01) and math.isclose(b["y"], c["y"], abs_tol=0.01):
+        return min(a["x"], c["x"]) - 0.01 <= b["x"] <= max(a["x"], c["x"]) + 0.01
+    return False
+
+
+def simplify_orthogonal_points(points: list[dict[str, float]]) -> list[dict[str, float]]:
+    simplified = unique_points(points)
+    changed = True
+    while changed and len(simplified) >= 3:
+        changed = False
+        output: list[dict[str, float]] = [simplified[0]]
+        for idx in range(1, len(simplified) - 1):
+            left = output[-1]
+            current = simplified[idx]
+            right = simplified[idx + 1]
+            if same_axis(left, current, right) and simplifies_middle(left, current, right):
+                changed = True
+                continue
+            output.append(current)
+        output.append(simplified[-1])
+        simplified = unique_points(output)
+    return simplified
+
+
+def maybe_shorten_signature(
+    signature: str,
+    dx: float,
+    dy: float,
+    start_dir: str,
+    end_dir: str,
+) -> str:
+    start_axis = axis_from_direction(start_dir)
+    end_axis = axis_from_direction(end_dir)
+    if signature in {"HVHV", "VHVH"}:
+        if abs(dx) < 60 or abs(dy) < 60:
+            if start_axis == "H" and end_axis == "H":
+                return "HVH"
+            if start_axis == "V" and end_axis == "V":
+                return "VHV"
+            if start_axis == "H":
+                return "HV"
+            if start_axis == "V":
+                return "VH"
+        if abs(dx) < 30 or abs(dy) < 30:
+            return "H" if abs(dx) >= abs(dy) else "V"
+    return signature
+
+
 def orthogonal_points_from_signature(start: dict[str, float], end: dict[str, float], signature: str) -> list[dict[str, float]]:
     if signature == "H":
+        if not math.isclose(start["y"], end["y"], abs_tol=0.01):
+            return [start, {"x": end["x"], "y": start["y"]}, end]
         return [start, end]
     if signature == "V":
+        if not math.isclose(start["x"], end["x"], abs_tol=0.01):
+            return [start, {"x": start["x"], "y": end["y"]}, end]
         return [start, end]
     if signature == "HV":
         return [start, {"x": end["x"], "y": start["y"]}, end]
@@ -459,7 +546,10 @@ def build_connector_path_points(
 ) -> list[dict[str, float]]:
     dx = end["x"] - start["x"]
     dy = end["y"] - start["y"]
+    start_dir = compatible_start_direction(start_dir, dx, dy)
+    end_dir = compatible_end_direction(end_dir, dx, dy)
     signature = choose_route_signature(kind, page_type, start_dir, end_dir, dx, dy)
+    signature = maybe_shorten_signature(signature, dx, dy, start_dir, end_dir)
     lead = max(min(abs(dx), abs(dy), 18.0), 8.0)
     start_anchor = offset_point(start, start_dir, lead) if start_dir else start
     end_anchor = offset_point(end, end_dir, -lead) if end_dir else end
@@ -470,7 +560,7 @@ def build_connector_path_points(
     if end_anchor != end:
         points.append(end_anchor)
     points.append(end)
-    return unique_points(points)
+    return simplify_orthogonal_points(points)
 
 
 def segment_direction(previous: dict[str, float], current: dict[str, float]) -> str:
@@ -499,7 +589,12 @@ def build_connector_route_debug(
     end_dir = direction_from_idx(end_conn.get("idx"))
     page_type = str(((context.get("visual_strategy") or {}).get("page_type")) or "generic")
     kind = str(extra.get("shape_kind") or "straightConnector1")
-    signature = choose_route_signature(kind, page_type, start_dir, end_dir, end["x"] - start["x"], end["y"] - start["y"])
+    dx = end["x"] - start["x"]
+    dy = end["y"] - start["y"]
+    effective_start_dir = compatible_start_direction(start_dir, dx, dy)
+    effective_end_dir = compatible_end_direction(end_dir, dx, dy)
+    signature = choose_route_signature(kind, page_type, effective_start_dir, effective_end_dir, dx, dy)
+    signature = maybe_shorten_signature(signature, dx, dy, effective_start_dir, effective_end_dir)
     points = build_connector_path_points(
         start,
         end,
@@ -511,7 +606,7 @@ def build_connector_route_debug(
     final_direction = ""
     if len(points) >= 2:
         final_direction = segment_direction(points[-2], points[-1])
-    expected_end_direction = end_dir or segment_direction(start, end)
+    expected_end_direction = effective_end_dir or segment_direction(start, end)
     bend_points = points[1:-1] if len(points) > 2 else []
     route_preferences = connector_route_preferences(page_type)
     ranked_preferences = [
@@ -530,6 +625,8 @@ def build_connector_route_debug(
         "end_connection_idx": end_conn.get("idx"),
         "start_direction": start_dir,
         "end_direction": end_dir,
+        "effective_start_direction": effective_start_dir,
+        "effective_end_direction": effective_end_dir,
         "chosen_signature": signature,
         "route_points": points,
         "bend_points": bend_points,
@@ -902,6 +999,13 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
                     vertical_fallback=(cell_style.get("anchor") or ("ctr" if row_index == 0 else "t")),
                     scale=min(scale_x, scale_y),
                 )
+                if start_column_index == 1 and row_span >= 3:
+                    merged_font = round(max(min(cell_bounds["height"] * 0.18, 28.0), 16.0), 2)
+                    text_node["style"] = dict(text_node.get("style") or {})
+                    text_node["style"]["fontSize"] = merged_font
+                    text_node["style"]["textAlignHorizontal"] = "LEFT"
+                    text_node["style"]["textAlignVertical"] = "CENTER"
+                    text_node["debug"] = dict(text_node.get("debug") or {}, table_role="merged_label_cell")
                 table_group["children"].append(text_node)
 
     return table_group
@@ -930,32 +1034,49 @@ def build_table_block_node(block: dict[str, Any], context: dict[str, Any], asset
                     local = local_bounds_in_block(bounds, block)
                     fill = (child.get("fills") or [{}])[0]
                     fill_hex, fill_opacity = style_color_to_svg(fill, "#111111")
+                    debug = child.get("debug") or {}
+                    if debug.get("table_role") == "merged_label_cell":
+                        font_size = float(style.get("fontSize") or 18)
+                        horizontal_align = "LEFT"
+                        vertical_align = "CENTER"
+                        l_ins = 10.0
+                        r_ins = 6.0
+                        t_ins = 2.0
+                        b_ins = 2.0
+                    else:
+                        font_size = resolve_block_font_size(
+                            {
+                                "extra": {
+                                    "text_style": {
+                                        "font_size_max": style.get("fontSize"),
+                                        "font_size_avg": style.get("fontSize"),
+                                    }
+                                }
+                            },
+                            style,
+                            policy,
+                            block_type="table_block",
+                        )
+                        horizontal_align = style.get("textAlignHorizontal") or "LEFT"
+                        vertical_align = style.get("textAlignVertical") or "TOP"
+                        l_ins = 0.0
+                        r_ins = 0.0
+                        t_ins = 0.0
+                        b_ins = 0.0
                     parts.append(
                         text_svg_markup(
                             text_value,
                             local,
-                            font_size=resolve_block_font_size(
-                                {
-                                    "extra": {
-                                        "text_style": {
-                                            "font_size_max": style.get("fontSize"),
-                                            "font_size_avg": style.get("fontSize"),
-                                        }
-                                    }
-                                },
-                                style,
-                                policy,
-                                block_type="table_block",
-                            ),
+                            font_size=font_size,
                             fill_hex=fill_hex,
                             fill_opacity=fill_opacity,
                             font_family=style.get("fontFamily") or "Arial",
-                            horizontal_align=style.get("textAlignHorizontal") or "LEFT",
-                            vertical_align=style.get("textAlignVertical") or "TOP",
-                            l_ins=0.0,
-                            r_ins=0.0,
-                            t_ins=0.0,
-                            b_ins=0.0,
+                            horizontal_align=horizontal_align,
+                            vertical_align=vertical_align,
+                            l_ins=l_ins,
+                            r_ins=r_ins,
+                            t_ins=t_ins,
+                            b_ins=b_ins,
                         )
                     )
                 elif child.get("type") == "RECTANGLE":

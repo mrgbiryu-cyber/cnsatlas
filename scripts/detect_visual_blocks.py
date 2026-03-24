@@ -60,14 +60,16 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
     top_cutoff = 58 if page_type == "ui-mockup" else 72
     is_top_band = bounds["y"] <= top_cutoff
     is_compact_band = bounds["height"] <= (90 if page_type == "ui-mockup" else 110)
+    center_x = bounds["x"] + bounds["width"] / 2
+    right_edge = bounds["x"] + bounds["width"]
 
     if source_scope in {"layout", "master"} and is_top_band:
         return "header_block"
 
     if page_type == "ui-mockup":
-        if bounds["x"] >= context["width"] * 0.58 and bounds["y"] >= 36:
+        if (bounds["x"] >= context["width"] * 0.58 or center_x >= context["width"] * 0.58 or right_edge >= context["width"] * 0.68) and bounds["y"] >= 36:
             return "right_panel_block"
-        if subtype == "table" and bounds["x"] >= context["width"] * 0.55:
+        if subtype == "table" and (bounds["x"] >= context["width"] * 0.55 or center_x >= context["width"] * 0.58):
             return "right_panel_block"
 
     if placeholder_type == "title" or (is_top_band and is_compact_band):
@@ -81,7 +83,7 @@ def detect_block_type(candidate: dict[str, Any], context: dict[str, Any], bounds
             return "flow_block"
 
     if page_type == "ui-mockup":
-        if bounds["x"] >= context["width"] * 0.58:
+        if bounds["x"] >= context["width"] * 0.58 or center_x >= context["width"] * 0.58 or right_edge >= context["width"] * 0.68:
             return "right_panel_block"
         return "content_block"
 

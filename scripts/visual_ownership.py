@@ -144,6 +144,63 @@ def build_candidate_owner_map(
     return mapping
 
 
+def build_children_lookup(candidates: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    lookup: dict[str, list[dict[str, Any]]] = {}
+    for candidate in candidates:
+        parent_id = str(candidate.get("parent_candidate_id") or "")
+        if not parent_id:
+            continue
+        lookup.setdefault(parent_id, []).append(candidate)
+    return lookup
+
+
+def build_candidate_lookup(candidates: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    return {str(candidate.get("candidate_id") or ""): candidate for candidate in candidates}
+
+
+def descendant_candidates(
+    container_id: str,
+    children_lookup: dict[str, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    output: list[dict[str, Any]] = []
+    queue = list(children_lookup.get(container_id, []))
+    while queue:
+        candidate = queue.pop(0)
+        output.append(candidate)
+        queue.extend(children_lookup.get(str(candidate.get("candidate_id") or ""), []))
+    return output
+
+
+def build_rich_containers(
+    candidates: list[dict[str, Any]],
+    *,
+    container_subtypes: set[str] | None = None,
+    min_descendants: int = 3,
+    min_text_descendants: int = 1,
+) -> list[dict[str, Any]]:
+    container_subtypes = container_subtypes or {"group", "section_block"}
+    children_lookup = build_children_lookup(candidates)
+    containers: list[dict[str, Any]] = []
+    for candidate in candidates:
+        if str(candidate.get("subtype") or "") not in container_subtypes:
+            continue
+        container_id = str(candidate.get("candidate_id") or "")
+        descendants = descendant_candidates(container_id, children_lookup)
+        if len(descendants) < min_descendants:
+            continue
+        text_descendants = [item for item in descendants if item.get("subtype") == "text_block"]
+        if len(text_descendants) < min_text_descendants:
+            continue
+        containers.append(
+            {
+                "candidate": candidate,
+                "descendants": descendants,
+                "descendant_ids": {str(item.get("candidate_id") or "") for item in descendants},
+            }
+        )
+    return containers
+
+
 def dominant_candidate(
     candidates: list[dict[str, Any]],
     context: dict[str, Any],
@@ -219,6 +276,53 @@ def should_skip_candidate_by_owner(
     return str(owner.get("owner_subtype") or "") in owner_subtypes
 
 
+def should_skip_candidate_by_rich_container(
+    candidate: dict[str, Any],
+    candidates: list[dict[str, Any]],
+    context: dict[str, Any],
+    rich_containers: list[dict[str, Any]],
+    *,
+    overlap_threshold: float = 0.85,
+    candidate_subtypes: set[str] | None = None,
+) -> bool:
+    candidate_id = str(candidate.get("candidate_id") or "")
+    subtype = str(candidate.get("subtype") or "")
+    candidate_subtypes = candidate_subtypes or {"shape", "labeled_shape", "text_block", "group"}
+    if subtype not in candidate_subtypes:
+        return False
+    parent_id = str(candidate.get("parent_candidate_id") or "")
+    if not parent_id.startswith("page:"):
+        return False
+    candidate_bounds = candidate_abs_bounds(candidate, context)
+    for container in rich_containers:
+        container_candidate = container["candidate"]
+        container_id = str(container_candidate.get("candidate_id") or "")
+        if candidate_id == container_id or candidate_id in container["descendant_ids"]:
+            continue
+        container_bounds = candidate_abs_bounds(container_candidate, context)
+        ratio = containment_ratio(candidate_bounds, container_bounds)
+        if ratio < overlap_threshold:
+            continue
+        return True
+    return False
+
+
+def has_ancestor_in_set(
+    candidate: dict[str, Any],
+    candidate_lookup: dict[str, dict[str, Any]],
+    blocked_ids: set[str],
+) -> bool:
+    parent_id = str(candidate.get("parent_candidate_id") or "")
+    while parent_id:
+        if parent_id in blocked_ids:
+            return True
+        parent = candidate_lookup.get(parent_id)
+        if not parent:
+            break
+        parent_id = str(parent.get("parent_candidate_id") or "")
+    return False
+
+
 def filter_block_candidates(
     candidates: list[dict[str, Any]],
     context: dict[str, Any],
@@ -233,6 +337,15 @@ def filter_block_candidates(
     skip_subtypes = skip_subtypes or {"group", "section_block", "table_row", "table_cell"}
     text_owner_subtypes = text_owner_subtypes or {"table", "table_cell", "labeled_shape"}
     duplicate_subtypes = duplicate_subtypes or {"labeled_shape", "text_block", "shape", "group", "section_block"}
+    candidate_lookup = build_candidate_lookup(candidates)
+    rich_containers = build_rich_containers(candidates)
+    suppressed_cluster_ids: set[str] = set()
+    for candidate in candidates:
+        subtype = str(candidate.get("subtype") or "")
+        if subtype not in {"group", "section_block", "shape", "labeled_shape"}:
+            continue
+        if should_skip_candidate_by_rich_container(candidate, candidates, context, rich_containers):
+            suppressed_cluster_ids.add(str(candidate.get("candidate_id") or ""))
     dominant_owner: dict[str, Any] | None = None
     dominant_owner_bounds: dict[str, float] | None = None
     if dominant_owner_subtypes:
@@ -248,9 +361,13 @@ def filter_block_candidates(
         subtype = str(candidate.get("subtype") or "")
         if subtype in skip_subtypes:
             continue
+        if has_ancestor_in_set(candidate, candidate_lookup, suppressed_cluster_ids):
+            continue
         if should_skip_text_by_owner(candidate, text_owner_map, owner_subtypes=text_owner_subtypes):
             continue
         if should_skip_candidate_by_owner(candidate, candidate_owner_map, owner_subtypes=candidate_owner_subtypes):
+            continue
+        if should_skip_candidate_by_rich_container(candidate, candidates, context, rich_containers):
             continue
         if should_skip_candidate_inside_owner(
             candidate,
