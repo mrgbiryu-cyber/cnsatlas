@@ -1519,7 +1519,7 @@ def collect_table_description_cells(table_candidate: dict[str, Any], context: di
         text_value = str(cell.get("text") or "").strip()
         if not text_value:
             continue
-        if row_index < 3:
+        if row_index < 2:
             continue
         if len(text_value) < 20 and "계속" not in text_value:
             continue
@@ -1534,11 +1534,85 @@ def collect_table_description_cells(table_candidate: dict[str, Any], context: di
     return description_cells
 
 
+def classify_right_panel_cards(selected_candidates: list[dict[str, Any]], context: dict[str, Any]) -> dict[str, Any]:
+    issue_card: dict[str, Any] | None = None
+    version_stack_cards: list[dict[str, Any]] = []
+    description_cards: list[dict[str, Any]] = []
+    for candidate in selected_candidates:
+        if candidate.get("subtype") != "labeled_shape":
+            continue
+        bounds = candidate_abs_bounds(candidate, context)
+        if not bounds:
+            continue
+        text_value = str(candidate.get("text") or "").strip()
+        width = float(bounds["width"])
+        height = float(bounds["height"])
+        x = float(bounds["x"])
+        y = float(bounds["y"])
+        if text_value.startswith("ISSUE"):
+            issue_card = candidate
+            continue
+        if text_value.startswith("V ") or text_value.startswith("V."):
+            if width < 220 and y < 220:
+                version_stack_cards.append(candidate)
+                continue
+            if width >= 230 and x >= 680:
+                description_cards.append(candidate)
+    description_cards.sort(key=lambda c: (candidate_abs_bounds(c, context)["y"], candidate_abs_bounds(c, context)["x"]))
+    version_stack_cards.sort(key=lambda c: (candidate_abs_bounds(c, context)["y"], candidate_abs_bounds(c, context)["x"]))
+    return {
+        "issue_card": issue_card,
+        "version_stack_cards": version_stack_cards,
+        "description_cards": description_cards,
+    }
+
+
+def build_right_panel_lane_sections(
+    block: dict[str, Any],
+    context: dict[str, Any],
+    selected_candidates: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    cards = classify_right_panel_cards(selected_candidates, context)
+    issue_card = cards["issue_card"]
+    description_cards = cards["description_cards"]
+    if not issue_card or not description_cards:
+        return []
+
+    issue_bounds = local_bounds_in_block(candidate_abs_bounds(issue_card, context), block)
+    local_cards = [local_bounds_in_block(candidate_abs_bounds(card, context), block) for card in description_cards]
+    lane_sections: list[dict[str, Any]] = []
+
+    first_card = local_cards[0]
+    white_top = issue_bounds["y"] + issue_bounds["height"] + 6.0
+    white_bottom = max(first_card["y"] - 6.0, white_top + 24.0)
+    lane_sections.append({
+        "name": "white_lane",
+        "bounds": {
+            "x": first_card["x"] + 8.0,
+            "y": white_top,
+            "width": max(first_card["width"] - 16.0, 40.0),
+            "height": max(white_bottom - white_top, 24.0),
+        },
+    })
+    for index, card_bounds in enumerate(local_cards):
+        lane_sections.append({
+            "name": f"card_lane_{index+1}",
+            "bounds": {
+                "x": card_bounds["x"] + 10.0,
+                "y": card_bounds["y"] + 8.0,
+                "width": max(card_bounds["width"] - 20.0, 40.0),
+                "height": max(card_bounds["height"] - 12.0, 18.0),
+            },
+        })
+    return lane_sections
+
+
 def build_right_panel_description_overlay(
     block: dict[str, Any],
     context: dict[str, Any],
     primary_table: dict[str, Any] | None,
     selected_candidates: list[dict[str, Any]],
+    variant: str = "v1",
 ) -> str:
     if not primary_table:
         return ""
@@ -1546,13 +1620,21 @@ def build_right_panel_description_overlay(
     if not description_cells:
         return ""
     text_blocks: list[str] = []
+    lane_sections = build_right_panel_lane_sections(block, context, selected_candidates) if variant == "v2" else []
     for row in description_cells:
         cell = row["cell"]
         text_value = str(cell.get("text") or "").strip()
         cell_extra = row["cell_extra"] or {}
         style = cell_extra.get("text_style") or {}
-        local_cell = local_bounds_in_block(row["cell_bounds"], block)
-        max_lines = max(1, int(max(local_cell["height"] - 6.0, 10.0) / max(float(style.get("font_size_max") or style.get("font_size_avg") or 8.0) * 1.25, 8.0)))
+        if lane_sections:
+            lane_index = min(max(int(row["row_index"]) - 2, 0), len(lane_sections) - 1)
+            local_cell = lane_sections[lane_index]["bounds"]
+        else:
+            local_cell = local_bounds_in_block(row["cell_bounds"], block)
+        font_size = float(style.get("font_size_max") or style.get("font_size_avg") or 8.0)
+        if lane_sections and row["row_index"] >= 3:
+            font_size = min(font_size, 7.0)
+        max_lines = max(1, int(max(local_cell["height"] - 6.0, 10.0) / max(font_size * 1.25, 8.0)))
         valign = "TOP"
         if "계속" in text_value:
             valign = "BOTTOM"
@@ -1565,7 +1647,7 @@ def build_right_panel_description_overlay(
                     "width": max(local_cell["width"] - 12.0, 24.0),
                     "height": max(local_cell["height"] - 8.0, 12.0),
                 },
-                font_size=float(style.get("font_size_max") or style.get("font_size_avg") or 8.0),
+                font_size=font_size,
                 fill_hex="#111111",
                 fill_opacity=1.0,
                 font_family=str(style.get("font_family") or "LG스마트체 Regular"),
@@ -1664,6 +1746,7 @@ def build_right_panel_block_node(
         context,
         primary_table,
         ownership["filtered_candidates"],
+        variant,
     )
     if background_layers:
         bg = f'<rect x="0" y="0" width="{round(render_block["bounds"]["width"],2)}" height="{round(render_block["bounds"]["height"],2)}" fill="white" fill-opacity="0" />'
