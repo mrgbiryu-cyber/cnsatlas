@@ -3,15 +3,28 @@ from __future__ import annotations
 
 from typing import Any
 
-from ppt_source_extractor import make_bounds, scale_value
+from ppt_source_extractor import make_bounds, placeholder_key, scale_bounds, scale_value
 
 
 def candidate_abs_bounds(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, float]:
+    bounds = candidate.get("bounds_px")
+    if bounds:
+        return make_bounds(
+            scale_value(bounds.get("x", 0), context["scale_x"]),
+            scale_value(bounds.get("y", 0), context["scale_y"]),
+            scale_value(bounds.get("width", 0), context["scale_x"]),
+            scale_value(bounds.get("height", 0), context["scale_y"]),
+        )
+    extra = candidate.get("extra") or {}
+    placeholder = extra.get("placeholder") or {}
+    anchor = context.get("placeholder_anchor_map", {}).get(placeholder_key(placeholder))
+    if anchor and anchor.get("bounds_px"):
+        return scale_bounds(anchor["bounds_px"], context["scale_x"], context["scale_y"])
     return make_bounds(
-        scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
-        scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
-        scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
-        scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
+        0,
+        0,
+        1,
+        1,
     )
 
 

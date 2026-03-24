@@ -369,14 +369,6 @@ def compatible_start_direction(direction: str, dx: float, dy: float) -> str:
 
 
 def compatible_end_direction(direction: str, dx: float, dy: float) -> str:
-    if direction == "right" and dx <= 0:
-        return ""
-    if direction == "left" and dx >= 0:
-        return ""
-    if direction == "down" and dy <= 0:
-        return ""
-    if direction == "up" and dy >= 0:
-        return ""
     return direction
 
 
@@ -887,12 +879,7 @@ def build_header_block_node(block: dict[str, Any], context: dict[str, Any], asse
         f'<rect x="0" y="0" width="{round(block["bounds"]["width"],2)}" height="{round(min(block["bounds"]["height"], 42),2)}" fill="white" fill-opacity="0" />'
     )
     for candidate in ownership["filtered_candidates"]:
-        abs_bounds = make_bounds(
-            scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
-            scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
-        )
+        abs_bounds = candidate_abs_bounds(candidate, context)
         svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="header_block")
         if not svg:
             continue
@@ -1140,12 +1127,7 @@ def build_flow_block_node(block: dict[str, Any], context: dict[str, Any], assets
     layers: list[tuple[int, float, float, str]] = []
     for candidate in ownership["filtered_candidates"]:
         subtype = candidate.get("subtype")
-        abs_bounds = make_bounds(
-            scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
-            scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
-        )
+        abs_bounds = candidate_abs_bounds(candidate, context)
         svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="flow_block")
         if not svg:
             continue
@@ -1226,13 +1208,11 @@ def build_content_svg_block_node(block: dict[str, Any], context: dict[str, Any],
     )
     layers: list[tuple[int, float, float, str]] = []
     for candidate in ownership["filtered_candidates"]:
+        source_scope = str(((candidate.get("extra") or {}).get("source_scope")) or "slide").lower()
+        if source_scope in {"layout", "master"}:
+            continue
         subtype = candidate.get("subtype")
-        abs_bounds = make_bounds(
-            scale_value((candidate.get("bounds_px") or {}).get("x", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("y", 0), context["scale_y"]),
-            scale_value((candidate.get("bounds_px") or {}).get("width", 0), context["scale_x"]),
-            scale_value((candidate.get("bounds_px") or {}).get("height", 0), context["scale_y"]),
-        )
+        abs_bounds = candidate_abs_bounds(candidate, context)
         svg = render_candidate_svg(candidate, abs_bounds, block, context, block_type="content_block")
         if not svg:
             continue
