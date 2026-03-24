@@ -372,7 +372,7 @@ def clamp_ratio_from_adjust(value: Any, fallback: float = 0.5) -> float:
         return fallback
     if math.isnan(ratio) or math.isinf(ratio):
         return fallback
-    return min(max(ratio, 0.08), 0.92)
+    return min(max(ratio, -0.35), 1.35)
 
 
 def direction_from_connection(point: dict[str, float] | None, bounds: dict[str, Any] | None, idx: Any) -> str:
@@ -651,8 +651,20 @@ def build_connector_path_points(
         signature = choose_route_signature(kind, page_type, start_dir, end_dir, dx, dy)
         signature = maybe_shorten_signature(signature, dx, dy, start_dir, end_dir)
     lead = max(min(abs(dx), abs(dy), 18.0), 8.0)
-    start_anchor = offset_point(start, start_dir, lead) if start_dir else start
-    end_anchor = offset_point(end, end_dir, -lead) if end_dir else end
+    horizontal_clearance = max(abs(dx) / 2.0 - 1.0, 0.0)
+    vertical_clearance = max(abs(dy) / 2.0 - 1.0, 0.0)
+    start_lead = lead
+    end_lead = lead
+    if start_dir in {"left", "right"}:
+        start_lead = min(start_lead, horizontal_clearance)
+    if start_dir in {"up", "down"}:
+        start_lead = min(start_lead, vertical_clearance)
+    if end_dir in {"left", "right"}:
+        end_lead = min(end_lead, horizontal_clearance)
+    if end_dir in {"up", "down"}:
+        end_lead = min(end_lead, vertical_clearance)
+    start_anchor = offset_point(start, start_dir, start_lead) if start_dir and start_lead > 0.5 else start
+    end_anchor = offset_point(end, end_dir, -end_lead) if end_dir and end_lead > 0.5 else end
     points = [start]
     if start_anchor != start:
         points.append(start_anchor)
@@ -1150,9 +1162,9 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
                     scale=min(scale_x, scale_y),
                 )
                 if start_column_index == 1 and row_span >= 3:
-                    merged_font = round(max(min(cell_bounds["height"] * 0.18, 28.0), 16.0), 2)
                     text_node["style"] = dict(text_node.get("style") or {})
-                    text_node["style"]["fontSize"] = merged_font
+                    base_font = float(text_node["style"].get("fontSize") or 8.0)
+                    text_node["style"]["fontSize"] = round(min(max(base_font, 8.0), 10.0), 2)
                     text_node["style"]["textAlignHorizontal"] = "LEFT"
                     text_node["style"]["textAlignVertical"] = "CENTER"
                     text_node["debug"] = dict(text_node.get("debug") or {}, table_role="merged_label_cell")
