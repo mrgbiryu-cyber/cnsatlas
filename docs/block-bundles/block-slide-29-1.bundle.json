@@ -1262,10 +1262,10 @@
                 "type": "GROUP",
                 "name": "description_lane_3",
                 "absoluteBoundingBox": {
-                  "x": 692.03,
-                  "y": 155.9,
-                  "width": 237.91,
-                  "height": 34.0
+                  "x": 695.52,
+                  "y": 159.38,
+                  "width": 230.93,
+                  "height": 27.04
                 },
                 "relativeTransform": [
                   [
@@ -1281,43 +1281,137 @@
                 ],
                 "children": [
                   {
-                    "id": "page:29:right_panel_block:row3",
-                    "type": "SVG_BLOCK",
-                    "name": "right_panel_block:row3",
+                    "id": "s29:slide_29/element_37:row_3:cell_2:sticky_lane:text_group",
+                    "type": "GROUP",
+                    "name": "description_lane_text_3",
                     "absoluteBoundingBox": {
-                      "x": 692.03,
-                      "y": 155.9,
-                      "width": 237.91,
-                      "height": 34.0
+                      "x": 695.52,
+                      "y": 159.38,
+                      "width": 230.93,
+                      "height": 27.04
                     },
                     "relativeTransform": [
                       [
-                        1,
-                        0,
+                        1.0,
+                        -0.0,
                         0
                       ],
                       [
-                        0,
-                        1,
+                        0.0,
+                        1.0,
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"237.91\" height=\"34.0\" viewBox=\"0 0 237.91 34.0\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조</tspan><tspan x=\"0.0\" dy=\"10.0\">문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선</tspan></text></svg>",
-                    "children": [],
+                    "children": [
+                      {
+                        "id": "s29:slide_29/element_37:row_3:cell_2:sticky_lane:text:1",
+                        "type": "TEXT",
+                        "name": "description_sticky_lane",
+                        "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서",
+                        "absoluteBoundingBox": {
+                          "x": 695.52,
+                          "y": 159.38,
+                          "width": 230.93,
+                          "height": 13.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_3/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "s29:slide_29/element_37:row_3:cell_2:sticky_lane:text:2",
+                        "type": "TEXT",
+                        "name": "description_sticky_lane",
+                        "characters": "정의 참조 문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )- V0.0.pptx",
+                        "absoluteBoundingBox": {
+                          "x": 695.52,
+                          "y": 172.9,
+                          "width": 230.93,
+                          "height": 13.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_3/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      }
+                    ],
                     "debug": {
-                      "generator": "block-prototype-v1",
-                      "block_type": "right_panel_block",
-                      "render_mode": "image",
-                      "page_type": "ui-mockup",
-                      "role": "description_lane_text_svg",
-                      "root_candidate_ids": [
-                        "s29:slide_29/element_37",
-                        "s29:slide_29/element_81",
-                        "s29:slide_29/element_93",
-                        "s29:slide_29/element_119",
-                        "s29:slide_29/element_95"
-                      ],
-                      "child_suffix": "row3"
+                      "source_path": "slide_29/element_37/row_3/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "role": "description_lane_text_native"
                     }
                   }
                 ],
@@ -1332,10 +1426,10 @@
                 "type": "GROUP",
                 "name": "description_lane_4",
                 "absoluteBoundingBox": {
-                  "x": 692.03,
-                  "y": 197.9,
-                  "width": 237.91,
-                  "height": 60.38
+                  "x": 695.52,
+                  "y": 201.38,
+                  "width": 230.93,
+                  "height": 53.42
                 },
                 "relativeTransform": [
                   [
@@ -1351,43 +1445,188 @@
                 ],
                 "children": [
                   {
-                    "id": "page:29:right_panel_block:row4",
-                    "type": "SVG_BLOCK",
-                    "name": "right_panel_block:row4",
+                    "id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:text_group",
+                    "type": "GROUP",
+                    "name": "description_lane_text_4",
                     "absoluteBoundingBox": {
-                      "x": 692.03,
-                      "y": 197.9,
-                      "width": 237.91,
-                      "height": 60.38
+                      "x": 695.52,
+                      "y": 201.38,
+                      "width": 230.93,
+                      "height": 53.42
                     },
                     "relativeTransform": [
                       [
-                        1,
-                        0,
+                        1.0,
+                        -0.0,
                         0
                       ],
                       [
-                        0,
-                        1,
+                        0.0,
+                        1.0,
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"237.91\" height=\"60.38\" viewBox=\"0 0 237.91 60.38\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan><tspan x=\"0.0\" dy=\"10.0\">: 동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP</tspan><tspan x=\"0.0\" dy=\"10.0\">Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조</tspan><tspan x=\"0.0\" dy=\"10.0\">좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 ,</tspan><tspan x=\"0.0\" dy=\"10.0\">[PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case :</tspan></text></svg>",
-                    "children": [],
+                    "children": [
+                      {
+                        "id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:text:1",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane",
+                        "characters": "[Key Visual 영역 ] – WCMS 콘텐츠",
+                        "absoluteBoundingBox": {
+                          "x": 695.52,
+                          "y": 201.38,
+                          "width": 230.93,
+                          "height": 17.81
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 12,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_4/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:text:2",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane",
+                        "characters": "등록 제품 visual 정보 제공 : 동영상 &",
+                        "absoluteBoundingBox": {
+                          "x": 695.52,
+                          "y": 219.19,
+                          "width": 230.93,
+                          "height": 17.81
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 12,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_4/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:text:3",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane",
+                        "characters": "이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서 인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS > 제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e) Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두 충족 시 문구 제공 1) WCMS > [KRP0008] > 비디오 > Video File > ‘360 미디어용도 ’ 에 체크 2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360 미디어 디스클라이머 노출에 Y 체크",
+                        "absoluteBoundingBox": {
+                          "x": 695.52,
+                          "y": 236.99,
+                          "width": 230.93,
+                          "height": 17.81
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 12,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_4/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      }
+                    ],
                     "debug": {
-                      "generator": "block-prototype-v1",
-                      "block_type": "right_panel_block",
-                      "render_mode": "image",
-                      "page_type": "ui-mockup",
-                      "role": "description_lane_text_svg",
-                      "root_candidate_ids": [
-                        "s29:slide_29/element_37",
-                        "s29:slide_29/element_81",
-                        "s29:slide_29/element_93",
-                        "s29:slide_29/element_119",
-                        "s29:slide_29/element_95"
-                      ],
-                      "child_suffix": "row4"
+                      "source_path": "slide_29/element_37/row_4/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "role": "description_lane_text_native"
                     }
                   }
                 ],

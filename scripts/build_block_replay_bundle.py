@@ -2112,34 +2112,59 @@ def build_right_panel_block_node(
                 "width": round(lane_bounds["width"], 2),
                 "height": round(lane_bounds["height"], 2),
             }
-            lane_children.append(
-                build_svg_child_node_with_bounds(
-                    render_block,
+            if spec["name"] in {"sticky_lane", "key_visual_lane"}:
+                text_candidate = dict(cell)
+                text_candidate["candidate_id"] = f"{cell['candidate_id']}:{spec['name']}"
+                text_candidate["title"] = f"description_{spec['name']}"
+                text_candidate["bounds_px"] = {
+                    "x": lane_child_bounds["x"],
+                    "y": lane_child_bounds["y"],
+                    "width": lane_child_bounds["width"],
+                    "height": lane_child_bounds["height"],
+                    "rotation": 0,
+                }
+                text_node = build_text_node(
+                    text_candidate,
                     lane_child_bounds,
-                    text_svg_markup(
-                        text_value,
-                        {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "width": lane_bounds["width"],
-                            "height": lane_bounds["height"],
-                        },
-                        font_size=font_size,
-                        fill_hex="#111111",
-                        fill_opacity=1.0,
-                        font_family=str(style.get("font_family") or "LG스마트체 Regular"),
-                        horizontal_align="LEFT",
-                        vertical_align="TOP" if spec["name"] != "footer_lane" else "CENTER",
-                        l_ins=0.0,
-                        r_ins=0.0,
-                        t_ins=0.0,
-                        b_ins=0.0,
-                        max_lines=max_lines,
-                    ),
-                    "description_lane_text_svg",
-                    f"row{row['row_index']+1}",
+                    context=context,
+                    force_wrap=True,
+                    table_cell=True,
+                    horizontal_fallback="l",
+                    vertical_fallback="t",
+                    scale=min(float(context["scale_x"]), float(context["scale_y"])),
                 )
-            )
+                text_node["name"] = f"description_lane_text_{row_index}"
+                text_node["debug"] = dict(text_node.get("debug") or {}, role="description_lane_text_native")
+                lane_children.append(text_node)
+            else:
+                lane_children.append(
+                    build_svg_child_node_with_bounds(
+                        render_block,
+                        lane_child_bounds,
+                        text_svg_markup(
+                            text_value,
+                            {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": lane_bounds["width"],
+                                "height": lane_bounds["height"],
+                            },
+                            font_size=font_size,
+                            fill_hex="#111111",
+                            fill_opacity=1.0,
+                            font_family=str(style.get("font_family") or "LG스마트체 Regular"),
+                            horizontal_align="LEFT",
+                            vertical_align="TOP" if spec["name"] != "footer_lane" else "CENTER",
+                            l_ins=0.0,
+                            r_ins=0.0,
+                            t_ins=0.0,
+                            b_ins=0.0,
+                            max_lines=max_lines,
+                        ),
+                        "description_lane_text_svg",
+                        f"row{row['row_index']+1}",
+                    )
+                )
             frame["children"].append(
                 build_owner_lane_group(
                     frame["id"],
