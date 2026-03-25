@@ -2427,14 +2427,14 @@
                         }
                       },
                       {
-                        "id": "compare:29-1:page:29:right_panel_block:row5",
-                        "type": "SVG_BLOCK",
-                        "name": "right_panel_block:row5",
+                        "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:description_body_lane_lines",
+                        "type": "GROUP",
+                        "name": "description_lane_text_5",
                         "absoluteBoundingBox": {
                           "x": 695.65,
                           "y": 391.91,
                           "width": 225.44,
-                          "height": 407.87
+                          "height": 400.0
                         },
                         "relativeTransform": [
                           [
@@ -2448,22 +2448,1972 @@
                             0
                           ]
                         ],
-                        "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"225.44\" height=\"407.87\" viewBox=\"0 0 225.44 407.87\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt;</tspan><tspan x=\"0.0\" dy=\"10.0\">UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트</tspan><tspan x=\"0.0\" dy=\"10.0\">Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미</tspan><tspan x=\"0.0\" dy=\"10.0\">노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 ,</tspan><tspan x=\"0.0\" dy=\"10.0\">특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해</tspan><tspan x=\"0.0\" dy=\"10.0\">특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 )</tspan><tspan x=\"0.0\" dy=\"10.0\">노출순서 변경됨 : 으뜸효율환급 &gt; 베스트 랭킹 순위 &gt;YYYY 년 출시 &gt;</tspan><tspan x=\"0.0\" dy=\"10.0\">다품목 할인 &gt; UP 가전 &gt; 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄</tspan><tspan x=\"0.0\" dy=\"10.0\">바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경</tspan><tspan x=\"0.0\" dy=\"10.0\">[ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★</tspan><tspan x=\"0.0\" dy=\"10.0\">YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일</tspan><tspan x=\"0.0\" dy=\"10.0\">(black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는</tspan><tspan x=\"0.0\" dy=\"10.0\">PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS &gt; 제품 &gt; 모델 &gt; 모델관리</tspan><tspan x=\"0.0\" dy=\"10.0\">&gt; 모델기본정보 --&gt; 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지</tspan><tspan x=\"0.0\" dy=\"10.0\">우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위</tspan><tspan x=\"0.0\" dy=\"10.0\">신규 추가됨 ”FRONT &gt; 홈 &gt; 제품 / 소모품 &gt; 베스트 랭킹 &gt; 오늘의</tspan><tspan x=\"0.0\" dy=\"10.0\">랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및</tspan><tspan x=\"0.0\" dy=\"10.0\">용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 )</tspan><tspan x=\"0.0\" dy=\"10.0\">뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크</tspan><tspan x=\"0.0\" dy=\"10.0\">없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin&gt; 공통 &gt;</tspan><tspan x=\"0.0\" dy=\"10.0\">전시구좌관리 &gt; 텍스트형 : 오늘의 랭킹 &gt; 카테고리형 ＂ 내 카테고리명 노출</tspan><tspan x=\"0.0\" dy=\"10.0\">n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위</tspan><tspan x=\"0.0\" dy=\"10.0\">, 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 &gt; 오늘의 랭킹</tspan><tspan x=\"0.0\" dy=\"10.0\">” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP</tspan><tspan x=\"0.0\" dy=\"10.0\">내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도</tspan><tspan x=\"0.0\" dy=\"10.0\">출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재</tspan><tspan x=\"0.0\" dy=\"10.0\">년도 확인하여 뱃지 노출</tspan></text></svg>",
-                        "children": [],
+                        "children": [
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line1:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_1",
+                            "characters": "[ 제품명 영역 ] Badge 노출 - 다품목할인",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 391.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line1"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line2:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_2",
+                            "characters": "> 내일배송 ( 판매예정 ) > UP 가전",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 401.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line2"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line3:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_3",
+                            "characters": "Badge 순으로 노출 - 최대 1 줄 노출하며 ,",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 411.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line3"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line4:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_4",
+                            "characters": "강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 421.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line4"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line5:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_5",
+                            "characters": "경우 , 해당 강조텍스트 Badge 미 노출",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 431.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line5"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line6:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_6",
+                            "characters": "(e.g. 다품목할인 , 내일배송 , UP 가전 ,",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 441.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line6"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line7:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_7",
+                            "characters": "신제품 , 베스트 , 특별세일 , 쿠폰할인",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 451.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line7"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line8:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_8",
+                            "characters": "Badge 설정되어 있는 상품 → 스크린 크기로",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 461.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line8"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line9:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_9",
+                            "characters": "인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 471.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line9"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line10:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_10",
+                            "characters": "특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 481.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line10"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line11:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_11",
+                            "characters": ": 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 491.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line11"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line12:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_12",
+                            "characters": "출시 > 다품목 할인 > UP 가전 > 강조텍스트",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 501.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line12"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line13:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_13",
+                            "characters": "( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 511.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line13"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line14:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_14",
+                            "characters": "적용함 디자인 변경됨 : PLP 뱃지 스타일과",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 521.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line14"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line15:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_15",
+                            "characters": "동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 531.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line15"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line16:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_16",
+                            "characters": "기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 541.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line16"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line17:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_17",
+                            "characters": "삭제됨 ★ YYYY 년 출시 , 다품목 할인 ,",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 551.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line17"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line18:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_18",
+                            "characters": "UP 가전 뱃지는 PLP 뱃지 스타일 (black)",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 561.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line18"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line19:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_19",
+                            "characters": "과 PDP 뱃지 스타일 (red) 이 다름 ★",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 571.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line19"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line20:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_20",
+                            "characters": "강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 581.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line20"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line21:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_21",
+                            "characters": "신규 추가됨 CMS > 제품 > 모델 > 모델관리",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 591.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line21"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line22:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_22",
+                            "characters": "> 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 601.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line22"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line23:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_23",
+                            "characters": "설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 611.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line23"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line24:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_24",
+                            "characters": ", 일시품절 상태인 경우에만 노출 베스트 랭킹 순위",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 621.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line24"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line25:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_25",
+                            "characters": "신규 추가됨 ”FRONT > 홈 > 제품 / 소모품",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 631.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line25"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line26:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_26",
+                            "characters": "> 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 641.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line26"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line27:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_27",
+                            "characters": "베스트 랭킹 1~3 위 가전인 경우에만 노출 (",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 651.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line27"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line28:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_28",
+                            "characters": "가격대 및 용량 / 사이즈 / 면적 / 타입 /",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 661.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line28"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line29:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_29",
+                            "characters": "디스플레이등 전체 옵션에서 1~3 위 ) 뱃지",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 671.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line29"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line30:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_30",
+                            "characters": "우선순위 중 최상위 판매중 , 일시품절 상태인",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 681.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line30"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line31:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_31",
+                            "characters": "경우에만 노출 선택시 이동링크 없음 노출문구 : $",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 691.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line31"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line32:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_32",
+                            "characters": "카테고리명 $ n 위 카테고리명 : “admin>",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 701.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line32"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line33:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_33",
+                            "characters": "공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 711.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line33"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line34:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_34",
+                            "characters": "> 카테고리형 ＂ 내 카테고리명 노출 n: 1~3",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 721.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line34"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line35:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_35",
+                            "characters": "노출 예 ) 김치냉장고 1 위 워시타워 3 위 ,",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 731.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line35"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line36:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_36",
+                            "characters": "의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 741.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line36"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line37:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_37",
+                            "characters": "위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ”",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 751.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line37"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line38:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_38",
+                            "characters": "은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 761.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line38"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line39:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_39",
+                            "characters": "출시 신규 추가됨 PLP 내 노출기준과 동일함 (",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 771.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line39"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:body_lane:line40:direct_text",
+                            "type": "TEXT",
+                            "name": "description_body_lane_line_40",
+                            "characters": "판매 , 일시품절 , 미판매 일때 노출 ) └",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 781.91,
+                              "width": 225.44,
+                              "height": 10.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane:line40"
+                            }
+                          }
+                        ],
                         "debug": {
                           "generator": "block-prototype-v1",
-                          "block_type": "right_panel_block",
-                          "render_mode": "image",
-                          "page_type": "ui-mockup",
-                          "role": "description_lane_text_svg",
-                          "root_candidate_ids": [
-                            "s29:slide_29/element_37",
-                            "s29:slide_29/element_81",
-                            "s29:slide_29/element_93",
-                            "s29:slide_29/element_119",
-                            "s29:slide_29/element_95"
-                          ],
-                          "child_suffix": "row5"
+                          "role": "description_lane_text_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2:body_lane"
                         }
                       }
                     ],
@@ -2543,14 +4493,14 @@
                         }
                       },
                       {
-                        "id": "compare:29-1:page:29:right_panel_block:row6",
-                        "type": "SVG_BLOCK",
-                        "name": "right_panel_block:row6",
+                        "id": "compare:29-1:s29:slide_29/element_37:row_6:cell_1:footer_lane:description_footer_lane_lines",
+                        "type": "GROUP",
+                        "name": "description_lane_text_6",
                         "absoluteBoundingBox": {
                           "x": 695.65,
                           "y": 536.96,
                           "width": 225.44,
-                          "height": 56.13
+                          "height": 9.0
                         },
                         "relativeTransform": [
                           [
@@ -2564,22 +4514,61 @@
                             0
                           ]
                         ],
-                        "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"225.44\" height=\"56.13\" viewBox=\"0 0 225.44 56.13\"><text x=\"0.0\" y=\"31.06\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
-                        "children": [],
+                        "children": [
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_6:cell_1:footer_lane:line1:direct_text",
+                            "type": "TEXT",
+                            "name": "description_footer_lane_line_1",
+                            "characters": "뒷페이지 계속",
+                            "absoluteBoundingBox": {
+                              "x": 695.65,
+                              "y": 536.96,
+                              "width": 225.44,
+                              "height": 9.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8.0,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "block-prototype-v1",
+                              "role": "description_lane_text_native",
+                              "source_candidate_id": "s29:slide_29/element_37:row_6:cell_1:footer_lane:line1"
+                            }
+                          }
+                        ],
                         "debug": {
                           "generator": "block-prototype-v1",
-                          "block_type": "right_panel_block",
-                          "render_mode": "image",
-                          "page_type": "ui-mockup",
-                          "role": "description_lane_text_svg",
-                          "root_candidate_ids": [
-                            "s29:slide_29/element_37",
-                            "s29:slide_29/element_81",
-                            "s29:slide_29/element_93",
-                            "s29:slide_29/element_119",
-                            "s29:slide_29/element_95"
-                          ],
-                          "child_suffix": "row6"
+                          "role": "description_lane_text_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_6:cell_1:footer_lane"
                         }
                       }
                     ],

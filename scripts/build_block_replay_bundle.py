@@ -1525,6 +1525,30 @@ def build_direct_lane_text_group(
     )
 
 
+def estimate_lane_wrap_chars(width: float, font_size: float) -> int:
+    # Approximate average Hangul/Latin glyph width for narrow dense-ui lanes.
+    glyph_width = max(font_size * 0.95, 6.4)
+    return max(10, int(max(width - 8.0, 24.0) / glyph_width))
+
+
+def build_native_description_lane_text_group(
+    candidate: dict[str, Any],
+    abs_bounds: dict[str, Any],
+    context: dict[str, Any],
+    *,
+    font_size: float = 8.0,
+    line_gap: float = 2.0,
+) -> dict[str, Any]:
+    return build_direct_lane_text_group(
+        candidate,
+        abs_bounds,
+        context,
+        font_size=font_size,
+        max_chars=estimate_lane_wrap_chars(float(abs_bounds["width"]), font_size),
+        line_gap=line_gap,
+    )
+
+
 def build_top_lane_background_node(
     candidate: dict[str, Any],
     abs_bounds: dict[str, Any],
@@ -2288,34 +2312,19 @@ def build_right_panel_block_node(
                 text_node["name"] = f"description_lane_text_{row_index}"
                 lane_children.append(text_node)
             else:
-                lane_children.append(
-                    build_svg_child_node_with_bounds(
-                        render_block,
-                        lane_child_bounds,
-                        text_svg_markup(
-                            text_value,
-                            {
-                                "x": 0.0,
-                                "y": 0.0,
-                                "width": lane_bounds["width"],
-                                "height": lane_bounds["height"],
-                            },
-                            font_size=font_size,
-                            fill_hex="#111111",
-                            fill_opacity=1.0,
-                            font_family=str(style.get("font_family") or "LG스마트체 Regular"),
-                            horizontal_align="LEFT",
-                            vertical_align="TOP" if spec["name"] != "footer_lane" else "CENTER",
-                            l_ins=0.0,
-                            r_ins=0.0,
-                            t_ins=0.0,
-                            b_ins=0.0,
-                            max_lines=max_lines,
-                        ),
-                        "description_lane_text_svg",
-                        f"row{row['row_index']+1}",
-                    )
+                text_candidate = dict(cell)
+                text_candidate["candidate_id"] = f"{cell['candidate_id']}:{spec['name']}"
+                text_candidate["title"] = f"description_{spec['name']}"
+                text_candidate["bounds_px"] = lane_child_bounds
+                text_node = build_native_description_lane_text_group(
+                    text_candidate,
+                    lane_child_bounds,
+                    context,
+                    font_size=font_size,
+                    line_gap=2.0 if spec["name"] != "footer_lane" else 1.0,
                 )
+                text_node["name"] = f"description_lane_text_{row_index}"
+                lane_children.append(text_node)
             frame["children"].append(
                 build_owner_lane_group(
                     frame["id"],
