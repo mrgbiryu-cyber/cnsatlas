@@ -1811,6 +1811,22 @@ def collect_table_description_cells(table_candidate: dict[str, Any], context: di
     return description_cells
 
 
+def collect_table_row_candidate_ids(
+    table_candidate: dict[str, Any],
+    context: dict[str, Any],
+    row_indices: set[int],
+) -> set[str]:
+    candidate_ids: set[str] = set()
+    for row_index, cell, _cell_extra, _cell_bounds, _start_column_index, _row_span in iter_table_cell_layouts(table_candidate, context):
+        one_based = int(row_index) + 1
+        if one_based not in row_indices:
+            continue
+        candidate_id = str(cell.get("candidate_id") or "")
+        if candidate_id:
+            candidate_ids.add(candidate_id)
+    return candidate_ids
+
+
 def classify_dense_ui_panel_owners(selected_candidates: list[dict[str, Any]], context: dict[str, Any]) -> dict[str, Any]:
     issue_card: dict[str, Any] | None = None
     version_stack_cards: list[dict[str, Any]] = []
@@ -2170,6 +2186,11 @@ def build_right_panel_block_node(
         for spec in description_lane_specs.values()
         if spec.get("card_candidate")
     }
+    lane_row_candidate_ids = collect_table_row_candidate_ids(
+        primary_table,
+        context,
+        set(description_lane_specs.keys()),
+    ) if primary_table and description_lane_specs else set()
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
             continue
@@ -2189,6 +2210,8 @@ def build_right_panel_block_node(
                 for child in table_group.get("children", []):
                     source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
                     if source_candidate_id in description_cell_ids:
+                        continue
+                    if source_candidate_id in lane_row_candidate_ids:
                         continue
                     if child.get("type") == "RECTANGLE" and should_skip_table_child_for_overlays(child, overlay_bounds):
                         continue
