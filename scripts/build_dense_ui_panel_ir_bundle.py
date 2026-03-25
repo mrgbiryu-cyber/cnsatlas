@@ -5,12 +5,15 @@ import argparse
 import json
 from collections import defaultdict
 from pathlib import Path
+import re
+import textwrap
 from typing import Any
 
 
 TARGET_SLIDE_WIDTH = 960.0
 TARGET_SLIDE_HEIGHT = 540.0
 RIGHT_PANEL_X_CUTOFF = TARGET_SLIDE_WIDTH * 0.58
+ROW_ID_RE = re.compile(r":row_(\d+)")
 
 
 def make_bounds(x: float, y: float, width: float, height: float) -> dict[str, float]:
@@ -178,6 +181,93 @@ def build_owner_group(owner_id: str, children: list[dict[str, Any]]) -> dict[str
     }
 
 
+def row_index_from_atom(atom: dict[str, Any]) -> int | None:
+    atom_id = str(atom.get("id") or "")
+    match = ROW_ID_RE.search(atom_id)
+    if not match:
+        return None
+    return int(match.group(1))
+
+
+def build_default_lane_background(bounds: dict[str, Any], row_index: int) -> dict[str, Any]:
+    fill = {"r": 1.0, "g": 1.0, "b": 1.0}
+    opacity = 1.0
+    if row_index == 6:
+        fill = {"r": 0.96, "g": 0.95, "b": 0.92}
+    return {
+        "id": f"lane-row-{row_index}:bg",
+        "type": "RECTANGLE",
+        "name": f"lane_row_{row_index}_bg",
+        "absoluteBoundingBox": dict(bounds),
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": fill, "opacity": opacity}],
+        "strokes": [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": 1.0}],
+        "strokeWeight": 1,
+        "children": [],
+        "debug": {"generator": "dense-ui-ir-v1", "role": "table_backed_lane_background", "row_index": row_index},
+    }
+
+
+def estimate_wrap_chars(width: float, font_size: float) -> int:
+    glyph_width = max(font_size * 0.95, 6.4)
+    usable_width = max(width - 8.0, 24.0)
+    return max(10, int(usable_width / glyph_width))
+
+
+def estimate_text_height(text: str, width: float, font_size: float, line_gap: float = 2.0) -> float:
+    wrapped = textwrap.wrap(
+        text.strip() or " ",
+        width=estimate_wrap_chars(width, font_size),
+        break_long_words=False,
+        break_on_hyphens=False,
+    )
+    line_count = max(1, len(wrapped))
+    line_height = font_size + line_gap
+    return line_count * line_height + 6.0
+
+
+def build_description_lane_layout(
+    lane_rows: dict[int, dict[str, Any]],
+    lane_markers: dict[int, dict[str, Any]],
+    lane_texts: dict[int, dict[str, Any]],
+    footer_atom: dict[str, Any] | None,
+) -> dict[int, dict[str, Any]]:
+    if not lane_rows:
+        return {}
+    ordered_rows = sorted(index for index in lane_rows if index in {3, 4, 5})
+    if not ordered_rows:
+        return {}
+    current_y = float(lane_rows[ordered_rows[0]]["visual_bounds_px"]["y"])
+    layouts: dict[int, dict[str, Any]] = {}
+    for row_index in ordered_rows:
+        row_atom = lane_rows[row_index]
+        marker_atom = lane_markers.get(row_index)
+        text_atom = lane_texts.get(row_index)
+        row_bounds = row_atom["visual_bounds_px"]
+        marker_bounds = dict(marker_atom["visual_bounds_px"]) if marker_atom else make_bounds(row_bounds["x"], current_y, 24.0, row_bounds["height"])
+        text_bounds = dict(text_atom["visual_bounds_px"]) if text_atom else make_bounds(marker_bounds["x"] + marker_bounds["width"], current_y, row_bounds["width"] - marker_bounds["width"], row_bounds["height"])
+        font_size = float((text_atom or {}).get("text_style", {}).get("font_size_max") or 8.0)
+        estimated_height = estimate_text_height(str((text_atom or {}).get("text") or ""), float(text_bounds["width"]), font_size)
+        lane_height = max(float(row_bounds["height"]), estimated_height)
+        lane_bounds = make_bounds(float(row_bounds["x"]), current_y, float(row_bounds["width"]), lane_height)
+        marker_bounds = make_bounds(float(marker_bounds["x"]), current_y, float(marker_bounds["width"]), lane_height)
+        text_bounds = make_bounds(float(text_bounds["x"]), current_y, float(text_bounds["width"]), lane_height)
+        layouts[row_index] = {
+            "lane_bounds": lane_bounds,
+            "marker_bounds": marker_bounds,
+            "text_bounds": text_bounds,
+        }
+        current_y += lane_height
+    if footer_atom:
+        footer_bounds = footer_atom["visual_bounds_px"]
+        layouts[6] = {
+            "lane_bounds": make_bounds(float(footer_bounds["x"]), current_y + 6.0, float(footer_bounds["width"]), max(float(footer_bounds["height"]), 14.0)),
+            "marker_bounds": None,
+            "text_bounds": make_bounds(float(footer_bounds["x"]), current_y + 6.0, float(footer_bounds["width"]), max(float(footer_bounds["height"]), 14.0)),
+        }
+    return layouts
+
+
 def dense_panel_bounds(page: dict[str, Any]) -> dict[str, float]:
     relevant = []
     for atom in page.get("atoms") or []:
@@ -214,11 +304,12 @@ def owner_priority(owner_id: str) -> int:
         "dense_ui_panel:top_meta_rows": 10,
         "dense_ui_panel:top_meta_cells": 12,
         "dense_ui_panel:version_stack": 14,
-        "dense_ui_panel:issue_card": 16,
-        "dense_ui_panel:description_cards": 18,
-        "dense_ui_panel:description_markers": 20,
-        "dense_ui_panel:description_lanes": 22,
-        "dense_ui_panel:description_footer": 24,
+        "dense_ui_panel:description_lane_rows": 16,
+        "dense_ui_panel:description_markers": 18,
+        "dense_ui_panel:description_lanes": 20,
+        "dense_ui_panel:description_footer": 22,
+        "dense_ui_panel:issue_card": 24,
+        "dense_ui_panel:description_cards": 26,
         "dense_ui_panel:small_assets": 30,
     }
     return order.get(owner_id, 50)
@@ -244,7 +335,46 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         grouped[owner_id].append(atom)
 
     children: list[dict[str, Any]] = []
+    lane_rows = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lane_rows", []) if row_index_from_atom(atom)}
+    lane_markers = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_markers", []) if row_index_from_atom(atom)}
+    lane_texts = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lanes", []) if row_index_from_atom(atom)}
+    footer_atom = next(iter(grouped.get("dense_ui_panel:description_footer", [])), None)
+    lane_layout = build_description_lane_layout(lane_rows, lane_markers, lane_texts, footer_atom)
+
+    for row_index in [3, 4, 5]:
+        row_atom = lane_rows.get(row_index)
+        text_atom = lane_texts.get(row_index)
+        marker_atom = lane_markers.get(row_index)
+        if not row_atom or not text_atom:
+            continue
+        layout = lane_layout.get(row_index) or {}
+        lane_bounds = layout.get("lane_bounds") or row_atom["visual_bounds_px"]
+        marker_bounds = layout.get("marker_bounds") or (marker_atom["visual_bounds_px"] if marker_atom else None)
+        text_bounds = layout.get("text_bounds") or text_atom["visual_bounds_px"]
+        lane_children = [
+            build_default_lane_background(lane_bounds, row_index),
+        ]
+        if marker_atom and marker_bounds:
+            lane_children.append(build_text_node(marker_atom, marker_bounds))
+        lane_children.append(build_text_node(text_atom, text_bounds))
+        children.append(build_owner_group(f"dense_ui_panel:lane_row_{row_index}", lane_children))
+    if footer_atom:
+        layout = lane_layout.get(6) or {}
+        footer_bounds = layout.get("lane_bounds") or footer_atom["visual_bounds_px"]
+        footer_children = [
+            build_default_lane_background(footer_bounds, 6),
+            build_text_node(footer_atom, layout.get("text_bounds") or footer_bounds),
+        ]
+        children.append(build_owner_group("dense_ui_panel:lane_row_6", footer_children))
+
     for owner_id in sorted(grouped.keys(), key=owner_priority):
+        if owner_id in {
+            "dense_ui_panel:description_lane_rows",
+            "dense_ui_panel:description_markers",
+            "dense_ui_panel:description_lanes",
+            "dense_ui_panel:description_footer",
+        }:
+            continue
         atoms = sorted(grouped[owner_id], key=atom_priority)
         owner_children: list[dict[str, Any]] = []
         for atom in atoms:
