@@ -86,6 +86,35 @@ def collect_block_candidates(block: dict[str, Any], context: dict[str, Any]) -> 
     return ordered
 
 
+def collect_candidates_in_block_bounds(
+    block: dict[str, Any],
+    context: dict[str, Any],
+    *,
+    min_overlap: float = 0.35,
+) -> list[dict[str, Any]]:
+    block_bounds = block["bounds"]
+    selected: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for candidate in sorted(context["candidates"], key=sort_by_position_key):
+        candidate_id = str(candidate.get("candidate_id") or "")
+        if not candidate_id or candidate_id in seen:
+            continue
+        abs_bounds = candidate_abs_bounds(candidate, context)
+        if not abs_bounds:
+            continue
+        overlap = bounds_overlap_ratio(abs_bounds, block_bounds)
+        center_x = float(abs_bounds["x"]) + float(abs_bounds["width"]) / 2
+        center_y = float(abs_bounds["y"]) + float(abs_bounds["height"]) / 2
+        center_inside = (
+            float(block_bounds["x"]) <= center_x <= float(block_bounds["x"]) + float(block_bounds["width"])
+            and float(block_bounds["y"]) <= center_y <= float(block_bounds["y"]) + float(block_bounds["height"])
+        )
+        if overlap >= min_overlap or center_inside:
+            selected.append(candidate)
+            seen.add(candidate_id)
+    return selected
+
+
 def build_block_group_node(block: dict[str, Any], role: str) -> dict[str, Any]:
     return {
         "id": block["block_id"],
@@ -1453,7 +1482,16 @@ def build_flow_block_node(block: dict[str, Any], context: dict[str, Any], assets
 
 
 def select_right_panel_candidates(block: dict[str, Any], context: dict[str, Any]) -> dict[str, Any]:
-    candidates = collect_block_candidates(block, context)
+    ordered_candidates: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for candidate in collect_block_candidates(block, context) + collect_candidates_in_block_bounds(block, context):
+        candidate_id = str(candidate.get("candidate_id") or "")
+        if not candidate_id or candidate_id in seen:
+            continue
+        seen.add(candidate_id)
+        ordered_candidates.append(candidate)
+
+    candidates = ordered_candidates
     ownership = filter_block_candidates(
         candidates,
         context,
