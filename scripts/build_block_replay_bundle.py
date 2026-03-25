@@ -1467,6 +1467,32 @@ def build_direct_lane_text_node(
     }
 
 
+def build_top_lane_background_node(
+    candidate: dict[str, Any],
+    abs_bounds: dict[str, Any],
+    context: dict[str, Any],
+) -> dict[str, Any]:
+    rect_candidate = dict(candidate)
+    rect_candidate["candidate_id"] = f"{candidate['candidate_id']}:lane_bg"
+    rect_candidate["title"] = f"{candidate.get('title') or candidate.get('subtype') or 'cell'}_lane_bg"
+    extra = dict(candidate.get("extra") or {})
+    cell_style = dict((extra.get("cell_style") or {}))
+    extra["shape_kind"] = "rect"
+    extra["shape_style"] = {
+        "fill": cell_style.get("fill"),
+        "line": {"type": "srgb", "value": "C7C7C7", "alpha": 1.0, "width_px": 1},
+    }
+    rect_candidate["extra"] = extra
+    node = build_rectangle_node(rect_candidate, abs_bounds, min(float(context["scale_x"]), float(context["scale_y"])))
+    if not node.get("fills"):
+        node["fills"] = [{"type": "SOLID", "color": {"r": 1, "g": 1, "b": 1}, "opacity": 1.0}]
+    node["strokes"] = [{"type": "SOLID", "color": {"r": 0.78, "g": 0.78, "b": 0.78}, "opacity": 1.0}]
+    node["strokeWeight"] = 1
+    node["name"] = f"{candidate.get('title') or candidate.get('subtype') or 'cell'}_lane_bg"
+    node["debug"] = dict(node.get("debug") or {}, role="description_lane_background")
+    return node
+
+
 def build_table_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     policy = block_text_policy(block["page_type"], "table_block")
     root_candidates = {candidate["candidate_id"]: candidate for candidate in context["roots"]}
@@ -2172,6 +2198,7 @@ def build_right_panel_block_node(
                 "height": round(lane_bounds["height"], 2),
             }
             if spec["name"] in {"sticky_lane", "key_visual_lane"}:
+                lane_children.append(build_top_lane_background_node(cell, lane_child_bounds, context))
                 text_candidate = dict(cell)
                 text_candidate["candidate_id"] = f"{cell['candidate_id']}:{spec['name']}"
                 text_candidate["title"] = f"description_{spec['name']}"

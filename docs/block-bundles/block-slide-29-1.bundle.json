@@ -1281,6 +1281,62 @@
                 ],
                 "children": [
                   {
+                    "id": "s29:slide_29/element_37:row_3:cell_2:lane_bg",
+                    "type": "RECTANGLE",
+                    "name": "cell 3-2_lane_bg",
+                    "absoluteBoundingBox": {
+                      "x": 686.22,
+                      "y": 79.09,
+                      "width": 243.45,
+                      "height": 18.0
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1,
+                          "g": 1,
+                          "b": 1
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1,
+                    "cornerRadius": 0,
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_29/element_37/row_3/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "shape_kind": "rect",
+                      "role": "description_lane_background"
+                    }
+                  },
+                  {
                     "id": "s29:slide_29/element_37:row_3:cell_2:sticky_lane:direct_text",
                     "type": "TEXT",
                     "name": "description_lane_text_3",
@@ -1359,6 +1415,62 @@
                   ]
                 ],
                 "children": [
+                  {
+                    "id": "s29:slide_29/element_37:row_4:cell_2:lane_bg",
+                    "type": "RECTANGLE",
+                    "name": "cell 4-2_lane_bg",
+                    "absoluteBoundingBox": {
+                      "x": 686.22,
+                      "y": 97.09,
+                      "width": 243.45,
+                      "height": 159.19
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1,
+                          "g": 1,
+                          "b": 1
+                        },
+                        "opacity": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1,
+                    "cornerRadius": 0,
+                    "children": [],
+                    "debug": {
+                      "source_path": "slide_29/element_37/row_4/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "shape_kind": "rect",
+                      "role": "description_lane_background"
+                    }
+                  },
                   {
                     "id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:direct_text",
                     "type": "TEXT",
