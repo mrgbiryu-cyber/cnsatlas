@@ -4644,14 +4644,14 @@
                     }
                   },
                   {
-                    "id": "compare:29-2:page:29:right_panel_block:description",
-                    "type": "SVG_BLOCK",
-                    "name": "right_panel_block:description",
+                    "id": "compare:29-2:s29:slide_29/element_37:row_3:cell_2:text_group",
+                    "type": "GROUP",
+                    "name": "cell 3-2",
                     "absoluteBoundingBox": {
-                      "x": 1589.71,
-                      "y": 66.33,
-                      "width": 370.29,
-                      "height": 501.67
+                      "x": 1689.71,
+                      "y": 110.57,
+                      "width": 242.47,
+                      "height": 11.04
                     },
                     "relativeTransform": [
                       [
@@ -4665,22 +4665,439 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"110.32\" y=\"129.57\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"110.32\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조</tspan><tspan x=\"110.32\" dy=\"10.0\">문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB</tspan><tspan x=\"110.32\" dy=\"10.0\">개선 )- V0.0.pptx</tspan></text><text x=\"112.32\" y=\"244.95\" font-size=\"7.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"112.32\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공 :</tspan><tspan x=\"112.32\" dy=\"8.75\">동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key</tspan></text><text x=\"111.94\" y=\"283.04\" font-size=\"7.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"111.94\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt; UP</tspan><tspan x=\"111.94\" dy=\"8.75\">가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해</tspan></text><text x=\"111.94\" y=\"727.7\" font-size=\"7.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"111.94\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
+                    "children": [
+                      {
+                        "id": "compare:29-2:s29:slide_29/element_37:row_3:cell_2:text:1",
+                        "type": "TEXT",
+                        "name": "cell 3-2",
+                        "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의",
+                        "absoluteBoundingBox": {
+                          "x": 1689.71,
+                          "y": 110.57,
+                          "width": 242.47,
+                          "height": 5.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_3/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "compare:29-2:s29:slide_29/element_37:row_3:cell_2:text:2",
+                        "type": "TEXT",
+                        "name": "cell 3-2",
+                        "characters": "참조 문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )- V0.0.pptx",
+                        "absoluteBoundingBox": {
+                          "x": 1689.71,
+                          "y": 116.09,
+                          "width": 242.47,
+                          "height": 5.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_3/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "source_path": "slide_29/element_37/row_3/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
+                    }
+                  },
+                  {
+                    "id": "compare:29-2:s29:slide_29/element_37:row_4:cell_2:text_group",
+                    "type": "GROUP",
+                    "name": "cell 4-2",
+                    "absoluteBoundingBox": {
+                      "x": 1689.71,
+                      "y": 128.57,
+                      "width": 242.47,
+                      "height": 11.04
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:29-2:s29:slide_29/element_37:row_4:cell_2:text:1",
+                        "type": "TEXT",
+                        "name": "cell 4-2",
+                        "characters": "[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual",
+                        "absoluteBoundingBox": {
+                          "x": 1689.71,
+                          "y": 128.57,
+                          "width": 242.47,
+                          "height": 5.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_4/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "compare:29-2:s29:slide_29/element_37:row_4:cell_2:text:2",
+                        "type": "TEXT",
+                        "name": "cell 4-2",
+                        "characters": "정보 제공 : 동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서 인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS > 제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e) Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두 충족 시 문구 제공 1) WCMS > [KRP0008] > 비디오 > Video File > ‘360 미디어용도 ’ 에 체크 2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360 미디어 디스클라이머 노출에 Y 체크",
+                        "absoluteBoundingBox": {
+                          "x": 1689.71,
+                          "y": 134.09,
+                          "width": 242.47,
+                          "height": 5.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_4/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "source_path": "slide_29/element_37/row_4/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2"
+                    }
+                  },
+                  {
+                    "id": "compare:29-2:s29:slide_29/element_37:row_5:cell_2:text_group",
+                    "type": "GROUP",
+                    "name": "cell 5-2",
+                    "absoluteBoundingBox": {
+                      "x": 1689.71,
+                      "y": 146.57,
+                      "width": 242.47,
+                      "height": 11.04
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:29-2:s29:slide_29/element_37:row_5:cell_2:text:1",
+                        "type": "TEXT",
+                        "name": "cell 5-2",
+                        "characters": "[ 제품명 영역 ] Badge 노출 - 다품목할인 > 내일배송 ( 판매예정",
+                        "absoluteBoundingBox": {
+                          "x": 1689.71,
+                          "y": 146.57,
+                          "width": 242.47,
+                          "height": 5.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_5/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      },
+                      {
+                        "id": "compare:29-2:s29:slide_29/element_37:row_5:cell_2:text:2",
+                        "type": "TEXT",
+                        "name": "cell 5-2",
+                        "characters": ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+                        "absoluteBoundingBox": {
+                          "x": 1689.71,
+                          "y": 152.09,
+                          "width": 242.47,
+                          "height": 5.52
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_37/row_5/cell_2",
+                          "source_node_id": "49",
+                          "source_subtype": "table_cell",
+                          "source_scope": "slide",
+                          "role": "header_text_fragment"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "source_path": "slide_29/element_37/row_5/cell_2",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "role": "header_text_group",
+                      "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2"
+                    }
+                  },
+                  {
+                    "id": "compare:29-2:s29:slide_29/element_37:row_6:cell_1:text",
+                    "type": "TEXT",
+                    "name": "cell 6-1",
+                    "characters": "뒷페이지 계속",
+                    "absoluteBoundingBox": {
+                      "x": 1663.83,
+                      "y": 165.2,
+                      "width": 268.67,
+                      "height": 9.78
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.12,
+                          "g": 0.12,
+                          "b": 0.12
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "style": {
+                      "fontSize": 8,
+                      "fontFamily": "Inter",
+                      "textAlignHorizontal": "LEFT",
+                      "textAlignVertical": "CENTER",
+                      "textAutoResize": "HEIGHT",
+                      "lineHeightPx": null
+                    },
                     "children": [],
                     "debug": {
-                      "generator": "block-prototype-v1",
-                      "block_type": "right_panel_block",
-                      "render_mode": "image",
-                      "page_type": "ui-mockup",
-                      "role": "right_panel_description_svg",
-                      "root_candidate_ids": [
-                        "s29:slide_29/element_37",
-                        "s29:slide_29/element_81",
-                        "s29:slide_29/element_93",
-                        "s29:slide_29/element_119",
-                        "s29:slide_29/element_95"
-                      ],
-                      "child_suffix": "description"
+                      "source_path": "slide_29/element_37/row_6/cell_1",
+                      "source_node_id": "49",
+                      "source_subtype": "table_cell",
+                      "source_scope": "slide",
+                      "rotation_degrees": 0.0,
+                      "source_candidate_id": "s29:slide_29/element_37:row_6:cell_1"
                     }
                   },
                   {

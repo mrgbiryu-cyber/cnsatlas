@@ -1765,6 +1765,32 @@ def build_right_panel_description_overlay(
     return "".join(text_blocks)
 
 
+def build_right_panel_description_lane_nodes(
+    primary_table: dict[str, Any] | None,
+    context: dict[str, Any],
+    assets: dict[str, Any],
+) -> list[dict[str, Any]]:
+    if not primary_table:
+        return []
+    description_cell_ids = {
+        str(row["cell"].get("candidate_id") or "")
+        for row in collect_table_description_cells(primary_table, context)
+    }
+    if not description_cell_ids:
+        return []
+
+    table_group = build_table_visual_group(primary_table, context, assets)
+    lane_nodes: list[dict[str, Any]] = []
+    for child in table_group.get("children", []):
+        source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
+        if source_candidate_id not in description_cell_ids:
+            continue
+        if child.get("type") not in {"TEXT", "GROUP"}:
+            continue
+        lane_nodes.append(child)
+    return lane_nodes
+
+
 def build_right_panel_block_node(
     block: dict[str, Any],
     context: dict[str, Any],
@@ -1795,6 +1821,7 @@ def build_right_panel_block_node(
     foreground_nodes: list[dict[str, Any]] = []
     background_label_markup_parts: list[str] = []
     overlay_bounds: list[dict[str, Any]] = []
+    description_lane_nodes: list[dict[str, Any]] = build_right_panel_description_lane_nodes(primary_table, context, assets) if variant == "v2" else []
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
             continue
@@ -1876,7 +1903,9 @@ def build_right_panel_block_node(
                 "card_labels",
             )
         )
-    if description_overlay:
+    if description_lane_nodes:
+        frame["children"].extend(description_lane_nodes)
+    elif description_overlay:
         frame["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
     frame["children"].extend(foreground_nodes)
     return frame
