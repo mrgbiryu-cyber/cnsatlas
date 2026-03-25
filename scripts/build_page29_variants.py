@@ -196,7 +196,11 @@ def clone_panel_step(panel: dict, step: int) -> dict:
             name = str(child.get("name") or "")
             if child.get("type") == "GROUP" and name.startswith("description_lane_"):
                 lane = copy.deepcopy(child)
-                lane["children"] = [c for c in (lane.get("children") or []) if c.get("type") == "SVG_BLOCK"]
+                lane["children"] = [
+                    c
+                    for c in (lane.get("children") or [])
+                    if c.get("type") in {"SVG_BLOCK", "TEXT", "GROUP"}
+                ]
                 filtered_children.append(lane)
             elif name == "right_panel_block:card_labels":
                 filtered_children.append(child)
