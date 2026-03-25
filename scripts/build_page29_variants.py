@@ -105,6 +105,87 @@ def build_compare_bundle(slide_no: int, bundles: list[tuple[str, dict]], source_
     }
 
 
+def find_right_panel_node(bundle: dict) -> dict | None:
+    root = bundle.get("document") or {}
+    inner = (root.get("children") or [None])[0]
+    if not inner:
+        return None
+    for child in inner.get("children") or []:
+        if child.get("name") == "right_panel_block":
+            return child
+    return None
+
+
+def build_panel_compare_bundle(slide_no: int, bundles: list[tuple[str, dict]], source_file: str) -> dict:
+    gap = 28.0
+    outer_pad_x = 12.0
+    outer_pad_y = 28.0
+    panels: list[tuple[str, dict]] = []
+    merged_assets: dict = {}
+
+    for label, bundle in bundles:
+        panel = find_right_panel_node(bundle)
+        if not panel:
+            continue
+        panels.append((label, panel))
+        merged_assets.update(bundle.get("assets") or {})
+
+    if not panels:
+        raise SystemExit("no right_panel_block found in variants")
+
+    panel_width = max(float(panel["absoluteBoundingBox"]["width"]) for _, panel in panels)
+    panel_height = max(float(panel["absoluteBoundingBox"]["height"]) for _, panel in panels)
+    total_width = len(panels) * panel_width + (len(panels) - 1) * gap + outer_pad_x * 2
+    total_height = panel_height + outer_pad_y + 12.0
+
+    compare_children: list[dict] = []
+    for index, (label, panel) in enumerate(panels):
+        bounds = panel["absoluteBoundingBox"]
+        dx = outer_pad_x + index * (panel_width + gap) - float(bounds["x"])
+        dy = outer_pad_y - float(bounds["y"])
+        shifted = shift_node(panel, f"panel-compare:{label}", dx, dy)
+        shifted["name"] = label
+        compare_children.append(make_label_node(f"panel-compare:{label}:label", label, outer_pad_x + index * (panel_width + gap) + 4.0, 6.0))
+        compare_children.append(shifted)
+
+    inner_frame = {
+        "id": f"page:{slide_no}:panel-compare:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": compare_children,
+    }
+    root = {
+        "id": f"page:{slide_no}:panel-compare",
+        "type": "FRAME",
+        "name": f"Slide {slide_no} Right Panel Compare",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [inner_frame],
+        "debug": {"generator": "page29-panel-compare"},
+    }
+    return {
+        "kind": "figma-replay-bundle",
+        "source_kind": "ppt-block-prototype-panel-compare",
+        "visual_model_version": "block-v1-panel-compare",
+        "source_file": source_file,
+        "file_name": Path(source_file).name,
+        "page_name": root["name"],
+        "node_id": root["id"],
+        "document": root,
+        "assets": merged_assets,
+        "missing_assets": [],
+        "debug": {"status": "page29_panel_compare_bundle", "variants": [label for label, _ in panels]},
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build page 29 comparison variants for block replay bundle.")
     parser.add_argument(
@@ -149,6 +230,12 @@ def main() -> None:
     with compare_output_path.open("w", encoding="utf-8") as handle:
         json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
     print(f"saved {compare_output_path}")
+
+    panel_compare_bundle = build_panel_compare_bundle(args.slide, built_variants, source_file)
+    panel_compare_output_path = output_dir / f"block-slide-{args.slide}-panel-compare.bundle.json"
+    with panel_compare_output_path.open("w", encoding="utf-8") as handle:
+        json.dump(panel_compare_bundle, handle, ensure_ascii=False, indent=2)
+    print(f"saved {panel_compare_output_path}")
 
 
 if __name__ == "__main__":
