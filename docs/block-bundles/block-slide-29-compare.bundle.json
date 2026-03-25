@@ -291,8 +291,8 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1",
-                        "type": "RECTANGLE",
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_1-1",
+                        "type": "GROUP",
                         "name": "cell 1-1",
                         "absoluteBoundingBox": {
                           "x": 660.66,
@@ -312,74 +312,16 @@
                             0
                           ]
                         ],
-                        "fills": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 1,
-                              "g": 1,
-                              "b": 1
-                            },
-                            "opacity": null
-                          }
-                        ],
-                        "strokes": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.78,
-                              "g": 0.78,
-                              "b": 0.78
-                            },
-                            "opacity": 1.0
-                          }
-                        ],
-                        "strokeWeight": 1,
-                        "cornerRadius": 0,
-                        "children": [],
-                        "debug": {
-                          "source_path": "slide_29/element_37/row_1/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "shape_kind": "rect",
-                          "role": "table_cell_rect",
-                          "source_candidate_id": "s29:slide_29/element_37:row_1:cell_1"
-                        }
-                      },
-                      {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1:text_group",
-                        "type": "GROUP",
-                        "name": "cell 1-1",
-                        "absoluteBoundingBox": {
-                          "x": 663.83,
-                          "y": 75.2,
-                          "width": 268.67,
-                          "height": 9.78
-                        },
-                        "relativeTransform": [
-                          [
-                            1,
-                            0,
-                            0
-                          ],
-                          [
-                            0,
-                            1,
-                            0
-                          ]
-                        ],
                         "children": [
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1:text:1",
-                            "type": "TEXT",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1",
+                            "type": "RECTANGLE",
                             "name": "cell 1-1",
-                            "characters": "화면",
                             "absoluteBoundingBox": {
-                              "x": 663.83,
-                              "y": 75.2,
-                              "width": 15.36,
-                              "height": 9.78
+                              "x": 660.66,
+                              "y": 71.09,
+                              "width": 275.01,
+                              "height": 18.0
                             },
                             "relativeTransform": [
                               [
@@ -397,39 +339,45 @@
                               {
                                 "type": "SOLID",
                                 "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
                                 },
                                 "opacity": 1.0
                               }
                             ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "CENTER",
-                              "textAlignVertical": "CENTER",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
                             "children": [],
                             "debug": {
                               "source_path": "slide_29/element_37/row_1/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_1:cell_1"
                             }
                           },
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1:text:2",
-                            "type": "TEXT",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1:text_group",
+                            "type": "GROUP",
                             "name": "cell 1-1",
-                            "characters": "설명",
                             "absoluteBoundingBox": {
-                              "x": 685.19,
+                              "x": 663.83,
                               "y": 75.2,
-                              "width": 247.31,
+                              "width": 268.67,
                               "height": 9.78
                             },
                             "relativeTransform": [
@@ -444,47 +392,129 @@
                                 0
                               ]
                             ],
-                            "fills": [
+                            "children": [
                               {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
+                                "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1:text:1",
+                                "type": "TEXT",
+                                "name": "cell 1-1",
+                                "characters": "화면",
+                                "absoluteBoundingBox": {
+                                  "x": 663.83,
+                                  "y": 75.2,
+                                  "width": 15.36,
+                                  "height": 9.78
                                 },
-                                "opacity": 1.0
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "CENTER",
+                                  "textAlignVertical": "CENTER",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_1/cell_1",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              },
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_1:cell_1:text:2",
+                                "type": "TEXT",
+                                "name": "cell 1-1",
+                                "characters": "설명",
+                                "absoluteBoundingBox": {
+                                  "x": 685.19,
+                                  "y": 75.2,
+                                  "width": 247.31,
+                                  "height": 9.78
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "CENTER",
+                                  "textAlignVertical": "CENTER",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_1/cell_1",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
                               }
                             ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "CENTER",
-                              "textAlignVertical": "CENTER",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
-                            "children": [],
                             "debug": {
                               "source_path": "slide_29/element_37/row_1/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "role": "header_text_group",
+                              "source_candidate_id": "s29:slide_29/element_37:row_1:cell_1"
                             }
                           }
                         ],
                         "debug": {
-                          "source_path": "slide_29/element_37/row_1/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "role": "header_text_group",
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
                           "source_candidate_id": "s29:slide_29/element_37:row_1:cell_1"
                         }
                       },
                       {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1",
-                        "type": "RECTANGLE",
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_2-1",
+                        "type": "GROUP",
                         "name": "cell 2-1",
                         "absoluteBoundingBox": {
                           "x": 660.66,
@@ -504,73 +534,72 @@
                             0
                           ]
                         ],
-                        "fills": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 1,
-                              "g": 1,
-                              "b": 1
-                            },
-                            "opacity": null
-                          }
-                        ],
-                        "strokes": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.78,
-                              "g": 0.78,
-                              "b": 0.78
-                            },
-                            "opacity": 1.0
-                          }
-                        ],
-                        "strokeWeight": 1,
-                        "cornerRadius": 0,
-                        "children": [],
-                        "debug": {
-                          "source_path": "slide_29/element_37/row_2/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "shape_kind": "rect",
-                          "role": "table_cell_rect",
-                          "source_candidate_id": "s29:slide_29/element_37:row_2:cell_1"
-                        }
-                      },
-                      {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text_group",
-                        "type": "GROUP",
-                        "name": "cell 2-1",
-                        "absoluteBoundingBox": {
-                          "x": 663.83,
-                          "y": 93.2,
-                          "width": 268.67,
-                          "height": 9.78
-                        },
-                        "relativeTransform": [
-                          [
-                            1,
-                            0,
-                            0
-                          ],
-                          [
-                            0,
-                            1,
-                            0
-                          ]
-                        ],
                         "children": [
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text:1",
-                            "type": "TEXT",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1",
+                            "type": "RECTANGLE",
                             "name": "cell 2-1",
-                            "characters": "Fold",
+                            "absoluteBoundingBox": {
+                              "x": 660.66,
+                              "y": 89.09,
+                              "width": 275.01,
+                              "height": 18.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
+                            "children": [],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_2/cell_1",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_2:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text_group",
+                            "type": "GROUP",
+                            "name": "cell 2-1",
                             "absoluteBoundingBox": {
                               "x": 663.83,
                               "y": 93.2,
-                              "width": 18.72,
+                              "width": 268.67,
                               "height": 9.78
                             },
                             "relativeTransform": [
@@ -585,206 +614,185 @@
                                 0
                               ]
                             ],
-                            "fills": [
+                            "children": [
                               {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
+                                "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text:1",
+                                "type": "TEXT",
+                                "name": "cell 2-1",
+                                "characters": "Fold",
+                                "absoluteBoundingBox": {
+                                  "x": 663.83,
+                                  "y": 93.2,
+                                  "width": 18.72,
+                                  "height": 9.78
                                 },
-                                "opacity": 1.0
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "CENTER",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_2/cell_1",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              },
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text:2",
+                                "type": "TEXT",
+                                "name": "cell 2-1",
+                                "characters": "영역",
+                                "absoluteBoundingBox": {
+                                  "x": 688.55,
+                                  "y": 93.2,
+                                  "width": 15.36,
+                                  "height": 9.78
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "CENTER",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_2/cell_1",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              },
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text:3",
+                                "type": "TEXT",
+                                "name": "cell 2-1",
+                                "characters": "정의",
+                                "absoluteBoundingBox": {
+                                  "x": 709.91,
+                                  "y": 93.2,
+                                  "width": 222.59,
+                                  "height": 9.78
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "CENTER",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_2/cell_1",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
                               }
                             ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "CENTER",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
-                            "children": [],
                             "debug": {
                               "source_path": "slide_29/element_37/row_2/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
-                            }
-                          },
-                          {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text:2",
-                            "type": "TEXT",
-                            "name": "cell 2-1",
-                            "characters": "영역",
-                            "absoluteBoundingBox": {
-                              "x": 688.55,
-                              "y": 93.2,
-                              "width": 15.36,
-                              "height": 9.78
-                            },
-                            "relativeTransform": [
-                              [
-                                1,
-                                0,
-                                0
-                              ],
-                              [
-                                0,
-                                1,
-                                0
-                              ]
-                            ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "CENTER",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
-                            "children": [],
-                            "debug": {
-                              "source_path": "slide_29/element_37/row_2/cell_1",
-                              "source_node_id": "49",
-                              "source_subtype": "table_cell",
-                              "source_scope": "slide",
-                              "role": "header_text_fragment"
-                            }
-                          },
-                          {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_2:cell_1:text:3",
-                            "type": "TEXT",
-                            "name": "cell 2-1",
-                            "characters": "정의",
-                            "absoluteBoundingBox": {
-                              "x": 709.91,
-                              "y": 93.2,
-                              "width": 222.59,
-                              "height": 9.78
-                            },
-                            "relativeTransform": [
-                              [
-                                1,
-                                0,
-                                0
-                              ],
-                              [
-                                0,
-                                1,
-                                0
-                              ]
-                            ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "CENTER",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
-                            "children": [],
-                            "debug": {
-                              "source_path": "slide_29/element_37/row_2/cell_1",
-                              "source_node_id": "49",
-                              "source_subtype": "table_cell",
-                              "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "role": "header_text_group",
+                              "source_candidate_id": "s29:slide_29/element_37:row_2:cell_1"
                             }
                           }
                         ],
                         "debug": {
-                          "source_path": "slide_29/element_37/row_2/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "role": "header_text_group",
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
                           "source_candidate_id": "s29:slide_29/element_37:row_2:cell_1"
                         }
                       },
                       {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_1:text",
-                        "type": "TEXT",
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_3-1",
+                        "type": "GROUP",
                         "name": "cell 3-1",
-                        "characters": "1",
                         "absoluteBoundingBox": {
-                          "x": 663.83,
-                          "y": 111.2,
-                          "width": 19.22,
-                          "height": 9.78
-                        },
-                        "relativeTransform": [
-                          [
-                            1,
-                            0,
-                            0
-                          ],
-                          [
-                            0,
-                            1,
-                            0
-                          ]
-                        ],
-                        "fills": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.12,
-                              "g": 0.12,
-                              "b": 0.12
-                            },
-                            "opacity": 1.0
-                          }
-                        ],
-                        "style": {
-                          "fontSize": 8,
-                          "fontFamily": "Inter",
-                          "textAlignHorizontal": "LEFT",
-                          "textAlignVertical": "CENTER",
-                          "textAutoResize": "HEIGHT",
-                          "lineHeightPx": null
-                        },
-                        "children": [],
-                        "debug": {
-                          "source_path": "slide_29/element_37/row_3/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "rotation_degrees": 0.0,
-                          "source_candidate_id": "s29:slide_29/element_37:row_3:cell_1"
-                        }
-                      },
-                      {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2",
-                        "type": "RECTANGLE",
-                        "name": "cell 3-2",
-                        "absoluteBoundingBox": {
-                          "x": 686.22,
+                          "x": 660.66,
                           "y": 107.09,
-                          "width": 249.45,
+                          "width": 25.56,
                           "height": 18.0
                         },
                         "relativeTransform": [
@@ -799,50 +807,132 @@
                             0
                           ]
                         ],
-                        "fills": [
+                        "children": [
                           {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 1,
-                              "g": 1,
-                              "b": 1
+                            "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_1",
+                            "type": "RECTANGLE",
+                            "name": "cell 3-1",
+                            "absoluteBoundingBox": {
+                              "x": 660.66,
+                              "y": 107.09,
+                              "width": 25.56,
+                              "height": 18.0
                             },
-                            "opacity": null
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
+                            "children": [],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_3/cell_1",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_3:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_1:text",
+                            "type": "TEXT",
+                            "name": "cell 3-1",
+                            "characters": "1",
+                            "absoluteBoundingBox": {
+                              "x": 663.83,
+                              "y": 111.2,
+                              "width": 19.22,
+                              "height": 9.78
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.12,
+                                  "g": 0.12,
+                                  "b": 0.12
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontSize": 8,
+                              "fontFamily": "Inter",
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "CENTER",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": null
+                            },
+                            "children": [],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_3/cell_1",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "rotation_degrees": 0.0,
+                              "source_candidate_id": "s29:slide_29/element_37:row_3:cell_1"
+                            }
                           }
                         ],
-                        "strokes": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.78,
-                              "g": 0.78,
-                              "b": 0.78
-                            },
-                            "opacity": 1.0
-                          }
-                        ],
-                        "strokeWeight": 1,
-                        "cornerRadius": 0,
-                        "children": [],
                         "debug": {
-                          "source_path": "slide_29/element_37/row_3/cell_2",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "shape_kind": "rect",
-                          "role": "table_cell_rect",
-                          "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_3:cell_1"
                         }
                       },
                       {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2:text_group",
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_4-1",
                         "type": "GROUP",
-                        "name": "cell 3-2",
+                        "name": "cell 4-1",
                         "absoluteBoundingBox": {
-                          "x": 689.71,
-                          "y": 110.57,
-                          "width": 242.47,
-                          "height": 11.04
+                          "x": 660.66,
+                          "y": 125.09,
+                          "width": 25.56,
+                          "height": 18.0
                         },
                         "relativeTransform": [
                           [
@@ -858,15 +948,14 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2:text:1",
-                            "type": "TEXT",
-                            "name": "cell 3-2",
-                            "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_1",
+                            "type": "RECTANGLE",
+                            "name": "cell 4-1",
                             "absoluteBoundingBox": {
-                              "x": 689.71,
-                              "y": 110.57,
-                              "width": 242.47,
-                              "height": 5.52
+                              "x": 660.66,
+                              "y": 125.09,
+                              "width": 25.56,
+                              "height": 18.0
                             },
                             "relativeTransform": [
                               [
@@ -884,40 +973,47 @@
                               {
                                 "type": "SOLID",
                                 "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
                                 },
                                 "opacity": 1.0
                               }
                             ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "TOP",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
                             "children": [],
                             "debug": {
-                              "source_path": "slide_29/element_37/row_3/cell_2",
+                              "source_path": "slide_29/element_37/row_4/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_4:cell_1"
                             }
                           },
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2:text:2",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_1:text",
                             "type": "TEXT",
-                            "name": "cell 3-2",
-                            "characters": "참조 문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )- V0.0.pptx",
+                            "name": "cell 4-1",
+                            "characters": "2",
                             "absoluteBoundingBox": {
-                              "x": 689.71,
-                              "y": 116.09,
-                              "width": 242.47,
-                              "height": 5.52
+                              "x": 663.83,
+                              "y": 129.2,
+                              "width": 19.22,
+                              "height": 9.78
                             },
                             "relativeTransform": [
                               [
@@ -946,90 +1042,36 @@
                               "fontSize": 8,
                               "fontFamily": "Inter",
                               "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "TOP",
+                              "textAlignVertical": "CENTER",
                               "textAutoResize": "HEIGHT",
                               "lineHeightPx": null
                             },
                             "children": [],
                             "debug": {
-                              "source_path": "slide_29/element_37/row_3/cell_2",
+                              "source_path": "slide_29/element_37/row_4/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "rotation_degrees": 0.0,
+                              "source_candidate_id": "s29:slide_29/element_37:row_4:cell_1"
                             }
                           }
                         ],
                         "debug": {
-                          "source_path": "slide_29/element_37/row_3/cell_2",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "role": "header_text_group",
-                          "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
-                        }
-                      },
-                      {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_1:text",
-                        "type": "TEXT",
-                        "name": "cell 4-1",
-                        "characters": "2",
-                        "absoluteBoundingBox": {
-                          "x": 663.83,
-                          "y": 129.2,
-                          "width": 19.22,
-                          "height": 9.78
-                        },
-                        "relativeTransform": [
-                          [
-                            1,
-                            0,
-                            0
-                          ],
-                          [
-                            0,
-                            1,
-                            0
-                          ]
-                        ],
-                        "fills": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.12,
-                              "g": 0.12,
-                              "b": 0.12
-                            },
-                            "opacity": 1.0
-                          }
-                        ],
-                        "style": {
-                          "fontSize": 8,
-                          "fontFamily": "Inter",
-                          "textAlignHorizontal": "LEFT",
-                          "textAlignVertical": "CENTER",
-                          "textAutoResize": "HEIGHT",
-                          "lineHeightPx": null
-                        },
-                        "children": [],
-                        "debug": {
-                          "source_path": "slide_29/element_37/row_4/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "rotation_degrees": 0.0,
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
                           "source_candidate_id": "s29:slide_29/element_37:row_4:cell_1"
                         }
                       },
                       {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2:text_group",
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_5-1",
                         "type": "GROUP",
-                        "name": "cell 4-2",
+                        "name": "cell 5-1",
                         "absoluteBoundingBox": {
-                          "x": 689.71,
-                          "y": 128.57,
-                          "width": 242.47,
-                          "height": 11.04
+                          "x": 660.66,
+                          "y": 143.09,
+                          "width": 25.56,
+                          "height": 18.0
                         },
                         "relativeTransform": [
                           [
@@ -1045,15 +1087,14 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2:text:1",
-                            "type": "TEXT",
-                            "name": "cell 4-2",
-                            "characters": "[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_1",
+                            "type": "RECTANGLE",
+                            "name": "cell 5-1",
                             "absoluteBoundingBox": {
-                              "x": 689.71,
-                              "y": 128.57,
-                              "width": 242.47,
-                              "height": 5.52
+                              "x": 660.66,
+                              "y": 143.09,
+                              "width": 25.56,
+                              "height": 18.0
                             },
                             "relativeTransform": [
                               [
@@ -1071,40 +1112,47 @@
                               {
                                 "type": "SOLID",
                                 "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
                                 },
                                 "opacity": 1.0
                               }
                             ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "TOP",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
                             "children": [],
                             "debug": {
-                              "source_path": "slide_29/element_37/row_4/cell_2",
+                              "source_path": "slide_29/element_37/row_5/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_1"
                             }
                           },
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2:text:2",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_1:text",
                             "type": "TEXT",
-                            "name": "cell 4-2",
-                            "characters": "정보 제공 : 동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서 인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS > 제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e) Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두 충족 시 문구 제공 1) WCMS > [KRP0008] > 비디오 > Video File > ‘360 미디어용도 ’ 에 체크 2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360 미디어 디스클라이머 노출에 Y 체크",
+                            "name": "cell 5-1",
+                            "characters": "3",
                             "absoluteBoundingBox": {
-                              "x": 689.71,
-                              "y": 134.09,
-                              "width": 242.47,
-                              "height": 5.52
+                              "x": 663.83,
+                              "y": 147.2,
+                              "width": 19.22,
+                              "height": 9.78
                             },
                             "relativeTransform": [
                               [
@@ -1133,90 +1181,36 @@
                               "fontSize": 8,
                               "fontFamily": "Inter",
                               "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "TOP",
+                              "textAlignVertical": "CENTER",
                               "textAutoResize": "HEIGHT",
                               "lineHeightPx": null
                             },
                             "children": [],
                             "debug": {
-                              "source_path": "slide_29/element_37/row_4/cell_2",
+                              "source_path": "slide_29/element_37/row_5/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "rotation_degrees": 0.0,
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_1"
                             }
                           }
                         ],
                         "debug": {
-                          "source_path": "slide_29/element_37/row_4/cell_2",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "role": "header_text_group",
-                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2"
-                        }
-                      },
-                      {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_1:text",
-                        "type": "TEXT",
-                        "name": "cell 5-1",
-                        "characters": "3",
-                        "absoluteBoundingBox": {
-                          "x": 663.83,
-                          "y": 147.2,
-                          "width": 19.22,
-                          "height": 9.78
-                        },
-                        "relativeTransform": [
-                          [
-                            1,
-                            0,
-                            0
-                          ],
-                          [
-                            0,
-                            1,
-                            0
-                          ]
-                        ],
-                        "fills": [
-                          {
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.12,
-                              "g": 0.12,
-                              "b": 0.12
-                            },
-                            "opacity": 1.0
-                          }
-                        ],
-                        "style": {
-                          "fontSize": 8,
-                          "fontFamily": "Inter",
-                          "textAlignHorizontal": "LEFT",
-                          "textAlignVertical": "CENTER",
-                          "textAutoResize": "HEIGHT",
-                          "lineHeightPx": null
-                        },
-                        "children": [],
-                        "debug": {
-                          "source_path": "slide_29/element_37/row_5/cell_1",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "rotation_degrees": 0.0,
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
                           "source_candidate_id": "s29:slide_29/element_37:row_5:cell_1"
                         }
                       },
                       {
-                        "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:text_group",
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_6-1",
                         "type": "GROUP",
-                        "name": "cell 5-2",
+                        "name": "cell 6-1",
                         "absoluteBoundingBox": {
-                          "x": 689.71,
-                          "y": 146.57,
-                          "width": 242.47,
-                          "height": 11.04
+                          "x": 660.66,
+                          "y": 161.09,
+                          "width": 275.01,
+                          "height": 18.0
                         },
                         "relativeTransform": [
                           [
@@ -1232,15 +1226,14 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:text:1",
-                            "type": "TEXT",
-                            "name": "cell 5-2",
-                            "characters": "[ 제품명 영역 ] Badge 노출 - 다품목할인 > 내일배송 ( 판매예정",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_6:cell_1",
+                            "type": "RECTANGLE",
+                            "name": "cell 6-1",
                             "absoluteBoundingBox": {
-                              "x": 689.71,
-                              "y": 146.57,
-                              "width": 242.47,
-                              "height": 5.52
+                              "x": 660.66,
+                              "y": 161.09,
+                              "width": 275.01,
+                              "height": 18.0
                             },
                             "relativeTransform": [
                               [
@@ -1258,40 +1251,47 @@
                               {
                                 "type": "SOLID",
                                 "color": {
-                                  "r": 0.12,
-                                  "g": 0.12,
-                                  "b": 0.12
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
                                 },
                                 "opacity": 1.0
                               }
                             ],
-                            "style": {
-                              "fontSize": 8,
-                              "fontFamily": "Inter",
-                              "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "TOP",
-                              "textAutoResize": "HEIGHT",
-                              "lineHeightPx": null
-                            },
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
                             "children": [],
                             "debug": {
-                              "source_path": "slide_29/element_37/row_5/cell_2",
+                              "source_path": "slide_29/element_37/row_6/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_6:cell_1"
                             }
                           },
                           {
-                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:text:2",
+                            "id": "compare:29-1:s29:slide_29/element_37:row_6:cell_1:text",
                             "type": "TEXT",
-                            "name": "cell 5-2",
-                            "characters": ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+                            "name": "cell 6-1",
+                            "characters": "뒷페이지 계속",
                             "absoluteBoundingBox": {
-                              "x": 689.71,
-                              "y": 152.09,
-                              "width": 242.47,
-                              "height": 5.52
+                              "x": 663.83,
+                              "y": 165.2,
+                              "width": 268.67,
+                              "height": 9.78
                             },
                             "relativeTransform": [
                               [
@@ -1320,27 +1320,25 @@
                               "fontSize": 8,
                               "fontFamily": "Inter",
                               "textAlignHorizontal": "LEFT",
-                              "textAlignVertical": "TOP",
+                              "textAlignVertical": "CENTER",
                               "textAutoResize": "HEIGHT",
                               "lineHeightPx": null
                             },
                             "children": [],
                             "debug": {
-                              "source_path": "slide_29/element_37/row_5/cell_2",
+                              "source_path": "slide_29/element_37/row_6/cell_1",
                               "source_node_id": "49",
                               "source_subtype": "table_cell",
                               "source_scope": "slide",
-                              "role": "header_text_fragment"
+                              "rotation_degrees": 0.0,
+                              "source_candidate_id": "s29:slide_29/element_37:row_6:cell_1"
                             }
                           }
                         ],
                         "debug": {
-                          "source_path": "slide_29/element_37/row_5/cell_2",
-                          "source_node_id": "49",
-                          "source_subtype": "table_cell",
-                          "source_scope": "slide",
-                          "role": "header_text_group",
-                          "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2"
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_6:cell_1"
                         }
                       }
                     ],
@@ -1372,7 +1370,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><rect x=\"0\" y=\"0\" width=\"370.29\" height=\"501.67\" fill=\"white\" fill-opacity=\"0\" /><rect x=\"-6.32\" y=\"-15.23\" width=\"141.73\" height=\"34.81\" rx=\"0\" ry=\"0\" fill=\"#7A81FF\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.32\" y=\"-4.82\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.32\" dy=\"0\">V 1.6</tspan><tspan x=\"-0.32\" dy=\"10.0\">[BTOCSITE-34166]</tspan><tspan x=\"-0.32\" dy=\"10.0\">제품명 우측 그룹명 노출 추가</tspan></text><rect x=\"-6.32\" y=\"-2.02\" width=\"141.73\" height=\"40.25\" rx=\"0\" ry=\"0\" fill=\"#FF7E79\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.32\" y=\"11.11\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.32\" dy=\"0\">V 1.7</tspan><tspan x=\"-0.32\" dy=\"10.0\">[BTOCSITE-35421]</tspan><tspan x=\"-0.32\" dy=\"10.0\">- 다품목할인, 내일배송 뱃지 추가</tspan></text><rect x=\"-6.56\" y=\"14.68\" width=\"141.73\" height=\"48.65\" rx=\"0\" ry=\"0\" fill=\"#F79646\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"25.68\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 2.0</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-43175]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- [인테리어컷] 영역 디스클레이머 일괄 적용</tspan></text><rect x=\"-6.56\" y=\"29.06\" width=\"141.73\" height=\"44.2\" rx=\"0\" ry=\"0\" fill=\"#EE8772\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"40.06\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 2.4</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-47092]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- 닷컴 ONLY 뱃지 적용 &amp; 출시일 노출</tspan></text><rect x=\"-6.56\" y=\"43.28\" width=\"141.73\" height=\"44.2\" rx=\"0\" ry=\"0\" fill=\"#F79646\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"54.28\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 2.9</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-51375  PDP 베스트</tspan><tspan x=\"-0.56\" dy=\"10.0\">순서 표시</tspan></text><rect x=\"135.97\" y=\"57.23\" width=\"234.32\" height=\"54.34\" rx=\"0\" ry=\"0\" fill=\"#FF33CC\" fill-opacity=\"1.0\" stroke=\"#FF33CC\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"145.57\" y=\"70.03\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"145.57\" dy=\"0\">ISSUE</tspan><tspan x=\"145.57\" dy=\"10.0\">‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정</tspan><tspan x=\"145.57\" dy=\"10.0\">필요)</tspan><tspan x=\"145.57\" dy=\"10.0\">[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 -</tspan><tspan x=\"145.57\" dy=\"10.0\">인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)</tspan></text><rect x=\"-6.56\" y=\"57.55\" width=\"141.47\" height=\"34.08\" rx=\"0\" ry=\"0\" fill=\"#990099\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"67.59\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 3.2</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-73060]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- 제품 PDP UI 개선</tspan></text><rect x=\"-6.52\" y=\"69.82\" width=\"141.73\" height=\"40.37\" rx=\"0\" ry=\"0\" fill=\"#A2D0CF\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.52\" y=\"83.0\" font-size=\"8.0\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.52\" dy=\"0\">V 4.4</tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-98109]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- 으뜸효율환급 뱃지 추가</tspan></text><rect x=\"-6.52\" y=\"85.02\" width=\"141.73\" height=\"60.47\" rx=\"0\" ry=\"0\" fill=\"#D99694\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.52\" y=\"93.25\" font-size=\"8.0\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.52\" dy=\"0\">V 4.6 </tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-99487]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- UP가전 텍스트 뱃지 제거(개수 줄이기</tspan><tspan x=\"-0.52\" dy=\"10.0\">위함)</tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-91167]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- 스펙 기반의 선호도</tspan></text><rect x=\"-6.56\" y=\"96.98\" width=\"141.73\" height=\"84.47\" rx=\"0\" ry=\"0\" fill=\"#EEECE1\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"112.22\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 4.7</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-99085]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- admin 판매상태(미판매)의 경우에도.</tspan><tspan x=\"-0.56\" dy=\"10.0\">텍스트 뱃지(출시년도) 노출로 로직 변경 요청</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-100137]</tspan><tspan x=\"-0.56\" dy=\"10.0\">LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠</tspan><tspan x=\"-0.56\" dy=\"10.0\">오류 확인 요청</tspan></text><rect x=\"-6.52\" y=\"111.15\" width=\"141.73\" height=\"70.29\" rx=\"0\" ry=\"0\" fill=\"#00FF00\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.52\" y=\"122.15\" font-size=\"8.0\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.52\" dy=\"0\">V 5.0 </tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-88928]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- AR체험 서비스 종료, 오브제체험 뱃지 삭제</tspan><tspan x=\"-0.52\" dy=\"10.0\">현행화(BTOCSITE-52092)</tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-85964]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- 360미디어 디스클라이머 추가</tspan></text><rect x=\"96.32\" y=\"225.95\" width=\"249.91\" height=\"38.1\" rx=\"0\" ry=\"0\" fill=\"#EE8772\" fill-opacity=\"0.3\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"340.23\" y=\"259.3\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"end\" font-family=\"+mj-ea\"><tspan x=\"340.23\" dy=\"0\">V.2.4</tspan></text><rect x=\"95.94\" y=\"264.04\" width=\"250.84\" height=\"41.29\" rx=\"0\" ry=\"0\" fill=\"#00FF00\" fill-opacity=\"0.3\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"340.78\" y=\"300.58\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"end\" font-family=\"+mj-ea\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text><rect x=\"95.94\" y=\"317.58\" width=\"245.44\" height=\"419.87\" rx=\"0\" ry=\"0\" fill=\"#F79646\" fill-opacity=\"0.4\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"101.94\" y=\"328.58\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"101.94\" dy=\"0\">V 2.9</tspan></text><rect x=\"-80.21\" y=\"325.79\" width=\"145.34\" height=\"163.18\" rx=\"0\" ry=\"0\" fill=\"#F2F2F2\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><rect x=\"-80.43\" y=\"326.06\" width=\"145.55\" height=\"162.25\" rx=\"0\" ry=\"0\" fill=\"none\" stroke=\"#FFFFFF\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"-80.21\" y=\"359.14\" width=\"145.55\" height=\"96.09\" rx=\"0\" ry=\"0\" fill=\"#4F81BD\" fill-opacity=\"0.77\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-7.43\" y=\"398.0\" font-size=\"10.5\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Inter\"><tspan x=\"-7.43\" dy=\"0\">Video</tspan><tspan x=\"-7.43\" dy=\"13.12\">자동재생</tspan><tspan x=\"-7.43\" dy=\"13.12\">(audio : mute)</tspan></text><rect x=\"95.94\" y=\"462.63\" width=\"245.44\" height=\"68.13\" rx=\"0\" ry=\"0\" fill=\"#A2D0CF\" fill-opacity=\"0.3\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"335.38\" y=\"472.63\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"end\" font-family=\"+mj-ea\"><tspan x=\"335.38\" dy=\"0\">V.2.2</tspan></text></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><rect x=\"0\" y=\"0\" width=\"370.29\" height=\"501.67\" fill=\"white\" fill-opacity=\"0\" /><rect x=\"-6.32\" y=\"-15.23\" width=\"141.73\" height=\"34.81\" rx=\"0\" ry=\"0\" fill=\"#7A81FF\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.32\" y=\"-4.82\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.32\" dy=\"0\">V 1.6</tspan><tspan x=\"-0.32\" dy=\"10.0\">[BTOCSITE-34166]</tspan><tspan x=\"-0.32\" dy=\"10.0\">제품명 우측 그룹명 노출 추가</tspan></text><rect x=\"-6.32\" y=\"-2.02\" width=\"141.73\" height=\"40.25\" rx=\"0\" ry=\"0\" fill=\"#FF7E79\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.32\" y=\"11.11\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.32\" dy=\"0\">V 1.7</tspan><tspan x=\"-0.32\" dy=\"10.0\">[BTOCSITE-35421]</tspan><tspan x=\"-0.32\" dy=\"10.0\">- 다품목할인, 내일배송 뱃지 추가</tspan></text><rect x=\"-6.56\" y=\"14.68\" width=\"141.73\" height=\"48.65\" rx=\"0\" ry=\"0\" fill=\"#F79646\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"25.68\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 2.0</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-43175]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- [인테리어컷] 영역 디스클레이머 일괄 적용</tspan></text><rect x=\"-6.56\" y=\"29.06\" width=\"141.73\" height=\"44.2\" rx=\"0\" ry=\"0\" fill=\"#EE8772\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"40.06\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 2.4</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-47092]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- 닷컴 ONLY 뱃지 적용 &amp; 출시일 노출</tspan></text><rect x=\"-6.56\" y=\"43.28\" width=\"141.73\" height=\"44.2\" rx=\"0\" ry=\"0\" fill=\"#F79646\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"54.28\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 2.9</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-51375  PDP 베스트</tspan><tspan x=\"-0.56\" dy=\"10.0\">순서 표시</tspan></text><rect x=\"135.97\" y=\"57.23\" width=\"234.32\" height=\"54.34\" rx=\"0\" ry=\"0\" fill=\"#FF33CC\" fill-opacity=\"1.0\" stroke=\"#FF33CC\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><text x=\"145.57\" y=\"70.03\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"145.57\" dy=\"0\">ISSUE</tspan><tspan x=\"145.57\" dy=\"10.0\">‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정</tspan><tspan x=\"145.57\" dy=\"10.0\">필요)</tspan><tspan x=\"145.57\" dy=\"10.0\">[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 -</tspan><tspan x=\"145.57\" dy=\"10.0\">인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)</tspan></text><rect x=\"-6.56\" y=\"57.55\" width=\"141.47\" height=\"34.08\" rx=\"0\" ry=\"0\" fill=\"#990099\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"67.59\" font-size=\"8.0\" fill=\"#FFFFFF\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 3.2</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-73060]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- 제품 PDP UI 개선</tspan></text><rect x=\"-6.52\" y=\"69.82\" width=\"141.73\" height=\"40.37\" rx=\"0\" ry=\"0\" fill=\"#A2D0CF\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.52\" y=\"83.0\" font-size=\"8.0\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.52\" dy=\"0\">V 4.4</tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-98109]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- 으뜸효율환급 뱃지 추가</tspan></text><rect x=\"-6.52\" y=\"85.02\" width=\"141.73\" height=\"60.47\" rx=\"0\" ry=\"0\" fill=\"#D99694\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.52\" y=\"93.25\" font-size=\"8.0\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.52\" dy=\"0\">V 4.6 </tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-99487]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- UP가전 텍스트 뱃지 제거(개수 줄이기</tspan><tspan x=\"-0.52\" dy=\"10.0\">위함)</tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-91167]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- 스펙 기반의 선호도</tspan></text><rect x=\"-6.56\" y=\"96.98\" width=\"141.73\" height=\"84.47\" rx=\"0\" ry=\"0\" fill=\"#EEECE1\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.56\" y=\"112.22\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.56\" dy=\"0\">V 4.7</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-99085]</tspan><tspan x=\"-0.56\" dy=\"10.0\">- admin 판매상태(미판매)의 경우에도.</tspan><tspan x=\"-0.56\" dy=\"10.0\">텍스트 뱃지(출시년도) 노출로 로직 변경 요청</tspan><tspan x=\"-0.56\" dy=\"10.0\">[BTOCSITE-100137]</tspan><tspan x=\"-0.56\" dy=\"10.0\">LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠</tspan><tspan x=\"-0.56\" dy=\"10.0\">오류 확인 요청</tspan></text><rect x=\"-6.52\" y=\"111.15\" width=\"141.73\" height=\"70.29\" rx=\"0\" ry=\"0\" fill=\"#00FF00\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-0.52\" y=\"122.15\" font-size=\"8.0\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"-0.52\" dy=\"0\">V 5.0 </tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-88928]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- AR체험 서비스 종료, 오브제체험 뱃지 삭제</tspan><tspan x=\"-0.52\" dy=\"10.0\">현행화(BTOCSITE-52092)</tspan><tspan x=\"-0.52\" dy=\"10.0\">[BTOCSITE-85964]</tspan><tspan x=\"-0.52\" dy=\"10.0\">- 360미디어 디스클라이머 추가</tspan></text><rect x=\"-80.21\" y=\"325.79\" width=\"145.34\" height=\"163.18\" rx=\"0\" ry=\"0\" fill=\"#F2F2F2\" fill-opacity=\"1.0\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><rect x=\"-80.43\" y=\"326.06\" width=\"145.55\" height=\"162.25\" rx=\"0\" ry=\"0\" fill=\"none\" stroke=\"#FFFFFF\" stroke-opacity=\"1.0\" stroke-width=\"1\" /><rect x=\"-80.21\" y=\"359.14\" width=\"145.55\" height=\"96.09\" rx=\"0\" ry=\"0\" fill=\"#4F81BD\" fill-opacity=\"0.77\" stroke=\"#C7C7C7\" stroke-opacity=\"0.85\" stroke-width=\"1\" /><text x=\"-7.43\" y=\"398.0\" font-size=\"10.5\" fill=\"#000000\" fill-opacity=\"1.0\" text-anchor=\"middle\" font-family=\"Inter\"><tspan x=\"-7.43\" dy=\"0\">Video</tspan><tspan x=\"-7.43\" dy=\"13.12\">자동재생</tspan><tspan x=\"-7.43\" dy=\"13.12\">(audio : mute)</tspan></text></svg>",
                     "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
@@ -1391,9 +1389,903 @@
                     }
                   },
                   {
-                    "id": "compare:29-1:page:29:right_panel_block:description",
+                    "id": "compare:29-1:page:29:right_panel_block:cell_3-2_lane",
+                    "type": "GROUP",
+                    "name": "cell_3-2_lane",
+                    "absoluteBoundingBox": {
+                      "x": 686.03,
+                      "y": 107.09,
+                      "width": 249.91,
+                      "height": 223.29
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:29-1:s29:slide_29/element_93:panel_bg",
+                        "type": "RECTANGLE",
+                        "name": "직사각형 216:panel_bg",
+                        "absoluteBoundingBox": {
+                          "x": 686.03,
+                          "y": 292.28,
+                          "width": 249.91,
+                          "height": 38.1
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            -0.0,
+                            0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.9333,
+                              "g": 0.5294,
+                              "b": 0.4471
+                            },
+                            "opacity": 0.3
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "cornerRadius": 0,
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_93",
+                          "source_node_id": "217",
+                          "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
+                          "shape_kind": "rect",
+                          "role": "dense_ui_panel_background"
+                        }
+                      },
+                      {
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_3-2",
+                        "type": "GROUP",
+                        "name": "cell 3-2",
+                        "absoluteBoundingBox": {
+                          "x": 686.22,
+                          "y": 107.09,
+                          "width": 249.45,
+                          "height": 18.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2",
+                            "type": "RECTANGLE",
+                            "name": "cell 3-2",
+                            "absoluteBoundingBox": {
+                              "x": 686.22,
+                              "y": 107.09,
+                              "width": 249.45,
+                              "height": 18.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
+                            "children": [],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_3/cell_2",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2:text_group",
+                            "type": "GROUP",
+                            "name": "cell 3-2",
+                            "absoluteBoundingBox": {
+                              "x": 689.71,
+                              "y": 110.57,
+                              "width": 242.47,
+                              "height": 11.04
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "children": [
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2:text:1",
+                                "type": "TEXT",
+                                "name": "cell 3-2",
+                                "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의",
+                                "absoluteBoundingBox": {
+                                  "x": 689.71,
+                                  "y": 110.57,
+                                  "width": 242.47,
+                                  "height": 5.52
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_3/cell_2",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              },
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_3:cell_2:text:2",
+                                "type": "TEXT",
+                                "name": "cell 3-2",
+                                "characters": "참조 문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )- V0.0.pptx",
+                                "absoluteBoundingBox": {
+                                  "x": 689.71,
+                                  "y": 116.09,
+                                  "width": 242.47,
+                                  "height": 5.52
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_3/cell_2",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              }
+                            ],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_3/cell_2",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "role": "header_text_group",
+                              "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "generator": "block-prototype-v1",
+                      "role": "description_card_lane_group",
+                      "source_candidate_id": "s29:slide_29/element_93"
+                    }
+                  },
+                  {
+                    "id": "compare:29-1:page:29:right_panel_block:cell_4-2_lane",
+                    "type": "GROUP",
+                    "name": "cell_4-2_lane",
+                    "absoluteBoundingBox": {
+                      "x": 685.65,
+                      "y": 125.09,
+                      "width": 250.84,
+                      "height": 246.57
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:29-1:s29:slide_29/element_119:panel_bg",
+                        "type": "RECTANGLE",
+                        "name": "직사각형 253:panel_bg",
+                        "absoluteBoundingBox": {
+                          "x": 685.65,
+                          "y": 330.37,
+                          "width": 250.84,
+                          "height": 41.29
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            -0.0,
+                            0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 1.0,
+                              "b": 0.0
+                            },
+                            "opacity": 0.3
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "cornerRadius": 0,
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_119",
+                          "source_node_id": "254",
+                          "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
+                          "shape_kind": "rect",
+                          "role": "dense_ui_panel_background"
+                        }
+                      },
+                      {
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_4-2",
+                        "type": "GROUP",
+                        "name": "cell 4-2",
+                        "absoluteBoundingBox": {
+                          "x": 686.22,
+                          "y": 125.09,
+                          "width": 249.45,
+                          "height": 18.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2",
+                            "type": "RECTANGLE",
+                            "name": "cell 4-2",
+                            "absoluteBoundingBox": {
+                              "x": 686.22,
+                              "y": 125.09,
+                              "width": 249.45,
+                              "height": 18.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
+                            "children": [],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_4/cell_2",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2:text_group",
+                            "type": "GROUP",
+                            "name": "cell 4-2",
+                            "absoluteBoundingBox": {
+                              "x": 689.71,
+                              "y": 128.57,
+                              "width": 242.47,
+                              "height": 11.04
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "children": [
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2:text:1",
+                                "type": "TEXT",
+                                "name": "cell 4-2",
+                                "characters": "[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual",
+                                "absoluteBoundingBox": {
+                                  "x": 689.71,
+                                  "y": 128.57,
+                                  "width": 242.47,
+                                  "height": 5.52
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_4/cell_2",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              },
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_4:cell_2:text:2",
+                                "type": "TEXT",
+                                "name": "cell 4-2",
+                                "characters": "정보 제공 : 동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서 인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS > 제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e) Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두 충족 시 문구 제공 1) WCMS > [KRP0008] > 비디오 > Video File > ‘360 미디어용도 ’ 에 체크 2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360 미디어 디스클라이머 노출에 Y 체크",
+                                "absoluteBoundingBox": {
+                                  "x": 689.71,
+                                  "y": 134.09,
+                                  "width": 242.47,
+                                  "height": 5.52
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_4/cell_2",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              }
+                            ],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_4/cell_2",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "role": "header_text_group",
+                              "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "generator": "block-prototype-v1",
+                      "role": "description_card_lane_group",
+                      "source_candidate_id": "s29:slide_29/element_119"
+                    }
+                  },
+                  {
+                    "id": "compare:29-1:page:29:right_panel_block:cell_5-2_lane",
+                    "type": "GROUP",
+                    "name": "cell_5-2_lane",
+                    "absoluteBoundingBox": {
+                      "x": 685.65,
+                      "y": 143.09,
+                      "width": 250.02,
+                      "height": 660.69
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:29-1:s29:slide_29/element_95:panel_bg",
+                        "type": "RECTANGLE",
+                        "name": "직사각형 233:panel_bg",
+                        "absoluteBoundingBox": {
+                          "x": 685.65,
+                          "y": 383.91,
+                          "width": 245.44,
+                          "height": 419.87
+                        },
+                        "relativeTransform": [
+                          [
+                            1.0,
+                            -0.0,
+                            0
+                          ],
+                          [
+                            0.0,
+                            1.0,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.9686,
+                              "g": 0.5882,
+                              "b": 0.2745
+                            },
+                            "opacity": 0.4
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "cornerRadius": 0,
+                        "children": [],
+                        "debug": {
+                          "source_path": "slide_29/element_95",
+                          "source_node_id": "234",
+                          "source_subtype": "labeled_shape",
+                          "source_scope": "slide",
+                          "shape_kind": "rect",
+                          "role": "dense_ui_panel_background"
+                        }
+                      },
+                      {
+                        "id": "compare:29-1:s29:slide_29/element_37:cell_5-2",
+                        "type": "GROUP",
+                        "name": "cell 5-2",
+                        "absoluteBoundingBox": {
+                          "x": 686.22,
+                          "y": 143.09,
+                          "width": 249.45,
+                          "height": 18.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2",
+                            "type": "RECTANGLE",
+                            "name": "cell 5-2",
+                            "absoluteBoundingBox": {
+                              "x": 686.22,
+                              "y": 143.09,
+                              "width": 249.45,
+                              "height": 18.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1,
+                                  "g": 1,
+                                  "b": 1
+                                },
+                                "opacity": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1,
+                            "cornerRadius": 0,
+                            "children": [],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_5/cell_2",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "shape_kind": "rect",
+                              "role": "table_cell_rect",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2"
+                            }
+                          },
+                          {
+                            "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:text_group",
+                            "type": "GROUP",
+                            "name": "cell 5-2",
+                            "absoluteBoundingBox": {
+                              "x": 689.71,
+                              "y": 146.57,
+                              "width": 242.47,
+                              "height": 11.04
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "children": [
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:text:1",
+                                "type": "TEXT",
+                                "name": "cell 5-2",
+                                "characters": "[ 제품명 영역 ] Badge 노출 - 다품목할인 > 내일배송 ( 판매예정",
+                                "absoluteBoundingBox": {
+                                  "x": 689.71,
+                                  "y": 146.57,
+                                  "width": 242.47,
+                                  "height": 5.52
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_5/cell_2",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              },
+                              {
+                                "id": "compare:29-1:s29:slide_29/element_37:row_5:cell_2:text:2",
+                                "type": "TEXT",
+                                "name": "cell 5-2",
+                                "characters": ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+                                "absoluteBoundingBox": {
+                                  "x": 689.71,
+                                  "y": 152.09,
+                                  "width": 242.47,
+                                  "height": 5.52
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.12,
+                                      "g": 0.12,
+                                      "b": 0.12
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontSize": 8,
+                                  "fontFamily": "Inter",
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": null
+                                },
+                                "children": [],
+                                "debug": {
+                                  "source_path": "slide_29/element_37/row_5/cell_2",
+                                  "source_node_id": "49",
+                                  "source_subtype": "table_cell",
+                                  "source_scope": "slide",
+                                  "role": "header_text_fragment"
+                                }
+                              }
+                            ],
+                            "debug": {
+                              "source_path": "slide_29/element_37/row_5/cell_2",
+                              "source_node_id": "49",
+                              "source_subtype": "table_cell",
+                              "source_scope": "slide",
+                              "role": "header_text_group",
+                              "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "table_cell_group",
+                          "source_candidate_id": "s29:slide_29/element_37:row_5:cell_2"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "generator": "block-prototype-v1",
+                      "role": "description_card_lane_group",
+                      "source_candidate_id": "s29:slide_29/element_95"
+                    }
+                  },
+                  {
+                    "id": "compare:29-1:page:29:right_panel_block:card_labels",
                     "type": "SVG_BLOCK",
-                    "name": "right_panel_block:description",
+                    "name": "right_panel_block:card_labels",
                     "absoluteBoundingBox": {
                       "x": 589.71,
                       "y": 66.33,
@@ -1412,14 +2304,14 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"102.51\" y=\"52.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조</tspan></text><text x=\"102.51\" y=\"70.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan></text><text x=\"102.51\" y=\"88.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.51\" dy=\"0\">[ 제품명 영역 ] Badge 노출 - 다품목할인 &gt; 내일배송 ( 판매예정 ) &gt;</tspan></text><text x=\"76.95\" y=\"108.76\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"76.95\" dy=\"0\">뒷페이지 계속</tspan></text></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"340.23\" y=\"236.95\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.23\" dy=\"0\">V.2.4</tspan></text><text x=\"340.78\" y=\"275.04\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text><text x=\"335.38\" y=\"328.58\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"335.38\" dy=\"0\">V 2.9</tspan></text><text x=\"335.38\" y=\"473.63\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"335.38\" dy=\"0\">V.2.2</tspan></text></svg>",
                     "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
                       "block_type": "right_panel_block",
                       "render_mode": "image",
                       "page_type": "ui-mockup",
-                      "role": "right_panel_description_svg",
+                      "role": "right_panel_card_labels_svg",
                       "root_candidate_ids": [
                         "s29:slide_29/element_37",
                         "s29:slide_29/element_81",
@@ -1427,7 +2319,7 @@
                         "s29:slide_29/element_119",
                         "s29:slide_29/element_95"
                       ],
-                      "child_suffix": "description"
+                      "child_suffix": "card_labels"
                     }
                   },
                   {

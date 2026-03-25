@@ -161,6 +161,16 @@ def intersect_bounds(a: dict[str, float], b: dict[str, float]) -> dict[str, floa
     return make_bounds(x1, y1, x2 - x1, y2 - y1)
 
 
+def union_bounds(bounds_list: list[dict[str, Any]]) -> dict[str, float]:
+    if not bounds_list:
+        return make_bounds(0.0, 0.0, 1.0, 1.0)
+    min_x = min(float(bounds["x"]) for bounds in bounds_list)
+    min_y = min(float(bounds["y"]) for bounds in bounds_list)
+    max_x = max(float(bounds["x"]) + float(bounds["width"]) for bounds in bounds_list)
+    max_y = max(float(bounds["y"]) + float(bounds["height"]) for bounds in bounds_list)
+    return make_bounds(min_x, min_y, max_x - min_x, max_y - min_y)
+
+
 def source_bounds_for_block(block: dict[str, Any]) -> dict[str, float]:
     return dict(block.get("source_bounds") or block["bounds"])
 
@@ -1336,6 +1346,71 @@ def build_table_visual_group(table_candidate: dict[str, Any], context: dict[str,
     return table_group
 
 
+def consolidate_table_group_cells(table_group: dict[str, Any]) -> dict[str, Any]:
+    grouped_children: list[dict[str, Any]] = []
+    bucketed: dict[str, list[dict[str, Any]]] = {}
+    passthrough: list[dict[str, Any]] = []
+
+    for child in table_group.get("children", []):
+        name = str(child.get("name") or "")
+        if name.startswith("cell "):
+            bucketed.setdefault(name, []).append(child)
+        else:
+            passthrough.append(child)
+
+    for name, items in bucketed.items():
+        if len(items) == 1 and items[0].get("type") == "GROUP":
+            grouped_children.append(items[0])
+            continue
+        bounds = union_bounds([item.get("absoluteBoundingBox") or table_group["absoluteBoundingBox"] for item in items])
+        grouped_children.append(
+            {
+                "id": f"{table_group['id']}:{name.replace(' ', '_')}",
+                "type": "GROUP",
+                "name": name,
+                "absoluteBoundingBox": bounds,
+                "relativeTransform": identity_affine(),
+                "children": items,
+                "debug": {
+                    "generator": "block-prototype-v1",
+                    "role": "table_cell_group",
+                    "source_candidate_id": ((items[0].get("debug") or {}).get("source_candidate_id")),
+                },
+            }
+        )
+
+    table_group["children"] = grouped_children + passthrough
+    return table_group
+
+
+def build_owner_lane_group(
+    parent_id: str,
+    name: str,
+    children: list[dict[str, Any]],
+    role: str,
+    source_candidate_id: str | None = None,
+) -> dict[str, Any]:
+    bounds = union_bounds(
+        [
+            child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0)
+            for child in children
+        ]
+    )
+    return {
+        "id": f"{parent_id}:{name}",
+        "type": "GROUP",
+        "name": name,
+        "absoluteBoundingBox": bounds,
+        "relativeTransform": identity_affine(),
+        "children": children,
+        "debug": {
+            "generator": "block-prototype-v1",
+            "role": role,
+            "source_candidate_id": source_candidate_id,
+        },
+    }
+
+
 def build_table_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     policy = block_text_policy(block["page_type"], "table_block")
     root_candidates = {candidate["candidate_id"]: candidate for candidate in context["roots"]}
@@ -1822,6 +1897,13 @@ def build_right_panel_block_node(
     background_label_markup_parts: list[str] = []
     overlay_bounds: list[dict[str, Any]] = []
     description_lane_nodes: list[dict[str, Any]] = build_right_panel_description_lane_nodes(primary_table, context, assets) if variant == "v2" else []
+    description_card_nodes: list[tuple[dict[str, Any], dict[str, Any]]] = []
+    description_group_names = [
+        f"cell {int(row['row_index']) + 1}-{int(row['start_column_index'])}"
+        for row in (collect_table_description_cells(primary_table, context) if primary_table else [])
+        if int(row["start_column_index"]) == 2
+    ]
+    description_group_nodes: dict[str, dict[str, Any]] = {}
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
             continue
@@ -1836,8 +1918,13 @@ def build_right_panel_block_node(
             seen_tables.add(candidate["candidate_id"])
             if variant == "v1":
                 table_group = build_table_visual_group(candidate, context, assets)
+                table_group = consolidate_table_group_cells(table_group)
                 table_children: list[dict[str, Any]] = []
                 for child in table_group.get("children", []):
+                    child_name = str(child.get("name") or "")
+                    if child_name in description_group_names:
+                        description_group_nodes[child_name] = child
+                        continue
                     source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
                     if child.get("type") == "TEXT" and source_candidate_id in description_cell_ids:
                         continue
@@ -1851,6 +1938,14 @@ def build_right_panel_block_node(
         abs_bounds = candidate_abs_bounds(candidate, context)
         is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
         if is_large_overlay:
+            if variant == "v1" and candidate in dense_panel["description_cards"]:
+                child = build_dense_panel_background_node(candidate, context)
+                if child:
+                    description_card_nodes.append((candidate, child))
+                    label_markup = build_dense_panel_card_label_markup(candidate, render_block, context)
+                    if label_markup:
+                        background_label_markup_parts.append(label_markup)
+                    continue
             if variant == "v2":
                 if candidate in dense_panel["description_cards"]:
                     child = build_dense_panel_background_node(candidate, context)
@@ -1894,6 +1989,29 @@ def build_right_panel_block_node(
         markup = bg + "".join(svg for _, _, svg in sorted(background_layers, key=lambda row: (row[0], row[1])))
         frame["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
     frame["children"].extend(background_nodes)
+    if variant == "v1" and description_card_nodes and description_group_nodes:
+        description_card_nodes.sort(
+            key=lambda row: (
+                float((row[1].get("absoluteBoundingBox") or {}).get("y", 0.0)),
+                float((row[1].get("absoluteBoundingBox") or {}).get("x", 0.0)),
+            )
+        )
+        for (candidate, card_node), group_name in zip(description_card_nodes, description_group_names):
+            text_group = description_group_nodes.get(group_name)
+            if not text_group:
+                frame["children"].append(card_node)
+                continue
+            frame["children"].append(
+                build_owner_lane_group(
+                    frame["id"],
+                    f"{group_name.replace(' ', '_')}_lane",
+                    [card_node, text_group],
+                    role="description_card_lane_group",
+                    source_candidate_id=str(candidate.get("candidate_id") or ""),
+                )
+            )
+    elif variant == "v1":
+        frame["children"].extend(card_node for _, card_node in description_card_nodes)
     if background_label_markup_parts:
         frame["children"].append(
             build_svg_block_child_node(
@@ -1905,7 +2023,7 @@ def build_right_panel_block_node(
         )
     if description_lane_nodes:
         frame["children"].extend(description_lane_nodes)
-    elif description_overlay:
+    elif description_overlay and variant != "v1":
         frame["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
     frame["children"].extend(foreground_nodes)
     return frame
