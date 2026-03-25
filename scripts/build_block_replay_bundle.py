@@ -18,6 +18,7 @@ from build_visual_first_replay_bundle import (
     build_text_style,
     build_visual_node_from_candidate,
     should_skip_layout_placeholder_text,
+    solid_paint,
 )
 from detect_visual_blocks import build_blocks_for_page
 from ppt_source_extractor import (
@@ -1427,6 +1428,45 @@ def build_owner_lane_group(
     }
 
 
+def build_direct_lane_text_node(
+    candidate: dict[str, Any],
+    abs_bounds: dict[str, Any],
+    context: dict[str, Any],
+    *,
+    font_size: float = 8.0,
+    vertical_align: str = "TOP",
+) -> dict[str, Any]:
+    style = build_text_style(
+        candidate,
+        abs_bounds,
+        force_wrap=True,
+        table_cell=True,
+        horizontal_fallback="l",
+        vertical_fallback="t",
+        scale=min(float(context["scale_x"]), float(context["scale_y"])),
+    )
+    style["fontSize"] = font_size
+    style["textAlignHorizontal"] = "LEFT"
+    style["textAlignVertical"] = vertical_align
+    style["textAutoResize"] = "HEIGHT"
+    return {
+        "id": f"{candidate['candidate_id']}:direct_text",
+        "type": "TEXT",
+        "name": candidate.get("title") or candidate.get("subtype") or "text",
+        "characters": str(candidate.get("text") or candidate.get("title") or ""),
+        "absoluteBoundingBox": abs_bounds,
+        "relativeTransform": identity_affine(),
+        "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
+        "style": style,
+        "children": [],
+        "debug": {
+            "generator": "block-prototype-v1",
+            "role": "description_lane_text_native",
+            "source_candidate_id": candidate["candidate_id"],
+        },
+    }
+
+
 def build_table_block_node(block: dict[str, Any], context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     policy = block_text_policy(block["page_type"], "table_block")
     root_candidates = {candidate["candidate_id"]: candidate for candidate in context["roots"]}
@@ -2123,18 +2163,14 @@ def build_right_panel_block_node(
                     "height": lane_child_bounds["height"],
                     "rotation": 0,
                 }
-                text_node = build_text_node(
+                text_node = build_direct_lane_text_node(
                     text_candidate,
                     lane_child_bounds,
-                    context=context,
-                    force_wrap=True,
-                    table_cell=True,
-                    horizontal_fallback="l",
-                    vertical_fallback="t",
-                    scale=min(float(context["scale_x"]), float(context["scale_y"])),
+                    context,
+                    font_size=8.0,
+                    vertical_align="TOP",
                 )
                 text_node["name"] = f"description_lane_text_{row_index}"
-                text_node["debug"] = dict(text_node.get("debug") or {}, role="description_lane_text_native")
                 lane_children.append(text_node)
             else:
                 lane_children.append(
