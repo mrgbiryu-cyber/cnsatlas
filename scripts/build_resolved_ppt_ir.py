@@ -5,6 +5,7 @@ import argparse
 import json
 from collections import defaultdict
 from pathlib import Path
+import re
 from typing import Any
 
 from ppt_source_extractor import (
@@ -25,6 +26,167 @@ def union_bounds(bounds_list: list[dict[str, float]]) -> dict[str, float]:
     max_x = max(float(bounds["x"]) + float(bounds["width"]) for bounds in bounds_list)
     max_y = max(float(bounds["y"]) + float(bounds["height"]) for bounds in bounds_list)
     return make_bounds(min_x, min_y, max_x - min_x, max_y - min_y)
+
+
+ROW_ID_RE = re.compile(r":row_(\d+)$")
+CELL_ID_RE = re.compile(r":row_(\d+):cell_(\d+)$")
+
+
+def parse_row_index(candidate_id: str) -> int | None:
+    match = ROW_ID_RE.search(candidate_id)
+    if not match:
+        return None
+    return int(match.group(1))
+
+
+def parse_cell_indices(candidate_id: str) -> tuple[int | None, int | None]:
+    match = CELL_ID_RE.search(candidate_id)
+    if not match:
+        return None, None
+    return int(match.group(1)), int(match.group(2))
+
+
+def infer_pattern_type(context: dict[str, Any]) -> str:
+    base_page_type = str((context.get("visual_strategy") or {}).get("page_type") or "generic")
+    if base_page_type != "ui-mockup":
+        return base_page_type
+
+    width = float(context.get("width") or 0.0)
+    height = float(context.get("height") or 0.0)
+    right_cutoff = width * 0.6
+    right_table_count = 0
+    right_text_count = 0
+    right_shape_count = 0
+    right_small_asset_count = 0
+
+    for candidate in context.get("candidates") or []:
+        bounds = candidate.get("bounds_px") or {}
+        x = float(bounds.get("x") or 0.0)
+        y = float(bounds.get("y") or 0.0)
+        w = float(bounds.get("width") or 0.0)
+        h = float(bounds.get("height") or 0.0)
+        if x + w < right_cutoff:
+            continue
+        subtype = str(candidate.get("subtype") or "")
+        if subtype == "table" and h >= height * 0.45:
+            right_table_count += 1
+        elif subtype == "text_block":
+            right_text_count += 1
+        elif subtype in {"shape", "labeled_shape"} and w >= 60 and h >= 12:
+            right_shape_count += 1
+        elif subtype == "image" or (w <= 40 and h <= 40):
+            right_small_asset_count += 1
+
+    if right_table_count >= 1 and right_text_count >= 2 and right_shape_count >= 4:
+        return "dense_ui_panel"
+    if right_table_count >= 1 and right_small_asset_count >= 4:
+        return "dense_ui_panel"
+    return base_page_type
+
+
+def compute_table_row_bounds(
+    candidate: dict[str, Any],
+    by_id: dict[str, dict[str, Any]],
+    children_map: dict[str, list[dict[str, Any]]],
+) -> dict[str, float] | None:
+    row_id = str(candidate.get("candidate_id") or "")
+    table_id = str(candidate.get("parent_candidate_id") or "")
+    if not row_id or not table_id:
+        return None
+    table_candidate = by_id.get(table_id)
+    table_bounds = table_candidate.get("bounds_px") if table_candidate else None
+    if not table_bounds:
+        return None
+    row_children = children_map.get(table_id) or []
+    ordered_rows = sorted(
+        [child for child in row_children if str(child.get("subtype") or "") == "table_row"],
+        key=lambda child: parse_row_index(str(child.get("candidate_id") or "")) or 0,
+    )
+    current_y = float(table_bounds["y"])
+    for row_candidate in ordered_rows:
+        row_height = float(((row_candidate.get("extra") or {}).get("row_height_px")) or 0.0)
+        if str(row_candidate.get("candidate_id") or "") == row_id:
+            return make_bounds(float(table_bounds["x"]), current_y, float(table_bounds["width"]), row_height)
+        current_y += row_height
+    return None
+
+
+def compute_table_cell_bounds(
+    candidate: dict[str, Any],
+    by_id: dict[str, dict[str, Any]],
+    children_map: dict[str, list[dict[str, Any]]],
+) -> dict[str, float] | None:
+    cell_id = str(candidate.get("candidate_id") or "")
+    row_id = str(candidate.get("parent_candidate_id") or "")
+    if not cell_id or not row_id:
+        return None
+    row_candidate = by_id.get(row_id)
+    table_id = str(row_candidate.get("parent_candidate_id") or "") if row_candidate else ""
+    table_candidate = by_id.get(table_id) if table_id else None
+    table_bounds = table_candidate.get("bounds_px") if table_candidate else None
+    table_extra = table_candidate.get("extra") if table_candidate else {}
+    if not table_bounds or not table_extra:
+        return None
+
+    row_bounds = compute_table_row_bounds(row_candidate, by_id, children_map) if row_candidate else None
+    if not row_bounds:
+        return None
+
+    row_index, _ = parse_cell_indices(cell_id)
+    cell_extra = candidate.get("extra") or {}
+    start_column_index = int(cell_extra.get("start_column_index") or 1)
+    grid_span = int(cell_extra.get("grid_span") or 1)
+    row_span = int(cell_extra.get("row_span") or 1)
+    grid_columns = table_extra.get("grid_columns") or []
+
+    current_x = float(table_bounds["x"])
+    cell_x = current_x
+    cell_width = 0.0
+    for column in grid_columns:
+        column_index = int(column.get("column_index") or 0)
+        width_px = float(column.get("width_px") or 0.0)
+        if column_index < start_column_index:
+            current_x += width_px
+            continue
+        if column_index == start_column_index:
+            cell_x = current_x
+        if start_column_index <= column_index < start_column_index + grid_span:
+            cell_width += width_px
+            current_x += width_px
+            continue
+        break
+
+    row_children = children_map.get(table_id) or []
+    ordered_rows = sorted(
+        [child for child in row_children if str(child.get("subtype") or "") == "table_row"],
+        key=lambda child: parse_row_index(str(child.get("candidate_id") or "")) or 0,
+    )
+    row_height = 0.0
+    current_row_index = row_index or (parse_row_index(row_id) or 1)
+    for row_candidate in ordered_rows:
+        ordered_index = parse_row_index(str(row_candidate.get("candidate_id") or "")) or 0
+        if current_row_index <= ordered_index < current_row_index + row_span:
+            row_height += float(((row_candidate.get("extra") or {}).get("row_height_px")) or 0.0)
+
+    return make_bounds(cell_x, float(row_bounds["y"]), cell_width, row_height)
+
+
+def resolve_candidate_bounds(
+    candidate: dict[str, Any],
+    context: dict[str, Any],
+    by_id: dict[str, dict[str, Any]],
+    children_map: dict[str, list[dict[str, Any]]],
+) -> dict[str, Any] | None:
+    direct_bounds = candidate.get("bounds_px")
+    if direct_bounds:
+        return direct_bounds
+
+    subtype = str(candidate.get("subtype") or "")
+    if subtype == "table_row":
+        return compute_table_row_bounds(candidate, by_id, children_map)
+    if subtype == "table_cell":
+        return compute_table_cell_bounds(candidate, by_id, children_map)
+    return None
 
 
 def atom_type(candidate: dict[str, Any]) -> str:
@@ -74,9 +236,24 @@ def layer_role(candidate: dict[str, Any], page_type: str) -> str:
     x = float(bounds.get("x") or 0)
     y = float(bounds.get("y") or 0)
 
+    candidate_id = str(candidate.get("candidate_id") or "")
+
     if page_type == "dense_ui_panel":
         if subtype == "table":
             return "description_table"
+        if subtype == "table_row":
+            row_index = parse_row_index(candidate_id) or 0
+            return "top_meta_row" if row_index <= 2 else "description_lane_row"
+        if subtype == "table_cell":
+            row_index, cell_index = parse_cell_indices(candidate_id)
+            if row_index in {1, 2}:
+                return "top_meta_cell"
+            if row_index in {3, 4, 5} and cell_index == 1:
+                return "description_marker"
+            if row_index in {3, 4, 5} and cell_index == 2:
+                return "description_text_lane"
+            if row_index == 6:
+                return "description_footer"
         if subtype in {"image"} or (width <= 40 and height <= 40):
             return "small_asset"
         if subtype == "connector":
@@ -129,8 +306,13 @@ def z_index(layer_role_value: str) -> int:
         "description_card": 12,
         "version_stack": 14,
         "issue_card": 16,
+        "top_meta_row": 16,
+        "top_meta_cell": 18,
         "top_text_row": 20,
         "description_text_lane": 22,
+        "description_footer": 22,
+        "description_marker": 24,
+        "description_lane_row": 24,
         "table_root": 24,
         "table_cell": 26,
         "table_text": 28,
@@ -160,6 +342,10 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
     role = layer_role(candidate, page_type)
 
     if page_type == "dense_ui_panel":
+        if role == "top_meta_row":
+            return "dense_ui_panel:top_meta_rows"
+        if role == "top_meta_cell":
+            return "dense_ui_panel:top_meta_cells"
         if role == "top_text_row":
             return "dense_ui_panel:top_rows"
         if role == "version_stack":
@@ -170,6 +356,12 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
             return "dense_ui_panel:description_cards"
         if role == "description_text_lane":
             return "dense_ui_panel:description_lanes"
+        if role == "description_footer":
+            return "dense_ui_panel:description_footer"
+        if role == "description_marker":
+            return "dense_ui_panel:description_markers"
+        if role == "description_lane_row":
+            return "dense_ui_panel:description_lane_rows"
         if role == "small_asset":
             return "dense_ui_panel:small_assets"
         if role == "description_table":
@@ -182,9 +374,15 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
     return f"owner:{candidate_id}"
 
 
-def build_atom(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, Any]:
-    page_type = context["visual_strategy"]["page_type"]
-    scaled = scale_bounds(candidate.get("bounds_px"), context["scale_x"], context["scale_y"])
+def build_atom(
+    candidate: dict[str, Any],
+    context: dict[str, Any],
+    pattern_type: str,
+    by_id: dict[str, dict[str, Any]],
+    children_map: dict[str, list[dict[str, Any]]],
+) -> dict[str, Any]:
+    raw_bounds = resolve_candidate_bounds(candidate, context, by_id, children_map)
+    scaled = scale_bounds(raw_bounds, context["scale_x"], context["scale_y"])
     start_point = scale_point(((candidate.get("extra") or {}).get("start_point_px")), context["scale_x"], context["scale_y"])
     end_point = scale_point(((candidate.get("extra") or {}).get("end_point_px")), context["scale_x"], context["scale_y"])
     extra = candidate.get("extra") or {}
@@ -195,15 +393,15 @@ def build_atom(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, 
         "source_node_id": str(candidate.get("source_node_id") or ""),
         "atom_type": atom_type(candidate),
         "subtype": str(candidate.get("subtype") or ""),
-        "pattern_type": page_type,
-        "owner_id": owner_key(candidate, page_type),
-        "layer_role": layer_role(candidate, page_type),
-        "z_index": z_index(layer_role(candidate, page_type)),
-        "clip_scope": clip_scope(candidate, page_type),
-        "render_mode": render_mode(candidate, page_type),
+        "pattern_type": pattern_type,
+        "owner_id": owner_key(candidate, pattern_type),
+        "layer_role": layer_role(candidate, pattern_type),
+        "z_index": z_index(layer_role(candidate, pattern_type)),
+        "clip_scope": clip_scope(candidate, pattern_type),
+        "render_mode": render_mode(candidate, pattern_type),
         "text": str(candidate.get("text") or ""),
         "title": str(candidate.get("title") or ""),
-        "source_bounds_px": candidate.get("bounds_px"),
+        "source_bounds_px": raw_bounds,
         "visual_bounds_px": scaled,
         "start_point_px": start_point,
         "end_point_px": end_point,
@@ -211,10 +409,21 @@ def build_atom(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, 
         "placeholder": extra.get("placeholder"),
         "connector_adjusts": (extra.get("connector_adjusts") or []),
         "grid_columns": (extra.get("grid_columns") or []),
+        "row_span": extra.get("row_span"),
+        "grid_span": extra.get("grid_span"),
+        "start_column_index": extra.get("start_column_index"),
+        "row_height_px": extra.get("row_height_px"),
+        "shape_style": (extra.get("shape_style") or {}),
+        "image_base64": extra.get("image_base64"),
+        "image_target": extra.get("image_target"),
+        "resolved_target": extra.get("resolved_target"),
+        "mime_type": extra.get("mime_type"),
         "text_style": (extra.get("text_style") or {}),
         "cell_style": (extra.get("cell_style") or {}),
+        "rendering": candidate.get("rendering") or {},
         "debug_tags": {
-            "page_type": page_type,
+            "page_type": pattern_type,
+            "source_page_type": str((context.get("visual_strategy") or {}).get("page_type") or "generic"),
             "source_path": candidate.get("source_path"),
         },
     }
@@ -237,7 +446,10 @@ def build_owner_bucket(owner_id: str, atoms: list[dict[str, Any]]) -> dict[str, 
 
 def build_page_ir(page: dict[str, Any]) -> dict[str, Any]:
     context = build_page_context(page)
-    atoms = [build_atom(candidate, context) for candidate in context["candidates"]]
+    pattern_type = infer_pattern_type(context)
+    by_id = {str(candidate.get("candidate_id") or ""): candidate for candidate in context["candidates"]}
+    children_map = context["children_map"]
+    atoms = [build_atom(candidate, context, pattern_type, by_id, children_map) for candidate in context["candidates"]]
     buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for atom in atoms:
         buckets[atom["owner_id"]].append(atom)
@@ -246,7 +458,8 @@ def build_page_ir(page: dict[str, Any]) -> dict[str, Any]:
         "page_id": context["page_id"],
         "slide_no": context["slide_no"],
         "title": context["title"],
-        "page_type": context["visual_strategy"]["page_type"],
+        "page_type": pattern_type,
+        "source_page_type": (context.get("visual_strategy") or {}).get("page_type"),
         "slide_bounds_px": make_bounds(0.0, 0.0, context["width"], context["height"]),
         "signals": context["visual_strategy"]["signals"],
         "atoms": atoms,
