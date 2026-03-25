@@ -427,9 +427,9 @@
                 }
               },
               {
-                "id": "s29:slide_29/element_93",
-                "type": "FRAME",
-                "name": "직사각형 216",
+                "id": "s29:slide_29/element_93:panel_bg",
+                "type": "RECTANGLE",
+                "name": "직사각형 216:panel_bg",
                 "absoluteBoundingBox": {
                   "x": 686.03,
                   "y": 264.28,
@@ -461,74 +461,21 @@
                 ],
                 "strokes": [],
                 "strokeWeight": 1.0,
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_93:text",
-                    "type": "TEXT",
-                    "name": "직사각형 216",
-                    "characters": "V.2.4",
-                    "absoluteBoundingBox": {
-                      "x": 902.42,
-                      "y": 264.28,
-                      "width": 33.52,
-                      "height": 38.1
-                    },
-                    "relativeTransform": [
-                      [
-                        1.0,
-                        -0.0,
-                        0
-                      ],
-                      [
-                        0.0,
-                        1.0,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": null
-                      }
-                    ],
-                    "style": {
-                      "fontSize": 8,
-                      "fontFamily": "+mj-ea",
-                      "textAlignHorizontal": "RIGHT",
-                      "textAlignVertical": "BOTTOM",
-                      "textAutoResize": "WIDTH_AND_HEIGHT",
-                      "lineHeightPx": null
-                    },
-                    "children": [],
-                    "debug": {
-                      "source_path": "slide_29/element_93",
-                      "source_node_id": "217",
-                      "source_subtype": "labeled_shape",
-                      "source_scope": "slide",
-                      "rotation_degrees": 0.0
-                    }
-                  }
-                ],
+                "cornerRadius": 0,
+                "children": [],
                 "debug": {
                   "source_path": "slide_29/element_93",
                   "source_node_id": "217",
                   "source_subtype": "labeled_shape",
                   "source_scope": "slide",
-                  "frame_shell": true,
                   "shape_kind": "rect",
-                  "visual_strategy": "ui-mockup",
-                  "role": "labeled_shape_frame"
+                  "role": "dense_ui_panel_background"
                 }
               },
               {
-                "id": "s29:slide_29/element_119",
-                "type": "FRAME",
-                "name": "직사각형 253",
+                "id": "s29:slide_29/element_119:panel_bg",
+                "type": "RECTANGLE",
+                "name": "직사각형 253:panel_bg",
                 "absoluteBoundingBox": {
                   "x": 685.65,
                   "y": 302.37,
@@ -560,74 +507,21 @@
                 ],
                 "strokes": [],
                 "strokeWeight": 1.0,
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_119:text",
-                    "type": "TEXT",
-                    "name": "직사각형 253",
-                    "characters": "V.5.0",
-                    "absoluteBoundingBox": {
-                      "x": 902.97,
-                      "y": 302.37,
-                      "width": 33.52,
-                      "height": 41.29
-                    },
-                    "relativeTransform": [
-                      [
-                        1.0,
-                        -0.0,
-                        0
-                      ],
-                      [
-                        0.0,
-                        1.0,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": null
-                      }
-                    ],
-                    "style": {
-                      "fontSize": 8,
-                      "fontFamily": "+mj-ea",
-                      "textAlignHorizontal": "RIGHT",
-                      "textAlignVertical": "BOTTOM",
-                      "textAutoResize": "WIDTH_AND_HEIGHT",
-                      "lineHeightPx": null
-                    },
-                    "children": [],
-                    "debug": {
-                      "source_path": "slide_29/element_119",
-                      "source_node_id": "254",
-                      "source_subtype": "labeled_shape",
-                      "source_scope": "slide",
-                      "rotation_degrees": 0.0
-                    }
-                  }
-                ],
+                "cornerRadius": 0,
+                "children": [],
                 "debug": {
                   "source_path": "slide_29/element_119",
                   "source_node_id": "254",
                   "source_subtype": "labeled_shape",
                   "source_scope": "slide",
-                  "frame_shell": true,
                   "shape_kind": "rect",
-                  "visual_strategy": "ui-mockup",
-                  "role": "labeled_shape_frame"
+                  "role": "dense_ui_panel_background"
                 }
               },
               {
-                "id": "s29:slide_29/element_95",
-                "type": "FRAME",
-                "name": "직사각형 233",
+                "id": "s29:slide_29/element_95:panel_bg",
+                "type": "RECTANGLE",
+                "name": "직사각형 233:panel_bg",
                 "absoluteBoundingBox": {
                   "x": 685.65,
                   "y": 355.91,
@@ -659,68 +553,55 @@
                 ],
                 "strokes": [],
                 "strokeWeight": 1.0,
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_95:text",
-                    "type": "TEXT",
-                    "name": "직사각형 233",
-                    "characters": "V 2.9",
-                    "absoluteBoundingBox": {
-                      "x": 792.49,
-                      "y": 355.91,
-                      "width": 31.76,
-                      "height": 419.87
-                    },
-                    "relativeTransform": [
-                      [
-                        1.0,
-                        -0.0,
-                        0
-                      ],
-                      [
-                        0.0,
-                        1.0,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": null
-                      }
-                    ],
-                    "style": {
-                      "fontSize": 8,
-                      "fontFamily": "LG스마트체 Regular",
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "WIDTH_AND_HEIGHT",
-                      "lineHeightPx": null
-                    },
-                    "children": [],
-                    "debug": {
-                      "source_path": "slide_29/element_95",
-                      "source_node_id": "234",
-                      "source_subtype": "labeled_shape",
-                      "source_scope": "slide",
-                      "rotation_degrees": 0.0
-                    }
-                  }
-                ],
+                "cornerRadius": 0,
+                "children": [],
                 "debug": {
                   "source_path": "slide_29/element_95",
                   "source_node_id": "234",
                   "source_subtype": "labeled_shape",
                   "source_scope": "slide",
-                  "frame_shell": true,
                   "shape_kind": "rect",
-                  "visual_strategy": "ui-mockup",
-                  "role": "labeled_shape_frame"
+                  "role": "dense_ui_panel_background"
+                }
+              },
+              {
+                "id": "page:29:right_panel_block:card_labels",
+                "type": "SVG_BLOCK",
+                "name": "right_panel_block:card_labels",
+                "absoluteBoundingBox": {
+                  "x": 589.71,
+                  "y": 38.33,
+                  "width": 370.29,
+                  "height": 501.67
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"340.23\" y=\"236.95\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.23\" dy=\"0\">V.2.4</tspan></text><text x=\"340.78\" y=\"275.04\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text><text x=\"335.38\" y=\"328.58\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"335.38\" dy=\"0\">V 2.9</tspan></text></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "block-prototype-v1",
+                  "block_type": "right_panel_block",
+                  "render_mode": "image",
+                  "page_type": "ui-mockup",
+                  "role": "right_panel_card_labels_svg",
+                  "root_candidate_ids": [
+                    "s29:slide_29/element_37",
+                    "s29:slide_29/element_81",
+                    "s29:slide_29/element_93",
+                    "s29:slide_29/element_119",
+                    "s29:slide_29/element_95"
+                  ],
+                  "child_suffix": "card_labels"
                 }
               },
               {

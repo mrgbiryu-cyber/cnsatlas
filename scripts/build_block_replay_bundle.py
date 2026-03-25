@@ -1620,6 +1620,57 @@ def build_right_panel_lane_sections(
     return lane_sections
 
 
+def build_dense_panel_background_node(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, Any] | None:
+    abs_bounds = candidate_abs_bounds(candidate, context)
+    if not abs_bounds:
+        return None
+    scale = min(float(context["scale_x"]), float(context["scale_y"]))
+    shape_kind = str(((candidate.get("extra") or {}).get("shape_kind") or "")).lower()
+    if shape_kind in {"rect", "roundrect"}:
+        node = build_rectangle_node(candidate, abs_bounds, scale)
+    else:
+        node = build_shape_node(candidate, abs_bounds, scale)
+    node["id"] = f"{candidate['candidate_id']}:panel_bg"
+    node["name"] = f"{candidate.get('title') or candidate.get('subtype') or 'shape'}:panel_bg"
+    node["debug"] = dict(node.get("debug") or {}, role="dense_ui_panel_background")
+    return node
+
+
+def build_dense_panel_card_label_markup(candidate: dict[str, Any], block: dict[str, Any], context: dict[str, Any]) -> str:
+    text_value = str(candidate.get("text") or "").strip()
+    if not text_value:
+        return ""
+    label = text_value.splitlines()[0].strip()
+    if not label:
+        return ""
+    abs_bounds = candidate_abs_bounds(candidate, context)
+    if not abs_bounds:
+        return ""
+    local = local_bounds_in_block(abs_bounds, block)
+    width = min(max(local["width"] - 12.0, 24.0), 72.0)
+    height = min(max(local["height"] - 8.0, 12.0), 16.0)
+    return text_svg_markup(
+        label,
+        {
+            "x": local["x"] + max(local["width"] - width - 6.0, 4.0),
+            "y": local["y"] + 4.0,
+            "width": width,
+            "height": height,
+        },
+        font_size=7.0,
+        fill_hex="#FFFFFF",
+        fill_opacity=0.95,
+        font_family="LG스마트체 Regular",
+        horizontal_align="RIGHT",
+        vertical_align="TOP",
+        l_ins=0.0,
+        r_ins=0.0,
+        t_ins=0.0,
+        b_ins=0.0,
+        max_lines=1,
+    )
+
+
 def build_right_panel_description_overlay(
     block: dict[str, Any],
     context: dict[str, Any],
@@ -1704,6 +1755,7 @@ def build_right_panel_block_node(
     background_layers: list[tuple[float, float, str]] = []
     background_nodes: list[dict[str, Any]] = []
     foreground_nodes: list[dict[str, Any]] = []
+    background_label_markup_parts: list[str] = []
     overlay_bounds: list[dict[str, Any]] = []
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
@@ -1735,6 +1787,14 @@ def build_right_panel_block_node(
         is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
         if is_large_overlay:
             if variant == "v2":
+                if candidate in dense_panel["description_cards"]:
+                    child = build_dense_panel_background_node(candidate, context)
+                    if child:
+                        background_nodes.append(child)
+                        label_markup = build_dense_panel_card_label_markup(candidate, render_block, context)
+                        if label_markup:
+                            background_label_markup_parts.append(label_markup)
+                        continue
                 child = build_visual_node_from_candidate(candidate, context, assets)
                 if child and child.get("type") != "TEXT":
                     background_nodes.append(child)
@@ -1769,6 +1829,15 @@ def build_right_panel_block_node(
         markup = bg + "".join(svg for _, _, svg in sorted(background_layers, key=lambda row: (row[0], row[1])))
         frame["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
     frame["children"].extend(background_nodes)
+    if background_label_markup_parts:
+        frame["children"].append(
+            build_svg_block_child_node(
+                render_block,
+                "".join(background_label_markup_parts),
+                "right_panel_card_labels_svg",
+                "card_labels",
+            )
+        )
     if description_overlay:
         frame["children"].append(build_svg_block_child_node(render_block, description_overlay, "right_panel_description_svg", "description"))
     frame["children"].extend(foreground_nodes)
