@@ -1138,6 +1138,22 @@ def build_svg_block_child_node(block: dict[str, Any], markup: str, role: str, su
     return node
 
 
+def build_svg_child_node_with_bounds(
+    parent_block: dict[str, Any],
+    child_bounds: dict[str, float],
+    markup: str,
+    role: str,
+    suffix: str,
+) -> dict[str, Any]:
+    temp_block = dict(parent_block)
+    temp_block["bounds"] = child_bounds
+    node = build_svg_block_node(temp_block, markup, role)
+    node["id"] = f"{parent_block['block_id']}:{suffix}"
+    node["name"] = f"{parent_block['block_type']}:{suffix}"
+    node["debug"] = dict(node.get("debug") or {}, child_suffix=suffix)
+    return node
+
+
 def iter_table_cell_layouts(table_candidate: dict[str, Any], context: dict[str, Any]):
     scale_x = context["scale_x"]
     scale_y = context["scale_y"]
@@ -2071,12 +2087,24 @@ def build_right_panel_block_node(
             font_size = min(max(font_size, 7.0), 8.0)
             lane_bounds = spec["bounds"]
             max_lines = max(1, int(max(lane_bounds["height"] - 6.0, 10.0) / max(font_size * 1.25, 8.0)))
+            lane_child_bounds = {
+                "x": round(render_block["bounds"]["x"] + lane_bounds["x"], 2),
+                "y": round(render_block["bounds"]["y"] + lane_bounds["y"], 2),
+                "width": round(lane_bounds["width"], 2),
+                "height": round(lane_bounds["height"], 2),
+            }
             lane_children.append(
-                build_svg_block_child_node(
+                build_svg_child_node_with_bounds(
                     render_block,
+                    lane_child_bounds,
                     text_svg_markup(
                         text_value,
-                        lane_bounds,
+                        {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "width": lane_bounds["width"],
+                            "height": lane_bounds["height"],
+                        },
                         font_size=font_size,
                         fill_hex="#111111",
                         fill_opacity=1.0,
