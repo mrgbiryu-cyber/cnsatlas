@@ -1810,6 +1810,7 @@ def build_description_lane_specs(
     block: dict[str, Any],
     context: dict[str, Any],
     dense_panel: dict[str, Any],
+    description_rows: list[dict[str, Any]] | None = None,
 ) -> dict[int, dict[str, Any]]:
     issue_card = dense_panel["issue_card"]
     primary_cards = select_primary_description_cards(dense_panel["description_cards"], context)
@@ -1819,20 +1820,38 @@ def build_description_lane_specs(
     issue_bounds = local_bounds_in_block(candidate_abs_bounds(issue_card, context), block)
     local_cards = [local_bounds_in_block(candidate_abs_bounds(card, context), block) for card in primary_cards]
     lane_specs: dict[int, dict[str, Any]] = {}
+    row_locals = {
+        int(row["row_index"]) + 1: local_bounds_in_block(row["cell_bounds"], block)
+        for row in (description_rows or [])
+    }
 
     first_card = local_cards[0]
-    white_top = issue_bounds["y"] + issue_bounds["height"] + 6.0
-    white_bottom = max(first_card["y"] - 6.0, white_top + 20.0)
-    white_height = max(white_bottom - white_top, 24.0)
-    sticky_height = max(min(34.0, white_height - 14.0), 16.0)
-    top_gap = 8.0
-    key_height = max(white_height - sticky_height - top_gap, 18.0)
+    row3_local = row_locals.get(3)
+    row4_local = row_locals.get(4)
+    if row3_local and row4_local:
+        sticky_y = row3_local["y"]
+        sticky_height = max(row4_local["y"] - row3_local["y"] - 2.0, row3_local["height"])
+        key_y = row4_local["y"]
+        key_bottom = max(first_card["y"] - 8.0, key_y + 36.0)
+        key_height = max(key_bottom - key_y, 24.0)
+        top_x = row3_local["x"]
+        top_width = max(min(row3_local["width"], row4_local["width"]) - 6.0, 40.0)
+    else:
+        white_top = issue_bounds["y"] + issue_bounds["height"] + 6.0
+        white_bottom = max(first_card["y"] - 6.0, white_top + 20.0)
+        white_height = max(white_bottom - white_top, 24.0)
+        sticky_y = white_top
+        sticky_height = max(min(34.0, white_height - 14.0), 16.0)
+        key_y = white_top + sticky_height + 8.0
+        key_height = max(white_height - sticky_height - 8.0, 18.0)
+        top_x = first_card["x"] + 6.0
+        top_width = max(first_card["width"] - 12.0, 40.0)
     lane_specs[3] = {
         "name": "sticky_lane",
         "bounds": {
-            "x": first_card["x"] + 6.0,
-            "y": white_top,
-            "width": max(first_card["width"] - 12.0, 40.0),
+            "x": top_x,
+            "y": sticky_y,
+            "width": top_width,
             "height": sticky_height,
         },
         "card_candidate": None,
@@ -1840,9 +1859,9 @@ def build_description_lane_specs(
     lane_specs[4] = {
         "name": "key_visual_lane",
         "bounds": {
-            "x": first_card["x"] + 6.0,
-            "y": white_top + sticky_height + top_gap,
-            "width": max(first_card["width"] - 12.0, 40.0),
+            "x": top_x,
+            "y": key_y,
+            "width": top_width,
             "height": key_height,
         },
         "card_candidate": None,
@@ -2037,7 +2056,7 @@ def build_right_panel_block_node(
     overlay_bounds: list[dict[str, Any]] = []
     description_lane_nodes: list[dict[str, Any]] = build_right_panel_description_lane_nodes(primary_table, context, assets) if variant == "v2" else []
     description_rows = collect_table_description_cells(primary_table, context) if primary_table else []
-    description_lane_specs = build_description_lane_specs(render_block, context, dense_panel) if variant == "v1" else {}
+    description_lane_specs = build_description_lane_specs(render_block, context, dense_panel, description_rows) if variant == "v1" else {}
     lane_card_candidate_ids = {
         str(spec["card_candidate"].get("candidate_id") or "")
         for spec in description_lane_specs.values()
