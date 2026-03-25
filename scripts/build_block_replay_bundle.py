@@ -1733,6 +1733,68 @@ def build_right_panel_lane_sections(
     return lane_sections
 
 
+def select_primary_description_cards(description_cards: list[dict[str, Any]], context: dict[str, Any]) -> list[dict[str, Any]]:
+    primary = [
+        card
+        for card in description_cards
+        if float(candidate_abs_bounds(card, context)["height"]) >= 40.0
+    ]
+    primary.sort(
+        key=lambda card: (
+            -float(candidate_abs_bounds(card, context)["height"]),
+            float(candidate_abs_bounds(card, context)["y"]),
+        )
+    )
+    primary = primary[:3]
+    primary.sort(key=lambda card: float(candidate_abs_bounds(card, context)["y"]))
+    return primary
+
+
+def build_description_lane_specs(
+    block: dict[str, Any],
+    context: dict[str, Any],
+    dense_panel: dict[str, Any],
+) -> list[dict[str, Any]]:
+    issue_card = dense_panel["issue_card"]
+    primary_cards = select_primary_description_cards(dense_panel["description_cards"], context)
+    if not issue_card or not primary_cards:
+        return []
+
+    issue_bounds = local_bounds_in_block(candidate_abs_bounds(issue_card, context), block)
+    local_cards = [local_bounds_in_block(candidate_abs_bounds(card, context), block) for card in primary_cards]
+    lane_specs: list[dict[str, Any]] = []
+
+    first_card = local_cards[0]
+    white_top = issue_bounds["y"] + issue_bounds["height"] + 6.0
+    white_bottom = max(first_card["y"] - 6.0, white_top + 20.0)
+    lane_specs.append(
+        {
+            "name": "white_lane",
+            "bounds": {
+                "x": first_card["x"] + 6.0,
+                "y": white_top,
+                "width": max(first_card["width"] - 12.0, 40.0),
+                "height": max(white_bottom - white_top, 18.0),
+            },
+            "card_candidate": None,
+        }
+    )
+    for index, (card, card_bounds) in enumerate(zip(primary_cards, local_cards), start=1):
+        lane_specs.append(
+            {
+                "name": f"card_lane_{index}",
+                "bounds": {
+                    "x": card_bounds["x"] + 10.0,
+                    "y": card_bounds["y"] + 8.0,
+                    "width": max(card_bounds["width"] - 20.0, 40.0),
+                    "height": max(card_bounds["height"] - 12.0, 18.0),
+                },
+                "card_candidate": card,
+            }
+        )
+    return lane_specs
+
+
 def build_dense_panel_background_node(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, Any] | None:
     abs_bounds = candidate_abs_bounds(candidate, context)
     if not abs_bounds:
@@ -1897,13 +1959,13 @@ def build_right_panel_block_node(
     background_label_markup_parts: list[str] = []
     overlay_bounds: list[dict[str, Any]] = []
     description_lane_nodes: list[dict[str, Any]] = build_right_panel_description_lane_nodes(primary_table, context, assets) if variant == "v2" else []
-    description_card_nodes: list[tuple[dict[str, Any], dict[str, Any]]] = []
-    description_group_names = [
-        f"cell {int(row['row_index']) + 1}-{int(row['start_column_index'])}"
-        for row in (collect_table_description_cells(primary_table, context) if primary_table else [])
-        if int(row["start_column_index"]) == 2
-    ]
-    description_group_nodes: dict[str, dict[str, Any]] = {}
+    description_rows = collect_table_description_cells(primary_table, context) if primary_table else []
+    description_lane_specs = build_description_lane_specs(render_block, context, dense_panel) if variant == "v1" else []
+    lane_card_candidate_ids = {
+        str(spec["card_candidate"].get("candidate_id") or "")
+        for spec in description_lane_specs
+        if spec.get("card_candidate")
+    }
     for candidate in ownership["filtered_candidates"]:
         if candidate.get("subtype") not in {"labeled_shape", "shape"}:
             continue
@@ -1921,12 +1983,8 @@ def build_right_panel_block_node(
                 table_group = consolidate_table_group_cells(table_group)
                 table_children: list[dict[str, Any]] = []
                 for child in table_group.get("children", []):
-                    child_name = str(child.get("name") or "")
-                    if child_name in description_group_names:
-                        description_group_nodes[child_name] = child
-                        continue
                     source_candidate_id = str(((child.get("debug") or {}).get("source_candidate_id")) or "")
-                    if child.get("type") == "TEXT" and source_candidate_id in description_cell_ids:
+                    if source_candidate_id in description_cell_ids:
                         continue
                     if child.get("type") == "RECTANGLE" and should_skip_table_child_for_overlays(child, overlay_bounds):
                         continue
@@ -1939,9 +1997,11 @@ def build_right_panel_block_node(
         is_large_overlay = subtype in {"labeled_shape", "shape"} and float(abs_bounds["width"]) >= 120 and float(abs_bounds["height"]) >= 20
         if is_large_overlay:
             if variant == "v1" and candidate in dense_panel["description_cards"]:
+                if str(candidate.get("candidate_id") or "") in lane_card_candidate_ids:
+                    continue
                 child = build_dense_panel_background_node(candidate, context)
                 if child:
-                    description_card_nodes.append((candidate, child))
+                    background_nodes.append(child)
                     label_markup = build_dense_panel_card_label_markup(candidate, render_block, context)
                     if label_markup:
                         background_label_markup_parts.append(label_markup)
@@ -1989,29 +2049,59 @@ def build_right_panel_block_node(
         markup = bg + "".join(svg for _, _, svg in sorted(background_layers, key=lambda row: (row[0], row[1])))
         frame["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
     frame["children"].extend(background_nodes)
-    if variant == "v1" and description_card_nodes and description_group_nodes:
-        description_card_nodes.sort(
-            key=lambda row: (
-                float((row[1].get("absoluteBoundingBox") or {}).get("y", 0.0)),
-                float((row[1].get("absoluteBoundingBox") or {}).get("x", 0.0)),
-            )
-        )
-        for (candidate, card_node), group_name in zip(description_card_nodes, description_group_names):
-            text_group = description_group_nodes.get(group_name)
-            if not text_group:
-                frame["children"].append(card_node)
+    if variant == "v1" and description_rows and description_lane_specs:
+        lane_rows = []
+        for row in description_rows:
+            row_index = int(row["row_index"]) + 1
+            if row_index not in {3, 4, 5, 6}:
                 continue
+            lane_rows.append(row)
+        for row, spec in zip(lane_rows, description_lane_specs):
+            lane_children: list[dict[str, Any]] = []
+            card_candidate = spec.get("card_candidate")
+            if card_candidate:
+                card_node = build_dense_panel_background_node(card_candidate, context)
+                if card_node:
+                    lane_children.append(card_node)
+            cell = row["cell"]
+            cell_extra = row["cell_extra"] or {}
+            style = cell_extra.get("text_style") or {}
+            text_value = str(cell.get("text") or "").strip()
+            font_size = float(style.get("font_size_max") or style.get("font_size_avg") or 8.0)
+            font_size = min(max(font_size, 7.0), 8.0)
+            lane_bounds = spec["bounds"]
+            max_lines = max(1, int(max(lane_bounds["height"] - 6.0, 10.0) / max(font_size * 1.25, 8.0)))
+            lane_children.append(
+                build_svg_block_child_node(
+                    render_block,
+                    text_svg_markup(
+                        text_value,
+                        lane_bounds,
+                        font_size=font_size,
+                        fill_hex="#111111",
+                        fill_opacity=1.0,
+                        font_family=str(style.get("font_family") or "LG스마트체 Regular"),
+                        horizontal_align="LEFT",
+                        vertical_align="TOP" if spec["name"] != "card_lane_3" else "CENTER",
+                        l_ins=0.0,
+                        r_ins=0.0,
+                        t_ins=0.0,
+                        b_ins=0.0,
+                        max_lines=max_lines,
+                    ),
+                    "description_lane_text_svg",
+                    f"row{row['row_index']+1}",
+                )
+            )
             frame["children"].append(
                 build_owner_lane_group(
                     frame["id"],
-                    f"{group_name.replace(' ', '_')}_lane",
-                    [card_node, text_group],
+                    f"description_lane_{row['row_index']+1}",
+                    lane_children,
                     role="description_card_lane_group",
-                    source_candidate_id=str(candidate.get("candidate_id") or ""),
+                    source_candidate_id=str(cell.get("candidate_id") or ""),
                 )
             )
-    elif variant == "v1":
-        frame["children"].extend(card_node for _, card_node in description_card_nodes)
     if background_label_markup_parts:
         frame["children"].append(
             build_svg_block_child_node(
