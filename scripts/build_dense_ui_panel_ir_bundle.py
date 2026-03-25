@@ -107,6 +107,51 @@ def build_text_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
     }
 
 
+def paragraph_texts(atom: dict[str, Any]) -> list[str]:
+    runs = atom.get("text_runs") or []
+    if not runs:
+        text = str(atom.get("text") or "").strip()
+        return [text] if text else []
+    paragraphs: list[str] = []
+    current: list[str] = []
+    for run in runs:
+        run_type = run.get("type")
+        text = str(run.get("text") or "")
+        if run_type == "paragraph_break":
+            paragraph = "".join(current).strip()
+            if paragraph:
+                paragraphs.append(paragraph)
+            current = []
+            continue
+        if run_type in {"text", "line_break"}:
+            current.append(text)
+    paragraph = "".join(current).strip()
+    if paragraph:
+        paragraphs.append(paragraph)
+    return paragraphs
+
+
+def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, suffix: str = "") -> dict[str, Any]:
+    paragraphs = paragraph_texts(atom)
+    if not paragraphs:
+        return build_owner_group(f"{atom['id']}{suffix}:empty", [])
+    style = text_style(atom)
+    font_size = float(style["fontSize"])
+    line_height = float(style["lineHeightPx"])
+    left = float(bounds["x"])
+    top = float(bounds["y"])
+    width = float(bounds["width"])
+    children: list[dict[str, Any]] = []
+    current_y = top
+    for index, paragraph in enumerate(paragraphs):
+        paragraph_bounds = make_bounds(left, current_y, width, line_height + 2.0)
+        paragraph_atom = dict(atom)
+        paragraph_atom["text"] = paragraph
+        children.append(build_text_node(paragraph_atom, paragraph_bounds, suffix=f"{suffix}:p{index + 1}"))
+        current_y += line_height + 2.0
+    return build_owner_group(f"{atom['id']}{suffix}:paragraphs", children)
+
+
 def build_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, *, suffix: str = "") -> dict[str, Any]:
     node_bounds = dict(bounds or atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
     shape_style = atom.get("shape_style") or {}
@@ -356,14 +401,14 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         ]
         if marker_atom and marker_bounds:
             lane_children.append(build_text_node(marker_atom, marker_bounds))
-        lane_children.append(build_text_node(text_atom, text_bounds))
+        lane_children.append(build_paragraph_text_group(text_atom, text_bounds))
         children.append(build_owner_group(f"dense_ui_panel:lane_row_{row_index}", lane_children))
     if footer_atom:
         layout = lane_layout.get(6) or {}
         footer_bounds = layout.get("lane_bounds") or footer_atom["visual_bounds_px"]
         footer_children = [
             build_default_lane_background(footer_bounds, 6),
-            build_text_node(footer_atom, layout.get("text_bounds") or footer_bounds),
+            build_paragraph_text_group(footer_atom, layout.get("text_bounds") or footer_bounds),
         ]
         children.append(build_owner_group("dense_ui_panel:lane_row_6", footer_children))
 

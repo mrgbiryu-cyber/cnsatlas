@@ -207,8 +207,8 @@ def _extract_shape_style(node: ET.Element, theme_colors: dict[str, str] | None =
 
 
 def _extract_text_alignment(node: ET.Element) -> dict[str, Any]:
-    body_pr = node.find(".//p:txBody/a:bodyPr", NS)
-    first_paragraph = node.find(".//p:txBody/a:p", NS)
+    body_pr = node.find(".//p:txBody/a:bodyPr", NS) or node.find(".//a:txBody/a:bodyPr", NS)
+    first_paragraph = node.find(".//p:txBody/a:p", NS) or node.find(".//a:txBody/a:p", NS)
     p_pr = first_paragraph.find("a:pPr", NS) if first_paragraph is not None else None
     payload: dict[str, Any] = {}
     if p_pr is not None and p_pr.attrib.get("algn"):
@@ -362,11 +362,9 @@ def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
         cells_payload: list[dict[str, Any]] = []
         running_col_index = 0
         for cell_index, cell in enumerate(row.findall("a:tc", NS), start=1):
-            texts = []
-            for text_node in cell.findall(".//a:t", NS):
-                if text_node.text and text_node.text.strip():
-                    texts.append(text_node.text.strip())
             tc_pr = cell.find("a:tcPr", NS)
+            text_runs = _extract_text_runs(cell)
+            text_alignment = _extract_text_alignment(cell)
             grid_span = int(cell.attrib.get("gridSpan", "1")) if cell.attrib.get("gridSpan") else 1
             row_span = int(cell.attrib.get("rowSpan", "1")) if cell.attrib.get("rowSpan") else 1
             spanned_columns = grid_columns[running_col_index: running_col_index + grid_span]
@@ -374,7 +372,7 @@ def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
             cells_payload.append(
                 {
                     "cell_index": cell_index,
-                    "text": " ".join(texts).strip(),
+                    "text": _build_text_from_runs(text_runs),
                     "grid_span": grid_span,
                     "row_span": row_span,
                     "h_merge": cell.attrib.get("hMerge"),
@@ -390,6 +388,9 @@ def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
                         "marT": _emu_to_px(tc_pr.attrib.get("marT")) if tc_pr is not None and tc_pr.attrib.get("marT") else None,
                         "marB": _emu_to_px(tc_pr.attrib.get("marB")) if tc_pr is not None and tc_pr.attrib.get("marB") else None,
                     },
+                    "text_runs": text_runs,
+                    "text_alignment": text_alignment,
+                    "text_style": _summarize_text_style(text_runs, text_alignment),
                 }
             )
             running_col_index += grid_span

@@ -419,6 +419,8 @@ def build_atom(
         "resolved_target": extra.get("resolved_target"),
         "mime_type": extra.get("mime_type"),
         "text_style": (extra.get("text_style") or {}),
+        "text_runs": (extra.get("text_runs") or []),
+        "text_alignment": (extra.get("text_alignment") or {}),
         "cell_style": (extra.get("cell_style") or {}),
         "rendering": candidate.get("rendering") or {},
         "debug_tags": {
