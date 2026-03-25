@@ -10,6 +10,7 @@ from typing import Any
 
 TARGET_SLIDE_WIDTH = 960.0
 TARGET_SLIDE_HEIGHT = 540.0
+RIGHT_PANEL_X_CUTOFF = TARGET_SLIDE_WIDTH * 0.58
 
 
 def make_bounds(x: float, y: float, width: float, height: float) -> dict[str, float]:
@@ -191,11 +192,21 @@ def dense_panel_bounds(page: dict[str, Any]) -> dict[str, float]:
             "description_marker",
         }:
             bounds = atom.get("visual_bounds_px")
-            if bounds:
+            if bounds and float(bounds["x"]) + float(bounds["width"]) >= RIGHT_PANEL_X_CUTOFF:
                 relevant.append(bounds)
     if not relevant:
         return make_bounds(TARGET_SLIDE_WIDTH * 0.6, 0.0, TARGET_SLIDE_WIDTH * 0.4, TARGET_SLIDE_HEIGHT)
     return union_bounds(relevant)
+
+
+def is_right_panel_atom(atom: dict[str, Any]) -> bool:
+    bounds = atom.get("visual_bounds_px") or {}
+    x = float(bounds.get("x") or 0.0)
+    width = float(bounds.get("width") or 0.0)
+    role = str(atom.get("layer_role") or "")
+    if role in {"description_card", "description_text_lane", "description_footer", "description_marker", "issue_card", "version_stack"}:
+        return True
+    return x + width >= RIGHT_PANEL_X_CUTOFF
 
 
 def owner_priority(owner_id: str) -> int:
@@ -227,6 +238,8 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     for atom in page.get("atoms") or []:
         owner_id = str(atom.get("owner_id") or "")
         if not owner_id.startswith("dense_ui_panel:"):
+            continue
+        if not is_right_panel_atom(atom):
             continue
         grouped[owner_id].append(atom)
 
