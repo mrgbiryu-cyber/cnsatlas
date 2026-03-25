@@ -1166,6 +1166,52 @@
                 }
               },
               {
+                "id": "s29:slide_29/element_93:panel_bg",
+                "type": "RECTANGLE",
+                "name": "직사각형 216:panel_bg",
+                "absoluteBoundingBox": {
+                  "x": 686.03,
+                  "y": 264.28,
+                  "width": 249.91,
+                  "height": 38.1
+                },
+                "relativeTransform": [
+                  [
+                    1.0,
+                    -0.0,
+                    0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9333,
+                      "g": 0.5294,
+                      "b": 0.4471
+                    },
+                    "opacity": 0.3
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1.0,
+                "cornerRadius": 0,
+                "children": [],
+                "debug": {
+                  "source_path": "slide_29/element_93",
+                  "source_node_id": "217",
+                  "source_subtype": "labeled_shape",
+                  "source_scope": "slide",
+                  "shape_kind": "rect",
+                  "role": "dense_ui_panel_background"
+                }
+              },
+              {
                 "id": "s29:slide_29/element_119:panel_bg",
                 "type": "RECTANGLE",
                 "name": "직사각형 253:panel_bg",
@@ -1219,7 +1265,7 @@
                   "x": 692.03,
                   "y": 155.9,
                   "width": 237.91,
-                  "height": 102.38
+                  "height": 34.0
                 },
                 "relativeTransform": [
                   [
@@ -1242,7 +1288,7 @@
                       "x": 692.03,
                       "y": 155.9,
                       "width": 237.91,
-                      "height": 102.38
+                      "height": 34.0
                     },
                     "relativeTransform": [
                       [
@@ -1256,7 +1302,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"237.91\" height=\"102.38\" viewBox=\"0 0 237.91 102.38\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조</tspan><tspan x=\"0.0\" dy=\"10.0\">문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선</tspan><tspan x=\"0.0\" dy=\"10.0\">)- V0.0.pptx</tspan></text></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"237.91\" height=\"34.0\" viewBox=\"0 0 237.91 34.0\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조</tspan><tspan x=\"0.0\" dy=\"10.0\">문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선</tspan></text></svg>",
                     "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
@@ -1286,10 +1332,10 @@
                 "type": "GROUP",
                 "name": "description_lane_4",
                 "absoluteBoundingBox": {
-                  "x": 686.03,
-                  "y": 264.28,
-                  "width": 249.91,
-                  "height": 38.1
+                  "x": 692.03,
+                  "y": 197.9,
+                  "width": 237.91,
+                  "height": 60.38
                 },
                 "relativeTransform": [
                   [
@@ -1305,60 +1351,14 @@
                 ],
                 "children": [
                   {
-                    "id": "s29:slide_29/element_93:panel_bg",
-                    "type": "RECTANGLE",
-                    "name": "직사각형 216:panel_bg",
-                    "absoluteBoundingBox": {
-                      "x": 686.03,
-                      "y": 264.28,
-                      "width": 249.91,
-                      "height": 38.1
-                    },
-                    "relativeTransform": [
-                      [
-                        1.0,
-                        -0.0,
-                        0
-                      ],
-                      [
-                        0.0,
-                        1.0,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.9333,
-                          "g": 0.5294,
-                          "b": 0.4471
-                        },
-                        "opacity": 0.3
-                      }
-                    ],
-                    "strokes": [],
-                    "strokeWeight": 1.0,
-                    "cornerRadius": 0,
-                    "children": [],
-                    "debug": {
-                      "source_path": "slide_29/element_93",
-                      "source_node_id": "217",
-                      "source_subtype": "labeled_shape",
-                      "source_scope": "slide",
-                      "shape_kind": "rect",
-                      "role": "dense_ui_panel_background"
-                    }
-                  },
-                  {
                     "id": "page:29:right_panel_block:row4",
                     "type": "SVG_BLOCK",
                     "name": "right_panel_block:row4",
                     "absoluteBoundingBox": {
-                      "x": 696.03,
-                      "y": 272.28,
-                      "width": 229.91,
-                      "height": 26.1
+                      "x": 692.03,
+                      "y": 197.9,
+                      "width": 237.91,
+                      "height": 60.38
                     },
                     "relativeTransform": [
                       [
@@ -1372,7 +1372,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"229.91\" height=\"26.1\" viewBox=\"0 0 229.91 26.1\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan><tspan x=\"0.0\" dy=\"10.0\">: 동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 :</tspan></text></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"237.91\" height=\"60.38\" viewBox=\"0 0 237.91 60.38\"><text x=\"0.0\" y=\"8.0\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"0.0\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan><tspan x=\"0.0\" dy=\"10.0\">: 동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP</tspan><tspan x=\"0.0\" dy=\"10.0\">Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조</tspan><tspan x=\"0.0\" dy=\"10.0\">좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 ,</tspan><tspan x=\"0.0\" dy=\"10.0\">[PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case :</tspan></text></svg>",
                     "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
@@ -1651,7 +1651,7 @@
                     0
                   ]
                 ],
-                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"340.78\" y=\"275.04\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text></svg>",
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"340.23\" y=\"236.95\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.23\" dy=\"0\">V.2.4</tspan></text><text x=\"340.78\" y=\"275.04\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text></svg>",
                 "children": [],
                 "debug": {
                   "generator": "block-prototype-v1",

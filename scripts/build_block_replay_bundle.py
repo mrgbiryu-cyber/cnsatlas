@@ -1770,44 +1770,65 @@ def build_description_lane_specs(
     block: dict[str, Any],
     context: dict[str, Any],
     dense_panel: dict[str, Any],
-) -> list[dict[str, Any]]:
+) -> dict[int, dict[str, Any]]:
     issue_card = dense_panel["issue_card"]
     primary_cards = select_primary_description_cards(dense_panel["description_cards"], context)
-    if not issue_card or not primary_cards:
-        return []
+    if not issue_card or len(primary_cards) < 3:
+        return {}
 
     issue_bounds = local_bounds_in_block(candidate_abs_bounds(issue_card, context), block)
     local_cards = [local_bounds_in_block(candidate_abs_bounds(card, context), block) for card in primary_cards]
-    lane_specs: list[dict[str, Any]] = []
+    lane_specs: dict[int, dict[str, Any]] = {}
 
     first_card = local_cards[0]
     white_top = issue_bounds["y"] + issue_bounds["height"] + 6.0
     white_bottom = max(first_card["y"] - 6.0, white_top + 20.0)
-    lane_specs.append(
-        {
-            "name": "white_lane",
-            "bounds": {
-                "x": first_card["x"] + 6.0,
-                "y": white_top,
-                "width": max(first_card["width"] - 12.0, 40.0),
-                "height": max(white_bottom - white_top, 18.0),
-            },
-            "card_candidate": None,
-        }
-    )
-    for index, (card, card_bounds) in enumerate(zip(primary_cards, local_cards), start=1):
-        lane_specs.append(
-            {
-                "name": f"card_lane_{index}",
-                "bounds": {
-                    "x": card_bounds["x"] + 10.0,
-                    "y": card_bounds["y"] + 8.0,
-                    "width": max(card_bounds["width"] - 20.0, 40.0),
-                    "height": max(card_bounds["height"] - 12.0, 18.0),
-                },
-                "card_candidate": card,
-            }
-        )
+    white_height = max(white_bottom - white_top, 24.0)
+    sticky_height = max(min(34.0, white_height - 14.0), 16.0)
+    top_gap = 8.0
+    key_height = max(white_height - sticky_height - top_gap, 18.0)
+    lane_specs[3] = {
+        "name": "sticky_lane",
+        "bounds": {
+            "x": first_card["x"] + 6.0,
+            "y": white_top,
+            "width": max(first_card["width"] - 12.0, 40.0),
+            "height": sticky_height,
+        },
+        "card_candidate": None,
+    }
+    lane_specs[4] = {
+        "name": "key_visual_lane",
+        "bounds": {
+            "x": first_card["x"] + 6.0,
+            "y": white_top + sticky_height + top_gap,
+            "width": max(first_card["width"] - 12.0, 40.0),
+            "height": key_height,
+        },
+        "card_candidate": None,
+    }
+    second_card = local_cards[1]
+    third_card = local_cards[2]
+    lane_specs[5] = {
+        "name": "body_lane",
+        "bounds": {
+            "x": second_card["x"] + 10.0,
+            "y": second_card["y"] + 8.0,
+            "width": max(second_card["width"] - 20.0, 40.0),
+            "height": max(second_card["height"] - 12.0, 18.0),
+        },
+        "card_candidate": primary_cards[1],
+    }
+    lane_specs[6] = {
+        "name": "footer_lane",
+        "bounds": {
+            "x": third_card["x"] + 10.0,
+            "y": third_card["y"] + 8.0,
+            "width": max(third_card["width"] - 20.0, 40.0),
+            "height": max(third_card["height"] - 12.0, 18.0),
+        },
+        "card_candidate": primary_cards[2],
+    }
     return lane_specs
 
 
@@ -1976,10 +1997,10 @@ def build_right_panel_block_node(
     overlay_bounds: list[dict[str, Any]] = []
     description_lane_nodes: list[dict[str, Any]] = build_right_panel_description_lane_nodes(primary_table, context, assets) if variant == "v2" else []
     description_rows = collect_table_description_cells(primary_table, context) if primary_table else []
-    description_lane_specs = build_description_lane_specs(render_block, context, dense_panel) if variant == "v1" else []
+    description_lane_specs = build_description_lane_specs(render_block, context, dense_panel) if variant == "v1" else {}
     lane_card_candidate_ids = {
         str(spec["card_candidate"].get("candidate_id") or "")
-        for spec in description_lane_specs
+        for spec in description_lane_specs.values()
         if spec.get("card_candidate")
     }
     for candidate in ownership["filtered_candidates"]:
@@ -2066,13 +2087,11 @@ def build_right_panel_block_node(
         frame["children"].append(build_svg_block_child_node(render_block, markup, "right_panel_background_svg", "background"))
     frame["children"].extend(background_nodes)
     if variant == "v1" and description_rows and description_lane_specs:
-        lane_rows = []
         for row in description_rows:
             row_index = int(row["row_index"]) + 1
-            if row_index not in {3, 4, 5, 6}:
+            spec = description_lane_specs.get(row_index)
+            if not spec:
                 continue
-            lane_rows.append(row)
-        for row, spec in zip(lane_rows, description_lane_specs):
             lane_children: list[dict[str, Any]] = []
             card_candidate = spec.get("card_candidate")
             if card_candidate:
@@ -2110,7 +2129,7 @@ def build_right_panel_block_node(
                         fill_opacity=1.0,
                         font_family=str(style.get("font_family") or "LG스마트체 Regular"),
                         horizontal_align="LEFT",
-                        vertical_align="TOP" if spec["name"] != "card_lane_3" else "CENTER",
+                        vertical_align="TOP" if spec["name"] != "footer_lane" else "CENTER",
                         l_ins=0.0,
                         r_ins=0.0,
                         t_ins=0.0,
