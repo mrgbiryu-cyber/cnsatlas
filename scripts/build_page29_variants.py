@@ -186,6 +186,104 @@ def build_panel_compare_bundle(slide_no: int, bundles: list[tuple[str, dict]], s
     }
 
 
+def clone_panel_step(panel: dict, step: int) -> dict:
+    cloned = copy.deepcopy(panel)
+    children = cloned.get("children") or []
+
+    if step == 1:
+        filtered_children = []
+        for child in children:
+            name = str(child.get("name") or "")
+            if child.get("type") == "GROUP" and name.startswith("description_lane_"):
+                lane = copy.deepcopy(child)
+                lane["children"] = [c for c in (lane.get("children") or []) if c.get("type") == "SVG_BLOCK"]
+                filtered_children.append(lane)
+            elif name == "right_panel_block:card_labels":
+                filtered_children.append(child)
+        cloned["children"] = filtered_children
+        cloned["name"] = "29-step-1"
+        return cloned
+
+    if step == 2:
+        filtered_children = []
+        for child in children:
+            name = str(child.get("name") or "")
+            if (child.get("type") == "GROUP" and name.startswith("description_lane_")) or name == "right_panel_block:card_labels":
+                filtered_children.append(child)
+        cloned["children"] = filtered_children
+        cloned["name"] = "29-step-2"
+        return cloned
+
+    cloned["name"] = "29-step-3"
+    return cloned
+
+
+def build_panel_steps_compare_bundle(slide_no: int, base_bundle: dict, source_file: str) -> dict:
+    base_panel = find_right_panel_node(base_bundle)
+    if not base_panel:
+        raise SystemExit("no right_panel_block found in base bundle")
+
+    panels = [
+        ("step-1", clone_panel_step(base_panel, 1)),
+        ("step-2", clone_panel_step(base_panel, 2)),
+        ("step-3", clone_panel_step(base_panel, 3)),
+    ]
+    gap = 28.0
+    outer_pad_x = 12.0
+    outer_pad_y = 28.0
+    panel_width = max(float(panel["absoluteBoundingBox"]["width"]) for _, panel in panels)
+    panel_height = max(float(panel["absoluteBoundingBox"]["height"]) for _, panel in panels)
+    total_width = len(panels) * panel_width + (len(panels) - 1) * gap + outer_pad_x * 2
+    total_height = panel_height + outer_pad_y + 12.0
+
+    compare_children: list[dict] = []
+    for index, (label, panel) in enumerate(panels):
+        bounds = panel["absoluteBoundingBox"]
+        dx = outer_pad_x + index * (panel_width + gap) - float(bounds["x"])
+        dy = outer_pad_y - float(bounds["y"])
+        shifted = shift_node(panel, f"panel-steps:{label}", dx, dy)
+        shifted["name"] = label
+        compare_children.append(make_label_node(f"panel-steps:{label}:label", label, outer_pad_x + index * (panel_width + gap) + 4.0, 6.0))
+        compare_children.append(shifted)
+
+    inner_frame = {
+        "id": f"page:{slide_no}:panel-steps:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": compare_children,
+    }
+    root = {
+        "id": f"page:{slide_no}:panel-steps",
+        "type": "FRAME",
+        "name": f"Slide {slide_no} Right Panel Steps",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [inner_frame],
+        "debug": {"generator": "page29-panel-steps"},
+    }
+    return {
+        "kind": "figma-replay-bundle",
+        "source_kind": "ppt-block-prototype-panel-steps",
+        "visual_model_version": "block-v1-panel-steps",
+        "source_file": source_file,
+        "file_name": Path(source_file).name,
+        "page_name": root["name"],
+        "node_id": root["id"],
+        "document": root,
+        "assets": base_bundle.get("assets") or {},
+        "missing_assets": [],
+        "debug": {"status": "page29_panel_steps_bundle", "variants": [label for label, _ in panels]},
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build page 29 comparison variants for block replay bundle.")
     parser.add_argument(
@@ -236,6 +334,13 @@ def main() -> None:
     with panel_compare_output_path.open("w", encoding="utf-8") as handle:
         json.dump(panel_compare_bundle, handle, ensure_ascii=False, indent=2)
     print(f"saved {panel_compare_output_path}")
+
+    base_bundle = next(bundle for label, bundle in built_variants if label == "29-1")
+    panel_steps_bundle = build_panel_steps_compare_bundle(args.slide, base_bundle, source_file)
+    panel_steps_output_path = output_dir / f"block-slide-{args.slide}-panel-steps.bundle.json"
+    with panel_steps_output_path.open("w", encoding="utf-8") as handle:
+        json.dump(panel_steps_bundle, handle, ensure_ascii=False, indent=2)
+    print(f"saved {panel_steps_output_path}")
 
 
 if __name__ == "__main__":
