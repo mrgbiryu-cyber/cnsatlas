@@ -1134,14 +1134,14 @@
                 }
               },
               {
-                "id": "panel-compare:29-1:s29:slide_29/element_93:panel_bg",
+                "id": "panel-compare:29-1:s29:slide_29/element_119:panel_bg",
                 "type": "RECTANGLE",
-                "name": "직사각형 216:panel_bg",
+                "name": "직사각형 253:panel_bg",
                 "absoluteBoundingBox": {
-                  "x": 108.32,
-                  "y": 253.95,
-                  "width": 249.91,
-                  "height": 38.1
+                  "x": 107.94,
+                  "y": 292.04,
+                  "width": 250.84,
+                  "height": 41.29
                 },
                 "relativeTransform": [
                   [
@@ -1159,9 +1159,9 @@
                   {
                     "type": "SOLID",
                     "color": {
-                      "r": 0.9333,
-                      "g": 0.5294,
-                      "b": 0.4471
+                      "r": 0.0,
+                      "g": 1.0,
+                      "b": 0.0
                     },
                     "opacity": 0.3
                   }
@@ -1171,8 +1171,8 @@
                 "cornerRadius": 0,
                 "children": [],
                 "debug": {
-                  "source_path": "slide_29/element_93",
-                  "source_node_id": "217",
+                  "source_path": "slide_29/element_119",
+                  "source_node_id": "254",
                   "source_subtype": "labeled_shape",
                   "source_scope": "slide",
                   "shape_kind": "rect",
@@ -1224,7 +1224,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"101.94\" y=\"125.57\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"101.94\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조 문서명</tspan><tspan x=\"101.94\" dy=\"10.0\">: LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )-</tspan><tspan x=\"101.94\" dy=\"10.0\">V0.0.pptx</tspan></text></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"102.32\" y=\"125.57\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"102.32\" dy=\"0\">[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조</tspan><tspan x=\"102.32\" dy=\"10.0\">문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선</tspan><tspan x=\"102.32\" dy=\"10.0\">)- V0.0.pptx</tspan></text></svg>",
                     "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
@@ -1273,14 +1273,14 @@
                 ],
                 "children": [
                   {
-                    "id": "panel-compare:29-1:s29:slide_29/element_119:panel_bg",
+                    "id": "panel-compare:29-1:s29:slide_29/element_93:panel_bg",
                     "type": "RECTANGLE",
-                    "name": "직사각형 253:panel_bg",
+                    "name": "직사각형 216:panel_bg",
                     "absoluteBoundingBox": {
-                      "x": 107.94,
-                      "y": 292.04,
-                      "width": 250.84,
-                      "height": 41.29
+                      "x": 108.32,
+                      "y": 253.95,
+                      "width": 249.91,
+                      "height": 38.1
                     },
                     "relativeTransform": [
                       [
@@ -1298,9 +1298,9 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.0,
-                          "g": 1.0,
-                          "b": 0.0
+                          "r": 0.9333,
+                          "g": 0.5294,
+                          "b": 0.4471
                         },
                         "opacity": 0.3
                       }
@@ -1310,8 +1310,8 @@
                     "cornerRadius": 0,
                     "children": [],
                     "debug": {
-                      "source_path": "slide_29/element_119",
-                      "source_node_id": "254",
+                      "source_path": "slide_29/element_93",
+                      "source_node_id": "217",
                       "source_subtype": "labeled_shape",
                       "source_scope": "slide",
                       "shape_kind": "rect",
@@ -1340,7 +1340,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"105.94\" y=\"280.04\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"105.94\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan><tspan x=\"105.94\" dy=\"10.0\">: 동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 :</tspan></text></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"106.32\" y=\"241.95\" font-size=\"8.0\" fill=\"#111111\" fill-opacity=\"1.0\" text-anchor=\"start\" font-family=\"LG스마트체 Regular\"><tspan x=\"106.32\" dy=\"0\">[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공</tspan><tspan x=\"106.32\" dy=\"10.0\">: 동영상 &amp; 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 :</tspan></text></svg>",
                     "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
@@ -1619,7 +1619,7 @@
                     0
                   ]
                 ],
-                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"340.23\" y=\"236.95\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.23\" dy=\"0\">V.2.4</tspan></text></svg>",
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"370.29\" height=\"501.67\" viewBox=\"0 0 370.29 501.67\"><text x=\"340.78\" y=\"275.04\" font-size=\"7.0\" fill=\"#FFFFFF\" fill-opacity=\"0.95\" text-anchor=\"end\" font-family=\"LG스마트체 Regular\"><tspan x=\"340.78\" dy=\"0\">V.5.0</tspan></text></svg>",
                 "children": [],
                 "debug": {
                   "generator": "block-prototype-v1",

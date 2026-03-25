@@ -1734,19 +1734,19 @@ def build_right_panel_lane_sections(
 
 
 def select_primary_description_cards(description_cards: list[dict[str, Any]], context: dict[str, Any]) -> list[dict[str, Any]]:
-    primary = [
-        card
-        for card in description_cards
-        if float(candidate_abs_bounds(card, context)["height"]) >= 40.0
-    ]
-    primary.sort(
-        key=lambda card: (
-            -float(candidate_abs_bounds(card, context)["height"]),
-            float(candidate_abs_bounds(card, context)["y"]),
-        )
-    )
-    primary = primary[:3]
+    primary: list[dict[str, Any]] = []
+    for card in description_cards:
+        bounds = candidate_abs_bounds(card, context)
+        fill = (((card.get("extra") or {}).get("shape_style") or {}).get("fill") or {})
+        resolved_fill = str(fill.get("resolved_value") or fill.get("value") or "").upper()
+        if float(bounds["height"]) < 20.0:
+            continue
+        # The bright green V5.x card is a separate callout block, not part of the description lane stack.
+        if resolved_fill == "00FF00":
+            continue
+        primary.append(card)
     primary.sort(key=lambda card: float(candidate_abs_bounds(card, context)["y"]))
+    primary = primary[:3]
     return primary
 
 
