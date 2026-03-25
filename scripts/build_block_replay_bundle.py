@@ -1534,13 +1534,14 @@ def collect_table_description_cells(table_candidate: dict[str, Any], context: di
     return description_cells
 
 
-def classify_right_panel_cards(selected_candidates: list[dict[str, Any]], context: dict[str, Any]) -> dict[str, Any]:
+def classify_dense_ui_panel_owners(selected_candidates: list[dict[str, Any]], context: dict[str, Any]) -> dict[str, Any]:
     issue_card: dict[str, Any] | None = None
     version_stack_cards: list[dict[str, Any]] = []
     description_cards: list[dict[str, Any]] = []
+    small_assets: list[dict[str, Any]] = []
+    misc_cards: list[dict[str, Any]] = []
     for candidate in selected_candidates:
-        if candidate.get("subtype") != "labeled_shape":
-            continue
+        subtype = str(candidate.get("subtype") or "")
         bounds = candidate_abs_bounds(candidate, context)
         if not bounds:
             continue
@@ -1549,6 +1550,11 @@ def classify_right_panel_cards(selected_candidates: list[dict[str, Any]], contex
         height = float(bounds["height"])
         x = float(bounds["x"])
         y = float(bounds["y"])
+        if subtype in {"image", "connector"} or (width <= 40 and height <= 40):
+            small_assets.append(candidate)
+            continue
+        if subtype != "labeled_shape":
+            continue
         if text_value.startswith("ISSUE"):
             issue_card = candidate
             continue
@@ -1558,12 +1564,19 @@ def classify_right_panel_cards(selected_candidates: list[dict[str, Any]], contex
                 continue
             if width >= 230 and x >= 680:
                 description_cards.append(candidate)
+                continue
+        if width >= 180 and height >= 24:
+            misc_cards.append(candidate)
     description_cards.sort(key=lambda c: (candidate_abs_bounds(c, context)["y"], candidate_abs_bounds(c, context)["x"]))
     version_stack_cards.sort(key=lambda c: (candidate_abs_bounds(c, context)["y"], candidate_abs_bounds(c, context)["x"]))
+    small_assets.sort(key=lambda c: (candidate_abs_bounds(c, context)["y"], candidate_abs_bounds(c, context)["x"]))
+    misc_cards.sort(key=lambda c: (candidate_abs_bounds(c, context)["y"], candidate_abs_bounds(c, context)["x"]))
     return {
         "issue_card": issue_card,
         "version_stack_cards": version_stack_cards,
         "description_cards": description_cards,
+        "small_assets": small_assets,
+        "misc_cards": misc_cards,
     }
 
 
@@ -1572,7 +1585,7 @@ def build_right_panel_lane_sections(
     context: dict[str, Any],
     selected_candidates: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    cards = classify_right_panel_cards(selected_candidates, context)
+    cards = classify_dense_ui_panel_owners(selected_candidates, context)
     issue_card = cards["issue_card"]
     description_cards = cards["description_cards"]
     if not issue_card or not description_cards:
@@ -1671,6 +1684,7 @@ def build_right_panel_block_node(
 ) -> dict[str, Any]:
     variant = right_panel_variant if right_panel_variant in RIGHT_PANEL_VARIANTS else "v1"
     ownership = select_right_panel_candidates(block, context)
+    dense_panel = classify_dense_ui_panel_owners(ownership["filtered_candidates"], context)
     primary_table = ownership["dominant_owner"]
     description_cell_ids = {
         str(row["cell"].get("candidate_id") or "")
@@ -1703,7 +1717,7 @@ def build_right_panel_block_node(
             if candidate["candidate_id"] in seen_tables:
                 continue
             seen_tables.add(candidate["candidate_id"])
-            if variant != "v3":
+            if variant == "v1":
                 table_group = build_table_visual_group(candidate, context, assets)
                 table_children: list[dict[str, Any]] = []
                 for child in table_group.get("children", []):
@@ -1733,6 +1747,8 @@ def build_right_panel_block_node(
                 svg = render_candidate_svg(candidate, abs_bounds, render_block, context, block_type="right_panel_block")
                 if svg:
                     background_layers.append((abs_bounds["y"], abs_bounds["x"], svg))
+            continue
+        if variant == "v2" and candidate not in dense_panel["small_assets"] and subtype not in {"text_block", "image", "connector"}:
             continue
         child = build_visual_node_from_candidate(candidate, context, assets)
         if child:
