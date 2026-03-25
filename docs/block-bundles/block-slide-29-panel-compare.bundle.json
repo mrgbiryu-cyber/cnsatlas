@@ -1305,15 +1305,14 @@
                     }
                   },
                   {
-                    "id": "panel-compare:29-1:s29:slide_29/element_37:row_3:cell_2:sticky_lane:direct_text",
-                    "type": "TEXT",
+                    "id": "panel-compare:29-1:s29:slide_29/element_37:row_3:cell_2:sticky_lane:description_sticky_lane_lines",
+                    "type": "GROUP",
                     "name": "description_lane_text_3",
-                    "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조 문서명 : LGEKR5.0-UIX-DE-02- 스토리보드 - F-( 공통 GNB 개선 )- V0.0.pptx",
                     "absoluteBoundingBox": {
                       "x": 108.51,
                       "y": 68.76,
                       "width": 243.45,
-                      "height": 18.0
+                      "height": 10.0
                     },
                     "relativeTransform": [
                       [
@@ -1327,29 +1326,60 @@
                         0
                       ]
                     ],
-                    "fills": [
+                    "children": [
                       {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.12,
-                          "g": 0.12,
-                          "b": 0.12
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_3:cell_2:sticky_lane:line1:direct_text",
+                        "type": "TEXT",
+                        "name": "description_sticky_lane_line_1",
+                        "characters": "[Sticky Header ] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조 문서명 :",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 68.76,
+                          "width": 243.45,
+                          "height": 10.0
                         },
-                        "opacity": 1.0
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2:sticky_lane:line1"
+                        }
                       }
                     ],
-                    "style": {
-                      "fontSize": 8.0,
-                      "fontFamily": "Inter",
-                      "textAlignHorizontal": "LEFT",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": null
-                    },
-                    "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
-                      "role": "description_lane_text_native",
+                      "role": "description_lane_text_group",
                       "source_candidate_id": "s29:slide_29/element_37:row_3:cell_2:sticky_lane"
                     }
                   }
@@ -1440,15 +1470,14 @@
                     }
                   },
                   {
-                    "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:direct_text",
-                    "type": "TEXT",
+                    "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:description_key_visual_lane_lines",
+                    "type": "GROUP",
                     "name": "description_lane_text_4",
-                    "characters": "[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공 : 동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조 좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한 썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거 상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a) 인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동 (ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지 ⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / * 동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서 인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS > 제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출 2e) Video File 타입의 360 미디어 디스클라이머 문구 영역 하기 조건 모두 충족 시 문구 제공 1) WCMS > [KRP0008] > 비디오 > Video File > ‘360 미디어용도 ’ 에 체크 2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360 미디어 디스클라이머 노출에 Y 체크",
                     "absoluteBoundingBox": {
                       "x": 108.51,
                       "y": 86.76,
                       "width": 243.45,
-                      "height": 159.19
+                      "height": 150.0
                     },
                     "relativeTransform": [
                       [
@@ -1462,29 +1491,746 @@
                         0
                       ]
                     ],
-                    "fills": [
+                    "children": [
                       {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.12,
-                          "g": 0.12,
-                          "b": 0.12
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line1:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_1",
+                        "characters": "[Key Visual 영역 ] – WCMS 콘텐츠 등록 제품 visual 정보 제공 :",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 86.76,
+                          "width": 243.45,
+                          "height": 10.0
                         },
-                        "opacity": 1.0
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line1"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line2:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_2",
+                        "characters": "동영상 & 이미지 ( 제품 인테리어컷 , 상세컷 ) 콘텐츠 노출 순서 : [PDP",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 96.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line2"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line3:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_3",
+                        "characters": "Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의 ] 참조",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 106.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line3"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line4:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_4",
+                        "characters": "좌우 swipe : 이전 / 다음 콘텐츠 노출 동영상 : 선택 시 , [PDP0001]",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 116.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line4"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line5:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_5",
+                        "characters": "갤러리뷰 팝업 노출되며 동영상 재생 ㄴ Youtube case : WCMS 에 등록한",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 126.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line5"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line6:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_6",
+                        "characters": "썸네일 이미지 + 재생아이콘 노출 ㄴ Video File case : 동영상 음소거",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 136.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line6"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line7:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_7",
+                        "characters": "상태로 자동반복재생 이미지 : 선택 시 , [PDP0001] 갤러리뷰 팝업 노출 2a)",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 146.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line7"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line8:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_8",
+                        "characters": "인디케이터 ( 등록 콘텐츠 2 개 이상일 경우 노출 ) 현재 노출 중인 콘텐츠 순서 /",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 156.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line8"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line9:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_9",
+                        "characters": "총 콘텐츠 수 노출 이전 / 다음 이동 버튼 : 선택 시 이전 / 다음 콘텐츠 이동",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 166.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line9"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line10:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_10",
+                        "characters": "(ex. 제일 마지막에서 다음 선택 시 , 첫번째 콘텐츠로 이동 ) 2b) 일시정지",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 176.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line10"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line11:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_11",
+                        "characters": "⇔재생 토글 버튼 (Optional) 버튼 선택 시 , 영상 일시정지 ⇔재생 / *",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 186.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line11"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line12:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_12",
+                        "characters": "동영상 (video file) 에만 노출 2C) 디스클라이머 문구 영역 CMS 에서",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 196.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line12"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line13:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_13",
+                        "characters": "인테리어컷 내 디스클라이머 노출여부에 ‘ Y’ 로 설정되어 있고 인테리어컷 이미지가",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 206.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line13"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line14:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_14",
+                        "characters": "등록되어 있을 경우 디스클라이머 문구 노출 2d) 닷컴 only 뱃지 - CMS >",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 216.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line14"
+                        }
+                      },
+                      {
+                        "id": "panel-compare:29-1:s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line15:direct_text",
+                        "type": "TEXT",
+                        "name": "description_key_visual_lane_line_15",
+                        "characters": "제품 > 모델 > 모델 관리 > 모델기본정보 -> 닷컴 전용 여부 ‘Y’ 로 설정시",
+                        "absoluteBoundingBox": {
+                          "x": 108.51,
+                          "y": 226.76,
+                          "width": 243.45,
+                          "height": 10.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.12,
+                              "g": 0.12,
+                              "b": 0.12
+                            },
+                            "opacity": 1.0
+                          }
+                        ],
+                        "style": {
+                          "fontSize": 8.0,
+                          "fontFamily": "Inter",
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "textAutoResize": "HEIGHT",
+                          "lineHeightPx": null
+                        },
+                        "children": [],
+                        "debug": {
+                          "generator": "block-prototype-v1",
+                          "role": "description_lane_text_native",
+                          "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane:line15"
+                        }
                       }
                     ],
-                    "style": {
-                      "fontSize": 8.0,
-                      "fontFamily": "Inter",
-                      "textAlignHorizontal": "LEFT",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": null
-                    },
-                    "children": [],
                     "debug": {
                       "generator": "block-prototype-v1",
-                      "role": "description_lane_text_native",
+                      "role": "description_lane_text_group",
                       "source_candidate_id": "s29:slide_29/element_37:row_4:cell_2:key_visual_lane"
                     }
                   }

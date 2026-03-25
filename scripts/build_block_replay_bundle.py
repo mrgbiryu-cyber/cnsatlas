@@ -1467,6 +1467,64 @@ def build_direct_lane_text_node(
     }
 
 
+def build_direct_lane_text_group(
+    candidate: dict[str, Any],
+    abs_bounds: dict[str, Any],
+    context: dict[str, Any],
+    *,
+    font_size: float = 8.0,
+    max_chars: int = 42,
+    line_gap: float = 2.0,
+) -> dict[str, Any]:
+    text_value = str(candidate.get("text") or candidate.get("title") or "").strip()
+    if not text_value:
+        return build_owner_lane_group(
+            candidate["candidate_id"],
+            "empty_text_group",
+            [],
+            role="description_lane_text_group",
+            source_candidate_id=candidate["candidate_id"],
+        )
+    lines = textwrap.wrap(
+        text_value,
+        width=max_chars,
+        break_long_words=False,
+        break_on_hyphens=False,
+    )
+    line_height = font_size + line_gap
+    max_lines = max(1, int(abs_bounds["height"] / max(line_height, 1.0)))
+    lines = lines[:max_lines]
+    children: list[dict[str, Any]] = []
+    for index, line in enumerate(lines):
+        line_y = abs_bounds["y"] + index * line_height
+        line_bounds = {
+            "x": abs_bounds["x"],
+            "y": round(line_y, 2),
+            "width": abs_bounds["width"],
+            "height": min(line_height, abs_bounds["height"]),
+        }
+        line_candidate = dict(candidate)
+        line_candidate["candidate_id"] = f"{candidate['candidate_id']}:line{index+1}"
+        line_candidate["text"] = line
+        line_candidate["title"] = f"{candidate.get('title') or candidate.get('subtype') or 'text'}_line_{index+1}"
+        children.append(
+            build_direct_lane_text_node(
+                line_candidate,
+                line_bounds,
+                context,
+                font_size=font_size,
+                vertical_align="TOP",
+            )
+        )
+    return build_owner_lane_group(
+        candidate["candidate_id"],
+        f"{candidate.get('title') or candidate.get('subtype') or 'text'}_lines",
+        children,
+        role="description_lane_text_group",
+        source_candidate_id=candidate["candidate_id"],
+    )
+
+
 def build_top_lane_background_node(
     candidate: dict[str, Any],
     abs_bounds: dict[str, Any],
@@ -2209,13 +2267,24 @@ def build_right_panel_block_node(
                     "height": lane_child_bounds["height"],
                     "rotation": 0,
                 }
-                text_node = build_direct_lane_text_node(
-                    text_candidate,
-                    lane_child_bounds,
-                    context,
-                    font_size=8.0,
-                    vertical_align="TOP",
-                )
+                if spec["name"] == "key_visual_lane":
+                    text_node = build_direct_lane_text_group(
+                        text_candidate,
+                        lane_child_bounds,
+                        context,
+                        font_size=8.0,
+                        max_chars=48,
+                        line_gap=2.0,
+                    )
+                else:
+                    text_node = build_direct_lane_text_group(
+                        text_candidate,
+                        lane_child_bounds,
+                        context,
+                        font_size=8.0,
+                        max_chars=64,
+                        line_gap=2.0,
+                    )
                 text_node["name"] = f"description_lane_text_{row_index}"
                 lane_children.append(text_node)
             else:
