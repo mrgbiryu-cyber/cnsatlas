@@ -82,6 +82,7 @@ def build_hybrid_frame(
     ir_logical = find_ir_logical_panel(ir_bundle)
     children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
     top_meta_group = children_by_id.get("dense_ui_panel:top_meta_group")
+    top_meta_info_group = children_by_id.get("dense_ui_panel:top_meta_info_group")
     top_rows_group = children_by_id.get("dense_ui_panel:top_rows_group")
     description_header_group = children_by_id.get("dense_ui_panel:description_header_group")
     version_stack_group = children_by_id.get("dense_ui_panel:version_stack_group")
@@ -108,6 +109,8 @@ def build_hybrid_frame(
         if child_name == "top_meta_block":
             if include_top_meta and top_meta_group is not None:
                 rebuilt_children.append(top_meta_group)
+            if include_top_meta and top_meta_info_group is not None:
+                rebuilt_children.append(top_meta_info_group)
             if include_top_rows and top_rows_group is not None:
                 rebuilt_children.append(top_rows_group)
             if include_version_stack and version_stack_group is not None:

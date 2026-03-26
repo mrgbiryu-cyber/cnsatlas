@@ -255,7 +255,9 @@ def layer_role(candidate: dict[str, Any], page_type: str) -> str:
         if subtype == "table_cell":
             row_index, cell_index = parse_cell_indices(candidate_id)
             if source_scope in {"master", "layout"}:
-                return "top_meta_cell"
+                if (cell_index or 0) >= 3:
+                    return "top_meta_info_cell"
+                return "top_meta_band_cell"
             if row_index in {1, 2}:
                 return "description_header_cell"
             if row_index in {3, 4, 5} and cell_index == 1:
@@ -320,7 +322,8 @@ def z_index(layer_role_value: str) -> int:
         "issue_card": 16,
         "top_meta_table": 16,
         "top_meta_row": 16,
-        "top_meta_cell": 18,
+        "top_meta_band_cell": 18,
+        "top_meta_info_cell": 18,
         "description_header_row": 18,
         "description_header_cell": 20,
         "top_text_row": 20,
@@ -362,8 +365,10 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
             return "dense_ui_panel:top_meta_group"
         if role == "top_meta_row":
             return "dense_ui_panel:top_meta_rows"
-        if role == "top_meta_cell":
-            return "dense_ui_panel:top_meta_cells"
+        if role == "top_meta_band_cell":
+            return "dense_ui_panel:top_meta_band_cells"
+        if role == "top_meta_info_cell":
+            return "dense_ui_panel:top_meta_info_cells"
         if role == "description_header_row":
             return "dense_ui_panel:description_header_rows"
         if role == "description_header_cell":
@@ -404,8 +409,10 @@ def group_key(atom: dict[str, Any]) -> str:
     owner_id = str(atom.get("owner_id") or "")
 
     if page_type == "dense_ui_panel":
-        if role in {"top_meta_table", "top_meta_row", "top_meta_cell"}:
+        if role in {"top_meta_table", "top_meta_row", "top_meta_band_cell"}:
             return "dense_ui_panel:top_meta_group"
+        if role == "top_meta_info_cell":
+            return "dense_ui_panel:top_meta_info_group"
         if role == "version_stack":
             return "dense_ui_panel:version_stack_group"
         if role == "issue_card":

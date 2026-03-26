@@ -1941,9 +1941,9 @@
                 ],
                 "children": [
                   {
-                    "id": "compare:axis:1:dense_ui_panel:top_meta_cells",
+                    "id": "compare:axis:1:dense_ui_panel:top_meta_band_cells",
                     "type": "GROUP",
-                    "name": "top_meta_cells",
+                    "name": "top_meta_band_cells",
                     "absoluteBoundingBox": {
                       "x": 1124.37,
                       "y": 36.63,
@@ -2011,8 +2011,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_2"
                         }
                       },
@@ -2064,8 +2064,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
                         }
                       },
@@ -2115,8 +2115,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
                         }
                       },
@@ -2168,8 +2168,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_4"
                         }
                       },
@@ -2221,8 +2221,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_2"
                         }
                       },
@@ -2274,8 +2274,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
                         }
                       },
@@ -2325,8 +2325,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
                         }
                       },
@@ -2378,15 +2378,15 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_4"
                         }
                       }
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "owner_id": "dense_ui_panel:top_meta_cells"
+                      "owner_id": "dense_ui_panel:top_meta_band_cells"
                     }
                   }
                 ],
@@ -3805,6 +3805,272 @@
                         "s29:slide_29/element_95"
                       ],
                       "child_suffix": "description"
+                    }
+                  },
+                  {
+                    "id": "compare:axis:1:dense_ui_panel:description_header_group",
+                    "type": "GROUP",
+                    "name": "description_header_group",
+                    "absoluteBoundingBox": {
+                      "x": 1660.66,
+                      "y": 71.09,
+                      "width": 275.01,
+                      "height": 24.17
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:axis:1:dense_ui_panel:description_headers",
+                        "type": "GROUP",
+                        "name": "description_headers",
+                        "absoluteBoundingBox": {
+                          "x": 1660.66,
+                          "y": 71.09,
+                          "width": 275.01,
+                          "height": 24.17
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "compare:axis:1:s29:slide_29/element_37:row_1:cell_1:bg",
+                            "type": "RECTANGLE",
+                            "name": "cell 1-1",
+                            "absoluteBoundingBox": {
+                              "x": 1660.66,
+                              "y": 71.09,
+                              "width": 275.01,
+                              "height": 9.2
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1.0,
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_1:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:axis:1:s29:slide_29/element_37:row_1:cell_1:label",
+                            "type": "TEXT",
+                            "name": "cell 1-1",
+                            "characters": "화면 설명",
+                            "absoluteBoundingBox": {
+                              "x": 1660.66,
+                              "y": 71.09,
+                              "width": 275.01,
+                              "height": 9.2
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.0,
+                                  "g": 0.0,
+                                  "b": 0.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontFamily": "+mn-ea",
+                              "fontStyle": "Regular",
+                              "fontSize": 7.0,
+                              "textAlignHorizontal": "CENTER",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": 8.75
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_1:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:axis:1:s29:slide_29/element_37:row_2:cell_1:bg",
+                            "type": "RECTANGLE",
+                            "name": "cell 2-1",
+                            "absoluteBoundingBox": {
+                              "x": 1660.66,
+                              "y": 80.28,
+                              "width": 275.01,
+                              "height": 14.98
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1.0,
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_2:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:axis:1:s29:slide_29/element_37:row_2:cell_1:label",
+                            "type": "TEXT",
+                            "name": "cell 2-1",
+                            "characters": "Fold 영역 정의",
+                            "absoluteBoundingBox": {
+                              "x": 1660.66,
+                              "y": 80.28,
+                              "width": 275.01,
+                              "height": 14.98
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.1,
+                                  "g": 0.1,
+                                  "b": 0.1
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontFamily": "맑은 고딕",
+                              "fontStyle": "Regular",
+                              "fontSize": 7.0,
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": 8.75
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_2:cell_1"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "dense-ui-ir-v1",
+                          "owner_id": "dense_ui_panel:description_headers"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "group_id": "dense_ui_panel:description_header_group"
                     }
                   },
                   {
@@ -5316,9 +5582,9 @@
                 ],
                 "children": [
                   {
-                    "id": "compare:axis:3:dense_ui_panel:top_meta_cells",
+                    "id": "compare:axis:3:dense_ui_panel:top_meta_band_cells",
                     "type": "GROUP",
-                    "name": "top_meta_cells",
+                    "name": "top_meta_band_cells",
                     "absoluteBoundingBox": {
                       "x": 3124.37,
                       "y": 36.63,
@@ -5386,8 +5652,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_2"
                         }
                       },
@@ -5439,8 +5705,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
                         }
                       },
@@ -5490,8 +5756,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
                         }
                       },
@@ -5543,8 +5809,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_1:cell_4"
                         }
                       },
@@ -5596,8 +5862,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_2"
                         }
                       },
@@ -5649,8 +5915,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
                         }
                       },
@@ -5700,8 +5966,8 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
                         }
                       },
@@ -5753,15 +6019,15 @@
                         "children": [],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "layer_role": "top_meta_cell",
-                          "owner_id": "dense_ui_panel:top_meta_cells",
+                          "layer_role": "top_meta_band_cell",
+                          "owner_id": "dense_ui_panel:top_meta_band_cells",
                           "source_atom_id": "s29:layout_29/element_1:row_2:cell_4"
                         }
                       }
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "owner_id": "dense_ui_panel:top_meta_cells"
+                      "owner_id": "dense_ui_panel:top_meta_band_cells"
                     }
                   }
                 ],
@@ -7180,6 +7446,272 @@
                         "s29:slide_29/element_95"
                       ],
                       "child_suffix": "description"
+                    }
+                  },
+                  {
+                    "id": "compare:axis:3:dense_ui_panel:description_header_group",
+                    "type": "GROUP",
+                    "name": "description_header_group",
+                    "absoluteBoundingBox": {
+                      "x": 3660.66,
+                      "y": 71.09,
+                      "width": 275.01,
+                      "height": 24.17
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "compare:axis:3:dense_ui_panel:description_headers",
+                        "type": "GROUP",
+                        "name": "description_headers",
+                        "absoluteBoundingBox": {
+                          "x": 3660.66,
+                          "y": 71.09,
+                          "width": 275.01,
+                          "height": 24.17
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "compare:axis:3:s29:slide_29/element_37:row_1:cell_1:bg",
+                            "type": "RECTANGLE",
+                            "name": "cell 1-1",
+                            "absoluteBoundingBox": {
+                              "x": 3660.66,
+                              "y": 71.09,
+                              "width": 275.01,
+                              "height": 9.2
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1.0,
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_1:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:axis:3:s29:slide_29/element_37:row_1:cell_1:label",
+                            "type": "TEXT",
+                            "name": "cell 1-1",
+                            "characters": "화면 설명",
+                            "absoluteBoundingBox": {
+                              "x": 3660.66,
+                              "y": 71.09,
+                              "width": 275.01,
+                              "height": 9.2
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.0,
+                                  "g": 0.0,
+                                  "b": 0.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontFamily": "+mn-ea",
+                              "fontStyle": "Regular",
+                              "fontSize": 7.0,
+                              "textAlignHorizontal": "CENTER",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": 8.75
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_1:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:axis:3:s29:slide_29/element_37:row_2:cell_1:bg",
+                            "type": "RECTANGLE",
+                            "name": "cell 2-1",
+                            "absoluteBoundingBox": {
+                              "x": 3660.66,
+                              "y": 80.28,
+                              "width": 275.01,
+                              "height": 14.98
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.78,
+                                  "g": 0.78,
+                                  "b": 0.78
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1.0,
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_2:cell_1"
+                            }
+                          },
+                          {
+                            "id": "compare:axis:3:s29:slide_29/element_37:row_2:cell_1:label",
+                            "type": "TEXT",
+                            "name": "cell 2-1",
+                            "characters": "Fold 영역 정의",
+                            "absoluteBoundingBox": {
+                              "x": 3660.66,
+                              "y": 80.28,
+                              "width": 275.01,
+                              "height": 14.98
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.1,
+                                  "g": 0.1,
+                                  "b": 0.1
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontFamily": "맑은 고딕",
+                              "fontStyle": "Regular",
+                              "fontSize": 7.0,
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": 8.75
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "description_header_cell",
+                              "owner_id": "dense_ui_panel:description_headers",
+                              "source_atom_id": "s29:slide_29/element_37:row_2:cell_1"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "dense-ui-ir-v1",
+                          "owner_id": "dense_ui_panel:description_headers"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "group_id": "dense_ui_panel:description_header_group"
                     }
                   },
                   {

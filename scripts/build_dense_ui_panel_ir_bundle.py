@@ -514,7 +514,8 @@ def is_right_panel_atom(atom: dict[str, Any]) -> bool:
 def owner_priority(owner_id: str) -> int:
     order = {
         "dense_ui_panel:top_meta_rows": 10,
-        "dense_ui_panel:top_meta_cells": 12,
+        "dense_ui_panel:top_meta_band_cells": 12,
+        "dense_ui_panel:top_meta_info_cells": 12,
         "dense_ui_panel:version_stack": 14,
         "dense_ui_panel:issue_card": 16,
         "dense_ui_panel:description_cards": 18,
@@ -530,6 +531,7 @@ def owner_priority(owner_id: str) -> int:
 def group_priority(group_id: str) -> int:
     order = {
         "dense_ui_panel:top_meta_group": 10,
+        "dense_ui_panel:top_meta_info_group": 10,
         "dense_ui_panel:top_rows_group": 11,
         "dense_ui_panel:description_header_group": 12,
         "dense_ui_panel:version_stack_group": 12,
@@ -616,7 +618,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         for atom in atoms:
             role = str(atom.get("layer_role") or "")
             subtype = str(atom.get("subtype") or "")
-            if role in {"top_meta_cell", "description_header_cell", "description_card", "issue_card", "version_stack"}:
+            if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card", "version_stack"}:
                 owner_children.append(build_rect_node(atom, suffix=":bg"))
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom, suffix=":label"))
@@ -651,11 +653,18 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     grouped_children: list[dict[str, Any]] = []
 
     top_meta_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:top_meta_rows", "dense_ui_panel:top_meta_cells"]:
+    for owner_id in ["dense_ui_panel:top_meta_rows", "dense_ui_panel:top_meta_band_cells"]:
         if owner_id in owner_groups:
             top_meta_children.append(owner_groups[owner_id])
     if top_meta_children and "dense_ui_panel:top_meta_group" in group_bucket_map:
         grouped_children.append(build_group_group("dense_ui_panel:top_meta_group", top_meta_children))
+
+    top_meta_info_children: list[dict[str, Any]] = []
+    for owner_id in ["dense_ui_panel:top_meta_info_cells"]:
+        if owner_id in owner_groups:
+            top_meta_info_children.append(owner_groups[owner_id])
+    if top_meta_info_children and "dense_ui_panel:top_meta_info_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:top_meta_info_group", top_meta_info_children))
 
     if "dense_ui_panel:top_rows" in owner_groups and "dense_ui_panel:top_rows_group" in group_bucket_map:
         grouped_children.append(build_group_group("dense_ui_panel:top_rows_group", [owner_groups["dense_ui_panel:top_rows"]]))
