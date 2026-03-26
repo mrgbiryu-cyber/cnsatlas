@@ -200,7 +200,7 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
 def build_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, *, suffix: str = "") -> dict[str, Any]:
     node_bounds = dict(bounds or atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
     shape_style = atom.get("shape_style") or {}
-    fill_style = shape_style.get("fill")
+    fill_style = shape_style.get("fill") or (atom.get("cell_style") or {}).get("fill")
     fills = [make_solid_fill(fill_style, {"r": 1.0, "g": 1.0, "b": 1.0})]
     strokes, stroke_weight = make_strokes(shape_style)
     return {
@@ -537,16 +537,42 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
 
     children = lane_groups + owner_groups
 
+    visible_panel_bounds = make_bounds(
+        float(panel_bounds["x"]),
+        float(panel_bounds["y"]),
+        min(float(panel_bounds["width"]), TARGET_SLIDE_WIDTH - float(panel_bounds["x"])),
+        min(float(panel_bounds["height"]), TARGET_SLIDE_HEIGHT - float(panel_bounds["y"])),
+    )
+
+    logical_panel = {
+        "id": f"{page['page_id']}:dense_ui_panel:logical",
+        "type": "FRAME",
+        "name": "dense_ui_panel_logical",
+        "absoluteBoundingBox": panel_bounds,
+        "relativeTransform": identity_affine(),
+        "fills": [],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": children,
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "page_id": page["page_id"],
+            "page_type": page["page_type"],
+            "logical_panel": True,
+        },
+    }
+
     panel_frame = {
         "id": f"{page['page_id']}:dense_ui_panel",
         "type": "FRAME",
         "name": "dense_ui_panel",
-        "absoluteBoundingBox": panel_bounds,
+        "absoluteBoundingBox": visible_panel_bounds,
         "relativeTransform": identity_affine(),
         "fills": [{"type": "SOLID", "color": {"r": 1, "g": 1, "b": 1}, "opacity": 1.0}],
         "strokes": [{"type": "SOLID", "color": {"r": 0.9, "g": 0.9, "b": 0.9}, "opacity": 1.0}],
         "strokeWeight": 1,
-        "children": children,
+        "clipsContent": True,
+        "children": [logical_panel],
         "debug": {
             "generator": "dense-ui-ir-v1",
             "page_id": page["page_id"],
