@@ -72,21 +72,33 @@ def build_hybrid_frame(
     ir_bundle: dict,
     *,
     include_top_meta: bool = True,
+    include_top_rows: bool = True,
+    include_description_header: bool = True,
     include_version_stack: bool = True,
+    include_issue: bool = True,
     include_small_assets: bool = True,
 ) -> dict:
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
     ir_logical = find_ir_logical_panel(ir_bundle)
     children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
     top_meta_group = children_by_id.get("dense_ui_panel:top_meta_group")
+    top_rows_group = children_by_id.get("dense_ui_panel:top_rows_group")
+    description_header_group = children_by_id.get("dense_ui_panel:description_header_group")
     version_stack_group = children_by_id.get("dense_ui_panel:version_stack_group")
+    issue_group = children_by_id.get("dense_ui_panel:issue_group")
     small_asset_group = children_by_id.get("dense_ui_panel:small_asset_group")
 
     name_parts = ["hybrid_full"]
     if include_top_meta:
         name_parts.append("meta")
+    if include_top_rows:
+        name_parts.append("rows")
+    if include_description_header:
+        name_parts.append("desc_header")
     if include_version_stack:
         name_parts.append("version")
+    if include_issue:
+        name_parts.append("issue")
     if include_small_assets:
         name_parts.append("assets")
     baseline_frame["name"] = "_".join(name_parts)
@@ -96,6 +108,8 @@ def build_hybrid_frame(
         if child_name == "top_meta_block":
             if include_top_meta and top_meta_group is not None:
                 rebuilt_children.append(top_meta_group)
+            if include_top_rows and top_rows_group is not None:
+                rebuilt_children.append(top_rows_group)
             if include_version_stack and version_stack_group is not None:
                 rebuilt_children.append(version_stack_group)
             continue
@@ -112,6 +126,10 @@ def build_hybrid_frame(
             if panel_name == "표 48":
                 continue
             right_panel_children.append(panel_child)
+        if include_description_header and description_header_group is not None:
+            right_panel_children.append(description_header_group)
+        if include_issue and issue_group is not None:
+            right_panel_children.append(issue_group)
         if include_small_assets and small_asset_group is not None:
             right_panel_children.append(small_asset_group)
         right_panel["children"] = right_panel_children
@@ -196,15 +214,42 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
         ("baseline_full", find_full_frame(baseline_bundle)),
         (
             "baseline_plus_ir_meta",
-            build_hybrid_frame(baseline_bundle, ir_bundle, include_top_meta=True, include_version_stack=True, include_small_assets=False),
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=True,
+                include_top_rows=True,
+                include_description_header=True,
+                include_version_stack=True,
+                include_issue=True,
+                include_small_assets=False,
+            ),
         ),
         (
             "baseline_plus_ir_assets",
-            build_hybrid_frame(baseline_bundle, ir_bundle, include_top_meta=False, include_version_stack=False, include_small_assets=True),
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=False,
+                include_top_rows=False,
+                include_description_header=False,
+                include_version_stack=False,
+                include_issue=False,
+                include_small_assets=True,
+            ),
         ),
         (
             "baseline_plus_ir_meta_assets",
-            build_hybrid_frame(baseline_bundle, ir_bundle, include_top_meta=True, include_version_stack=True, include_small_assets=True),
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=True,
+                include_top_rows=True,
+                include_description_header=True,
+                include_version_stack=True,
+                include_issue=True,
+                include_small_assets=True,
+            ),
         ),
     ]
     total_width = TARGET_SLIDE_WIDTH * len(variants) + gap * (len(variants) - 1)

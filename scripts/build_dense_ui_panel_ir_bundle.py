@@ -531,6 +531,7 @@ def group_priority(group_id: str) -> int:
     order = {
         "dense_ui_panel:top_meta_group": 10,
         "dense_ui_panel:top_rows_group": 11,
+        "dense_ui_panel:description_header_group": 12,
         "dense_ui_panel:version_stack_group": 12,
         "dense_ui_panel:issue_group": 14,
         "dense_ui_panel:description_block_group": 20,
@@ -659,6 +660,13 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     if "dense_ui_panel:top_rows" in owner_groups and "dense_ui_panel:top_rows_group" in group_bucket_map:
         grouped_children.append(build_group_group("dense_ui_panel:top_rows_group", [owner_groups["dense_ui_panel:top_rows"]]))
 
+    description_header_children: list[dict[str, Any]] = []
+    for owner_id in ["dense_ui_panel:description_header_rows", "dense_ui_panel:description_headers"]:
+        if owner_id in owner_groups:
+            description_header_children.append(owner_groups[owner_id])
+    if description_header_children and "dense_ui_panel:description_header_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:description_header_group", description_header_children))
+
     if "dense_ui_panel:version_stack" in owner_groups and "dense_ui_panel:version_stack_group" in group_bucket_map:
         grouped_children.append(build_group_group("dense_ui_panel:version_stack_group", [owner_groups["dense_ui_panel:version_stack"]]))
 
@@ -666,7 +674,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         grouped_children.append(build_group_group("dense_ui_panel:issue_group", [owner_groups["dense_ui_panel:issue_card"]]))
 
     description_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:description_headers", "dense_ui_panel:description_cards"]:
+    for owner_id in ["dense_ui_panel:description_cards"]:
         if owner_id in owner_groups:
             description_children.append(owner_groups[owner_id])
     description_children.extend(lane_groups)

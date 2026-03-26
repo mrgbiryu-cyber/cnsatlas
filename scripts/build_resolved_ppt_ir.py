@@ -412,10 +412,10 @@ def group_key(atom: dict[str, Any]) -> str:
             return "dense_ui_panel:issue_group"
         if role == "top_text_row":
             return "dense_ui_panel:top_rows_group"
+        if role in {"description_header_row", "description_header_cell"}:
+            return "dense_ui_panel:description_header_group"
         if role in {
             "description_card",
-            "description_header_row",
-            "description_header_cell",
             "description_text_lane",
             "description_footer",
             "description_marker",
