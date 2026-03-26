@@ -72,6 +72,8 @@ def build_hybrid_frame(
     ir_bundle: dict,
     *,
     include_top_meta: bool = True,
+    include_top_meta_band: bool = True,
+    include_top_meta_info: bool = True,
     include_top_rows: bool = True,
     include_description_header: bool = True,
     include_version_stack: bool = True,
@@ -92,6 +94,10 @@ def build_hybrid_frame(
     name_parts = ["hybrid_full"]
     if include_top_meta:
         name_parts.append("meta")
+        if include_top_meta_band and not include_top_meta_info:
+            name_parts.append("band")
+        if include_top_meta_info and not include_top_meta_band:
+            name_parts.append("info")
     if include_top_rows:
         name_parts.append("rows")
     if include_description_header:
@@ -107,9 +113,9 @@ def build_hybrid_frame(
     for child in baseline_frame.get("children") or []:
         child_name = child.get("name")
         if child_name == "top_meta_block":
-            if include_top_meta and top_meta_group is not None:
+            if include_top_meta and include_top_meta_band and top_meta_group is not None:
                 rebuilt_children.append(top_meta_group)
-            if include_top_meta and top_meta_info_group is not None:
+            if include_top_meta and include_top_meta_info and top_meta_info_group is not None:
                 rebuilt_children.append(top_meta_info_group)
             if include_top_rows and top_rows_group is not None:
                 rebuilt_children.append(top_rows_group)
@@ -216,11 +222,28 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
     variants = [
         ("baseline_full", find_full_frame(baseline_bundle)),
         (
-            "ir_top_meta_only",
+            "ir_top_meta_band_only",
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
                 include_top_meta=True,
+                include_top_meta_band=True,
+                include_top_meta_info=False,
+                include_top_rows=False,
+                include_description_header=False,
+                include_version_stack=False,
+                include_issue=False,
+                include_small_assets=False,
+            ),
+        ),
+        (
+            "ir_top_meta_info_only",
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=True,
+                include_top_meta_band=False,
+                include_top_meta_info=True,
                 include_top_rows=False,
                 include_description_header=False,
                 include_version_stack=False,
