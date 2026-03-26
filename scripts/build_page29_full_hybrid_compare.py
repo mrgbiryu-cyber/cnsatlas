@@ -216,20 +216,59 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
     variants = [
         ("baseline_full", find_full_frame(baseline_bundle)),
         (
-            "baseline_plus_ir_meta",
+            "ir_top_meta_only",
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
                 include_top_meta=True,
-                include_top_rows=True,
-                include_description_header=True,
+                include_top_rows=False,
+                include_description_header=False,
+                include_version_stack=False,
+                include_issue=False,
+                include_small_assets=False,
+            ),
+        ),
+        (
+            "ir_version_only",
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=False,
+                include_top_rows=False,
+                include_description_header=False,
                 include_version_stack=True,
+                include_issue=False,
+                include_small_assets=False,
+            ),
+        ),
+        (
+            "ir_desc_header_only",
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=False,
+                include_top_rows=False,
+                include_description_header=True,
+                include_version_stack=False,
+                include_issue=False,
+                include_small_assets=False,
+            ),
+        ),
+        (
+            "ir_issue_only",
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                include_top_meta=False,
+                include_top_rows=False,
+                include_description_header=False,
+                include_version_stack=False,
                 include_issue=True,
                 include_small_assets=False,
             ),
         ),
         (
-            "baseline_plus_ir_assets",
+            "ir_assets_only",
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
@@ -242,7 +281,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             ),
         ),
         (
-            "baseline_plus_ir_meta_assets",
+            "ir_meta_version_issue_assets",
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
