@@ -323,6 +323,14 @@ def estimate_text_height(text: str, width: float, font_size: float, line_gap: fl
     return line_count * line_height + 6.0
 
 
+def estimate_paragraph_group_height(atom: dict[str, Any], width: float, font_size: float, line_gap: float = 2.0) -> float:
+    paragraphs = paragraph_texts(atom)
+    if not paragraphs:
+        return estimate_text_height(str(atom.get("text") or ""), width, font_size, line_gap)
+    rendered_line_height = float(text_style(atom, font_size).get("lineHeightPx") or (font_size * 1.25))
+    return len(paragraphs) * (rendered_line_height + 2.0)
+
+
 def build_description_lane_layout(
     lane_rows: dict[int, dict[str, Any]],
     lane_markers: dict[int, dict[str, Any]],
@@ -350,7 +358,7 @@ def build_description_lane_layout(
             if available_width > 40.0:
                 text_bounds = make_bounds(float(text_bounds["x"]), current_y, available_width, float(text_bounds["height"]))
         font_size = float((text_atom or {}).get("text_style", {}).get("font_size_max") or 8.0)
-        estimated_height = estimate_text_height(str((text_atom or {}).get("text") or ""), float(text_bounds["width"]), font_size)
+        estimated_height = estimate_paragraph_group_height(text_atom or {}, float(text_bounds["width"]), font_size)
         lane_height = max(float(row_bounds["height"]), estimated_height)
         lane_bounds = make_bounds(float(row_bounds["x"]), current_y, float(row_bounds["width"]), lane_height)
         marker_bounds = make_bounds(float(marker_bounds["x"]), current_y, float(marker_bounds["width"]), lane_height)
