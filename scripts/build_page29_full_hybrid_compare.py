@@ -73,6 +73,7 @@ def build_hybrid_frame(baseline_bundle: dict, ir_bundle: dict) -> dict:
     selected_ids = {
         "dense_ui_panel:version_stack",
         "dense_ui_panel:issue_card",
+        "dense_ui_panel:description_cards",
         "dense_ui_panel:small_assets",
     }
     selected_groups = [
@@ -82,8 +83,40 @@ def build_hybrid_frame(baseline_bundle: dict, ir_bundle: dict) -> dict:
     ]
 
     baseline_frame["name"] = "hybrid_full_baseline_plus_ir_layers"
-    baseline_frame["children"] = list(baseline_frame.get("children") or []) + selected_groups
+    rebuilt_children = []
+    for child in baseline_frame.get("children") or []:
+        if child.get("name") != "right_panel_block":
+            rebuilt_children.append(child)
+            continue
+        right_panel = copy.deepcopy(child)
+        right_panel_children = []
+        for panel_child in right_panel.get("children") or []:
+            panel_name = str(panel_child.get("name") or "")
+            # Keep the semantic table group, but drop the dense SVG layers that wash out color.
+            if panel_name in {"right_panel_block:background", "right_panel_block:description"}:
+                continue
+            right_panel_children.append(panel_child)
+        right_panel_children.extend(selected_groups)
+        right_panel["children"] = right_panel_children
+        rebuilt_children.append(right_panel)
+    baseline_frame["children"] = rebuilt_children
     return baseline_frame
+
+
+def build_hybrid_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: Path) -> None:
+    hybrid_bundle = copy.deepcopy(baseline_bundle)
+    hybrid_bundle["page_name"] = "Slide 29 - Full Style Hybrid"
+    hybrid_bundle["node_id"] = "page:29:full-style-hybrid"
+    hybrid_bundle["visual_model_version"] = "dense-ui-style-hybrid-v1"
+    hybrid_bundle["source_kind"] = "ppt-full-style-hybrid"
+    hybrid_bundle["file_name"] = out_path.name
+    hybrid_bundle["document"]["id"] = "page:29:full-style-hybrid"
+    hybrid_bundle["document"]["name"] = "Slide 29 - Full Style Hybrid"
+    hybrid_bundle["document"]["children"][0] = build_hybrid_frame(baseline_bundle, ir_bundle)
+    hybrid_bundle["assets"] = bundle_assets(baseline_bundle, ir_bundle)
+    hybrid_bundle["debug"] = {"status": "page29_full_style_hybrid"}
+    with out_path.open("w", encoding="utf-8") as handle:
+        json.dump(hybrid_bundle, handle, ensure_ascii=False, indent=2)
 
 
 def build_compare_bundle(baseline_bundle: dict, hybrid_bundle: dict, out_path: Path) -> None:
@@ -144,13 +177,16 @@ def main() -> None:
     baseline_path = repo_root / "docs" / "block-bundles" / "block-slide-29.bundle.json"
     ir_path = repo_root / "docs" / "block-bundles" / "ir-dense-ui-panel-29.bundle.json"
     out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid-compare.bundle.json"
+    hybrid_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid.bundle.json"
 
     baseline_bundle = load_bundle(baseline_path)
     ir_bundle = load_bundle(ir_path)
     hybrid_bundle = copy.deepcopy(baseline_bundle)
     hybrid_bundle["document"]["children"][0] = build_hybrid_frame(baseline_bundle, ir_bundle)
     build_compare_bundle(baseline_bundle, hybrid_bundle, out_path)
+    build_hybrid_bundle(baseline_bundle, ir_bundle, hybrid_out_path)
     print(f"saved {out_path}")
+    print(f"saved {hybrid_out_path}")
 
 
 if __name__ == "__main__":
