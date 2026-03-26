@@ -71,12 +71,33 @@ def make_strokes(shape_style: dict[str, Any] | None) -> tuple[list[dict[str, Any
 def text_style(atom: dict[str, Any], font_size: float | None = None) -> dict[str, Any]:
     source_style = atom.get("text_style") or {}
     size = float(font_size or source_style.get("font_size_max") or source_style.get("font_size_avg") or 8.0)
+    horizontal = str(source_style.get("horizontal_align") or "l").lower()
+    vertical = str(source_style.get("vertical_align") or "t").lower()
+    horizontal_map = {
+        "l": "LEFT",
+        "left": "LEFT",
+        "ctr": "CENTER",
+        "center": "CENTER",
+        "r": "RIGHT",
+        "right": "RIGHT",
+        "just": "JUSTIFIED",
+        "justify": "JUSTIFIED",
+    }
+    vertical_map = {
+        "t": "TOP",
+        "top": "TOP",
+        "ctr": "CENTER",
+        "mid": "CENTER",
+        "center": "CENTER",
+        "b": "BOTTOM",
+        "bottom": "BOTTOM",
+    }
     return {
         "fontFamily": str(source_style.get("font_family") or "LG스마트체"),
         "fontStyle": "Regular",
         "fontSize": size,
-        "textAlignHorizontal": "LEFT",
-        "textAlignVertical": "TOP",
+        "textAlignHorizontal": horizontal_map.get(horizontal, "LEFT"),
+        "textAlignVertical": vertical_map.get(vertical, "TOP"),
         "textAutoResize": "HEIGHT",
         "lineHeightPx": round(size * 1.25, 2),
     }
@@ -234,11 +255,14 @@ def row_index_from_atom(atom: dict[str, Any]) -> int | None:
     return int(match.group(1))
 
 
-def build_default_lane_background(bounds: dict[str, Any], row_index: int) -> dict[str, Any]:
+def build_default_lane_background(bounds: dict[str, Any], row_index: int, style_atom: dict[str, Any] | None = None) -> dict[str, Any]:
     fill = {"r": 1.0, "g": 1.0, "b": 1.0}
     opacity = 1.0
     stroke_opacity = 1.0
-    if row_index == 6:
+    if style_atom and (style_atom.get("shape_style") or {}).get("fill"):
+        fill, opacity = color_from_style((style_atom.get("shape_style") or {}).get("fill"), fill)
+        _, stroke_opacity = color_from_style((style_atom.get("shape_style") or {}).get("line") or {}, {"r": 0.82, "g": 0.82, "b": 0.82})
+    elif row_index == 6:
         fill = {"r": 0.96, "g": 0.95, "b": 0.92}
     elif row_index >= 5:
         opacity = 0.0
@@ -317,6 +341,26 @@ def build_description_lane_layout(
     return layouts
 
 
+def max_overlap_area(a: dict[str, Any], b: dict[str, Any]) -> float:
+    left = max(float(a["x"]), float(b["x"]))
+    top = max(float(a["y"]), float(b["y"]))
+    right = min(float(a["x"]) + float(a["width"]), float(b["x"]) + float(b["width"]))
+    bottom = min(float(a["y"]) + float(a["height"]), float(b["y"]) + float(b["height"]))
+    if right <= left or bottom <= top:
+        return 0.0
+    return (right - left) * (bottom - top)
+
+
+def best_overlapping_card(bounds: dict[str, Any], card_atoms: list[dict[str, Any]]) -> dict[str, Any] | None:
+    if not card_atoms:
+        return None
+    ranked = sorted(card_atoms, key=lambda atom: max_overlap_area(bounds, atom.get("visual_bounds_px") or bounds), reverse=True)
+    top = ranked[0]
+    if max_overlap_area(bounds, top.get("visual_bounds_px") or bounds) <= 0:
+        return None
+    return top
+
+
 def dense_panel_bounds(page: dict[str, Any]) -> dict[str, float]:
     relevant = []
     for atom in page.get("atoms") or []:
@@ -389,6 +433,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     lane_markers = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_markers", []) if row_index_from_atom(atom)}
     lane_texts = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lanes", []) if row_index_from_atom(atom)}
     footer_atom = next(iter(grouped.get("dense_ui_panel:description_footer", [])), None)
+    description_cards = list(grouped.get("dense_ui_panel:description_cards", []))
     lane_layout = build_description_lane_layout(lane_rows, lane_markers, lane_texts, footer_atom)
 
     for row_index in [3, 4, 5]:
@@ -401,8 +446,9 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         lane_bounds = layout.get("lane_bounds") or row_atom["visual_bounds_px"]
         marker_bounds = layout.get("marker_bounds") or (marker_atom["visual_bounds_px"] if marker_atom else None)
         text_bounds = layout.get("text_bounds") or text_atom["visual_bounds_px"]
+        background_atom = best_overlapping_card(lane_bounds, description_cards if row_index >= 5 else [])
         lane_children = [
-            build_default_lane_background(lane_bounds, row_index),
+            build_default_lane_background(lane_bounds, row_index, background_atom),
         ]
         if marker_atom and marker_bounds:
             lane_children.append(build_text_node(marker_atom, marker_bounds))
@@ -452,10 +498,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         if owner_children:
             owner_groups.append(build_owner_group(owner_id, owner_children))
 
-    background_owner_names = {"top_meta_cells", "version_stack", "issue_card", "description_cards"}
-    background_groups = [group for group in owner_groups if group.get("name") in background_owner_names]
-    foreground_groups = [group for group in owner_groups if group.get("name") not in background_owner_names]
-    children = background_groups + lane_groups + foreground_groups
+    children = lane_groups + owner_groups
 
     panel_frame = {
         "id": f"{page['page_id']}:dense_ui_panel",
