@@ -6531,9 +6531,9 @@
                     "type": "GROUP",
                     "name": "small_asset_group",
                     "absoluteBoundingBox": {
-                      "x": 539.23,
+                      "x": 505.08,
                       "y": 11.77,
-                      "width": 338.35,
+                      "width": 372.5,
                       "height": 509.48
                     },
                     "relativeTransform": [
@@ -6995,6 +6995,115 @@
                           "generator": "dense-ui-ir-v1",
                           "owner_id": "dense_ui_panel:small_assets"
                         }
+                      },
+                      {
+                        "id": "dense_ui_panel:overlay_notes",
+                        "type": "GROUP",
+                        "name": "overlay_notes",
+                        "absoluteBoundingBox": {
+                          "x": 505.08,
+                          "y": 338.89,
+                          "width": 86.11,
+                          "height": 12.0
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "s29:slide_29/element_51:paragraphs",
+                            "type": "GROUP",
+                            "name": "paragraphs",
+                            "absoluteBoundingBox": {
+                              "x": 505.08,
+                              "y": 338.89,
+                              "width": 86.11,
+                              "height": 12.0
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "children": [
+                              {
+                                "id": "s29:slide_29/element_51:p1",
+                                "type": "TEXT",
+                                "name": "TextBox 303",
+                                "characters": "영상 가로 사이즈 맞춰\n세로 중간맞춤",
+                                "absoluteBoundingBox": {
+                                  "x": 505.08,
+                                  "y": 338.89,
+                                  "width": 86.11,
+                                  "height": 12.0
+                                },
+                                "relativeTransform": [
+                                  [
+                                    1,
+                                    0,
+                                    0
+                                  ],
+                                  [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                ],
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.6509803921568628,
+                                      "b": 0.8666666666666667
+                                    },
+                                    "opacity": 1.0
+                                  }
+                                ],
+                                "style": {
+                                  "fontFamily": "LG스마트체 Regular",
+                                  "fontStyle": "Regular",
+                                  "fontSize": 8.0,
+                                  "textAlignHorizontal": "LEFT",
+                                  "textAlignVertical": "TOP",
+                                  "textAutoResize": "HEIGHT",
+                                  "lineHeightPx": 10.0
+                                },
+                                "children": [],
+                                "debug": {
+                                  "generator": "dense-ui-ir-v1",
+                                  "layer_role": "overlay_note",
+                                  "owner_id": "dense_ui_panel:overlay_notes",
+                                  "source_atom_id": "s29:slide_29/element_51"
+                                }
+                              }
+                            ],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "owner_id": "s29:slide_29/element_51:paragraphs"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "dense-ui-ir-v1",
+                          "owner_id": "dense_ui_panel:overlay_notes"
+                        }
                       }
                     ],
                     "debug": {
@@ -7049,7 +7158,7 @@
   "debug": {
     "status": "dense_ui_ir_bundle",
     "page_type": "dense_ui_panel",
-    "owner_count": 21,
+    "owner_count": 23,
     "atom_count": 196
   }
 }

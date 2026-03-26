@@ -235,17 +235,27 @@ def layer_role(candidate: dict[str, Any], page_type: str) -> str:
     height = float(bounds.get("height") or 0)
     x = float(bounds.get("x") or 0)
     y = float(bounds.get("y") or 0)
+    source_scope = str(((candidate.get("extra") or {}).get("source_scope") or "slide")).lower()
 
     candidate_id = str(candidate.get("candidate_id") or "")
 
     if page_type == "dense_ui_panel":
         if subtype == "table":
+            # Dense UI panels can contain both:
+            # - small layout/master meta tables spanning the header band
+            # - oversized slide-level description tables on the right panel
+            if source_scope in {"master", "layout"} or (y < 80 and width > 500 and height < 120):
+                return "top_meta_table"
             return "description_table"
         if subtype == "table_row":
             row_index = parse_row_index(candidate_id) or 0
+            if source_scope in {"master", "layout"} or (y < 80 and width > 500):
+                return "top_meta_row"
             return "top_meta_row" if row_index <= 2 else "description_lane_row"
         if subtype == "table_cell":
             row_index, cell_index = parse_cell_indices(candidate_id)
+            if source_scope in {"master", "layout"} or (y < 80 and width > 60):
+                return "top_meta_cell"
             if row_index in {1, 2}:
                 return "top_meta_cell"
             if row_index in {3, 4, 5} and cell_index == 1:
@@ -266,10 +276,12 @@ def layer_role(candidate: dict[str, Any], page_type: str) -> str:
             if width >= 230 and x >= 680:
                 return "description_card"
         if subtype == "text_block":
-            if x >= 650 and y < 260:
+            if x >= 650 and y < 260 and width >= 180:
                 return "top_text_row"
-            if x >= 650:
+            if x >= 650 and width >= 180:
                 return "description_text_lane"
+            if x >= 650:
+                return "overlay_note"
         if subtype in {"shape", "labeled_shape"} and width >= 120 and height >= 20:
             return "background_card"
 
@@ -306,6 +318,7 @@ def z_index(layer_role_value: str) -> int:
         "description_card": 12,
         "version_stack": 14,
         "issue_card": 16,
+        "top_meta_table": 16,
         "top_meta_row": 16,
         "top_meta_cell": 18,
         "top_text_row": 20,
@@ -313,6 +326,7 @@ def z_index(layer_role_value: str) -> int:
         "description_footer": 22,
         "description_marker": 24,
         "description_lane_row": 24,
+        "overlay_note": 26,
         "table_root": 24,
         "table_cell": 26,
         "table_text": 28,
@@ -342,6 +356,8 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
     role = layer_role(candidate, page_type)
 
     if page_type == "dense_ui_panel":
+        if role == "top_meta_table":
+            return "dense_ui_panel:top_meta_group"
         if role == "top_meta_row":
             return "dense_ui_panel:top_meta_rows"
         if role == "top_meta_cell":
@@ -366,6 +382,8 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
             return "dense_ui_panel:small_assets"
         if role == "description_table":
             return "dense_ui_panel:description_table"
+        if role == "overlay_note":
+            return "dense_ui_panel:overlay_notes"
 
     if subtype == "table_cell" and parent_id:
         return f"owner:{parent_id}"
@@ -380,14 +398,15 @@ def group_key(atom: dict[str, Any]) -> str:
     owner_id = str(atom.get("owner_id") or "")
 
     if page_type == "dense_ui_panel":
-        if role in {"top_meta_row", "top_meta_cell"}:
+        if role in {"top_meta_table", "top_meta_row", "top_meta_cell"}:
             return "dense_ui_panel:top_meta_group"
         if role == "version_stack":
             return "dense_ui_panel:version_stack_group"
         if role == "issue_card":
             return "dense_ui_panel:issue_group"
+        if role == "top_text_row":
+            return "dense_ui_panel:top_rows_group"
         if role in {
-            "top_text_row",
             "description_card",
             "description_text_lane",
             "description_footer",
@@ -396,6 +415,8 @@ def group_key(atom: dict[str, Any]) -> str:
             "description_table",
         }:
             return "dense_ui_panel:description_block_group"
+        if role == "overlay_note":
+            return "dense_ui_panel:small_asset_group"
         if role in {"small_asset", "overlay_mark"}:
             return "dense_ui_panel:small_asset_group"
 
