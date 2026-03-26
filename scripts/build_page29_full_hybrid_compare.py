@@ -70,33 +70,36 @@ def find_ir_logical_panel(bundle: dict) -> dict:
 def build_hybrid_frame(baseline_bundle: dict, ir_bundle: dict) -> dict:
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
     ir_logical = find_ir_logical_panel(ir_bundle)
-    selected_ids = {
-        "dense_ui_panel:version_stack",
-        "dense_ui_panel:issue_card",
-        "dense_ui_panel:description_cards",
-        "dense_ui_panel:small_assets",
-    }
-    selected_groups = [
-        copy.deepcopy(child)
-        for child in ir_logical.get("children") or []
-        if child.get("id") in selected_ids
-    ]
+    children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
+    top_meta_cells = children_by_id.get("dense_ui_panel:top_meta_cells")
+    version_stack = children_by_id.get("dense_ui_panel:version_stack")
+    small_assets = children_by_id.get("dense_ui_panel:small_assets")
 
-    baseline_frame["name"] = "hybrid_full_baseline_plus_ir_layers"
+    baseline_frame["name"] = "hybrid_full_baseline_style_plus_ir_meta_assets"
     rebuilt_children = []
     for child in baseline_frame.get("children") or []:
-        if child.get("name") != "right_panel_block":
+        child_name = child.get("name")
+        if child_name == "top_meta_block":
+            if top_meta_cells is not None:
+                rebuilt_children.append(top_meta_cells)
+            if version_stack is not None:
+                rebuilt_children.append(version_stack)
+            continue
+        if child_name != "right_panel_block":
             rebuilt_children.append(child)
             continue
         right_panel = copy.deepcopy(child)
         right_panel_children = []
         for panel_child in right_panel.get("children") or []:
             panel_name = str(panel_child.get("name") or "")
-            # Keep the semantic table group, but drop the dense SVG layers that wash out color.
-            if panel_name in {"right_panel_block:background", "right_panel_block:description"}:
+            # Replacement hybrid:
+            # - keep dense baseline background/description style layers
+            # - drop semantic table text group that overlaps everything
+            if panel_name == "표 48":
                 continue
             right_panel_children.append(panel_child)
-        right_panel_children.extend(selected_groups)
+        if small_assets is not None:
+            right_panel_children.append(small_assets)
         right_panel["children"] = right_panel_children
         rebuilt_children.append(right_panel)
     baseline_frame["children"] = rebuilt_children
@@ -127,7 +130,7 @@ def build_compare_bundle(baseline_bundle: dict, hybrid_bundle: dict, out_path: P
     compare_children = [
         make_label_node("compare:baseline:label", "baseline_full", 8.0, 6.0),
         shift_node(find_full_frame(baseline_bundle), "compare:baseline", 0.0, top_pad),
-        make_label_node("compare:hybrid:label", "hybrid_full_baseline_plus_ir_layers", TARGET_SLIDE_WIDTH + gap + 8.0, 6.0),
+        make_label_node("compare:hybrid:label", "hybrid_full_baseline_style_plus_ir_meta_assets", TARGET_SLIDE_WIDTH + gap + 8.0, 6.0),
         shift_node(find_full_frame(hybrid_bundle), "compare:hybrid", TARGET_SLIDE_WIDTH + gap, top_pad),
     ]
 
