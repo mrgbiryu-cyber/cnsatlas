@@ -237,8 +237,12 @@ def row_index_from_atom(atom: dict[str, Any]) -> int | None:
 def build_default_lane_background(bounds: dict[str, Any], row_index: int) -> dict[str, Any]:
     fill = {"r": 1.0, "g": 1.0, "b": 1.0}
     opacity = 1.0
+    stroke_opacity = 1.0
     if row_index == 6:
         fill = {"r": 0.96, "g": 0.95, "b": 0.92}
+    elif row_index >= 5:
+        opacity = 0.0
+        stroke_opacity = 0.0
     return {
         "id": f"lane-row-{row_index}:bg",
         "type": "RECTANGLE",
@@ -246,7 +250,7 @@ def build_default_lane_background(bounds: dict[str, Any], row_index: int) -> dic
         "absoluteBoundingBox": dict(bounds),
         "relativeTransform": identity_affine(),
         "fills": [{"type": "SOLID", "color": fill, "opacity": opacity}],
-        "strokes": [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": 1.0}],
+        "strokes": [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": stroke_opacity}],
         "strokeWeight": 1,
         "children": [],
         "debug": {"generator": "dense-ui-ir-v1", "role": "table_backed_lane_background", "row_index": row_index},
@@ -349,12 +353,12 @@ def owner_priority(owner_id: str) -> int:
         "dense_ui_panel:top_meta_rows": 10,
         "dense_ui_panel:top_meta_cells": 12,
         "dense_ui_panel:version_stack": 14,
-        "dense_ui_panel:description_lane_rows": 16,
-        "dense_ui_panel:description_markers": 18,
-        "dense_ui_panel:description_lanes": 20,
-        "dense_ui_panel:description_footer": 22,
-        "dense_ui_panel:issue_card": 24,
-        "dense_ui_panel:description_cards": 26,
+        "dense_ui_panel:issue_card": 16,
+        "dense_ui_panel:description_cards": 18,
+        "dense_ui_panel:description_lane_rows": 20,
+        "dense_ui_panel:description_markers": 22,
+        "dense_ui_panel:description_lanes": 24,
+        "dense_ui_panel:description_footer": 26,
         "dense_ui_panel:small_assets": 30,
     }
     return order.get(owner_id, 50)
@@ -379,7 +383,8 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
             continue
         grouped[owner_id].append(atom)
 
-    children: list[dict[str, Any]] = []
+    lane_groups: list[dict[str, Any]] = []
+    owner_groups: list[dict[str, Any]] = []
     lane_rows = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lane_rows", []) if row_index_from_atom(atom)}
     lane_markers = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_markers", []) if row_index_from_atom(atom)}
     lane_texts = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lanes", []) if row_index_from_atom(atom)}
@@ -402,7 +407,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         if marker_atom and marker_bounds:
             lane_children.append(build_text_node(marker_atom, marker_bounds))
         lane_children.append(build_paragraph_text_group(text_atom, text_bounds))
-        children.append(build_owner_group(f"dense_ui_panel:lane_row_{row_index}", lane_children))
+        lane_groups.append(build_owner_group(f"dense_ui_panel:lane_row_{row_index}", lane_children))
     if footer_atom:
         layout = lane_layout.get(6) or {}
         footer_bounds = layout.get("lane_bounds") or footer_atom["visual_bounds_px"]
@@ -410,7 +415,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
             build_default_lane_background(footer_bounds, 6),
             build_paragraph_text_group(footer_atom, layout.get("text_bounds") or footer_bounds),
         ]
-        children.append(build_owner_group("dense_ui_panel:lane_row_6", footer_children))
+        lane_groups.append(build_owner_group("dense_ui_panel:lane_row_6", footer_children))
 
     for owner_id in sorted(grouped.keys(), key=owner_priority):
         if owner_id in {
@@ -445,7 +450,12 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
                     owner_children.append(build_rect_node(atom))
                 continue
         if owner_children:
-            children.append(build_owner_group(owner_id, owner_children))
+            owner_groups.append(build_owner_group(owner_id, owner_children))
+
+    background_owner_names = {"top_meta_cells", "version_stack", "issue_card", "description_cards"}
+    background_groups = [group for group in owner_groups if group.get("name") in background_owner_names]
+    foreground_groups = [group for group in owner_groups if group.get("name") not in background_owner_names]
+    children = background_groups + lane_groups + foreground_groups
 
     panel_frame = {
         "id": f"{page['page_id']}:dense_ui_panel",
