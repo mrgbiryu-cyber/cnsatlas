@@ -536,7 +536,8 @@ def group_priority(group_id: str) -> int:
         "dense_ui_panel:description_header_group": 12,
         "dense_ui_panel:version_stack_group": 12,
         "dense_ui_panel:issue_group": 14,
-        "dense_ui_panel:description_block_group": 20,
+        "dense_ui_panel:description_card_group": 18,
+        "dense_ui_panel:description_text_group": 20,
         "dense_ui_panel:small_asset_group": 30,
     }
     return order.get(group_id, 50)
@@ -682,16 +683,20 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     if "dense_ui_panel:issue_card" in owner_groups and "dense_ui_panel:issue_group" in group_bucket_map:
         grouped_children.append(build_group_group("dense_ui_panel:issue_group", [owner_groups["dense_ui_panel:issue_card"]]))
 
-    description_children: list[dict[str, Any]] = []
+    description_card_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:description_cards"]:
         if owner_id in owner_groups:
-            description_children.append(owner_groups[owner_id])
-    description_children.extend(lane_groups)
+            description_card_children.append(owner_groups[owner_id])
+    if description_card_children and "dense_ui_panel:description_card_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:description_card_group", description_card_children))
+
+    description_text_children: list[dict[str, Any]] = []
+    description_text_children.extend(lane_groups)
     for owner_id in ["dense_ui_panel:description_footer", "dense_ui_panel:description_markers", "dense_ui_panel:description_lanes"]:
         if owner_id in owner_groups:
-            description_children.append(owner_groups[owner_id])
-    if description_children and "dense_ui_panel:description_block_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:description_block_group", description_children))
+            description_text_children.append(owner_groups[owner_id])
+    if description_text_children and "dense_ui_panel:description_text_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:description_text_group", description_text_children))
 
     small_asset_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:small_assets", "dense_ui_panel:overlay_notes"]:

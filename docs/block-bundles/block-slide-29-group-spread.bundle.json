@@ -13,7 +13,7 @@
     "absoluteBoundingBox": {
       "x": 0.0,
       "y": 0.0,
-      "width": 7960.0,
+      "width": 8960.0,
       "height": 568.0
     },
     "relativeTransform": [
@@ -49,7 +49,7 @@
         "absoluteBoundingBox": {
           "x": 0.0,
           "y": 0.0,
-          "width": 7960.0,
+          "width": 8960.0,
           "height": 568.0
         },
         "relativeTransform": [
@@ -4549,8 +4549,8 @@
           {
             "id": "compare:groups:6:label",
             "type": "TEXT",
-            "name": "description_block_group",
-            "characters": "description_block_group",
+            "name": "description_card_group",
+            "characters": "description_card_group",
             "absoluteBoundingBox": {
               "x": 6008.0,
               "y": 6.0,
@@ -4596,7 +4596,7 @@
           {
             "id": "compare:groups:6:frame",
             "type": "FRAME",
-            "name": "description_block_group",
+            "name": "description_card_group",
             "absoluteBoundingBox": {
               "x": 6000.0,
               "y": 28.0,
@@ -4640,14 +4640,14 @@
             "strokeWeight": 1,
             "children": [
               {
-                "id": "compare:groups:6:dense_ui_panel:description_block_group",
+                "id": "compare:groups:6:dense_ui_panel:description_card_group",
                 "type": "GROUP",
-                "name": "description_block_group",
+                "name": "description_card_group",
                 "absoluteBoundingBox": {
-                  "x": 6660.66,
-                  "y": 95.26,
-                  "width": 275.83,
-                  "height": 708.52
+                  "x": 6685.65,
+                  "y": 292.28,
+                  "width": 250.84,
+                  "height": 511.5
                 },
                 "relativeTransform": [
                   [
@@ -5210,13 +5210,137 @@
                       "generator": "dense-ui-ir-v1",
                       "owner_id": "dense_ui_panel:description_cards"
                     }
-                  },
+                  }
+                ],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "group_id": "dense_ui_panel:description_card_group"
+                }
+              }
+            ]
+          },
+          {
+            "id": "compare:groups:7:label",
+            "type": "TEXT",
+            "name": "description_text_group",
+            "characters": "description_text_group",
+            "absoluteBoundingBox": {
+              "x": 7008.0,
+              "y": 6.0,
+              "width": 260.0,
+              "height": 18.0
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.12,
+                  "g": 0.12,
+                  "b": 0.12
+                },
+                "opacity": 1.0
+              }
+            ],
+            "style": {
+              "fontSize": 14,
+              "fontFamily": "Inter",
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "TOP",
+              "textAutoResize": "HEIGHT",
+              "lineHeightPx": null
+            },
+            "children": [],
+            "debug": {
+              "role": "compare_label"
+            }
+          },
+          {
+            "id": "compare:groups:7:frame",
+            "type": "FRAME",
+            "name": "description_text_group",
+            "absoluteBoundingBox": {
+              "x": 7000.0,
+              "y": 28.0,
+              "width": 960.0,
+              "height": 540.0
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "strokes": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.92,
+                  "g": 0.92,
+                  "b": 0.92
+                },
+                "opacity": 1.0
+              }
+            ],
+            "strokeWeight": 1,
+            "children": [
+              {
+                "id": "compare:groups:7:dense_ui_panel:description_text_group",
+                "type": "GROUP",
+                "name": "description_text_group",
+                "absoluteBoundingBox": {
+                  "x": 7660.66,
+                  "y": 95.26,
+                  "width": 275.01,
+                  "height": 654.25
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "children": [
                   {
-                    "id": "compare:groups:6:dense_ui_panel:lane_row_3",
+                    "id": "compare:groups:7:dense_ui_panel:lane_row_3",
                     "type": "GROUP",
                     "name": "lane_row_3",
                     "absoluteBoundingBox": {
-                      "x": 6660.66,
+                      "x": 7660.66,
                       "y": 95.26,
                       "width": 275.01,
                       "height": 21.5
@@ -5235,11 +5359,11 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:groups:6:lane-row-3:bg",
+                        "id": "compare:groups:7:lane-row-3:bg",
                         "type": "RECTANGLE",
                         "name": "lane_row_3_bg",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 95.26,
                           "width": 275.0,
                           "height": 21.5
@@ -5287,12 +5411,12 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_3:cell_1",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_3:cell_1",
                         "type": "TEXT",
                         "name": "cell 3-1",
                         "characters": "1",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 95.26,
                           "width": 25.56,
                           "height": 21.5
@@ -5338,11 +5462,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_3:cell_2:paragraphs",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_3:cell_2:paragraphs",
                         "type": "GROUP",
                         "name": "paragraphs",
                         "absoluteBoundingBox": {
-                          "x": 6686.22,
+                          "x": 7686.22,
                           "y": 95.26,
                           "width": 249.45,
                           "height": 21.5
@@ -5361,12 +5485,12 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_3:cell_2:p1",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_3:cell_2:p1",
                             "type": "TEXT",
                             "name": "cell 3-2",
                             "characters": "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 95.26,
                               "width": 249.45,
                               "height": 10.75
@@ -5412,12 +5536,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_3:cell_2:p2",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_3:cell_2:p2",
                             "type": "TEXT",
                             "name": "cell 3-2",
                             "characters": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 106.01,
                               "width": 249.45,
                               "height": 10.75
@@ -5475,11 +5599,11 @@
                     }
                   },
                   {
-                    "id": "compare:groups:6:dense_ui_panel:lane_row_4",
+                    "id": "compare:groups:7:dense_ui_panel:lane_row_4",
                     "type": "GROUP",
                     "name": "lane_row_4",
                     "absoluteBoundingBox": {
-                      "x": 6660.66,
+                      "x": 7660.66,
                       "y": 116.76,
                       "width": 275.01,
                       "height": 247.25
@@ -5498,11 +5622,11 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:groups:6:lane-row-4:bg",
+                        "id": "compare:groups:7:lane-row-4:bg",
                         "type": "RECTANGLE",
                         "name": "lane_row_4_bg",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 116.76,
                           "width": 275.0,
                           "height": 247.25
@@ -5550,12 +5674,12 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_1",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_1",
                         "type": "TEXT",
                         "name": "cell 4-1",
                         "characters": "2",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 116.76,
                           "width": 25.56,
                           "height": 247.25
@@ -5601,11 +5725,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:paragraphs",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:paragraphs",
                         "type": "GROUP",
                         "name": "paragraphs",
                         "absoluteBoundingBox": {
-                          "x": 6686.22,
+                          "x": 7686.22,
                           "y": 116.76,
                           "width": 249.45,
                           "height": 247.25
@@ -5624,12 +5748,12 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p1",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p1",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "[Key Visual 영역] – WCMS 콘텐츠 등록",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 116.76,
                               "width": 249.45,
                               "height": 10.75
@@ -5675,12 +5799,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p2",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p2",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "제품 visual 정보 제공 : 동영상&이미지(제품 인테리어컷, 상세컷)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 127.51,
                               "width": 249.45,
                               "height": 10.75
@@ -5726,12 +5850,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p3",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p3",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의] 참조",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 138.26,
                               "width": 249.45,
                               "height": 10.75
@@ -5777,12 +5901,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p4",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p4",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "좌우 swipe : 이전/다음 콘텐츠 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 149.01,
                               "width": 249.45,
                               "height": 10.75
@@ -5828,12 +5952,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p5",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p5",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "동영상 : 선택 시, [PDP0001]갤러리뷰 팝업 노출되며 동영상 재생",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 159.76,
                               "width": 249.45,
                               "height": 10.75
@@ -5879,12 +6003,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p6",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p6",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "ㄴ Youtube case : WCMS에 등록한 썸네일 이미지 +재생아이콘 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 170.51,
                               "width": 249.45,
                               "height": 10.75
@@ -5930,12 +6054,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p7",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p7",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "ㄴ Video File case : 동영상 음소거 상태로 자동반복재생",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 181.26,
                               "width": 249.45,
                               "height": 10.75
@@ -5981,12 +6105,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p8",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p8",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "이미지 : 선택 시, [PDP0001] 갤러리뷰 팝업 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 192.01,
                               "width": 249.45,
                               "height": 10.75
@@ -6032,12 +6156,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p9",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p9",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 202.76,
                               "width": 249.45,
                               "height": 10.75
@@ -6083,12 +6207,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p10",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p10",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 213.51,
                               "width": 249.45,
                               "height": 10.75
@@ -6134,12 +6258,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p11",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p11",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "이전/다음 이동 버튼 : 선택 시 이전/다음 콘텐츠 이동",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 224.26,
                               "width": 249.45,
                               "height": 10.75
@@ -6185,12 +6309,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p12",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p12",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 235.01,
                               "width": 249.45,
                               "height": 10.75
@@ -6236,12 +6360,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p13",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p13",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "2b) 일시정지⇔재생 토글 버튼(Optional)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 245.76,
                               "width": 249.45,
                               "height": 10.75
@@ -6287,12 +6411,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p14",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p14",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "버튼 선택 시, 영상 일시정지⇔재생 / *동영상(video file)에만 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 256.51,
                               "width": 249.45,
                               "height": 10.75
@@ -6338,12 +6462,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p15",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p15",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "2C) 디스클라이머 문구 영역",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 267.26,
                               "width": 249.45,
                               "height": 10.75
@@ -6389,12 +6513,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p16",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p16",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 278.01,
                               "width": 249.45,
                               "height": 10.75
@@ -6440,12 +6564,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p17",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p17",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "2d) 닷컴 only 뱃지",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 288.76,
                               "width": 249.45,
                               "height": 10.75
@@ -6491,12 +6615,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p18",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p18",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 299.51,
                               "width": 249.45,
                               "height": 10.75
@@ -6542,12 +6666,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p19",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p19",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 310.26,
                               "width": 249.45,
                               "height": 10.75
@@ -6593,12 +6717,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p20",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p20",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 321.01,
                               "width": 249.45,
                               "height": 10.75
@@ -6644,12 +6768,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p21",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p21",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "하기 조건 모두 충족 시 문구 제공",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 331.76,
                               "width": 249.45,
                               "height": 10.75
@@ -6695,12 +6819,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p22",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p22",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 342.51,
                               "width": 249.45,
                               "height": 10.75
@@ -6746,12 +6870,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_4:cell_2:p23",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_4:cell_2:p23",
                             "type": "TEXT",
                             "name": "cell 4-2",
                             "characters": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어 디스클라이머 노출에 Y 체크",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 353.26,
                               "width": 249.45,
                               "height": 10.75
@@ -6809,11 +6933,11 @@
                     }
                   },
                   {
-                    "id": "compare:groups:6:dense_ui_panel:lane_row_5",
+                    "id": "compare:groups:7:dense_ui_panel:lane_row_5",
                     "type": "GROUP",
                     "name": "lane_row_5",
                     "absoluteBoundingBox": {
-                      "x": 6660.66,
+                      "x": 7660.66,
                       "y": 364.01,
                       "width": 275.01,
                       "height": 365.5
@@ -6832,11 +6956,11 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:groups:6:lane-row-5:bg",
+                        "id": "compare:groups:7:lane-row-5:bg",
                         "type": "RECTANGLE",
                         "name": "lane_row_5_bg",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 364.01,
                           "width": 275.0,
                           "height": 365.5
@@ -6884,12 +7008,12 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_1",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_1",
                         "type": "TEXT",
                         "name": "cell 5-1",
                         "characters": "3",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 364.01,
                           "width": 25.56,
                           "height": 365.5
@@ -6935,11 +7059,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:paragraphs",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:paragraphs",
                         "type": "GROUP",
                         "name": "paragraphs",
                         "absoluteBoundingBox": {
-                          "x": 6686.22,
+                          "x": 7686.22,
                           "y": 364.01,
                           "width": 249.45,
                           "height": 365.5
@@ -6958,12 +7082,12 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p1",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p1",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "[제품명 영역]",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 364.01,
                               "width": 249.45,
                               "height": 10.75
@@ -7009,12 +7133,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p2",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p2",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "Badge 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 374.76,
                               "width": 249.45,
                               "height": 10.75
@@ -7060,12 +7184,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p3",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p3",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "- 다품목할인 > 내일배송(판매예정) > UP가전 Badge 순으로 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 385.51,
                               "width": 249.45,
                               "height": 10.75
@@ -7111,12 +7235,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p4",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p4",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "- 최대 1줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우, 해당 강조텍스트 Badge 미 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 396.26,
                               "width": 249.45,
                               "height": 10.75
@@ -7162,12 +7286,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p5",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p5",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "(e.g. 다품목할인, 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일, 쿠폰할인 줄 바꿈 필요한 경우 특별세일, 쿠폰할인 미 노출)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 407.01,
                               "width": 249.45,
                               "height": 10.75
@@ -7213,12 +7337,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p6",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p6",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 > 다품목 할인> UP가전 > 강조텍스트(뱃지관리 등록)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 417.76,
                               "width": 249.45,
                               "height": 10.75
@@ -7264,12 +7388,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p7",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p7",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "기존과 동일하게 줄 바꿈 적용함",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 428.51,
                               "width": 249.45,
                               "height": 10.75
@@ -7315,12 +7439,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p8",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p8",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "디자인 변경됨: PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 439.26,
                               "width": 249.45,
                               "height": 10.75
@@ -7366,12 +7490,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p9",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p9",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "[참고사항]",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 450.01,
                               "width": 249.45,
                               "height": 10.75
@@ -7417,12 +7541,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p10",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p10",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 460.76,
                               "width": 249.45,
                               "height": 10.75
@@ -7468,12 +7592,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p11",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p11",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "★  YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지 스타일(black)과 PDP 뱃지 스타일(red)이 다름",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 471.51,
                               "width": 249.45,
                               "height": 10.75
@@ -7519,12 +7643,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p12",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p12",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "★ 강조텍스트 뱃지는 PLP에서 비노출됨",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 482.26,
                               "width": 249.45,
                               "height": 10.75
@@ -7570,12 +7694,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p13",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p13",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "고효율가전",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 493.01,
                               "width": 249.45,
                               "height": 10.75
@@ -7621,12 +7745,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p14",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p14",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "신규 추가됨",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 503.76,
                               "width": 249.45,
                               "height": 10.75
@@ -7672,12 +7796,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p15",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p15",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 514.51,
                               "width": 249.45,
                               "height": 10.75
@@ -7723,12 +7847,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p16",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p16",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "--> 으뜸효율환급 여부 ‘Y’로 설정 시 뱃지 제공",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 525.26,
                               "width": 249.45,
                               "height": 10.75
@@ -7774,12 +7898,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p17",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p17",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "뱃지 우선순위 중 최상위",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 536.01,
                               "width": 249.45,
                               "height": 10.75
@@ -7825,12 +7949,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p18",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p18",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "판매중, 일시품절 상태인 경우에만 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 546.76,
                               "width": 249.45,
                               "height": 10.75
@@ -7876,12 +8000,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p19",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p19",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "베스트 랭킹 순위",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 557.51,
                               "width": 249.45,
                               "height": 10.75
@@ -7927,12 +8051,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p20",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p20",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "신규 추가됨",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 568.26,
                               "width": 249.45,
                               "height": 10.75
@@ -7978,12 +8102,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p21",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p21",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "”FRONT > 홈 > 제품/소모품 > 베스트 랭킹 > 오늘의 랭킹＂내 카테고리별 베스트 랭킹 1~3위 가전인 경우에만 노출(가격대 및 용량/사이즈/면적 /타입/디스플레이등 전체 옵션에서 1~3위)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 579.01,
                               "width": 249.45,
                               "height": 10.75
@@ -8029,12 +8153,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p22",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p22",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "뱃지 우선순위 중 최상위",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 589.76,
                               "width": 249.45,
                               "height": 10.75
@@ -8080,12 +8204,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p23",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p23",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "판매중, 일시품절 상태인 경우에만 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 600.51,
                               "width": 249.45,
                               "height": 10.75
@@ -8131,12 +8255,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p24",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p24",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "선택시 이동링크 없음",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 611.26,
                               "width": 249.45,
                               "height": 10.75
@@ -8182,12 +8306,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p25",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p25",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "노출문구: $카테고리명$ n위",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 622.01,
                               "width": 249.45,
                               "height": 10.75
@@ -8233,12 +8357,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p26",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p26",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "카테고리명: “admin>공통>전시구좌관리>텍스트형: 오늘의 랭킹 > 카테고리형＂내 카테고리명 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 632.76,
                               "width": 249.45,
                               "height": 10.75
@@ -8284,12 +8408,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p27",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p27",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "n: 1~3 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 643.51,
                               "width": 249.45,
                               "height": 10.75
@@ -8335,12 +8459,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p28",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p28",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "예) 김치냉장고 1위 워시타워 3위, 의류건조기 2위, 광파오븐,/전자레인지 1위",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 654.26,
                               "width": 249.45,
                               "height": 10.75
@@ -8386,12 +8510,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p29",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p29",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "[참고] “베스트 랭킹 > 오늘의 랭킹”은 렌탈은 제외하고 일반제품에만 적용됨",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 665.01,
                               "width": 249.45,
                               "height": 10.75
@@ -8437,12 +8561,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p30",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p30",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "YYYY년 출시",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 675.76,
                               "width": 249.45,
                               "height": 10.75
@@ -8488,12 +8612,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p31",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p31",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "신규 추가됨",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 686.51,
                               "width": 249.45,
                               "height": 10.75
@@ -8539,12 +8663,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p32",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p32",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "PLP 내 노출기준과 동일함 (판매, 일시품절, 미판매 일때 노출)",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 697.26,
                               "width": 249.45,
                               "height": 10.75
@@ -8590,12 +8714,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p33",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p33",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "└당해년도 출시제품에 출시년도 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 708.01,
                               "width": 249.45,
                               "height": 10.75
@@ -8641,12 +8765,12 @@
                             }
                           },
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_5:cell_2:p34",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_5:cell_2:p34",
                             "type": "TEXT",
                             "name": "cell 5-2",
                             "characters": "└MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
                             "absoluteBoundingBox": {
-                              "x": 6686.22,
+                              "x": 7686.22,
                               "y": 718.76,
                               "width": 249.45,
                               "height": 10.75
@@ -8704,11 +8828,11 @@
                     }
                   },
                   {
-                    "id": "compare:groups:6:dense_ui_panel:lane_row_6",
+                    "id": "compare:groups:7:dense_ui_panel:lane_row_6",
                     "type": "GROUP",
                     "name": "lane_row_6",
                     "absoluteBoundingBox": {
-                      "x": 6660.66,
+                      "x": 7660.66,
                       "y": 735.51,
                       "width": 275.01,
                       "height": 14.0
@@ -8727,11 +8851,11 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:groups:6:lane-row-6:bg",
+                        "id": "compare:groups:7:lane-row-6:bg",
                         "type": "RECTANGLE",
                         "name": "lane_row_6_bg",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 735.51,
                           "width": 275.01,
                           "height": 14.0
@@ -8779,11 +8903,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:6:s29:slide_29/element_37:row_6:cell_1:paragraphs",
+                        "id": "compare:groups:7:s29:slide_29/element_37:row_6:cell_1:paragraphs",
                         "type": "GROUP",
                         "name": "paragraphs",
                         "absoluteBoundingBox": {
-                          "x": 6660.66,
+                          "x": 7660.66,
                           "y": 735.51,
                           "width": 275.01,
                           "height": 10.75
@@ -8802,12 +8926,12 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:groups:6:s29:slide_29/element_37:row_6:cell_1:p1",
+                            "id": "compare:groups:7:s29:slide_29/element_37:row_6:cell_1:p1",
                             "type": "TEXT",
                             "name": "cell 6-1",
                             "characters": "뒷페이지 계속",
                             "absoluteBoundingBox": {
-                              "x": 6660.66,
+                              "x": 7660.66,
                               "y": 735.51,
                               "width": 275.01,
                               "height": 10.75
@@ -8867,18 +8991,18 @@
                 ],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "group_id": "dense_ui_panel:description_block_group"
+                  "group_id": "dense_ui_panel:description_text_group"
                 }
               }
             ]
           },
           {
-            "id": "compare:groups:7:label",
+            "id": "compare:groups:8:label",
             "type": "TEXT",
             "name": "small_asset_group",
             "characters": "small_asset_group",
             "absoluteBoundingBox": {
-              "x": 7008.0,
+              "x": 8008.0,
               "y": 6.0,
               "width": 260.0,
               "height": 18.0
@@ -8920,11 +9044,11 @@
             }
           },
           {
-            "id": "compare:groups:7:frame",
+            "id": "compare:groups:8:frame",
             "type": "FRAME",
             "name": "small_asset_group",
             "absoluteBoundingBox": {
-              "x": 7000.0,
+              "x": 8000.0,
               "y": 28.0,
               "width": 960.0,
               "height": 540.0
@@ -8966,11 +9090,11 @@
             "strokeWeight": 1,
             "children": [
               {
-                "id": "compare:groups:7:dense_ui_panel:small_asset_group",
+                "id": "compare:groups:8:dense_ui_panel:small_asset_group",
                 "type": "GROUP",
                 "name": "small_asset_group",
                 "absoluteBoundingBox": {
-                  "x": 7505.08,
+                  "x": 8505.08,
                   "y": 39.77,
                   "width": 372.5,
                   "height": 509.48
@@ -8989,11 +9113,11 @@
                 ],
                 "children": [
                   {
-                    "id": "compare:groups:7:dense_ui_panel:small_assets",
+                    "id": "compare:groups:8:dense_ui_panel:small_assets",
                     "type": "GROUP",
                     "name": "small_assets",
                     "absoluteBoundingBox": {
-                      "x": 7539.23,
+                      "x": 8539.23,
                       "y": 39.77,
                       "width": 338.35,
                       "height": 509.48
@@ -9012,12 +9136,12 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:groups:7:s29:layout_29/element_5",
+                        "id": "compare:groups:8:s29:layout_29/element_5",
                         "type": "TEXT",
                         "name": "Slide Number Placeholder 3",
                         "characters": "‹#›",
                         "absoluteBoundingBox": {
-                          "x": 7859.74,
+                          "x": 8859.74,
                           "y": 39.77,
                           "width": 17.84,
                           "height": 8.97
@@ -9063,11 +9187,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_73",
+                        "id": "compare:groups:8:s29:slide_29/element_73",
                         "type": "RECTANGLE",
                         "name": "그룹 199",
                         "absoluteBoundingBox": {
-                          "x": 7539.23,
+                          "x": 8539.23,
                           "y": 333.14,
                           "width": 18.77,
                           "height": 18.77
@@ -9116,11 +9240,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_73/child_1",
+                        "id": "compare:groups:8:s29:slide_29/element_73/child_1",
                         "type": "SVG_BLOCK",
                         "name": "타원 200",
                         "absoluteBoundingBox": {
-                          "x": 7539.23,
+                          "x": 8539.23,
                           "y": 333.14,
                           "width": 18.77,
                           "height": 18.77
@@ -9147,11 +9271,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_71",
+                        "id": "compare:groups:8:s29:slide_29/element_71",
                         "type": "SVG_BLOCK",
                         "name": "타원 197",
                         "absoluteBoundingBox": {
-                          "x": 7581.39,
+                          "x": 8581.39,
                           "y": 334.05,
                           "width": 19.03,
                           "height": 19.03
@@ -9178,11 +9302,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_72",
+                        "id": "compare:groups:8:s29:slide_29/element_72",
                         "type": "SVG_BLOCK",
                         "name": "직선 화살표 연결선 198",
                         "absoluteBoundingBox": {
-                          "x": 7559.31,
+                          "x": 8559.31,
                           "y": 344.19,
                           "width": 20.28,
                           "height": 1.0
@@ -9209,11 +9333,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_52/child_4",
+                        "id": "compare:groups:8:s29:slide_29/element_52/child_4",
                         "type": "RECTANGLE",
                         "name": "그림 308",
                         "absoluteBoundingBox": {
-                          "x": 7638.24,
+                          "x": 8638.24,
                           "y": 398.52,
                           "width": 10.69,
                           "height": 10.69
@@ -9248,11 +9372,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_52/child_6",
+                        "id": "compare:groups:8:s29:slide_29/element_52/child_6",
                         "type": "RECTANGLE",
                         "name": "그림 310",
                         "absoluteBoundingBox": {
-                          "x": 7623.1,
+                          "x": 8623.1,
                           "y": 398.87,
                           "width": 9.19,
                           "height": 9.19
@@ -9287,11 +9411,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_52/child_5",
+                        "id": "compare:groups:8:s29:slide_29/element_52/child_5",
                         "type": "RECTANGLE",
                         "name": "Search",
                         "absoluteBoundingBox": {
-                          "x": 7608.42,
+                          "x": 8608.42,
                           "y": 399.98,
                           "width": 8.08,
                           "height": 8.26
@@ -9340,11 +9464,11 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_53",
+                        "id": "compare:groups:8:s29:slide_29/element_53",
                         "type": "RECTANGLE",
                         "name": "그림 314",
                         "absoluteBoundingBox": {
-                          "x": 7632.29,
+                          "x": 8632.29,
                           "y": 505.41,
                           "width": 19.87,
                           "height": 43.84
@@ -9379,12 +9503,12 @@
                         }
                       },
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_70",
+                        "id": "compare:groups:8:s29:slide_29/element_70",
                         "type": "TEXT",
                         "name": "Google Shape;1032;p23",
                         "characters": "< 1 / 5 >",
                         "absoluteBoundingBox": {
-                          "x": 7571.22,
+                          "x": 8571.22,
                           "y": 540.12,
                           "width": 26.18,
                           "height": 8.05
@@ -9436,11 +9560,11 @@
                     }
                   },
                   {
-                    "id": "compare:groups:7:dense_ui_panel:overlay_notes",
+                    "id": "compare:groups:8:dense_ui_panel:overlay_notes",
                     "type": "GROUP",
                     "name": "overlay_notes",
                     "absoluteBoundingBox": {
-                      "x": 7505.08,
+                      "x": 8505.08,
                       "y": 366.89,
                       "width": 86.11,
                       "height": 12.0
@@ -9459,11 +9583,11 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:groups:7:s29:slide_29/element_51:paragraphs",
+                        "id": "compare:groups:8:s29:slide_29/element_51:paragraphs",
                         "type": "GROUP",
                         "name": "paragraphs",
                         "absoluteBoundingBox": {
-                          "x": 7505.08,
+                          "x": 8505.08,
                           "y": 366.89,
                           "width": 86.11,
                           "height": 12.0
@@ -9482,12 +9606,12 @@
                         ],
                         "children": [
                           {
-                            "id": "compare:groups:7:s29:slide_29/element_51:p1",
+                            "id": "compare:groups:8:s29:slide_29/element_51:p1",
                             "type": "TEXT",
                             "name": "TextBox 303",
                             "characters": "영상 가로 사이즈 맞춰\n세로 중간맞춤",
                             "absoluteBoundingBox": {
-                              "x": 7505.08,
+                              "x": 8505.08,
                               "y": 366.89,
                               "width": 86.11,
                               "height": 12.0

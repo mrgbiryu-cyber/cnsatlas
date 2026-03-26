@@ -423,13 +423,16 @@ def group_key(atom: dict[str, Any]) -> str:
             return "dense_ui_panel:description_header_group"
         if role in {
             "description_card",
+        }:
+            return "dense_ui_panel:description_card_group"
+        if role in {
             "description_text_lane",
             "description_footer",
             "description_marker",
             "description_lane_row",
             "description_table",
         }:
-            return "dense_ui_panel:description_block_group"
+            return "dense_ui_panel:description_text_group"
         if role == "overlay_note":
             return "dense_ui_panel:small_asset_group"
         if role in {"small_asset", "overlay_mark"}:

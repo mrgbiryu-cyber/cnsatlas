@@ -2412,14 +2412,14 @@
                     }
                   },
                   {
-                    "id": "dense_ui_panel:description_block_group",
+                    "id": "dense_ui_panel:description_card_group",
                     "type": "GROUP",
-                    "name": "description_block_group",
+                    "name": "description_card_group",
                     "absoluteBoundingBox": {
-                      "x": 660.66,
-                      "y": 67.26,
-                      "width": 275.83,
-                      "height": 708.52
+                      "x": 685.65,
+                      "y": 264.28,
+                      "width": 250.84,
+                      "height": 511.5
                     },
                     "relativeTransform": [
                       [
@@ -2982,7 +2982,36 @@
                           "generator": "dense-ui-ir-v1",
                           "owner_id": "dense_ui_panel:description_cards"
                         }
-                      },
+                      }
+                    ],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "group_id": "dense_ui_panel:description_card_group"
+                    }
+                  },
+                  {
+                    "id": "dense_ui_panel:description_text_group",
+                    "type": "GROUP",
+                    "name": "description_text_group",
+                    "absoluteBoundingBox": {
+                      "x": 660.66,
+                      "y": 67.26,
+                      "width": 275.01,
+                      "height": 654.25
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
                       {
                         "id": "dense_ui_panel:lane_row_3",
                         "type": "GROUP",
@@ -6639,7 +6668,7 @@
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "group_id": "dense_ui_panel:description_block_group"
+                      "group_id": "dense_ui_panel:description_text_group"
                     }
                   },
                   {
