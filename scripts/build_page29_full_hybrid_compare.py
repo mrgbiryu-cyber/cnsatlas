@@ -78,9 +78,9 @@ def build_hybrid_frame(
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
     ir_logical = find_ir_logical_panel(ir_bundle)
     children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
-    top_meta_cells = children_by_id.get("dense_ui_panel:top_meta_cells")
-    version_stack = children_by_id.get("dense_ui_panel:version_stack")
-    small_assets = children_by_id.get("dense_ui_panel:small_assets")
+    top_meta_group = children_by_id.get("dense_ui_panel:top_meta_group")
+    version_stack_group = children_by_id.get("dense_ui_panel:version_stack_group")
+    small_asset_group = children_by_id.get("dense_ui_panel:small_asset_group")
 
     name_parts = ["hybrid_full"]
     if include_top_meta:
@@ -94,10 +94,10 @@ def build_hybrid_frame(
     for child in baseline_frame.get("children") or []:
         child_name = child.get("name")
         if child_name == "top_meta_block":
-            if include_top_meta and top_meta_cells is not None:
-                rebuilt_children.append(top_meta_cells)
-            if include_version_stack and version_stack is not None:
-                rebuilt_children.append(version_stack)
+            if include_top_meta and top_meta_group is not None:
+                rebuilt_children.append(top_meta_group)
+            if include_version_stack and version_stack_group is not None:
+                rebuilt_children.append(version_stack_group)
             continue
         if child_name != "right_panel_block":
             rebuilt_children.append(child)
@@ -112,8 +112,8 @@ def build_hybrid_frame(
             if panel_name == "표 48":
                 continue
             right_panel_children.append(panel_child)
-        if include_small_assets and small_assets is not None:
-            right_panel_children.append(small_assets)
+        if include_small_assets and small_asset_group is not None:
+            right_panel_children.append(small_asset_group)
         right_panel["children"] = right_panel_children
         rebuilt_children.append(right_panel)
     baseline_frame["children"] = rebuilt_children
