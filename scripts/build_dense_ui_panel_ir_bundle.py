@@ -222,6 +222,66 @@ def build_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
     }
 
 
+def svg_color(style_color: dict[str, Any] | None, fallback: str, fallback_opacity: float = 1.0) -> tuple[str, float]:
+    color, opacity = color_from_style(style_color, {"r": 0.0, "g": 0.0, "b": 0.0})
+    return (
+        f"rgb({round(color['r'] * 255)}, {round(color['g'] * 255)}, {round(color['b'] * 255)})" if style_color else fallback,
+        opacity if style_color else fallback_opacity,
+    )
+
+
+def build_small_asset_svg_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, *, suffix: str = "") -> dict[str, Any] | None:
+    node_bounds = dict(bounds or atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
+    width = max(float(node_bounds["width"]), 1.0)
+    height = max(float(node_bounds["height"]), 1.0)
+    shape_kind = str(atom.get("shape_kind") or "")
+    shape_style = atom.get("shape_style") or {}
+    fill_color, fill_opacity = svg_color(shape_style.get("fill"), "rgb(255,255,255)")
+    line_style = shape_style.get("line") or {}
+    stroke_color, stroke_opacity = svg_color(line_style, "rgb(120,120,120)")
+    stroke_width = max(float(line_style.get("width_px") or 1.0), 1.0)
+
+    if shape_kind == "ellipse":
+        svg_markup = (
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+            f'<ellipse cx="{width / 2}" cy="{height / 2}" rx="{max(width / 2 - stroke_width / 2, 0.5)}" '
+            f'ry="{max(height / 2 - stroke_width / 2, 0.5)}" '
+            f'fill="{fill_color}" fill-opacity="{fill_opacity}" '
+            f'stroke="{stroke_color}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}"/>'
+            "</svg>"
+        )
+    elif shape_kind == "straightConnector1" or atom.get("subtype") == "connector":
+        mid_y = height / 2
+        arrow = max(min(width, height) * 0.35, 3.0)
+        line_end_x = max(width - arrow - stroke_width, stroke_width)
+        svg_markup = (
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+            f'<line x1="{stroke_width / 2}" y1="{mid_y}" x2="{line_end_x}" y2="{mid_y}" '
+            f'stroke="{stroke_color}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}" stroke-linecap="round"/>'
+            f'<polygon points="{line_end_x},{max(mid_y - arrow / 2, 0)} {width},{mid_y} {line_end_x},{min(mid_y + arrow / 2, height)}" '
+            f'fill="{stroke_color}" fill-opacity="{stroke_opacity}"/>'
+            "</svg>"
+        )
+    else:
+        return None
+
+    return {
+        "id": f"{atom['id']}{suffix}",
+        "type": "SVG_BLOCK",
+        "name": atom.get("title") or atom.get("id") or "small_asset_svg",
+        "absoluteBoundingBox": node_bounds,
+        "relativeTransform": identity_affine(),
+        "svgMarkup": svg_markup,
+        "children": [],
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "layer_role": atom.get("layer_role"),
+            "owner_id": atom.get("owner_id"),
+            "source_atom_id": atom.get("id"),
+        },
+    }
+
+
 def build_image_node(atom: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any] | None:
     image_base64 = atom.get("image_base64")
     if not image_base64:
@@ -534,6 +594,10 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
                     image_node = build_image_node(atom, assets)
                     if image_node:
                         owner_children.append(image_node)
+                    continue
+                svg_node = build_small_asset_svg_node(atom)
+                if svg_node:
+                    owner_children.append(svg_node)
                     continue
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom))
