@@ -615,7 +615,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         for atom in atoms:
             role = str(atom.get("layer_role") or "")
             subtype = str(atom.get("subtype") or "")
-            if role in {"top_meta_cell", "description_card", "issue_card", "version_stack"}:
+            if role in {"top_meta_cell", "description_header_cell", "description_card", "issue_card", "version_stack"}:
                 owner_children.append(build_rect_node(atom, suffix=":bg"))
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom, suffix=":label"))
@@ -666,7 +666,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         grouped_children.append(build_group_group("dense_ui_panel:issue_group", [owner_groups["dense_ui_panel:issue_card"]]))
 
     description_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:description_cards"]:
+    for owner_id in ["dense_ui_panel:description_headers", "dense_ui_panel:description_cards"]:
         if owner_id in owner_groups:
             description_children.append(owner_groups[owner_id])
     description_children.extend(lane_groups)

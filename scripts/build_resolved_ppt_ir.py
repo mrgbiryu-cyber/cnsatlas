@@ -251,13 +251,13 @@ def layer_role(candidate: dict[str, Any], page_type: str) -> str:
             row_index = parse_row_index(candidate_id) or 0
             if source_scope in {"master", "layout"} or (y < 80 and width > 500):
                 return "top_meta_row"
-            return "top_meta_row" if row_index <= 2 else "description_lane_row"
+            return "description_header_row" if row_index <= 2 else "description_lane_row"
         if subtype == "table_cell":
             row_index, cell_index = parse_cell_indices(candidate_id)
-            if source_scope in {"master", "layout"} or (y < 80 and width > 60):
+            if source_scope in {"master", "layout"}:
                 return "top_meta_cell"
             if row_index in {1, 2}:
-                return "top_meta_cell"
+                return "description_header_cell"
             if row_index in {3, 4, 5} and cell_index == 1:
                 return "description_marker"
             if row_index in {3, 4, 5} and cell_index == 2:
@@ -321,6 +321,8 @@ def z_index(layer_role_value: str) -> int:
         "top_meta_table": 16,
         "top_meta_row": 16,
         "top_meta_cell": 18,
+        "description_header_row": 18,
+        "description_header_cell": 20,
         "top_text_row": 20,
         "description_text_lane": 22,
         "description_footer": 22,
@@ -362,6 +364,10 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
             return "dense_ui_panel:top_meta_rows"
         if role == "top_meta_cell":
             return "dense_ui_panel:top_meta_cells"
+        if role == "description_header_row":
+            return "dense_ui_panel:description_header_rows"
+        if role == "description_header_cell":
+            return "dense_ui_panel:description_headers"
         if role == "top_text_row":
             return "dense_ui_panel:top_rows"
         if role == "version_stack":
@@ -408,6 +414,8 @@ def group_key(atom: dict[str, Any]) -> str:
             return "dense_ui_panel:top_rows_group"
         if role in {
             "description_card",
+            "description_header_row",
+            "description_header_cell",
             "description_text_lane",
             "description_footer",
             "description_marker",
