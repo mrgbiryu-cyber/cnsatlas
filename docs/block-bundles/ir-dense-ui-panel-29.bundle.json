@@ -4504,7 +4504,7 @@
                     "id": "s29:slide_29/element_79:label",
                     "type": "TEXT",
                     "name": "직사각형 138",
-                    "characters": "V 1.1\n[BTOCSITE-22640]\n- 비교하기 버튼 : 노출 제외 조건 추가\n[BTOCSITE-22833]\n- 비교하기 버튼 : 노출 제외 조건 수정",
+                    "characters": "V 1.1",
                     "absoluteBoundingBox": {
                       "x": 583.39,
                       "y": 0.0,
@@ -4608,7 +4608,7 @@
                     "id": "s29:slide_29/element_80:label",
                     "type": "TEXT",
                     "name": "직사각형 11",
-                    "characters": "V 1.5\n[BTOCSITE-29832]\n- UP가전 뱃지 노출 로직 수정",
+                    "characters": "V 1.5",
                     "absoluteBoundingBox": {
                       "x": 583.39,
                       "y": 11.46,
@@ -4712,7 +4712,7 @@
                     "id": "s29:slide_29/element_84:label",
                     "type": "TEXT",
                     "name": "직사각형 150",
-                    "characters": "V 1.6\n[BTOCSITE-34166]\n제품명 우측 그룹명 노출 추가",
+                    "characters": "V 1.6",
                     "absoluteBoundingBox": {
                       "x": 583.39,
                       "y": 23.1,
@@ -4816,7 +4816,7 @@
                     "id": "s29:slide_29/element_85:label",
                     "type": "TEXT",
                     "name": "직사각형 239",
-                    "characters": "V 1.7\n[BTOCSITE-35421]\n- 다품목할인, 내일배송 뱃지 추가",
+                    "characters": "V 1.7",
                     "absoluteBoundingBox": {
                       "x": 583.39,
                       "y": 36.31,
@@ -4920,7 +4920,7 @@
                     "id": "s29:slide_29/element_86:label",
                     "type": "TEXT",
                     "name": "직사각형 145",
-                    "characters": "V 2.0\n[BTOCSITE-43175]\n- [인테리어컷] 영역 디스클레이머 일괄 적용",
+                    "characters": "V 2.0",
                     "absoluteBoundingBox": {
                       "x": 583.15,
                       "y": 53.01,
@@ -5024,7 +5024,7 @@
                     "id": "s29:slide_29/element_91:label",
                     "type": "TEXT",
                     "name": "직사각형 190",
-                    "characters": "V 2.4\n[BTOCSITE-47092]\n- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+                    "characters": "V 2.4",
                     "absoluteBoundingBox": {
                       "x": 583.15,
                       "y": 67.39,
@@ -5128,7 +5128,7 @@
                     "id": "s29:slide_29/element_94:label",
                     "type": "TEXT",
                     "name": "직사각형 152",
-                    "characters": "V 2.9\n[BTOCSITE-51375  PDP 베스트  순서 표시",
+                    "characters": "V 2.9",
                     "absoluteBoundingBox": {
                       "x": 583.15,
                       "y": 81.61,
@@ -5232,7 +5232,7 @@
                     "id": "s29:slide_29/element_98:label",
                     "type": "TEXT",
                     "name": "직사각형 149",
-                    "characters": "V 3.2\n[BTOCSITE-73060]\n- 제품 PDP UI 개선",
+                    "characters": "V 3.2",
                     "absoluteBoundingBox": {
                       "x": 583.15,
                       "y": 95.88,
@@ -5336,7 +5336,7 @@
                     "id": "s29:slide_29/element_101:label",
                     "type": "TEXT",
                     "name": "직사각형 174",
-                    "characters": "V 4.4\n[BTOCSITE-98109]\n- 으뜸효율환급 뱃지 추가",
+                    "characters": "V 4.4",
                     "absoluteBoundingBox": {
                       "x": 583.19,
                       "y": 108.15,
@@ -5440,7 +5440,7 @@
                     "id": "s29:slide_29/element_106:label",
                     "type": "TEXT",
                     "name": "직사각형 195",
-                    "characters": "V 4.6 \n[BTOCSITE-99487]\n- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)\n[BTOCSITE-91167]\n- 스펙 기반의 선호도",
+                    "characters": "V 4.6",
                     "absoluteBoundingBox": {
                       "x": 583.19,
                       "y": 123.35,
@@ -5544,7 +5544,7 @@
                     "id": "s29:slide_29/element_109:label",
                     "type": "TEXT",
                     "name": "직사각형 191",
-                    "characters": "V 4.7\n[BTOCSITE-99085]\n- admin 판매상태(미판매)의 경우에도. 텍스트 뱃지(출시년도) 노출로 로직 변경 요청\n[BTOCSITE-100137]\nLGE.COM PDP 스펙 용어사전 툴팁 컨텐츠 오류 확인 요청",
+                    "characters": "V 4.7",
                     "absoluteBoundingBox": {
                       "x": 583.15,
                       "y": 135.31,
@@ -5648,7 +5648,7 @@
                     "id": "s29:slide_29/element_115:label",
                     "type": "TEXT",
                     "name": "직사각형 248",
-                    "characters": "V 5.0 \n[BTOCSITE-88928]\n- AR체험 서비스 종료, 오브제체험 뱃지 삭제 현행화(BTOCSITE-52092)\n[BTOCSITE-85964]\n- 360미디어 디스클라이머 추가",
+                    "characters": "V 5.0",
                     "absoluteBoundingBox": {
                       "x": 583.19,
                       "y": 149.48,

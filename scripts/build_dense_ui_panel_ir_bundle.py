@@ -103,17 +103,33 @@ def text_style(atom: dict[str, Any], font_size: float | None = None) -> dict[str
     }
 
 
+def compact_label_text(atom: dict[str, Any]) -> str:
+    text = str(atom.get("text") or "").strip()
+    if not text:
+        return ""
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if not lines:
+        return text
+    role = str(atom.get("layer_role") or "")
+    if role in {"version_stack", "description_card"}:
+        return lines[0]
+    if role == "issue_card":
+        return "\n".join(lines[:3])
+    return text
+
+
 def build_text_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, *, suffix: str = "") -> dict[str, Any]:
     node_bounds = dict(bounds or atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
     source_style = atom.get("text_style") or {}
     fill_style = source_style.get("fill")
     if not fill_style and (atom.get("cell_style") or {}).get("fill"):
         fill_style = None
+    characters = compact_label_text(atom) if suffix == ":label" else str(atom.get("text") or "")
     return {
         "id": f"{atom['id']}{suffix}",
         "type": "TEXT",
         "name": atom.get("title") or atom.get("id") or "text",
-        "characters": str(atom.get("text") or ""),
+        "characters": characters,
         "absoluteBoundingBox": node_bounds,
         "relativeTransform": identity_affine(),
         "fills": [make_solid_fill(fill_style, {"r": 0.1, "g": 0.1, "b": 0.1})],
