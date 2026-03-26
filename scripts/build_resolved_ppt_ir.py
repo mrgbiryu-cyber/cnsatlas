@@ -30,6 +30,7 @@ def union_bounds(bounds_list: list[dict[str, float]]) -> dict[str, float]:
 
 ROW_ID_RE = re.compile(r":row_(\d+)$")
 CELL_ID_RE = re.compile(r":row_(\d+):cell_(\d+)$")
+RIGHT_PANEL_X_CUTOFF = 960.0 * 0.58
 
 
 def parse_row_index(candidate_id: str) -> int | None:
@@ -359,6 +360,8 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
     candidate_id = str(candidate.get("candidate_id") or "")
     parent_id = str(candidate.get("parent_candidate_id") or "")
     role = layer_role(candidate, page_type)
+    bounds = candidate.get("bounds_px") or {}
+    x = float(bounds.get("x") or 0.0)
 
     if page_type == "dense_ui_panel":
         if role == "top_meta_table":
@@ -390,11 +393,15 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
         if role == "description_lane_row":
             return "dense_ui_panel:description_lane_rows"
         if role == "small_asset":
-            return "dense_ui_panel:small_assets"
+            if x >= RIGHT_PANEL_X_CUTOFF:
+                return "dense_ui_panel:panel_small_assets"
+            return "dense_ui_panel:global_ui_assets"
         if role == "description_table":
             return "dense_ui_panel:description_table"
         if role == "overlay_note":
-            return "dense_ui_panel:overlay_notes"
+            if x >= RIGHT_PANEL_X_CUTOFF:
+                return "dense_ui_panel:panel_overlay_notes"
+            return "dense_ui_panel:global_ui_assets"
 
     if subtype == "table_cell" and parent_id:
         return f"owner:{parent_id}"
@@ -429,14 +436,21 @@ def group_key(atom: dict[str, Any]) -> str:
             "description_text_lane",
             "description_footer",
             "description_marker",
+        }:
+            return "dense_ui_panel:description_body_text_group"
+        if role in {
             "description_lane_row",
             "description_table",
         }:
-            return "dense_ui_panel:description_text_group"
+            return "dense_ui_panel:description_body_semantic_group"
         if role == "overlay_note":
-            return "dense_ui_panel:small_asset_group"
+            if owner_id == "dense_ui_panel:panel_overlay_notes":
+                return "dense_ui_panel:panel_small_asset_group"
+            return "dense_ui_panel:global_ui_asset_group"
         if role in {"small_asset", "overlay_mark"}:
-            return "dense_ui_panel:small_asset_group"
+            if owner_id == "dense_ui_panel:panel_small_assets":
+                return "dense_ui_panel:panel_small_asset_group"
+            return "dense_ui_panel:global_ui_asset_group"
 
     if owner_id:
         return owner_id

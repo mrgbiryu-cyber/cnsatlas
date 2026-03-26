@@ -523,7 +523,9 @@ def owner_priority(owner_id: str) -> int:
         "dense_ui_panel:description_markers": 22,
         "dense_ui_panel:description_lanes": 24,
         "dense_ui_panel:description_footer": 26,
-        "dense_ui_panel:small_assets": 30,
+        "dense_ui_panel:panel_small_assets": 30,
+        "dense_ui_panel:panel_overlay_notes": 30,
+        "dense_ui_panel:global_ui_assets": 40,
     }
     return order.get(owner_id, 50)
 
@@ -537,8 +539,10 @@ def group_priority(group_id: str) -> int:
         "dense_ui_panel:version_stack_group": 12,
         "dense_ui_panel:issue_group": 14,
         "dense_ui_panel:description_card_group": 18,
-        "dense_ui_panel:description_text_group": 20,
-        "dense_ui_panel:small_asset_group": 30,
+        "dense_ui_panel:description_body_text_group": 20,
+        "dense_ui_panel:description_body_semantic_group": 21,
+        "dense_ui_panel:panel_small_asset_group": 30,
+        "dense_ui_panel:global_ui_asset_group": 31,
     }
     return order.get(group_id, 50)
 
@@ -695,15 +699,15 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     for owner_id in ["dense_ui_panel:description_footer", "dense_ui_panel:description_markers", "dense_ui_panel:description_lanes"]:
         if owner_id in owner_groups:
             description_text_children.append(owner_groups[owner_id])
-    if description_text_children and "dense_ui_panel:description_text_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:description_text_group", description_text_children))
+    if description_text_children and "dense_ui_panel:description_body_text_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:description_body_text_group", description_text_children))
 
     small_asset_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:small_assets", "dense_ui_panel:overlay_notes"]:
+    for owner_id in ["dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"]:
         if owner_id in owner_groups:
             small_asset_children.append(owner_groups[owner_id])
-    if small_asset_children and "dense_ui_panel:small_asset_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:small_asset_group", small_asset_children))
+    if small_asset_children and "dense_ui_panel:panel_small_asset_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:panel_small_asset_group", small_asset_children))
 
     children = sorted(grouped_children, key=lambda node: group_priority(str(node.get("id") or "")))
 

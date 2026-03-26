@@ -1,0 +1,901 @@
+{
+  "report_version": "dense-ui-panel-chunk-report-v1",
+  "reference_summary": {
+    "interesting_node_count": 11,
+    "sample_nodes": [
+      {
+        "path": "nodes/1:1440/document",
+        "name": "Page 3",
+        "type": "FRAME",
+        "bounds": {
+          "x": 1762.0,
+          "y": -279.0,
+          "width": 960.0,
+          "height": 540.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/39",
+        "name": "Fold",
+        "type": "TEXT",
+        "bounds": {
+          "x": 1891.530029296875,
+          "y": -265.82000732421875,
+          "width": 32.0,
+          "height": 9.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/49",
+        "name": "Fold",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2443.1201171875,
+          "y": -219.1999969482422,
+          "width": 47.0,
+          "height": 10.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/52",
+        "name": "[Sticky",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2458.35986328125,
+          "y": -205.260009765625,
+          "width": 207.0,
+          "height": 10.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/87",
+        "name": "2e) Video File",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2457.64013671875,
+          "y": 20.100006103515625,
+          "width": 183.0,
+          "height": 10.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/96",
+        "name": "Badge",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2458.35986328125,
+          "y": 76.5,
+          "width": 38.0,
+          "height": 10.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/105",
+        "name": "Badge",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2512.3798828125,
+          "y": 100.5,
+          "width": 47.0,
+          "height": 10.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/109",
+        "name": "Badge",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2458.35986328125,
+          "y": 116.489990234375,
+          "width": 20.0,
+          "height": 10.0
+        }
+      },
+      {
+        "path": "1:1440/document/children/0/children/146/children/7",
+        "name": "Video",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2330.510009765625,
+          "y": 146.01998901367188,
+          "width": 28.0,
+          "height": 14.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/189",
+        "name": "ISSUE",
+        "type": "TEXT",
+        "bounds": {
+          "x": 2494.97998046875,
+          "y": -179.25,
+          "width": 22.0,
+          "height": 9.0
+        }
+      },
+      {
+        "path": "nodes/1:1440/document/children/0/children/230",
+        "name": "Clip path group",
+        "type": "GROUP",
+        "bounds": {
+          "x": 1762.0,
+          "y": -279.0,
+          "width": 960.0,
+          "height": 540.0
+        }
+      }
+    ]
+  },
+  "page29_summary": {
+    "page_title": "옵션 선택",
+    "page_type": "dense_ui_panel",
+    "owner_summary": [
+      {
+        "owner_id": "dense_ui_panel:description_cards",
+        "atom_count": 5,
+        "roles": {
+          "description_card": 5
+        },
+        "bounds": {
+          "x": 685.65,
+          "y": 264.28,
+          "width": 250.84,
+          "height": 511.5
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_footer",
+        "atom_count": 1,
+        "roles": {
+          "description_footer": 1
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 114.06,
+          "width": 275.01,
+          "height": 12.59
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_header_rows",
+        "atom_count": 2,
+        "roles": {
+          "description_header_row": 2
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.0,
+          "height": 24.17
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_headers",
+        "atom_count": 2,
+        "roles": {
+          "description_header_cell": 2
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.01,
+          "height": 24.17
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_lane_rows",
+        "atom_count": 4,
+        "roles": {
+          "description_lane_row": 4
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 67.26,
+          "width": 275.0,
+          "height": 59.39
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_lanes",
+        "atom_count": 3,
+        "roles": {
+          "description_text_lane": 3
+        },
+        "bounds": {
+          "x": 686.22,
+          "y": 67.26,
+          "width": 249.45,
+          "height": 46.8
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_markers",
+        "atom_count": 3,
+        "roles": {
+          "description_marker": 3
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 67.26,
+          "width": 25.56,
+          "height": 46.8
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:description_table",
+        "atom_count": 1,
+        "roles": {
+          "description_table": 1
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.0,
+          "height": 749.01
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:global_ui_assets",
+        "atom_count": 53,
+        "roles": {
+          "small_asset": 53
+        },
+        "bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 496.16,
+          "height": 527.82
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:issue_card",
+        "atom_count": 1,
+        "roles": {
+          "issue_card": 1
+        },
+        "bounds": {
+          "x": 725.68,
+          "y": 95.56,
+          "width": 234.32,
+          "height": 54.34
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:panel_overlay_notes",
+        "atom_count": 1,
+        "roles": {
+          "overlay_note": 1
+        },
+        "bounds": {
+          "x": 505.08,
+          "y": 338.89,
+          "width": 86.11,
+          "height": 26.66
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:panel_small_assets",
+        "atom_count": 20,
+        "roles": {
+          "small_asset": 20
+        },
+        "bounds": {
+          "x": 512.77,
+          "y": 11.77,
+          "width": 364.81,
+          "height": 510.3
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:top_meta_band_cells",
+        "atom_count": 4,
+        "roles": {
+          "top_meta_band_cell": 4
+        },
+        "bounds": {
+          "x": 31.34,
+          "y": 8.63,
+          "width": 694.52,
+          "height": 33.58
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:top_meta_group",
+        "atom_count": 1,
+        "roles": {
+          "top_meta_table": 1
+        },
+        "bounds": {
+          "x": 31.34,
+          "y": 8.63,
+          "width": 905.04,
+          "height": 33.59
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:top_meta_info_cells",
+        "atom_count": 4,
+        "roles": {
+          "top_meta_info_cell": 4
+        },
+        "bounds": {
+          "x": 725.86,
+          "y": 8.63,
+          "width": 210.51,
+          "height": 33.58
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:top_meta_rows",
+        "atom_count": 2,
+        "roles": {
+          "top_meta_row": 2
+        },
+        "bounds": {
+          "x": 31.34,
+          "y": 8.63,
+          "width": 905.04,
+          "height": 33.58
+        }
+      },
+      {
+        "owner_id": "dense_ui_panel:version_stack",
+        "atom_count": 12,
+        "roles": {
+          "version_stack": 12
+        },
+        "bounds": {
+          "x": 583.15,
+          "y": 0.0,
+          "width": 141.97,
+          "height": 219.78
+        }
+      },
+      {
+        "owner_id": "owner:page:29",
+        "atom_count": 61,
+        "roles": {
+          "shape": 12,
+          "background_card": 9,
+          "text": 18,
+          "group": 6,
+          "labeled_shape": 14,
+          "section_block": 2
+        },
+        "bounds": {
+          "x": 0.0,
+          "y": 8.07,
+          "width": 936.49,
+          "height": 519.86
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_13",
+        "atom_count": 3,
+        "roles": {
+          "background_card": 1,
+          "overlay_mark": 2
+        },
+        "bounds": {
+          "x": 29.77,
+          "y": 55.41,
+          "width": 236.12,
+          "height": 261.47
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_16",
+        "atom_count": 1,
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 49.57,
+          "y": 376.95,
+          "width": 69.55,
+          "height": 10.9
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_39",
+        "atom_count": 2,
+        "roles": {
+          "overlay_mark": 1,
+          "text": 1
+        },
+        "bounds": {
+          "x": 128.51,
+          "y": 209.56,
+          "width": 61.99,
+          "height": 31.89
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_46",
+        "atom_count": 1,
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 231.36,
+          "y": 376.37,
+          "width": 30.29,
+          "height": 10.3
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_52",
+        "atom_count": 2,
+        "roles": {
+          "background_card": 2
+        },
+        "bounds": {
+          "x": 509.28,
+          "y": 364.39,
+          "width": 145.77,
+          "height": 162.25
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_6",
+        "atom_count": 1,
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 46.06,
+          "y": 494.38,
+          "width": 41.03,
+          "height": 10.9
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_9",
+        "atom_count": 1,
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 46.84,
+          "y": 474.76,
+          "width": 41.03,
+          "height": 10.9
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_99",
+        "atom_count": 3,
+        "roles": {
+          "background_card": 2,
+          "group": 1
+        },
+        "bounds": {
+          "x": 29.87,
+          "y": 458.53,
+          "width": 236.25,
+          "height": 65.66
+        }
+      },
+      {
+        "owner_id": "owner:s29:slide_29/element_99/child_4",
+        "atom_count": 2,
+        "roles": {
+          "text": 2
+        },
+        "bounds": {
+          "x": 40.48,
+          "y": 467.33,
+          "width": 220.77,
+          "height": 13.33
+        }
+      }
+    ],
+    "group_summary": [
+      {
+        "group_id": "dense_ui_panel:description_body_semantic_group",
+        "atom_count": 5,
+        "owner_count": 2,
+        "owners": {
+          "dense_ui_panel:description_table": 1,
+          "dense_ui_panel:description_lane_rows": 4
+        },
+        "roles": {
+          "description_table": 1,
+          "description_lane_row": 4
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.0,
+          "height": 749.01
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:description_body_text_group",
+        "atom_count": 7,
+        "owner_count": 3,
+        "owners": {
+          "dense_ui_panel:description_markers": 3,
+          "dense_ui_panel:description_lanes": 3,
+          "dense_ui_panel:description_footer": 1
+        },
+        "roles": {
+          "description_marker": 3,
+          "description_text_lane": 3,
+          "description_footer": 1
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 67.26,
+          "width": 275.01,
+          "height": 59.39
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:description_card_group",
+        "atom_count": 5,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:description_cards": 5
+        },
+        "roles": {
+          "description_card": 5
+        },
+        "bounds": {
+          "x": 685.65,
+          "y": 264.28,
+          "width": 250.84,
+          "height": 511.5
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:description_header_group",
+        "atom_count": 4,
+        "owner_count": 2,
+        "owners": {
+          "dense_ui_panel:description_header_rows": 2,
+          "dense_ui_panel:description_headers": 2
+        },
+        "roles": {
+          "description_header_row": 2,
+          "description_header_cell": 2
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.01,
+          "height": 24.17
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:global_ui_asset_group",
+        "atom_count": 53,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:global_ui_assets": 53
+        },
+        "roles": {
+          "small_asset": 53
+        },
+        "bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 496.16,
+          "height": 527.82
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:issue_group",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:issue_card": 1
+        },
+        "roles": {
+          "issue_card": 1
+        },
+        "bounds": {
+          "x": 725.68,
+          "y": 95.56,
+          "width": 234.32,
+          "height": 54.34
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:panel_small_asset_group",
+        "atom_count": 21,
+        "owner_count": 2,
+        "owners": {
+          "dense_ui_panel:panel_small_assets": 20,
+          "dense_ui_panel:panel_overlay_notes": 1
+        },
+        "roles": {
+          "small_asset": 20,
+          "overlay_note": 1
+        },
+        "bounds": {
+          "x": 505.08,
+          "y": 11.77,
+          "width": 372.5,
+          "height": 510.3
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:top_meta_group",
+        "atom_count": 7,
+        "owner_count": 3,
+        "owners": {
+          "dense_ui_panel:top_meta_group": 1,
+          "dense_ui_panel:top_meta_rows": 2,
+          "dense_ui_panel:top_meta_band_cells": 4
+        },
+        "roles": {
+          "top_meta_table": 1,
+          "top_meta_row": 2,
+          "top_meta_band_cell": 4
+        },
+        "bounds": {
+          "x": 31.34,
+          "y": 8.63,
+          "width": 905.04,
+          "height": 33.59
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:top_meta_info_group",
+        "atom_count": 4,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:top_meta_info_cells": 4
+        },
+        "roles": {
+          "top_meta_info_cell": 4
+        },
+        "bounds": {
+          "x": 725.86,
+          "y": 8.63,
+          "width": 210.51,
+          "height": 33.58
+        }
+      },
+      {
+        "group_id": "dense_ui_panel:version_stack_group",
+        "atom_count": 12,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:version_stack": 12
+        },
+        "roles": {
+          "version_stack": 12
+        },
+        "bounds": {
+          "x": 583.15,
+          "y": 0.0,
+          "width": 141.97,
+          "height": 219.78
+        }
+      },
+      {
+        "group_id": "owner:page:29",
+        "atom_count": 61,
+        "owner_count": 1,
+        "owners": {
+          "owner:page:29": 61
+        },
+        "roles": {
+          "shape": 12,
+          "background_card": 9,
+          "text": 18,
+          "group": 6,
+          "labeled_shape": 14,
+          "section_block": 2
+        },
+        "bounds": {
+          "x": 0.0,
+          "y": 8.07,
+          "width": 936.49,
+          "height": 519.86
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_13",
+        "atom_count": 3,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_13": 3
+        },
+        "roles": {
+          "background_card": 1,
+          "overlay_mark": 2
+        },
+        "bounds": {
+          "x": 29.77,
+          "y": 55.41,
+          "width": 236.12,
+          "height": 261.47
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_16",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_16": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 49.57,
+          "y": 376.95,
+          "width": 69.55,
+          "height": 10.9
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_39",
+        "atom_count": 2,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_39": 2
+        },
+        "roles": {
+          "overlay_mark": 1,
+          "text": 1
+        },
+        "bounds": {
+          "x": 128.51,
+          "y": 209.56,
+          "width": 61.99,
+          "height": 31.89
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_46",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_46": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 231.36,
+          "y": 376.37,
+          "width": 30.29,
+          "height": 10.3
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_52",
+        "atom_count": 2,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_52": 2
+        },
+        "roles": {
+          "background_card": 2
+        },
+        "bounds": {
+          "x": 509.28,
+          "y": 364.39,
+          "width": 145.77,
+          "height": 162.25
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_6",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_6": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 46.06,
+          "y": 494.38,
+          "width": 41.03,
+          "height": 10.9
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_9",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_9": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 46.84,
+          "y": 474.76,
+          "width": 41.03,
+          "height": 10.9
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_99",
+        "atom_count": 3,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_99": 3
+        },
+        "roles": {
+          "background_card": 2,
+          "group": 1
+        },
+        "bounds": {
+          "x": 29.87,
+          "y": 458.53,
+          "width": 236.25,
+          "height": 65.66
+        }
+      },
+      {
+        "group_id": "owner:s29:slide_29/element_99/child_4",
+        "atom_count": 2,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_99/child_4": 2
+        },
+        "roles": {
+          "text": 2
+        },
+        "bounds": {
+          "x": 40.48,
+          "y": 467.33,
+          "width": 220.77,
+          "height": 13.33
+        }
+      }
+    ],
+    "small_asset_split_preview": {
+      "panel_small_asset_count": 0,
+      "global_ui_asset_count": 0,
+      "panel_examples": [],
+      "global_examples": []
+    },
+    "recommendations": [
+      {
+        "problem": "description_text_group is semantic-heavy",
+        "evidence": {
+          "owners": {},
+          "roles": {}
+        },
+        "suggestion": "Replace semantic collection with a visual `description_body_chunk` classification."
+      },
+      {
+        "problem": "small_asset_group mixes panel and global UI atoms",
+        "evidence": {
+          "panel_small_assets": 0,
+          "global_small_assets": 0
+        },
+        "suggestion": "Split into `panel_small_assets` and `global_ui_assets` before rendering."
+      },
+      {
+        "problem": "version_stack is already a coherent visual chunk",
+        "evidence": {
+          "owner": {
+            "owner_id": "dense_ui_panel:version_stack",
+            "atom_count": 12,
+            "roles": {
+              "version_stack": 12
+            },
+            "bounds": {
+              "x": 583.15,
+              "y": 0.0,
+              "width": 141.97,
+              "height": 219.78
+            }
+          }
+        },
+        "suggestion": "Keep as a single visual chunk and avoid partial additive hybrid overlays."
+      }
+    ]
+  }
+}
