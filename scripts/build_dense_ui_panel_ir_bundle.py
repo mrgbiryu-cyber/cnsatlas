@@ -138,14 +138,22 @@ def paragraph_texts(atom: dict[str, Any]) -> list[str]:
     for run in runs:
         run_type = run.get("type")
         text = str(run.get("text") or "")
-        if run_type == "paragraph_break":
+        if run_type in {"paragraph_break", "line_break"}:
             paragraph = "".join(current).strip()
             if paragraph:
                 paragraphs.append(paragraph)
             current = []
             continue
-        if run_type in {"text", "line_break"}:
-            current.append(text)
+        if run_type == "text":
+            chunks = text.splitlines()
+            if not chunks:
+                continue
+            current.append(chunks[0])
+            for extra in chunks[1:]:
+                paragraph = "".join(current).strip()
+                if paragraph:
+                    paragraphs.append(paragraph)
+                current = [extra]
     paragraph = "".join(current).strip()
     if paragraph:
         paragraphs.append(paragraph)
@@ -304,6 +312,7 @@ def build_description_lane_layout(
     lane_markers: dict[int, dict[str, Any]],
     lane_texts: dict[int, dict[str, Any]],
     footer_atom: dict[str, Any] | None,
+    issue_bounds: dict[str, Any] | None = None,
 ) -> dict[int, dict[str, Any]]:
     if not lane_rows:
         return {}
@@ -319,6 +328,11 @@ def build_description_lane_layout(
         row_bounds = row_atom["visual_bounds_px"]
         marker_bounds = dict(marker_atom["visual_bounds_px"]) if marker_atom else make_bounds(row_bounds["x"], current_y, 24.0, row_bounds["height"])
         text_bounds = dict(text_atom["visual_bounds_px"]) if text_atom else make_bounds(marker_bounds["x"] + marker_bounds["width"], current_y, row_bounds["width"] - marker_bounds["width"], row_bounds["height"])
+        if issue_bounds and row_index in {3, 4}:
+            issue_left = float(issue_bounds["x"])
+            available_width = issue_left - float(text_bounds["x"]) - 8.0
+            if available_width > 40.0:
+                text_bounds = make_bounds(float(text_bounds["x"]), current_y, available_width, float(text_bounds["height"]))
         font_size = float((text_atom or {}).get("text_style", {}).get("font_size_max") or 8.0)
         estimated_height = estimate_text_height(str((text_atom or {}).get("text") or ""), float(text_bounds["width"]), font_size)
         lane_height = max(float(row_bounds["height"]), estimated_height)
@@ -434,7 +448,14 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     lane_texts = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lanes", []) if row_index_from_atom(atom)}
     footer_atom = next(iter(grouped.get("dense_ui_panel:description_footer", [])), None)
     description_cards = list(grouped.get("dense_ui_panel:description_cards", []))
-    lane_layout = build_description_lane_layout(lane_rows, lane_markers, lane_texts, footer_atom)
+    issue_atom = next(iter(grouped.get("dense_ui_panel:issue_card", [])), None)
+    lane_layout = build_description_lane_layout(
+        lane_rows,
+        lane_markers,
+        lane_texts,
+        footer_atom,
+        issue_atom.get("visual_bounds_px") if issue_atom else None,
+    )
 
     for row_index in [3, 4, 5]:
         row_atom = lane_rows.get(row_index)
