@@ -67,7 +67,14 @@ def find_ir_logical_panel(bundle: dict) -> dict:
     return bundle["document"]["children"][0]["children"][0]["children"][0]
 
 
-def build_hybrid_frame(baseline_bundle: dict, ir_bundle: dict) -> dict:
+def build_hybrid_frame(
+    baseline_bundle: dict,
+    ir_bundle: dict,
+    *,
+    include_top_meta: bool = True,
+    include_version_stack: bool = True,
+    include_small_assets: bool = True,
+) -> dict:
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
     ir_logical = find_ir_logical_panel(ir_bundle)
     children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
@@ -75,14 +82,21 @@ def build_hybrid_frame(baseline_bundle: dict, ir_bundle: dict) -> dict:
     version_stack = children_by_id.get("dense_ui_panel:version_stack")
     small_assets = children_by_id.get("dense_ui_panel:small_assets")
 
-    baseline_frame["name"] = "hybrid_full_baseline_style_plus_ir_meta_assets"
+    name_parts = ["hybrid_full"]
+    if include_top_meta:
+        name_parts.append("meta")
+    if include_version_stack:
+        name_parts.append("version")
+    if include_small_assets:
+        name_parts.append("assets")
+    baseline_frame["name"] = "_".join(name_parts)
     rebuilt_children = []
     for child in baseline_frame.get("children") or []:
         child_name = child.get("name")
         if child_name == "top_meta_block":
-            if top_meta_cells is not None:
+            if include_top_meta and top_meta_cells is not None:
                 rebuilt_children.append(top_meta_cells)
-            if version_stack is not None:
+            if include_version_stack and version_stack is not None:
                 rebuilt_children.append(version_stack)
             continue
         if child_name != "right_panel_block":
@@ -98,7 +112,7 @@ def build_hybrid_frame(baseline_bundle: dict, ir_bundle: dict) -> dict:
             if panel_name == "표 48":
                 continue
             right_panel_children.append(panel_child)
-        if small_assets is not None:
+        if include_small_assets and small_assets is not None:
             right_panel_children.append(small_assets)
         right_panel["children"] = right_panel_children
         rebuilt_children.append(right_panel)
@@ -130,7 +144,7 @@ def build_compare_bundle(baseline_bundle: dict, hybrid_bundle: dict, out_path: P
     compare_children = [
         make_label_node("compare:baseline:label", "baseline_full", 8.0, 6.0),
         shift_node(find_full_frame(baseline_bundle), "compare:baseline", 0.0, top_pad),
-        make_label_node("compare:hybrid:label", "hybrid_full_baseline_style_plus_ir_meta_assets", TARGET_SLIDE_WIDTH + gap + 8.0, 6.0),
+        make_label_node("compare:hybrid:label", hybrid_bundle["document"]["children"][0]["name"], TARGET_SLIDE_WIDTH + gap + 8.0, 6.0),
         shift_node(find_full_frame(hybrid_bundle), "compare:hybrid", TARGET_SLIDE_WIDTH + gap, top_pad),
     ]
 
@@ -175,12 +189,79 @@ def build_compare_bundle(baseline_bundle: dict, hybrid_bundle: dict, out_path: P
         json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
 
 
+def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: Path) -> None:
+    gap = 40.0
+    top_pad = 28.0
+    variants = [
+        ("baseline_full", find_full_frame(baseline_bundle)),
+        (
+            "baseline_plus_ir_meta",
+            build_hybrid_frame(baseline_bundle, ir_bundle, include_top_meta=True, include_version_stack=True, include_small_assets=False),
+        ),
+        (
+            "baseline_plus_ir_assets",
+            build_hybrid_frame(baseline_bundle, ir_bundle, include_top_meta=False, include_version_stack=False, include_small_assets=True),
+        ),
+        (
+            "baseline_plus_ir_meta_assets",
+            build_hybrid_frame(baseline_bundle, ir_bundle, include_top_meta=True, include_version_stack=True, include_small_assets=True),
+        ),
+    ]
+    total_width = TARGET_SLIDE_WIDTH * len(variants) + gap * (len(variants) - 1)
+    total_height = TARGET_SLIDE_HEIGHT + top_pad
+    compare_children: list[dict[str, Any]] = []
+    for index, (label, frame) in enumerate(variants):
+        dx = index * (TARGET_SLIDE_WIDTH + gap)
+        compare_children.append(make_label_node(f"compare:axis:{index}:label", label, dx + 8.0, 6.0))
+        compare_children.append(shift_node(frame, f"compare:axis:{index}", dx, top_pad))
+
+    inner_frame = {
+        "id": "page:29:full-style-axis-compare:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": compare_children,
+    }
+    root = {
+        "id": "page:29:full-style-axis-compare",
+        "type": "FRAME",
+        "name": "Slide 29 Full Style Axis Compare",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [inner_frame],
+        "debug": {"generator": "page29-full-style-axis-compare"},
+    }
+    compare_bundle = {
+        "kind": "figma-replay-bundle",
+        "source_kind": "ppt-full-style-axis-compare",
+        "visual_model_version": "dense-ui-style-axis-compare-v1",
+        "source_file": str(out_path),
+        "file_name": out_path.name,
+        "page_name": root["name"],
+        "node_id": root["id"],
+        "document": root,
+        "assets": bundle_assets(baseline_bundle, ir_bundle),
+        "missing_assets": [],
+        "debug": {"status": "page29_full_style_axis_compare"},
+    }
+    with out_path.open("w", encoding="utf-8") as handle:
+        json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
+
+
 def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     baseline_path = repo_root / "docs" / "block-bundles" / "block-slide-29.bundle.json"
     ir_path = repo_root / "docs" / "block-bundles" / "ir-dense-ui-panel-29.bundle.json"
     out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid-compare.bundle.json"
     hybrid_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid.bundle.json"
+    axis_compare_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-axis-compare.bundle.json"
 
     baseline_bundle = load_bundle(baseline_path)
     ir_bundle = load_bundle(ir_path)
@@ -188,8 +269,10 @@ def main() -> None:
     hybrid_bundle["document"]["children"][0] = build_hybrid_frame(baseline_bundle, ir_bundle)
     build_compare_bundle(baseline_bundle, hybrid_bundle, out_path)
     build_hybrid_bundle(baseline_bundle, ir_bundle, hybrid_out_path)
+    build_axis_compare_bundle(baseline_bundle, ir_bundle, axis_compare_out_path)
     print(f"saved {out_path}")
     print(f"saved {hybrid_out_path}")
+    print(f"saved {axis_compare_out_path}")
 
 
 if __name__ == "__main__":
