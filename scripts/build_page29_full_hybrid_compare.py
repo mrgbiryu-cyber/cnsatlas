@@ -365,6 +365,76 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
         json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
 
 
+def build_group_spread_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: Path) -> None:
+    gap = 40.0
+    top_pad = 28.0
+    ir_logical = find_ir_logical_panel(ir_bundle)
+    groups = [child for child in ir_logical.get("children") or []]
+    variants = [("baseline_full", find_full_frame(baseline_bundle))] + [
+        (group.get("id", f"group:{index}").split(":")[-1], group) for index, group in enumerate(groups)
+    ]
+    total_width = TARGET_SLIDE_WIDTH * len(variants) + gap * (len(variants) - 1)
+    total_height = TARGET_SLIDE_HEIGHT + top_pad
+    compare_children: list[dict] = []
+    for index, (label, node) in enumerate(variants):
+        dx = index * (TARGET_SLIDE_WIDTH + gap)
+        compare_children.append(make_label_node(f"compare:groups:{index}:label", label, dx + 8.0, 6.0))
+        if index == 0:
+            compare_children.append(shift_node(node, f"compare:groups:{index}", dx, top_pad))
+            continue
+        frame = {
+            "id": f"compare:groups:{index}:frame",
+            "type": "FRAME",
+            "name": label,
+            "absoluteBoundingBox": {"x": dx, "y": top_pad, "width": TARGET_SLIDE_WIDTH, "height": TARGET_SLIDE_HEIGHT},
+            "relativeTransform": identity_affine(),
+            "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+            "strokes": [{"type": "SOLID", "color": {"r": 0.92, "g": 0.92, "b": 0.92}, "opacity": 1.0}],
+            "strokeWeight": 1,
+            "children": [shift_node(node, f"compare:groups:{index}", dx, top_pad)],
+        }
+        compare_children.append(frame)
+
+    inner_frame = {
+        "id": "page:29:group-spread:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": compare_children,
+    }
+    root = {
+        "id": "page:29:group-spread",
+        "type": "FRAME",
+        "name": "Slide 29 Group Spread Compare",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [inner_frame],
+        "debug": {"generator": "page29-group-spread-compare"},
+    }
+    compare_bundle = {
+        "kind": "figma-replay-bundle",
+        "source_kind": "ppt-full-group-spread-compare",
+        "visual_model_version": "dense-ui-group-spread-v1",
+        "source_file": str(out_path),
+        "file_name": out_path.name,
+        "page_name": root["name"],
+        "node_id": root["id"],
+        "document": root,
+        "assets": bundle_assets(baseline_bundle, ir_bundle),
+        "missing_assets": [],
+        "debug": {"status": "page29_group_spread_compare"},
+    }
+    with out_path.open("w", encoding="utf-8") as handle:
+        json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
+
+
 def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     baseline_path = repo_root / "docs" / "block-bundles" / "block-slide-29.bundle.json"
@@ -372,6 +442,7 @@ def main() -> None:
     out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid-compare.bundle.json"
     hybrid_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid.bundle.json"
     axis_compare_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-axis-compare.bundle.json"
+    group_spread_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-group-spread.bundle.json"
 
     baseline_bundle = load_bundle(baseline_path)
     ir_bundle = load_bundle(ir_path)
@@ -380,9 +451,11 @@ def main() -> None:
     build_compare_bundle(baseline_bundle, hybrid_bundle, out_path)
     build_hybrid_bundle(baseline_bundle, ir_bundle, hybrid_out_path)
     build_axis_compare_bundle(baseline_bundle, ir_bundle, axis_compare_out_path)
+    build_group_spread_bundle(baseline_bundle, ir_bundle, group_spread_out_path)
     print(f"saved {out_path}")
     print(f"saved {hybrid_out_path}")
     print(f"saved {axis_compare_out_path}")
+    print(f"saved {group_spread_out_path}")
 
 
 if __name__ == "__main__":
