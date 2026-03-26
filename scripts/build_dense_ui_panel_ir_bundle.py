@@ -331,6 +331,27 @@ def build_owner_group(owner_id: str, children: list[dict[str, Any]]) -> dict[str
     }
 
 
+def build_group_group(group_id: str, children: list[dict[str, Any]]) -> dict[str, Any]:
+    bounds = union_bounds(
+        [
+            child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0)
+            for child in children
+        ]
+    )
+    return {
+        "id": group_id,
+        "type": "GROUP",
+        "name": group_id.split(":")[-1],
+        "absoluteBoundingBox": bounds,
+        "relativeTransform": identity_affine(),
+        "children": children,
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "group_id": group_id,
+        },
+    }
+
+
 def row_index_from_atom(atom: dict[str, Any]) -> int | None:
     atom_id = str(atom.get("id") or "")
     match = ROW_ID_RE.search(atom_id)
@@ -506,6 +527,17 @@ def owner_priority(owner_id: str) -> int:
     return order.get(owner_id, 50)
 
 
+def group_priority(group_id: str) -> int:
+    order = {
+        "dense_ui_panel:top_meta_group": 10,
+        "dense_ui_panel:version_stack_group": 12,
+        "dense_ui_panel:issue_group": 14,
+        "dense_ui_panel:description_block_group": 20,
+        "dense_ui_panel:small_asset_group": 30,
+    }
+    return order.get(group_id, 50)
+
+
 def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
     return (
         int(atom.get("z_index") or 0),
@@ -517,6 +549,7 @@ def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
 def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> list[dict[str, Any]]:
     panel_bounds = dense_panel_bounds(page)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    group_bucket_map = {bucket["group_id"]: bucket for bucket in page.get("group_buckets") or []}
     for atom in page.get("atoms") or []:
         owner_id = str(atom.get("owner_id") or "")
         if not owner_id.startswith("dense_ui_panel:"):
@@ -526,7 +559,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         grouped[owner_id].append(atom)
 
     lane_groups: list[dict[str, Any]] = []
-    owner_groups: list[dict[str, Any]] = []
+    owner_groups: dict[str, dict[str, Any]] = {}
     lane_rows = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lane_rows", []) if row_index_from_atom(atom)}
     lane_markers = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_markers", []) if row_index_from_atom(atom)}
     lane_texts = {row_index_from_atom(atom): atom for atom in grouped.get("dense_ui_panel:description_lanes", []) if row_index_from_atom(atom)}
@@ -586,6 +619,9 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom, suffix=":label"))
                 continue
+            if role == "top_text_row":
+                owner_children.append(build_paragraph_text_group(atom, atom["visual_bounds_px"]))
+                continue
             if role in {"description_text_lane", "description_footer", "description_marker"}:
                 owner_children.append(build_text_node(atom))
                 continue
@@ -605,9 +641,38 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
                     owner_children.append(build_rect_node(atom))
                 continue
         if owner_children:
-            owner_groups.append(build_owner_group(owner_id, owner_children))
+            owner_groups[owner_id] = build_owner_group(owner_id, owner_children)
 
-    children = lane_groups + owner_groups
+    grouped_children: list[dict[str, Any]] = []
+
+    top_meta_children: list[dict[str, Any]] = []
+    for owner_id in ["dense_ui_panel:top_meta_rows", "dense_ui_panel:top_meta_cells"]:
+        if owner_id in owner_groups:
+            top_meta_children.append(owner_groups[owner_id])
+    if top_meta_children and "dense_ui_panel:top_meta_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:top_meta_group", top_meta_children))
+
+    if "dense_ui_panel:version_stack" in owner_groups and "dense_ui_panel:version_stack_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:version_stack_group", [owner_groups["dense_ui_panel:version_stack"]]))
+
+    if "dense_ui_panel:issue_card" in owner_groups and "dense_ui_panel:issue_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:issue_group", [owner_groups["dense_ui_panel:issue_card"]]))
+
+    description_children: list[dict[str, Any]] = []
+    for owner_id in ["dense_ui_panel:top_rows", "dense_ui_panel:description_cards"]:
+        if owner_id in owner_groups:
+            description_children.append(owner_groups[owner_id])
+    description_children.extend(lane_groups)
+    for owner_id in ["dense_ui_panel:description_footer", "dense_ui_panel:description_markers", "dense_ui_panel:description_lanes"]:
+        if owner_id in owner_groups:
+            description_children.append(owner_groups[owner_id])
+    if description_children and "dense_ui_panel:description_block_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:description_block_group", description_children))
+
+    if "dense_ui_panel:small_assets" in owner_groups and "dense_ui_panel:small_asset_group" in group_bucket_map:
+        grouped_children.append(build_group_group("dense_ui_panel:small_asset_group", [owner_groups["dense_ui_panel:small_assets"]]))
+
+    children = sorted(grouped_children, key=lambda node: group_priority(str(node.get("id") or "")))
 
     visible_panel_bounds = make_bounds(
         float(panel_bounds["x"]),
