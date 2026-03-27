@@ -67,29 +67,84 @@ def find_ir_logical_panel(bundle: dict) -> dict:
     return bundle["document"]["children"][0]["children"][0]["children"][0]
 
 
+def load_ir_chunk_policies(repo_root: Path) -> dict[str, dict]:
+    ir_path = repo_root / "docs" / "resolved-ppt-ir-12-19-29.json"
+    with ir_path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    page = next(page for page in payload.get("pages") or [] if int(page.get("slide_no") or 0) == 29)
+    return {bucket["chunk_id"]: bucket for bucket in page.get("chunk_buckets") or []}
+
+
+def find_chunk_children(ir_bundle: dict) -> dict[str, dict]:
+    logical = find_ir_logical_panel(ir_bundle)
+    return {child.get("id"): copy.deepcopy(child) for child in logical.get("children") or []}
+
+
+def text_only_description_overlay(description_body_group: dict | None) -> dict | None:
+    if description_body_group is None:
+        return None
+    overlay_children = []
+    for child in description_body_group.get("children") or []:
+        if str(child.get("name") or "").startswith("lane_row_"):
+            overlay_children.append(copy.deepcopy(child))
+    if not overlay_children:
+        return None
+    bounds_list = [child.get("absoluteBoundingBox") for child in overlay_children if child.get("absoluteBoundingBox")]
+    if not bounds_list:
+        return None
+    min_x = min(float(b["x"]) for b in bounds_list)
+    min_y = min(float(b["y"]) for b in bounds_list)
+    max_x = max(float(b["x"]) + float(b["width"]) for b in bounds_list)
+    max_y = max(float(b["y"]) + float(b["height"]) for b in bounds_list)
+    return {
+        "id": "dense_ui_panel:description_body_text_overlay_chunk",
+        "type": "GROUP",
+        "name": "description_body_text_overlay_chunk",
+        "absoluteBoundingBox": {
+            "x": round(min_x, 2),
+            "y": round(min_y, 2),
+            "width": round(max_x - min_x, 2),
+            "height": round(max_y - min_y, 2),
+        },
+        "relativeTransform": identity_affine(),
+        "children": overlay_children,
+        "debug": {"role": "description_body_text_overlay_chunk"},
+    }
+
+
 def build_hybrid_frame(
     baseline_bundle: dict,
     ir_bundle: dict,
+    chunk_policies: dict[str, dict],
     *,
     include_top_meta: bool = True,
     include_top_meta_band: bool = True,
     include_top_meta_info: bool = True,
     include_top_rows: bool = True,
     include_description_header: bool = True,
+    include_description_text_overlay: bool = False,
     include_version_stack: bool = True,
     include_issue: bool = True,
     include_small_assets: bool = True,
 ) -> dict:
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
-    ir_logical = find_ir_logical_panel(ir_bundle)
-    children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
+    children_by_id = find_chunk_children(ir_bundle)
     top_meta_band_group = children_by_id.get("dense_ui_panel:top_meta_band_chunk")
     top_meta_info_group = children_by_id.get("dense_ui_panel:top_meta_info_chunk")
     top_rows_group = children_by_id.get("dense_ui_panel:top_rows_chunk")
     description_header_group = children_by_id.get("dense_ui_panel:description_header_chunk")
+    description_body_group = children_by_id.get("dense_ui_panel:description_body_chunk")
+    description_text_overlay_group = text_only_description_overlay(description_body_group)
     version_stack_group = children_by_id.get("dense_ui_panel:version_stack_chunk")
     issue_group = children_by_id.get("dense_ui_panel:issue_chunk")
     small_asset_group = children_by_id.get("dense_ui_panel:panel_small_assets_chunk")
+    version_policy = str((chunk_policies.get("dense_ui_panel:version_stack_chunk") or {}).get("composition_policy") or "preserve")
+    issue_policy = str((chunk_policies.get("dense_ui_panel:issue_chunk") or {}).get("composition_policy") or "preserve")
+    assets_policy = str((chunk_policies.get("dense_ui_panel:panel_small_assets_chunk") or {}).get("composition_policy") or "preserve")
+    top_meta_band_policy = str((chunk_policies.get("dense_ui_panel:top_meta_band_chunk") or {}).get("composition_policy") or "preserve")
+    top_meta_info_policy = str((chunk_policies.get("dense_ui_panel:top_meta_info_chunk") or {}).get("composition_policy") or "preserve")
+    top_rows_policy = str((chunk_policies.get("dense_ui_panel:top_rows_chunk") or {}).get("composition_policy") or "preserve")
+    desc_header_policy = str((chunk_policies.get("dense_ui_panel:description_header_chunk") or {}).get("composition_policy") or "preserve")
 
     name_parts = ["hybrid_full"]
     if include_top_meta:
@@ -102,6 +157,8 @@ def build_hybrid_frame(
         name_parts.append("rows")
     if include_description_header:
         name_parts.append("desc_header")
+    if include_description_text_overlay:
+        name_parts.append("desc_text")
     if include_version_stack:
         name_parts.append("version")
     if include_issue:
@@ -113,33 +170,47 @@ def build_hybrid_frame(
     for child in baseline_frame.get("children") or []:
         child_name = child.get("name")
         if child_name == "top_meta_block":
-            if include_top_meta and include_top_meta_band and top_meta_band_group is not None:
-                rebuilt_children.append(top_meta_band_group)
-            if include_top_meta and include_top_meta_info and top_meta_info_group is not None:
-                rebuilt_children.append(top_meta_info_group)
-            if include_top_rows and top_rows_group is not None:
-                rebuilt_children.append(top_rows_group)
-            if include_version_stack and version_stack_group is not None:
+            keep_baseline_top_meta = (
+                (not include_top_meta or top_meta_band_policy == "preserve" or top_meta_info_policy == "preserve")
+                and (not include_top_rows or top_rows_policy == "preserve")
+            )
+            if keep_baseline_top_meta:
+                rebuilt_children.append(child)
+            else:
+                if include_top_meta and include_top_meta_band and top_meta_band_group is not None:
+                    rebuilt_children.append(top_meta_band_group)
+                if include_top_meta and include_top_meta_info and top_meta_info_group is not None:
+                    rebuilt_children.append(top_meta_info_group)
+                if include_top_rows and top_rows_group is not None:
+                    rebuilt_children.append(top_rows_group)
+            if include_version_stack and version_stack_group is not None and version_policy in {"overlay", "replace"}:
                 rebuilt_children.append(version_stack_group)
             continue
         if child_name != "right_panel_block":
             rebuilt_children.append(child)
             continue
         right_panel = copy.deepcopy(child)
+        keep_baseline_right_panel = desc_header_policy == "preserve"
         right_panel_children = []
-        for panel_child in right_panel.get("children") or []:
-            panel_name = str(panel_child.get("name") or "")
-            # Replacement hybrid:
-            # - keep dense baseline background/description style layers
-            # - drop semantic table text group that overlaps everything
-            if panel_name == "표 48":
-                continue
-            right_panel_children.append(panel_child)
-        if include_description_header and description_header_group is not None:
+        if keep_baseline_right_panel:
+            for panel_child in right_panel.get("children") or []:
+                panel_name = str(panel_child.get("name") or "")
+                if include_description_text_overlay and panel_name == "right_panel_block:description":
+                    continue
+                right_panel_children.append(panel_child)
+        if not keep_baseline_right_panel:
+            for panel_child in right_panel.get("children") or []:
+                panel_name = str(panel_child.get("name") or "")
+                if panel_name == "표 48":
+                    continue
+                right_panel_children.append(panel_child)
+        if include_description_header and description_header_group is not None and desc_header_policy == "replace":
             right_panel_children.append(description_header_group)
-        if include_issue and issue_group is not None:
+        if include_description_text_overlay and description_text_overlay_group is not None:
+            right_panel_children.append(description_text_overlay_group)
+        if include_issue and issue_group is not None and issue_policy in {"overlay", "replace"}:
             right_panel_children.append(issue_group)
-        if include_small_assets and small_asset_group is not None:
+        if include_small_assets and small_asset_group is not None and assets_policy in {"overlay", "replace"}:
             right_panel_children.append(small_asset_group)
         right_panel["children"] = right_panel_children
         rebuilt_children.append(right_panel)
@@ -147,7 +218,22 @@ def build_hybrid_frame(
     return baseline_frame
 
 
-def build_hybrid_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: Path) -> None:
+def build_hybrid_bundle(
+    baseline_bundle: dict,
+    ir_bundle: dict,
+    chunk_policies: dict[str, dict],
+    out_path: Path,
+    *,
+    include_top_meta: bool = True,
+    include_top_meta_band: bool = True,
+    include_top_meta_info: bool = True,
+    include_top_rows: bool = True,
+    include_description_header: bool = True,
+    include_description_text_overlay: bool = False,
+    include_version_stack: bool = True,
+    include_issue: bool = True,
+    include_small_assets: bool = True,
+) -> None:
     hybrid_bundle = copy.deepcopy(baseline_bundle)
     hybrid_bundle["page_name"] = "Slide 29 - Full Style Hybrid"
     hybrid_bundle["node_id"] = "page:29:full-style-hybrid"
@@ -156,7 +242,20 @@ def build_hybrid_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: Path) 
     hybrid_bundle["file_name"] = out_path.name
     hybrid_bundle["document"]["id"] = "page:29:full-style-hybrid"
     hybrid_bundle["document"]["name"] = "Slide 29 - Full Style Hybrid"
-    hybrid_bundle["document"]["children"][0] = build_hybrid_frame(baseline_bundle, ir_bundle)
+    hybrid_bundle["document"]["children"][0] = build_hybrid_frame(
+        baseline_bundle,
+        ir_bundle,
+        chunk_policies,
+        include_top_meta=include_top_meta,
+        include_top_meta_band=include_top_meta_band,
+        include_top_meta_info=include_top_meta_info,
+        include_top_rows=include_top_rows,
+        include_description_header=include_description_header,
+        include_description_text_overlay=include_description_text_overlay,
+        include_version_stack=include_version_stack,
+        include_issue=include_issue,
+        include_small_assets=include_small_assets,
+    )
     hybrid_bundle["assets"] = bundle_assets(baseline_bundle, ir_bundle)
     hybrid_bundle["debug"] = {"status": "page29_full_style_hybrid"}
     with out_path.open("w", encoding="utf-8") as handle:
@@ -216,7 +315,7 @@ def build_compare_bundle(baseline_bundle: dict, hybrid_bundle: dict, out_path: P
         json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
 
 
-def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: Path) -> None:
+def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_policies: dict[str, dict], out_path: Path) -> None:
     gap = 40.0
     top_pad = 28.0
     variants = [
@@ -226,6 +325,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=True,
                 include_top_meta_band=True,
                 include_top_meta_info=False,
@@ -241,6 +341,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=True,
                 include_top_meta_band=False,
                 include_top_meta_info=True,
@@ -256,6 +357,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=False,
@@ -269,6 +371,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=True,
@@ -282,6 +385,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=False,
@@ -295,6 +399,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=False,
@@ -308,6 +413,7 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
             build_hybrid_frame(
                 baseline_bundle,
                 ir_bundle,
+                chunk_policies,
                 include_top_meta=True,
                 include_top_rows=True,
                 include_description_header=True,
@@ -446,11 +552,36 @@ def main() -> None:
 
     baseline_bundle = load_bundle(baseline_path)
     ir_bundle = load_bundle(ir_path)
+    chunk_policies = load_ir_chunk_policies(repo_root)
     hybrid_bundle = copy.deepcopy(baseline_bundle)
-    hybrid_bundle["document"]["children"][0] = build_hybrid_frame(baseline_bundle, ir_bundle)
+    hybrid_frame = build_hybrid_frame(
+        baseline_bundle,
+        ir_bundle,
+        chunk_policies,
+        include_top_meta=False,
+        include_top_rows=False,
+        include_description_header=False,
+        include_description_text_overlay=True,
+        include_version_stack=False,
+        include_issue=False,
+        include_small_assets=False,
+    )
+    hybrid_bundle["document"]["children"][0] = hybrid_frame
     build_compare_bundle(baseline_bundle, hybrid_bundle, out_path)
-    build_hybrid_bundle(baseline_bundle, ir_bundle, hybrid_out_path)
-    build_axis_compare_bundle(baseline_bundle, ir_bundle, axis_compare_out_path)
+    build_hybrid_bundle(
+        baseline_bundle,
+        ir_bundle,
+        chunk_policies,
+        hybrid_out_path,
+        include_top_meta=False,
+        include_top_rows=False,
+        include_description_header=False,
+        include_description_text_overlay=True,
+        include_version_stack=False,
+        include_issue=False,
+        include_small_assets=False,
+    )
+    build_axis_compare_bundle(baseline_bundle, ir_bundle, chunk_policies, axis_compare_out_path)
     build_group_spread_bundle(baseline_bundle, ir_bundle, group_spread_out_path)
     print(f"saved {out_path}")
     print(f"saved {hybrid_out_path}")
