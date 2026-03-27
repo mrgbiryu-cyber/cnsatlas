@@ -1918,9 +1918,9 @@
                 }
               },
               {
-                "id": "compare:hybrid:dense_ui_panel:top_meta_group",
+                "id": "compare:hybrid:dense_ui_panel:top_meta_band_chunk",
                 "type": "GROUP",
-                "name": "top_meta_group",
+                "name": "top_meta_band_chunk",
                 "absoluteBoundingBox": {
                   "x": 1124.37,
                   "y": 36.63,
@@ -2078,13 +2078,13 @@
                 ],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "group_id": "dense_ui_panel:top_meta_group"
+                  "group_id": "dense_ui_panel:top_meta_band_chunk"
                 }
               },
               {
-                "id": "compare:hybrid:dense_ui_panel:top_meta_info_group",
+                "id": "compare:hybrid:dense_ui_panel:top_meta_info_chunk",
                 "type": "GROUP",
-                "name": "top_meta_info_group",
+                "name": "top_meta_info_chunk",
                 "absoluteBoundingBox": {
                   "x": 1725.86,
                   "y": 36.63,
@@ -2450,13 +2450,13 @@
                 ],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "group_id": "dense_ui_panel:top_meta_info_group"
+                  "group_id": "dense_ui_panel:top_meta_info_chunk"
                 }
               },
               {
-                "id": "compare:hybrid:dense_ui_panel:version_stack_group",
+                "id": "compare:hybrid:dense_ui_panel:version_stack_chunk",
                 "type": "GROUP",
-                "name": "version_stack_group",
+                "name": "version_stack_chunk",
                 "absoluteBoundingBox": {
                   "x": 1583.15,
                   "y": 28.0,
@@ -3756,7 +3756,7 @@
                 ],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "group_id": "dense_ui_panel:version_stack_group"
+                  "group_id": "dense_ui_panel:version_stack_chunk"
                 }
               },
               {
@@ -3866,9 +3866,9 @@
                     }
                   },
                   {
-                    "id": "compare:hybrid:dense_ui_panel:description_header_group",
+                    "id": "compare:hybrid:dense_ui_panel:description_header_chunk",
                     "type": "GROUP",
-                    "name": "description_header_group",
+                    "name": "description_header_chunk",
                     "absoluteBoundingBox": {
                       "x": 1660.66,
                       "y": 71.09,
@@ -4128,13 +4128,13 @@
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "group_id": "dense_ui_panel:description_header_group"
+                      "group_id": "dense_ui_panel:description_header_chunk"
                     }
                   },
                   {
-                    "id": "compare:hybrid:dense_ui_panel:issue_group",
+                    "id": "compare:hybrid:dense_ui_panel:issue_chunk",
                     "type": "GROUP",
-                    "name": "issue_group",
+                    "name": "issue_chunk",
                     "absoluteBoundingBox": {
                       "x": 1725.68,
                       "y": 123.56,
@@ -4290,13 +4290,13 @@
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "group_id": "dense_ui_panel:issue_group"
+                      "group_id": "dense_ui_panel:issue_chunk"
                     }
                   },
                   {
-                    "id": "compare:hybrid:dense_ui_panel:small_asset_group",
+                    "id": "compare:hybrid:dense_ui_panel:panel_small_assets_chunk",
                     "type": "GROUP",
-                    "name": "small_asset_group",
+                    "name": "panel_small_assets_chunk",
                     "absoluteBoundingBox": {
                       "x": 1505.08,
                       "y": 39.77,
@@ -4317,9 +4317,9 @@
                     ],
                     "children": [
                       {
-                        "id": "compare:hybrid:dense_ui_panel:small_assets",
+                        "id": "compare:hybrid:dense_ui_panel:panel_small_assets",
                         "type": "GROUP",
-                        "name": "small_assets",
+                        "name": "panel_small_assets",
                         "absoluteBoundingBox": {
                           "x": 1539.23,
                           "y": 39.77,
@@ -4386,7 +4386,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:layout_29/element_5"
                             }
                           },
@@ -4439,7 +4439,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_73"
                             }
                           },
@@ -4470,7 +4470,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_73/child_1"
                             }
                           },
@@ -4501,7 +4501,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_71"
                             }
                           },
@@ -4532,7 +4532,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_72"
                             }
                           },
@@ -4571,7 +4571,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_52/child_4"
                             }
                           },
@@ -4610,7 +4610,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_52/child_6"
                             }
                           },
@@ -4663,7 +4663,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_52/child_5"
                             }
                           },
@@ -4702,7 +4702,7 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_53"
                             }
                           },
@@ -4753,20 +4753,20 @@
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "small_asset",
-                              "owner_id": "dense_ui_panel:small_assets",
+                              "owner_id": "dense_ui_panel:panel_small_assets",
                               "source_atom_id": "s29:slide_29/element_70"
                             }
                           }
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:small_assets"
+                          "owner_id": "dense_ui_panel:panel_small_assets"
                         }
                       },
                       {
-                        "id": "compare:hybrid:dense_ui_panel:overlay_notes",
+                        "id": "compare:hybrid:dense_ui_panel:panel_overlay_notes",
                         "type": "GROUP",
-                        "name": "overlay_notes",
+                        "name": "panel_overlay_notes",
                         "absoluteBoundingBox": {
                           "x": 1505.08,
                           "y": 366.89,
@@ -4856,7 +4856,7 @@
                                 "debug": {
                                   "generator": "dense-ui-ir-v1",
                                   "layer_role": "overlay_note",
-                                  "owner_id": "dense_ui_panel:overlay_notes",
+                                  "owner_id": "dense_ui_panel:panel_overlay_notes",
                                   "source_atom_id": "s29:slide_29/element_51"
                                 }
                               }
@@ -4869,13 +4869,13 @@
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:overlay_notes"
+                          "owner_id": "dense_ui_panel:panel_overlay_notes"
                         }
                       }
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "group_id": "dense_ui_panel:small_asset_group"
+                      "group_id": "dense_ui_panel:panel_small_assets_chunk"
                     }
                   }
                 ],

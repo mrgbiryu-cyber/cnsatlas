@@ -83,13 +83,13 @@ def build_hybrid_frame(
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
     ir_logical = find_ir_logical_panel(ir_bundle)
     children_by_id = {child.get("id"): copy.deepcopy(child) for child in ir_logical.get("children") or []}
-    top_meta_group = children_by_id.get("dense_ui_panel:top_meta_group")
-    top_meta_info_group = children_by_id.get("dense_ui_panel:top_meta_info_group")
-    top_rows_group = children_by_id.get("dense_ui_panel:top_rows_group")
-    description_header_group = children_by_id.get("dense_ui_panel:description_header_group")
-    version_stack_group = children_by_id.get("dense_ui_panel:version_stack_group")
-    issue_group = children_by_id.get("dense_ui_panel:issue_group")
-    small_asset_group = children_by_id.get("dense_ui_panel:small_asset_group")
+    top_meta_band_group = children_by_id.get("dense_ui_panel:top_meta_band_chunk")
+    top_meta_info_group = children_by_id.get("dense_ui_panel:top_meta_info_chunk")
+    top_rows_group = children_by_id.get("dense_ui_panel:top_rows_chunk")
+    description_header_group = children_by_id.get("dense_ui_panel:description_header_chunk")
+    version_stack_group = children_by_id.get("dense_ui_panel:version_stack_chunk")
+    issue_group = children_by_id.get("dense_ui_panel:issue_chunk")
+    small_asset_group = children_by_id.get("dense_ui_panel:panel_small_assets_chunk")
 
     name_parts = ["hybrid_full"]
     if include_top_meta:
@@ -113,8 +113,8 @@ def build_hybrid_frame(
     for child in baseline_frame.get("children") or []:
         child_name = child.get("name")
         if child_name == "top_meta_block":
-            if include_top_meta and include_top_meta_band and top_meta_group is not None:
-                rebuilt_children.append(top_meta_group)
+            if include_top_meta and include_top_meta_band and top_meta_band_group is not None:
+                rebuilt_children.append(top_meta_band_group)
             if include_top_meta and include_top_meta_info and top_meta_info_group is not None:
                 rebuilt_children.append(top_meta_info_group)
             if include_top_rows and top_rows_group is not None:
