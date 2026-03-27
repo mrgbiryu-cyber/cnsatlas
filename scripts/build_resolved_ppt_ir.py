@@ -457,6 +457,83 @@ def group_key(atom: dict[str, Any]) -> str:
     return f"group:{atom.get('id')}"
 
 
+def classify_chunk_type(chunk_id: str, roles: list[str]) -> str:
+    if chunk_id.endswith("top_meta_band_chunk"):
+        return "header_band"
+    if chunk_id.endswith("top_meta_info_chunk"):
+        return "meta_grid"
+    if chunk_id.endswith("top_rows_chunk"):
+        return "top_text_rows"
+    if chunk_id.endswith("description_header_chunk"):
+        return "description_header"
+    if chunk_id.endswith("description_body_chunk"):
+        return "body_text_region"
+    if chunk_id.endswith("issue_chunk"):
+        return "issue_card"
+    if chunk_id.endswith("version_stack_chunk"):
+        return "stacked_badges"
+    if chunk_id.endswith("panel_small_assets_chunk"):
+        return "panel_local_assets"
+    if chunk_id.endswith("global_ui_assets_chunk"):
+        return "global_ui_assets"
+    if any(role in {"description_text_lane", "description_footer", "description_marker"} for role in roles):
+        return "body_text_region"
+    return "generic_chunk"
+
+
+def chunk_render_strategy(chunk_type: str) -> str:
+    mapping = {
+        "header_band": "frame_text_grid",
+        "meta_grid": "frame_text_grid",
+        "top_text_rows": "leaf_text_overlay",
+        "description_header": "frame_text_grid",
+        "body_text_region": "chunk_container_leaf_text",
+        "issue_card": "frame_vector_text",
+        "stacked_badges": "group_vector_text",
+        "panel_local_assets": "absolute_atom_overlay",
+        "global_ui_assets": "page_level_assets",
+    }
+    return mapping.get(chunk_type, "generic_native")
+
+
+def chunk_text_composition(chunk_type: str) -> str:
+    mapping = {
+        "header_band": "single_or_line",
+        "meta_grid": "cell_leaf",
+        "top_text_rows": "paragraph_or_line",
+        "description_header": "cell_leaf",
+        "body_text_region": "paragraph_or_line_leaf",
+        "issue_card": "short_label",
+        "stacked_badges": "badge_label",
+        "panel_local_assets": "none",
+        "global_ui_assets": "none",
+    }
+    return mapping.get(chunk_type, "single_node")
+
+
+def chunk_style_policy(chunk_type: str) -> str:
+    mapping = {
+        "header_band": "native_shape_first",
+        "meta_grid": "native_shape_first",
+        "top_text_rows": "text_only_overlay",
+        "description_header": "native_shape_first",
+        "body_text_region": "preserve_dense_background_overlay_text",
+        "issue_card": "source_shape_style_priority",
+        "stacked_badges": "source_shape_style_priority",
+        "panel_local_assets": "source_asset_style_priority",
+        "global_ui_assets": "source_asset_style_priority",
+    }
+    return mapping.get(chunk_type, "source_first")
+
+
+def chunk_asset_scope(chunk_type: str) -> str:
+    mapping = {
+        "panel_local_assets": "panel_local",
+        "global_ui_assets": "global_ui",
+    }
+    return mapping.get(chunk_type, "panel")
+
+
 def chunk_key_from_role(role: str, owner_id: str, page_type: str) -> str:
     if page_type == "dense_ui_panel":
         if role in {"top_meta_table", "top_meta_row", "top_meta_band_cell"}:
@@ -583,14 +660,24 @@ def build_chunk_bucket(chunk_id: str, atoms: list[dict[str, Any]]) -> dict[str, 
     bounds = union_bounds([atom["visual_bounds_px"] for atom in atoms if atom.get("visual_bounds_px")])
     owner_ids = sorted({str(atom.get("owner_id") or "") for atom in atoms})
     roles = sorted({str(atom.get("layer_role") or "") for atom in atoms})
+    chunk_type = classify_chunk_type(chunk_id, roles)
+    render_strategy = chunk_render_strategy(chunk_type)
+    text_composition = chunk_text_composition(chunk_type)
+    style_policy = chunk_style_policy(chunk_type)
+    asset_scope = chunk_asset_scope(chunk_type)
     return {
         "chunk_id": chunk_id,
+        "chunk_type": chunk_type,
         "pattern_type": atoms[0]["pattern_type"] if atoms else "generic",
         "owner_ids": owner_ids,
         "layer_roles": roles,
         "visual_bounds_px": bounds,
         "atom_ids": [atom["id"] for atom in atoms],
         "atom_count": len(atoms),
+        "render_strategy": render_strategy,
+        "text_composition": text_composition,
+        "style_policy": style_policy,
+        "asset_scope": asset_scope,
     }
 
 
