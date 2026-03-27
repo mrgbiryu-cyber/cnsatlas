@@ -188,12 +188,18 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
     width = float(bounds["width"])
     children: list[dict[str, Any]] = []
     current_y = top
+    max_bottom = top + float(bounds["height"])
     for index, paragraph in enumerate(paragraphs):
-        paragraph_bounds = make_bounds(left, current_y, width, line_height + 2.0)
+        if current_y >= max_bottom:
+            break
+        paragraph_height = min(line_height + 2.0, max_bottom - current_y)
+        if paragraph_height <= 1.0:
+            break
+        paragraph_bounds = make_bounds(left, current_y, width, paragraph_height)
         paragraph_atom = dict(atom)
         paragraph_atom["text"] = paragraph
         children.append(build_text_node(paragraph_atom, paragraph_bounds, suffix=f"{suffix}:p{index + 1}"))
-        current_y += line_height + 2.0
+        current_y += paragraph_height
     return build_owner_group(f"{atom['id']}{suffix}:paragraphs", children)
 
 
@@ -425,6 +431,7 @@ def build_description_lane_layout(
     if not ordered_rows:
         return {}
     current_y = float(lane_rows[ordered_rows[0]]["visual_bounds_px"]["y"])
+    max_bottom = TARGET_SLIDE_HEIGHT - 12.0
     layouts: dict[int, dict[str, Any]] = {}
     for row_index in ordered_rows:
         row_atom = lane_rows[row_index]
@@ -441,6 +448,10 @@ def build_description_lane_layout(
         font_size = float((text_atom or {}).get("text_style", {}).get("font_size_max") or 8.0)
         estimated_height = estimate_paragraph_group_height(text_atom or {}, float(text_bounds["width"]), font_size)
         lane_height = max(float(row_bounds["height"]), estimated_height)
+        remaining_height = max_bottom - current_y
+        if remaining_height <= 18.0:
+            break
+        lane_height = min(lane_height, remaining_height)
         lane_bounds = make_bounds(float(row_bounds["x"]), current_y, float(row_bounds["width"]), lane_height)
         marker_bounds = make_bounds(float(marker_bounds["x"]), current_y, float(marker_bounds["width"]), lane_height)
         text_bounds = make_bounds(float(text_bounds["x"]), current_y, float(text_bounds["width"]), lane_height)
@@ -452,10 +463,12 @@ def build_description_lane_layout(
         current_y += lane_height
     if footer_atom:
         footer_bounds = footer_atom["visual_bounds_px"]
+        footer_y = min(current_y + 6.0, max_bottom - 14.0)
+        footer_height = max(14.0, min(float(footer_bounds["height"]), max_bottom - footer_y))
         layouts[6] = {
-            "lane_bounds": make_bounds(float(footer_bounds["x"]), current_y + 6.0, float(footer_bounds["width"]), max(float(footer_bounds["height"]), 14.0)),
+            "lane_bounds": make_bounds(float(footer_bounds["x"]), footer_y, float(footer_bounds["width"]), footer_height),
             "marker_bounds": None,
-            "text_bounds": make_bounds(float(footer_bounds["x"]), current_y + 6.0, float(footer_bounds["width"]), max(float(footer_bounds["height"]), 14.0)),
+            "text_bounds": make_bounds(float(footer_bounds["x"]), footer_y, float(footer_bounds["width"]), footer_height),
         }
     return layouts
 
@@ -484,20 +497,22 @@ def dense_panel_bounds(page: dict[str, Any]) -> dict[str, float]:
     relevant = []
     for atom in page.get("atoms") or []:
         role = str(atom.get("layer_role") or "")
+        owner_id = str(atom.get("owner_id") or "")
         if role in {
-            "top_meta_band_cell",
             "top_meta_info_cell",
-            "top_text_row",
-            "description_header_cell",
             "version_stack",
             "issue_card",
-            "description_card",
+            "description_header_cell",
             "description_text_lane",
             "description_footer",
             "description_marker",
         }:
             bounds = atom.get("visual_bounds_px")
             if bounds and float(bounds["x"]) + float(bounds["width"]) >= RIGHT_PANEL_X_CUTOFF:
+                relevant.append(bounds)
+        if role in {"small_asset", "overlay_note"} and owner_id in {"dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"}:
+            bounds = atom.get("visual_bounds_px")
+            if bounds:
                 relevant.append(bounds)
     if not relevant:
         return make_bounds(TARGET_SLIDE_WIDTH * 0.6, 0.0, TARGET_SLIDE_WIDTH * 0.4, TARGET_SLIDE_HEIGHT)
@@ -672,22 +687,12 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
 
     chunk_children: list[dict[str, Any]] = []
 
-    top_meta_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:top_meta_rows", "dense_ui_panel:top_meta_band_cells"]:
-        if owner_id in owner_groups:
-            top_meta_children.append(owner_groups[owner_id])
-    if top_meta_children and "dense_ui_panel:top_meta_band_chunk" in chunk_bucket_map:
-        chunk_children.append(build_group_group("dense_ui_panel:top_meta_band_chunk", top_meta_children))
-
     top_meta_info_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:top_meta_info_cells"]:
         if owner_id in owner_groups:
             top_meta_info_children.append(owner_groups[owner_id])
     if top_meta_info_children and "dense_ui_panel:top_meta_info_chunk" in chunk_bucket_map:
         chunk_children.append(build_group_group("dense_ui_panel:top_meta_info_chunk", top_meta_info_children))
-
-    if "dense_ui_panel:top_rows" in owner_groups and "dense_ui_panel:top_rows_chunk" in chunk_bucket_map:
-        chunk_children.append(build_group_group("dense_ui_panel:top_rows_chunk", [owner_groups["dense_ui_panel:top_rows"]]))
 
     description_header_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:description_header_rows", "dense_ui_panel:description_headers"]:
