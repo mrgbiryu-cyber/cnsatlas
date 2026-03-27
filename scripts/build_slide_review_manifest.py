@@ -18,13 +18,14 @@ SLIDE_CONFIG = {
             "issue_card_overlay",
             "panel_small_assets_scope",
         ],
-        "entry_bundle": "docs/block-bundles/block-slide-29-full-style-axis-compare.bundle.json",
+        "entry_bundle": "docs/block-bundles/block-slide-29-right-panel-axis-compare.bundle.json",
         "bundles": {
             "baseline_bundle": "docs/block-bundles/block-slide-29.bundle.json",
             "ir_panel_bundle": "docs/block-bundles/ir-dense-ui-panel-29.bundle.json",
             "hybrid_bundle": "docs/block-bundles/block-slide-29-full-style-hybrid.bundle.json",
             "hybrid_compare_bundle": "docs/block-bundles/block-slide-29-full-style-hybrid-compare.bundle.json",
             "axis_compare_bundle": "docs/block-bundles/block-slide-29-full-style-axis-compare.bundle.json",
+            "panel_axis_compare_bundle": "docs/block-bundles/block-slide-29-right-panel-axis-compare.bundle.json",
             "group_spread_bundle": "docs/block-bundles/block-slide-29-group-spread.bundle.json",
         },
         "reports": {
@@ -82,7 +83,7 @@ def build_manifest(repo_root: Path, slide_no: int) -> dict[str, Any]:
         "slide_no": slide_no,
         "title": config["title"],
         "focus": config["focus"],
-        "entry_bundle_label": "axis_compare_bundle",
+        "entry_bundle_label": "panel_axis_compare_bundle",
         "entry_bundle_source": rel(repo_root, entry_bundle_path),
         "entry_bundle": entry_bundle,
         "bundles": {

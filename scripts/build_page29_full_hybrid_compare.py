@@ -605,6 +605,86 @@ def build_group_spread_bundle(baseline_bundle: dict, ir_bundle: dict, out_path: 
         json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
 
 
+def find_right_panel_node(bundle: dict) -> dict | None:
+    frame = find_full_frame(bundle)
+    for child in frame.get("children") or []:
+        if child.get("name") == "right_panel_block":
+            return child
+    return None
+
+
+def build_panel_axis_compare_bundle(variants: list[tuple[str, dict]], out_path: Path) -> None:
+    gap = 28.0
+    outer_pad_x = 12.0
+    outer_pad_y = 28.0
+    panels: list[tuple[str, dict]] = []
+    merged_assets: dict = {}
+
+    for label, bundle in variants:
+        panel = find_right_panel_node(bundle)
+        if not panel:
+            continue
+        panels.append((label, panel))
+        merged_assets.update(bundle.get("assets") or {})
+
+    if not panels:
+        raise SystemExit("no right_panel_block found in variants")
+
+    panel_width = max(float(panel["absoluteBoundingBox"]["width"]) for _, panel in panels)
+    panel_height = max(float(panel["absoluteBoundingBox"]["height"]) for _, panel in panels)
+    total_width = len(panels) * panel_width + (len(panels) - 1) * gap + outer_pad_x * 2
+    total_height = panel_height + outer_pad_y + 12.0
+
+    compare_children: list[dict] = []
+    for index, (label, panel) in enumerate(panels):
+        bounds = panel["absoluteBoundingBox"]
+        dx = outer_pad_x + index * (panel_width + gap) - float(bounds["x"])
+        dy = outer_pad_y - float(bounds["y"])
+        shifted = shift_node(panel, f"panel-axis:{label}", dx, dy)
+        shifted["name"] = label
+        compare_children.append(make_label_node(f"panel-axis:{label}:label", label, outer_pad_x + index * (panel_width + gap) + 4.0, 6.0))
+        compare_children.append(shifted)
+
+    inner_frame = {
+        "id": "page:29:panel-axis-compare:frame",
+        "type": "FRAME",
+        "name": "Frame",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": compare_children,
+    }
+    root = {
+        "id": "page:29:panel-axis-compare",
+        "type": "FRAME",
+        "name": "Slide 29 Right Panel Axis Compare",
+        "absoluteBoundingBox": {"x": 0.0, "y": 0.0, "width": total_width, "height": total_height},
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}],
+        "strokes": [],
+        "strokeWeight": 0,
+        "children": [inner_frame],
+        "debug": {"generator": "page29-panel-axis-compare"},
+    }
+    compare_bundle = {
+        "kind": "figma-replay-bundle",
+        "source_kind": "ppt-full-style-panel-axis-compare",
+        "visual_model_version": "dense-ui-style-panel-axis-compare-v1",
+        "source_file": str(out_path),
+        "file_name": out_path.name,
+        "page_name": root["name"],
+        "node_id": root["id"],
+        "document": root,
+        "assets": merged_assets,
+        "missing_assets": [],
+        "debug": {"status": "page29_panel_axis_compare"},
+    }
+    with out_path.open("w", encoding="utf-8") as handle:
+        json.dump(compare_bundle, handle, ensure_ascii=False, indent=2)
+
+
 def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     baseline_path = repo_root / "docs" / "block-bundles" / "block-slide-29.bundle.json"
@@ -613,6 +693,7 @@ def main() -> None:
     hybrid_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-hybrid.bundle.json"
     axis_compare_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-full-style-axis-compare.bundle.json"
     group_spread_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-group-spread.bundle.json"
+    panel_axis_compare_out_path = repo_root / "docs" / "block-bundles" / "block-slide-29-right-panel-axis-compare.bundle.json"
 
     baseline_bundle = load_bundle(baseline_path)
     ir_bundle = load_bundle(ir_path)
@@ -645,11 +726,43 @@ def main() -> None:
         include_issue=False,
         include_small_assets=False,
     )
+    variants = [
+        ("baseline_full", baseline_bundle),
+        ("ir_top_meta_band_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=True, include_top_meta_band=True, include_top_meta_info=False, include_top_rows=False, include_description_header=False, include_description_footer=False, include_version_stack=False, include_issue=False, include_annotation_overlay=False, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_top_meta_info_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=True, include_top_meta_band=False, include_top_meta_info=True, include_top_rows=False, include_description_header=False, include_description_footer=False, include_version_stack=False, include_issue=False, include_annotation_overlay=False, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_version_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=False, include_top_rows=False, include_description_header=False, include_description_footer=False, include_version_stack=True, include_issue=False, include_annotation_overlay=False, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_desc_header_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=False, include_top_rows=False, include_description_header=True, include_description_footer=False, include_version_stack=False, include_issue=False, include_annotation_overlay=False, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_footer_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=False, include_top_rows=False, include_description_header=False, include_description_footer=True, include_version_stack=False, include_issue=False, include_annotation_overlay=False, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_issue_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=False, include_top_rows=False, include_description_header=False, include_description_footer=False, include_version_stack=False, include_issue=True, include_annotation_overlay=False, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_notes_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=False, include_top_rows=False, include_description_header=False, include_description_footer=False, include_version_stack=False, include_issue=False, include_annotation_overlay=True, include_small_assets=False
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_assets_only", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=False, include_top_rows=False, include_description_header=False, include_description_footer=False, include_version_stack=False, include_issue=False, include_annotation_overlay=False, include_small_assets=True
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+        ("ir_meta_version_issue_assets", {"document": {"children": [build_hybrid_frame(
+            baseline_bundle, ir_bundle, chunk_policies, include_top_meta=True, include_top_rows=True, include_description_header=True, include_description_footer=True, include_version_stack=True, include_issue=True, include_annotation_overlay=True, include_small_assets=True
+        )] }, "assets": bundle_assets(baseline_bundle, ir_bundle)}),
+    ]
     build_axis_compare_bundle(baseline_bundle, ir_bundle, chunk_policies, axis_compare_out_path)
+    build_panel_axis_compare_bundle(variants, panel_axis_compare_out_path)
     build_group_spread_bundle(baseline_bundle, ir_bundle, group_spread_out_path)
     print(f"saved {out_path}")
     print(f"saved {hybrid_out_path}")
     print(f"saved {axis_compare_out_path}")
+    print(f"saved {panel_axis_compare_out_path}")
     print(f"saved {group_spread_out_path}")
 
 
