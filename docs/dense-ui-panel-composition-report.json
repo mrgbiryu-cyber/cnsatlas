@@ -1,0 +1,290 @@
+{
+  "report_version": "dense-ui-panel-composition-report-v1",
+  "baseline_right_panel_layers": [
+    {
+      "id": "s29:slide_29/element_37",
+      "name": "표 48",
+      "type": "GROUP",
+      "absoluteBoundingBox": {
+        "x": 660.66,
+        "y": 43.09,
+        "width": 275.0,
+        "height": 749.01
+      }
+    },
+    {
+      "id": "page:29:right_panel_block:background",
+      "name": "right_panel_block:background",
+      "type": "SVG_BLOCK",
+      "absoluteBoundingBox": {
+        "x": 589.71,
+        "y": 38.33,
+        "width": 370.29,
+        "height": 501.67
+      }
+    },
+    {
+      "id": "page:29:right_panel_block:description",
+      "name": "right_panel_block:description",
+      "type": "SVG_BLOCK",
+      "absoluteBoundingBox": {
+        "x": 589.71,
+        "y": 38.33,
+        "width": 370.29,
+        "height": 501.67
+      }
+    }
+  ],
+  "chunk_analysis": [
+    {
+      "chunk_id": "dense_ui_panel:top_meta_band_chunk",
+      "chunk_type": "header_band",
+      "render_strategy": "frame_text_grid",
+      "text_composition": "single_or_line",
+      "style_policy": "native_shape_first",
+      "asset_scope": "panel",
+      "atom_count": 7,
+      "features": {
+        "atom_type_count": 3,
+        "text_char_count": 8,
+        "shape_fill_count": 2,
+        "stroke_count": 0,
+        "small_atom_count": 0,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": true,
+        "is_narrow_panel_region": false,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "replace_only_if_baseline_meta_is_weaker",
+      "baseline_overlaps": []
+    },
+    {
+      "chunk_id": "dense_ui_panel:top_meta_info_chunk",
+      "chunk_type": "meta_grid",
+      "render_strategy": "frame_text_grid",
+      "text_composition": "cell_leaf",
+      "style_policy": "native_shape_first",
+      "asset_scope": "panel",
+      "atom_count": 4,
+      "features": {
+        "atom_type_count": 1,
+        "text_char_count": 7,
+        "shape_fill_count": 2,
+        "stroke_count": 0,
+        "small_atom_count": 0,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": true,
+        "is_narrow_panel_region": true,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "replace_only_if_baseline_meta_is_weaker",
+      "baseline_overlaps": []
+    },
+    {
+      "chunk_id": "dense_ui_panel:description_header_chunk",
+      "chunk_type": "description_header",
+      "render_strategy": "frame_text_grid",
+      "text_composition": "cell_leaf",
+      "style_policy": "native_shape_first",
+      "asset_scope": "panel",
+      "atom_count": 4,
+      "features": {
+        "atom_type_count": 2,
+        "text_char_count": 15,
+        "shape_fill_count": 2,
+        "stroke_count": 0,
+        "small_atom_count": 0,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": true,
+        "is_narrow_panel_region": false,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "review",
+      "baseline_overlaps": [
+        {
+          "baseline_name": "right_panel_block:background",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.036,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "right_panel_block:description",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.036,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "표 48",
+          "baseline_type": "GROUP",
+          "iou": 0.032,
+          "chunk_inside_ratio": 1.0
+        }
+      ]
+    },
+    {
+      "chunk_id": "dense_ui_panel:version_stack_chunk",
+      "chunk_type": "stacked_badges",
+      "render_strategy": "group_vector_text",
+      "text_composition": "badge_label",
+      "style_policy": "source_shape_style_priority",
+      "asset_scope": "panel",
+      "atom_count": 12,
+      "features": {
+        "atom_type_count": 1,
+        "text_char_count": 729,
+        "shape_fill_count": 12,
+        "stroke_count": 12,
+        "small_atom_count": 0,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": false,
+        "is_narrow_panel_region": true,
+        "repeated_colored_band_pattern": true
+      },
+      "recommended_composition_policy": "overlay_or_replace_candidate",
+      "baseline_overlaps": [
+        {
+          "baseline_name": "right_panel_block:background",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.128,
+          "chunk_inside_ratio": 0.787
+        },
+        {
+          "baseline_name": "right_panel_block:description",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.128,
+          "chunk_inside_ratio": 0.787
+        },
+        {
+          "baseline_name": "표 48",
+          "baseline_type": "GROUP",
+          "iou": 0.05,
+          "chunk_inside_ratio": 0.365
+        }
+      ]
+    },
+    {
+      "chunk_id": "dense_ui_panel:issue_chunk",
+      "chunk_type": "issue_card",
+      "render_strategy": "frame_vector_text",
+      "text_composition": "short_label",
+      "style_policy": "source_shape_style_priority",
+      "asset_scope": "panel",
+      "atom_count": 1,
+      "features": {
+        "atom_type_count": 1,
+        "text_char_count": 133,
+        "shape_fill_count": 1,
+        "stroke_count": 0,
+        "small_atom_count": 0,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": false,
+        "is_narrow_panel_region": true,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "overlay_or_replace_candidate",
+      "baseline_overlaps": [
+        {
+          "baseline_name": "right_panel_block:background",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.069,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "right_panel_block:description",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.069,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "표 48",
+          "baseline_type": "GROUP",
+          "iou": 0.055,
+          "chunk_inside_ratio": 0.896
+        }
+      ]
+    },
+    {
+      "chunk_id": "dense_ui_panel:description_body_chunk",
+      "chunk_type": "body_text_region",
+      "render_strategy": "chunk_container_leaf_text",
+      "text_composition": "paragraph_or_line_leaf",
+      "style_policy": "preserve_dense_background_overlay_text",
+      "asset_scope": "panel",
+      "atom_count": 17,
+      "features": {
+        "atom_type_count": 4,
+        "text_char_count": 2104,
+        "shape_fill_count": 12,
+        "stroke_count": 5,
+        "small_atom_count": 3,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": true,
+        "is_narrow_panel_region": false,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "preserve_or_overlay_text_only",
+      "baseline_overlaps": [
+        {
+          "baseline_name": "표 48",
+          "baseline_type": "GROUP",
+          "iou": 0.869,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "right_panel_block:background",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.554,
+          "chunk_inside_ratio": 0.726
+        },
+        {
+          "baseline_name": "right_panel_block:description",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.554,
+          "chunk_inside_ratio": 0.726
+        }
+      ]
+    },
+    {
+      "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+      "chunk_type": "panel_local_assets",
+      "render_strategy": "absolute_atom_overlay",
+      "text_composition": "none",
+      "style_policy": "source_asset_style_priority",
+      "asset_scope": "panel_local",
+      "atom_count": 1,
+      "features": {
+        "atom_type_count": 1,
+        "text_char_count": 0,
+        "shape_fill_count": 0,
+        "stroke_count": 0,
+        "small_atom_count": 1,
+        "panel_local_asset_count": 1,
+        "global_asset_count": 0,
+        "has_table_backing": false,
+        "is_narrow_panel_region": true,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "overlay_candidate",
+      "baseline_overlaps": [
+        {
+          "baseline_name": "right_panel_block:background",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.001,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "right_panel_block:description",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.001,
+          "chunk_inside_ratio": 1.0
+        }
+      ]
+    }
+  ]
+}

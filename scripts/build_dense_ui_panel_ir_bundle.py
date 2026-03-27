@@ -485,7 +485,10 @@ def dense_panel_bounds(page: dict[str, Any]) -> dict[str, float]:
     for atom in page.get("atoms") or []:
         role = str(atom.get("layer_role") or "")
         if role in {
-            "top_meta_cell",
+            "top_meta_band_cell",
+            "top_meta_info_cell",
+            "top_text_row",
+            "description_header_cell",
             "version_stack",
             "issue_card",
             "description_card",
@@ -530,21 +533,26 @@ def owner_priority(owner_id: str) -> int:
     return order.get(owner_id, 50)
 
 
-def group_priority(group_id: str) -> int:
+def chunk_priority(chunk_id: str) -> int:
     order = {
-        "dense_ui_panel:top_meta_group": 10,
-        "dense_ui_panel:top_meta_info_group": 10,
-        "dense_ui_panel:top_rows_group": 11,
-        "dense_ui_panel:description_header_group": 12,
-        "dense_ui_panel:version_stack_group": 12,
-        "dense_ui_panel:issue_group": 14,
-        "dense_ui_panel:description_card_group": 18,
-        "dense_ui_panel:description_body_text_group": 20,
-        "dense_ui_panel:description_body_semantic_group": 21,
-        "dense_ui_panel:panel_small_asset_group": 30,
-        "dense_ui_panel:global_ui_asset_group": 31,
+        "dense_ui_panel:top_meta_band_chunk": 10,
+        "dense_ui_panel:top_meta_info_chunk": 10,
+        "dense_ui_panel:top_rows_chunk": 11,
+        "dense_ui_panel:description_header_chunk": 12,
+        "dense_ui_panel:version_stack_chunk": 12,
+        "dense_ui_panel:issue_chunk": 14,
+        "dense_ui_panel:description_body_chunk": 18,
+        "dense_ui_panel:panel_small_assets_chunk": 30,
+        "dense_ui_panel:global_ui_assets_chunk": 31,
     }
-    return order.get(group_id, 50)
+    return order.get(chunk_id, 50)
+
+
+def chunk_bucket(page: dict[str, Any], chunk_id: str) -> dict[str, Any] | None:
+    for bucket in page.get("chunk_buckets") or []:
+        if str(bucket.get("chunk_id") or "") == chunk_id:
+            return bucket
+    return None
 
 
 def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
@@ -558,7 +566,14 @@ def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
 def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> list[dict[str, Any]]:
     panel_bounds = dense_panel_bounds(page)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    group_bucket_map = {bucket["group_id"]: bucket for bucket in page.get("group_buckets") or []}
+    chunk_bucket_map = {bucket["chunk_id"]: bucket for bucket in page.get("chunk_buckets") or []}
+    description_body_bucket = chunk_bucket_map.get("dense_ui_panel:description_body_chunk")
+    description_body_strategy = str((description_body_bucket or {}).get("render_strategy") or "")
+    description_body_style_policy = str((description_body_bucket or {}).get("style_policy") or "")
+    preserve_dense_body_background = (
+        description_body_strategy == "chunk_container_leaf_text"
+        and description_body_style_policy == "preserve_dense_background_overlay_text"
+    )
     for atom in page.get("atoms") or []:
         owner_id = str(atom.get("owner_id") or "")
         if not owner_id.startswith("dense_ui_panel:"):
@@ -594,9 +609,9 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         marker_bounds = layout.get("marker_bounds") or (marker_atom["visual_bounds_px"] if marker_atom else None)
         text_bounds = layout.get("text_bounds") or text_atom["visual_bounds_px"]
         background_atom = best_overlapping_card(lane_bounds, description_cards if row_index >= 5 else [])
-        lane_children = [
-            build_default_lane_background(lane_bounds, row_index, background_atom),
-        ]
+        lane_children: list[dict[str, Any]] = []
+        if not preserve_dense_body_background:
+            lane_children.append(build_default_lane_background(lane_bounds, row_index, background_atom))
         if marker_atom and marker_bounds:
             lane_children.append(build_text_node(marker_atom, marker_bounds))
         lane_children.append(build_paragraph_text_group(text_atom, text_bounds))
@@ -604,10 +619,10 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     if footer_atom:
         layout = lane_layout.get(6) or {}
         footer_bounds = layout.get("lane_bounds") or footer_atom["visual_bounds_px"]
-        footer_children = [
-            build_default_lane_background(footer_bounds, 6),
-            build_paragraph_text_group(footer_atom, layout.get("text_bounds") or footer_bounds),
-        ]
+        footer_children: list[dict[str, Any]] = []
+        if not preserve_dense_body_background:
+            footer_children.append(build_default_lane_background(footer_bounds, 6))
+        footer_children.append(build_paragraph_text_group(footer_atom, layout.get("text_bounds") or footer_bounds))
         lane_groups.append(build_owner_group("dense_ui_panel:lane_row_6", footer_children))
 
     for owner_id in sorted(grouped.keys(), key=owner_priority):
@@ -655,61 +670,75 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         if owner_children:
             owner_groups[owner_id] = build_owner_group(owner_id, owner_children)
 
-    grouped_children: list[dict[str, Any]] = []
+    chunk_children: list[dict[str, Any]] = []
 
     top_meta_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:top_meta_rows", "dense_ui_panel:top_meta_band_cells"]:
         if owner_id in owner_groups:
             top_meta_children.append(owner_groups[owner_id])
-    if top_meta_children and "dense_ui_panel:top_meta_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:top_meta_group", top_meta_children))
+    if top_meta_children and "dense_ui_panel:top_meta_band_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:top_meta_band_chunk", top_meta_children))
 
     top_meta_info_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:top_meta_info_cells"]:
         if owner_id in owner_groups:
             top_meta_info_children.append(owner_groups[owner_id])
-    if top_meta_info_children and "dense_ui_panel:top_meta_info_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:top_meta_info_group", top_meta_info_children))
+    if top_meta_info_children and "dense_ui_panel:top_meta_info_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:top_meta_info_chunk", top_meta_info_children))
 
-    if "dense_ui_panel:top_rows" in owner_groups and "dense_ui_panel:top_rows_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:top_rows_group", [owner_groups["dense_ui_panel:top_rows"]]))
+    if "dense_ui_panel:top_rows" in owner_groups and "dense_ui_panel:top_rows_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:top_rows_chunk", [owner_groups["dense_ui_panel:top_rows"]]))
 
     description_header_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:description_header_rows", "dense_ui_panel:description_headers"]:
         if owner_id in owner_groups:
             description_header_children.append(owner_groups[owner_id])
-    if description_header_children and "dense_ui_panel:description_header_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:description_header_group", description_header_children))
+    if description_header_children and "dense_ui_panel:description_header_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:description_header_chunk", description_header_children))
 
-    if "dense_ui_panel:version_stack" in owner_groups and "dense_ui_panel:version_stack_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:version_stack_group", [owner_groups["dense_ui_panel:version_stack"]]))
+    if "dense_ui_panel:version_stack" in owner_groups and "dense_ui_panel:version_stack_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:version_stack_chunk", [owner_groups["dense_ui_panel:version_stack"]]))
 
-    if "dense_ui_panel:issue_card" in owner_groups and "dense_ui_panel:issue_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:issue_group", [owner_groups["dense_ui_panel:issue_card"]]))
+    if "dense_ui_panel:issue_card" in owner_groups and "dense_ui_panel:issue_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:issue_chunk", [owner_groups["dense_ui_panel:issue_card"]]))
 
-    description_card_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:description_cards"]:
-        if owner_id in owner_groups:
-            description_card_children.append(owner_groups[owner_id])
-    if description_card_children and "dense_ui_panel:description_card_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:description_card_group", description_card_children))
-
-    description_text_children: list[dict[str, Any]] = []
-    description_text_children.extend(lane_groups)
-    for owner_id in ["dense_ui_panel:description_footer", "dense_ui_panel:description_markers", "dense_ui_panel:description_lanes"]:
-        if owner_id in owner_groups:
-            description_text_children.append(owner_groups[owner_id])
-    if description_text_children and "dense_ui_panel:description_body_text_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:description_body_text_group", description_text_children))
+    description_body_children: list[dict[str, Any]] = []
+    if description_body_bucket:
+        if description_body_strategy == "chunk_container_leaf_text":
+            if not preserve_dense_body_background:
+                for owner_id in ["dense_ui_panel:description_cards"]:
+                    if owner_id in owner_groups:
+                        description_body_children.append(owner_groups[owner_id])
+            description_body_children.extend(lane_groups)
+            # In leaf-text mode the lane groups already contain row backgrounds,
+            # markers, footer text and paragraph leaves. Re-adding semantic/text
+            # owner groups here causes duplicate text layers and muddies the
+            # baseline-like dense region.
+            if description_body_style_policy != "preserve_dense_background_overlay_text":
+                for owner_id in ["dense_ui_panel:description_footer", "dense_ui_panel:description_markers", "dense_ui_panel:description_lanes"]:
+                    if owner_id in owner_groups:
+                        description_body_children.append(owner_groups[owner_id])
+        else:
+            for owner_id in [
+                "dense_ui_panel:description_cards",
+                "dense_ui_panel:description_footer",
+                "dense_ui_panel:description_markers",
+                "dense_ui_panel:description_lanes",
+            ]:
+                if owner_id in owner_groups:
+                    description_body_children.append(owner_groups[owner_id])
+            description_body_children.extend(lane_groups)
+    if description_body_children and description_body_bucket is not None:
+        chunk_children.append(build_group_group("dense_ui_panel:description_body_chunk", description_body_children))
 
     small_asset_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"]:
         if owner_id in owner_groups:
             small_asset_children.append(owner_groups[owner_id])
-    if small_asset_children and "dense_ui_panel:panel_small_asset_group" in group_bucket_map:
-        grouped_children.append(build_group_group("dense_ui_panel:panel_small_asset_group", small_asset_children))
+    if small_asset_children and "dense_ui_panel:panel_small_assets_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:panel_small_assets_chunk", small_asset_children))
 
-    children = sorted(grouped_children, key=lambda node: group_priority(str(node.get("id") or "")))
+    children = sorted(chunk_children, key=lambda node: chunk_priority(str(node.get("id") or "")))
 
     visible_panel_bounds = make_bounds(
         float(panel_bounds["x"]),

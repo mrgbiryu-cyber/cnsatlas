@@ -140,9 +140,8 @@ def summarize_page29(ir_payload: dict[str, Any]) -> dict[str, Any]:
 
     panel_small_assets = []
     global_small_assets = []
-    for atom in atoms_by_owner.get("dense_ui_panel:panel_small_assets", []):
-        bounds = atom.get("visual_bounds_px") or atom.get("source_bounds_px") or {}
-        if float(bounds.get("x") or 0.0) >= RIGHT_PANEL_X:
+    for owner_id in ("dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"):
+        for atom in atoms_by_owner.get(owner_id, []):
             panel_small_assets.append(atom["id"])
     for atom in atoms_by_owner.get("dense_ui_panel:global_ui_assets", []):
         global_small_assets.append(atom["id"])

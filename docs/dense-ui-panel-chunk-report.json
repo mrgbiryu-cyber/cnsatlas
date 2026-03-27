@@ -236,14 +236,15 @@
       },
       {
         "owner_id": "dense_ui_panel:global_ui_assets",
-        "atom_count": 53,
+        "atom_count": 73,
         "roles": {
-          "small_asset": 53
+          "small_asset": 72,
+          "overlay_note": 1
         },
         "bounds": {
           "x": 0.0,
           "y": 0.0,
-          "width": 496.16,
+          "width": 877.58,
           "height": 527.82
         }
       },
@@ -261,29 +262,16 @@
         }
       },
       {
-        "owner_id": "dense_ui_panel:panel_overlay_notes",
+        "owner_id": "dense_ui_panel:panel_small_assets",
         "atom_count": 1,
         "roles": {
-          "overlay_note": 1
+          "small_asset": 1
         },
         "bounds": {
-          "x": 505.08,
-          "y": 338.89,
-          "width": 86.11,
-          "height": 26.66
-        }
-      },
-      {
-        "owner_id": "dense_ui_panel:panel_small_assets",
-        "atom_count": 20,
-        "roles": {
-          "small_asset": 20
-        },
-        "bounds": {
-          "x": 512.77,
-          "y": 11.77,
-          "width": 364.81,
-          "height": 510.3
+          "x": 638.24,
+          "y": 370.52,
+          "width": 10.69,
+          "height": 10.69
         }
       },
       {
@@ -569,18 +557,19 @@
       },
       {
         "group_id": "dense_ui_panel:global_ui_asset_group",
-        "atom_count": 53,
+        "atom_count": 73,
         "owner_count": 1,
         "owners": {
-          "dense_ui_panel:global_ui_assets": 53
+          "dense_ui_panel:global_ui_assets": 73
         },
         "roles": {
-          "small_asset": 53
+          "small_asset": 72,
+          "overlay_note": 1
         },
         "bounds": {
           "x": 0.0,
           "y": 0.0,
-          "width": 496.16,
+          "width": 877.58,
           "height": 527.82
         }
       },
@@ -603,21 +592,19 @@
       },
       {
         "group_id": "dense_ui_panel:panel_small_asset_group",
-        "atom_count": 21,
-        "owner_count": 2,
+        "atom_count": 1,
+        "owner_count": 1,
         "owners": {
-          "dense_ui_panel:panel_small_assets": 20,
-          "dense_ui_panel:panel_overlay_notes": 1
+          "dense_ui_panel:panel_small_assets": 1
         },
         "roles": {
-          "small_asset": 20,
-          "overlay_note": 1
+          "small_asset": 1
         },
         "bounds": {
-          "x": 505.08,
-          "y": 11.77,
-          "width": 372.5,
-          "height": 510.3
+          "x": 638.24,
+          "y": 370.52,
+          "width": 10.69,
+          "height": 10.69
         }
       },
       {
@@ -903,21 +890,22 @@
       },
       {
         "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
-        "atom_count": 56,
+        "atom_count": 76,
         "owner_count": 3,
         "owners": {
-          "dense_ui_panel:global_ui_assets": 53,
+          "dense_ui_panel:global_ui_assets": 73,
           "owner:s29:slide_29/element_13": 2,
           "owner:s29:slide_29/element_39": 1
         },
         "roles": {
-          "small_asset": 53,
-          "overlay_mark": 3
+          "small_asset": 72,
+          "overlay_mark": 3,
+          "overlay_note": 1
         },
         "bounds": {
           "x": 0.0,
           "y": 0.0,
-          "width": 496.16,
+          "width": 877.58,
           "height": 527.82
         }
       },
@@ -940,21 +928,19 @@
       },
       {
         "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
-        "atom_count": 21,
-        "owner_count": 2,
+        "atom_count": 1,
+        "owner_count": 1,
         "owners": {
-          "dense_ui_panel:panel_small_assets": 20,
-          "dense_ui_panel:panel_overlay_notes": 1
+          "dense_ui_panel:panel_small_assets": 1
         },
         "roles": {
-          "small_asset": 20,
-          "overlay_note": 1
+          "small_asset": 1
         },
         "bounds": {
-          "x": 505.08,
-          "y": 11.77,
-          "width": 372.5,
-          "height": 510.3
+          "x": 638.24,
+          "y": 370.52,
+          "width": 10.69,
+          "height": 10.69
         }
       },
       {
@@ -1191,11 +1177,12 @@
     ],
     "small_asset_split_preview": {
       "panel_small_asset_count": 1,
-      "global_ui_asset_count": 53,
+      "global_ui_asset_count": 73,
       "panel_examples": [
-        "s29:layout_29/element_5"
+        "s29:slide_29/element_52/child_4"
       ],
       "global_examples": [
+        "s29:layout_29/element_5",
         "s29:slide_29/element_3",
         "s29:slide_29/element_6/child_2",
         "s29:slide_29/element_9/child_2",
@@ -1206,8 +1193,7 @@
         "s29:slide_29/element_20",
         "s29:slide_29/element_23",
         "s29:slide_29/element_24",
-        "s29:slide_29/element_25",
-        "s29:slide_29/element_27"
+        "s29:slide_29/element_25"
       ]
     },
     "recommendations": [
@@ -1237,7 +1223,7 @@
         "problem": "small assets mix panel and global UI atoms",
         "evidence": {
           "panel_small_assets": 1,
-          "global_small_assets": 53
+          "global_small_assets": 73
         },
         "suggestion": "Split into `panel_small_assets` and `global_ui_assets` before rendering."
       },

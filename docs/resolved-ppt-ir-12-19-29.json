@@ -11889,7 +11889,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 4,
+            "text_char_count": 702,
+            "shape_fill_count": 61,
+            "stroke_count": 23,
+            "small_atom_count": 21,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_15",
@@ -11916,7 +11929,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 4,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_17",
@@ -11943,7 +11969,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 9,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_18",
@@ -11975,7 +12014,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 43,
+            "shape_fill_count": 6,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": true
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_18/child_1",
@@ -12001,7 +12053,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 12,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_24",
@@ -12027,7 +12092,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 7,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_33",
@@ -12054,7 +12132,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 9,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_33/child_2",
@@ -12080,7 +12171,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 5,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_37",
@@ -12107,7 +12211,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 5,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_39",
@@ -12134,7 +12251,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 4,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_40",
@@ -12161,7 +12291,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 10,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_40/child_2",
@@ -12187,7 +12330,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 9,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_50",
@@ -12214,7 +12370,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 24,
+            "shape_fill_count": 3,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_51",
@@ -12241,7 +12410,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 3,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 1,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_58",
@@ -12268,7 +12450,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 9,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_60",
@@ -12297,7 +12492,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 39,
+            "shape_fill_count": 5,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": true
+          }
         },
         {
           "chunk_id": "owner:s12:slide_12/element_68",
@@ -12326,7 +12534,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 49,
+            "shape_fill_count": 5,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         }
       ]
     },
@@ -38699,7 +38920,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 4,
+            "text_char_count": 152,
+            "shape_fill_count": 10,
+            "stroke_count": 7,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10",
@@ -38735,7 +38969,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 0,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_1",
@@ -38761,7 +39008,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 25,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_10",
@@ -38789,7 +39049,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 33,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_11",
@@ -38817,7 +39090,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 34,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_12",
@@ -38845,7 +39131,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 30,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_2",
@@ -38872,7 +39171,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 6,
+            "shape_fill_count": 3,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_3",
@@ -38900,7 +39212,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_4",
@@ -38928,7 +39253,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_5",
@@ -38956,7 +39294,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 26,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_6",
@@ -38984,7 +39335,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 31,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_7",
@@ -39012,7 +39376,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 31,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_8",
@@ -39040,7 +39417,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_10:row_9",
@@ -39068,7 +39458,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 30,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2",
@@ -39123,7 +39526,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 0,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_1",
@@ -39151,7 +39567,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 22,
+            "shape_fill_count": 4,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_10",
@@ -39178,7 +39607,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 33,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_11",
@@ -39205,7 +39647,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 30,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_12",
@@ -39232,7 +39687,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 29,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_13",
@@ -39259,7 +39727,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_14",
@@ -39286,7 +39767,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 29,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_15",
@@ -39314,7 +39808,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 32,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_16",
@@ -39341,7 +39848,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_17",
@@ -39368,7 +39888,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 29,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_18",
@@ -39395,7 +39928,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 29,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_19",
@@ -39422,7 +39968,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_2",
@@ -39450,7 +40009,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 31,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_20",
@@ -39477,7 +40049,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 29,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_21",
@@ -39505,7 +40090,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 35,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_22",
@@ -39532,7 +40130,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 29,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_23",
@@ -39559,7 +40170,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_24",
@@ -39586,7 +40210,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_25",
@@ -39614,7 +40251,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 23,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_26",
@@ -39641,7 +40291,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 19,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_27",
@@ -39668,7 +40331,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 24,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_28",
@@ -39694,7 +40370,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 16,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_29",
@@ -39722,7 +40411,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 30,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_3",
@@ -39749,7 +40451,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 28,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_30",
@@ -39776,7 +40491,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 23,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_31",
@@ -39803,7 +40531,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 31,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_4",
@@ -39830,7 +40571,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 31,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_5",
@@ -39858,7 +40612,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 37,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_6",
@@ -39885,7 +40652,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 26,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_7",
@@ -39912,7 +40692,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 26,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_8",
@@ -39940,7 +40733,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 34,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_2:row_9",
@@ -39967,7 +40773,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 32,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4",
@@ -40003,7 +40822,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 0,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_1",
@@ -40029,7 +40861,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 24,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_10",
@@ -40058,7 +40903,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 31,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_11",
@@ -40087,7 +40945,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 27,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_12",
@@ -40116,7 +40987,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 25,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_2",
@@ -40144,7 +41028,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 11,
+            "shape_fill_count": 4,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_3",
@@ -40173,7 +41070,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 24,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_4",
@@ -40202,7 +41112,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 24,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_5",
@@ -40231,7 +41154,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 23,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_6",
@@ -40260,7 +41196,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 26,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_7",
@@ -40289,7 +41238,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 26,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_8",
@@ -40318,7 +41280,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 24,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s19:slide_19/element_4:row_9",
@@ -40347,7 +41322,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 25,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         }
       ]
     },
@@ -41466,8 +42454,8 @@
           "atom_type": "text_row",
           "subtype": "text_block",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -53313,8 +54301,8 @@
           "atom_type": "text_row",
           "subtype": "text_block",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_overlay_notes",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "overlay_note",
           "z_index": 26,
           "clip_scope": "dense_ui_panel",
@@ -53617,8 +54605,8 @@
           "atom_type": "image_asset",
           "subtype": "image",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -53745,8 +54733,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -53829,8 +54817,8 @@
           "atom_type": "image_asset",
           "subtype": "image",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -53893,8 +54881,8 @@
           "atom_type": "image_asset",
           "subtype": "image",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -55557,8 +56545,8 @@
           "atom_type": "background_card",
           "subtype": "labeled_shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -55654,8 +56642,8 @@
           "atom_type": "background_card",
           "subtype": "labeled_shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -55738,8 +56726,8 @@
           "atom_type": "connector",
           "subtype": "connector",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "page",
@@ -55829,8 +56817,8 @@
           "atom_type": "container",
           "subtype": "group",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "page",
@@ -55887,8 +56875,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -55968,8 +56956,8 @@
           "atom_type": "container",
           "subtype": "group",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "page",
@@ -56026,8 +57014,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -56104,8 +57092,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -56271,8 +57259,8 @@
           "atom_type": "background_card",
           "subtype": "labeled_shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -56710,8 +57698,8 @@
           "atom_type": "container",
           "subtype": "group",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "page",
@@ -56768,8 +57756,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -56846,8 +57834,8 @@
           "atom_type": "container",
           "subtype": "group",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "page",
@@ -56904,8 +57892,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -56982,8 +57970,8 @@
           "atom_type": "background_card",
           "subtype": "shape",
           "pattern_type": "dense_ui_panel",
-          "owner_id": "dense_ui_panel:panel_small_assets",
-          "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+          "owner_id": "dense_ui_panel:global_ui_assets",
+          "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
           "layer_role": "small_asset",
           "z_index": 30,
           "clip_scope": "dense_ui_panel",
@@ -61452,20 +62440,23 @@
           "owner_id": "dense_ui_panel:global_ui_assets",
           "pattern_type": "dense_ui_panel",
           "layer_roles": [
+            "overlay_note",
             "small_asset"
           ],
           "render_modes": [
             "image_asset",
             "native_shape",
-            "native_text"
+            "native_text",
+            "vector"
           ],
           "visual_bounds_px": {
             "x": 0.0,
             "y": 0.0,
-            "width": 496.16,
+            "width": 877.58,
             "height": 527.82
           },
           "atom_ids": [
+            "s29:layout_29/element_5",
             "s29:slide_29/element_3",
             "s29:slide_29/element_6/child_2",
             "s29:slide_29/element_9/child_2",
@@ -61494,6 +62485,11 @@
             "s29:slide_29/element_46/child_1/child_2",
             "s29:slide_29/element_48",
             "s29:slide_29/element_50",
+            "s29:slide_29/element_51",
+            "s29:slide_29/element_52/child_3",
+            "s29:slide_29/element_52/child_5",
+            "s29:slide_29/element_52/child_6",
+            "s29:slide_29/element_53",
             "s29:slide_29/element_55",
             "s29:slide_29/element_57",
             "s29:slide_29/element_61",
@@ -61503,12 +62499,26 @@
             "s29:slide_29/element_69/child_2",
             "s29:slide_29/element_69/child_2/child_1",
             "s29:slide_29/element_69/child_2/child_2",
+            "s29:slide_29/element_70",
+            "s29:slide_29/element_71",
+            "s29:slide_29/element_72",
+            "s29:slide_29/element_73",
+            "s29:slide_29/element_73/child_1",
+            "s29:slide_29/element_73/child_2",
+            "s29:slide_29/element_73/child_2/child_1",
+            "s29:slide_29/element_73/child_2/child_2",
             "s29:slide_29/element_74",
+            "s29:slide_29/element_75",
             "s29:slide_29/element_76",
             "s29:slide_29/element_76/child_1",
             "s29:slide_29/element_76/child_2",
             "s29:slide_29/element_76/child_2/child_1",
             "s29:slide_29/element_76/child_2/child_2",
+            "s29:slide_29/element_77",
+            "s29:slide_29/element_77/child_1",
+            "s29:slide_29/element_77/child_2",
+            "s29:slide_29/element_77/child_2/child_1",
+            "s29:slide_29/element_77/child_2/child_2",
             "s29:slide_29/element_78",
             "s29:slide_29/element_88",
             "s29:slide_29/element_90",
@@ -61520,7 +62530,7 @@
             "s29:slide_29/element_100",
             "s29:slide_29/element_117"
           ],
-          "atom_count": 53
+          "atom_count": 73
         },
         {
           "owner_id": "dense_ui_panel:issue_card",
@@ -61543,66 +62553,24 @@
           "atom_count": 1
         },
         {
-          "owner_id": "dense_ui_panel:panel_overlay_notes",
-          "pattern_type": "dense_ui_panel",
-          "layer_roles": [
-            "overlay_note"
-          ],
-          "render_modes": [
-            "native_text"
-          ],
-          "visual_bounds_px": {
-            "x": 505.08,
-            "y": 338.89,
-            "width": 86.11,
-            "height": 26.66
-          },
-          "atom_ids": [
-            "s29:slide_29/element_51"
-          ],
-          "atom_count": 1
-        },
-        {
           "owner_id": "dense_ui_panel:panel_small_assets",
           "pattern_type": "dense_ui_panel",
           "layer_roles": [
             "small_asset"
           ],
           "render_modes": [
-            "image_asset",
-            "native_shape",
-            "native_text",
-            "vector"
+            "image_asset"
           ],
           "visual_bounds_px": {
-            "x": 512.77,
-            "y": 11.77,
-            "width": 364.81,
-            "height": 510.3
+            "x": 638.24,
+            "y": 370.52,
+            "width": 10.69,
+            "height": 10.69
           },
           "atom_ids": [
-            "s29:layout_29/element_5",
-            "s29:slide_29/element_52/child_3",
-            "s29:slide_29/element_52/child_4",
-            "s29:slide_29/element_52/child_5",
-            "s29:slide_29/element_52/child_6",
-            "s29:slide_29/element_53",
-            "s29:slide_29/element_70",
-            "s29:slide_29/element_71",
-            "s29:slide_29/element_72",
-            "s29:slide_29/element_73",
-            "s29:slide_29/element_73/child_1",
-            "s29:slide_29/element_73/child_2",
-            "s29:slide_29/element_73/child_2/child_1",
-            "s29:slide_29/element_73/child_2/child_2",
-            "s29:slide_29/element_75",
-            "s29:slide_29/element_77",
-            "s29:slide_29/element_77/child_1",
-            "s29:slide_29/element_77/child_2",
-            "s29:slide_29/element_77/child_2/child_1",
-            "s29:slide_29/element_77/child_2/child_2"
+            "s29:slide_29/element_52/child_4"
           ],
-          "atom_count": 20
+          "atom_count": 1
         },
         {
           "owner_id": "dense_ui_panel:top_meta_band_cells",
@@ -62117,15 +63085,17 @@
           ],
           "layer_roles": [
             "overlay_mark",
+            "overlay_note",
             "small_asset"
           ],
           "visual_bounds_px": {
             "x": 0.0,
             "y": 0.0,
-            "width": 496.16,
+            "width": 877.58,
             "height": 527.82
           },
           "atom_ids": [
+            "s29:layout_29/element_5",
             "s29:slide_29/element_3",
             "s29:slide_29/element_6/child_2",
             "s29:slide_29/element_9/child_2",
@@ -62157,6 +63127,11 @@
             "s29:slide_29/element_46/child_1/child_2",
             "s29:slide_29/element_48",
             "s29:slide_29/element_50",
+            "s29:slide_29/element_51",
+            "s29:slide_29/element_52/child_3",
+            "s29:slide_29/element_52/child_5",
+            "s29:slide_29/element_52/child_6",
+            "s29:slide_29/element_53",
             "s29:slide_29/element_55",
             "s29:slide_29/element_57",
             "s29:slide_29/element_61",
@@ -62166,12 +63141,26 @@
             "s29:slide_29/element_69/child_2",
             "s29:slide_29/element_69/child_2/child_1",
             "s29:slide_29/element_69/child_2/child_2",
+            "s29:slide_29/element_70",
+            "s29:slide_29/element_71",
+            "s29:slide_29/element_72",
+            "s29:slide_29/element_73",
+            "s29:slide_29/element_73/child_1",
+            "s29:slide_29/element_73/child_2",
+            "s29:slide_29/element_73/child_2/child_1",
+            "s29:slide_29/element_73/child_2/child_2",
             "s29:slide_29/element_74",
+            "s29:slide_29/element_75",
             "s29:slide_29/element_76",
             "s29:slide_29/element_76/child_1",
             "s29:slide_29/element_76/child_2",
             "s29:slide_29/element_76/child_2/child_1",
             "s29:slide_29/element_76/child_2/child_2",
+            "s29:slide_29/element_77",
+            "s29:slide_29/element_77/child_1",
+            "s29:slide_29/element_77/child_2",
+            "s29:slide_29/element_77/child_2/child_1",
+            "s29:slide_29/element_77/child_2/child_2",
             "s29:slide_29/element_78",
             "s29:slide_29/element_88",
             "s29:slide_29/element_90",
@@ -62183,7 +63172,7 @@
             "s29:slide_29/element_100",
             "s29:slide_29/element_117"
           ],
-          "atom_count": 56
+          "atom_count": 76
         },
         {
           "group_id": "dense_ui_panel:issue_group",
@@ -62209,43 +63198,21 @@
           "group_id": "dense_ui_panel:panel_small_asset_group",
           "pattern_type": "dense_ui_panel",
           "owner_ids": [
-            "dense_ui_panel:panel_overlay_notes",
             "dense_ui_panel:panel_small_assets"
           ],
           "layer_roles": [
-            "overlay_note",
             "small_asset"
           ],
           "visual_bounds_px": {
-            "x": 505.08,
-            "y": 11.77,
-            "width": 372.5,
-            "height": 510.3
+            "x": 638.24,
+            "y": 370.52,
+            "width": 10.69,
+            "height": 10.69
           },
           "atom_ids": [
-            "s29:layout_29/element_5",
-            "s29:slide_29/element_51",
-            "s29:slide_29/element_52/child_3",
-            "s29:slide_29/element_52/child_4",
-            "s29:slide_29/element_52/child_5",
-            "s29:slide_29/element_52/child_6",
-            "s29:slide_29/element_53",
-            "s29:slide_29/element_70",
-            "s29:slide_29/element_71",
-            "s29:slide_29/element_72",
-            "s29:slide_29/element_73",
-            "s29:slide_29/element_73/child_1",
-            "s29:slide_29/element_73/child_2",
-            "s29:slide_29/element_73/child_2/child_1",
-            "s29:slide_29/element_73/child_2/child_2",
-            "s29:slide_29/element_75",
-            "s29:slide_29/element_77",
-            "s29:slide_29/element_77/child_1",
-            "s29:slide_29/element_77/child_2",
-            "s29:slide_29/element_77/child_2/child_1",
-            "s29:slide_29/element_77/child_2/child_2"
+            "s29:slide_29/element_52/child_4"
           ],
-          "atom_count": 21
+          "atom_count": 1
         },
         {
           "group_id": "dense_ui_panel:top_meta_group",
@@ -62652,7 +63619,20 @@
           "render_strategy": "chunk_container_leaf_text",
           "text_composition": "paragraph_or_line_leaf",
           "style_policy": "preserve_dense_background_overlay_text",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 4,
+            "text_char_count": 2104,
+            "shape_fill_count": 12,
+            "stroke_count": 5,
+            "small_atom_count": 3,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": true,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:description_header_chunk",
@@ -62682,7 +63662,20 @@
           "render_strategy": "frame_text_grid",
           "text_composition": "cell_leaf",
           "style_policy": "native_shape_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 15,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": true,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
@@ -62695,15 +63688,17 @@
           ],
           "layer_roles": [
             "overlay_mark",
+            "overlay_note",
             "small_asset"
           ],
           "visual_bounds_px": {
             "x": 0.0,
             "y": 0.0,
-            "width": 496.16,
+            "width": 877.58,
             "height": 527.82
           },
           "atom_ids": [
+            "s29:layout_29/element_5",
             "s29:slide_29/element_3",
             "s29:slide_29/element_6/child_2",
             "s29:slide_29/element_9/child_2",
@@ -62735,6 +63730,11 @@
             "s29:slide_29/element_46/child_1/child_2",
             "s29:slide_29/element_48",
             "s29:slide_29/element_50",
+            "s29:slide_29/element_51",
+            "s29:slide_29/element_52/child_3",
+            "s29:slide_29/element_52/child_5",
+            "s29:slide_29/element_52/child_6",
+            "s29:slide_29/element_53",
             "s29:slide_29/element_55",
             "s29:slide_29/element_57",
             "s29:slide_29/element_61",
@@ -62744,12 +63744,26 @@
             "s29:slide_29/element_69/child_2",
             "s29:slide_29/element_69/child_2/child_1",
             "s29:slide_29/element_69/child_2/child_2",
+            "s29:slide_29/element_70",
+            "s29:slide_29/element_71",
+            "s29:slide_29/element_72",
+            "s29:slide_29/element_73",
+            "s29:slide_29/element_73/child_1",
+            "s29:slide_29/element_73/child_2",
+            "s29:slide_29/element_73/child_2/child_1",
+            "s29:slide_29/element_73/child_2/child_2",
             "s29:slide_29/element_74",
+            "s29:slide_29/element_75",
             "s29:slide_29/element_76",
             "s29:slide_29/element_76/child_1",
             "s29:slide_29/element_76/child_2",
             "s29:slide_29/element_76/child_2/child_1",
             "s29:slide_29/element_76/child_2/child_2",
+            "s29:slide_29/element_77",
+            "s29:slide_29/element_77/child_1",
+            "s29:slide_29/element_77/child_2",
+            "s29:slide_29/element_77/child_2/child_1",
+            "s29:slide_29/element_77/child_2/child_2",
             "s29:slide_29/element_78",
             "s29:slide_29/element_88",
             "s29:slide_29/element_90",
@@ -62761,11 +63775,24 @@
             "s29:slide_29/element_100",
             "s29:slide_29/element_117"
           ],
-          "atom_count": 56,
+          "atom_count": 76,
           "render_strategy": "page_level_assets",
           "text_composition": "none",
           "style_policy": "source_asset_style_priority",
-          "asset_scope": "global_ui"
+          "asset_scope": "global_ui",
+          "composition_policy": "exclude",
+          "features": {
+            "atom_type_count": 5,
+            "text_char_count": 124,
+            "shape_fill_count": 48,
+            "stroke_count": 36,
+            "small_atom_count": 66,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 73,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:issue_chunk",
@@ -62790,54 +63817,58 @@
           "render_strategy": "frame_vector_text",
           "text_composition": "short_label",
           "style_policy": "source_shape_style_priority",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "overlay",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 133,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
           "chunk_type": "panel_local_assets",
           "pattern_type": "dense_ui_panel",
           "owner_ids": [
-            "dense_ui_panel:panel_overlay_notes",
             "dense_ui_panel:panel_small_assets"
           ],
           "layer_roles": [
-            "overlay_note",
             "small_asset"
           ],
           "visual_bounds_px": {
-            "x": 505.08,
-            "y": 11.77,
-            "width": 372.5,
-            "height": 510.3
+            "x": 638.24,
+            "y": 370.52,
+            "width": 10.69,
+            "height": 10.69
           },
           "atom_ids": [
-            "s29:layout_29/element_5",
-            "s29:slide_29/element_51",
-            "s29:slide_29/element_52/child_3",
-            "s29:slide_29/element_52/child_4",
-            "s29:slide_29/element_52/child_5",
-            "s29:slide_29/element_52/child_6",
-            "s29:slide_29/element_53",
-            "s29:slide_29/element_70",
-            "s29:slide_29/element_71",
-            "s29:slide_29/element_72",
-            "s29:slide_29/element_73",
-            "s29:slide_29/element_73/child_1",
-            "s29:slide_29/element_73/child_2",
-            "s29:slide_29/element_73/child_2/child_1",
-            "s29:slide_29/element_73/child_2/child_2",
-            "s29:slide_29/element_75",
-            "s29:slide_29/element_77",
-            "s29:slide_29/element_77/child_1",
-            "s29:slide_29/element_77/child_2",
-            "s29:slide_29/element_77/child_2/child_1",
-            "s29:slide_29/element_77/child_2/child_2"
+            "s29:slide_29/element_52/child_4"
           ],
-          "atom_count": 21,
+          "atom_count": 1,
           "render_strategy": "absolute_atom_overlay",
           "text_composition": "none",
           "style_policy": "source_asset_style_priority",
-          "asset_scope": "panel_local"
+          "asset_scope": "panel_local",
+          "composition_policy": "overlay",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 0,
+            "shape_fill_count": 0,
+            "stroke_count": 0,
+            "small_atom_count": 1,
+            "panel_local_asset_count": 1,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:top_meta_band_chunk",
@@ -62872,7 +63903,20 @@
           "render_strategy": "frame_text_grid",
           "text_composition": "single_or_line",
           "style_policy": "native_shape_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 3,
+            "text_char_count": 8,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": true,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:top_meta_info_chunk",
@@ -62900,7 +63944,20 @@
           "render_strategy": "frame_text_grid",
           "text_composition": "cell_leaf",
           "style_policy": "native_shape_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 7,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": true,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "dense_ui_panel:version_stack_chunk",
@@ -62936,7 +63993,20 @@
           "render_strategy": "group_vector_text",
           "text_composition": "badge_label",
           "style_policy": "source_shape_style_priority",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "overlay",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 729,
+            "shape_fill_count": 12,
+            "stroke_count": 12,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": true
+          }
         },
         {
           "chunk_id": "owner:page:29",
@@ -63026,7 +64096,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 3,
+            "text_char_count": 400,
+            "shape_fill_count": 47,
+            "stroke_count": 23,
+            "small_atom_count": 14,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_13",
@@ -63051,7 +64134,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 0,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_16",
@@ -63076,7 +64172,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 13,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_39",
@@ -63101,7 +64210,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 5,
+            "shape_fill_count": 1,
+            "stroke_count": 1,
+            "small_atom_count": 1,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_46",
@@ -63126,7 +64248,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 4,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 1,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_52",
@@ -63152,7 +64287,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 25,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_6",
@@ -63177,7 +64325,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 5,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_9",
@@ -63202,7 +64363,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 5,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_99",
@@ -63230,7 +64404,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 2,
+            "text_char_count": 4,
+            "shape_fill_count": 2,
+            "stroke_count": 1,
+            "small_atom_count": 0,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         },
         {
           "chunk_id": "owner:s29:slide_29/element_99/child_4",
@@ -63256,7 +64443,20 @@
           "render_strategy": "generic_native",
           "text_composition": "single_node",
           "style_policy": "source_first",
-          "asset_scope": "panel"
+          "asset_scope": "panel",
+          "composition_policy": "preserve",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 15,
+            "shape_fill_count": 2,
+            "stroke_count": 0,
+            "small_atom_count": 1,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": false,
+            "is_narrow_panel_region": true,
+            "repeated_colored_band_pattern": false
+          }
         }
       ]
     }

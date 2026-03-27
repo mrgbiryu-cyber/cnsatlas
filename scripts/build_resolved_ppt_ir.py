@@ -355,11 +355,40 @@ def clip_scope(candidate: dict[str, Any], page_type: str) -> str:
     return "page"
 
 
-def owner_key(candidate: dict[str, Any], page_type: str) -> str:
+def dense_panel_asset_scope(visual_bounds: dict[str, Any] | None, context: dict[str, Any]) -> str:
+    if not visual_bounds:
+        return "global_ui"
+    width = float(context.get("width") or 960.0)
+    height = float(context.get("height") or 540.0)
+    x = float(visual_bounds.get("x") or 0.0)
+    y = float(visual_bounds.get("y") or 0.0)
+    w = float(visual_bounds.get("width") or 0.0)
+    h = float(visual_bounds.get("height") or 0.0)
+    cx = x + (w / 2.0)
+    cy = y + (h / 2.0)
+    panel_left = width * 0.66
+    panel_top = height * 0.04
+    panel_bottom = height * 0.97
+    # Dense right-side panel assets should sit inside the right third of the
+    # slide, but previous heuristics leaked a few panel badges/icons into the
+    # global bucket because their source bounds were slightly inset.
+    if (x >= panel_left or cx >= width * 0.72) and (y + h) >= panel_top and cy <= panel_bottom:
+        return "panel_local"
+    return "global_ui"
+
+
+def owner_key(
+    candidate: dict[str, Any],
+    page_type: str,
+    *,
+    role: str | None = None,
+    visual_bounds: dict[str, Any] | None = None,
+    context: dict[str, Any] | None = None,
+) -> str:
     subtype = str(candidate.get("subtype") or "")
     candidate_id = str(candidate.get("candidate_id") or "")
     parent_id = str(candidate.get("parent_candidate_id") or "")
-    role = layer_role(candidate, page_type)
+    role = role or layer_role(candidate, page_type)
     bounds = candidate.get("bounds_px") or {}
     x = float(bounds.get("x") or 0.0)
 
@@ -393,13 +422,13 @@ def owner_key(candidate: dict[str, Any], page_type: str) -> str:
         if role == "description_lane_row":
             return "dense_ui_panel:description_lane_rows"
         if role == "small_asset":
-            if x >= RIGHT_PANEL_X_CUTOFF:
+            if context is not None and dense_panel_asset_scope(visual_bounds, context) == "panel_local":
                 return "dense_ui_panel:panel_small_assets"
             return "dense_ui_panel:global_ui_assets"
         if role == "description_table":
             return "dense_ui_panel:description_table"
         if role == "overlay_note":
-            if x >= RIGHT_PANEL_X_CUTOFF:
+            if context is not None and dense_panel_asset_scope(visual_bounds, context) == "panel_local":
                 return "dense_ui_panel:panel_overlay_notes"
             return "dense_ui_panel:global_ui_assets"
 
@@ -481,6 +510,47 @@ def classify_chunk_type(chunk_id: str, roles: list[str]) -> str:
     return "generic_chunk"
 
 
+def chunk_features(atoms: list[dict[str, Any]], bounds: dict[str, Any]) -> dict[str, Any]:
+    atom_types = {str(atom.get("atom_type") or "") for atom in atoms}
+    roles = [str(atom.get("layer_role") or "") for atom in atoms]
+    width = float(bounds.get("width") or 0.0)
+    height = float(bounds.get("height") or 0.0)
+    fill_count = 0
+    stroke_count = 0
+    text_char_count = 0
+    small_atom_count = 0
+    panel_local_count = 0
+    global_asset_count = 0
+    for atom in atoms:
+        shape_style = atom.get("shape_style") or {}
+        cell_style = atom.get("cell_style") or {}
+        if shape_style.get("fill") or cell_style.get("fill"):
+            fill_count += 1
+        if (shape_style.get("line") or {}).get("kind") not in {None, "none"}:
+            stroke_count += 1
+        text_char_count += len(str(atom.get("text") or "").strip())
+        atom_bounds = atom.get("visual_bounds_px") or {}
+        if float(atom_bounds.get("width") or 0.0) <= 40.0 and float(atom_bounds.get("height") or 0.0) <= 40.0:
+            small_atom_count += 1
+        owner_id = str(atom.get("owner_id") or "")
+        if owner_id in {"dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"}:
+            panel_local_count += 1
+        if owner_id == "dense_ui_panel:global_ui_assets":
+            global_asset_count += 1
+    return {
+        "atom_type_count": len(atom_types),
+        "text_char_count": text_char_count,
+        "shape_fill_count": fill_count,
+        "stroke_count": stroke_count,
+        "small_atom_count": small_atom_count,
+        "panel_local_asset_count": panel_local_count,
+        "global_asset_count": global_asset_count,
+        "has_table_backing": any(role.startswith("description_") or role.startswith("top_meta_") for role in roles),
+        "is_narrow_panel_region": width <= 240.0,
+        "repeated_colored_band_pattern": fill_count >= 3 and width <= 240.0 and height >= 80.0,
+    }
+
+
 def chunk_render_strategy(chunk_type: str) -> str:
     mapping = {
         "header_band": "frame_text_grid",
@@ -534,6 +604,21 @@ def chunk_asset_scope(chunk_type: str) -> str:
     return mapping.get(chunk_type, "panel")
 
 
+def chunk_composition_policy(chunk_type: str) -> str:
+    mapping = {
+        "header_band": "preserve",
+        "meta_grid": "preserve",
+        "top_text_rows": "preserve",
+        "description_header": "preserve",
+        "body_text_region": "preserve",
+        "issue_card": "overlay",
+        "stacked_badges": "overlay",
+        "panel_local_assets": "overlay",
+        "global_ui_assets": "exclude",
+    }
+    return mapping.get(chunk_type, "preserve")
+
+
 def chunk_key_from_role(role: str, owner_id: str, page_type: str) -> str:
     if page_type == "dense_ui_panel":
         if role in {"top_meta_table", "top_meta_row", "top_meta_band_cell"}:
@@ -576,6 +661,8 @@ def build_atom(
     start_point = scale_point(((candidate.get("extra") or {}).get("start_point_px")), context["scale_x"], context["scale_y"])
     end_point = scale_point(((candidate.get("extra") or {}).get("end_point_px")), context["scale_x"], context["scale_y"])
     extra = candidate.get("extra") or {}
+    role = layer_role(candidate, pattern_type)
+    owner_id = owner_key(candidate, pattern_type, role=role, visual_bounds=scaled, context=context)
     return {
         "id": str(candidate.get("candidate_id") or ""),
         "parent_id": str(candidate.get("parent_candidate_id") or ""),
@@ -584,14 +671,14 @@ def build_atom(
         "atom_type": atom_type(candidate),
         "subtype": str(candidate.get("subtype") or ""),
         "pattern_type": pattern_type,
-        "owner_id": owner_key(candidate, pattern_type),
+        "owner_id": owner_id,
         "chunk_id": chunk_key_from_role(
-            layer_role(candidate, pattern_type),
-            owner_key(candidate, pattern_type),
+            role,
+            owner_id,
             pattern_type,
         ),
-        "layer_role": layer_role(candidate, pattern_type),
-        "z_index": z_index(layer_role(candidate, pattern_type)),
+        "layer_role": role,
+        "z_index": z_index(role),
         "clip_scope": clip_scope(candidate, pattern_type),
         "render_mode": render_mode(candidate, pattern_type),
         "text": str(candidate.get("text") or ""),
@@ -665,6 +752,8 @@ def build_chunk_bucket(chunk_id: str, atoms: list[dict[str, Any]]) -> dict[str, 
     text_composition = chunk_text_composition(chunk_type)
     style_policy = chunk_style_policy(chunk_type)
     asset_scope = chunk_asset_scope(chunk_type)
+    composition_policy = chunk_composition_policy(chunk_type)
+    features = chunk_features(atoms, bounds)
     return {
         "chunk_id": chunk_id,
         "chunk_type": chunk_type,
@@ -678,6 +767,8 @@ def build_chunk_bucket(chunk_id: str, atoms: list[dict[str, Any]]) -> dict[str, 
         "text_composition": text_composition,
         "style_policy": style_policy,
         "asset_scope": asset_scope,
+        "composition_policy": composition_policy,
+        "features": features,
     }
 
 
