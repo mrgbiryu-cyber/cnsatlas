@@ -169,10 +169,13 @@
         if (payload && Array.isArray(payload.pages)) {
           return "intermediate";
         }
+        if (payload && payload.kind === "slide-review-manifest" && payload.entry_bundle && payload.entry_bundle.document) {
+          return "slide-review-manifest";
+        }
         if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
           return "figma-replay-bundle";
         }
-        throw new Error("지원하지 않는 JSON 형식입니다. intermediate JSON 또는 figma replay bundle JSON을 넣어야 합니다.");
+        throw new Error("지원하지 않는 JSON 형식입니다. intermediate JSON, figma replay bundle JSON, slide review manifest JSON 중 하나를 넣어야 합니다.");
       }
 
       function validatePayload(payload) {
@@ -191,6 +194,24 @@
             `슬라이드 수: ${payload.pages.length}`,
             "",
             ...slides
+          ].join("\n");
+        }
+
+        if (kind === "slide-review-manifest") {
+          const exportStatus = Object.entries(payload.figma_exports || {})
+            .map(([key, value]) => `- ${key}: ${value && value.exists ? "available" : "missing"}`)
+            .join("\n");
+          return [
+            `파일: ${fileName || "직접 입력"}`,
+            `형식: slide review manifest`,
+            `리뷰: ${payload.title || payload.review_id || "unknown"}`,
+            `슬라이드: ${payload.slide_no || "unknown"}`,
+            `엔트리 번들: ${payload.entry_bundle_label || "entry_bundle"}`,
+            "",
+            `focus: ${(payload.focus || []).join(", ")}`,
+            "",
+            "Figma export 상태",
+            exportStatus || "- none"
           ].join("\n");
         }
 

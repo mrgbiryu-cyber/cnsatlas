@@ -35,14 +35,18 @@ figma.ui.onmessage = async (message) => {
     try {
       const payload = JSON.parse(message.jsonText);
       activeRenderMode = message.renderMode === "vector-heavy" ? "vector-heavy" : "read-first";
-      if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
+      if (payload && payload.kind === "slide-review-manifest" && payload.entry_bundle && payload.entry_bundle.document) {
+        await renderFigmaReplayBundle(payload.entry_bundle);
+      } else if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
         await renderFigmaReplayBundle(payload);
       } else {
         await renderIntermediatePayload(payload);
       }
       figma.ui.postMessage({
         type: "render-success",
-        message: payload && payload.kind === "figma-replay-bundle"
+        message: payload && payload.kind === "slide-review-manifest"
+          ? `Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
+          : payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
           : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
       });
