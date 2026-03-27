@@ -123,8 +123,10 @@ def build_hybrid_frame(
     include_top_rows: bool = True,
     include_description_header: bool = True,
     include_description_text_overlay: bool = False,
+    include_description_footer: bool = True,
     include_version_stack: bool = True,
     include_issue: bool = True,
+    include_annotation_overlay: bool = True,
     include_small_assets: bool = True,
 ) -> dict:
     baseline_frame = copy.deepcopy(find_full_frame(baseline_bundle))
@@ -135,11 +137,15 @@ def build_hybrid_frame(
     description_header_group = children_by_id.get("dense_ui_panel:description_header_chunk")
     description_body_group = children_by_id.get("dense_ui_panel:description_body_chunk")
     description_text_overlay_group = text_only_description_overlay(description_body_group)
+    description_footer_group = children_by_id.get("dense_ui_panel:description_footer_chunk")
     version_stack_group = children_by_id.get("dense_ui_panel:version_stack_chunk")
     issue_group = children_by_id.get("dense_ui_panel:issue_chunk")
+    annotation_overlay_group = children_by_id.get("dense_ui_panel:annotation_overlay_chunk")
     small_asset_group = children_by_id.get("dense_ui_panel:panel_small_assets_chunk")
+    footer_policy = str((chunk_policies.get("dense_ui_panel:description_footer_chunk") or {}).get("composition_policy") or "preserve")
     version_policy = str((chunk_policies.get("dense_ui_panel:version_stack_chunk") or {}).get("composition_policy") or "preserve")
     issue_policy = str((chunk_policies.get("dense_ui_panel:issue_chunk") or {}).get("composition_policy") or "preserve")
+    annotation_policy = str((chunk_policies.get("dense_ui_panel:annotation_overlay_chunk") or {}).get("composition_policy") or "preserve")
     assets_policy = str((chunk_policies.get("dense_ui_panel:panel_small_assets_chunk") or {}).get("composition_policy") or "preserve")
     top_meta_band_policy = str((chunk_policies.get("dense_ui_panel:top_meta_band_chunk") or {}).get("composition_policy") or "preserve")
     top_meta_info_policy = str((chunk_policies.get("dense_ui_panel:top_meta_info_chunk") or {}).get("composition_policy") or "preserve")
@@ -159,10 +165,14 @@ def build_hybrid_frame(
         name_parts.append("desc_header")
     if include_description_text_overlay:
         name_parts.append("desc_text")
+    if include_description_footer:
+        name_parts.append("footer")
     if include_version_stack:
         name_parts.append("version")
     if include_issue:
         name_parts.append("issue")
+    if include_annotation_overlay:
+        name_parts.append("notes")
     if include_small_assets:
         name_parts.append("assets")
     baseline_frame["name"] = "_".join(name_parts)
@@ -208,8 +218,12 @@ def build_hybrid_frame(
             right_panel_children.append(description_header_group)
         if include_description_text_overlay and description_text_overlay_group is not None:
             right_panel_children.append(description_text_overlay_group)
+        if include_description_footer and description_footer_group is not None and footer_policy in {"overlay", "replace"}:
+            right_panel_children.append(description_footer_group)
         if include_issue and issue_group is not None and issue_policy in {"overlay", "replace"}:
             right_panel_children.append(issue_group)
+        if include_annotation_overlay and annotation_overlay_group is not None and annotation_policy in {"overlay", "replace"}:
+            right_panel_children.append(annotation_overlay_group)
         if include_small_assets and small_asset_group is not None and assets_policy in {"overlay", "replace"}:
             right_panel_children.append(small_asset_group)
         right_panel["children"] = right_panel_children
@@ -230,8 +244,10 @@ def build_hybrid_bundle(
     include_top_rows: bool = True,
     include_description_header: bool = True,
     include_description_text_overlay: bool = False,
+    include_description_footer: bool = True,
     include_version_stack: bool = True,
     include_issue: bool = True,
+    include_annotation_overlay: bool = True,
     include_small_assets: bool = True,
 ) -> None:
     hybrid_bundle = copy.deepcopy(baseline_bundle)
@@ -252,8 +268,10 @@ def build_hybrid_bundle(
         include_top_rows=include_top_rows,
         include_description_header=include_description_header,
         include_description_text_overlay=include_description_text_overlay,
+        include_description_footer=include_description_footer,
         include_version_stack=include_version_stack,
         include_issue=include_issue,
+        include_annotation_overlay=include_annotation_overlay,
         include_small_assets=include_small_assets,
     )
     hybrid_bundle["assets"] = bundle_assets(baseline_bundle, ir_bundle)
@@ -331,8 +349,10 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta_info=False,
                 include_top_rows=False,
                 include_description_header=False,
+                include_description_footer=False,
                 include_version_stack=False,
                 include_issue=False,
+                include_annotation_overlay=False,
                 include_small_assets=False,
             ),
         ),
@@ -347,8 +367,10 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta_info=True,
                 include_top_rows=False,
                 include_description_header=False,
+                include_description_footer=False,
                 include_version_stack=False,
                 include_issue=False,
+                include_annotation_overlay=False,
                 include_small_assets=False,
             ),
         ),
@@ -361,8 +383,10 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=False,
+                include_description_footer=False,
                 include_version_stack=True,
                 include_issue=False,
+                include_annotation_overlay=False,
                 include_small_assets=False,
             ),
         ),
@@ -375,8 +399,26 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=True,
+                include_description_footer=False,
                 include_version_stack=False,
                 include_issue=False,
+                include_annotation_overlay=False,
+                include_small_assets=False,
+            ),
+        ),
+        (
+            "ir_footer_only",
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                chunk_policies,
+                include_top_meta=False,
+                include_top_rows=False,
+                include_description_header=False,
+                include_description_footer=True,
+                include_version_stack=False,
+                include_issue=False,
+                include_annotation_overlay=False,
                 include_small_assets=False,
             ),
         ),
@@ -389,8 +431,26 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=False,
+                include_description_footer=False,
                 include_version_stack=False,
                 include_issue=True,
+                include_annotation_overlay=False,
+                include_small_assets=False,
+            ),
+        ),
+        (
+            "ir_notes_only",
+            build_hybrid_frame(
+                baseline_bundle,
+                ir_bundle,
+                chunk_policies,
+                include_top_meta=False,
+                include_top_rows=False,
+                include_description_header=False,
+                include_description_footer=False,
+                include_version_stack=False,
+                include_issue=False,
+                include_annotation_overlay=True,
                 include_small_assets=False,
             ),
         ),
@@ -403,8 +463,10 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta=False,
                 include_top_rows=False,
                 include_description_header=False,
+                include_description_footer=False,
                 include_version_stack=False,
                 include_issue=False,
+                include_annotation_overlay=False,
                 include_small_assets=True,
             ),
         ),
@@ -417,8 +479,10 @@ def build_axis_compare_bundle(baseline_bundle: dict, ir_bundle: dict, chunk_poli
                 include_top_meta=True,
                 include_top_rows=True,
                 include_description_header=True,
+                include_description_footer=True,
                 include_version_stack=True,
                 include_issue=True,
+                include_annotation_overlay=True,
                 include_small_assets=True,
             ),
         ),

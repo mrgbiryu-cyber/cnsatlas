@@ -497,10 +497,14 @@ def classify_chunk_type(chunk_id: str, roles: list[str]) -> str:
         return "description_header"
     if chunk_id.endswith("description_body_chunk"):
         return "body_text_region"
+    if chunk_id.endswith("description_footer_chunk"):
+        return "footer_note_overlay"
     if chunk_id.endswith("issue_chunk"):
         return "issue_card"
     if chunk_id.endswith("version_stack_chunk"):
         return "stacked_badges"
+    if chunk_id.endswith("annotation_overlay_chunk"):
+        return "annotation_overlay"
     if chunk_id.endswith("panel_small_assets_chunk"):
         return "panel_local_assets"
     if chunk_id.endswith("global_ui_assets_chunk"):
@@ -558,6 +562,8 @@ def chunk_render_strategy(chunk_type: str) -> str:
         "top_text_rows": "leaf_text_overlay",
         "description_header": "frame_text_grid",
         "body_text_region": "chunk_container_leaf_text",
+        "footer_note_overlay": "leaf_text_overlay",
+        "annotation_overlay": "leaf_text_overlay",
         "issue_card": "frame_vector_text",
         "stacked_badges": "group_vector_text",
         "panel_local_assets": "absolute_atom_overlay",
@@ -573,6 +579,8 @@ def chunk_text_composition(chunk_type: str) -> str:
         "top_text_rows": "paragraph_or_line",
         "description_header": "cell_leaf",
         "body_text_region": "paragraph_or_line_leaf",
+        "footer_note_overlay": "paragraph_or_line_leaf",
+        "annotation_overlay": "paragraph_or_line_leaf",
         "issue_card": "short_label",
         "stacked_badges": "badge_label",
         "panel_local_assets": "none",
@@ -588,6 +596,8 @@ def chunk_style_policy(chunk_type: str) -> str:
         "top_text_rows": "text_only_overlay",
         "description_header": "native_shape_first",
         "body_text_region": "preserve_dense_background_overlay_text",
+        "footer_note_overlay": "preserve_dense_background_overlay_text",
+        "annotation_overlay": "text_only_overlay",
         "issue_card": "source_shape_style_priority",
         "stacked_badges": "source_shape_style_priority",
         "panel_local_assets": "source_asset_style_priority",
@@ -611,6 +621,8 @@ def chunk_composition_policy(chunk_type: str) -> str:
         "top_text_rows": "preserve",
         "description_header": "preserve",
         "body_text_region": "preserve",
+        "footer_note_overlay": "overlay",
+        "annotation_overlay": "overlay",
         "issue_card": "overlay",
         "stacked_badges": "overlay",
         "panel_local_assets": "overlay",
@@ -629,10 +641,11 @@ def chunk_key_from_role(role: str, owner_id: str, page_type: str) -> str:
             return "dense_ui_panel:top_rows_chunk"
         if role in {"description_header_row", "description_header_cell"}:
             return "dense_ui_panel:description_header_chunk"
+        if role == "description_footer":
+            return "dense_ui_panel:description_footer_chunk"
         if role in {
             "description_card",
             "description_text_lane",
-            "description_footer",
             "description_marker",
             "description_lane_row",
             "description_table",
@@ -642,7 +655,11 @@ def chunk_key_from_role(role: str, owner_id: str, page_type: str) -> str:
             return "dense_ui_panel:issue_chunk"
         if role == "version_stack":
             return "dense_ui_panel:version_stack_chunk"
-        if role in {"small_asset", "overlay_note", "overlay_mark"}:
+        if role == "overlay_note":
+            if owner_id == "dense_ui_panel:panel_overlay_notes":
+                return "dense_ui_panel:annotation_overlay_chunk"
+            return "dense_ui_panel:global_ui_assets_chunk"
+        if role in {"small_asset", "overlay_mark"}:
             if owner_id in {"dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"}:
                 return "dense_ui_panel:panel_small_assets_chunk"
             return "dense_ui_panel:global_ui_assets_chunk"

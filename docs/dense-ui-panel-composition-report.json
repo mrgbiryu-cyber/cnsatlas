@@ -37,29 +37,6 @@
   ],
   "chunk_analysis": [
     {
-      "chunk_id": "dense_ui_panel:top_meta_band_chunk",
-      "chunk_type": "header_band",
-      "render_strategy": "frame_text_grid",
-      "text_composition": "single_or_line",
-      "style_policy": "native_shape_first",
-      "asset_scope": "panel",
-      "atom_count": 7,
-      "features": {
-        "atom_type_count": 3,
-        "text_char_count": 8,
-        "shape_fill_count": 2,
-        "stroke_count": 0,
-        "small_atom_count": 0,
-        "panel_local_asset_count": 0,
-        "global_asset_count": 0,
-        "has_table_backing": true,
-        "is_narrow_panel_region": false,
-        "repeated_colored_band_pattern": false
-      },
-      "recommended_composition_policy": "replace_only_if_baseline_meta_is_weaker",
-      "baseline_overlaps": []
-    },
-    {
       "chunk_id": "dense_ui_panel:top_meta_info_chunk",
       "chunk_type": "meta_grid",
       "render_strategy": "frame_text_grid",
@@ -215,11 +192,11 @@
       "text_composition": "paragraph_or_line_leaf",
       "style_policy": "preserve_dense_background_overlay_text",
       "asset_scope": "panel",
-      "atom_count": 17,
+      "atom_count": 16,
       "features": {
         "atom_type_count": 4,
-        "text_char_count": 2104,
-        "shape_fill_count": 12,
+        "text_char_count": 2097,
+        "shape_fill_count": 11,
         "stroke_count": 5,
         "small_atom_count": 3,
         "panel_local_asset_count": 0,
@@ -231,22 +208,64 @@
       "recommended_composition_policy": "preserve_or_overlay_text_only",
       "baseline_overlaps": [
         {
-          "baseline_name": "표 48",
-          "baseline_type": "GROUP",
-          "iou": 0.869,
-          "chunk_inside_ratio": 1.0
-        },
-        {
           "baseline_name": "right_panel_block:background",
           "baseline_type": "SVG_BLOCK",
-          "iou": 0.554,
-          "chunk_inside_ratio": 0.726
+          "iou": 0.682,
+          "chunk_inside_ratio": 1.0
         },
         {
           "baseline_name": "right_panel_block:description",
           "baseline_type": "SVG_BLOCK",
-          "iou": 0.554,
-          "chunk_inside_ratio": 0.726
+          "iou": 0.682,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "표 48",
+          "baseline_type": "GROUP",
+          "iou": 0.615,
+          "chunk_inside_ratio": 1.0
+        }
+      ]
+    },
+    {
+      "chunk_id": "dense_ui_panel:description_footer_chunk",
+      "chunk_type": "footer_note_overlay",
+      "render_strategy": "leaf_text_overlay",
+      "text_composition": "paragraph_or_line_leaf",
+      "style_policy": "preserve_dense_background_overlay_text",
+      "asset_scope": "panel",
+      "atom_count": 1,
+      "features": {
+        "atom_type_count": 1,
+        "text_char_count": 7,
+        "shape_fill_count": 1,
+        "stroke_count": 0,
+        "small_atom_count": 0,
+        "panel_local_asset_count": 0,
+        "global_asset_count": 0,
+        "has_table_backing": true,
+        "is_narrow_panel_region": false,
+        "repeated_colored_band_pattern": false
+      },
+      "recommended_composition_policy": "overlay_candidate",
+      "baseline_overlaps": [
+        {
+          "baseline_name": "right_panel_block:background",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.016,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "right_panel_block:description",
+          "baseline_type": "SVG_BLOCK",
+          "iou": 0.016,
+          "chunk_inside_ratio": 1.0
+        },
+        {
+          "baseline_name": "표 48",
+          "baseline_type": "GROUP",
+          "iou": 0.014,
+          "chunk_inside_ratio": 1.0
         }
       ]
     },

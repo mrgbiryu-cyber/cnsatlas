@@ -4789,11 +4789,40 @@
                           "generator": "dense-ui-ir-v1",
                           "owner_id": "dense_ui_panel:lane_row_5"
                         }
-                      },
+                      }
+                    ],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "group_id": "dense_ui_panel:description_body_chunk"
+                    }
+                  },
+                  {
+                    "id": "dense_ui_panel:description_footer_chunk",
+                    "type": "GROUP",
+                    "name": "description_footer_chunk",
+                    "absoluteBoundingBox": {
+                      "x": 660.66,
+                      "y": 514.0,
+                      "width": 275.01,
+                      "height": 10.75
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
                       {
-                        "id": "dense_ui_panel:lane_row_6",
+                        "id": "dense_ui_panel:description_footer",
                         "type": "GROUP",
-                        "name": "lane_row_6",
+                        "name": "description_footer",
                         "absoluteBoundingBox": {
                           "x": 660.66,
                           "y": 514.0,
@@ -4896,13 +4925,13 @@
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:lane_row_6"
+                          "owner_id": "dense_ui_panel:description_footer"
                         }
                       }
                     ],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
-                      "group_id": "dense_ui_panel:description_body_chunk"
+                      "group_id": "dense_ui_panel:description_footer_chunk"
                     }
                   },
                   {

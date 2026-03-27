@@ -540,9 +540,9 @@ def owner_priority(owner_id: str) -> int:
         "dense_ui_panel:description_lane_rows": 20,
         "dense_ui_panel:description_markers": 22,
         "dense_ui_panel:description_lanes": 24,
-        "dense_ui_panel:description_footer": 26,
+        "dense_ui_panel:description_footer": 28,
+        "dense_ui_panel:panel_overlay_notes": 29,
         "dense_ui_panel:panel_small_assets": 30,
-        "dense_ui_panel:panel_overlay_notes": 30,
         "dense_ui_panel:global_ui_assets": 40,
     }
     return order.get(owner_id, 50)
@@ -557,6 +557,8 @@ def chunk_priority(chunk_id: str) -> int:
         "dense_ui_panel:version_stack_chunk": 12,
         "dense_ui_panel:issue_chunk": 14,
         "dense_ui_panel:description_body_chunk": 18,
+        "dense_ui_panel:description_footer_chunk": 28,
+        "dense_ui_panel:annotation_overlay_chunk": 29,
         "dense_ui_panel:panel_small_assets_chunk": 30,
         "dense_ui_panel:global_ui_assets_chunk": 31,
     }
@@ -631,6 +633,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
             lane_children.append(build_text_node(marker_atom, marker_bounds))
         lane_children.append(build_paragraph_text_group(text_atom, text_bounds))
         lane_groups.append(build_owner_group(f"dense_ui_panel:lane_row_{row_index}", lane_children))
+    footer_group: dict[str, Any] | None = None
     if footer_atom:
         layout = lane_layout.get(6) or {}
         footer_bounds = layout.get("lane_bounds") or footer_atom["visual_bounds_px"]
@@ -638,7 +641,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         if not preserve_dense_body_background:
             footer_children.append(build_default_lane_background(footer_bounds, 6))
         footer_children.append(build_paragraph_text_group(footer_atom, layout.get("text_bounds") or footer_bounds))
-        lane_groups.append(build_owner_group("dense_ui_panel:lane_row_6", footer_children))
+        footer_group = build_owner_group("dense_ui_panel:description_footer", footer_children)
 
     for owner_id in sorted(grouped.keys(), key=owner_priority):
         if owner_id in {
@@ -736,8 +739,18 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     if description_body_children and description_body_bucket is not None:
         chunk_children.append(build_group_group("dense_ui_panel:description_body_chunk", description_body_children))
 
+    if footer_group and "dense_ui_panel:description_footer_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:description_footer_chunk", [footer_group]))
+
+    annotation_overlay_children: list[dict[str, Any]] = []
+    for owner_id in ["dense_ui_panel:panel_overlay_notes"]:
+        if owner_id in owner_groups:
+            annotation_overlay_children.append(owner_groups[owner_id])
+    if annotation_overlay_children and "dense_ui_panel:annotation_overlay_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:annotation_overlay_chunk", annotation_overlay_children))
+
     small_asset_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"]:
+    for owner_id in ["dense_ui_panel:panel_small_assets"]:
         if owner_id in owner_groups:
             small_asset_children.append(owner_groups[owner_id])
     if small_asset_children and "dense_ui_panel:panel_small_assets_chunk" in chunk_bucket_map:

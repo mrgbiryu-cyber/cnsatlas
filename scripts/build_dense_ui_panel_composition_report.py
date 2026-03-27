@@ -55,6 +55,8 @@ def recommendation_for_chunk(chunk_bucket: dict[str, Any], baseline_hits: list[d
     chunk_type = str(chunk_bucket.get("chunk_type") or "")
     if chunk_type == "body_text_region":
         return "preserve_or_overlay_text_only"
+    if chunk_type in {"footer_note_overlay", "annotation_overlay"}:
+        return "overlay_candidate"
     if chunk_type in {"header_band", "meta_grid"}:
         return "replace_only_if_baseline_meta_is_weaker"
     if chunk_type in {"stacked_badges", "issue_card"}:

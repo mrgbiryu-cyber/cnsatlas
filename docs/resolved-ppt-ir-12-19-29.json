@@ -52646,7 +52646,7 @@
           "subtype": "table_cell",
           "pattern_type": "dense_ui_panel",
           "owner_id": "dense_ui_panel:description_footer",
-          "chunk_id": "dense_ui_panel:description_body_chunk",
+          "chunk_id": "dense_ui_panel:description_footer_chunk",
           "layer_role": "description_footer",
           "z_index": 22,
           "clip_scope": "dense_ui_panel",
@@ -63576,7 +63576,6 @@
           "pattern_type": "dense_ui_panel",
           "owner_ids": [
             "dense_ui_panel:description_cards",
-            "dense_ui_panel:description_footer",
             "dense_ui_panel:description_lane_rows",
             "dense_ui_panel:description_lanes",
             "dense_ui_panel:description_markers",
@@ -63584,7 +63583,6 @@
           ],
           "layer_roles": [
             "description_card",
-            "description_footer",
             "description_lane_row",
             "description_marker",
             "description_table",
@@ -63608,14 +63606,13 @@
             "s29:slide_29/element_37:row_5:cell_1",
             "s29:slide_29/element_37:row_5:cell_2",
             "s29:slide_29/element_37:row_6",
-            "s29:slide_29/element_37:row_6:cell_1",
             "s29:slide_29/element_93",
             "s29:slide_29/element_95",
             "s29:slide_29/element_104",
             "s29:slide_29/element_110",
             "s29:slide_29/element_119"
           ],
-          "atom_count": 17,
+          "atom_count": 16,
           "render_strategy": "chunk_container_leaf_text",
           "text_composition": "paragraph_or_line_leaf",
           "style_policy": "preserve_dense_background_overlay_text",
@@ -63623,10 +63620,48 @@
           "composition_policy": "preserve",
           "features": {
             "atom_type_count": 4,
-            "text_char_count": 2104,
-            "shape_fill_count": 12,
+            "text_char_count": 2097,
+            "shape_fill_count": 11,
             "stroke_count": 5,
             "small_atom_count": 3,
+            "panel_local_asset_count": 0,
+            "global_asset_count": 0,
+            "has_table_backing": true,
+            "is_narrow_panel_region": false,
+            "repeated_colored_band_pattern": false
+          }
+        },
+        {
+          "chunk_id": "dense_ui_panel:description_footer_chunk",
+          "chunk_type": "footer_note_overlay",
+          "pattern_type": "dense_ui_panel",
+          "owner_ids": [
+            "dense_ui_panel:description_footer"
+          ],
+          "layer_roles": [
+            "description_footer"
+          ],
+          "visual_bounds_px": {
+            "x": 660.66,
+            "y": 114.06,
+            "width": 275.01,
+            "height": 12.59
+          },
+          "atom_ids": [
+            "s29:slide_29/element_37:row_6:cell_1"
+          ],
+          "atom_count": 1,
+          "render_strategy": "leaf_text_overlay",
+          "text_composition": "paragraph_or_line_leaf",
+          "style_policy": "preserve_dense_background_overlay_text",
+          "asset_scope": "panel",
+          "composition_policy": "overlay",
+          "features": {
+            "atom_type_count": 1,
+            "text_char_count": 7,
+            "shape_fill_count": 1,
+            "stroke_count": 0,
+            "small_atom_count": 0,
             "panel_local_asset_count": 0,
             "global_asset_count": 0,
             "has_table_backing": true,
