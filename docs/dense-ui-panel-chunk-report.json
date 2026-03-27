@@ -854,26 +854,390 @@
         }
       }
     ],
+    "chunk_summary": [
+      {
+        "chunk_id": "dense_ui_panel:description_body_chunk",
+        "atom_count": 17,
+        "owner_count": 6,
+        "owners": {
+          "dense_ui_panel:description_table": 1,
+          "dense_ui_panel:description_lane_rows": 4,
+          "dense_ui_panel:description_markers": 3,
+          "dense_ui_panel:description_lanes": 3,
+          "dense_ui_panel:description_footer": 1,
+          "dense_ui_panel:description_cards": 5
+        },
+        "roles": {
+          "description_table": 1,
+          "description_lane_row": 4,
+          "description_marker": 3,
+          "description_text_lane": 3,
+          "description_footer": 1,
+          "description_card": 5
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.83,
+          "height": 749.01
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:description_header_chunk",
+        "atom_count": 4,
+        "owner_count": 2,
+        "owners": {
+          "dense_ui_panel:description_header_rows": 2,
+          "dense_ui_panel:description_headers": 2
+        },
+        "roles": {
+          "description_header_row": 2,
+          "description_header_cell": 2
+        },
+        "bounds": {
+          "x": 660.66,
+          "y": 43.09,
+          "width": 275.01,
+          "height": 24.17
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:global_ui_assets_chunk",
+        "atom_count": 56,
+        "owner_count": 3,
+        "owners": {
+          "dense_ui_panel:global_ui_assets": 53,
+          "owner:s29:slide_29/element_13": 2,
+          "owner:s29:slide_29/element_39": 1
+        },
+        "roles": {
+          "small_asset": 53,
+          "overlay_mark": 3
+        },
+        "bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 496.16,
+          "height": 527.82
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:issue_chunk",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:issue_card": 1
+        },
+        "roles": {
+          "issue_card": 1
+        },
+        "bounds": {
+          "x": 725.68,
+          "y": 95.56,
+          "width": 234.32,
+          "height": 54.34
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:panel_small_assets_chunk",
+        "atom_count": 21,
+        "owner_count": 2,
+        "owners": {
+          "dense_ui_panel:panel_small_assets": 20,
+          "dense_ui_panel:panel_overlay_notes": 1
+        },
+        "roles": {
+          "small_asset": 20,
+          "overlay_note": 1
+        },
+        "bounds": {
+          "x": 505.08,
+          "y": 11.77,
+          "width": 372.5,
+          "height": 510.3
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:top_meta_band_chunk",
+        "atom_count": 7,
+        "owner_count": 3,
+        "owners": {
+          "dense_ui_panel:top_meta_group": 1,
+          "dense_ui_panel:top_meta_rows": 2,
+          "dense_ui_panel:top_meta_band_cells": 4
+        },
+        "roles": {
+          "top_meta_table": 1,
+          "top_meta_row": 2,
+          "top_meta_band_cell": 4
+        },
+        "bounds": {
+          "x": 31.34,
+          "y": 8.63,
+          "width": 905.04,
+          "height": 33.59
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:top_meta_info_chunk",
+        "atom_count": 4,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:top_meta_info_cells": 4
+        },
+        "roles": {
+          "top_meta_info_cell": 4
+        },
+        "bounds": {
+          "x": 725.86,
+          "y": 8.63,
+          "width": 210.51,
+          "height": 33.58
+        }
+      },
+      {
+        "chunk_id": "dense_ui_panel:version_stack_chunk",
+        "atom_count": 12,
+        "owner_count": 1,
+        "owners": {
+          "dense_ui_panel:version_stack": 12
+        },
+        "roles": {
+          "version_stack": 12
+        },
+        "bounds": {
+          "x": 583.15,
+          "y": 0.0,
+          "width": 141.97,
+          "height": 219.78
+        }
+      },
+      {
+        "chunk_id": "owner:page:29",
+        "atom_count": 61,
+        "owner_count": 1,
+        "owners": {
+          "owner:page:29": 61
+        },
+        "roles": {
+          "shape": 12,
+          "background_card": 9,
+          "text": 18,
+          "group": 6,
+          "labeled_shape": 14,
+          "section_block": 2
+        },
+        "bounds": {
+          "x": 0.0,
+          "y": 8.07,
+          "width": 936.49,
+          "height": 519.86
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_13",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_13": 1
+        },
+        "roles": {
+          "background_card": 1
+        },
+        "bounds": {
+          "x": 30.5,
+          "y": 56.11,
+          "width": 235.39,
+          "height": 260.77
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_16",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_16": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 49.57,
+          "y": 376.95,
+          "width": 69.55,
+          "height": 10.9
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_39",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_39": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 147.51,
+          "y": 224.82,
+          "width": 34.1,
+          "height": 16.63
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_46",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_46": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 231.36,
+          "y": 376.37,
+          "width": 30.29,
+          "height": 10.3
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_52",
+        "atom_count": 2,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_52": 2
+        },
+        "roles": {
+          "background_card": 2
+        },
+        "bounds": {
+          "x": 509.28,
+          "y": 364.39,
+          "width": 145.77,
+          "height": 162.25
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_6",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_6": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 46.06,
+          "y": 494.38,
+          "width": 41.03,
+          "height": 10.9
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_9",
+        "atom_count": 1,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_9": 1
+        },
+        "roles": {
+          "text": 1
+        },
+        "bounds": {
+          "x": 46.84,
+          "y": 474.76,
+          "width": 41.03,
+          "height": 10.9
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_99",
+        "atom_count": 3,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_99": 3
+        },
+        "roles": {
+          "background_card": 2,
+          "group": 1
+        },
+        "bounds": {
+          "x": 29.87,
+          "y": 458.53,
+          "width": 236.25,
+          "height": 65.66
+        }
+      },
+      {
+        "chunk_id": "owner:s29:slide_29/element_99/child_4",
+        "atom_count": 2,
+        "owner_count": 1,
+        "owners": {
+          "owner:s29:slide_29/element_99/child_4": 2
+        },
+        "roles": {
+          "text": 2
+        },
+        "bounds": {
+          "x": 40.48,
+          "y": 467.33,
+          "width": 220.77,
+          "height": 13.33
+        }
+      }
+    ],
     "small_asset_split_preview": {
-      "panel_small_asset_count": 0,
-      "global_ui_asset_count": 0,
-      "panel_examples": [],
-      "global_examples": []
+      "panel_small_asset_count": 1,
+      "global_ui_asset_count": 53,
+      "panel_examples": [
+        "s29:layout_29/element_5"
+      ],
+      "global_examples": [
+        "s29:slide_29/element_3",
+        "s29:slide_29/element_6/child_2",
+        "s29:slide_29/element_9/child_2",
+        "s29:slide_29/element_10",
+        "s29:slide_29/element_14",
+        "s29:slide_29/element_16/child_2",
+        "s29:slide_29/element_19",
+        "s29:slide_29/element_20",
+        "s29:slide_29/element_23",
+        "s29:slide_29/element_24",
+        "s29:slide_29/element_25",
+        "s29:slide_29/element_27"
+      ]
     },
     "recommendations": [
       {
-        "problem": "description_text_group is semantic-heavy",
+        "problem": "description_body_chunk should replace semantic-heavy text grouping",
         "evidence": {
-          "owners": {},
-          "roles": {}
+          "owners": {
+            "dense_ui_panel:description_table": 1,
+            "dense_ui_panel:description_lane_rows": 4,
+            "dense_ui_panel:description_markers": 3,
+            "dense_ui_panel:description_lanes": 3,
+            "dense_ui_panel:description_footer": 1,
+            "dense_ui_panel:description_cards": 5
+          },
+          "roles": {
+            "description_table": 1,
+            "description_lane_row": 4,
+            "description_marker": 3,
+            "description_text_lane": 3,
+            "description_footer": 1,
+            "description_card": 5
+          }
         },
-        "suggestion": "Replace semantic collection with a visual `description_body_chunk` classification."
+        "suggestion": "Use `description_body_chunk` as the visual chunk, but keep semantic support layers out of final composition by default."
       },
       {
-        "problem": "small_asset_group mixes panel and global UI atoms",
+        "problem": "small assets mix panel and global UI atoms",
         "evidence": {
-          "panel_small_assets": 0,
-          "global_small_assets": 0
+          "panel_small_assets": 1,
+          "global_small_assets": 53
         },
         "suggestion": "Split into `panel_small_assets` and `global_ui_assets` before rendering."
       },

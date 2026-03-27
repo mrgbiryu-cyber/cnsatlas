@@ -457,6 +457,36 @@ def group_key(atom: dict[str, Any]) -> str:
     return f"group:{atom.get('id')}"
 
 
+def chunk_key_from_role(role: str, owner_id: str, page_type: str) -> str:
+    if page_type == "dense_ui_panel":
+        if role in {"top_meta_table", "top_meta_row", "top_meta_band_cell"}:
+            return "dense_ui_panel:top_meta_band_chunk"
+        if role == "top_meta_info_cell":
+            return "dense_ui_panel:top_meta_info_chunk"
+        if role == "top_text_row":
+            return "dense_ui_panel:top_rows_chunk"
+        if role in {"description_header_row", "description_header_cell"}:
+            return "dense_ui_panel:description_header_chunk"
+        if role in {
+            "description_card",
+            "description_text_lane",
+            "description_footer",
+            "description_marker",
+            "description_lane_row",
+            "description_table",
+        }:
+            return "dense_ui_panel:description_body_chunk"
+        if role == "issue_card":
+            return "dense_ui_panel:issue_chunk"
+        if role == "version_stack":
+            return "dense_ui_panel:version_stack_chunk"
+        if role in {"small_asset", "overlay_note", "overlay_mark"}:
+            if owner_id in {"dense_ui_panel:panel_small_assets", "dense_ui_panel:panel_overlay_notes"}:
+                return "dense_ui_panel:panel_small_assets_chunk"
+            return "dense_ui_panel:global_ui_assets_chunk"
+    return owner_id or f"chunk:{role or 'unknown'}"
+
+
 def build_atom(
     candidate: dict[str, Any],
     context: dict[str, Any],
@@ -478,6 +508,11 @@ def build_atom(
         "subtype": str(candidate.get("subtype") or ""),
         "pattern_type": pattern_type,
         "owner_id": owner_key(candidate, pattern_type),
+        "chunk_id": chunk_key_from_role(
+            layer_role(candidate, pattern_type),
+            owner_key(candidate, pattern_type),
+            pattern_type,
+        ),
         "layer_role": layer_role(candidate, pattern_type),
         "z_index": z_index(layer_role(candidate, pattern_type)),
         "clip_scope": clip_scope(candidate, pattern_type),
@@ -544,6 +579,21 @@ def build_group_bucket(group_id: str, atoms: list[dict[str, Any]]) -> dict[str, 
     }
 
 
+def build_chunk_bucket(chunk_id: str, atoms: list[dict[str, Any]]) -> dict[str, Any]:
+    bounds = union_bounds([atom["visual_bounds_px"] for atom in atoms if atom.get("visual_bounds_px")])
+    owner_ids = sorted({str(atom.get("owner_id") or "") for atom in atoms})
+    roles = sorted({str(atom.get("layer_role") or "") for atom in atoms})
+    return {
+        "chunk_id": chunk_id,
+        "pattern_type": atoms[0]["pattern_type"] if atoms else "generic",
+        "owner_ids": owner_ids,
+        "layer_roles": roles,
+        "visual_bounds_px": bounds,
+        "atom_ids": [atom["id"] for atom in atoms],
+        "atom_count": len(atoms),
+    }
+
+
 def build_page_ir(page: dict[str, Any]) -> dict[str, Any]:
     context = build_page_context(page)
     pattern_type = infer_pattern_type(context)
@@ -552,11 +602,14 @@ def build_page_ir(page: dict[str, Any]) -> dict[str, Any]:
     atoms = [build_atom(candidate, context, pattern_type, by_id, children_map) for candidate in context["candidates"]]
     buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    chunks: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for atom in atoms:
         buckets[atom["owner_id"]].append(atom)
         groups[group_key(atom)].append(atom)
+        chunks[str(atom.get("chunk_id") or "")].append(atom)
     owner_buckets = [build_owner_bucket(owner_id, grouped) for owner_id, grouped in sorted(buckets.items())]
     group_buckets = [build_group_bucket(group_id, grouped) for group_id, grouped in sorted(groups.items())]
+    chunk_buckets = [build_chunk_bucket(chunk_id, grouped) for chunk_id, grouped in sorted(chunks.items())]
     return {
         "page_id": context["page_id"],
         "slide_no": context["slide_no"],
@@ -568,6 +621,7 @@ def build_page_ir(page: dict[str, Any]) -> dict[str, Any]:
         "atoms": atoms,
         "owner_buckets": owner_buckets,
         "group_buckets": group_buckets,
+        "chunk_buckets": chunk_buckets,
     }
 
 

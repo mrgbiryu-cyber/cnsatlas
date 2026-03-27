@@ -78,6 +78,7 @@ def summarize_page29(ir_payload: dict[str, Any]) -> dict[str, Any]:
     atoms = page["atoms"]
     atoms_by_owner: dict[str, list[dict[str, Any]]] = defaultdict(list)
     atoms_by_group: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    atoms_by_chunk: dict[str, list[dict[str, Any]]] = defaultdict(list)
     group_by_owner: dict[str, str] = {}
 
     for group in page["group_buckets"]:
@@ -87,8 +88,10 @@ def summarize_page29(ir_payload: dict[str, Any]) -> dict[str, Any]:
     for atom in atoms:
         owner_id = str(atom.get("owner_id") or "")
         group_id = group_by_owner.get(owner_id, owner_id)
+        chunk_id = str(atom.get("chunk_id") or "")
         atoms_by_owner[owner_id].append(atom)
         atoms_by_group[group_id].append(atom)
+        atoms_by_chunk[chunk_id].append(atom)
 
     owner_summary = []
     for owner_id, owner_atoms in sorted(atoms_by_owner.items()):
@@ -119,32 +122,48 @@ def summarize_page29(ir_payload: dict[str, Any]) -> dict[str, Any]:
             }
         )
 
+    chunk_summary = []
+    for chunk_id, chunk_atoms in sorted(atoms_by_chunk.items()):
+        roles = Counter(str(atom.get("layer_role") or "") for atom in chunk_atoms)
+        owners = Counter(str(atom.get("owner_id") or "") for atom in chunk_atoms)
+        bounds = union_bounds([atom.get("visual_bounds_px") or atom.get("source_bounds_px") for atom in chunk_atoms])
+        chunk_summary.append(
+            {
+                "chunk_id": chunk_id,
+                "atom_count": len(chunk_atoms),
+                "owner_count": len(owners),
+                "owners": dict(owners),
+                "roles": dict(roles),
+                "bounds": bounds,
+            }
+        )
+
     panel_small_assets = []
     global_small_assets = []
-    for atom in atoms_by_owner.get("dense_ui_panel:small_assets", []):
+    for atom in atoms_by_owner.get("dense_ui_panel:panel_small_assets", []):
         bounds = atom.get("visual_bounds_px") or atom.get("source_bounds_px") or {}
         if float(bounds.get("x") or 0.0) >= RIGHT_PANEL_X:
             panel_small_assets.append(atom["id"])
-        else:
-            global_small_assets.append(atom["id"])
+    for atom in atoms_by_owner.get("dense_ui_panel:global_ui_assets", []):
+        global_small_assets.append(atom["id"])
 
     recommendations = [
         {
-            "problem": "description_text_group is semantic-heavy",
+            "problem": "description_body_chunk should replace semantic-heavy text grouping",
             "evidence": {
                 "owners": next(
-                    (g["owners"] for g in group_summary if g["group_id"] == "dense_ui_panel:description_text_group"),
+                    (g["owners"] for g in chunk_summary if g["chunk_id"] == "dense_ui_panel:description_body_chunk"),
                     {},
                 ),
                 "roles": next(
-                    (g["roles"] for g in group_summary if g["group_id"] == "dense_ui_panel:description_text_group"),
+                    (g["roles"] for g in chunk_summary if g["chunk_id"] == "dense_ui_panel:description_body_chunk"),
                     {},
                 ),
             },
-            "suggestion": "Replace semantic collection with a visual `description_body_chunk` classification.",
+            "suggestion": "Use `description_body_chunk` as the visual chunk, but keep semantic support layers out of final composition by default.",
         },
         {
-            "problem": "small_asset_group mixes panel and global UI atoms",
+            "problem": "small assets mix panel and global UI atoms",
             "evidence": {
                 "panel_small_assets": len(panel_small_assets),
                 "global_small_assets": len(global_small_assets),
@@ -168,6 +187,7 @@ def summarize_page29(ir_payload: dict[str, Any]) -> dict[str, Any]:
         "page_type": page["page_type"],
         "owner_summary": owner_summary,
         "group_summary": group_summary,
+        "chunk_summary": chunk_summary,
         "small_asset_split_preview": {
             "panel_small_asset_count": len(panel_small_assets),
             "global_ui_asset_count": len(global_small_assets),
