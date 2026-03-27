@@ -209,7 +209,7 @@ def build_version_stack_block(atom: dict[str, Any]) -> tuple[dict[str, Any], dic
     block_children = [build_rect_node(atom, suffix=":bg")]
     if label_text:
         block_children.append(build_text_leaf(atom, label_text, label_bounds, suffix=":label"))
-    block_group = build_owner_group(f"{atom['id']}:version_block", block_children)
+    block_group = build_owner_frame(f"{atom['id']}:version_block", block_children, bounds=bounds)
 
     detail_node: dict[str, Any] | None = None
     if detail_text:
@@ -380,6 +380,41 @@ def build_owner_group(owner_id: str, children: list[dict[str, Any]]) -> dict[str
         "debug": {
             "generator": "dense-ui-ir-v1",
             "owner_id": owner_id,
+        },
+    }
+
+
+def build_owner_frame(
+    owner_id: str,
+    children: list[dict[str, Any]],
+    *,
+    bounds: dict[str, Any] | None = None,
+    clips_content: bool = True,
+) -> dict[str, Any]:
+    frame_bounds = dict(
+        bounds
+        or union_bounds(
+            [
+                child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0)
+                for child in children
+            ]
+        )
+    )
+    return {
+        "id": owner_id,
+        "type": "FRAME",
+        "name": owner_id.split(":")[-1],
+        "absoluteBoundingBox": frame_bounds,
+        "relativeTransform": identity_affine(),
+        "fills": [],
+        "strokes": [],
+        "strokeWeight": 0,
+        "clipsContent": clips_content,
+        "children": children,
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "owner_id": owner_id,
+            "frame_container": True,
         },
     }
 
@@ -679,7 +714,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         if marker_atom and marker_bounds:
             lane_children.append(build_text_node(marker_atom, marker_bounds))
         lane_children.append(build_paragraph_text_group(text_atom, text_bounds))
-        lane_groups.append(build_owner_group(f"dense_ui_panel:lane_row_{row_index}", lane_children))
+        lane_groups.append(build_owner_frame(f"dense_ui_panel:lane_row_{row_index}", lane_children, bounds=lane_bounds))
     footer_group: dict[str, Any] | None = None
     if footer_atom:
         layout = lane_layout.get(6) or {}
@@ -688,7 +723,7 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         if not preserve_dense_body_background:
             footer_children.append(build_default_lane_background(footer_bounds, 6))
         footer_children.append(build_paragraph_text_group(footer_atom, layout.get("text_bounds") or footer_bounds))
-        footer_group = build_owner_group("dense_ui_panel:description_footer", footer_children)
+        footer_group = build_owner_frame("dense_ui_panel:description_footer", footer_children, bounds=footer_bounds)
 
     for owner_id in sorted(grouped.keys(), key=owner_priority):
         if owner_id in {

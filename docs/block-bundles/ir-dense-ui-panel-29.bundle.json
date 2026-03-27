@@ -827,7 +827,7 @@
                         "children": [
                           {
                             "id": "s29:slide_29/element_79:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.39,
@@ -847,6 +847,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_79:bg",
@@ -955,7 +959,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_79:version_block"
+                              "owner_id": "s29:slide_29/element_79:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -1011,7 +1016,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_80:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.39,
@@ -1031,6 +1036,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_80:bg",
@@ -1139,7 +1148,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_80:version_block"
+                              "owner_id": "s29:slide_29/element_80:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -1195,7 +1205,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_84:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.39,
@@ -1215,6 +1225,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_84:bg",
@@ -1323,7 +1337,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_84:version_block"
+                              "owner_id": "s29:slide_29/element_84:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -1379,7 +1394,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_85:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.39,
@@ -1399,6 +1414,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_85:bg",
@@ -1507,7 +1526,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_85:version_block"
+                              "owner_id": "s29:slide_29/element_85:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -1563,7 +1583,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_86:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.15,
@@ -1583,6 +1603,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_86:bg",
@@ -1691,7 +1715,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_86:version_block"
+                              "owner_id": "s29:slide_29/element_86:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -1747,7 +1772,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_91:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.15,
@@ -1767,6 +1792,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_91:bg",
@@ -1875,7 +1904,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_91:version_block"
+                              "owner_id": "s29:slide_29/element_91:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -1931,7 +1961,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_94:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.15,
@@ -1951,6 +1981,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_94:bg",
@@ -2059,7 +2093,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_94:version_block"
+                              "owner_id": "s29:slide_29/element_94:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -2115,7 +2150,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_98:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.15,
@@ -2135,6 +2170,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_98:bg",
@@ -2243,7 +2282,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_98:version_block"
+                              "owner_id": "s29:slide_29/element_98:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -2299,7 +2339,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_101:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.19,
@@ -2319,6 +2359,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_101:bg",
@@ -2427,7 +2471,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_101:version_block"
+                              "owner_id": "s29:slide_29/element_101:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -2483,7 +2528,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_106:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.19,
@@ -2503,6 +2548,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_106:bg",
@@ -2611,7 +2660,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_106:version_block"
+                              "owner_id": "s29:slide_29/element_106:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -2667,7 +2717,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_109:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.15,
@@ -2687,6 +2737,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_109:bg",
@@ -2795,7 +2849,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_109:version_block"
+                              "owner_id": "s29:slide_29/element_109:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -2851,7 +2906,7 @@
                           },
                           {
                             "id": "s29:slide_29/element_115:version_block",
-                            "type": "GROUP",
+                            "type": "FRAME",
                             "name": "version_block",
                             "absoluteBoundingBox": {
                               "x": 583.19,
@@ -2871,6 +2926,10 @@
                                 0
                               ]
                             ],
+                            "fills": [],
+                            "strokes": [],
+                            "strokeWeight": 0,
+                            "clipsContent": true,
                             "children": [
                               {
                                 "id": "s29:slide_29/element_115:bg",
@@ -2979,7 +3038,8 @@
                             ],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
-                              "owner_id": "s29:slide_29/element_115:version_block"
+                              "owner_id": "s29:slide_29/element_115:version_block",
+                              "frame_container": true
                             }
                           },
                           {
@@ -3214,7 +3274,7 @@
                     "absoluteBoundingBox": {
                       "x": 660.66,
                       "y": 67.26,
-                      "width": 275.01,
+                      "width": 275.0,
                       "height": 460.74
                     },
                     "relativeTransform": [
@@ -3232,12 +3292,12 @@
                     "children": [
                       {
                         "id": "dense_ui_panel:lane_row_3",
-                        "type": "GROUP",
+                        "type": "FRAME",
                         "name": "lane_row_3",
                         "absoluteBoundingBox": {
                           "x": 660.66,
                           "y": 67.26,
-                          "width": 275.01,
+                          "width": 275.0,
                           "height": 21.5
                         },
                         "relativeTransform": [
@@ -3252,6 +3312,10 @@
                             0
                           ]
                         ],
+                        "fills": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "clipsContent": true,
                         "children": [
                           {
                             "id": "s29:slide_29/element_37:row_3:cell_1",
@@ -3438,17 +3502,18 @@
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:lane_row_3"
+                          "owner_id": "dense_ui_panel:lane_row_3",
+                          "frame_container": true
                         }
                       },
                       {
                         "id": "dense_ui_panel:lane_row_4",
-                        "type": "GROUP",
+                        "type": "FRAME",
                         "name": "lane_row_4",
                         "absoluteBoundingBox": {
                           "x": 660.66,
                           "y": 88.76,
-                          "width": 275.01,
+                          "width": 275.0,
                           "height": 247.25
                         },
                         "relativeTransform": [
@@ -3463,6 +3528,10 @@
                             0
                           ]
                         ],
+                        "fills": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "clipsContent": true,
                         "children": [
                           {
                             "id": "s29:slide_29/element_37:row_4:cell_1",
@@ -4720,17 +4789,18 @@
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:lane_row_4"
+                          "owner_id": "dense_ui_panel:lane_row_4",
+                          "frame_container": true
                         }
                       },
                       {
                         "id": "dense_ui_panel:lane_row_5",
-                        "type": "GROUP",
+                        "type": "FRAME",
                         "name": "lane_row_5",
                         "absoluteBoundingBox": {
                           "x": 660.66,
                           "y": 336.01,
-                          "width": 275.01,
+                          "width": 275.0,
                           "height": 191.99
                         },
                         "relativeTransform": [
@@ -4745,6 +4815,10 @@
                             0
                           ]
                         ],
+                        "fills": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "clipsContent": true,
                         "children": [
                           {
                             "id": "s29:slide_29/element_37:row_5:cell_1",
@@ -5747,7 +5821,8 @@
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:lane_row_5"
+                          "owner_id": "dense_ui_panel:lane_row_5",
+                          "frame_container": true
                         }
                       }
                     ],
@@ -5764,7 +5839,7 @@
                       "x": 660.66,
                       "y": 514.0,
                       "width": 275.01,
-                      "height": 10.75
+                      "height": 14.0
                     },
                     "relativeTransform": [
                       [
@@ -5781,13 +5856,13 @@
                     "children": [
                       {
                         "id": "dense_ui_panel:description_footer",
-                        "type": "GROUP",
+                        "type": "FRAME",
                         "name": "description_footer",
                         "absoluteBoundingBox": {
                           "x": 660.66,
                           "y": 514.0,
                           "width": 275.01,
-                          "height": 10.75
+                          "height": 14.0
                         },
                         "relativeTransform": [
                           [
@@ -5801,6 +5876,10 @@
                             0
                           ]
                         ],
+                        "fills": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "clipsContent": true,
                         "children": [
                           {
                             "id": "s29:slide_29/element_37:row_6:cell_1:paragraphs",
@@ -5885,7 +5964,8 @@
                         ],
                         "debug": {
                           "generator": "dense-ui-ir-v1",
-                          "owner_id": "dense_ui_panel:description_footer"
+                          "owner_id": "dense_ui_panel:description_footer",
+                          "frame_container": true
                         }
                       }
                     ],
