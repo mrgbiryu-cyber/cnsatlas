@@ -144,6 +144,19 @@ def build_text_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
     }
 
 
+def build_text_leaf(
+    atom: dict[str, Any],
+    text: str,
+    bounds: dict[str, Any],
+    *,
+    suffix: str = "",
+    font_size: float | None = None,
+) -> dict[str, Any]:
+    text_atom = dict(atom)
+    text_atom["text"] = text
+    return build_text_node(text_atom, bounds, suffix=suffix)
+
+
 def paragraph_texts(atom: dict[str, Any]) -> list[str]:
     runs = atom.get("text_runs") or []
     if not runs:
@@ -174,6 +187,40 @@ def paragraph_texts(atom: dict[str, Any]) -> list[str]:
     if paragraph:
         paragraphs.append(paragraph)
     return paragraphs
+
+
+def version_stack_label_and_detail(atom: dict[str, Any]) -> tuple[str, str]:
+    lines = [line.strip() for line in str(atom.get("text") or "").splitlines() if line.strip()]
+    if not lines:
+        return "", ""
+    return lines[0], "\n".join(lines[1:]).strip()
+
+
+def build_version_stack_block(atom: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    bounds = dict(atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
+    label_text, detail_text = version_stack_label_and_detail(atom)
+    label_height = min(12.0, max(6.0, float(bounds["height"]) * 0.2))
+    label_bounds = make_bounds(
+        float(bounds["x"]) + 7.0,
+        float(bounds["y"]) + 3.5,
+        max(float(bounds["width"]) - 14.0, 8.0),
+        label_height,
+    )
+    block_children = [build_rect_node(atom, suffix=":bg")]
+    if label_text:
+        block_children.append(build_text_leaf(atom, label_text, label_bounds, suffix=":label"))
+    block_group = build_owner_group(f"{atom['id']}:version_block", block_children)
+
+    detail_node: dict[str, Any] | None = None
+    if detail_text:
+        detail_bounds = make_bounds(
+            float(bounds["x"]) + 7.0,
+            float(bounds["y"]) + label_height + 6.0,
+            max(float(bounds["width"]) - 14.0, 8.0),
+            max(float(bounds["height"]) - label_height - 8.0, 8.0),
+        )
+        detail_node = build_text_leaf(atom, detail_text, detail_bounds, suffix=":detail")
+    return block_group, detail_node
 
 
 def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, suffix: str = "") -> dict[str, Any]:
@@ -656,7 +703,13 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         for atom in atoms:
             role = str(atom.get("layer_role") or "")
             subtype = str(atom.get("subtype") or "")
-            if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card", "version_stack"}:
+            if role == "version_stack":
+                block_group, detail_node = build_version_stack_block(atom)
+                owner_children.append(block_group)
+                if detail_node:
+                    owner_children.append(detail_node)
+                continue
+            if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card"}:
                 owner_children.append(build_rect_node(atom, suffix=":bg"))
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom, suffix=":label"))
