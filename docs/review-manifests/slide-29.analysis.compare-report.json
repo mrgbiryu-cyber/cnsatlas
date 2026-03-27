@@ -1,0 +1,2519 @@
+{
+  "kind": "slide-29-analysis-compare-report",
+  "reference_source": "reference-page-3.json",
+  "actual_source": "figma-page-11_31696.json",
+  "focus_region": {
+    "name": "right_panel_block",
+    "relative_bbox_from_actual_baseline": {
+      "x": 589.7100219726562,
+      "y": 66.33000183105469,
+      "width": 370.2900085449219,
+      "height": 501.6699981689453
+    },
+    "reference_region_bbox": {
+      "x": 2351.7100219726562,
+      "y": -212.6699981689453,
+      "width": 370.2900085449219,
+      "height": 501.6699981689453
+    }
+  },
+  "reference_region_summary": {
+    "node_count": 178,
+    "text_count": 111,
+    "frame_like_count": 26,
+    "vector_count": 38,
+    "short_text_count": 38,
+    "short_text_ratio": 0.3423,
+    "type_counts": {
+      "GROUP": 23,
+      "VECTOR": 38,
+      "TEXT": 111,
+      "FRAME": 3,
+      "RECTANGLE": 3
+    },
+    "paint_order_sample": [
+      {
+        "order": 97,
+        "type": "GROUP",
+        "name": "Group",
+        "text": ""
+      },
+      {
+        "order": 100,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 101,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 102,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 103,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 104,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 105,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 106,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 107,
+        "type": "GROUP",
+        "name": "Group",
+        "text": ""
+      },
+      {
+        "order": 109,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 110,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 111,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 112,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 113,
+        "type": "VECTOR",
+        "name": "Vector",
+        "text": ""
+      },
+      {
+        "order": 120,
+        "type": "TEXT",
+        "name": "1",
+        "text": "1"
+      },
+      {
+        "order": 121,
+        "type": "TEXT",
+        "name": "•",
+        "text": "•"
+      },
+      {
+        "order": 122,
+        "type": "TEXT",
+        "name": "[Sticky",
+        "text": "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의"
+      },
+      {
+        "order": 123,
+        "type": "TEXT",
+        "name": "-",
+        "text": "-"
+      },
+      {
+        "order": 124,
+        "type": "TEXT",
+        "name": "문서명",
+        "text": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개"
+      },
+      {
+        "order": 125,
+        "type": "TEXT",
+        "name": "2",
+        "text": "2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "variant_name": "baseline_full",
+      "panel_bbox": {
+        "x": 589.7100219726562,
+        "y": 66.33000183105469,
+        "width": 370.2900085449219,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 116,
+        "text_count": 70,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1429,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 70,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 9
+        },
+        "paint_order_sample": [
+          {
+            "order": 28,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 35,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 36,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 37,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 38,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 39,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 40,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 41,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 42,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 43,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 44,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 45,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 46,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 47,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 48,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 49,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 50,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 51,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 52,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 53,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 55,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0",
+          "V 2.4"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.94,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_top_meta_band_only",
+      "panel_bbox": {
+        "x": 1589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 116,
+        "text_count": 70,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1429,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 70,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 9
+        },
+        "paint_order_sample": [
+          {
+            "order": 363,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 370,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 371,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 372,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 373,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 374,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 375,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 376,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 377,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 378,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 379,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 380,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 381,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 382,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 383,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 384,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 385,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 386,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 387,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 388,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 55,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0",
+          "V 2.4"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.94,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_top_meta_info_only",
+      "panel_bbox": {
+        "x": 2589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 116,
+        "text_count": 70,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1429,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 70,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 9
+        },
+        "paint_order_sample": [
+          {
+            "order": 698,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 705,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 706,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 707,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 708,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 709,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 710,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 711,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 712,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 713,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 714,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 715,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 716,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 717,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 718,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 719,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 720,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 721,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 722,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 723,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 55,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0",
+          "V 2.4"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.94,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_version_only",
+      "panel_bbox": {
+        "x": 3589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 135,
+        "text_count": 79,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1266,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 79,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 19
+        },
+        "paint_order_sample": [
+          {
+            "order": 1033,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 1040,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 1041,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1042,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1043,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 1044,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 1045,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 1046,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1047,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1048,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 1049,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 1050,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 1051,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1052,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1053,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 1054,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 1055,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 1056,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1057,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1058,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 55,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0",
+          "V 2.4"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.94,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_desc_header_only",
+      "panel_bbox": {
+        "x": 4589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 116,
+        "text_count": 70,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1429,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 70,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 9
+        },
+        "paint_order_sample": [
+          {
+            "order": 1392,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 1399,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 1400,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1401,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1402,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 1403,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 1404,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 1405,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1406,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1407,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 1408,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 1409,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 1410,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1411,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1412,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 1413,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 1414,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 1415,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1416,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1417,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 55,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0",
+          "V 2.4"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.95,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_issue_only",
+      "panel_bbox": {
+        "x": 5589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 118,
+        "text_count": 71,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1408,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 71,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 10
+        },
+        "paint_order_sample": [
+          {
+            "order": 1727,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 1734,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 1735,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1736,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1737,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 1738,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 1739,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 1740,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1741,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1742,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 1743,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 1744,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 1745,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1746,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1747,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 1748,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 1749,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 1750,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 1751,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 1752,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 56,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "ISSUE ‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요) [BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.95,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_assets_only",
+      "panel_bbox": {
+        "x": 6589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 117,
+        "text_count": 70,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.1429,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 70,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 10
+        },
+        "paint_order_sample": [
+          {
+            "order": 2064,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 2071,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 2072,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2073,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2074,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 2075,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 2076,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 2077,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2078,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2079,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 2080,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 2081,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 2082,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2083,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2084,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 2085,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 2086,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 2087,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2088,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2089,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 55,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0",
+          "V 2.4"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.95,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    },
+    {
+      "variant_name": "ir_meta_version_issue_assets",
+      "panel_bbox": {
+        "x": 7589.7099609375,
+        "y": 66.33000183105469,
+        "width": 370.2900390625,
+        "height": 501.6699981689453
+      },
+      "summary": {
+        "node_count": 138,
+        "text_count": 80,
+        "frame_like_count": 17,
+        "vector_count": 20,
+        "short_text_count": 10,
+        "short_text_ratio": 0.125,
+        "type_counts": {
+          "FRAME": 5,
+          "TEXT": 80,
+          "VECTOR": 20,
+          "GROUP": 12,
+          "RECTANGLE": 21
+        },
+        "paint_order_sample": [
+          {
+            "order": 2400,
+            "type": "FRAME",
+            "name": "top_meta_block",
+            "text": ""
+          },
+          {
+            "order": 2407,
+            "type": "TEXT",
+            "name": "- 비교하기 버튼 : 노출 제외 조건 수정",
+            "text": "- 비교하기 버튼 : 노출 제외 조건 수정"
+          },
+          {
+            "order": 2408,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2409,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2410,
+            "type": "TEXT",
+            "name": "V 1.7",
+            "text": "V 1.7"
+          },
+          {
+            "order": 2411,
+            "type": "TEXT",
+            "name": "[BTOCSITE-35421]",
+            "text": "[BTOCSITE-35421]"
+          },
+          {
+            "order": 2412,
+            "type": "TEXT",
+            "name": "- 다품목할인, 내일배송 뱃지 추가",
+            "text": "- 다품목할인, 내일배송 뱃지 추가"
+          },
+          {
+            "order": 2413,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2414,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2415,
+            "type": "TEXT",
+            "name": "V 2.0",
+            "text": "V 2.0"
+          },
+          {
+            "order": 2416,
+            "type": "TEXT",
+            "name": "[BTOCSITE-43175]",
+            "text": "[BTOCSITE-43175]"
+          },
+          {
+            "order": 2417,
+            "type": "TEXT",
+            "name": "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+            "text": "- [인테리어컷] 영역 디스클레이머 일괄 적용"
+          },
+          {
+            "order": 2418,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2419,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2420,
+            "type": "TEXT",
+            "name": "V 2.4",
+            "text": "V 2.4"
+          },
+          {
+            "order": 2421,
+            "type": "TEXT",
+            "name": "[BTOCSITE-47092]",
+            "text": "[BTOCSITE-47092]"
+          },
+          {
+            "order": 2422,
+            "type": "TEXT",
+            "name": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+            "text": "- 닷컴 ONLY 뱃지 적용 & 출시일 노출"
+          },
+          {
+            "order": 2423,
+            "type": "VECTOR",
+            "name": "Vector",
+            "text": ""
+          },
+          {
+            "order": 2424,
+            "type": "GROUP",
+            "name": "Group",
+            "text": ""
+          },
+          {
+            "order": 2425,
+            "type": "TEXT",
+            "name": "V 2.9",
+            "text": "V 2.9"
+          }
+        ]
+      },
+      "text_compare_to_reference": {
+        "shared_text_count": 13,
+        "missing_text_count": 77,
+        "extra_text_count": 56,
+        "missing_text_sample": [
+          "(e.g.",
+          "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+          ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+          "-",
+          "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+          "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+          "- 다품목할인",
+          "- 최대",
+          "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+          ".4",
+          ".9",
+          "/ 5 >",
+          "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+          "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+          "2C) 디스클라이머 문구 영역",
+          "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+          "2b) 일시정지⇔재생 토글 버튼(Optional)",
+          "2d) 닷컴 only 뱃지",
+          "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+          "4.4"
+        ],
+        "extra_text_sample": [
+          ") > UP 가전 Badge 순으로 노출 - 최대 1 줄 노출하며 , 강조텍스트 Badge 갯수로 인해 줄 바꿈이 필요한 경우 , 해당 강조텍스트 Badge 미 노출 (e.g. 다품목할인 , 내일배송 , UP 가전 , 신제품 , 베스트 , 특별세일 , 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일 , 쿠폰할인 줄 바꿈 필요한 경우 특별세일 , 쿠폰할인 미 노출 ) 노출순서 변경됨 : 으뜸효율환급 > 베스트 랭킹 순위 >YYYY 년 출시 > 다품목 할인 > UP 가전 > 강조텍스트 ( 뱃지관리 등록 ) 기존과 동일하게 줄 바꿈 적용함 디자인 변경됨 : PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경 [ 참고사항 ] ★ 기존의 판매예정 , 내일배송 , 쿠폰할인 뱃지가 삭제됨 ★ YYYY 년 출시 , 다품목 할인 , UP 가전 뱃지는 PLP 뱃지 스타일 (black) 과 PDP 뱃지 스타일 (red) 이 다름 ★ 강조텍스트 뱃지는 PLP 에서 비노출됨 고효율가전 신규 추가됨 CMS > 제품 > 모델 > 모델관리 > 모델기본정보 --> 으뜸효율환급 여부 ‘Y’ 로 설정 시 뱃지 제공 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 베스트 랭킹 순위 신규 추가됨 ”FRONT > 홈 > 제품 / 소모품 > 베스트 랭킹 > 오늘의 랭킹 ＂ 내 카테고리별 베스트 랭킹 1~3 위 가전인 경우에만 노출 ( 가격대 및 용량 / 사이즈 / 면적 / 타입 / 디스플레이등 전체 옵션에서 1~3 위 ) 뱃지 우선순위 중 최상위 판매중 , 일시품절 상태인 경우에만 노출 선택시 이동링크 없음 노출문구 : $ 카테고리명 $ n 위 카테고리명 : “admin> 공통 > 전시구좌관리 > 텍스트형 : 오늘의 랭킹 > 카테고리형 ＂ 내 카테고리명 노출 n: 1~3 노출 예 ) 김치냉장고 1 위 워시타워 3 위 , 의류건조기 2 위 , 광파오븐 ,/ 전자레인지 1 위 [ 참고 ] “ 베스트 랭킹 > 오늘의 랭킹 ” 은 렌탈은 제외하고 일반제품에만 적용됨 YYYY 년 출시 신규 추가됨 PLP 내 노출기준과 동일함 ( 판매 , 일시품절 , 미판매 일때 노출 ) └ 당해년도 출시제품에 출시년도 노출 └ MODEL_RELEASE_DATE 를 기준으로 현재 년도 확인하여 뱃지 노출",
+          "- 360미디어 디스클라이머 추가",
+          "- AR체험 서비스 종료, 오브제체험 뱃지 삭제",
+          "- UP가전 텍스트 뱃지 제거(개수 줄이기 위함)",
+          "- [인테리어컷] 영역 디스클레이머 일괄 적용",
+          "- admin 판매상태(미판매)의 경우에도.",
+          "- 다품목할인, 내일배송 뱃지 추가",
+          "- 닷컴 ONLY 뱃지 적용 & 출시일 노출",
+          "- 비교하기 버튼 : 노출 제외 조건 수정",
+          "- 스펙 기반의 선호도",
+          "- 으뜸효율환급 뱃지 추가",
+          "- 제품 PDP UI 개선",
+          "3",
+          "CMPDPG-MN17110",
+          "CMPDPG-MN17300",
+          "Fold",
+          "ISSUE ‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요) [BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)",
+          "LGE.COM PDP 스펙 용어사전 툴팁 컨텐츠",
+          "V 1.7",
+          "V 2.0"
+        ],
+        "largest_bbox_deltas": [
+          {
+            "text": "V 2.9",
+            "dx": -107.58,
+            "dy": -246.93,
+            "dw": -0.08,
+            "dh": -3.01
+          },
+          {
+            "text": "2",
+            "dx": -7.11,
+            "dy": -80.52,
+            "dw": -0.33,
+            "dh": -4.1
+          },
+          {
+            "text": "1",
+            "dx": -7.22,
+            "dy": 37.64,
+            "dw": -1.84,
+            "dh": -4.18
+          },
+          {
+            "text": "V 4.7",
+            "dx": -5.07,
+            "dy": 32.99,
+            "dw": -0.49,
+            "dh": -3.14
+          },
+          {
+            "text": "V 4.6",
+            "dx": -5.08,
+            "dy": 33.3,
+            "dw": -0.21,
+            "dh": -3.02
+          },
+          {
+            "text": "V.5.0",
+            "dx": 1.66,
+            "dy": 31.18,
+            "dw": -1.53,
+            "dh": -4.77
+          },
+          {
+            "text": "▶",
+            "dx": 1.28,
+            "dy": 30.67,
+            "dw": -2.27,
+            "dh": -4.91
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.43,
+            "dy": 29.32,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.4.6",
+            "dx": 3.42,
+            "dy": 29.32,
+            "dw": -1.28,
+            "dh": -4.76
+          },
+          {
+            "text": "V.2.2",
+            "dx": 3.34,
+            "dy": 29.31,
+            "dw": -1.29,
+            "dh": -4.8
+          },
+          {
+            "text": "V.2.4",
+            "dx": 1.02,
+            "dy": 31.21,
+            "dw": -0.95,
+            "dh": -4.8
+          },
+          {
+            "text": "V 3.2",
+            "dx": -5.07,
+            "dy": 28.92,
+            "dw": -0.16,
+            "dh": -3.02
+          },
+          {
+            "text": "ISSUE",
+            "dx": 3.0,
+            "dy": 30.71,
+            "dw": -0.19,
+            "dh": -3.0
+          },
+          {
+            "text": "V 5.0",
+            "dx": -5.08,
+            "dy": 27.42,
+            "dw": -0.38,
+            "dh": -3.02
+          }
+        ]
+      }
+    }
+  ]
+}
