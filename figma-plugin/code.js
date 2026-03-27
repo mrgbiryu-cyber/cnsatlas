@@ -66,6 +66,20 @@ figma.ui.onmessage = async (message) => {
         message: error instanceof Error ? `${error.name}: ${error.message}\n${error.stack}` : String(error),
       });
     }
+  } else if (message.type === "export-figma-analysis-json") {
+    try {
+      const payload = exportFigmaAnalysisJson(message.scope === "selection" ? "selection" : "page");
+      figma.ui.postMessage({
+        type: "figma-analysis-exported",
+        filename: payload.filename,
+        jsonText: JSON.stringify(payload.document, null, 2),
+      });
+    } catch (error) {
+      figma.ui.postMessage({
+        type: "render-error",
+        message: error instanceof Error ? `${error.name}: ${error.message}\n${error.stack}` : String(error),
+      });
+    }
   }
 };
 
@@ -1090,6 +1104,122 @@ function exportActualManifest() {
       skipped_nodes: replayDebugState.skipped_nodes,
     },
     nodes: rows,
+  };
+}
+
+function serializePaint(paint) {
+  if (!paint) return null;
+  const result = {
+    type: paint.type || "",
+    visible: paint.visible !== false,
+  };
+  if (typeof paint.opacity === "number") {
+    result.opacity = paint.opacity;
+  }
+  if (paint.color) {
+    result.color = {
+      r: paint.color.r || 0,
+      g: paint.color.g || 0,
+      b: paint.color.b || 0,
+      a: typeof paint.color.a === "number" ? paint.color.a : undefined,
+    };
+  }
+  if (paint.imageHash) result.imageHash = paint.imageHash;
+  if (paint.scaleMode) result.scaleMode = paint.scaleMode;
+  if (paint.blendMode) result.blendMode = paint.blendMode;
+  return result;
+}
+
+function pluginDataSnapshot(node) {
+  if (!node || typeof node.getPluginDataKeys !== "function") {
+    return {};
+  }
+  const data = {};
+  for (const key of node.getPluginDataKeys()) {
+    data[key] = node.getPluginData(key);
+  }
+  return data;
+}
+
+function sharedPluginDataSnapshot(node) {
+  return {};
+}
+
+function serializeNodeForAnalysis(node, originBounds) {
+  const bounds = computeRenderableBounds(node);
+  const rel = bounds && originBounds ? {
+    x: bounds.x - originBounds.x,
+    y: bounds.y - originBounds.y,
+    width: bounds.width,
+    height: bounds.height,
+  } : null;
+  const serialized = {
+    id: node.id,
+    name: node.name || "",
+    type: node.type,
+    visible: node.visible !== false,
+    locked: node.locked === true,
+    bounds_absolute: bounds,
+    bounds_relative_to_scope: rel,
+    width: typeof node.width === "number" ? node.width : undefined,
+    height: typeof node.height === "number" ? node.height : undefined,
+    relative_transform: node.relativeTransform || identityAffine(),
+    composed_transform: computeNodeComposedTransform(node),
+    clips_content: "clipsContent" in node ? Boolean(node.clipsContent) : undefined,
+    opacity: typeof node.opacity === "number" ? node.opacity : undefined,
+    fills: Array.isArray(node.fills) ? node.fills.map(serializePaint).filter(Boolean) : [],
+    strokes: Array.isArray(node.strokes) ? node.strokes.map(serializePaint).filter(Boolean) : [],
+    stroke_weight: typeof node.strokeWeight === "number" ? node.strokeWeight : undefined,
+    corner_radius: typeof node.cornerRadius === "number" ? node.cornerRadius : undefined,
+    plugin_data: pluginDataSnapshot(node),
+    shared_plugin_data: sharedPluginDataSnapshot(node),
+  };
+  if (node.type === "TEXT") {
+    serialized.characters = node.characters || "";
+    serialized.text_style = {
+      fontName: node.fontName === figma.mixed ? "mixed" : node.fontName,
+      fontSize: node.fontSize === figma.mixed ? "mixed" : node.fontSize,
+      textAlignHorizontal: node.textAlignHorizontal,
+      textAlignVertical: node.textAlignVertical,
+      textAutoResize: node.textAutoResize,
+      lineHeight: node.lineHeight === figma.mixed ? "mixed" : node.lineHeight,
+      letterSpacing: node.letterSpacing === figma.mixed ? "mixed" : node.letterSpacing,
+    };
+  }
+  if ("children" in node && Array.isArray(node.children) && node.children.length > 0) {
+    serialized.children = node.children.map((child) => serializeNodeForAnalysis(child, originBounds));
+  } else {
+    serialized.children = [];
+  }
+  return serialized;
+}
+
+function exportFigmaAnalysisJson(scope) {
+  const selected = figma.currentPage.selection || [];
+  const useSelection = scope === "selection" && selected.length > 0;
+  const scopeNodes = useSelection ? [...selected] : [...figma.currentPage.children];
+  if (!scopeNodes.length) {
+    throw new Error(useSelection ? "선택된 노드가 없습니다." : "현재 페이지에 노드가 없습니다.");
+  }
+  const scopeBounds = unionBounds(scopeNodes.map((node) => computeRenderableBounds(node)).filter(Boolean))
+    || { x: 0, y: 0, width: MIN_PAGE_WIDTH, height: MIN_PAGE_HEIGHT };
+  const document = {
+    kind: "figma-analysis-export",
+    export_scope: useSelection ? "selection" : "page",
+    page: {
+      id: figma.currentPage.id,
+      name: figma.currentPage.name || "",
+    },
+    selection_ids: selected.map((node) => node.id),
+    exported_at: new Date().toISOString(),
+    scope_bounds: scopeBounds,
+    nodes: scopeNodes.map((node) => serializeNodeForAnalysis(node, scopeBounds)),
+  };
+  return {
+    filename: useSelection
+      ? `figma-selection-${figma.currentPage.id}.json`
+      : `figma-page-${figma.currentPage.id}.json`,
+    document,
   };
 }
 

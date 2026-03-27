@@ -138,6 +138,8 @@
     <div class="row">
       <button id="renderButton" disabled>Figma 렌더 시작</button>
       <button class="secondary" id="exportActualButton" type="button">Actual Manifest 내보내기</button>
+      <button class="secondary" id="exportPageJsonButton" type="button">현재 페이지 JSON</button>
+      <button class="secondary" id="exportSelectionJsonButton" type="button">선택 영역 JSON</button>
     </div>
 
     <script>
@@ -147,6 +149,8 @@
       const summary = document.getElementById("summary");
       const renderButton = document.getElementById("renderButton");
       const exportActualButton = document.getElementById("exportActualButton");
+      const exportPageJsonButton = document.getElementById("exportPageJsonButton");
+      const exportSelectionJsonButton = document.getElementById("exportSelectionJsonButton");
       const clearButton = document.getElementById("clearButton");
       const renderModeInputs = Array.from(document.querySelectorAll('input[name="renderMode"]'));
 
@@ -295,6 +299,32 @@
         );
       });
 
+      exportPageJsonButton.addEventListener("click", () => {
+        setStatus("현재 페이지 JSON 추출 중...");
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: "export-figma-analysis-json",
+              scope: "page"
+            }
+          },
+          "*"
+        );
+      });
+
+      exportSelectionJsonButton.addEventListener("click", () => {
+        setStatus("선택 영역 JSON 추출 중...");
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: "export-figma-analysis-json",
+              scope: "selection"
+            }
+          },
+          "*"
+        );
+      });
+
       function downloadTextFile(filename, text) {
         const blob = new Blob([text], { type: "application/json;charset=utf-8" });
         const url = URL.createObjectURL(blob);
@@ -319,6 +349,10 @@
           setStatus(`Error: ${message.message}`, true);
         }
         if (message.type === "actual-manifest-exported") {
+          downloadTextFile(message.filename, message.jsonText);
+          setStatus(`${message.filename} 다운로드 완료`);
+        }
+        if (message.type === "figma-analysis-exported") {
           downloadTextFile(message.filename, message.jsonText);
           setStatus(`${message.filename} 다운로드 완료`);
         }
