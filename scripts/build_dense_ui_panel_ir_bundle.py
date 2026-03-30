@@ -1586,8 +1586,16 @@ def build_dense_ui_panel_nodes(
         }
         children = sorted(children, key=lambda node: version_order.get(str(node.get("id") or ""), chunk_priority(str(node.get("id") or ""))))
 
+    page_level_chunk_ids = {
+        "dense_ui_panel:top_meta_band_chunk",
+        "dense_ui_panel:top_meta_info_chunk",
+        "dense_ui_panel:global_ui_assets_chunk",
+    }
+    page_level_children = [child for child in children if str(child.get("id") or "") in page_level_chunk_ids]
+    panel_children = [child for child in children if str(child.get("id") or "") not in page_level_chunk_ids]
+
     content_bounds = union_bounds(
-        [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in children]
+        [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in panel_children]
     )
     expanded_panel_bounds = make_bounds(
         min(float(panel_bounds["x"]), float(content_bounds["x"])),
@@ -1613,7 +1621,7 @@ def build_dense_ui_panel_nodes(
         "fills": [],
         "strokes": [],
         "strokeWeight": 0,
-        "children": children,
+        "children": panel_children,
         "debug": {
             "generator": "dense-ui-ir-v1",
             "page_id": page["page_id"],
@@ -1639,7 +1647,7 @@ def build_dense_ui_panel_nodes(
             "page_type": page["page_type"],
         },
     }
-    return [panel_frame]
+    return page_level_children + [panel_frame]
 
 
 def build_bundle(
