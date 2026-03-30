@@ -672,6 +672,150 @@ def build_default_lane_background(bounds: dict[str, Any], row_index: int, style_
     }
 
 
+def build_grid_rect(
+    node_id: str,
+    name: str,
+    bounds: dict[str, Any],
+    *,
+    fill: dict[str, float] | None = None,
+    fill_opacity: float = 1.0,
+    stroke: dict[str, float] | None = None,
+    stroke_opacity: float = 1.0,
+    stroke_weight: float = 0.0,
+    owner_id: str = "dense_ui_panel:description_table_grid",
+) -> dict[str, Any]:
+    fills = []
+    if fill is not None:
+        fills = [{"type": "SOLID", "color": fill, "opacity": fill_opacity}]
+    strokes = []
+    if stroke is not None and stroke_weight > 0.0:
+        strokes = [{"type": "SOLID", "color": stroke, "opacity": stroke_opacity}]
+    return {
+        "id": node_id,
+        "type": "RECTANGLE",
+        "name": name,
+        "absoluteBoundingBox": dict(bounds),
+        "relativeTransform": identity_affine(),
+        "fills": fills,
+        "strokes": strokes,
+        "strokeWeight": stroke_weight,
+        "children": [],
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "owner_id": owner_id,
+            "role": "dense_table_grid",
+        },
+    }
+
+
+def build_dense_table_grid_layer(
+    lane_layout: dict[int, dict[str, Any]],
+    lane_markers: dict[int, dict[str, Any]],
+    lane_texts: dict[int, dict[str, Any]],
+    footer_atom: dict[str, Any] | None,
+) -> dict[str, Any] | None:
+    ordered_rows = [row_index for row_index in [3, 4, 5] if row_index in lane_layout]
+    if not ordered_rows:
+        return None
+
+    marker_fill = {"r": 0.949, "g": 0.949, "b": 0.949}
+    content_fill = {"r": 1.0, "g": 1.0, "b": 1.0}
+    line_color = {"r": 0.651, "g": 0.651, "b": 0.651}
+    line_weight = 0.25
+    line_half = line_weight / 2.0
+    children: list[dict[str, Any]] = []
+
+    first_lane_bounds = lane_layout[ordered_rows[0]]["lane_bounds"]
+    footer_layout = lane_layout.get(6)
+    bottom_bounds = (footer_layout or lane_layout[ordered_rows[-1]])["lane_bounds"]
+    table_left = float(first_lane_bounds["x"])
+    table_top = float(first_lane_bounds["y"])
+    table_right = float(bottom_bounds["x"]) + float(bottom_bounds["width"])
+    table_bottom = float(bottom_bounds["y"]) + float(bottom_bounds["height"])
+
+    divider_x = float(lane_layout[ordered_rows[0]]["text_bounds"]["x"])
+
+    for row_index in ordered_rows:
+        layout = lane_layout[row_index]
+        lane_bounds = layout["lane_bounds"]
+        marker_bounds = layout["marker_bounds"]
+        text_bounds = layout["text_bounds"]
+        if marker_bounds:
+            children.append(
+                build_grid_rect(
+                    f"dense-table-grid:row-{row_index}:marker-fill",
+                    f"row_{row_index}_marker_fill",
+                    make_bounds(marker_bounds["x"], lane_bounds["y"], marker_bounds["width"], lane_bounds["height"]),
+                    fill=marker_fill,
+                )
+            )
+        children.append(
+            build_grid_rect(
+                f"dense-table-grid:row-{row_index}:text-fill",
+                f"row_{row_index}_text_fill",
+                make_bounds(text_bounds["x"], lane_bounds["y"], text_bounds["width"], lane_bounds["height"]),
+                fill=content_fill,
+            )
+        )
+
+    if footer_layout:
+        footer_bounds = footer_layout["lane_bounds"]
+        children.append(
+            build_grid_rect(
+                "dense-table-grid:footer-fill",
+                "footer_fill",
+                footer_bounds,
+                fill=content_fill,
+            )
+        )
+
+    horizontal_positions = [table_top]
+    for row_index in ordered_rows:
+        lane_bounds = lane_layout[row_index]["lane_bounds"]
+        horizontal_positions.append(float(lane_bounds["y"]) + float(lane_bounds["height"]))
+    if footer_layout:
+        horizontal_positions.append(float(footer_layout["lane_bounds"]["y"]) + float(footer_layout["lane_bounds"]["height"]))
+
+    seen_horizontal: set[float] = set()
+    for position in horizontal_positions:
+        rounded = round(position, 2)
+        if rounded in seen_horizontal:
+            continue
+        seen_horizontal.add(rounded)
+        children.append(
+            build_grid_rect(
+                f"dense-table-grid:hline:{rounded}",
+                f"hline_{rounded}",
+                make_bounds(table_left - 0.12, position - line_half, (table_right - table_left) + 0.24, line_weight),
+                stroke=line_color,
+                stroke_opacity=1.0,
+                stroke_weight=0.0,
+                fill=None,
+            )
+        )
+        children[-1]["fills"] = []
+        children[-1]["strokes"] = [{"type": "SOLID", "color": line_color, "opacity": 1.0}]
+        children[-1]["strokeWeight"] = line_weight
+
+    for position, label in [(table_left, "left"), (divider_x, "divider"), (table_right, "right")]:
+        children.append(
+            build_grid_rect(
+                f"dense-table-grid:vline:{label}",
+                f"vline_{label}",
+                make_bounds(position - line_half, table_top - 0.13, line_weight, (table_bottom - table_top) + 0.26),
+                stroke=line_color,
+                stroke_opacity=1.0,
+                stroke_weight=0.0,
+                fill=None,
+            )
+        )
+        children[-1]["fills"] = []
+        children[-1]["strokes"] = [{"type": "SOLID", "color": line_color, "opacity": 1.0}]
+        children[-1]["strokeWeight"] = line_weight
+
+    return build_owner_group("dense_ui_panel:description_table_grid", children)
+
+
 def estimate_wrap_chars(width: float, font_size: float) -> int:
     glyph_width = max(font_size * 0.95, 6.4)
     usable_width = max(width - 8.0, 24.0)
@@ -878,6 +1022,7 @@ def build_dense_ui_panel_nodes(
     assets: dict[str, Any],
     *,
     include_dense_body_boxes: bool = False,
+    include_dense_body_grid: bool = False,
 ) -> list[dict[str, Any]]:
     panel_bounds = dense_panel_bounds(page)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -891,6 +1036,8 @@ def build_dense_ui_panel_nodes(
     )
     if include_dense_body_boxes:
         preserve_dense_body_background = False
+    if include_dense_body_grid:
+        preserve_dense_body_background = True
     for atom in page.get("atoms") or []:
         owner_id = str(atom.get("owner_id") or "")
         if not owner_id.startswith("dense_ui_panel:"):
@@ -914,6 +1061,7 @@ def build_dense_ui_panel_nodes(
         footer_atom,
         issue_atom.get("visual_bounds_px") if issue_atom else None,
     )
+    table_grid_group = build_dense_table_grid_layer(lane_layout, lane_markers, lane_texts, footer_atom) if include_dense_body_grid else None
 
     for row_index in [3, 4, 5]:
         row_atom = lane_rows.get(row_index)
@@ -1019,6 +1167,8 @@ def build_dense_ui_panel_nodes(
     description_body_children: list[dict[str, Any]] = []
     if description_body_bucket:
         if description_body_strategy == "chunk_container_leaf_text":
+            if table_grid_group is not None:
+                description_body_children.append(table_grid_group)
             if not preserve_dense_body_background:
                 for owner_id in ["dense_ui_panel:description_cards"]:
                     if owner_id in owner_groups:
@@ -1118,9 +1268,20 @@ def build_dense_ui_panel_nodes(
     return [panel_frame]
 
 
-def build_bundle(page: dict[str, Any], source_file: str, *, include_dense_body_boxes: bool = False) -> dict[str, Any]:
+def build_bundle(
+    page: dict[str, Any],
+    source_file: str,
+    *,
+    include_dense_body_boxes: bool = False,
+    include_dense_body_grid: bool = False,
+) -> dict[str, Any]:
     assets: dict[str, Any] = {}
-    page_children = build_dense_ui_panel_nodes(page, assets, include_dense_body_boxes=include_dense_body_boxes)
+    page_children = build_dense_ui_panel_nodes(
+        page,
+        assets,
+        include_dense_body_boxes=include_dense_body_boxes,
+        include_dense_body_grid=include_dense_body_grid,
+    )
     root_bounds = make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT)
     inner_frame = {
         "id": f"{page['page_id']}:frame",
@@ -1287,6 +1448,20 @@ def extract_lower_body_text_box_bundle(bundle: dict[str, Any]) -> dict[str, Any]
     return extracted
 
 
+def extract_lower_body_text_grid_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
+    document = bundle.get("document") or {}
+    pruned_document = prune_lower_body_text_box_layer(document)
+    if pruned_document is None:
+        raise SystemExit("lower body text/grid extraction produced an empty bundle")
+
+    extracted = dict(bundle)
+    extracted["page_name"] = f"{bundle.get('page_name')} - Lower Body Text And Grid"
+    extracted["node_id"] = pruned_document.get("id")
+    extracted["document"] = pruned_document
+    extracted["debug"] = dict(bundle.get("debug") or {}, export_mode="lower_body_text_and_grid")
+    return extracted
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a dense-ui-panel replay bundle from resolved PPT IR.")
     parser.add_argument("--input", required=True, help="Resolved IR JSON path")
@@ -1294,7 +1469,7 @@ def main() -> None:
     parser.add_argument("--slide", type=int, default=29, help="Slide number to render")
     parser.add_argument(
         "--export-mode",
-        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes"],
+        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid"],
         default="full",
         help="Optional post-processing mode for the generated bundle",
     )
@@ -1313,11 +1488,14 @@ def main() -> None:
         page,
         str(input_path),
         include_dense_body_boxes=args.export_mode == "lower_body_text_and_boxes",
+        include_dense_body_grid=args.export_mode == "lower_body_text_and_grid",
     )
     if args.export_mode == "lower_body_text_only":
         bundle = extract_lower_body_text_bundle(bundle)
     elif args.export_mode == "lower_body_text_and_boxes":
         bundle = extract_lower_body_text_box_bundle(bundle)
+    elif args.export_mode == "lower_body_text_and_grid":
+        bundle = extract_lower_body_text_grid_bundle(bundle)
     output_path = Path(args.output).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")
