@@ -126,6 +126,11 @@ def build_text_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
     if not fill_style and (atom.get("cell_style") or {}).get("fill"):
         fill_style = None
     characters = compact_label_text(atom) if suffix == ":label" else str(atom.get("text") or "")
+    if characters == "‹#›":
+        title = str(atom.get("title") or "")
+        match = re.search(r"Slide Number Placeholder\s+(\S+)$", title)
+        if match:
+            characters = match.group(1)
     return {
         "id": f"{atom['id']}{suffix}",
         "type": "TEXT",
@@ -1178,6 +1183,105 @@ def is_right_panel_atom(atom: dict[str, Any]) -> bool:
     return x + width >= RIGHT_PANEL_X_CUTOFF
 
 
+def is_zero_bounds_placeholder_text(atom: dict[str, Any]) -> bool:
+    if str(atom.get("owner_id") or "") != "dense_ui_panel:global_ui_assets":
+        return False
+    if str(atom.get("layer_role") or "") != "small_asset":
+        return False
+    if not str(atom.get("text") or "").strip():
+        return False
+    bounds = atom.get("visual_bounds_px") or {}
+    return (
+        float(bounds.get("x") or 0.0) == 0.0
+        and float(bounds.get("y") or 0.0) == 0.0
+        and atom.get("placeholder") is not None
+    )
+
+
+def placeholder_sort_key(atom: dict[str, Any]) -> tuple[int, int, str]:
+    placeholder = atom.get("placeholder") or {}
+    idx = placeholder.get("idx")
+    try:
+        placeholder_idx = int(idx)
+    except (TypeError, ValueError):
+        placeholder_idx = 9999
+    try:
+        source_node_id = int(atom.get("source_node_id") or 0)
+    except (TypeError, ValueError):
+        source_node_id = 0
+    return (placeholder_idx, source_node_id, str(atom.get("id") or ""))
+
+
+def is_empty_top_meta_value_cell(atom: dict[str, Any]) -> bool:
+    return (
+        str(atom.get("owner_id") or "") in {"dense_ui_panel:top_meta_band_cells", "dense_ui_panel:top_meta_info_cells"}
+        and not str(atom.get("text") or "").strip()
+    )
+
+
+def inset_bounds(bounds: dict[str, Any], *, dx: float = 0.0, dy: float = 0.0, dw: float = 0.0, dh: float = 0.0) -> dict[str, float]:
+    return make_bounds(
+        float(bounds["x"]) + dx,
+        float(bounds["y"]) + dy,
+        max(float(bounds["width"]) + dw, 1.0),
+        max(float(bounds["height"]) + dh, 1.0),
+    )
+
+
+def anchored_placeholder_bounds(atom: dict[str, Any], cell_bounds: dict[str, Any]) -> dict[str, float]:
+    text = str(atom.get("text") or "")
+    line_count = max(len(text.splitlines()), 1)
+    if line_count > 1:
+        line_height = 6.2
+        return inset_bounds(
+            cell_bounds,
+            dx=2.0,
+            dy=1.2,
+            dw=-4.0,
+            dh=max(line_count * line_height - float(cell_bounds["height"]) + 2.0, 0.0),
+        )
+    return inset_bounds(cell_bounds, dx=2.0, dy=0.6, dw=-4.0, dh=0.0)
+
+
+def build_top_meta_placeholder_nodes(page: dict[str, Any]) -> list[dict[str, Any]]:
+    atoms = page.get("atoms") or []
+    band_value_cells = sorted(
+        [
+            atom
+            for atom in atoms
+            if str(atom.get("owner_id") or "") == "dense_ui_panel:top_meta_band_cells" and is_empty_top_meta_value_cell(atom)
+        ],
+        key=atom_priority,
+    )
+    info_value_cells = sorted(
+        [
+            atom
+            for atom in atoms
+            if str(atom.get("owner_id") or "") == "dense_ui_panel:top_meta_info_cells" and is_empty_top_meta_value_cell(atom)
+        ],
+        key=atom_priority,
+    )
+    zero_bounds_placeholders = sorted(
+        [atom for atom in atoms if is_zero_bounds_placeholder_text(atom)],
+        key=placeholder_sort_key,
+    )
+    nodes: list[dict[str, Any]] = []
+    occupied_info_cells = {
+        str(cell.get("id") or "")
+        for cell in info_value_cells
+        for atom in atoms
+        if str(atom.get("owner_id") or "") == "dense_ui_panel:global_ui_assets"
+        and str(atom.get("layer_role") or "") == "small_asset"
+        and str(atom.get("text") or "").strip()
+        and not is_zero_bounds_placeholder_text(atom)
+        and max_overlap_area(atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 0.0, 0.0), cell.get("visual_bounds_px") or make_bounds(0.0, 0.0, 0.0, 0.0)) > 0
+    }
+    placeholder_targets = band_value_cells + [cell for cell in info_value_cells if str(cell.get("id") or "") not in occupied_info_cells]
+    for atom, cell in zip(zero_bounds_placeholders, placeholder_targets):
+        nodes.append(build_text_node(atom, anchored_placeholder_bounds(atom, cell["visual_bounds_px"])))
+    return nodes
+
+
 def owner_priority(owner_id: str) -> int:
     order = {
         "dense_ui_panel:top_meta_rows": 10,
@@ -1262,11 +1366,12 @@ def build_dense_ui_panel_nodes(
         preserve_dense_body_background = False
     if include_dense_body_grid:
         preserve_dense_body_background = True
+    use_svg_shape_cells = include_dense_body_grid or include_dense_body_overlays or include_version_last
     for atom in page.get("atoms") or []:
         owner_id = str(atom.get("owner_id") or "")
         if not owner_id.startswith("dense_ui_panel:"):
             continue
-        if not is_right_panel_atom(atom):
+        if is_zero_bounds_placeholder_text(atom):
             continue
         grouped[owner_id].append(atom)
 
@@ -1340,7 +1445,10 @@ def build_dense_ui_panel_nodes(
                     owner_children.append(build_text_node(atom, suffix=":label"))
                 continue
             if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card"}:
-                owner_children.append(build_rect_node(atom, suffix=":bg"))
+                if use_svg_shape_cells:
+                    owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
+                else:
+                    owner_children.append(build_rect_node(atom, suffix=":bg"))
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom, suffix=":label"))
                 continue
@@ -1372,6 +1480,13 @@ def build_dense_ui_panel_nodes(
             owner_groups[owner_id] = build_owner_group(owner_id, owner_children)
 
     chunk_children: list[dict[str, Any]] = []
+
+    top_meta_band_children: list[dict[str, Any]] = []
+    for owner_id in ["dense_ui_panel:top_meta_band_cells", "dense_ui_panel:top_meta_rows"]:
+        if owner_id in owner_groups:
+            top_meta_band_children.append(owner_groups[owner_id])
+    if top_meta_band_children and "dense_ui_panel:top_meta_band_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:top_meta_band_chunk", top_meta_band_children))
 
     top_meta_info_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:top_meta_info_cells"]:
@@ -1445,6 +1560,15 @@ def build_dense_ui_panel_nodes(
     if small_asset_children and "dense_ui_panel:panel_small_assets_chunk" in chunk_bucket_map:
         chunk_children.append(build_group_group("dense_ui_panel:panel_small_assets_chunk", small_asset_children))
 
+    global_asset_children: list[dict[str, Any]] = []
+    if "dense_ui_panel:global_ui_assets" in owner_groups:
+        global_asset_children.append(owner_groups["dense_ui_panel:global_ui_assets"])
+    placeholder_nodes = build_top_meta_placeholder_nodes(page)
+    if placeholder_nodes:
+        global_asset_children.append(build_owner_group("dense_ui_panel:global_ui_assets:anchored_placeholders", placeholder_nodes))
+    if global_asset_children and "dense_ui_panel:global_ui_assets_chunk" in chunk_bucket_map:
+        chunk_children.append(build_group_group("dense_ui_panel:global_ui_assets_chunk", global_asset_children))
+
     children = sorted(chunk_children, key=lambda node: chunk_priority(str(node.get("id") or "")))
     if include_dense_body_overlays:
         overlay_order = {
@@ -1466,10 +1590,12 @@ def build_dense_ui_panel_nodes(
         [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in children]
     )
     expanded_panel_bounds = make_bounds(
-        float(panel_bounds["x"]),
-        float(panel_bounds["y"]),
-        max(float(panel_bounds["width"]), float(content_bounds["width"]) + max(float(content_bounds["x"]) - float(panel_bounds["x"]), 0.0)),
-        max(float(panel_bounds["height"]), (float(content_bounds["y"]) + float(content_bounds["height"]) - float(panel_bounds["y"])) + 12.0),
+        min(float(panel_bounds["x"]), float(content_bounds["x"])),
+        min(float(panel_bounds["y"]), float(content_bounds["y"])),
+        max(float(panel_bounds["x"]) + float(panel_bounds["width"]), float(content_bounds["x"]) + float(content_bounds["width"]))
+        - min(float(panel_bounds["x"]), float(content_bounds["x"])),
+        max(float(panel_bounds["y"]) + float(panel_bounds["height"]), float(content_bounds["y"]) + float(content_bounds["height"]) + 12.0)
+        - min(float(panel_bounds["y"]), float(content_bounds["y"])),
     )
     visible_panel_bounds = make_bounds(
         float(expanded_panel_bounds["x"]),
