@@ -420,7 +420,7 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
     if str(atom.get("owner_id") or "") == "dense_ui_panel:description_lanes":
         line_height = min(line_height, round(font_size + 0.9, 2))
     if str(atom.get("id") or "") == "s29:slide_29/element_37:row_5:cell_2":
-        line_height = min(line_height, round(font_size + 0.65, 2))
+        line_height = min(line_height, round(font_size + 0.55, 2))
     lines = body_text_lines(atom, float(bounds["width"]), font_size)
     if not lines:
         return build_owner_group(f"{atom['id']}{suffix}:empty", [])
@@ -434,7 +434,10 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
         if current_y >= max_bottom:
             break
         visual_line_units = max(1, len([part for part in str(line).splitlines() if part.strip()]) or 1)
-        paragraph_height = min(line_height * visual_line_units, max_bottom - current_y)
+        multiline_padding = 0.0
+        if visual_line_units > 1:
+            multiline_padding = 0.8 * (visual_line_units - 1)
+        paragraph_height = min((line_height * visual_line_units) + multiline_padding, max_bottom - current_y)
         if paragraph_height <= 1.0:
             break
         paragraph_bounds = make_bounds(left, current_y, width, paragraph_height)
