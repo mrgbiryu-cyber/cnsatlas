@@ -1369,6 +1369,184 @@ def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
     )
 
 
+def bounds_gap(a: dict[str, Any], b: dict[str, Any]) -> tuple[float, float]:
+    ax1 = float(a["x"])
+    ay1 = float(a["y"])
+    ax2 = ax1 + float(a["width"])
+    ay2 = ay1 + float(a["height"])
+    bx1 = float(b["x"])
+    by1 = float(b["y"])
+    bx2 = bx1 + float(b["width"])
+    by2 = by1 + float(b["height"])
+    gap_x = max(0.0, max(ax1 - bx2, bx1 - ax2))
+    gap_y = max(0.0, max(ay1 - by2, by1 - ay2))
+    return gap_x, gap_y
+
+
+def global_asset_source_key(atom: dict[str, Any]) -> str:
+    source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
+    parts = source_path.split("/")
+    if len(parts) >= 2:
+        return "/".join(parts[:2])
+    return source_path or str(atom.get("id") or "")
+
+
+def cluster_signature(atoms: list[dict[str, Any]]) -> str:
+    texts = [str(atom.get("text") or "").strip() for atom in atoms if str(atom.get("text") or "").strip()]
+    joined = " ".join(texts[:3]).lower()
+    if any(text in joined for text in ["fold 영역", "pdp", "cmpdpg", "페이지", "화면id"]):
+        return "top_meta"
+    if any(text in joined for text in ["닷컴", "only", "10%", "?", "< 1 / 5 >", "영상 가로"]):
+        return "callout"
+    if any(str(atom.get("subtype") or "") == "image" for atom in atoms):
+        return "media"
+    if any(str(atom.get("subtype") or "") == "connector" for atom in atoms):
+        return "connector"
+    if any(str(atom.get("shape_kind") or "") == "ellipse" for atom in atoms):
+        return "marker"
+    return "misc"
+
+
+def build_global_asset_semantic_groups(
+    atoms: list[dict[str, Any]],
+    assets: dict[str, Any],
+    *,
+    use_svg_shape_cells: bool,
+    include_dense_body_overlays: bool,
+    include_version_last: bool,
+) -> list[dict[str, Any]]:
+    source_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for atom in atoms:
+        source_groups[global_asset_source_key(atom)].append(atom)
+    source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
+    for key, source_atoms in source_groups.items():
+        source_atoms_sorted = sorted(source_atoms, key=atom_priority)
+        bounds = union_bounds([atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0) for atom in source_atoms_sorted])
+        source_items.append((key, source_atoms_sorted, bounds))
+
+    parent = list(range(len(source_items)))
+
+    def find(index: int) -> int:
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root = find(left)
+        right_root = find(right)
+        if left_root != right_root:
+            parent[right_root] = left_root
+
+    for i, (_, atoms_i, bounds_i) in enumerate(source_items):
+        sig_i = cluster_signature(atoms_i)
+        for j in range(i + 1, len(source_items)):
+            _, atoms_j, bounds_j = source_items[j]
+            sig_j = cluster_signature(atoms_j)
+            if sig_i != sig_j:
+                continue
+            gap_x, gap_y = bounds_gap(bounds_i, bounds_j)
+            if gap_x <= 56.0 and gap_y <= 44.0:
+                union(i, j)
+
+    merged: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    for index, (_, group_atoms, _) in enumerate(source_items):
+        merged[find(index)].extend(group_atoms)
+
+    semantic_groups: list[dict[str, Any]] = []
+    for cluster_index, cluster_atoms in enumerate(
+        sorted(
+            merged.values(),
+            key=lambda atoms_in_cluster: (
+                min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in atoms_in_cluster),
+                min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in atoms_in_cluster),
+            ),
+        ),
+        start=1,
+    ):
+        rendered_children: list[dict[str, Any]] = []
+        for atom in sorted(cluster_atoms, key=atom_priority):
+            rendered_children.extend(
+                render_dense_atom_nodes(
+                    atom,
+                    assets,
+                    use_svg_shape_cells=use_svg_shape_cells,
+                    include_dense_body_overlays=include_dense_body_overlays,
+                    include_version_last=include_version_last,
+                )
+            )
+        if not rendered_children:
+            continue
+        semantic_groups.append(
+            build_owner_group(
+                f"dense_ui_panel:global_cluster:{cluster_index:02d}",
+                rendered_children,
+            )
+        )
+    return semantic_groups
+
+
+def render_dense_atom_nodes(
+    atom: dict[str, Any],
+    assets: dict[str, Any],
+    *,
+    use_svg_shape_cells: bool,
+    include_dense_body_overlays: bool,
+    include_version_last: bool,
+) -> list[dict[str, Any]]:
+    role = str(atom.get("layer_role") or "")
+    subtype = str(atom.get("subtype") or "")
+    owner_children: list[dict[str, Any]] = []
+    if role == "version_stack":
+        block_group, detail_node = build_version_stack_block(atom, use_svg_background=include_version_last)
+        owner_children.append(block_group)
+        if detail_node:
+            owner_children.append(detail_node)
+        return owner_children
+    if include_dense_body_overlays and role in {"description_card", "issue_card"}:
+        owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
+        if role == "issue_card" and atom.get("text"):
+            owner_children.append(build_text_node(atom, suffix=":label"))
+        return owner_children
+    if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card"}:
+        if use_svg_shape_cells:
+            owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
+        else:
+            owner_children.append(build_rect_node(atom, suffix=":bg"))
+        if atom.get("text"):
+            owner_children.append(build_text_node(atom, suffix=":label"))
+        return owner_children
+    if role == "top_text_row":
+        owner_children.append(build_paragraph_text_group(atom, atom["visual_bounds_px"]))
+        return owner_children
+    if role == "overlay_note":
+        owner_children.append(build_paragraph_text_group(atom, atom["visual_bounds_px"]))
+        return owner_children
+    if role in {"description_text_lane", "description_footer", "description_marker"}:
+        owner_children.append(build_text_node(atom))
+        return owner_children
+    if role == "small_asset":
+        if subtype == "image":
+            image_node = build_image_node(atom, assets)
+            if image_node:
+                owner_children.append(image_node)
+            return owner_children
+        if subtype == "group":
+            return owner_children
+        svg_node = build_small_asset_svg_node(atom)
+        if svg_node:
+            owner_children.append(svg_node)
+            if atom.get("text"):
+                owner_children.append(build_text_node(atom, suffix=":label"))
+            return owner_children
+        if atom.get("text"):
+            owner_children.append(build_text_node(atom))
+        else:
+            owner_children.append(build_rect_node(atom))
+        return owner_children
+    return owner_children
+
+
 def build_dense_ui_panel_nodes(
     page: dict[str, Any],
     assets: dict[str, Any],
@@ -1452,60 +1630,21 @@ def build_dense_ui_panel_nodes(
             "dense_ui_panel:description_markers",
             "dense_ui_panel:description_lanes",
             "dense_ui_panel:description_footer",
+            "dense_ui_panel:global_ui_assets",
         }:
             continue
         atoms = sorted(grouped[owner_id], key=atom_priority)
         owner_children: list[dict[str, Any]] = []
         for atom in atoms:
-            role = str(atom.get("layer_role") or "")
-            subtype = str(atom.get("subtype") or "")
-            if role == "version_stack":
-                block_group, detail_node = build_version_stack_block(atom, use_svg_background=include_version_last)
-                owner_children.append(block_group)
-                if detail_node:
-                    owner_children.append(detail_node)
-                continue
-            if include_dense_body_overlays and role in {"description_card", "issue_card"}:
-                owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
-                if role == "issue_card" and atom.get("text"):
-                    owner_children.append(build_text_node(atom, suffix=":label"))
-                continue
-            if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card"}:
-                if use_svg_shape_cells:
-                    owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
-                else:
-                    owner_children.append(build_rect_node(atom, suffix=":bg"))
-                if atom.get("text"):
-                    owner_children.append(build_text_node(atom, suffix=":label"))
-                continue
-            if role == "top_text_row":
-                owner_children.append(build_paragraph_text_group(atom, atom["visual_bounds_px"]))
-                continue
-            if role == "overlay_note":
-                owner_children.append(build_paragraph_text_group(atom, atom["visual_bounds_px"]))
-                continue
-            if role in {"description_text_lane", "description_footer", "description_marker"}:
-                owner_children.append(build_text_node(atom))
-                continue
-            if role == "small_asset":
-                if subtype == "image":
-                    image_node = build_image_node(atom, assets)
-                    if image_node:
-                        owner_children.append(image_node)
-                    continue
-                if subtype == "group":
-                    continue
-                svg_node = build_small_asset_svg_node(atom)
-                if svg_node:
-                    owner_children.append(svg_node)
-                    if atom.get("text"):
-                        owner_children.append(build_text_node(atom, suffix=":label"))
-                    continue
-                if atom.get("text"):
-                    owner_children.append(build_text_node(atom))
-                else:
-                    owner_children.append(build_rect_node(atom))
-                continue
+            owner_children.extend(
+                render_dense_atom_nodes(
+                    atom,
+                    assets,
+                    use_svg_shape_cells=use_svg_shape_cells,
+                    include_dense_body_overlays=include_dense_body_overlays,
+                    include_version_last=include_version_last,
+                )
+            )
         if owner_children:
             owner_groups[owner_id] = build_owner_group(owner_id, owner_children)
 
@@ -1591,8 +1730,17 @@ def build_dense_ui_panel_nodes(
         chunk_children.append(build_group_group("dense_ui_panel:panel_small_assets_chunk", small_asset_children))
 
     global_asset_children: list[dict[str, Any]] = []
-    if "dense_ui_panel:global_ui_assets" in owner_groups:
-        global_asset_children.append(owner_groups["dense_ui_panel:global_ui_assets"])
+    global_atoms = sorted(grouped.get("dense_ui_panel:global_ui_assets", []), key=atom_priority)
+    if global_atoms:
+        global_asset_children.extend(
+            build_global_asset_semantic_groups(
+                global_atoms,
+                assets,
+                use_svg_shape_cells=use_svg_shape_cells,
+                include_dense_body_overlays=include_dense_body_overlays,
+                include_version_last=include_version_last,
+            )
+        )
     placeholder_nodes = build_top_meta_placeholder_nodes(page)
     if placeholder_nodes:
         global_asset_children.append(build_owner_group("dense_ui_panel:global_ui_assets:anchored_placeholders", placeholder_nodes))
