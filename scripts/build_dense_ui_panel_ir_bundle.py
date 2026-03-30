@@ -638,6 +638,49 @@ def build_small_asset_svg_node(atom: dict[str, Any], bounds: dict[str, Any] | No
     }
 
 
+def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, *, suffix: str = "") -> dict[str, Any]:
+    node_bounds = dict(bounds or atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
+    width = max(float(node_bounds["width"]), 1.0)
+    height = max(float(node_bounds["height"]), 1.0)
+    shape_style = atom.get("shape_style") or {}
+    fill_style = shape_style.get("fill")
+    fill_color, fill_opacity = svg_color(fill_style, "rgb(255,255,255)", 0.0)
+    line_style = shape_style.get("line") or {}
+    svg_parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+    ]
+    if line_style and line_style.get("type"):
+        stroke_color, stroke_opacity = svg_color(line_style, "rgb(0,0,0)")
+        stroke_width = max(float(line_style.get("width_px") or 1.0), 1.0)
+        inset = stroke_width / 2.0
+        svg_parts.append(
+            f'<rect x="{inset}" y="{inset}" width="{max(width - stroke_width, 0.5)}" height="{max(height - stroke_width, 0.5)}" '
+            f'fill="{fill_color}" fill-opacity="{fill_opacity}" '
+            f'stroke="{stroke_color}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}"/>'
+        )
+    else:
+        svg_parts.append(
+            f'<rect x="0" y="0" width="{width}" height="{height}" fill="{fill_color}" fill-opacity="{fill_opacity}"/>'
+        )
+    svg_parts.append("</svg>")
+    return {
+        "id": f"{atom['id']}{suffix}",
+        "type": "SVG_BLOCK",
+        "name": atom.get("title") or atom.get("id") or "overlay_svg_rect",
+        "absoluteBoundingBox": node_bounds,
+        "relativeTransform": identity_affine(),
+        "svgMarkup": "".join(svg_parts),
+        "children": [],
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "layer_role": atom.get("layer_role"),
+            "owner_id": atom.get("owner_id"),
+            "source_atom_id": atom.get("id"),
+            "role": "overlay_svg_rect",
+        },
+    }
+
+
 def build_image_node(atom: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any] | None:
     image_base64 = atom.get("image_base64")
     if not image_base64:
@@ -1223,6 +1266,11 @@ def build_dense_ui_panel_nodes(
                 if detail_node:
                     owner_children.append(detail_node)
                 continue
+            if include_dense_body_overlays and role in {"description_card", "issue_card"}:
+                owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
+                if role == "issue_card" and atom.get("text"):
+                    owner_children.append(build_text_node(atom, suffix=":label"))
+                continue
             if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card"}:
                 owner_children.append(build_rect_node(atom, suffix=":bg"))
                 if atom.get("text"):
@@ -1554,7 +1602,7 @@ def prune_lower_body_text_box_layer(
             return pruned
         return None
 
-    if node_type == "RECTANGLE" and child_in_lower_body_chunk:
+    if node_type in {"RECTANGLE", "SVG_BLOCK"} and child_in_lower_body_chunk:
         pruned = dict(node)
         pruned["children"] = []
         return pruned

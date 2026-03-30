@@ -3698,7 +3698,7 @@
                         "children": [
                           {
                             "id": "s29:slide_29/element_93:bg",
-                            "type": "RECTANGLE",
+                            "type": "SVG_BLOCK",
                             "name": "직사각형 216",
                             "absoluteBoundingBox": {
                               "x": 686.03,
@@ -3718,40 +3718,19 @@
                                 0
                               ]
                             ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.9333333333333333,
-                                  "g": 0.5294117647058824,
-                                  "b": 0.4470588235294118
-                                },
-                                "opacity": 0.3
-                              }
-                            ],
-                            "strokes": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.78,
-                                  "g": 0.78,
-                                  "b": 0.78
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokeWeight": 1.0,
+                            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"249.91\" height=\"38.1\" viewBox=\"0 0 249.91 38.1\"><rect x=\"0\" y=\"0\" width=\"249.91\" height=\"38.1\" fill=\"rgb(238, 135, 114)\" fill-opacity=\"0.3\"/></svg>",
                             "children": [],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "description_card",
                               "owner_id": "dense_ui_panel:description_cards",
-                              "source_atom_id": "s29:slide_29/element_93"
+                              "source_atom_id": "s29:slide_29/element_93",
+                              "role": "overlay_svg_rect"
                             }
                           },
                           {
                             "id": "s29:slide_29/element_119:bg",
-                            "type": "RECTANGLE",
+                            "type": "SVG_BLOCK",
                             "name": "직사각형 253",
                             "absoluteBoundingBox": {
                               "x": 685.65,
@@ -3771,40 +3750,19 @@
                                 0
                               ]
                             ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.0,
-                                  "g": 1.0,
-                                  "b": 0.0
-                                },
-                                "opacity": 0.3
-                              }
-                            ],
-                            "strokes": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.78,
-                                  "g": 0.78,
-                                  "b": 0.78
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokeWeight": 1.0,
+                            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"250.84\" height=\"41.29\" viewBox=\"0 0 250.84 41.29\"><rect x=\"0\" y=\"0\" width=\"250.84\" height=\"41.29\" fill=\"rgb(0, 255, 0)\" fill-opacity=\"0.3\"/></svg>",
                             "children": [],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "description_card",
                               "owner_id": "dense_ui_panel:description_cards",
-                              "source_atom_id": "s29:slide_29/element_119"
+                              "source_atom_id": "s29:slide_29/element_119",
+                              "role": "overlay_svg_rect"
                             }
                           },
                           {
                             "id": "s29:slide_29/element_95:bg",
-                            "type": "RECTANGLE",
+                            "type": "SVG_BLOCK",
                             "name": "직사각형 233",
                             "absoluteBoundingBox": {
                               "x": 685.65,
@@ -3824,40 +3782,19 @@
                                 0
                               ]
                             ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.9686274509803922,
-                                  "g": 0.5882352941176471,
-                                  "b": 0.27450980392156865
-                                },
-                                "opacity": 0.4
-                              }
-                            ],
-                            "strokes": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.78,
-                                  "g": 0.78,
-                                  "b": 0.78
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokeWeight": 1.0,
+                            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"245.44\" height=\"419.87\" viewBox=\"0 0 245.44 419.87\"><rect x=\"0\" y=\"0\" width=\"245.44\" height=\"419.87\" fill=\"rgb(247, 150, 70)\" fill-opacity=\"0.4\"/></svg>",
                             "children": [],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "description_card",
                               "owner_id": "dense_ui_panel:description_cards",
-                              "source_atom_id": "s29:slide_29/element_95"
+                              "source_atom_id": "s29:slide_29/element_95",
+                              "role": "overlay_svg_rect"
                             }
                           },
                           {
                             "id": "s29:slide_29/element_104:bg",
-                            "type": "RECTANGLE",
+                            "type": "SVG_BLOCK",
                             "name": "직사각형 181",
                             "absoluteBoundingBox": {
                               "x": 685.65,
@@ -3877,40 +3814,19 @@
                                 0
                               ]
                             ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.6352941176470588,
-                                  "g": 0.8156862745098039,
-                                  "b": 0.8117647058823529
-                                },
-                                "opacity": 0.3
-                              }
-                            ],
-                            "strokes": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.78,
-                                  "g": 0.78,
-                                  "b": 0.78
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokeWeight": 1.0,
+                            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"245.44\" height=\"68.13\" viewBox=\"0 0 245.44 68.13\"><rect x=\"0\" y=\"0\" width=\"245.44\" height=\"68.13\" fill=\"rgb(162, 208, 207)\" fill-opacity=\"0.3\"/></svg>",
                             "children": [],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "description_card",
                               "owner_id": "dense_ui_panel:description_cards",
-                              "source_atom_id": "s29:slide_29/element_104"
+                              "source_atom_id": "s29:slide_29/element_104",
+                              "role": "overlay_svg_rect"
                             }
                           },
                           {
                             "id": "s29:slide_29/element_110:bg",
-                            "type": "RECTANGLE",
+                            "type": "SVG_BLOCK",
                             "name": "직사각형 212",
                             "absoluteBoundingBox": {
                               "x": 686.03,
@@ -3930,35 +3846,14 @@
                                 0
                               ]
                             ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.9333333333333333,
-                                  "g": 0.9254901960784314,
-                                  "b": 0.8823529411764706
-                                },
-                                "opacity": 0.5
-                              }
-                            ],
-                            "strokes": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 0.78,
-                                  "g": 0.78,
-                                  "b": 0.78
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokeWeight": 1.0,
+                            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"245.07\" height=\"13.66\" viewBox=\"0 0 245.07 13.66\"><rect x=\"0\" y=\"0\" width=\"245.07\" height=\"13.66\" fill=\"rgb(238, 236, 225)\" fill-opacity=\"0.5\"/></svg>",
                             "children": [],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "description_card",
                               "owner_id": "dense_ui_panel:description_cards",
-                              "source_atom_id": "s29:slide_29/element_110"
+                              "source_atom_id": "s29:slide_29/element_110",
+                              "role": "overlay_svg_rect"
                             }
                           }
                         ],
@@ -4164,7 +4059,7 @@
                         "children": [
                           {
                             "id": "s29:slide_29/element_81:bg",
-                            "type": "RECTANGLE",
+                            "type": "SVG_BLOCK",
                             "name": "Google Shape;105;p2",
                             "absoluteBoundingBox": {
                               "x": 725.68,
@@ -4184,35 +4079,14 @@
                                 0
                               ]
                             ],
-                            "fills": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 1.0,
-                                  "g": 0.2,
-                                  "b": 0.8
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokes": [
-                              {
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 1.0,
-                                  "g": 0.2,
-                                  "b": 0.8
-                                },
-                                "opacity": 1.0
-                              }
-                            ],
-                            "strokeWeight": 1.33,
+                            "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"234.32\" height=\"54.34\" viewBox=\"0 0 234.32 54.34\"><rect x=\"0.665\" y=\"0.665\" width=\"232.98999999999998\" height=\"53.010000000000005\" fill=\"rgb(255, 51, 204)\" fill-opacity=\"1.0\" stroke=\"rgb(255, 51, 204)\" stroke-opacity=\"1.0\" stroke-width=\"1.33\"/></svg>",
                             "children": [],
                             "debug": {
                               "generator": "dense-ui-ir-v1",
                               "layer_role": "issue_card",
                               "owner_id": "dense_ui_panel:issue_card",
-                              "source_atom_id": "s29:slide_29/element_81"
+                              "source_atom_id": "s29:slide_29/element_81",
+                              "role": "overlay_svg_rect"
                             }
                           },
                           {
