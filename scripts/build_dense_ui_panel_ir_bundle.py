@@ -1282,15 +1282,15 @@ def build_dense_ui_panel_nodes(
         if description_body_strategy == "chunk_container_leaf_text":
             if table_grid_group is not None:
                 description_body_children.append(table_grid_group)
-            if include_dense_body_overlays:
-                for owner_id in ["dense_ui_panel:description_cards"]:
-                    if owner_id in owner_groups:
-                        description_body_children.append(owner_groups[owner_id])
             if not preserve_dense_body_background:
                 for owner_id in ["dense_ui_panel:description_cards"]:
                     if owner_id in owner_groups:
                         description_body_children.append(owner_groups[owner_id])
             description_body_children.extend(lane_groups)
+            if include_dense_body_overlays:
+                for owner_id in ["dense_ui_panel:description_cards"]:
+                    if owner_id in owner_groups:
+                        description_body_children.append(owner_groups[owner_id])
             # In leaf-text mode the lane groups already contain row backgrounds,
             # markers, footer text and paragraph leaves. Re-adding semantic/text
             # owner groups here causes duplicate text layers and muddies the
@@ -1330,6 +1330,13 @@ def build_dense_ui_panel_nodes(
         chunk_children.append(build_group_group("dense_ui_panel:panel_small_assets_chunk", small_asset_children))
 
     children = sorted(chunk_children, key=lambda node: chunk_priority(str(node.get("id") or "")))
+    if include_dense_body_overlays:
+        overlay_order = {
+            "dense_ui_panel:description_body_chunk": 18,
+            "dense_ui_panel:description_footer_chunk": 19,
+            "dense_ui_panel:issue_chunk": 20,
+        }
+        children = sorted(children, key=lambda node: overlay_order.get(str(node.get("id") or ""), chunk_priority(str(node.get("id") or ""))))
 
     content_bounds = union_bounds(
         [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in children]
