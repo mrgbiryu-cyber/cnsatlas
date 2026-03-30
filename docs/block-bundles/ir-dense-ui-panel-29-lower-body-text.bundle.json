@@ -1957,7 +1957,7 @@
                               "x": 686.22,
                               "y": 328.06,
                               "width": 249.45,
-                              "height": 189.6
+                              "height": 183.6
                             },
                             "relativeTransform": [
                               [
@@ -1981,7 +1981,7 @@
                                   "x": 686.22,
                                   "y": 328.06,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2030,9 +2030,9 @@
                                 "characters": "Badge 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 335.96,
+                                  "y": 335.71,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2081,9 +2081,9 @@
                                 "characters": "- 다품목할인",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 343.86,
+                                  "y": 343.36,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2132,9 +2132,9 @@
                                 "characters": "내일배송(판매예정) > UP가전 Badge 순으로 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 351.76,
+                                  "y": 351.01,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2183,9 +2183,9 @@
                                 "characters": "- 최대",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 359.66,
+                                  "y": 358.66,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2234,9 +2234,9 @@
                                 "characters": "줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우,",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 367.56,
+                                  "y": 366.31,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2285,9 +2285,9 @@
                                 "characters": "해당",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 375.46,
+                                  "y": 373.96,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2336,9 +2336,9 @@
                                 "characters": "강조텍스트",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 383.36,
+                                  "y": 381.61,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2387,9 +2387,9 @@
                                 "characters": "Badge 미 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 391.26,
+                                  "y": 389.26,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2438,9 +2438,9 @@
                                 "characters": "(e.g.",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 399.16,
+                                  "y": 396.91,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2489,9 +2489,9 @@
                                 "characters": "다품목할인",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 407.06,
+                                  "y": 404.56,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2540,9 +2540,9 @@
                                 "characters": ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 414.96,
+                                  "y": 412.21,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2591,9 +2591,9 @@
                                 "characters": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 >",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 422.86,
+                                  "y": 419.86,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2642,9 +2642,9 @@
                                 "characters": "다품목 할인> UP가전 > 강조텍스트(뱃지관리 등록)",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 430.76,
+                                  "y": 427.51,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2693,9 +2693,9 @@
                                 "characters": "기존과 동일하게 줄 바꿈 적용함",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 438.66,
+                                  "y": 435.16,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2744,9 +2744,9 @@
                                 "characters": "디자인 변경됨: PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 446.56,
+                                  "y": 442.81,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2795,9 +2795,9 @@
                                 "characters": "[참고사항]\n★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨\n★ YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지\n스타일(black)과 PDP 뱃지 스타일(red)이 다름\n★ 강조텍스트 뱃지는 PLP에서 비노출됨",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 454.46,
+                                  "y": 450.46,
                                   "width": 249.45,
-                                  "height": 39.5
+                                  "height": 38.25
                                 },
                                 "relativeTransform": [
                                   [
@@ -2846,9 +2846,9 @@
                                 "characters": "고효율가전",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 493.96,
+                                  "y": 488.71,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2897,9 +2897,9 @@
                                 "characters": "신규 추가됨",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 501.86,
+                                  "y": 496.36,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
@@ -2948,9 +2948,9 @@
                                 "characters": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 509.76,
+                                  "y": 504.01,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 7.65
                                 },
                                 "relativeTransform": [
                                   [
