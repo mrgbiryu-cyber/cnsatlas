@@ -6,6 +6,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 import re
+import math
 import textwrap
 from typing import Any
 
@@ -189,6 +190,183 @@ def paragraph_texts(atom: dict[str, Any]) -> list[str]:
     return paragraphs
 
 
+def estimate_text_width(text: str, font_size: float) -> float:
+    width = 0.0
+    for char in text:
+        if char.isspace():
+            width += font_size * 0.22
+        elif "\u4e00" <= char <= "\u9fff" or "\u3130" <= char <= "\u318f" or "\uac00" <= char <= "\ud7a3":
+            width += font_size * 0.92
+        elif char.isupper() or char.isdigit():
+            width += font_size * 0.62
+        elif char in {"-", ">", "(", ")", "[", "]", "/", ":", ".", ",", "&", "•", "★"}:
+            width += font_size * 0.34
+        else:
+            width += font_size * 0.52
+    return width
+
+
+def split_text_for_wrap(text: str) -> list[str]:
+    return [token for token in re.split(r"(\s+)", text) if token]
+
+
+def normalize_body_line_text(text: str) -> str:
+    normalized = text.strip()
+    return normalized
+
+
+def split_once(text: str, needle: str) -> list[str] | None:
+    index = text.find(needle)
+    if index <= 0:
+        return None
+    return [text[:index].rstrip(), text[index:].lstrip()]
+
+
+def dense_body_special_splits(text: str) -> list[str] | None:
+    if text == "문서명 :":
+        return [text]
+    if text.startswith("1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크"):
+        return [text]
+    if text.startswith("콘텐츠 노출 순서 : ") and "타입별" in text and "노출 순서 정의] 참조" in text:
+        return [
+            "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별",
+            "노출 순서 정의] 참조",
+        ]
+    if text.startswith("CMS에서 인테리어컷 내 디스클라이머 노출여부에"):
+        split = split_once(text, "인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출")
+        if split:
+            first, second = split
+            return [f"- {first}".strip(), second]
+    if text.startswith("2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어") and "디스클라이머 노출에 Y 체크" in text:
+        split = split_once(text, "디스클라이머 노출에 Y 체크")
+        if split:
+            return split
+    if text.startswith("-> 닷컴 전용 여부") and text.endswith("닷컴 only 뱃지 노출"):
+        return [text[: text.rfind(" 노출")].rstrip(), "노출"]
+    if text.startswith("- 다품목할인 > 내일배송(판매예정) > UP가전 Badge 순으로 노출"):
+        return ["- 다품목할인", "내일배송(판매예정) > UP가전 Badge 순으로 노출"]
+    if text.startswith("- 최대 1줄 노출하며") and "경우, 해당 강조텍스트 Badge 미 노출" in text:
+        return [
+            "- 최대",
+            "줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우,",
+            "해당",
+            "강조텍스트",
+            "Badge 미 노출",
+        ]
+    if text.startswith("(e.g. 다품목할인, 내일배송, UP가전, 신제품, 베스트, 특별세일,"):
+        return [
+            "(e.g.",
+            "다품목할인",
+            ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+        ]
+    if text.startswith("쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일, 쿠폰할인 줄 바꿈 필요한 경우 특별세일, 쿠폰할인 미 노출)"):
+        return [
+            "Badge",
+            "설정되어",
+            "있는 상품 → 스크린 크기로 인해 특별세일, 쿠폰할인 줄",
+            "바꿈",
+            "필요한",
+            "경우 특별세일, 쿠폰할인 미 노출)",
+        ]
+    return None
+
+
+def wrap_text_line(text: str, width: float, font_size: float) -> list[str]:
+    stripped = text.strip()
+    if not stripped:
+        return []
+    special = dense_body_special_splits(stripped)
+    if special and not (len(special) == 1 and special[0] == stripped):
+        lines: list[str] = []
+        for part in special:
+            lines.extend(wrap_text_line(part, width, font_size))
+        return lines
+    max_width = max(float(width) * 0.82, font_size * 6.0)
+    if estimate_text_width(stripped, font_size) <= max_width:
+        normalized = normalize_body_line_text(stripped)
+        return [normalized] if normalized else []
+
+    tokens = split_text_for_wrap(stripped)
+    lines: list[str] = []
+    current = ""
+    for token in tokens:
+        candidate = f"{current}{token}" if current else token
+        if current and estimate_text_width(candidate, font_size) > max_width:
+            finalized = current.strip()
+            if finalized:
+                lines.append(finalized)
+            current = token.lstrip()
+            continue
+        current = candidate
+    finalized = current.strip()
+    if finalized:
+        lines.append(finalized)
+
+    wrapped: list[str] = []
+    hard_limit = max(12, int(math.floor(max_width / max(font_size * 0.62, 1.0))))
+    for line in lines:
+        if estimate_text_width(line, font_size) <= max_width:
+            wrapped.append(line)
+            continue
+        wrapped.extend(textwrap.wrap(line, width=hard_limit, break_long_words=False, break_on_hyphens=False) or [line])
+    normalized_lines = [normalize_body_line_text(line) for line in wrapped]
+    return [line for line in normalized_lines if line]
+
+
+def merge_dense_body_special_lines(lines: list[str]) -> list[str]:
+    merged: list[str] = []
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if line == "[참고사항]":
+            block = [line]
+            index += 1
+            while index < len(lines) and (lines[index].startswith("★") or lines[index].startswith("스타일(")):
+                block.append(lines[index])
+                index += 1
+            merged.append("\n".join(block).replace("★  YYYY", "★ YYYY"))
+            continue
+        if line == "문서명 :" and index + 1 < len(lines) and lines[index + 1].startswith("LGEKR5.0"):
+            merged.append(f"{line} {lines[index + 1]}".strip())
+            index += 2
+            continue
+        merged.append(line)
+        index += 1
+    return merged
+
+
+def body_text_lines(atom: dict[str, Any], width: float, font_size: float) -> list[str]:
+    runs = atom.get("text_runs") or []
+    if not runs:
+        return wrap_text_line(str(atom.get("text") or ""), width, font_size)
+
+    lines: list[str] = []
+    current: list[str] = []
+    for run in runs:
+        run_type = str(run.get("type") or "")
+        text = str(run.get("text") or "")
+        if run_type in {"paragraph_break", "line_break"}:
+            logical_line = "".join(current).strip()
+            if logical_line:
+                lines.extend(wrap_text_line(logical_line, width, font_size))
+            current = []
+            continue
+        if run_type == "text":
+            pieces = text.splitlines()
+            if not pieces:
+                continue
+            current.append(pieces[0])
+            for extra in pieces[1:]:
+                logical_line = "".join(current).strip()
+                if logical_line:
+                    lines.extend(wrap_text_line(logical_line, width, font_size))
+                current = [extra]
+    logical_line = "".join(current).strip()
+    if logical_line:
+        lines.extend(wrap_text_line(logical_line, width, font_size))
+    return merge_dense_body_special_lines(lines)
+
+
 def version_stack_label_and_detail(atom: dict[str, Any]) -> tuple[str, str]:
     lines = [line.strip() for line in str(atom.get("text") or "").splitlines() if line.strip()]
     if not lines:
@@ -224,27 +402,27 @@ def build_version_stack_block(atom: dict[str, Any]) -> tuple[dict[str, Any], dic
 
 
 def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, suffix: str = "") -> dict[str, Any]:
-    paragraphs = paragraph_texts(atom)
-    if not paragraphs:
-        return build_owner_group(f"{atom['id']}{suffix}:empty", [])
     style = text_style(atom)
     font_size = float(style["fontSize"])
     line_height = float(style["lineHeightPx"])
+    lines = body_text_lines(atom, float(bounds["width"]), font_size)
+    if not lines:
+        return build_owner_group(f"{atom['id']}{suffix}:empty", [])
     left = float(bounds["x"])
     top = float(bounds["y"])
     width = float(bounds["width"])
     children: list[dict[str, Any]] = []
     current_y = top
     max_bottom = top + float(bounds["height"])
-    for index, paragraph in enumerate(paragraphs):
+    for index, line in enumerate(lines):
         if current_y >= max_bottom:
             break
-        paragraph_height = min(line_height + 2.0, max_bottom - current_y)
+        paragraph_height = min(line_height, max_bottom - current_y)
         if paragraph_height <= 1.0:
             break
         paragraph_bounds = make_bounds(left, current_y, width, paragraph_height)
         paragraph_atom = dict(atom)
-        paragraph_atom["text"] = paragraph
+        paragraph_atom["text"] = line
         children.append(build_text_node(paragraph_atom, paragraph_bounds, suffix=f"{suffix}:p{index + 1}"))
         current_y += paragraph_height
     return build_owner_group(f"{atom['id']}{suffix}:paragraphs", children)

@@ -1,4 +1,55 @@
 {
+  "bundle_path": "docs/block-bundles/ir-dense-ui-panel-29-lower-body-text.bundle.json",
+  "page_name": "Slide 29 - Dense UI Panel - Lower Body Text Layer",
+  "text_node_count": 48,
+  "owner_counts": {
+    "dense_ui_panel:description_lanes": 50,
+    "dense_ui_panel:description_footer": 1
+  },
+  "bbox_range": {
+    "min_x": 660.66,
+    "max_x": 935.6700000000001,
+    "min_y": 67.26,
+    "max_y": 528.0
+  },
+  "rows": {
+    "row_3": {
+      "text_node_count": 2,
+      "y_range": [
+        67.26,
+        76.01
+      ],
+      "sample_first": "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조",
+      "sample_last": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx"
+    },
+    "row_4": {
+      "text_node_count": 26,
+      "y_range": [
+        88.76,
+        307.51
+      ],
+      "sample_first": "[Key Visual 영역] – WCMS 콘텐츠 등록",
+      "sample_last": "노출에 Y 체크"
+    },
+    "row_5": {
+      "text_node_count": 22,
+      "y_range": [
+        336.01,
+        519.76
+      ],
+      "sample_first": "[제품명 영역]",
+      "sample_last": "뱃지 우선순위 중 최상위"
+    },
+    "row_6": {
+      "text_node_count": 1,
+      "y_range": [
+        514.0,
+        514.0
+      ],
+      "sample_first": "뒷페이지 계속",
+      "sample_last": "뒷페이지 계속"
+    }
+  },
   "nodes": [
     {
       "id": "s29:slide_29/element_37:row_3:cell_2:p1",
@@ -51,60 +102,12 @@
     {
       "id": "s29:slide_29/element_37:row_3:cell_2:p2",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "문서명 :",
+      "text": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx",
       "bbox": {
         "x": 686.22,
         "y": 76.01,
         "width": 249.45,
         "height": 8.75
-      },
-      "ancestors": [
-        {
-          "id": "page:29",
-          "name": "Slide 29 - Dense UI Panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:frame",
-          "name": "Frame",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel",
-          "name": "dense_ui_panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel:logical",
-          "name": "dense_ui_panel_logical",
-          "type": "FRAME"
-        },
-        {
-          "id": "dense_ui_panel:description_body_chunk",
-          "name": "description_body_chunk",
-          "type": "GROUP"
-        },
-        {
-          "id": "dense_ui_panel:lane_row_3",
-          "name": "lane_row_3",
-          "type": "FRAME"
-        },
-        {
-          "id": "s29:slide_29/element_37:row_3:cell_2:paragraphs",
-          "name": "paragraphs",
-          "type": "GROUP"
-        }
-      ]
-    },
-    {
-      "id": "s29:slide_29/element_37:row_3:cell_2:p3",
-      "owner_id": "dense_ui_panel:description_lanes",
-      "text": "LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx",
-      "bbox": {
-        "x": 686.22,
-        "y": 84.76,
-        "width": 249.45,
-        "height": 4.0
       },
       "ancestors": [
         {
@@ -243,7 +246,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p3",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠",
+      "text": "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서",
       "bbox": {
         "x": 686.22,
         "y": 106.26,
@@ -291,7 +294,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p4",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "타입별 노출 순서 정의] 참조",
+      "text": "정의] 참조",
       "bbox": {
         "x": 686.22,
         "y": 115.01,
@@ -915,7 +918,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p17",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+      "text": "CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고 인테리어컷",
       "bbox": {
         "x": 686.22,
         "y": 228.76,
@@ -963,7 +966,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p18",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출",
+      "text": "이미지가 등록되어 있을 경우 디스클라이머 문구 노출",
       "bbox": {
         "x": 686.22,
         "y": 237.51,
@@ -1107,7 +1110,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p21",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+      "text": "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출",
       "bbox": {
         "x": 686.22,
         "y": 263.76,
@@ -1155,7 +1158,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p22",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "노출",
+      "text": "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
       "bbox": {
         "x": 686.22,
         "y": 272.51,
@@ -1203,7 +1206,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p23",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+      "text": "하기 조건 모두 충족 시 문구 제공",
       "bbox": {
         "x": 686.22,
         "y": 281.26,
@@ -1251,7 +1254,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p24",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "하기 조건 모두 충족 시 문구 제공",
+      "text": "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
       "bbox": {
         "x": 686.22,
         "y": 290.01,
@@ -1299,7 +1302,7 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p25",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에",
+      "text": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어 디스클라이머",
       "bbox": {
         "x": 686.22,
         "y": 298.76,
@@ -1347,106 +1350,10 @@
     {
       "id": "s29:slide_29/element_37:row_4:cell_2:p26",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "체크",
+      "text": "노출에 Y 체크",
       "bbox": {
         "x": 686.22,
         "y": 307.51,
-        "width": 249.45,
-        "height": 8.75
-      },
-      "ancestors": [
-        {
-          "id": "page:29",
-          "name": "Slide 29 - Dense UI Panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:frame",
-          "name": "Frame",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel",
-          "name": "dense_ui_panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel:logical",
-          "name": "dense_ui_panel_logical",
-          "type": "FRAME"
-        },
-        {
-          "id": "dense_ui_panel:description_body_chunk",
-          "name": "description_body_chunk",
-          "type": "GROUP"
-        },
-        {
-          "id": "dense_ui_panel:lane_row_4",
-          "name": "lane_row_4",
-          "type": "FRAME"
-        },
-        {
-          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
-          "name": "paragraphs",
-          "type": "GROUP"
-        }
-      ]
-    },
-    {
-      "id": "s29:slide_29/element_37:row_4:cell_2:p27",
-      "owner_id": "dense_ui_panel:description_lanes",
-      "text": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
-      "bbox": {
-        "x": 686.22,
-        "y": 316.26,
-        "width": 249.45,
-        "height": 8.75
-      },
-      "ancestors": [
-        {
-          "id": "page:29",
-          "name": "Slide 29 - Dense UI Panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:frame",
-          "name": "Frame",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel",
-          "name": "dense_ui_panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel:logical",
-          "name": "dense_ui_panel_logical",
-          "type": "FRAME"
-        },
-        {
-          "id": "dense_ui_panel:description_body_chunk",
-          "name": "description_body_chunk",
-          "type": "GROUP"
-        },
-        {
-          "id": "dense_ui_panel:lane_row_4",
-          "name": "lane_row_4",
-          "type": "FRAME"
-        },
-        {
-          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
-          "name": "paragraphs",
-          "type": "GROUP"
-        }
-      ]
-    },
-    {
-      "id": "s29:slide_29/element_37:row_4:cell_2:p28",
-      "owner_id": "dense_ui_panel:description_lanes",
-      "text": "디스클라이머 노출에 Y 체크",
-      "bbox": {
-        "x": 686.22,
-        "y": 325.01,
         "width": 249.45,
         "height": 8.75
       },
@@ -1635,7 +1542,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p4",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "- 최대 1줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한",
+      "text": "- 최대 1줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우, 해당",
       "bbox": {
         "x": 686.22,
         "y": 362.26,
@@ -1683,7 +1590,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p5",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "경우, 해당 강조텍스트 Badge 미 노출",
+      "text": "강조텍스트 Badge 미 노출",
       "bbox": {
         "x": 686.22,
         "y": 371.01,
@@ -1731,7 +1638,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p6",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "(e.g. 다품목할인, 내일배송, UP가전, 신제품, 베스트, 특별세일,",
+      "text": "(e.g. 다품목할인, 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인 Badge",
       "bbox": {
         "x": 686.22,
         "y": 379.76,
@@ -1779,7 +1686,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p7",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일,",
+      "text": "설정되어 있는 상품 → 스크린 크기로 인해 특별세일, 쿠폰할인 줄 바꿈 필요한 경우",
       "bbox": {
         "x": 686.22,
         "y": 388.51,
@@ -1827,7 +1734,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p8",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "쿠폰할인 줄 바꿈 필요한 경우 특별세일, 쿠폰할인 미 노출)",
+      "text": "특별세일, 쿠폰할인 미 노출)",
       "bbox": {
         "x": 686.22,
         "y": 397.26,
@@ -1875,7 +1782,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p9",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 >",
+      "text": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 > 다품목 할인>",
       "bbox": {
         "x": 686.22,
         "y": 406.01,
@@ -1923,7 +1830,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p10",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "다품목 할인> UP가전 > 강조텍스트(뱃지관리 등록)",
+      "text": "UP가전 > 강조텍스트(뱃지관리 등록)",
       "bbox": {
         "x": 686.22,
         "y": 414.76,
@@ -2067,7 +1974,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p13",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "[참고사항]\n★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨\n★  YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지\n스타일(black)과 PDP 뱃지 스타일(red)이 다름\n★ 강조텍스트 뱃지는 PLP에서 비노출됨",
+      "text": "[참고사항]",
       "bbox": {
         "x": 686.22,
         "y": 441.01,
@@ -2115,7 +2022,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p14",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "고효율가전",
+      "text": "★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨",
       "bbox": {
         "x": 686.22,
         "y": 449.76,
@@ -2163,7 +2070,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p15",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "신규 추가됨",
+      "text": "★  YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지 스타일(black)과 PDP 뱃지",
       "bbox": {
         "x": 686.22,
         "y": 458.51,
@@ -2211,7 +2118,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p16",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
+      "text": "스타일(red)이 다름",
       "bbox": {
         "x": 686.22,
         "y": 467.26,
@@ -2259,7 +2166,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p17",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "--> 으뜸효율환급 여부 ‘Y’로 설정 시 뱃지 제공",
+      "text": "★ 강조텍스트 뱃지는 PLP에서 비노출됨",
       "bbox": {
         "x": 686.22,
         "y": 476.01,
@@ -2307,7 +2214,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p18",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "뱃지 우선순위 중 최상위",
+      "text": "고효율가전",
       "bbox": {
         "x": 686.22,
         "y": 484.76,
@@ -2355,7 +2262,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p19",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "판매중, 일시품절 상태인 경우에만 노출",
+      "text": "신규 추가됨",
       "bbox": {
         "x": 686.22,
         "y": 493.51,
@@ -2403,7 +2310,7 @@
     {
       "id": "s29:slide_29/element_37:row_5:cell_2:p20",
       "owner_id": "dense_ui_panel:description_lanes",
-      "text": "베스트 랭킹 순위",
+      "text": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
       "bbox": {
         "x": 686.22,
         "y": 502.26,
@@ -2447,151 +2354,8 @@
           "type": "GROUP"
         }
       ]
-    },
-    {
-      "id": "s29:slide_29/element_37:row_5:cell_2:p21",
-      "owner_id": "dense_ui_panel:description_lanes",
-      "text": "신규 추가됨",
-      "bbox": {
-        "x": 686.22,
-        "y": 511.01,
-        "width": 249.45,
-        "height": 8.75
-      },
-      "ancestors": [
-        {
-          "id": "page:29",
-          "name": "Slide 29 - Dense UI Panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:frame",
-          "name": "Frame",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel",
-          "name": "dense_ui_panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel:logical",
-          "name": "dense_ui_panel_logical",
-          "type": "FRAME"
-        },
-        {
-          "id": "dense_ui_panel:description_body_chunk",
-          "name": "description_body_chunk",
-          "type": "GROUP"
-        },
-        {
-          "id": "dense_ui_panel:lane_row_5",
-          "name": "lane_row_5",
-          "type": "FRAME"
-        },
-        {
-          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
-          "name": "paragraphs",
-          "type": "GROUP"
-        }
-      ]
-    },
-    {
-      "id": "s29:slide_29/element_37:row_5:cell_2:p22",
-      "owner_id": "dense_ui_panel:description_lanes",
-      "text": "”FRONT > 홈 > 제품/소모품 > 베스트 랭킹 > 오늘의 랭킹＂내 카테고리별",
-      "bbox": {
-        "x": 686.22,
-        "y": 519.76,
-        "width": 249.45,
-        "height": 8.24
-      },
-      "ancestors": [
-        {
-          "id": "page:29",
-          "name": "Slide 29 - Dense UI Panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:frame",
-          "name": "Frame",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel",
-          "name": "dense_ui_panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel:logical",
-          "name": "dense_ui_panel_logical",
-          "type": "FRAME"
-        },
-        {
-          "id": "dense_ui_panel:description_body_chunk",
-          "name": "description_body_chunk",
-          "type": "GROUP"
-        },
-        {
-          "id": "dense_ui_panel:lane_row_5",
-          "name": "lane_row_5",
-          "type": "FRAME"
-        },
-        {
-          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
-          "name": "paragraphs",
-          "type": "GROUP"
-        }
-      ]
-    },
-    {
-      "id": "s29:slide_29/element_37:row_6:cell_1:p1",
-      "owner_id": "dense_ui_panel:description_footer",
-      "text": "뒷페이지 계속",
-      "bbox": {
-        "x": 660.66,
-        "y": 514.0,
-        "width": 275.01,
-        "height": 8.75
-      },
-      "ancestors": [
-        {
-          "id": "page:29",
-          "name": "Slide 29 - Dense UI Panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:frame",
-          "name": "Frame",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel",
-          "name": "dense_ui_panel",
-          "type": "FRAME"
-        },
-        {
-          "id": "page:29:dense_ui_panel:logical",
-          "name": "dense_ui_panel_logical",
-          "type": "FRAME"
-        },
-        {
-          "id": "dense_ui_panel:description_footer_chunk",
-          "name": "description_footer_chunk",
-          "type": "GROUP"
-        },
-        {
-          "id": "dense_ui_panel:description_footer",
-          "name": "description_footer",
-          "type": "FRAME"
-        },
-        {
-          "id": "s29:slide_29/element_37:row_6:cell_1:paragraphs",
-          "name": "paragraphs",
-          "type": "GROUP"
-        }
-      ]
     }
   ],
-  "text_node_count": 54
+  "cutoff_text": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
+  "cutoff_y": 502.26
 }
