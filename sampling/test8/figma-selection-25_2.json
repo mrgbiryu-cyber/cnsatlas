@@ -1,0 +1,7831 @@
+{
+  "kind": "figma-analysis-export",
+  "export_scope": "selection",
+  "page": {
+    "id": "25:2",
+    "name": "테스트 화면"
+  },
+  "selection_ids": [
+    "25:214",
+    "25:215",
+    "25:216",
+    "25:217",
+    "25:219",
+    "25:220",
+    "25:221",
+    "25:222",
+    "25:223",
+    "25:224",
+    "25:225",
+    "25:226",
+    "25:227",
+    "25:228",
+    "25:229",
+    "25:230",
+    "25:231",
+    "25:232",
+    "25:233",
+    "25:234",
+    "25:235",
+    "25:236",
+    "25:237",
+    "25:238",
+    "25:239",
+    "25:240",
+    "25:241",
+    "25:242",
+    "25:243",
+    "25:244",
+    "25:245",
+    "25:246",
+    "25:247",
+    "25:248",
+    "25:249",
+    "25:250",
+    "25:251",
+    "25:252",
+    "25:253",
+    "25:254",
+    "25:255",
+    "25:256",
+    "25:257",
+    "25:258",
+    "25:259",
+    "25:260",
+    "25:264",
+    "25:265",
+    "25:266",
+    "25:270",
+    "25:271",
+    "25:272",
+    "25:276",
+    "25:277",
+    "25:278",
+    "25:279",
+    "25:282",
+    "25:283",
+    "25:284",
+    "25:288",
+    "25:289",
+    "25:290",
+    "25:294",
+    "25:295",
+    "25:296",
+    "25:297",
+    "25:301",
+    "25:302",
+    "25:303",
+    "25:304",
+    "25:305",
+    "25:306",
+    "25:307",
+    "25:308",
+    "25:309",
+    "25:310",
+    "25:311",
+    "25:312",
+    "25:313",
+    "25:652",
+    "25:727",
+    "25:782"
+  ],
+  "exported_at": "2026-03-30T03:40:56.416Z",
+  "scope_bounds": {
+    "x": 689.2298583984375,
+    "y": 75.75639343261719,
+    "width": 244.115966796875,
+    "height": 458.56202697753906
+  },
+  "nodes": [
+    {
+      "id": "25:214",
+      "name": "•",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.2298583984375,
+        "y": 77.46855163574219,
+        "width": 1.398193359375,
+        "height": 1.708160400390625
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 1.712158203125,
+        "width": 1.398193359375,
+        "height": 1.708160400390625
+      },
+      "width": 2,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          74.739990234375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          74.739990234375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1584",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "•",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "•",
+      "text_style": {
+        "fontName": {
+          "family": "Arial",
+          "style": "Narrow"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:215",
+      "name": "[Sticky",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 697.0909423828125,
+        "y": 75.75639343261719,
+        "width": 205.56475830078125,
+        "height": 7.64794921875
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.861083984375,
+        "y": 0,
+        "width": 205.56475830078125,
+        "height": 7.64794921875
+      },
+      "width": 207,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          73.739990234375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          73.739990234375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1585",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "[Sticky",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:216",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.2586669921875,
+        "y": 89.15005493164062,
+        "width": 1.88671875,
+        "height": 0.42787933349609375
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.02880859375,
+        "y": 13.393661499023438,
+        "width": 1.88671875,
+        "height": 0.42787933349609375
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          83.33999633789062
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          83.33999633789062
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0.43921568989753723,
+            "b": 0.7529411911964417
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1586",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:217",
+      "name": "문서명",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.5147094726562,
+        "y": 85.44737243652344,
+        "width": 217.9901123046875,
+        "height": 7.523284912109375
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.28485107421875,
+        "y": 9.69097900390625,
+        "width": 217.9901123046875,
+        "height": 7.523284912109375
+      },
+      "width": 219,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          83.33999633789062
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          83.33999633789062
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0.43921568989753723,
+            "b": 0.7529411911964417
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1587",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "문서명",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.05390625074505806
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:219",
+      "name": "•",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.2298583984375,
+        "y": 100.34855651855469,
+        "width": 1.398193359375,
+        "height": 1.708160400390625
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 24.5921630859375,
+        "width": 1.398193359375,
+        "height": 1.708160400390625
+      },
+      "width": 2,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          97.6199951171875
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          97.6199951171875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1589",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "•",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "•",
+      "text_style": {
+        "fontName": {
+          "family": "Arial",
+          "style": "Narrow"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:220",
+      "name": "[Key",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 697.0909423828125,
+        "y": 98.72737121582031,
+        "width": 126.632568359375,
+        "height": 7.556976318359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.861083984375,
+        "y": 22.970977783203125,
+        "width": 126.632568359375,
+        "height": 7.556976318359375
+      },
+      "width": 128,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          96.6199951171875
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          96.6199951171875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1590",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "[Key",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "[Key Visual 영역] – WCMS 콘텐츠 등록",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:221",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.2586669921875,
+        "y": 112.03005981445312,
+        "width": 1.88671875,
+        "height": 0.42787933349609375
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.02880859375,
+        "y": 36.27366638183594,
+        "width": 1.88671875,
+        "height": 0.42787933349609375
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          106.22000122070312
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          106.22000122070312
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1591",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:222",
+      "name": "제품",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.5214233398438,
+        "y": 108.32737731933594,
+        "width": 201.2320556640625,
+        "height": 7.017913818359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.29156494140625,
+        "y": 32.57098388671875,
+        "width": 201.2320556640625,
+        "height": 7.017913818359375
+      },
+      "width": 203,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          106.22000122070312
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          106.22000122070312
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1592",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "제품",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "제품 visual 정보 제공 : 동영상&이미지(제품 인테리어컷, 상세컷)",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:223",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.2586669921875,
+        "y": 121.75006103515625,
+        "width": 1.88671875,
+        "height": 0.42787933349609375
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.02880859375,
+        "y": 45.99366760253906,
+        "width": 1.88671875,
+        "height": 0.42787933349609375
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          115.94000244140625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          115.94000244140625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1593",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:224",
+      "name": "콘텐츠",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.5147094726562,
+        "y": 117.95640563964844,
+        "width": 228.276123046875,
+        "height": 7.6513214111328125
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.28485107421875,
+        "y": 42.20001220703125,
+        "width": 228.276123046875,
+        "height": 7.6513214111328125
+      },
+      "width": 230,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          115.94000244140625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          115.94000244140625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1594",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "콘텐츠",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:225",
+      "name": "노출",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.5147094726562,
+        "y": 125.87640380859375,
+        "width": 64.8963623046875,
+        "height": 7.10888671875
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.28485107421875,
+        "y": 50.12001037597656,
+        "width": 64.8963623046875,
+        "height": 7.10888671875
+      },
+      "width": 66,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          123.86000061035156
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          123.86000061035156
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0.29411765933036804,
+            "g": 0.6745098233222961,
+            "b": 0.7764706015586853
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1595",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "노출",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "노출 순서 정의] 참조",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:226",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.2586669921875,
+        "y": 139.3900604248047,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.02880859375,
+        "y": 63.6336669921875,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          133.5800018310547
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          133.5800018310547
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1596",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:227",
+      "name": "좌우",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.4304809570312,
+        "y": 135.59640502929688,
+        "width": 110.28204345703125,
+        "height": 7.6142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.20062255859375,
+        "y": 59.84001159667969,
+        "width": 110.28204345703125,
+        "height": 7.6142578125
+      },
+      "width": 112,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          133.5800018310547
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          133.5800018310547
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1597",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "좌우",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "좌우 swipe : 이전/다음 콘텐츠 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.05390625074505806
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:228",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.2586669921875,
+        "y": 148.99005126953125,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.02880859375,
+        "y": 73.23365783691406,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          143.17999267578125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          143.17999267578125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1598",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:229",
+      "name": "동영상",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.5147094726562,
+        "y": 145.18966674804688,
+        "width": 204.43609619140625,
+        "height": 7.1156158447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.28485107421875,
+        "y": 69.43327331542969,
+        "width": 204.43609619140625,
+        "height": 7.1156158447265625
+      },
+      "width": 206,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          143.17999267578125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          143.17999267578125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1599",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "동영상",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "동영상 : 선택 시, [PDP0001]갤러리뷰 팝업 노출되며 동영상 재생",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:230",
+      "name": "ㄴ",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 704.4681396484375,
+        "y": 153.2364044189453,
+        "width": 214.8265380859375,
+        "height": 6.5900421142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 15.23828125,
+        "y": 77.48001098632812,
+        "width": 214.8265380859375,
+        "height": 6.5900421142578125
+      },
+      "width": 217,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          151.22000122070312
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          151.22000122070312
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1600",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "ㄴ",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "ㄴ Youtube case : WCMS에 등록한 썸네일 이미지 +재생아이콘 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:231",
+      "name": "ㄴ",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 704.4681396484375,
+        "y": 161.24737548828125,
+        "width": 174.0869140625,
+        "height": 6.4990692138671875
+      },
+      "bounds_relative_to_scope": {
+        "x": 15.23828125,
+        "y": 85.49098205566406,
+        "width": 174.0869140625,
+        "height": 6.4990692138671875
+      },
+      "width": 177,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          159.13999938964844
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          159.13999938964844
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1601",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "ㄴ",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "ㄴ Video File case : 동영상 음소거 상태로 자동반복재생",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:232",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.2586669921875,
+        "y": 174.67005920410156,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.02880859375,
+        "y": 98.91366577148438,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          168.86000061035156
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          168.86000061035156
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1602",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:233",
+      "name": "이미지",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.7437744140625,
+        "y": 170.8696746826172,
+        "width": 153.19488525390625,
+        "height": 7.1156158447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.513916015625,
+        "y": 95.11328125,
+        "width": 153.19488525390625,
+        "height": 7.1156158447265625
+      },
+      "width": 155,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          168.86000061035156
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          703.080078125
+        ],
+        [
+          0,
+          1,
+          168.86000061035156
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1603",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "이미지",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "이미지 : 선택 시, [PDP0001] 갤러리뷰 팝업 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:234",
+      "name": "2a)",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.1912841796875,
+        "y": 180.4896697998047,
+        "width": 161.8265380859375,
+        "height": 7.1156158447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.96142578125,
+        "y": 104.7332763671875,
+        "width": 161.8265380859375,
+        "height": 7.1156158447265625
+      },
+      "width": 163,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          178.47999572753906
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.760009765625
+        ],
+        [
+          0,
+          1,
+          178.47999572753906
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1604",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "2a)",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:235",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.1387939453125,
+        "y": 194.0100555419922,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.908935546875,
+        "y": 118.253662109375,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          188.1999969482422
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          188.1999969482422
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1605",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:236",
+      "name": "현재",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.3724365234375,
+        "y": 190.21640014648438,
+        "width": 150.71173095703125,
+        "height": 6.8056640625
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.142578125,
+        "y": 114.46000671386719,
+        "width": 150.71173095703125,
+        "height": 6.8056640625
+      },
+      "width": 152,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          188.1999969482422
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          188.1999969482422
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1606",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "현재",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:237",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.1387939453125,
+        "y": 203.6100616455078,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.908935546875,
+        "y": 127.85366821289062,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          197.8000030517578
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          197.8000030517578
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1607",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:238",
+      "name": "이전",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.648681640625,
+        "y": 199.90737915039062,
+        "width": 166.3782958984375,
+        "height": 6.714691162109375
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.4188232421875,
+        "y": 124.15098571777344,
+        "width": 166.3782958984375,
+        "height": 6.714691162109375
+      },
+      "width": 168,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          197.8000030517578
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          197.8000030517578
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1608",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "이전",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "이전/다음 이동 버튼 : 선택 시 이전/다음 콘텐츠 이동",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:239",
+      "name": "(ex.",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.3218994140625,
+        "y": 207.92041015625,
+        "width": 180.23553466796875,
+        "height": 7.0448760986328125
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.092041015625,
+        "y": 132.1640167236328,
+        "width": 180.23553466796875,
+        "height": 7.0448760986328125
+      },
+      "width": 182,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          205.83999633789062
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          205.83999633789062
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1609",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "(ex.",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:240",
+      "name": "2b)",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.0714111328125,
+        "y": 217.54737854003906,
+        "width": 127.72412109375,
+        "height": 7.523284912109375
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.841552734375,
+        "y": 141.79098510742188,
+        "width": 127.72412109375,
+        "height": 7.523284912109375
+      },
+      "width": 129,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          215.44000244140625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          215.44000244140625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1610",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "2b)",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "2b) 일시정지⇔재생 토글 버튼(Optional)",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.05390625074505806
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:241",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.1387939453125,
+        "y": 230.97006225585938,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.908935546875,
+        "y": 155.2136688232422,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          225.16000366210938
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          225.16000366210938
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1611",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:242",
+      "name": "버튼",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.7093505859375,
+        "y": 227.17640686035156,
+        "width": 203.7554931640625,
+        "height": 7.10888671875
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.4794921875,
+        "y": 151.42001342773438,
+        "width": 203.7554931640625,
+        "height": 7.10888671875
+      },
+      "width": 206,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          225.16000366210938
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          225.16000366210938
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1612",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "버튼",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "버튼 선택 시, 영상 일시정지⇔재생 / *동영상(video file)에만 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:243",
+      "name": "2C)",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.0714111328125,
+        "y": 236.86737060546875,
+        "width": 87.442626953125,
+        "height": 7.017913818359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.841552734375,
+        "y": 161.11097717285156,
+        "width": 87.442626953125,
+        "height": 7.017913818359375
+      },
+      "width": 89,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          234.75999450683594
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          234.75999450683594
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1613",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "2C)",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "2C) 디스클라이머 문구 영역",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:244",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.1387939453125,
+        "y": 246.49639892578125,
+        "width": 230.18975830078125,
+        "height": 6.5900421142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.908935546875,
+        "y": 170.74000549316406,
+        "width": 230.18975830078125,
+        "height": 6.5900421142578125
+      },
+      "width": 232,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          244.47999572753906
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          244.47999572753906
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1614",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.134765625
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:245",
+      "name": "인테리어컷",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.7632446289062,
+        "y": 254.41639709472656,
+        "width": 205.48052978515625,
+        "height": 6.5900421142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.53338623046875,
+        "y": 178.66000366210938,
+        "width": 205.48052978515625,
+        "height": 6.5900421142578125
+      },
+      "width": 207,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          252.39999389648438
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          252.39999389648438
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1615",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "인테리어컷",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:246",
+      "name": "2d)",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.0714111328125,
+        "y": 264.22735595703125,
+        "width": 58.976806640625,
+        "height": 7.5570068359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.841552734375,
+        "y": 188.47096252441406,
+        "width": 58.976806640625,
+        "height": 7.5570068359375
+      },
+      "width": 61,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          262.1199951171875
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          262.1199951171875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1616",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "2d)",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "2d) 닷컴 only 뱃지",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.05390625074505806
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:247",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.8585205078125,
+        "y": 273.8273620605469,
+        "width": 159.90277099609375,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.628662109375,
+        "y": 198.0709686279297,
+        "width": 159.90277099609375,
+        "height": 6.49908447265625
+      },
+      "width": 161,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          271.7200012207031
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          271.7200012207031
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1617",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:248",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 701.8985595703125,
+        "y": 283.54736328125,
+        "width": 223.73114013671875,
+        "height": 7.56036376953125
+      },
+      "bounds_relative_to_scope": {
+        "x": 12.668701171875,
+        "y": 207.7909698486328,
+        "width": 223.73114013671875,
+        "height": 7.56036376953125
+      },
+      "width": 226,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          701.39990234375
+        ],
+        [
+          0,
+          1,
+          281.44000244140625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          701.39990234375
+        ],
+        [
+          0,
+          1,
+          281.44000244140625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1618",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:249",
+      "name": "노출",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.3545532226562,
+        "y": 291.37640380859375,
+        "width": 13.79327392578125,
+        "height": 6.431671142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.12469482421875,
+        "y": 215.62001037597656,
+        "width": 13.79327392578125,
+        "height": 6.431671142578125
+      },
+      "width": 15,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          289.3599853515625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          289.3599853515625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1619",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "노출",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.862500011920929
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:250",
+      "name": "2e) Video File",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.0714111328125,
+        "y": 301.2073669433594,
+        "width": 181.42822265625,
+        "height": 7.0179443359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.841552734375,
+        "y": 225.4509735107422,
+        "width": 181.42822265625,
+        "height": 7.0179443359375
+      },
+      "width": 183,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          299.1000061035156
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          299.1000061035156
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1620",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "2e) Video File",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:251",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.1387939453125,
+        "y": 314.51007080078125,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 6.908935546875,
+        "y": 238.75367736816406,
+        "width": 1.88671875,
+        "height": 0.427886962890625
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          308.70001220703125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          695.64013671875
+        ],
+        [
+          0,
+          1,
+          308.70001220703125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1621",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:252",
+      "name": "하기",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.345458984375,
+        "y": 310.75347900390625,
+        "width": 105.25531005859375,
+        "height": 6.552978515625
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.1156005859375,
+        "y": 234.99708557128906,
+        "width": 105.25531005859375,
+        "height": 6.552978515625
+      },
+      "width": 107,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          308.70001220703125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          308.70001220703125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1622",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "하기",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "하기 조건 모두 충족 시 문구 제공",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:253",
+      "name": "1) WCMS > [KRP0008] >",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.564453125,
+        "y": 318.84735107421875,
+        "width": 226.18389892578125,
+        "height": 7.0179443359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.3345947265625,
+        "y": 243.09095764160156,
+        "width": 226.18389892578125,
+        "height": 7.0179443359375
+      },
+      "width": 228,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          316.739990234375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          316.739990234375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1623",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "1) WCMS > [KRP0008] >",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.0673828125
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:254",
+      "name": "2) CMS > CMS >",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.2241821289062,
+        "y": 326.7673645019531,
+        "width": 221.36602783203125,
+        "height": 7.0179443359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 13.99432373046875,
+        "y": 251.01097106933594,
+        "width": 221.36602783203125,
+        "height": 7.0179443359375
+      },
+      "width": 223,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          324.6600036621094
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          324.6600036621094
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1624",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "2) CMS > CMS >",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:255",
+      "name": "디스클라이머",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.9317016601562,
+        "y": 334.7164306640625,
+        "width": 87.0484619140625,
+        "height": 6.59002685546875
+      },
+      "bounds_relative_to_scope": {
+        "x": 14.70184326171875,
+        "y": 258.9600372314453,
+        "width": 87.0484619140625,
+        "height": 6.59002685546875
+      },
+      "width": 89,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          332.70001220703125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.840087890625
+        ],
+        [
+          0,
+          1,
+          332.70001220703125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1625",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "디스클라이머",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "디스클라이머 노출에 Y 체크",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:256",
+      "name": "•",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.2298583984375,
+        "y": 349.6285705566406,
+        "width": 1.398193359375,
+        "height": 1.7081298828125
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 273.87217712402344,
+        "width": 1.398193359375,
+        "height": 1.7081298828125
+      },
+      "width": 2,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          346.8999938964844
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          346.8999938964844
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1626",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "•",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "•",
+      "text_style": {
+        "fontName": {
+          "family": "Arial",
+          "style": "Narrow"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:257",
+      "name": "[",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 697.0909423828125,
+        "y": 348.0073547363281,
+        "width": 41.1708984375,
+        "height": 7.0179443359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.861083984375,
+        "y": 272.25096130371094,
+        "width": 41.1708984375,
+        "height": 7.0179443359375
+      },
+      "width": 43,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          345.8999938964844
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          345.8999938964844
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1627",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "[",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "[제품명 영역]",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:258",
+      "name": "•",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.2298583984375,
+        "y": 359.22857666015625,
+        "width": 1.398193359375,
+        "height": 1.7081298828125
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 283.47218322753906,
+        "width": 1.398193359375,
+        "height": 1.7081298828125
+      },
+      "width": 2,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          356.5
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          356.5
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1628",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "•",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "•",
+      "text_style": {
+        "fontName": {
+          "family": "Arial",
+          "style": "Narrow"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:259",
+      "name": "Badge",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.949462890625,
+        "y": 357.5096740722656,
+        "width": 36.53497314453125,
+        "height": 7.654693603515625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.7196044921875,
+        "y": 281.75328063964844,
+        "width": 36.53497314453125,
+        "height": 7.654693603515625
+      },
+      "width": 38,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          355.5
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          355.5
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1629",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "Badge",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "Badge 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:260",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.8585205078125,
+        "y": 365.5429382324219,
+        "width": 39.0146484375,
+        "height": 6.603515625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.628662109375,
+        "y": 289.7865447998047,
+        "width": 39.0146484375,
+        "height": 6.603515625
+      },
+      "width": 41,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          363.5400085449219
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          363.5400085449219
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1630",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "- 다품목할인",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:264",
+      "name": ">",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 740.143310546875,
+        "y": 367.7396240234375,
+        "width": 2.9581298828125,
+        "height": 3.348907470703125
+      },
+      "bounds_relative_to_scope": {
+        "x": 50.9134521484375,
+        "y": 291.9832305908203,
+        "width": 2.9581298828125,
+        "height": 3.348907470703125
+      },
+      "width": 5,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          739.199951171875
+        ],
+        [
+          0,
+          1,
+          363.5400085449219
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          739.199951171875
+        ],
+        [
+          0,
+          1,
+          363.5400085449219
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1631",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1633",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": ">",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": ">",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:265",
+      "name": "내일배송",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 747.6066284179688,
+        "y": 365.5564270019531,
+        "width": 154.057373046875,
+        "height": 7.65130615234375
+      },
+      "bounds_relative_to_scope": {
+        "x": 58.37677001953125,
+        "y": 289.80003356933594,
+        "width": 154.057373046875,
+        "height": 7.65130615234375
+      },
+      "width": 156,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          746.659912109375
+        ],
+        [
+          0,
+          1,
+          363.5400085449219
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          746.659912109375
+        ],
+        [
+          0,
+          1,
+          363.5400085449219
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1634",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "내일배송",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "내일배송(판매예정) > UP가전 Badge 순으로 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.08085937798023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:266",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.8585205078125,
+        "y": 373.5673522949219,
+        "width": 17.6273193359375,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.628662109375,
+        "y": 297.8109588623047,
+        "width": 17.6273193359375,
+        "height": 6.49908447265625
+      },
+      "width": 20,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          371.4599914550781
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          371.4599914550781
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1635",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "- 최대",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:270",
+      "name": "1",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 718.924560546875,
+        "y": 374.3927917480469,
+        "width": 1.68121337890625,
+        "height": 5.06719970703125
+      },
+      "bounds_relative_to_scope": {
+        "x": 29.6947021484375,
+        "y": 298.6363983154297,
+        "width": 1.68121337890625,
+        "height": 5.06719970703125
+      },
+      "width": 4,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          718.2001953125
+        ],
+        [
+          0,
+          1,
+          371.4599914550781
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          718.2001953125
+        ],
+        [
+          0,
+          1,
+          371.4599914550781
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1636",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1638",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "1",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "1",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:271",
+      "name": "줄",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 722.4746704101562,
+        "y": 373.4764099121094,
+        "width": 210.87115478515625,
+        "height": 7.65130615234375
+      },
+      "bounds_relative_to_scope": {
+        "x": 33.24481201171875,
+        "y": 297.7200164794922,
+        "width": 210.87115478515625,
+        "height": 7.65130615234375
+      },
+      "width": 212,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          722.0400390625
+        ],
+        [
+          0,
+          1,
+          371.4599914550781
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          722.0400390625
+        ],
+        [
+          0,
+          1,
+          371.4599914550781
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1639",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "줄",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우,",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:272",
+      "name": "해당",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.8079833984375,
+        "y": 381.60736083984375,
+        "width": 13.8201904296875,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.578125,
+        "y": 305.85096740722656,
+        "width": 13.8201904296875,
+        "height": 6.49908447265625
+      },
+      "width": 15,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          379.5
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          379.5
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1640",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "해당",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "해당",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.862500011920929
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:276",
+      "name": "강조텍스트",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 713.2952880859375,
+        "y": 381.60736083984375,
+        "width": 33.57012939453125,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 24.0654296875,
+        "y": 305.85096740722656,
+        "width": 33.57012939453125,
+        "height": 6.49908447265625
+      },
+      "width": 35,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          712.800048828125
+        ],
+        [
+          0,
+          1,
+          379.5
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          712.800048828125
+        ],
+        [
+          0,
+          1,
+          379.5
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1641",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1643",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "강조텍스트",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "강조텍스트",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:277",
+      "name": "Badge",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 751.036865234375,
+        "y": 381.51641845703125,
+        "width": 45.05889892578125,
+        "height": 7.65130615234375
+      },
+      "bounds_relative_to_scope": {
+        "x": 61.8070068359375,
+        "y": 305.76002502441406,
+        "width": 45.05889892578125,
+        "height": 7.65130615234375
+      },
+      "width": 47,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          750.3798828125
+        ],
+        [
+          0,
+          1,
+          379.5
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          750.3798828125
+        ],
+        [
+          0,
+          1,
+          379.5
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1644",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "Badge",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "Badge 미 노출",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:278",
+      "name": "(e.g.",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.8416748046875,
+        "y": 390.46063232421875,
+        "width": 12.9677734375,
+        "height": 6.627105712890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.61181640625,
+        "y": 314.70423889160156,
+        "width": 12.9677734375,
+        "height": 6.627105712890625
+      },
+      "width": 14,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          387.4200134277344
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          387.4200134277344
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1645",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "(e.g.",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "(e.g.",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.21562500298023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:279",
+      "name": "Vector",
+      "type": "FRAME",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 696.280029296875,
+        "y": 393.8399963378906,
+        "width": 223.3199462890625,
+        "height": 0.360015869140625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.0501708984375,
+        "y": 318.08360290527344,
+        "width": 223.3199462890625,
+        "height": 0.360015869140625
+      },
+      "width": 223.3199462890625,
+      "height": 1,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.280029296875
+        ],
+        [
+          0,
+          1,
+          393.20001220703125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.280029296875
+        ],
+        [
+          0,
+          1,
+          393.20001220703125
+        ]
+      ],
+      "clips_content": true,
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": false,
+          "opacity": 1,
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "corner_radius": 0,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.reference_type": "VECTOR",
+        "cnsatlas.replay.reference_parent_id": "1:1646",
+        "cnsatlas.replay.render_rotation_hint": "0",
+        "cnsatlas.replay.render_flip_x": "false",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.render_flip_y": "true",
+        "cnsatlas.replay.reference_node_id": "1:1647",
+        "cnsatlas.replay.render_transform_signature": "+:-:R0",
+        "cnsatlas.replay.reference_name": "Vector",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "25:280",
+          "name": "Group",
+          "type": "GROUP",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 696.280029296875,
+            "y": 393.8399963378906,
+            "width": 223.3199462890625,
+            "height": 0.360015869140625
+          },
+          "bounds_relative_to_scope": {
+            "x": 7.0501708984375,
+            "y": 318.08360290527344,
+            "width": 223.3199462890625,
+            "height": 0.360015869140625
+          },
+          "width": 223.32000732421875,
+          "height": 0.36000099778175354,
+          "relative_transform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              696.280029296875
+            ],
+            [
+              0,
+              -1,
+              394.20001220703125
+            ]
+          ],
+          "opacity": 1,
+          "fills": [],
+          "strokes": [],
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": [
+            {
+              "id": "25:281",
+              "name": "Vector",
+              "type": "VECTOR",
+              "visible": true,
+              "locked": false,
+              "bounds_absolute": {
+                "x": 696.280029296875,
+                "y": 393.8399963378906,
+                "width": 223.3199462890625,
+                "height": 0.360015869140625
+              },
+              "bounds_relative_to_scope": {
+                "x": 7.0501708984375,
+                "y": 318.08360290527344,
+                "width": 223.3199462890625,
+                "height": 0.360015869140625
+              },
+              "width": 223.32000732421875,
+              "height": 0.36000099778175354,
+              "relative_transform": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  1
+                ]
+              ],
+              "composed_transform": [
+                [
+                  1,
+                  0,
+                  696.280029296875
+                ],
+                [
+                  0,
+                  -1,
+                  394.20001220703125
+                ]
+              ],
+              "opacity": 1,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "visible": true,
+                  "opacity": 1,
+                  "color": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                  },
+                  "blendMode": "NORMAL"
+                }
+              ],
+              "strokes": [],
+              "stroke_weight": 1,
+              "corner_radius": 0,
+              "plugin_data": {},
+              "shared_plugin_data": {},
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25:282",
+      "name": "다품목할인",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 712.8629150390625,
+        "y": 389.4229431152344,
+        "width": 33.570068359375,
+        "height": 6.603515625
+      },
+      "bounds_relative_to_scope": {
+        "x": 23.633056640625,
+        "y": 313.6665496826172,
+        "width": 33.570068359375,
+        "height": 6.603515625
+      },
+      "width": 36,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          711.9599609375
+        ],
+        [
+          0,
+          1,
+          387.4200134277344
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          711.9599609375
+        ],
+        [
+          0,
+          1,
+          387.4200134277344
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1646",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1648",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "다품목할인",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "다품목할인",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.21562500298023224
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:283",
+      "name": ",",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 746.914794921875,
+        "y": 389.4229431152344,
+        "width": 172.93798828125,
+        "height": 6.913482666015625
+      },
+      "bounds_relative_to_scope": {
+        "x": 57.6849365234375,
+        "y": 313.6665496826172,
+        "width": 172.93798828125,
+        "height": 6.913482666015625
+      },
+      "width": 174,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          746.780029296875
+        ],
+        [
+          0,
+          1,
+          387.4200134277344
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          746.780029296875
+        ],
+        [
+          0,
+          1,
+          387.4200134277344
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1649",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": ",",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:284",
+      "name": "Badge",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 697.016845703125,
+        "y": 398.2509765625,
+        "width": 18.681884765625,
+        "height": 6.90673828125
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.7869873046875,
+        "y": 322.4945831298828,
+        "width": 18.681884765625,
+        "height": 6.90673828125
+      },
+      "width": 20,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          395.489990234375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          395.489990234375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1650",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "Badge",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "Badge",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:288",
+      "name": "설정되어",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 719.305419921875,
+        "y": 397.59735107421875,
+        "width": 27.2630615234375,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 30.0755615234375,
+        "y": 321.84095764160156,
+        "width": 27.2630615234375,
+        "height": 6.49908447265625
+      },
+      "width": 29,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          718.800048828125
+        ],
+        [
+          0,
+          1,
+          395.489990234375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          718.800048828125
+        ],
+        [
+          0,
+          1,
+          395.489990234375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1651",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1653",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "설정되어",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "설정되어",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.4312500059604645
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:289",
+      "name": "있는",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 750.3228759765625,
+        "y": 397.492919921875,
+        "width": 174.268798828125,
+        "height": 6.913482666015625
+      },
+      "bounds_relative_to_scope": {
+        "x": 61.093017578125,
+        "y": 321.7365264892578,
+        "width": 174.268798828125,
+        "height": 6.913482666015625
+      },
+      "width": 176,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          749.419921875
+        ],
+        [
+          0,
+          1,
+          395.489990234375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          749.419921875
+        ],
+        [
+          0,
+          1,
+          395.489990234375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1654",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "있는",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "있는 상품 → 스크린 크기로 인해 특별세일, 쿠폰할인 줄",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:290",
+      "name": "바꿈",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 697.2088623046875,
+        "y": 405.5173645019531,
+        "width": 13.37890625,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 7.97900390625,
+        "y": 329.76097106933594,
+        "width": 13.37890625,
+        "height": 6.49908447265625
+      },
+      "width": 15,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          403.4100036621094
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          696.35986328125
+        ],
+        [
+          0,
+          1,
+          403.4100036621094
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1655",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "바꿈",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "바꿈",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.862500011920929
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:294",
+      "name": "필요한",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 713.5042114257812,
+        "y": 405.5173645019531,
+        "width": 20.46417236328125,
+        "height": 6.404754638671875
+      },
+      "bounds_relative_to_scope": {
+        "x": 24.27435302734375,
+        "y": 329.76097106933594,
+        "width": 20.46417236328125,
+        "height": 6.404754638671875
+      },
+      "width": 22,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          712.800048828125
+        ],
+        [
+          0,
+          1,
+          403.4100036621094
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          712.800048828125
+        ],
+        [
+          0,
+          1,
+          403.4100036621094
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1656",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1658",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "필요한",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "필요한",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.4312500059604645
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:295",
+      "name": "경우",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 736.9063110351562,
+        "y": 405.4129333496094,
+        "width": 103.90765380859375,
+        "height": 7.12237548828125
+      },
+      "bounds_relative_to_scope": {
+        "x": 47.67645263671875,
+        "y": 329.6565399169922,
+        "width": 103.90765380859375,
+        "height": 7.12237548828125
+      },
+      "width": 105,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          736.320068359375
+        ],
+        [
+          0,
+          1,
+          403.4100036621094
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          736.320068359375
+        ],
+        [
+          0,
+          1,
+          403.4100036621094
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1659",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "경우",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "경우 특별세일, 쿠폰할인 미 노출)",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:296",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.4170532226562,
+        "y": 419.4340515136719,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.18719482421875,
+        "y": 343.6776580810547,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "width": 4,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          414.8900146484375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          414.8900146484375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1660",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 7,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": -3.5
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:297",
+      "name": "노출순서",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 702.8099975585938,
+        "y": 415.3724060058594,
+        "width": 230.1431884765625,
+        "height": 13.900421142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 13.58013916015625,
+        "y": 339.6160125732422,
+        "width": 230.1431884765625,
+        "height": 13.900421142578125
+      },
+      "width": 231,
+      "height": 16,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          414.8900146484375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          414.8900146484375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1661",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "노출순서",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 > 다품목 할\n인> UP",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 6.599999904632568,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.30937498807907104
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:301",
+      "name": "가전",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 724.8029174804688,
+        "y": 423.351806640625,
+        "width": 12.763916015625,
+        "height": 5.966400146484375
+      },
+      "bounds_relative_to_scope": {
+        "x": 35.57305908203125,
+        "y": 347.5954132080078,
+        "width": 12.763916015625,
+        "height": 5.966400146484375
+      },
+      "width": 14,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          724.43994140625
+        ],
+        [
+          0,
+          1,
+          422.80999755859375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          724.43994140625
+        ],
+        [
+          0,
+          1,
+          422.80999755859375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1662",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1664",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "가전",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "가전",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 6.599999904632568,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 1.649999976158142
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:302",
+      "name": ">",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 740.2660522460938,
+        "y": 424.02099609375,
+        "width": 83.82598876953125,
+        "height": 6.823089599609375
+      },
+      "bounds_relative_to_scope": {
+        "x": 51.03619384765625,
+        "y": 348.2646026611328,
+        "width": 83.82598876953125,
+        "height": 6.823089599609375
+      },
+      "width": 86,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          739.56005859375
+        ],
+        [
+          0,
+          1,
+          422.80999755859375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          739.56005859375
+        ],
+        [
+          0,
+          1,
+          422.80999755859375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1665",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": ">",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "> 강조텍스트(뱃지관리 등록)",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 7,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.0546875
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:303",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.4170532226562,
+        "y": 437.07403564453125,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.18719482421875,
+        "y": 361.31764221191406,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "width": 4,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          432.5299987792969
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          432.5299987792969
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1666",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 7,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": -3.5
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:304",
+      "name": "기존과",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 705.042724609375,
+        "y": 433.0256042480469,
+        "width": 93.146240234375,
+        "height": 6.019195556640625
+      },
+      "bounds_relative_to_scope": {
+        "x": 15.8128662109375,
+        "y": 357.2692108154297,
+        "width": 93.146240234375,
+        "height": 6.019195556640625
+      },
+      "width": 94,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          704.64013671875
+        ],
+        [
+          0,
+          1,
+          432.5299987792969
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          704.64013671875
+        ],
+        [
+          0,
+          1,
+          432.5299987792969
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1667",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "기존과",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "기존과 동일하게 줄 바꿈 적용함",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 6.599999904632568,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.46406248211860657
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:305",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.4170532226562,
+        "y": 446.6720275878906,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.18719482421875,
+        "y": 370.91563415527344,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "width": 4,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          442.12799072265625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          442.12799072265625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1668",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 7,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": -3.5
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:306",
+      "name": "디자인",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 703.1928100585938,
+        "y": 442.6697998046875,
+        "width": 192.0289306640625,
+        "height": 5.979583740234375
+      },
+      "bounds_relative_to_scope": {
+        "x": 13.96295166015625,
+        "y": 366.9134063720703,
+        "width": 192.0289306640625,
+        "height": 5.979583740234375
+      },
+      "width": 194,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          442.12799072265625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          442.12799072265625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1669",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "디자인",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "디자인 변경됨: PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 6.599999904632568,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.3609375059604645
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:307",
+      "name": "[",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.2698974609375,
+        "y": 453.0099792480469,
+        "width": 238.0872802734375,
+        "height": 38.391021728515625
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.0400390625,
+        "y": 377.2535858154297,
+        "width": 238.0872802734375,
+        "height": 38.391021728515625
+      },
+      "width": 240,
+      "height": 40,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          451.8479919433594
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          451.8479919433594
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0.43921568989753723,
+            "b": 0.7529411911964417
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1670",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "[",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "[참고사항]\n★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨\n★ YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지 스타일(black)과 PDP 뱃지\n스타일(red)이 다름\n★ 강조텍스트 뱃지는 PLP에서 비노출됨",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 7,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": -0.123046875
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:308",
+      "name": "•",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.2298583984375,
+        "y": 509.8565673828125,
+        "width": 1.398193359375,
+        "height": 1.7081298828125
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 434.1001739501953,
+        "width": 1.398193359375,
+        "height": 1.7081298828125
+      },
+      "width": 2,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          507.12799072265625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          507.12799072265625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1671",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "•",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "•",
+      "text_style": {
+        "fontName": {
+          "family": "Arial",
+          "style": "Narrow"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:309",
+      "name": "고효율가전",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 702.8099975585938,
+        "y": 508.6697998046875,
+        "width": 31.01129150390625,
+        "height": 5.96636962890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 13.58013916015625,
+        "y": 432.9134063720703,
+        "width": 31.01129150390625,
+        "height": 5.96636962890625
+      },
+      "width": 33,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          508.12799072265625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          508.12799072265625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1672",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "고효율가전",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "고효율가전",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 6.599999904632568,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.4124999940395355
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:310",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.4170532226562,
+        "y": 522.2960205078125,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.18719482421875,
+        "y": 446.5396270751953,
+        "width": 2.227294921875,
+        "height": 0.546875
+      },
+      "width": 4,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          517.7520141601562
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          517.7520141601562
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1673",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 7,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": -3.5
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:311",
+      "name": "신규",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 702.869384765625,
+        "y": 518.2938232421875,
+        "width": 33.035888671875,
+        "height": 5.9796142578125
+      },
+      "bounds_relative_to_scope": {
+        "x": 13.6395263671875,
+        "y": 442.5374298095703,
+        "width": 33.035888671875,
+        "height": 5.9796142578125
+      },
+      "width": 35,
+      "height": 8,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          517.7520141601562
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          517.7520141601562
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1674",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "신규",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "신규 추가됨",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 6.599999904632568,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 8
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.4124999940395355
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:312",
+      "name": "-",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 689.4185791015625,
+        "y": 531.5220336914062,
+        "width": 1.88671875,
+        "height": 0.4278564453125
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.188720703125,
+        "y": 455.76564025878906,
+        "width": 1.88671875,
+        "height": 0.4278564453125
+      },
+      "width": 3,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          525.7119750976562
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          688.919921875
+        ],
+        [
+          0,
+          1,
+          525.7119750976562
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1675",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "-",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "-",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 3.450000047683716
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:313",
+      "name": "CMS >",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 702.8101806640625,
+        "y": 527.8193359375,
+        "width": 152.066162109375,
+        "height": 6.49908447265625
+      },
+      "bounds_relative_to_scope": {
+        "x": 13.580322265625,
+        "y": 452.0629425048828,
+        "width": 152.066162109375,
+        "height": 6.49908447265625
+      },
+      "width": 153,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          525.7119750976562
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          702.47998046875
+        ],
+        [
+          0,
+          1,
+          525.7119750976562
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1676",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "CMS >",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Regular"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0.10781250149011612
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:652",
+      "name": "V.2.4",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 912.5003662109375,
+        "y": 292.21978759765625,
+        "width": 15.9967041015625,
+        "height": 5.12445068359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 223.2705078125,
+        "y": 216.46339416503906,
+        "width": 15.9967041015625,
+        "height": 5.12445068359375
+      },
+      "width": 17,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          912.4599609375
+        ],
+        [
+          0,
+          1,
+          289.260009765625
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          912.4599609375
+        ],
+        [
+          0,
+          1,
+          289.260009765625
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1913",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1915",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "V.2.4",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "V.2.4",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:727",
+      "name": "V.2.2",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 907.5804443359375,
+        "y": 506.4477844238281,
+        "width": 15.77099609375,
+        "height": 5.12445068359375
+      },
+      "bounds_relative_to_scope": {
+        "x": 218.3505859375,
+        "y": 430.69139099121094,
+        "width": 15.77099609375,
+        "height": 5.12445068359375
+      },
+      "width": 17,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          907.5400390625
+        ],
+        [
+          0,
+          1,
+          503.4880065917969
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          907.5400390625
+        ],
+        [
+          0,
+          1,
+          503.4880065917969
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:1441",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:1975",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "V.2.2",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "V.2.2",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "25:782",
+      "name": "V.5.0",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 912.9803466796875,
+        "y": 333.52978515625,
+        "width": 15.94952392578125,
+        "height": 5.1278076171875
+      },
+      "bounds_relative_to_scope": {
+        "x": 223.75048828125,
+        "y": 257.7733917236328,
+        "width": 15.94952392578125,
+        "height": 5.1278076171875
+      },
+      "width": 17,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          912.93994140625
+        ],
+        [
+          0,
+          1,
+          330.57000732421875
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          912.93994140625
+        ],
+        [
+          0,
+          1,
+          330.57000732421875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {
+        "cnsatlas.replay.source_is_clip_like": "false",
+        "cnsatlas.replay.replay_page_id": "1:1440",
+        "cnsatlas.replay.replay_role": "render-node",
+        "cnsatlas.replay.reference_parent_id": "1:2013",
+        "cnsatlas.replay.reference_type": "TEXT",
+        "cnsatlas.replay.reference_node_id": "1:2015",
+        "cnsatlas.replay.render_transform_signature": "+:+:R0",
+        "cnsatlas.replay.reference_name": "V.5.0",
+        "cnsatlas.replay.comparison_level": "L2"
+      },
+      "shared_plugin_data": {},
+      "characters": "V.5.0",
+      "text_style": {
+        "fontName": {
+          "family": "Malgun Gothic",
+          "style": "Bold"
+        },
+        "fontSize": 6.900000095367432,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      "children": []
+    }
+  ]
+}
