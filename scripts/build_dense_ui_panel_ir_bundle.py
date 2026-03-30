@@ -431,7 +431,8 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
     for index, line in enumerate(lines):
         if current_y >= max_bottom:
             break
-        paragraph_height = min(line_height, max_bottom - current_y)
+        visual_line_units = max(1, len([part for part in str(line).splitlines() if part.strip()]) or 1)
+        paragraph_height = min(line_height * visual_line_units, max_bottom - current_y)
         if paragraph_height <= 1.0:
             break
         paragraph_bounds = make_bounds(left, current_y, width, paragraph_height)
@@ -687,8 +688,11 @@ def estimate_text_height(text: str, width: float, font_size: float, line_gap: fl
 def estimate_paragraph_group_height(atom: dict[str, Any], width: float, font_size: float, line_gap: float = 2.0) -> float:
     if str(atom.get("owner_id") or "") == "dense_ui_panel:description_lanes":
         rendered_line_height = min(float(text_style(atom, font_size).get("lineHeightPx") or (font_size * 1.25)), round(font_size + 0.9, 2))
-        line_count = max(1, len(body_text_lines(atom, width, font_size)))
-        return line_count * rendered_line_height
+        total_units = 0
+        for line in body_text_lines(atom, width, font_size):
+            units = max(1, len([part for part in str(line).splitlines() if part.strip()]) or 1)
+            total_units += units
+        return max(1, total_units) * rendered_line_height
     paragraphs = paragraph_texts(atom)
     if not paragraphs:
         return estimate_text_height(str(atom.get("text") or ""), width, font_size, line_gap)
@@ -1048,18 +1052,27 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
 
     children = sorted(chunk_children, key=lambda node: chunk_priority(str(node.get("id") or "")))
 
-    visible_panel_bounds = make_bounds(
+    content_bounds = union_bounds(
+        [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in children]
+    )
+    expanded_panel_bounds = make_bounds(
         float(panel_bounds["x"]),
         float(panel_bounds["y"]),
-        min(float(panel_bounds["width"]), TARGET_SLIDE_WIDTH - float(panel_bounds["x"])),
-        min(float(panel_bounds["height"]), TARGET_SLIDE_HEIGHT - float(panel_bounds["y"])),
+        max(float(panel_bounds["width"]), float(content_bounds["width"]) + max(float(content_bounds["x"]) - float(panel_bounds["x"]), 0.0)),
+        max(float(panel_bounds["height"]), (float(content_bounds["y"]) + float(content_bounds["height"]) - float(panel_bounds["y"])) + 12.0),
+    )
+    visible_panel_bounds = make_bounds(
+        float(expanded_panel_bounds["x"]),
+        float(expanded_panel_bounds["y"]),
+        min(float(expanded_panel_bounds["width"]), TARGET_SLIDE_WIDTH - float(expanded_panel_bounds["x"])),
+        min(float(expanded_panel_bounds["height"]), TARGET_SLIDE_HEIGHT - float(expanded_panel_bounds["y"])),
     )
 
     logical_panel = {
         "id": f"{page['page_id']}:dense_ui_panel:logical",
         "type": "FRAME",
         "name": "dense_ui_panel_logical",
-        "absoluteBoundingBox": panel_bounds,
+        "absoluteBoundingBox": expanded_panel_bounds,
         "relativeTransform": identity_affine(),
         "fills": [],
         "strokes": [],

@@ -76,7 +76,7 @@
               "x": 583.15,
               "y": 0.0,
               "width": 376.85,
-              "height": 381.21
+              "height": 540.0
             },
             "relativeTransform": [
               [
@@ -123,7 +123,7 @@
                   "x": 583.15,
                   "y": 0.0,
                   "width": 376.85,
-                  "height": 381.21
+                  "height": 540.0
                 },
                 "relativeTransform": [
                   [
@@ -149,7 +149,7 @@
                       "x": 660.66,
                       "y": 67.26,
                       "width": 275.0,
-                      "height": 422.8
+                      "height": 454.4
                     },
                     "relativeTransform": [
                       [
@@ -1930,7 +1930,7 @@
                           "x": 660.66,
                           "y": 326.06,
                           "width": 275.0,
-                          "height": 164.0
+                          "height": 195.6
                         },
                         "relativeTransform": [
                           [
@@ -1957,7 +1957,7 @@
                               "x": 686.22,
                               "y": 328.06,
                               "width": 249.45,
-                              "height": 158.0
+                              "height": 189.6
                             },
                             "relativeTransform": [
                               [
@@ -2797,7 +2797,7 @@
                                   "x": 686.22,
                                   "y": 454.46,
                                   "width": 249.45,
-                                  "height": 7.9
+                                  "height": 39.5
                                 },
                                 "relativeTransform": [
                                   [
@@ -2846,7 +2846,7 @@
                                 "characters": "고효율가전",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 462.36,
+                                  "y": 493.96,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2897,7 +2897,7 @@
                                 "characters": "신규 추가됨",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 470.26,
+                                  "y": 501.86,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2948,7 +2948,7 @@
                                 "characters": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 478.16,
+                                  "y": 509.76,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -3017,7 +3017,7 @@
                     "name": "description_footer_chunk",
                     "absoluteBoundingBox": {
                       "x": 660.66,
-                      "y": 498.06,
+                      "y": 514.0,
                       "width": 275.01,
                       "height": 14.0
                     },
@@ -3040,7 +3040,7 @@
                         "name": "description_footer",
                         "absoluteBoundingBox": {
                           "x": 660.66,
-                          "y": 498.06,
+                          "y": 514.0,
                           "width": 275.01,
                           "height": 14.0
                         },
@@ -3067,7 +3067,7 @@
                             "name": "paragraphs",
                             "absoluteBoundingBox": {
                               "x": 660.66,
-                              "y": 498.06,
+                              "y": 514.0,
                               "width": 275.01,
                               "height": 8.75
                             },
@@ -3091,7 +3091,7 @@
                                 "characters": "뒷페이지 계속",
                                 "absoluteBoundingBox": {
                                   "x": 660.66,
-                                  "y": 498.06,
+                                  "y": 514.0,
                                   "width": 275.01,
                                   "height": 8.75
                                 },
