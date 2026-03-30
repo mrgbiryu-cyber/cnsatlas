@@ -142,6 +142,168 @@
                 "strokeWeight": 0,
                 "children": [
                   {
+                    "id": "dense_ui_panel:issue_chunk",
+                    "type": "GROUP",
+                    "name": "issue_chunk",
+                    "absoluteBoundingBox": {
+                      "x": 725.68,
+                      "y": 95.56,
+                      "width": 234.32,
+                      "height": 54.34
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "id": "dense_ui_panel:issue_card",
+                        "type": "GROUP",
+                        "name": "issue_card",
+                        "absoluteBoundingBox": {
+                          "x": 725.68,
+                          "y": 95.56,
+                          "width": 234.32,
+                          "height": 54.34
+                        },
+                        "relativeTransform": [
+                          [
+                            1,
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            1,
+                            0
+                          ]
+                        ],
+                        "children": [
+                          {
+                            "id": "s29:slide_29/element_81:bg",
+                            "type": "RECTANGLE",
+                            "name": "Google Shape;105;p2",
+                            "absoluteBoundingBox": {
+                              "x": 725.68,
+                              "y": 95.56,
+                              "width": 234.32,
+                              "height": 54.34
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 0.2,
+                                  "b": 0.8
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 0.2,
+                                  "b": 0.8
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "strokeWeight": 1.33,
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "issue_card",
+                              "owner_id": "dense_ui_panel:issue_card",
+                              "source_atom_id": "s29:slide_29/element_81"
+                            }
+                          },
+                          {
+                            "id": "s29:slide_29/element_81:label",
+                            "type": "TEXT",
+                            "name": "Google Shape;105;p2",
+                            "characters": "ISSUE\n‘매립배관형’ 에어컨 옵션 데이터 설정 시 윗첨자 노출 삭제 예정(제품명 수정 필요)\n[BTOCSITE-27062] 장바구니 버튼 노출 퍼블리싱 작업 완료 상태 - 인사이더 결과 확인 이후 반영여부 결정 (by. 최송운 책임님)",
+                            "absoluteBoundingBox": {
+                              "x": 725.68,
+                              "y": 95.56,
+                              "width": 234.32,
+                              "height": 54.34
+                            },
+                            "relativeTransform": [
+                              [
+                                1,
+                                0,
+                                0
+                              ],
+                              [
+                                0,
+                                1,
+                                0
+                              ]
+                            ],
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0
+                                },
+                                "opacity": 1.0
+                              }
+                            ],
+                            "style": {
+                              "fontFamily": "LG스마트체 Regular",
+                              "fontStyle": "Regular",
+                              "fontSize": 8.0,
+                              "textAlignHorizontal": "LEFT",
+                              "textAlignVertical": "TOP",
+                              "textAutoResize": "HEIGHT",
+                              "lineHeightPx": 10.0
+                            },
+                            "children": [],
+                            "debug": {
+                              "generator": "dense-ui-ir-v1",
+                              "layer_role": "issue_card",
+                              "owner_id": "dense_ui_panel:issue_card",
+                              "source_atom_id": "s29:slide_29/element_81"
+                            }
+                          }
+                        ],
+                        "debug": {
+                          "generator": "dense-ui-ir-v1",
+                          "owner_id": "dense_ui_panel:issue_card"
+                        }
+                      }
+                    ],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "group_id": "dense_ui_panel:issue_chunk"
+                    }
+                  },
+                  {
                     "id": "dense_ui_panel:description_body_chunk",
                     "type": "GROUP",
                     "name": "description_body_chunk",

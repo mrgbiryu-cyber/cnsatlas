@@ -1459,9 +1459,21 @@ LOWER_BODY_TEXT_CHUNK_IDS = {
     "dense_ui_panel:description_footer_chunk",
 }
 
+LOWER_BODY_OVERLAY_CHUNK_IDS = {
+    "dense_ui_panel:description_body_chunk",
+    "dense_ui_panel:description_footer_chunk",
+    "dense_ui_panel:issue_chunk",
+}
+
 LOWER_BODY_TEXT_OWNER_IDS = {
     "dense_ui_panel:description_lanes",
     "dense_ui_panel:description_footer",
+}
+
+LOWER_BODY_OVERLAY_OWNER_IDS = {
+    "dense_ui_panel:description_lanes",
+    "dense_ui_panel:description_footer",
+    "dense_ui_panel:issue_card",
 }
 
 
@@ -1513,15 +1525,23 @@ def extract_lower_body_text_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
     return extracted
 
 
-def prune_lower_body_text_box_layer(node: dict[str, Any], in_lower_body_chunk: bool = False) -> dict[str, Any] | None:
+def prune_lower_body_text_box_layer(
+    node: dict[str, Any],
+    in_lower_body_chunk: bool = False,
+    *,
+    allowed_chunk_ids: set[str] | None = None,
+    allowed_text_owner_ids: set[str] | None = None,
+) -> dict[str, Any] | None:
     node_type = str(node.get("type") or "")
     node_id = str(node.get("id") or "")
     debug = node.get("debug") or {}
     owner_id = str(debug.get("owner_id") or "")
-    child_in_lower_body_chunk = in_lower_body_chunk or node_id in LOWER_BODY_TEXT_CHUNK_IDS
+    chunk_ids = allowed_chunk_ids or LOWER_BODY_TEXT_CHUNK_IDS
+    text_owner_ids = allowed_text_owner_ids or LOWER_BODY_TEXT_OWNER_IDS
+    child_in_lower_body_chunk = in_lower_body_chunk or node_id in chunk_ids
 
     if node_type == "TEXT":
-        if owner_id in LOWER_BODY_TEXT_OWNER_IDS:
+        if owner_id in text_owner_ids:
             pruned = dict(node)
             pruned["children"] = []
             return pruned
@@ -1534,11 +1554,16 @@ def prune_lower_body_text_box_layer(node: dict[str, Any], in_lower_body_chunk: b
 
     pruned_children: list[dict[str, Any]] = []
     for child in node.get("children") or []:
-        pruned_child = prune_lower_body_text_box_layer(child, child_in_lower_body_chunk)
+        pruned_child = prune_lower_body_text_box_layer(
+            child,
+            child_in_lower_body_chunk,
+            allowed_chunk_ids=chunk_ids,
+            allowed_text_owner_ids=text_owner_ids,
+        )
         if pruned_child is not None:
             pruned_children.append(pruned_child)
 
-    if node_id in LOWER_BODY_TEXT_CHUNK_IDS:
+    if node_id in chunk_ids:
         if not pruned_children:
             return None
         pruned = dict(node)
@@ -1583,7 +1608,11 @@ def extract_lower_body_text_grid_bundle(bundle: dict[str, Any]) -> dict[str, Any
 
 def extract_lower_body_text_grid_overlay_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
     document = bundle.get("document") or {}
-    pruned_document = prune_lower_body_text_box_layer(document)
+    pruned_document = prune_lower_body_text_box_layer(
+        document,
+        allowed_chunk_ids=LOWER_BODY_OVERLAY_CHUNK_IDS,
+        allowed_text_owner_ids=LOWER_BODY_OVERLAY_OWNER_IDS,
+    )
     if pruned_document is None:
         raise SystemExit("lower body text/grid/overlay extraction produced an empty bundle")
 
