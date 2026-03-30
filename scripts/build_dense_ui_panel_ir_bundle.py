@@ -1135,6 +1135,7 @@ def build_dense_ui_panel_nodes(
     *,
     include_dense_body_boxes: bool = False,
     include_dense_body_grid: bool = False,
+    include_dense_body_overlays: bool = False,
 ) -> list[dict[str, Any]]:
     panel_bounds = dense_panel_bounds(page)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -1281,6 +1282,10 @@ def build_dense_ui_panel_nodes(
         if description_body_strategy == "chunk_container_leaf_text":
             if table_grid_group is not None:
                 description_body_children.append(table_grid_group)
+            if include_dense_body_overlays:
+                for owner_id in ["dense_ui_panel:description_cards"]:
+                    if owner_id in owner_groups:
+                        description_body_children.append(owner_groups[owner_id])
             if not preserve_dense_body_background:
                 for owner_id in ["dense_ui_panel:description_cards"]:
                     if owner_id in owner_groups:
@@ -1386,6 +1391,7 @@ def build_bundle(
     *,
     include_dense_body_boxes: bool = False,
     include_dense_body_grid: bool = False,
+    include_dense_body_overlays: bool = False,
 ) -> dict[str, Any]:
     assets: dict[str, Any] = {}
     page_children = build_dense_ui_panel_nodes(
@@ -1393,6 +1399,7 @@ def build_bundle(
         assets,
         include_dense_body_boxes=include_dense_body_boxes,
         include_dense_body_grid=include_dense_body_grid,
+        include_dense_body_overlays=include_dense_body_overlays,
     )
     root_bounds = make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT)
     inner_frame = {
@@ -1574,6 +1581,20 @@ def extract_lower_body_text_grid_bundle(bundle: dict[str, Any]) -> dict[str, Any
     return extracted
 
 
+def extract_lower_body_text_grid_overlay_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
+    document = bundle.get("document") or {}
+    pruned_document = prune_lower_body_text_box_layer(document)
+    if pruned_document is None:
+        raise SystemExit("lower body text/grid/overlay extraction produced an empty bundle")
+
+    extracted = dict(bundle)
+    extracted["page_name"] = f"{bundle.get('page_name')} - Lower Body Text Grid And Overlays"
+    extracted["node_id"] = pruned_document.get("id")
+    extracted["document"] = pruned_document
+    extracted["debug"] = dict(bundle.get("debug") or {}, export_mode="lower_body_text_grid_and_overlays")
+    return extracted
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a dense-ui-panel replay bundle from resolved PPT IR.")
     parser.add_argument("--input", required=True, help="Resolved IR JSON path")
@@ -1581,7 +1602,7 @@ def main() -> None:
     parser.add_argument("--slide", type=int, default=29, help="Slide number to render")
     parser.add_argument(
         "--export-mode",
-        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid"],
+        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid", "lower_body_text_grid_and_overlays"],
         default="full",
         help="Optional post-processing mode for the generated bundle",
     )
@@ -1601,13 +1622,23 @@ def main() -> None:
         str(input_path),
         include_dense_body_boxes=args.export_mode == "lower_body_text_and_boxes",
         include_dense_body_grid=args.export_mode == "lower_body_text_and_grid",
+        include_dense_body_overlays=args.export_mode == "lower_body_text_grid_and_overlays",
     )
+    if args.export_mode == "lower_body_text_grid_and_overlays":
+        bundle = build_bundle(
+            page,
+            str(input_path),
+            include_dense_body_grid=True,
+            include_dense_body_overlays=True,
+        )
     if args.export_mode == "lower_body_text_only":
         bundle = extract_lower_body_text_bundle(bundle)
     elif args.export_mode == "lower_body_text_and_boxes":
         bundle = extract_lower_body_text_box_bundle(bundle)
     elif args.export_mode == "lower_body_text_and_grid":
         bundle = extract_lower_body_text_grid_bundle(bundle)
+    elif args.export_mode == "lower_body_text_grid_and_overlays":
+        bundle = extract_lower_body_text_grid_overlay_bundle(bundle)
     output_path = Path(args.output).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")
