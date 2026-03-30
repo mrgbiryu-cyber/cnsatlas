@@ -43,6 +43,8 @@ def union_bounds(bounds_list: list[dict[str, Any]]) -> dict[str, float]:
 def color_from_style(style_color: dict[str, Any] | None, fallback: dict[str, float]) -> tuple[dict[str, float], float]:
     if not style_color:
         return fallback, 1.0
+    if str(style_color.get("kind") or "").lower() == "none":
+        return fallback, 0.0
     resolved_hex = style_color.get("resolved_value") or style_color.get("value")
     alpha = style_color.get("alpha")
     opacity = float(alpha) if isinstance(alpha, (int, float)) else 1.0
@@ -614,6 +616,30 @@ def build_small_asset_svg_node(atom: dict[str, Any], bounds: dict[str, Any] | No
             f'stroke="{stroke_color}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}"/>'
             "</svg>"
         )
+    elif shape_kind in {"rect", "roundRect", "shape"} or atom.get("subtype") in {"shape", "labeled_shape"}:
+        rx = 0.0
+        if shape_kind == "roundRect":
+            rx = max(min(width, height) * 0.16, 3.0)
+        if fill_opacity <= 0.0 and (not line_style or line_style.get("kind") == "none"):
+            return None
+        svg_parts = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+        ]
+        if line_style and line_style.get("kind") != "none":
+            inset = stroke_width / 2.0
+            svg_parts.append(
+                f'<rect x="{inset}" y="{inset}" width="{max(width - stroke_width, 0.5)}" height="{max(height - stroke_width, 0.5)}"'
+                f' rx="{max(rx - inset, 0.0)}" ry="{max(rx - inset, 0.0)}"'
+                f' fill="{fill_color}" fill-opacity="{fill_opacity}"'
+                f' stroke="{stroke_color}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_width}"/>'
+            )
+        else:
+            svg_parts.append(
+                f'<rect x="0" y="0" width="{width}" height="{height}" rx="{rx}" ry="{rx}"'
+                f' fill="{fill_color}" fill-opacity="{fill_opacity}"/>'
+            )
+        svg_parts.append("</svg>")
+        svg_markup = "".join(svg_parts)
     elif shape_kind == "straightConnector1" or atom.get("subtype") == "connector":
         mid_y = height / 2
         arrow = max(min(width, height) * 0.35, 3.0)
@@ -1467,9 +1493,13 @@ def build_dense_ui_panel_nodes(
                     if image_node:
                         owner_children.append(image_node)
                     continue
+                if subtype == "group":
+                    continue
                 svg_node = build_small_asset_svg_node(atom)
                 if svg_node:
                     owner_children.append(svg_node)
+                    if atom.get("text"):
+                        owner_children.append(build_text_node(atom, suffix=":label"))
                     continue
                 if atom.get("text"):
                     owner_children.append(build_text_node(atom))
