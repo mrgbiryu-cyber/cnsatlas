@@ -149,7 +149,7 @@
                       "x": 660.66,
                       "y": 67.26,
                       "width": 275.0,
-                      "height": 410.8
+                      "height": 422.8
                     },
                     "relativeTransform": [
                       [
@@ -337,7 +337,7 @@
                           "x": 660.66,
                           "y": 83.06,
                           "width": 275.0,
-                          "height": 237.0
+                          "height": 243.0
                         },
                         "relativeTransform": [
                           [
@@ -362,7 +362,7 @@
                             "name": "paragraphs",
                             "absoluteBoundingBox": {
                               "x": 686.22,
-                              "y": 83.06,
+                              "y": 85.06,
                               "width": 249.45,
                               "height": 237.0
                             },
@@ -386,7 +386,7 @@
                                 "characters": "[Key Visual 영역] – WCMS 콘텐츠 등록",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 83.06,
+                                  "y": 85.06,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -437,7 +437,7 @@
                                 "characters": "제품 visual 정보 제공 : 동영상&이미지(제품 인테리어컷, 상세컷)",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 90.96,
+                                  "y": 92.96,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -488,7 +488,7 @@
                                 "characters": "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 98.86,
+                                  "y": 100.86,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -539,7 +539,7 @@
                                 "characters": "타입별",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 106.76,
+                                  "y": 108.76,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -590,7 +590,7 @@
                                 "characters": "노출 순서 정의] 참조",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 114.66,
+                                  "y": 116.66,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -641,7 +641,7 @@
                                 "characters": "좌우 swipe : 이전/다음 콘텐츠 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 122.56,
+                                  "y": 124.56,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -692,7 +692,7 @@
                                 "characters": "동영상 : 선택 시, [PDP0001]갤러리뷰 팝업 노출되며 동영상 재생",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 130.46,
+                                  "y": 132.46,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -743,7 +743,7 @@
                                 "characters": "ㄴ Youtube case : WCMS에 등록한 썸네일 이미지 +재생아이콘 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 138.36,
+                                  "y": 140.36,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -794,7 +794,7 @@
                                 "characters": "ㄴ Video File case : 동영상 음소거 상태로 자동반복재생",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 146.26,
+                                  "y": 148.26,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -845,7 +845,7 @@
                                 "characters": "이미지 : 선택 시, [PDP0001] 갤러리뷰 팝업 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 154.16,
+                                  "y": 156.16,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -896,7 +896,7 @@
                                 "characters": "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 162.06,
+                                  "y": 164.06,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -947,7 +947,7 @@
                                 "characters": "현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 169.96,
+                                  "y": 171.96,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -998,7 +998,7 @@
                                 "characters": "이전/다음 이동 버튼 : 선택 시 이전/다음 콘텐츠 이동",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 177.86,
+                                  "y": 179.86,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1049,7 +1049,7 @@
                                 "characters": "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 185.76,
+                                  "y": 187.76,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1100,7 +1100,7 @@
                                 "characters": "2b) 일시정지⇔재생 토글 버튼(Optional)",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 193.66,
+                                  "y": 195.66,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1151,7 +1151,7 @@
                                 "characters": "버튼 선택 시, 영상 일시정지⇔재생 / *동영상(video file)에만 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 201.56,
+                                  "y": 203.56,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1202,7 +1202,7 @@
                                 "characters": "2C) 디스클라이머 문구 영역",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 209.46,
+                                  "y": 211.46,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1253,7 +1253,7 @@
                                 "characters": "- CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 217.36,
+                                  "y": 219.36,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1304,7 +1304,7 @@
                                 "characters": "있고",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 225.26,
+                                  "y": 227.26,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1355,7 +1355,7 @@
                                 "characters": "인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 233.16,
+                                  "y": 235.16,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1406,7 +1406,7 @@
                                 "characters": "2d) 닷컴 only 뱃지",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 241.06,
+                                  "y": 243.06,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1457,7 +1457,7 @@
                                 "characters": "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 248.96,
+                                  "y": 250.96,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1508,7 +1508,7 @@
                                 "characters": "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 256.86,
+                                  "y": 258.86,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1559,7 +1559,7 @@
                                 "characters": "노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 264.76,
+                                  "y": 266.76,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1610,7 +1610,7 @@
                                 "characters": "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 272.66,
+                                  "y": 274.66,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1661,7 +1661,7 @@
                                 "characters": "하기 조건 모두 충족 시 문구 제공",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 280.56,
+                                  "y": 282.56,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1712,7 +1712,7 @@
                                 "characters": "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 288.46,
+                                  "y": 290.46,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1763,7 +1763,7 @@
                                 "characters": "체크",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 296.36,
+                                  "y": 298.36,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1814,7 +1814,7 @@
                                 "characters": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 304.26,
+                                  "y": 306.26,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1865,7 +1865,7 @@
                                 "characters": "디스클라이머 노출에 Y 체크",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 312.16,
+                                  "y": 314.16,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -1928,9 +1928,9 @@
                         "name": "lane_row_5",
                         "absoluteBoundingBox": {
                           "x": 660.66,
-                          "y": 320.06,
+                          "y": 326.06,
                           "width": 275.0,
-                          "height": 158.0
+                          "height": 164.0
                         },
                         "relativeTransform": [
                           [
@@ -1955,7 +1955,7 @@
                             "name": "paragraphs",
                             "absoluteBoundingBox": {
                               "x": 686.22,
-                              "y": 320.06,
+                              "y": 328.06,
                               "width": 249.45,
                               "height": 158.0
                             },
@@ -1979,7 +1979,7 @@
                                 "characters": "[제품명 영역]",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 320.06,
+                                  "y": 328.06,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2030,7 +2030,7 @@
                                 "characters": "Badge 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 327.96,
+                                  "y": 335.96,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2081,7 +2081,7 @@
                                 "characters": "- 다품목할인",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 335.86,
+                                  "y": 343.86,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2132,7 +2132,7 @@
                                 "characters": "내일배송(판매예정) > UP가전 Badge 순으로 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 343.76,
+                                  "y": 351.76,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2183,7 +2183,7 @@
                                 "characters": "- 최대",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 351.66,
+                                  "y": 359.66,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2234,7 +2234,7 @@
                                 "characters": "줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우,",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 359.56,
+                                  "y": 367.56,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2285,7 +2285,7 @@
                                 "characters": "해당",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 367.46,
+                                  "y": 375.46,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2336,7 +2336,7 @@
                                 "characters": "강조텍스트",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 375.36,
+                                  "y": 383.36,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2387,7 +2387,7 @@
                                 "characters": "Badge 미 노출",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 383.26,
+                                  "y": 391.26,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2438,7 +2438,7 @@
                                 "characters": "(e.g.",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 391.16,
+                                  "y": 399.16,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2489,7 +2489,7 @@
                                 "characters": "다품목할인",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 399.06,
+                                  "y": 407.06,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2540,7 +2540,7 @@
                                 "characters": ", 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 406.96,
+                                  "y": 414.96,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2591,7 +2591,7 @@
                                 "characters": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 >",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 414.86,
+                                  "y": 422.86,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2642,7 +2642,7 @@
                                 "characters": "다품목 할인> UP가전 > 강조텍스트(뱃지관리 등록)",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 422.76,
+                                  "y": 430.76,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2693,7 +2693,7 @@
                                 "characters": "기존과 동일하게 줄 바꿈 적용함",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 430.66,
+                                  "y": 438.66,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2744,7 +2744,7 @@
                                 "characters": "디자인 변경됨: PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 438.56,
+                                  "y": 446.56,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2795,7 +2795,7 @@
                                 "characters": "[참고사항]\n★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨\n★ YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지\n스타일(black)과 PDP 뱃지 스타일(red)이 다름\n★ 강조텍스트 뱃지는 PLP에서 비노출됨",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 446.46,
+                                  "y": 454.46,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2846,7 +2846,7 @@
                                 "characters": "고효율가전",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 454.36,
+                                  "y": 462.36,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2897,7 +2897,7 @@
                                 "characters": "신규 추가됨",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 462.26,
+                                  "y": 470.26,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -2948,7 +2948,7 @@
                                 "characters": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
                                 "absoluteBoundingBox": {
                                   "x": 686.22,
-                                  "y": 470.16,
+                                  "y": 478.16,
                                   "width": 249.45,
                                   "height": 7.9
                                 },
@@ -3017,7 +3017,7 @@
                     "name": "description_footer_chunk",
                     "absoluteBoundingBox": {
                       "x": 660.66,
-                      "y": 484.06,
+                      "y": 498.06,
                       "width": 275.01,
                       "height": 14.0
                     },
@@ -3040,7 +3040,7 @@
                         "name": "description_footer",
                         "absoluteBoundingBox": {
                           "x": 660.66,
-                          "y": 484.06,
+                          "y": 498.06,
                           "width": 275.01,
                           "height": 14.0
                         },
@@ -3067,7 +3067,7 @@
                             "name": "paragraphs",
                             "absoluteBoundingBox": {
                               "x": 660.66,
-                              "y": 484.06,
+                              "y": 498.06,
                               "width": 275.01,
                               "height": 8.75
                             },
@@ -3091,7 +3091,7 @@
                                 "characters": "뒷페이지 계속",
                                 "absoluteBoundingBox": {
                                   "x": 660.66,
-                                  "y": 484.06,
+                                  "y": 498.06,
                                   "width": 275.01,
                                   "height": 8.75
                                 },

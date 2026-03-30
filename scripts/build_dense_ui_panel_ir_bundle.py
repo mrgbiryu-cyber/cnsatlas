@@ -725,14 +725,20 @@ def build_description_lane_layout(
                 text_bounds = make_bounds(float(text_bounds["x"]), current_y, available_width, float(text_bounds["height"]))
         font_size = float((text_atom or {}).get("text_style", {}).get("font_size_max") or 8.0)
         estimated_height = estimate_paragraph_group_height(text_atom or {}, float(text_bounds["width"]), font_size)
-        lane_height = max(float(row_bounds["height"]), estimated_height)
+        top_padding = 0.0
+        bottom_padding = 0.0
+        if row_index in {4, 5}:
+            top_padding = 2.0
+            bottom_padding = 4.0
+        lane_height = max(float(row_bounds["height"]), estimated_height + top_padding + bottom_padding)
         remaining_height = max_bottom - current_y
         if remaining_height <= 18.0:
             break
         lane_height = min(lane_height, remaining_height)
         lane_bounds = make_bounds(float(row_bounds["x"]), current_y, float(row_bounds["width"]), lane_height)
         marker_bounds = make_bounds(float(marker_bounds["x"]), current_y, float(marker_bounds["width"]), lane_height)
-        text_bounds = make_bounds(float(text_bounds["x"]), current_y, float(text_bounds["width"]), lane_height)
+        text_height = max(8.0, lane_height - top_padding - bottom_padding)
+        text_bounds = make_bounds(float(text_bounds["x"]), current_y + top_padding, float(text_bounds["width"]), text_height)
         layouts[row_index] = {
             "lane_bounds": lane_bounds,
             "marker_bounds": marker_bounds,
@@ -741,7 +747,7 @@ def build_description_lane_layout(
         current_y += lane_height
     if footer_atom:
         footer_bounds = footer_atom["visual_bounds_px"]
-        footer_y = min(current_y + 6.0, max_bottom - 14.0)
+        footer_y = min(current_y + 8.0, max_bottom - 14.0)
         footer_height = max(14.0, min(float(footer_bounds["height"]), max_bottom - footer_y))
         layouts[6] = {
             "lane_bounds": make_bounds(float(footer_bounds["x"]), footer_y, float(footer_bounds["width"]), footer_height),
