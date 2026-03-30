@@ -873,7 +873,12 @@ def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
     )
 
 
-def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> list[dict[str, Any]]:
+def build_dense_ui_panel_nodes(
+    page: dict[str, Any],
+    assets: dict[str, Any],
+    *,
+    include_dense_body_boxes: bool = False,
+) -> list[dict[str, Any]]:
     panel_bounds = dense_panel_bounds(page)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     chunk_bucket_map = {bucket["chunk_id"]: bucket for bucket in page.get("chunk_buckets") or []}
@@ -884,6 +889,8 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
         description_body_strategy == "chunk_container_leaf_text"
         and description_body_style_policy == "preserve_dense_background_overlay_text"
     )
+    if include_dense_body_boxes:
+        preserve_dense_body_background = False
     for atom in page.get("atoms") or []:
         owner_id = str(atom.get("owner_id") or "")
         if not owner_id.startswith("dense_ui_panel:"):
@@ -1111,9 +1118,9 @@ def build_dense_ui_panel_nodes(page: dict[str, Any], assets: dict[str, Any]) -> 
     return [panel_frame]
 
 
-def build_bundle(page: dict[str, Any], source_file: str) -> dict[str, Any]:
+def build_bundle(page: dict[str, Any], source_file: str, *, include_dense_body_boxes: bool = False) -> dict[str, Any]:
     assets: dict[str, Any] = {}
-    page_children = build_dense_ui_panel_nodes(page, assets)
+    page_children = build_dense_ui_panel_nodes(page, assets, include_dense_body_boxes=include_dense_body_boxes)
     root_bounds = make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT)
     inner_frame = {
         "id": f"{page['page_id']}:frame",
@@ -1226,6 +1233,60 @@ def extract_lower_body_text_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
     return extracted
 
 
+def prune_lower_body_text_box_layer(node: dict[str, Any], in_lower_body_chunk: bool = False) -> dict[str, Any] | None:
+    node_type = str(node.get("type") or "")
+    node_id = str(node.get("id") or "")
+    debug = node.get("debug") or {}
+    owner_id = str(debug.get("owner_id") or "")
+    child_in_lower_body_chunk = in_lower_body_chunk or node_id in LOWER_BODY_TEXT_CHUNK_IDS
+
+    if node_type == "TEXT":
+        if owner_id in LOWER_BODY_TEXT_OWNER_IDS:
+            pruned = dict(node)
+            pruned["children"] = []
+            return pruned
+        return None
+
+    if node_type == "RECTANGLE" and child_in_lower_body_chunk:
+        pruned = dict(node)
+        pruned["children"] = []
+        return pruned
+
+    pruned_children: list[dict[str, Any]] = []
+    for child in node.get("children") or []:
+        pruned_child = prune_lower_body_text_box_layer(child, child_in_lower_body_chunk)
+        if pruned_child is not None:
+            pruned_children.append(pruned_child)
+
+    if node_id in LOWER_BODY_TEXT_CHUNK_IDS:
+        if not pruned_children:
+            return None
+        pruned = dict(node)
+        pruned["children"] = pruned_children
+        return pruned
+
+    if pruned_children:
+        pruned = dict(node)
+        pruned["children"] = pruned_children
+        return pruned
+
+    return None
+
+
+def extract_lower_body_text_box_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
+    document = bundle.get("document") or {}
+    pruned_document = prune_lower_body_text_box_layer(document)
+    if pruned_document is None:
+        raise SystemExit("lower body text/box extraction produced an empty bundle")
+
+    extracted = dict(bundle)
+    extracted["page_name"] = f"{bundle.get('page_name')} - Lower Body Text And Boxes"
+    extracted["node_id"] = pruned_document.get("id")
+    extracted["document"] = pruned_document
+    extracted["debug"] = dict(bundle.get("debug") or {}, export_mode="lower_body_text_and_boxes")
+    return extracted
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a dense-ui-panel replay bundle from resolved PPT IR.")
     parser.add_argument("--input", required=True, help="Resolved IR JSON path")
@@ -1233,7 +1294,7 @@ def main() -> None:
     parser.add_argument("--slide", type=int, default=29, help="Slide number to render")
     parser.add_argument(
         "--export-mode",
-        choices=["full", "lower_body_text_only"],
+        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes"],
         default="full",
         help="Optional post-processing mode for the generated bundle",
     )
@@ -1248,9 +1309,15 @@ def main() -> None:
     if str(page.get("page_type") or "") != "dense_ui_panel":
         raise SystemExit(f"slide {args.slide} is not dense_ui_panel (got {page.get('page_type')})")
 
-    bundle = build_bundle(page, str(input_path))
+    bundle = build_bundle(
+        page,
+        str(input_path),
+        include_dense_body_boxes=args.export_mode == "lower_body_text_and_boxes",
+    )
     if args.export_mode == "lower_body_text_only":
         bundle = extract_lower_body_text_bundle(bundle)
+    elif args.export_mode == "lower_body_text_and_boxes":
+        bundle = extract_lower_body_text_box_bundle(bundle)
     output_path = Path(args.output).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")
