@@ -1221,6 +1221,16 @@ def chunk_bucket(page: dict[str, Any], chunk_id: str) -> dict[str, Any] | None:
     return None
 
 
+def use_svg_dense_panel_stack(page: dict[str, Any]) -> bool:
+    if str(page.get("page_type") or "") != "dense_ui_panel":
+        return False
+    description_body_bucket = chunk_bucket(page, "dense_ui_panel:description_body_chunk") or {}
+    return (
+        str(description_body_bucket.get("render_strategy") or "") == "chunk_container_leaf_text"
+        and str(description_body_bucket.get("style_policy") or "") == "preserve_dense_background_overlay_text"
+    )
+
+
 def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
     return (
         int(atom.get("z_index") or 0),
@@ -1515,6 +1525,10 @@ def build_bundle(
     include_dense_body_overlays: bool = False,
     include_version_last: bool = False,
 ) -> dict[str, Any]:
+    inferred_svg_stack = use_svg_dense_panel_stack(page)
+    include_dense_body_grid = include_dense_body_grid or inferred_svg_stack
+    include_dense_body_overlays = include_dense_body_overlays or inferred_svg_stack
+    include_version_last = include_version_last or inferred_svg_stack
     assets: dict[str, Any] = {}
     page_children = build_dense_ui_panel_nodes(
         page,
