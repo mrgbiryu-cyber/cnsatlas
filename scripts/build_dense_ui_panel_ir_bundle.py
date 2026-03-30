@@ -488,7 +488,7 @@ def version_stack_label_and_detail(atom: dict[str, Any]) -> tuple[str, str]:
     return lines[0], "\n".join(lines[1:]).strip()
 
 
-def build_version_stack_block(atom: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any] | None]:
+def build_version_stack_block(atom: dict[str, Any], *, use_svg_background: bool = False) -> tuple[dict[str, Any], dict[str, Any] | None]:
     bounds = dict(atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
     label_text, detail_text = version_stack_label_and_detail(atom)
     label_height = min(12.0, max(6.0, float(bounds["height"]) * 0.2))
@@ -498,7 +498,10 @@ def build_version_stack_block(atom: dict[str, Any]) -> tuple[dict[str, Any], dic
         max(float(bounds["width"]) - 14.0, 8.0),
         label_height,
     )
-    block_children = [build_rect_node(atom, suffix=":bg")]
+    if use_svg_background:
+        block_children = [build_overlay_svg_rect_node(atom, suffix=":bg")]
+    else:
+        block_children = [build_rect_node(atom, suffix=":bg")]
     if label_text:
         block_children.append(build_text_leaf(atom, label_text, label_bounds, suffix=":label"))
     block_group = build_owner_frame(f"{atom['id']}:version_block", block_children, bounds=bounds)
@@ -1316,7 +1319,7 @@ def build_dense_ui_panel_nodes(
             role = str(atom.get("layer_role") or "")
             subtype = str(atom.get("subtype") or "")
             if role == "version_stack":
-                block_group, detail_node = build_version_stack_block(atom)
+                block_group, detail_node = build_version_stack_block(atom, use_svg_background=include_version_last)
                 owner_children.append(block_group)
                 if detail_node:
                     owner_children.append(detail_node)
