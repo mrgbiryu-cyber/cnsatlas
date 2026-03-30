@@ -681,6 +681,59 @@ def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | N
     }
 
 
+def build_svg_rect_node(
+    node_id: str,
+    name: str,
+    bounds: dict[str, Any],
+    *,
+    fill: dict[str, float] | None = None,
+    fill_opacity: float = 1.0,
+    stroke: dict[str, float] | None = None,
+    stroke_opacity: float = 1.0,
+    stroke_weight: float = 0.0,
+    owner_id: str = "dense_ui_panel:description_table_grid",
+) -> dict[str, Any]:
+    width = max(float(bounds["width"]), 1.0)
+    height = max(float(bounds["height"]), 1.0)
+    svg_parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+    ]
+    if stroke is not None and stroke_weight > 0.0:
+        stroke_css = f'rgb({round(stroke["r"] * 255)}, {round(stroke["g"] * 255)}, {round(stroke["b"] * 255)})'
+        fill_css = "none"
+        fill_attr = ""
+        if fill is not None:
+            fill_css = f'rgb({round(fill["r"] * 255)}, {round(fill["g"] * 255)}, {round(fill["b"] * 255)})'
+            fill_attr = f' fill="{fill_css}" fill-opacity="{fill_opacity}"'
+        inset = stroke_weight / 2.0
+        svg_parts.append(
+            f'<rect x="{inset}" y="{inset}" width="{max(width - stroke_weight, 0.5)}" height="{max(height - stroke_weight, 0.5)}"'
+            f'{fill_attr} stroke="{stroke_css}" stroke-opacity="{stroke_opacity}" stroke-width="{stroke_weight}"/>'
+        )
+    else:
+        fill_css = "rgb(255,255,255)"
+        fill_alpha = 0.0
+        if fill is not None:
+            fill_css = f'rgb({round(fill["r"] * 255)}, {round(fill["g"] * 255)}, {round(fill["b"] * 255)})'
+            fill_alpha = fill_opacity
+        svg_parts.append(f'<rect x="0" y="0" width="{width}" height="{height}" fill="{fill_css}" fill-opacity="{fill_alpha}"/>')
+    svg_parts.append("</svg>")
+    return {
+        "id": node_id,
+        "type": "SVG_BLOCK",
+        "name": name,
+        "absoluteBoundingBox": dict(bounds),
+        "relativeTransform": identity_affine(),
+        "svgMarkup": "".join(svg_parts),
+        "children": [],
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "owner_id": owner_id,
+            "role": "dense_table_grid_svg",
+        },
+    }
+
+
 def build_image_node(atom: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any] | None:
     image_base64 = atom.get("image_base64")
     if not image_base64:
@@ -890,7 +943,7 @@ def build_dense_table_grid_layer(
         text_bounds = layout["text_bounds"]
         if marker_bounds:
             children.append(
-                build_grid_rect(
+                build_svg_rect_node(
                     f"dense-table-grid:row-{row_index}:marker-fill",
                     f"row_{row_index}_marker_fill",
                     make_bounds(marker_bounds["x"], lane_bounds["y"], max(float(marker_bounds["width"]) - 0.4, 8.0), lane_bounds["height"]),
@@ -898,7 +951,7 @@ def build_dense_table_grid_layer(
                 )
             )
         children.append(
-            build_grid_rect(
+            build_svg_rect_node(
                 f"dense-table-grid:row-{row_index}:text-fill",
                 f"row_{row_index}_text_fill",
                 make_bounds(divider_x, lane_bounds["y"], table_right - divider_x, lane_bounds["height"]),
@@ -909,7 +962,7 @@ def build_dense_table_grid_layer(
     if footer_layout:
         footer_bounds = footer_layout["lane_bounds"]
         children.append(
-            build_grid_rect(
+            build_svg_rect_node(
                 "dense-table-grid:footer-fill",
                 "footer_fill",
                 footer_bounds,
@@ -931,7 +984,7 @@ def build_dense_table_grid_layer(
             continue
         seen_horizontal.add(rounded)
         children.append(
-            build_grid_rect(
+            build_svg_rect_node(
                 f"dense-table-grid:hline:{rounded}",
                 f"hline_{rounded}",
                 make_bounds(table_left - 0.12, position - line_half, (table_right - table_left) + 0.24, line_weight),
@@ -941,25 +994,26 @@ def build_dense_table_grid_layer(
                 fill=None,
             )
         )
-        children[-1]["fills"] = []
-        children[-1]["strokes"] = [{"type": "SOLID", "color": line_color, "opacity": 1.0}]
-        children[-1]["strokeWeight"] = line_weight
+        children[-1] = build_svg_rect_node(
+            f"dense-table-grid:hline:{rounded}",
+            f"hline_{rounded}",
+            make_bounds(table_left - 0.12, position - line_half, (table_right - table_left) + 0.24, line_weight),
+            stroke=line_color,
+            stroke_opacity=1.0,
+            stroke_weight=line_weight,
+        )
 
     for position, label in [(table_left, "left"), (divider_x, "divider"), (table_right, "right")]:
         children.append(
-            build_grid_rect(
+            build_svg_rect_node(
                 f"dense-table-grid:vline:{label}",
                 f"vline_{label}",
                 make_bounds(position - line_half, table_top - 0.13, line_weight, (table_bottom - table_top) + 0.26),
                 stroke=line_color,
                 stroke_opacity=1.0,
-                stroke_weight=0.0,
-                fill=None,
+                stroke_weight=line_weight,
             )
         )
-        children[-1]["fills"] = []
-        children[-1]["strokes"] = [{"type": "SOLID", "color": line_color, "opacity": 1.0}]
-        children[-1]["strokeWeight"] = line_weight
 
     return build_owner_group("dense_ui_panel:description_table_grid", children)
 
@@ -1179,6 +1233,7 @@ def build_dense_ui_panel_nodes(
     include_dense_body_boxes: bool = False,
     include_dense_body_grid: bool = False,
     include_dense_body_overlays: bool = False,
+    include_version_last: bool = False,
 ) -> list[dict[str, Any]]:
     panel_bounds = dense_panel_bounds(page)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -1385,6 +1440,14 @@ def build_dense_ui_panel_nodes(
             "dense_ui_panel:issue_chunk": 20,
         }
         children = sorted(children, key=lambda node: overlay_order.get(str(node.get("id") or ""), chunk_priority(str(node.get("id") or ""))))
+    if include_version_last:
+        version_order = {
+            "dense_ui_panel:description_body_chunk": 18,
+            "dense_ui_panel:description_footer_chunk": 19,
+            "dense_ui_panel:issue_chunk": 20,
+            "dense_ui_panel:version_stack_chunk": 21,
+        }
+        children = sorted(children, key=lambda node: version_order.get(str(node.get("id") or ""), chunk_priority(str(node.get("id") or ""))))
 
     content_bounds = union_bounds(
         [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in children]
@@ -1447,6 +1510,7 @@ def build_bundle(
     include_dense_body_boxes: bool = False,
     include_dense_body_grid: bool = False,
     include_dense_body_overlays: bool = False,
+    include_version_last: bool = False,
 ) -> dict[str, Any]:
     assets: dict[str, Any] = {}
     page_children = build_dense_ui_panel_nodes(
@@ -1455,6 +1519,7 @@ def build_bundle(
         include_dense_body_boxes=include_dense_body_boxes,
         include_dense_body_grid=include_dense_body_grid,
         include_dense_body_overlays=include_dense_body_overlays,
+        include_version_last=include_version_last,
     )
     root_bounds = make_bounds(0.0, 0.0, TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT)
     inner_frame = {
@@ -1520,6 +1585,13 @@ LOWER_BODY_OVERLAY_CHUNK_IDS = {
     "dense_ui_panel:issue_chunk",
 }
 
+LOWER_BODY_OVERLAY_VERSION_CHUNK_IDS = {
+    "dense_ui_panel:description_body_chunk",
+    "dense_ui_panel:description_footer_chunk",
+    "dense_ui_panel:issue_chunk",
+    "dense_ui_panel:version_stack_chunk",
+}
+
 LOWER_BODY_TEXT_OWNER_IDS = {
     "dense_ui_panel:description_lanes",
     "dense_ui_panel:description_footer",
@@ -1529,6 +1601,13 @@ LOWER_BODY_OVERLAY_OWNER_IDS = {
     "dense_ui_panel:description_lanes",
     "dense_ui_panel:description_footer",
     "dense_ui_panel:issue_card",
+}
+
+LOWER_BODY_OVERLAY_VERSION_OWNER_IDS = {
+    "dense_ui_panel:description_lanes",
+    "dense_ui_panel:description_footer",
+    "dense_ui_panel:issue_card",
+    "dense_ui_panel:version_stack",
 }
 
 
@@ -1679,6 +1758,24 @@ def extract_lower_body_text_grid_overlay_bundle(bundle: dict[str, Any]) -> dict[
     return extracted
 
 
+def extract_lower_body_text_grid_overlay_version_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
+    document = bundle.get("document") or {}
+    pruned_document = prune_lower_body_text_box_layer(
+        document,
+        allowed_chunk_ids=LOWER_BODY_OVERLAY_VERSION_CHUNK_IDS,
+        allowed_text_owner_ids=LOWER_BODY_OVERLAY_VERSION_OWNER_IDS,
+    )
+    if pruned_document is None:
+        raise SystemExit("lower body text/grid/overlay/version extraction produced an empty bundle")
+
+    extracted = dict(bundle)
+    extracted["page_name"] = f"{bundle.get('page_name')} - Lower Body Text Grid Overlays And Versions"
+    extracted["node_id"] = pruned_document.get("id")
+    extracted["document"] = pruned_document
+    extracted["debug"] = dict(bundle.get("debug") or {}, export_mode="lower_body_text_grid_overlays_and_versions")
+    return extracted
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a dense-ui-panel replay bundle from resolved PPT IR.")
     parser.add_argument("--input", required=True, help="Resolved IR JSON path")
@@ -1686,7 +1783,7 @@ def main() -> None:
     parser.add_argument("--slide", type=int, default=29, help="Slide number to render")
     parser.add_argument(
         "--export-mode",
-        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid", "lower_body_text_grid_and_overlays"],
+        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid", "lower_body_text_grid_and_overlays", "lower_body_text_grid_overlays_and_versions"],
         default="full",
         help="Optional post-processing mode for the generated bundle",
     )
@@ -1715,6 +1812,14 @@ def main() -> None:
             include_dense_body_grid=True,
             include_dense_body_overlays=True,
         )
+    elif args.export_mode == "lower_body_text_grid_overlays_and_versions":
+        bundle = build_bundle(
+            page,
+            str(input_path),
+            include_dense_body_grid=True,
+            include_dense_body_overlays=True,
+            include_version_last=True,
+        )
     if args.export_mode == "lower_body_text_only":
         bundle = extract_lower_body_text_bundle(bundle)
     elif args.export_mode == "lower_body_text_and_boxes":
@@ -1723,6 +1828,8 @@ def main() -> None:
         bundle = extract_lower_body_text_grid_bundle(bundle)
     elif args.export_mode == "lower_body_text_grid_and_overlays":
         bundle = extract_lower_body_text_grid_overlay_bundle(bundle)
+    elif args.export_mode == "lower_body_text_grid_overlays_and_versions":
+        bundle = extract_lower_body_text_grid_overlay_version_bundle(bundle)
     output_path = Path(args.output).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")
