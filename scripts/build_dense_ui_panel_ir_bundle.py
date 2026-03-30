@@ -405,6 +405,8 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
     style = text_style(atom)
     font_size = float(style["fontSize"])
     line_height = float(style["lineHeightPx"])
+    if str(atom.get("owner_id") or "") == "dense_ui_panel:description_lanes":
+        line_height = min(line_height, round(font_size + 0.9, 2))
     lines = body_text_lines(atom, float(bounds["width"]), font_size)
     if not lines:
         return build_owner_group(f"{atom['id']}{suffix}:empty", [])
@@ -671,6 +673,10 @@ def estimate_text_height(text: str, width: float, font_size: float, line_gap: fl
 
 
 def estimate_paragraph_group_height(atom: dict[str, Any], width: float, font_size: float, line_gap: float = 2.0) -> float:
+    if str(atom.get("owner_id") or "") == "dense_ui_panel:description_lanes":
+        rendered_line_height = min(float(text_style(atom, font_size).get("lineHeightPx") or (font_size * 1.25)), round(font_size + 0.9, 2))
+        line_count = max(1, len(body_text_lines(atom, width, font_size)))
+        return line_count * rendered_line_height
     paragraphs = paragraph_texts(atom)
     if not paragraphs:
         return estimate_text_height(str(atom.get("text") or ""), width, font_size, line_gap)
