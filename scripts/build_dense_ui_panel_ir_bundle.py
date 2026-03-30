@@ -947,11 +947,76 @@ def build_bundle(page: dict[str, Any], source_file: str) -> dict[str, Any]:
     }
 
 
+LOWER_BODY_TEXT_CHUNK_IDS = {
+    "dense_ui_panel:description_body_chunk",
+    "dense_ui_panel:description_footer_chunk",
+}
+
+LOWER_BODY_TEXT_OWNER_IDS = {
+    "dense_ui_panel:description_lanes",
+    "dense_ui_panel:description_footer",
+}
+
+
+def prune_lower_body_text_layer(node: dict[str, Any]) -> dict[str, Any] | None:
+    node_type = str(node.get("type") or "")
+    node_id = str(node.get("id") or "")
+    debug = node.get("debug") or {}
+    owner_id = str(debug.get("owner_id") or "")
+
+    if node_type == "TEXT":
+        if owner_id in LOWER_BODY_TEXT_OWNER_IDS:
+            pruned = dict(node)
+            pruned["children"] = []
+            return pruned
+        return None
+
+    pruned_children: list[dict[str, Any]] = []
+    for child in node.get("children") or []:
+        pruned_child = prune_lower_body_text_layer(child)
+        if pruned_child is not None:
+            pruned_children.append(pruned_child)
+
+    if node_id in LOWER_BODY_TEXT_CHUNK_IDS:
+        if not pruned_children:
+            return None
+        pruned = dict(node)
+        pruned["children"] = pruned_children
+        return pruned
+
+    if pruned_children:
+        pruned = dict(node)
+        pruned["children"] = pruned_children
+        return pruned
+
+    return None
+
+
+def extract_lower_body_text_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
+    document = bundle.get("document") or {}
+    pruned_document = prune_lower_body_text_layer(document)
+    if pruned_document is None:
+        raise SystemExit("lower body text layer extraction produced an empty bundle")
+
+    extracted = dict(bundle)
+    extracted["page_name"] = f"{bundle.get('page_name')} - Lower Body Text Layer"
+    extracted["node_id"] = pruned_document.get("id")
+    extracted["document"] = pruned_document
+    extracted["debug"] = dict(bundle.get("debug") or {}, export_mode="lower_body_text_only")
+    return extracted
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a dense-ui-panel replay bundle from resolved PPT IR.")
     parser.add_argument("--input", required=True, help="Resolved IR JSON path")
     parser.add_argument("--output", required=True, help="Output bundle path")
     parser.add_argument("--slide", type=int, default=29, help="Slide number to render")
+    parser.add_argument(
+        "--export-mode",
+        choices=["full", "lower_body_text_only"],
+        default="full",
+        help="Optional post-processing mode for the generated bundle",
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input).resolve()
@@ -964,6 +1029,8 @@ def main() -> None:
         raise SystemExit(f"slide {args.slide} is not dense_ui_panel (got {page.get('page_type')})")
 
     bundle = build_bundle(page, str(input_path))
+    if args.export_mode == "lower_body_text_only":
+        bundle = extract_lower_body_text_bundle(bundle)
     output_path = Path(args.output).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -1,0 +1,2213 @@
+{
+  "bundle_path": "docs/block-bundles/ir-dense-ui-panel-29-lower-body-text.bundle.json",
+  "page_name": "Slide 29 - Dense UI Panel - Lower Body Text Layer",
+  "text_node_count": 44,
+  "owner_counts": {
+    "dense_ui_panel:description_lanes": 43,
+    "dense_ui_panel:description_footer": 1
+  },
+  "y_sorted_ids": [
+    "s29:slide_29/element_37:row_3:cell_2:p1",
+    "s29:slide_29/element_37:row_3:cell_2:p2",
+    "s29:slide_29/element_37:row_4:cell_2:p1",
+    "s29:slide_29/element_37:row_4:cell_2:p2",
+    "s29:slide_29/element_37:row_4:cell_2:p3",
+    "s29:slide_29/element_37:row_4:cell_2:p4",
+    "s29:slide_29/element_37:row_4:cell_2:p5",
+    "s29:slide_29/element_37:row_4:cell_2:p6",
+    "s29:slide_29/element_37:row_4:cell_2:p7",
+    "s29:slide_29/element_37:row_4:cell_2:p8",
+    "s29:slide_29/element_37:row_4:cell_2:p9",
+    "s29:slide_29/element_37:row_4:cell_2:p10",
+    "s29:slide_29/element_37:row_4:cell_2:p11",
+    "s29:slide_29/element_37:row_4:cell_2:p12",
+    "s29:slide_29/element_37:row_4:cell_2:p13",
+    "s29:slide_29/element_37:row_4:cell_2:p14",
+    "s29:slide_29/element_37:row_4:cell_2:p15",
+    "s29:slide_29/element_37:row_4:cell_2:p16",
+    "s29:slide_29/element_37:row_4:cell_2:p17",
+    "s29:slide_29/element_37:row_4:cell_2:p18",
+    "s29:slide_29/element_37:row_4:cell_2:p19",
+    "s29:slide_29/element_37:row_4:cell_2:p20",
+    "s29:slide_29/element_37:row_4:cell_2:p21",
+    "s29:slide_29/element_37:row_4:cell_2:p22",
+    "s29:slide_29/element_37:row_4:cell_2:p23",
+    "s29:slide_29/element_37:row_5:cell_2:p1",
+    "s29:slide_29/element_37:row_5:cell_2:p2",
+    "s29:slide_29/element_37:row_5:cell_2:p3",
+    "s29:slide_29/element_37:row_5:cell_2:p4",
+    "s29:slide_29/element_37:row_5:cell_2:p5",
+    "s29:slide_29/element_37:row_5:cell_2:p6",
+    "s29:slide_29/element_37:row_5:cell_2:p7",
+    "s29:slide_29/element_37:row_5:cell_2:p8",
+    "s29:slide_29/element_37:row_5:cell_2:p9",
+    "s29:slide_29/element_37:row_5:cell_2:p10",
+    "s29:slide_29/element_37:row_5:cell_2:p11",
+    "s29:slide_29/element_37:row_5:cell_2:p12",
+    "s29:slide_29/element_37:row_5:cell_2:p13",
+    "s29:slide_29/element_37:row_5:cell_2:p14",
+    "s29:slide_29/element_37:row_5:cell_2:p15",
+    "s29:slide_29/element_37:row_5:cell_2:p16",
+    "s29:slide_29/element_37:row_5:cell_2:p17",
+    "s29:slide_29/element_37:row_6:cell_1:p1",
+    "s29:slide_29/element_37:row_5:cell_2:p18"
+  ],
+  "bbox_range": {
+    "min_x": 660.66,
+    "max_x": 935.6700000000001,
+    "min_y": 67.26,
+    "max_y": 528.0
+  },
+  "rows": {
+    "row_3": {
+      "text_node_count": 2,
+      "y_range": [
+        67.26,
+        78.01
+      ],
+      "sample_first": "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조",
+      "sample_last": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx"
+    },
+    "row_4": {
+      "text_node_count": 23,
+      "y_range": [
+        88.76,
+        325.26
+      ],
+      "sample_first": "[Key Visual 영역] – WCMS 콘텐츠 등록",
+      "sample_last": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어 디스클라이머 노출에 Y 체크"
+    },
+    "row_5": {
+      "text_node_count": 18,
+      "y_range": [
+        336.01,
+        518.76
+      ],
+      "sample_first": "[제품명 영역]",
+      "sample_last": "판매중, 일시품절 상태인 경우에만 노출"
+    },
+    "row_6": {
+      "text_node_count": 1,
+      "y_range": [
+        514.0,
+        514.0
+      ],
+      "sample_first": "뒷페이지 계속",
+      "sample_last": "뒷페이지 계속"
+    }
+  },
+  "nodes": [
+    {
+      "id": "s29:slide_29/element_37:row_3:cell_2:p1",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "[Sticky Header] 헤더 공통 정의는 하기 최신 공통 문서 정의 참조",
+      "bbox": {
+        "x": 686.22,
+        "y": 67.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_3",
+          "name": "lane_row_3",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_3:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_3:cell_2:p2",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "문서명 : LGEKR5.0-UIX-DE-02-스토리보드-F-(공통GNB개선)-V0.0.pptx",
+      "bbox": {
+        "x": 686.22,
+        "y": 78.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_3",
+          "name": "lane_row_3",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_3:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p1",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "[Key Visual 영역] – WCMS 콘텐츠 등록",
+      "bbox": {
+        "x": 686.22,
+        "y": 88.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p2",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "제품 visual 정보 제공 : 동영상&이미지(제품 인테리어컷, 상세컷)",
+      "bbox": {
+        "x": 686.22,
+        "y": 99.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p3",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "콘텐츠 노출 순서 : [PDP Key visual 영역 / 갤러리뷰 팝업 : 콘텐츠 타입별 노출 순서 정의] 참조",
+      "bbox": {
+        "x": 686.22,
+        "y": 110.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p4",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "좌우 swipe : 이전/다음 콘텐츠 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 121.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p5",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "동영상 : 선택 시, [PDP0001]갤러리뷰 팝업 노출되며 동영상 재생",
+      "bbox": {
+        "x": 686.22,
+        "y": 131.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p6",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "ㄴ Youtube case : WCMS에 등록한 썸네일 이미지 +재생아이콘 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 142.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p7",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "ㄴ Video File case : 동영상 음소거 상태로 자동반복재생",
+      "bbox": {
+        "x": 686.22,
+        "y": 153.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p8",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "이미지 : 선택 시, [PDP0001] 갤러리뷰 팝업 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 164.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p9",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "2a) 인디케이터 (등록 콘텐츠 2개 이상일 경우 노출)",
+      "bbox": {
+        "x": 686.22,
+        "y": 174.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p10",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "현재 노출 중인 콘텐츠 순서 / 총 콘텐츠 수 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 185.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p11",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "이전/다음 이동 버튼 : 선택 시 이전/다음 콘텐츠 이동",
+      "bbox": {
+        "x": 686.22,
+        "y": 196.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p12",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "(ex. 제일 마지막에서 다음 선택 시, 첫번째 콘텐츠로 이동)",
+      "bbox": {
+        "x": 686.22,
+        "y": 207.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p13",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "2b) 일시정지⇔재생 토글 버튼(Optional)",
+      "bbox": {
+        "x": 686.22,
+        "y": 217.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p14",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "버튼 선택 시, 영상 일시정지⇔재생 / *동영상(video file)에만 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 228.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p15",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "2C) 디스클라이머 문구 영역",
+      "bbox": {
+        "x": 686.22,
+        "y": 239.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p16",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "CMS에서 인테리어컷 내 디스클라이머 노출여부에 ‘Y’ 로 설정되어 있고 인테리어컷 이미지가 등록되어 있을 경우 디스클라이머 문구 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 250.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p17",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "2d) 닷컴 only 뱃지",
+      "bbox": {
+        "x": 686.22,
+        "y": 260.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p18",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "- CMS > 제품 > 모델 > 모델 관리 > 모델기본정보",
+      "bbox": {
+        "x": 686.22,
+        "y": 271.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p19",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "-> 닷컴 전용 여부 ‘Y’로 설정시 PDP 제품 이미지 영역에 닷컴 only 뱃지 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 282.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p20",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "2e) Video File 타입의 360미디어 디스클라이머 문구 영역",
+      "bbox": {
+        "x": 686.22,
+        "y": 293.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p21",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "하기 조건 모두 충족 시 문구 제공",
+      "bbox": {
+        "x": 686.22,
+        "y": 303.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p22",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "1) WCMS > [KRP0008] > 비디오 > Video File > ‘360미디어용도’에 체크",
+      "bbox": {
+        "x": 686.22,
+        "y": 314.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_4:cell_2:p23",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "2) CMS > CMS > 제품 > 모델관리 > 모델기본 정보 팝업 > 360미디어 디스클라이머 노출에 Y 체크",
+      "bbox": {
+        "x": 686.22,
+        "y": 325.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_4",
+          "name": "lane_row_4",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_4:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p1",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "[제품명 영역]",
+      "bbox": {
+        "x": 686.22,
+        "y": 336.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p2",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "Badge 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 346.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p3",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "- 다품목할인 > 내일배송(판매예정) > UP가전 Badge 순으로 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 357.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p4",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "- 최대 1줄 노출하며, 강조텍스트 Badge갯수로 인해 줄 바꿈이 필요한 경우, 해당 강조텍스트 Badge 미 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 368.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p5",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "(e.g. 다품목할인, 내일배송, UP가전, 신제품, 베스트, 특별세일, 쿠폰할인 Badge 설정되어 있는 상품 → 스크린 크기로 인해 특별세일, 쿠폰할인 줄 바꿈 필요한 경우 특별세일, 쿠폰할인 미 노출)",
+      "bbox": {
+        "x": 686.22,
+        "y": 379.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p6",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "노출순서 변경됨: 으뜸효율환급 > 베스트 랭킹 순위 >YYYY년 출시 > 다품목 할인> UP가전 > 강조텍스트(뱃지관리 등록)",
+      "bbox": {
+        "x": 686.22,
+        "y": 389.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p7",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "기존과 동일하게 줄 바꿈 적용함",
+      "bbox": {
+        "x": 686.22,
+        "y": 400.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p8",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "디자인 변경됨: PLP 뱃지 스타일과 동일하게 빨간색 텍스트로 변경",
+      "bbox": {
+        "x": 686.22,
+        "y": 411.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p9",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "[참고사항]",
+      "bbox": {
+        "x": 686.22,
+        "y": 422.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p10",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "★ 기존의 판매예정, 내일배송, 쿠폰할인 뱃지가 삭제됨",
+      "bbox": {
+        "x": 686.22,
+        "y": 432.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p11",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "★  YYYY년 출시, 다품목 할인, UP가전 뱃지는 PLP 뱃지 스타일(black)과 PDP 뱃지 스타일(red)이 다름",
+      "bbox": {
+        "x": 686.22,
+        "y": 443.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p12",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "★ 강조텍스트 뱃지는 PLP에서 비노출됨",
+      "bbox": {
+        "x": 686.22,
+        "y": 454.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p13",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "고효율가전",
+      "bbox": {
+        "x": 686.22,
+        "y": 465.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p14",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "신규 추가됨",
+      "bbox": {
+        "x": 686.22,
+        "y": 475.76,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p15",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "CMS > 제품 > 모델 > 모델관리 > 모델기본정보",
+      "bbox": {
+        "x": 686.22,
+        "y": 486.51,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p16",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "--> 으뜸효율환급 여부 ‘Y’로 설정 시 뱃지 제공",
+      "bbox": {
+        "x": 686.22,
+        "y": 497.26,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p17",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "뱃지 우선순위 중 최상위",
+      "bbox": {
+        "x": 686.22,
+        "y": 508.01,
+        "width": 249.45,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_5:cell_2:p18",
+      "owner_id": "dense_ui_panel:description_lanes",
+      "text": "판매중, 일시품절 상태인 경우에만 노출",
+      "bbox": {
+        "x": 686.22,
+        "y": 518.76,
+        "width": 249.45,
+        "height": 9.24
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_body_chunk",
+          "name": "description_body_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:lane_row_5",
+          "name": "lane_row_5",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_5:cell_2:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    },
+    {
+      "id": "s29:slide_29/element_37:row_6:cell_1:p1",
+      "owner_id": "dense_ui_panel:description_footer",
+      "text": "뒷페이지 계속",
+      "bbox": {
+        "x": 660.66,
+        "y": 514.0,
+        "width": 275.01,
+        "height": 10.75
+      },
+      "ancestors": [
+        {
+          "id": "page:29",
+          "name": "Slide 29 - Dense UI Panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:frame",
+          "name": "Frame",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel",
+          "name": "dense_ui_panel",
+          "type": "FRAME"
+        },
+        {
+          "id": "page:29:dense_ui_panel:logical",
+          "name": "dense_ui_panel_logical",
+          "type": "FRAME"
+        },
+        {
+          "id": "dense_ui_panel:description_footer_chunk",
+          "name": "description_footer_chunk",
+          "type": "GROUP"
+        },
+        {
+          "id": "dense_ui_panel:description_footer",
+          "name": "description_footer",
+          "type": "FRAME"
+        },
+        {
+          "id": "s29:slide_29/element_37:row_6:cell_1:paragraphs",
+          "name": "paragraphs",
+          "type": "GROUP"
+        }
+      ]
+    }
+  ]
+}
