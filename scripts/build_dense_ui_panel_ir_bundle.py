@@ -745,7 +745,7 @@ def build_dense_table_grid_layer(
                 build_grid_rect(
                     f"dense-table-grid:row-{row_index}:marker-fill",
                     f"row_{row_index}_marker_fill",
-                    make_bounds(marker_bounds["x"], lane_bounds["y"], marker_bounds["width"], lane_bounds["height"]),
+                    make_bounds(marker_bounds["x"], lane_bounds["y"], max(float(marker_bounds["width"]) - 0.4, 8.0), lane_bounds["height"]),
                     fill=marker_fill,
                 )
             )
@@ -871,6 +871,13 @@ def build_description_lane_layout(
         row_bounds = row_atom["visual_bounds_px"]
         marker_bounds = dict(marker_atom["visual_bounds_px"]) if marker_atom else make_bounds(row_bounds["x"], current_y, 24.0, row_bounds["height"])
         text_bounds = dict(text_atom["visual_bounds_px"]) if text_atom else make_bounds(marker_bounds["x"] + marker_bounds["width"], current_y, row_bounds["width"] - marker_bounds["width"], row_bounds["height"])
+        text_gutter = 2.8
+        text_bounds = make_bounds(
+            float(text_bounds["x"]) + text_gutter,
+            float(text_bounds["y"]),
+            max(float(text_bounds["width"]) - text_gutter, 8.0),
+            float(text_bounds["height"]),
+        )
         if issue_bounds and row_index in {3, 4}:
             issue_left = float(issue_bounds["x"])
             available_width = issue_left - float(text_bounds["x"]) - 8.0
