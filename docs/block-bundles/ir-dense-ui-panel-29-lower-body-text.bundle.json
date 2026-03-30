@@ -149,7 +149,7 @@
                       "x": 660.66,
                       "y": 67.26,
                       "width": 275.0,
-                      "height": 460.74
+                      "height": 410.8
                     },
                     "relativeTransform": [
                       [
@@ -1930,7 +1930,7 @@
                           "x": 660.66,
                           "y": 320.06,
                           "width": 275.0,
-                          "height": 207.94
+                          "height": 158.0
                         },
                         "relativeTransform": [
                           [
@@ -1957,7 +1957,7 @@
                               "x": 686.22,
                               "y": 320.06,
                               "width": 249.45,
-                              "height": 207.94
+                              "height": 158.0
                             },
                             "relativeTransform": [
                               [
@@ -2991,363 +2991,6 @@
                                   "owner_id": "dense_ui_panel:description_lanes",
                                   "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
                                 }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p21",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "--> 으뜸효율환급 여부 ‘Y’로 설정 시 뱃지 제공",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 478.06,
-                                  "width": 249.45,
-                                  "height": 7.9
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p22",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "뱃지 우선순위 중 최상위",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 485.96,
-                                  "width": 249.45,
-                                  "height": 7.9
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p23",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "판매중, 일시품절 상태인 경우에만 노출",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 493.86,
-                                  "width": 249.45,
-                                  "height": 7.9
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p24",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "베스트 랭킹 순위",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 501.76,
-                                  "width": 249.45,
-                                  "height": 7.9
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p25",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "신규 추가됨",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 509.66,
-                                  "width": 249.45,
-                                  "height": 7.9
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p26",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "”FRONT > 홈 > 제품/소모품 > 베스트 랭킹 > 오늘의 랭킹＂내 카테고리별",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 517.56,
-                                  "width": 249.45,
-                                  "height": 7.9
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
-                              },
-                              {
-                                "id": "s29:slide_29/element_37:row_5:cell_2:p27",
-                                "type": "TEXT",
-                                "name": "cell 5-2",
-                                "characters": "베스트 랭킹 1~3위 가전인 경우에만 노출(가격대 및 용량/사이즈/면적",
-                                "absoluteBoundingBox": {
-                                  "x": 686.22,
-                                  "y": 525.46,
-                                  "width": 249.45,
-                                  "height": 2.54
-                                },
-                                "relativeTransform": [
-                                  [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                ],
-                                "fills": [
-                                  {
-                                    "type": "SOLID",
-                                    "color": {
-                                      "r": 0.0,
-                                      "g": 0.0,
-                                      "b": 0.0
-                                    },
-                                    "opacity": 1.0
-                                  }
-                                ],
-                                "style": {
-                                  "fontFamily": "맑은 고딕",
-                                  "fontStyle": "Regular",
-                                  "fontSize": 7.0,
-                                  "textAlignHorizontal": "LEFT",
-                                  "textAlignVertical": "TOP",
-                                  "textAutoResize": "HEIGHT",
-                                  "lineHeightPx": 8.75
-                                },
-                                "children": [],
-                                "debug": {
-                                  "generator": "dense-ui-ir-v1",
-                                  "layer_role": "description_text_lane",
-                                  "owner_id": "dense_ui_panel:description_lanes",
-                                  "source_atom_id": "s29:slide_29/element_37:row_5:cell_2"
-                                }
                               }
                             ],
                             "debug": {
@@ -3374,7 +3017,7 @@
                     "name": "description_footer_chunk",
                     "absoluteBoundingBox": {
                       "x": 660.66,
-                      "y": 514.0,
+                      "y": 484.06,
                       "width": 275.01,
                       "height": 14.0
                     },
@@ -3397,7 +3040,7 @@
                         "name": "description_footer",
                         "absoluteBoundingBox": {
                           "x": 660.66,
-                          "y": 514.0,
+                          "y": 484.06,
                           "width": 275.01,
                           "height": 14.0
                         },
@@ -3424,7 +3067,7 @@
                             "name": "paragraphs",
                             "absoluteBoundingBox": {
                               "x": 660.66,
-                              "y": 514.0,
+                              "y": 484.06,
                               "width": 275.01,
                               "height": 8.75
                             },
@@ -3448,7 +3091,7 @@
                                 "characters": "뒷페이지 계속",
                                 "absoluteBoundingBox": {
                                   "x": 660.66,
-                                  "y": 514.0,
+                                  "y": 484.06,
                                   "width": 275.01,
                                   "height": 8.75
                                 },

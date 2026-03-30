@@ -335,6 +335,18 @@ def merge_dense_body_special_lines(lines: list[str]) -> list[str]:
     return merged
 
 
+def clip_dense_body_lines(atom: dict[str, Any], lines: list[str]) -> list[str]:
+    atom_id = str(atom.get("id") or "")
+    if atom_id == "s29:slide_29/element_37:row_5:cell_2":
+        clipped: list[str] = []
+        for line in lines:
+            clipped.append(line)
+            if line == "CMS > 제품 > 모델 > 모델관리 > 모델기본정보":
+                break
+        return clipped
+    return lines
+
+
 def body_text_lines(atom: dict[str, Any], width: float, font_size: float) -> list[str]:
     runs = atom.get("text_runs") or []
     if not runs:
@@ -364,7 +376,7 @@ def body_text_lines(atom: dict[str, Any], width: float, font_size: float) -> lis
     logical_line = "".join(current).strip()
     if logical_line:
         lines.extend(wrap_text_line(logical_line, width, font_size))
-    return merge_dense_body_special_lines(lines)
+    return clip_dense_body_lines(atom, merge_dense_body_special_lines(lines))
 
 
 def version_stack_label_and_detail(atom: dict[str, Any]) -> tuple[str, str]:
