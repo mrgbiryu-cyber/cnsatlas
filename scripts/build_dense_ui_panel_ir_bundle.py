@@ -190,6 +190,61 @@ def paragraph_texts(atom: dict[str, Any]) -> list[str]:
     return paragraphs
 
 
+def normalize_match_text(text: str) -> str:
+    return re.sub(r"\s+", " ", str(text or "").strip())
+
+
+def is_default_text_fill(fill: dict[str, Any] | None) -> bool:
+    if not fill:
+        return True
+    resolved = str(fill.get("resolved_value") or "").upper()
+    value = str(fill.get("value") or "").upper()
+    return resolved in {"", "000000"} or value in {"TX1", "000000"}
+
+
+def inferred_line_fill(atom: dict[str, Any], line: str) -> dict[str, Any] | None:
+    runs = atom.get("text_runs") or []
+    if not runs:
+        return None
+    normalized_line = normalize_match_text(line)
+    if not normalized_line:
+        return None
+
+    scores: dict[str, float] = {}
+    fills_by_key: dict[str, dict[str, Any]] = {}
+    for run in runs:
+        if str(run.get("type") or "") != "text":
+            continue
+        fill = run.get("fill")
+        if is_default_text_fill(fill):
+            continue
+        snippet = normalize_match_text(run.get("text") or "")
+        if len(snippet) < 2:
+            continue
+        if snippet not in normalized_line and not normalized_line.startswith(snippet):
+            continue
+        key = json.dumps(fill, ensure_ascii=False, sort_keys=True)
+        scores[key] = scores.get(key, 0.0) + len(snippet)
+        fills_by_key[key] = fill
+
+    if not scores:
+        return None
+
+    best_key = max(scores, key=scores.get)
+    best_score = scores[best_key]
+    coverage = best_score / max(len(normalized_line), 1)
+    if coverage >= 0.28:
+        return fills_by_key[best_key]
+
+    best_fill = fills_by_key[best_key]
+    best_value = str(best_fill.get("value") or "").upper()
+    if normalized_line.startswith(("ㄴ Youtube case", "ㄴ Video File case", "[참고사항]", "★", "문서명 :")):
+        return best_fill
+    if best_value in {"ACCENT5", "0070C0", "FF0000"} and coverage >= 0.16:
+        return best_fill
+    return None
+
+
 def estimate_text_width(text: str, font_size: float) -> float:
     width = 0.0
     for char in text:
@@ -443,6 +498,9 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
         paragraph_bounds = make_bounds(left, current_y, width, paragraph_height)
         paragraph_atom = dict(atom)
         paragraph_atom["text"] = line
+        fill_override = inferred_line_fill(atom, line)
+        if fill_override:
+            paragraph_atom["text_style"] = dict(atom.get("text_style") or {}, fill=fill_override)
         children.append(build_text_node(paragraph_atom, paragraph_bounds, suffix=f"{suffix}:p{index + 1}"))
         current_y += paragraph_height
     return build_owner_group(f"{atom['id']}{suffix}:paragraphs", children)
