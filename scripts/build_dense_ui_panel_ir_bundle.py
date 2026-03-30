@@ -202,6 +202,19 @@ def is_default_text_fill(fill: dict[str, Any] | None) -> bool:
     return resolved in {"", "000000"} or value in {"TX1", "000000"}
 
 
+def first_fill_with_value(runs: list[dict[str, Any]], value: str) -> dict[str, Any] | None:
+    target = value.upper()
+    for run in runs:
+        if str(run.get("type") or "") != "text":
+            continue
+        fill = run.get("fill")
+        if not fill:
+            continue
+        if str(fill.get("value") or "").upper() == target or str(fill.get("resolved_value") or "").upper() == target:
+            return fill
+    return None
+
+
 def inferred_line_fill(atom: dict[str, Any], line: str) -> dict[str, Any] | None:
     runs = atom.get("text_runs") or []
     if not runs:
@@ -209,6 +222,16 @@ def inferred_line_fill(atom: dict[str, Any], line: str) -> dict[str, Any] | None
     normalized_line = normalize_match_text(line)
     if not normalized_line:
         return None
+
+    if normalized_line.startswith("[참고사항]") or normalized_line.startswith("★"):
+        blue_fill = first_fill_with_value(runs, "0070C0")
+        if blue_fill:
+            return blue_fill
+
+    if normalized_line.startswith("ㄴ Youtube case") or normalized_line.startswith("ㄴ Video File case"):
+        red_fill = first_fill_with_value(runs, "FF0000")
+        if red_fill:
+            return red_fill
 
     scores: dict[str, float] = {}
     fills_by_key: dict[str, dict[str, Any]] = {}
@@ -228,6 +251,26 @@ def inferred_line_fill(atom: dict[str, Any], line: str) -> dict[str, Any] | None
         fills_by_key[key] = fill
 
     if not scores:
+        if str(line).startswith("[참고사항]") or str(line).startswith("★"):
+            for run in runs:
+                if str(run.get("type") or "") != "text":
+                    continue
+                fill = run.get("fill")
+                if is_default_text_fill(fill):
+                    continue
+                text = str(run.get("text") or "")
+                if "[참고사항]" in text or text.startswith("★"):
+                    return fill
+        if normalized_line.startswith("ㄴ Youtube case") or normalized_line.startswith("ㄴ Video File case"):
+            for run in runs:
+                if str(run.get("type") or "") != "text":
+                    continue
+                fill = run.get("fill")
+                if is_default_text_fill(fill):
+                    continue
+                text = normalize_match_text(run.get("text") or "")
+                if text.startswith("ㄴ Youtube case") or text.startswith("ㄴ Video File case"):
+                    return fill
         return None
 
     best_key = max(scores, key=scores.get)
@@ -238,6 +281,10 @@ def inferred_line_fill(atom: dict[str, Any], line: str) -> dict[str, Any] | None
 
     best_fill = fills_by_key[best_key]
     best_value = str(best_fill.get("value") or "").upper()
+    if str(line).startswith("[참고사항]") or str(line).startswith("★"):
+        return best_fill
+    if normalized_line.startswith("ㄴ Youtube case") or normalized_line.startswith("ㄴ Video File case"):
+        return best_fill
     if normalized_line.startswith(("ㄴ Youtube case", "ㄴ Video File case", "[참고사항]", "★", "문서명 :")):
         return best_fill
     if best_value in {"ACCENT5", "0070C0", "FF0000"} and coverage >= 0.16:
