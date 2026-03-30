@@ -234,9 +234,9 @@
                             "type": "RECTANGLE",
                             "name": "row_3_text_fill",
                             "absoluteBoundingBox": {
-                              "x": 689.02,
+                              "x": 686.22,
                               "y": 67.26,
-                              "width": 246.65,
+                              "width": 249.45,
                               "height": 15.8
                             },
                             "relativeTransform": [
@@ -318,9 +318,9 @@
                             "type": "RECTANGLE",
                             "name": "row_4_text_fill",
                             "absoluteBoundingBox": {
-                              "x": 689.02,
+                              "x": 686.22,
                               "y": 83.06,
-                              "width": 246.65,
+                              "width": 249.45,
                               "height": 250.9
                             },
                             "relativeTransform": [
@@ -402,9 +402,9 @@
                             "type": "RECTANGLE",
                             "name": "row_5_text_fill",
                             "absoluteBoundingBox": {
-                              "x": 689.02,
+                              "x": 686.22,
                               "y": 333.96,
-                              "width": 246.65,
+                              "width": 249.45,
                               "height": 194.04
                             },
                             "relativeTransform": [
@@ -696,7 +696,7 @@
                             "type": "RECTANGLE",
                             "name": "vline_divider",
                             "absoluteBoundingBox": {
-                              "x": 688.89,
+                              "x": 686.09,
                               "y": 67.13,
                               "width": 0.25,
                               "height": 461.0

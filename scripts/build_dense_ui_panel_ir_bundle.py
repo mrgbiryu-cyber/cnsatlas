@@ -733,7 +733,7 @@ def build_dense_table_grid_layer(
     table_right = float(bottom_bounds["x"]) + float(bottom_bounds["width"])
     table_bottom = float(bottom_bounds["y"]) + float(bottom_bounds["height"])
 
-    divider_x = float(lane_layout[ordered_rows[0]]["text_bounds"]["x"])
+    divider_x = float(lane_layout[ordered_rows[0]]["marker_bounds"]["x"]) + float(lane_layout[ordered_rows[0]]["marker_bounds"]["width"])
 
     for row_index in ordered_rows:
         layout = lane_layout[row_index]
