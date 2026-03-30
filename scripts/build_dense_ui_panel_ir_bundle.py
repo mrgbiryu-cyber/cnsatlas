@@ -753,7 +753,7 @@ def build_dense_table_grid_layer(
             build_grid_rect(
                 f"dense-table-grid:row-{row_index}:text-fill",
                 f"row_{row_index}_text_fill",
-                make_bounds(text_bounds["x"], lane_bounds["y"], text_bounds["width"], lane_bounds["height"]),
+                make_bounds(divider_x, lane_bounds["y"], table_right - divider_x, lane_bounds["height"]),
                 fill=content_fill,
             )
         )
