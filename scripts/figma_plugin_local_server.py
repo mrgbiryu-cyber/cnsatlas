@@ -67,6 +67,9 @@ class LocalHandler(BaseHTTPRequestHandler):
                 {
                     "ok": True,
                     "kind": "intermediate",
+                    "serverVersion": self.server_version,
+                    "requestedSlides": slides,
+                    "pageCount": len(intermediate.get("pages") or []),
                     "payload": intermediate,
                     "slides": [page.get("slide_no") for page in intermediate.get("pages") or []],
                 },

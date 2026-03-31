@@ -333,7 +333,12 @@
           const slideLabel = payload.slides && payload.slides.length
             ? payload.slides.join(", ")
             : "none";
-          setStatus(`PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0})`);
+          const requestedLabel = Array.isArray(payload.requestedSlides) && payload.requestedSlides.length
+            ? payload.requestedSlides.join(", ")
+            : "ALL";
+          setStatus(
+            `PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, server: ${payload.serverVersion || "unknown"})`
+          );
           updateRenderAvailability();
           parent.postMessage({
             pluginMessage: {
