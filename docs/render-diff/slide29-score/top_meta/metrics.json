@@ -1,0 +1,12 @@
+{
+  "crop": {
+    "x": 20,
+    "y": 10,
+    "width": 940,
+    "height": 70
+  },
+  "width": 940,
+  "height": 70,
+  "changed_pixels": 29152,
+  "changed_ratio": 0.4430395136778115
+}
