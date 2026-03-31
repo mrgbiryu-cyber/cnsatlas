@@ -680,6 +680,7 @@ def build_atom(
     extra = candidate.get("extra") or {}
     role = layer_role(candidate, pattern_type)
     owner_id = owner_key(candidate, pattern_type, role=role, visual_bounds=scaled, context=context)
+    source_order_path = list(candidate.get("source_order_path") or [])
     return {
         "id": str(candidate.get("candidate_id") or ""),
         "parent_id": str(candidate.get("parent_candidate_id") or ""),
@@ -696,6 +697,7 @@ def build_atom(
         ),
         "layer_role": role,
         "z_index": z_index(role),
+        "source_order_path": source_order_path,
         "clip_scope": clip_scope(candidate, pattern_type),
         "render_mode": render_mode(candidate, pattern_type),
         "text": str(candidate.get("text") or ""),
@@ -726,6 +728,7 @@ def build_atom(
             "page_type": pattern_type,
             "source_page_type": str((context.get("visual_strategy") or {}).get("page_type") or "generic"),
             "source_path": candidate.get("source_path"),
+            "source_order_path": source_order_path,
         },
     }
 

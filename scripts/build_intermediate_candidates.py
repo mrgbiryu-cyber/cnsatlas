@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
 
 EMU_PER_PIXEL = 9525
+SOURCE_ORDER_RE = re.compile(r"(?:element|child|row|cell)_(\d+)")
 
 
 def emu_bounds_to_px(bounds: dict[str, int] | None) -> dict[str, float] | None:
@@ -41,6 +43,10 @@ def build_element_index(elements: list[dict[str, Any]]) -> dict[str, dict[str, A
 
     walk(elements)
     return index
+
+
+def parse_source_order_path(source_path: str) -> list[int]:
+    return [int(match.group(1)) for match in SOURCE_ORDER_RE.finditer(source_path or "")]
 
 
 def connection_point_px(bounds: dict[str, int] | None, idx: int | None) -> dict[str, float] | None:
@@ -274,6 +280,7 @@ def make_candidate(
     bounds_emu: dict[str, int] | None,
     extra: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    source_order_path = parse_source_order_path(source_path)
     payload = {
         "candidate_id": candidate_id,
         "parent_candidate_id": parent_candidate_id,
@@ -283,6 +290,7 @@ def make_candidate(
         "title": title,
         "text": text,
         "source_path": source_path,
+        "source_order_path": source_order_path,
         "source_node_id": source_node_id,
         "bounds_emu": bounds_emu,
         "bounds_px": emu_bounds_to_px(bounds_emu),

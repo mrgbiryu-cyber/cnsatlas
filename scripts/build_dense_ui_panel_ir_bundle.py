@@ -1466,9 +1466,10 @@ def use_svg_dense_panel_stack(page: dict[str, Any]) -> bool:
     )
 
 
-def atom_priority(atom: dict[str, Any]) -> tuple[int, float, float]:
+def atom_priority(atom: dict[str, Any]) -> tuple[int, tuple[int, ...], float, float]:
     return (
         int(atom.get("z_index") or 0),
+        tuple(int(v) for v in (atom.get("source_order_path") or [])),
         float((atom.get("visual_bounds_px") or {}).get("y") or 0.0),
         float((atom.get("visual_bounds_px") or {}).get("x") or 0.0),
     )
