@@ -909,6 +909,75 @@ def build_group_group(group_id: str, children: list[dict[str, Any]]) -> dict[str
     }
 
 
+def build_top_meta_cell_rect(
+    atom: dict[str, Any],
+    *,
+    fill_hex: str,
+    stroke_hex: str = "BFBFBF",
+    stroke_weight: float = 0.5,
+) -> dict[str, Any]:
+    color = {
+        "r": int(fill_hex[0:2], 16) / 255.0,
+        "g": int(fill_hex[2:4], 16) / 255.0,
+        "b": int(fill_hex[4:6], 16) / 255.0,
+    }
+    stroke = {
+        "r": int(stroke_hex[0:2], 16) / 255.0,
+        "g": int(stroke_hex[2:4], 16) / 255.0,
+        "b": int(stroke_hex[4:6], 16) / 255.0,
+    }
+    return {
+        "id": f"{atom['id']}:scaffold",
+        "type": "RECTANGLE",
+        "name": atom.get("id") or "top_meta_cell",
+        "absoluteBoundingBox": dict(atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)),
+        "relativeTransform": identity_affine(),
+        "fills": [{"type": "SOLID", "color": color, "opacity": 1.0}],
+        "strokes": [{"type": "SOLID", "color": stroke, "opacity": 1.0}],
+        "strokeWeight": stroke_weight,
+        "children": [],
+        "debug": {
+            "generator": "dense-ui-ir-v1",
+            "owner_id": atom.get("owner_id"),
+            "source_atom_id": atom.get("id"),
+            "role": "top_meta_scaffold",
+        },
+    }
+
+
+def build_top_meta_scaffold_groups(page: dict[str, Any]) -> list[dict[str, Any]]:
+    atoms = page.get("atoms") or []
+    band_cells = sorted(
+        [atom for atom in atoms if str(atom.get("owner_id") or "") == "dense_ui_panel:top_meta_band_cells"],
+        key=atom_priority,
+    )
+    info_cells = sorted(
+        [atom for atom in atoms if str(atom.get("owner_id") or "") == "dense_ui_panel:top_meta_info_cells"],
+        key=atom_priority,
+    )
+
+    def scaffold_for_cells(group_id: str, cells: list[dict[str, Any]]) -> dict[str, Any] | None:
+        if not cells:
+            return None
+        children: list[dict[str, Any]] = []
+        for atom in cells:
+            source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
+            is_value = source_path.endswith(("cell_2", "cell_4"))
+            children.append(build_top_meta_cell_rect(atom, fill_hex="D9D9D9" if is_value else "F2F2F2"))
+            if atom.get("text"):
+                children.append(build_text_node(atom, suffix=":label"))
+        return build_group_group(group_id, children)
+
+    groups: list[dict[str, Any]] = []
+    band_group = scaffold_for_cells("dense_ui_panel:top_meta_band_chunk", band_cells)
+    info_group = scaffold_for_cells("dense_ui_panel:top_meta_info_chunk", info_cells)
+    if band_group:
+        groups.append(band_group)
+    if info_group:
+        groups.append(info_group)
+    return groups
+
+
 def row_index_from_atom(atom: dict[str, Any]) -> int | None:
     atom_id = str(atom.get("id") or "")
     match = ROW_ID_RE.search(atom_id)
@@ -1611,10 +1680,7 @@ def render_dense_atom_nodes(
         if role == "issue_card" and atom.get("text"):
             owner_children.append(build_text_node(atom, suffix=":label"))
         return owner_children
-    if role in {"top_meta_band_cell", "top_meta_info_cell"}:
-        owner_children.append(build_rect_node(atom, suffix=":bg"))
-        if atom.get("text"):
-            owner_children.append(build_text_node(atom, suffix=":label"))
+    if role in {"top_meta_band_cell", "top_meta_info_cell", "top_meta_row"}:
         return owner_children
     if role in {"description_header_cell", "description_card", "issue_card"}:
         if use_svg_shape_cells:
@@ -1758,19 +1824,8 @@ def build_dense_ui_panel_nodes(
 
     chunk_children: list[dict[str, Any]] = []
 
-    top_meta_band_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:top_meta_band_cells", "dense_ui_panel:top_meta_rows"]:
-        if owner_id in owner_groups:
-            top_meta_band_children.append(owner_groups[owner_id])
-    if top_meta_band_children and "dense_ui_panel:top_meta_band_chunk" in chunk_bucket_map:
-        chunk_children.append(build_group_group("dense_ui_panel:top_meta_band_chunk", top_meta_band_children))
-
-    top_meta_info_children: list[dict[str, Any]] = []
-    for owner_id in ["dense_ui_panel:top_meta_info_cells"]:
-        if owner_id in owner_groups:
-            top_meta_info_children.append(owner_groups[owner_id])
-    if top_meta_info_children and "dense_ui_panel:top_meta_info_chunk" in chunk_bucket_map:
-        chunk_children.append(build_group_group("dense_ui_panel:top_meta_info_chunk", top_meta_info_children))
+    if "dense_ui_panel:top_meta_band_chunk" in chunk_bucket_map or "dense_ui_panel:top_meta_info_chunk" in chunk_bucket_map:
+        chunk_children.extend(build_top_meta_scaffold_groups(page))
 
     description_header_children: list[dict[str, Any]] = []
     for owner_id in ["dense_ui_panel:description_header_rows", "dense_ui_panel:description_headers"]:

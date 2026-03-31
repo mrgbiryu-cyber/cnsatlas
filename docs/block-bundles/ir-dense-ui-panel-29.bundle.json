@@ -92,14 +92,14 @@
             ],
             "children": [
               {
-                "id": "dense_ui_panel:top_meta_band_cells",
-                "type": "GROUP",
-                "name": "top_meta_band_cells",
+                "id": "s29:layout_29/element_1:row_1:cell_1:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_1:cell_1",
                 "absoluteBoundingBox": {
                   "x": 31.34,
                   "y": 8.63,
-                  "width": 694.52,
-                  "height": 33.58
+                  "width": 93.04,
+                  "height": 16.79
                 },
                 "relativeTransform": [
                   [
@@ -113,325 +113,296 @@
                     0
                   ]
                 ],
-                "children": [
+                "fills": [
                   {
-                    "id": "s29:layout_29/element_1:row_1:cell_1:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 1-1",
-                    "absoluteBoundingBox": {
-                      "x": 31.34,
-                      "y": 8.63,
-                      "width": 93.04,
-                      "height": 16.79
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9490196078431372,
+                      "g": 0.9490196078431372,
+                      "b": 0.9490196078431372
                     },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.9490196078431372,
-                          "g": 0.9490196078431372,
-                          "b": 0.9490196078431372
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_band_cell",
-                      "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_1"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_1:cell_1:label",
-                    "type": "TEXT",
-                    "name": "cell 1-1",
-                    "characters": "화면 명",
-                    "absoluteBoundingBox": {
-                      "x": 31.34,
-                      "y": 8.63,
-                      "width": 93.04,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 8.0,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 10.0
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_band_cell",
-                      "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_1"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_1:cell_2:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 1-2",
-                    "absoluteBoundingBox": {
-                      "x": 124.37,
-                      "y": 8.63,
-                      "width": 601.49,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.8509803921568627,
-                          "g": 0.8509803921568627,
-                          "b": 0.8509803921568627
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_band_cell",
-                      "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_2"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_2:cell_1:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 2-1",
-                    "absoluteBoundingBox": {
-                      "x": 31.34,
-                      "y": 25.42,
-                      "width": 93.04,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.9490196078431372,
-                          "g": 0.9490196078431372,
-                          "b": 0.9490196078431372
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_band_cell",
-                      "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_1"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_2:cell_1:label",
-                    "type": "TEXT",
-                    "name": "cell 2-1",
-                    "characters": "화면경로",
-                    "absoluteBoundingBox": {
-                      "x": 31.34,
-                      "y": 25.42,
-                      "width": 93.04,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 8.0,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 10.0
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_band_cell",
-                      "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_1"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_2:cell_2:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 2-2",
-                    "absoluteBoundingBox": {
-                      "x": 124.37,
-                      "y": 25.42,
-                      "width": 601.49,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.8509803921568627,
-                          "g": 0.8509803921568627,
-                          "b": 0.8509803921568627
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_band_cell",
-                      "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_2"
-                    }
+                    "opacity": 1.0
                   }
                 ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:top_meta_band_cells"
+                  "owner_id": "dense_ui_panel:top_meta_band_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_1:cell_1",
+                  "role": "top_meta_scaffold"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_1:label",
+                "type": "TEXT",
+                "name": "cell 1-1",
+                "characters": "화면 명",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 8.63,
+                  "width": 93.04,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.1,
+                      "b": 0.1
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 Regular",
+                  "fontStyle": "Regular",
+                  "fontSize": 8.0,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 10.0
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "top_meta_band_cell",
+                  "owner_id": "dense_ui_panel:top_meta_band_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_1:cell_1"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_2:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_1:cell_2",
+                "absoluteBoundingBox": {
+                  "x": 124.37,
+                  "y": 8.63,
+                  "width": 601.49,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8509803921568627,
+                      "g": 0.8509803921568627,
+                      "b": 0.8509803921568627
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "owner_id": "dense_ui_panel:top_meta_band_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_1:cell_2",
+                  "role": "top_meta_scaffold"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_1:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_2:cell_1",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 25.42,
+                  "width": 93.04,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9490196078431372,
+                      "g": 0.9490196078431372,
+                      "b": 0.9490196078431372
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "owner_id": "dense_ui_panel:top_meta_band_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_2:cell_1",
+                  "role": "top_meta_scaffold"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_1:label",
+                "type": "TEXT",
+                "name": "cell 2-1",
+                "characters": "화면경로",
+                "absoluteBoundingBox": {
+                  "x": 31.34,
+                  "y": 25.42,
+                  "width": 93.04,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.1,
+                      "b": 0.1
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 Regular",
+                  "fontStyle": "Regular",
+                  "fontSize": 8.0,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 10.0
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "top_meta_band_cell",
+                  "owner_id": "dense_ui_panel:top_meta_band_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_2:cell_1"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_2:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_2:cell_2",
+                "absoluteBoundingBox": {
+                  "x": 124.37,
+                  "y": 25.42,
+                  "width": 601.49,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8509803921568627,
+                      "g": 0.8509803921568627,
+                      "b": 0.8509803921568627
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "owner_id": "dense_ui_panel:top_meta_band_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_2:cell_2",
+                  "role": "top_meta_scaffold"
                 }
               }
             ],
@@ -464,14 +435,14 @@
             ],
             "children": [
               {
-                "id": "dense_ui_panel:top_meta_info_cells",
-                "type": "GROUP",
-                "name": "top_meta_info_cells",
+                "id": "s29:layout_29/element_1:row_1:cell_3:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_1:cell_3",
                 "absoluteBoundingBox": {
                   "x": 725.86,
                   "y": 8.63,
-                  "width": 210.51,
-                  "height": 33.58
+                  "width": 76.85,
+                  "height": 16.79
                 },
                 "relativeTransform": [
                   [
@@ -485,325 +456,296 @@
                     0
                   ]
                 ],
-                "children": [
+                "fills": [
                   {
-                    "id": "s29:layout_29/element_1:row_1:cell_3:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 1-3",
-                    "absoluteBoundingBox": {
-                      "x": 725.86,
-                      "y": 8.63,
-                      "width": 76.85,
-                      "height": 16.79
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9490196078431372,
+                      "g": 0.9490196078431372,
+                      "b": 0.9490196078431372
                     },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.9490196078431372,
-                          "g": 0.9490196078431372,
-                          "b": 0.9490196078431372
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_info_cell",
-                      "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_1:cell_3:label",
-                    "type": "TEXT",
-                    "name": "cell 1-3",
-                    "characters": "페이지",
-                    "absoluteBoundingBox": {
-                      "x": 725.86,
-                      "y": 8.63,
-                      "width": 76.85,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 8.0,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 10.0
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_info_cell",
-                      "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_1:cell_4:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 1-4",
-                    "absoluteBoundingBox": {
-                      "x": 802.71,
-                      "y": 8.63,
-                      "width": 133.66,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.8509803921568627,
-                          "g": 0.8509803921568627,
-                          "b": 0.8509803921568627
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_info_cell",
-                      "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_4"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_2:cell_3:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 2-3",
-                    "absoluteBoundingBox": {
-                      "x": 725.86,
-                      "y": 25.42,
-                      "width": 76.85,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.9490196078431372,
-                          "g": 0.9490196078431372,
-                          "b": 0.9490196078431372
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_info_cell",
-                      "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_2:cell_3:label",
-                    "type": "TEXT",
-                    "name": "cell 2-3",
-                    "characters": "화면ID",
-                    "absoluteBoundingBox": {
-                      "x": 725.86,
-                      "y": 25.42,
-                      "width": 76.85,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 8.0,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 10.0
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_info_cell",
-                      "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
-                    }
-                  },
-                  {
-                    "id": "s29:layout_29/element_1:row_2:cell_4:bg",
-                    "type": "RECTANGLE",
-                    "name": "cell 2-4",
-                    "absoluteBoundingBox": {
-                      "x": 802.71,
-                      "y": 25.42,
-                      "width": 133.66,
-                      "height": 16.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.8509803921568627,
-                          "g": 0.8509803921568627,
-                          "b": 0.8509803921568627
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokes": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7490196078431373,
-                          "g": 0.7490196078431373,
-                          "b": 0.7490196078431373
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "strokeWeight": 0.5,
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "top_meta_info_cell",
-                      "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_4"
-                    }
+                    "opacity": 1.0
                   }
                 ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:top_meta_info_cells"
+                  "owner_id": "dense_ui_panel:top_meta_info_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_1:cell_3",
+                  "role": "top_meta_scaffold"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_3:label",
+                "type": "TEXT",
+                "name": "cell 1-3",
+                "characters": "페이지",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 8.63,
+                  "width": 76.85,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.1,
+                      "b": 0.1
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 Regular",
+                  "fontStyle": "Regular",
+                  "fontSize": 8.0,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 10.0
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "top_meta_info_cell",
+                  "owner_id": "dense_ui_panel:top_meta_info_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_1:cell_4:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_1:cell_4",
+                "absoluteBoundingBox": {
+                  "x": 802.71,
+                  "y": 8.63,
+                  "width": 133.66,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8509803921568627,
+                      "g": 0.8509803921568627,
+                      "b": 0.8509803921568627
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "owner_id": "dense_ui_panel:top_meta_info_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_1:cell_4",
+                  "role": "top_meta_scaffold"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_3:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_2:cell_3",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 25.42,
+                  "width": 76.85,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9490196078431372,
+                      "g": 0.9490196078431372,
+                      "b": 0.9490196078431372
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "owner_id": "dense_ui_panel:top_meta_info_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_2:cell_3",
+                  "role": "top_meta_scaffold"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_3:label",
+                "type": "TEXT",
+                "name": "cell 2-3",
+                "characters": "화면ID",
+                "absoluteBoundingBox": {
+                  "x": 725.86,
+                  "y": 25.42,
+                  "width": 76.85,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.1,
+                      "b": 0.1
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 Regular",
+                  "fontStyle": "Regular",
+                  "fontSize": 8.0,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 10.0
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "top_meta_info_cell",
+                  "owner_id": "dense_ui_panel:top_meta_info_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
+                }
+              },
+              {
+                "id": "s29:layout_29/element_1:row_2:cell_4:scaffold",
+                "type": "RECTANGLE",
+                "name": "s29:layout_29/element_1:row_2:cell_4",
+                "absoluteBoundingBox": {
+                  "x": 802.71,
+                  "y": 25.42,
+                  "width": 133.66,
+                  "height": 16.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8509803921568627,
+                      "g": 0.8509803921568627,
+                      "b": 0.8509803921568627
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7490196078431373,
+                      "g": 0.7490196078431373,
+                      "b": 0.7490196078431373
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "strokeWeight": 0.5,
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "owner_id": "dense_ui_panel:top_meta_info_cells",
+                  "source_atom_id": "s29:layout_29/element_1:row_2:cell_4",
+                  "role": "top_meta_scaffold"
                 }
               }
             ],
