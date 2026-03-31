@@ -151,14 +151,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -255,14 +255,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -308,14 +308,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -412,14 +412,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -523,14 +523,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -627,14 +627,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -680,14 +680,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -784,14 +784,14 @@
                       {
                         "type": "SOLID",
                         "color": {
-                          "r": 0.78,
-                          "g": 0.78,
-                          "b": 0.78
+                          "r": 0.7490196078431373,
+                          "g": 0.7490196078431373,
+                          "b": 0.7490196078431373
                         },
                         "opacity": 1.0
                       }
                     ],
-                    "strokeWeight": 1.0,
+                    "strokeWeight": 0.5,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",

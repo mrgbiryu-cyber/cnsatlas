@@ -64,6 +64,8 @@ def make_solid_fill(style_color: dict[str, Any] | None, fallback: dict[str, floa
 
 def make_strokes(shape_style: dict[str, Any] | None) -> tuple[list[dict[str, Any]], float]:
     line = (shape_style or {}).get("line") or {}
+    if not line:
+        return [], 0.0
     if line.get("kind") == "none":
         return [], 0.0
     color, opacity = color_from_style(line, {"r": 0.78, "g": 0.78, "b": 0.78})
