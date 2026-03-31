@@ -963,7 +963,7 @@ def build_top_meta_scaffold_groups(page: dict[str, Any]) -> list[dict[str, Any]]
         for atom in cells:
             source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
             is_value = source_path.endswith(("cell_2", "cell_4"))
-            children.append(build_top_meta_cell_rect(atom, fill_hex="D9D9D9" if is_value else "F2F2F2"))
+            children.append(build_top_meta_cell_rect(atom, fill_hex="FFFFFF" if is_value else "F2F2F2"))
             if atom.get("text"):
                 children.append(build_text_node(atom, suffix=":label"))
         return build_group_group(group_id, children)
