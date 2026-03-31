@@ -12,9 +12,9 @@
     "name": "Slide 29 - Dense UI Panel",
     "absoluteBoundingBox": {
       "x": 15.72,
-      "y": 55.41,
-      "width": 490.36,
-      "height": 472.52
+      "y": 9.23,
+      "width": 918.65,
+      "height": 518.7
     },
     "relativeTransform": [
       [
@@ -48,9 +48,9 @@
         "name": "Frame",
         "absoluteBoundingBox": {
           "x": 15.72,
-          "y": 55.41,
-          "width": 490.36,
-          "height": 472.52
+          "y": 9.23,
+          "width": 918.65,
+          "height": 518.7
         },
         "relativeTransform": [
           [
@@ -73,10 +73,10 @@
             "type": "GROUP",
             "name": "global_ui_assets_chunk",
             "absoluteBoundingBox": {
-              "x": 15.72,
-              "y": 289.29,
-              "width": 247.02,
-              "height": 224.41
+              "x": 21.17,
+              "y": 9.23,
+              "width": 913.2,
+              "height": 518.59
             },
             "relativeTransform": [
               [
@@ -90,1476 +90,7 @@
                 0
               ]
             ],
-            "children": [
-              {
-                "id": "dense_ui_panel:global_cluster:09",
-                "type": "GROUP",
-                "name": "09",
-                "absoluteBoundingBox": {
-                  "x": 15.72,
-                  "y": 289.29,
-                  "width": 210.97,
-                  "height": 99.58
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_74",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 204",
-                    "absoluteBoundingBox": {
-                      "x": 28.39,
-                      "y": 289.29,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_74"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_74:label",
-                    "type": "TEXT",
-                    "name": "타원 204",
-                    "characters": "2b",
-                    "absoluteBoundingBox": {
-                      "x": 28.39,
-                      "y": 289.29,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_74"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_61",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 163",
-                    "absoluteBoundingBox": {
-                      "x": 123.49,
-                      "y": 289.29,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_61"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_61:label",
-                    "type": "TEXT",
-                    "name": "타원 163",
-                    "characters": "2a",
-                    "absoluteBoundingBox": {
-                      "x": 123.49,
-                      "y": 289.29,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_61"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_69/child_1",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 178",
-                    "absoluteBoundingBox": {
-                      "x": 39.0,
-                      "y": 292.88,
-                      "width": 18.77,
-                      "height": 18.77
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18.77\" height=\"18.77\" viewBox=\"0 0 18.77 18.77\"><ellipse cx=\"9.385\" cy=\"9.385\" rx=\"8.719999999999999\" ry=\"8.719999999999999\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"0.6\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.33\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_69/child_1"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_69/child_2/child_1",
-                    "type": "SVG_BLOCK",
-                    "name": "직사각형 193",
-                    "absoluteBoundingBox": {
-                      "x": 45.26,
-                      "y": 297.99,
-                      "width": 2.08,
-                      "height": 8.53
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"2.08\" height=\"8.53\" viewBox=\"0 0 2.08 8.53\"><rect x=\"0.5\" y=\"0.5\" width=\"1.08\" height=\"7.529999999999999\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_69/child_2/child_1"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_69/child_2/child_2",
-                    "type": "SVG_BLOCK",
-                    "name": "직사각형 194",
-                    "absoluteBoundingBox": {
-                      "x": 49.43,
-                      "y": 297.99,
-                      "width": 2.08,
-                      "height": 8.53
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"2.08\" height=\"8.53\" viewBox=\"0 0 2.08 8.53\"><rect x=\"0.5\" y=\"0.5\" width=\"1.08\" height=\"7.529999999999999\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_69/child_2/child_2"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_27",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 168",
-                    "absoluteBoundingBox": {
-                      "x": 15.72,
-                      "y": 318.22,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_27"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_27:label",
-                    "type": "TEXT",
-                    "name": "타원 168",
-                    "characters": "3",
-                    "absoluteBoundingBox": {
-                      "x": 15.72,
-                      "y": 318.22,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_27"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_24",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 164",
-                    "absoluteBoundingBox": {
-                      "x": 145.29,
-                      "y": 338.56,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_24"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_24:label",
-                    "type": "TEXT",
-                    "name": "타원 164",
-                    "characters": "3f",
-                    "absoluteBoundingBox": {
-                      "x": 145.29,
-                      "y": 338.56,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_24"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_31",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 172",
-                    "absoluteBoundingBox": {
-                      "x": 212.27,
-                      "y": 338.56,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_31"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_31:label",
-                    "type": "TEXT",
-                    "name": "타원 172",
-                    "characters": "4",
-                    "absoluteBoundingBox": {
-                      "x": 212.27,
-                      "y": 338.56,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_31"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_23",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 161",
-                    "absoluteBoundingBox": {
-                      "x": 23.69,
-                      "y": 345.92,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_23"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_23:label",
-                    "type": "TEXT",
-                    "name": "타원 161",
-                    "characters": "3d",
-                    "absoluteBoundingBox": {
-                      "x": 23.69,
-                      "y": 345.92,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_23"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_45",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 158",
-                    "absoluteBoundingBox": {
-                      "x": 110.75,
-                      "y": 363.32,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_45"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_45:label",
-                    "type": "TEXT",
-                    "name": "타원 158",
-                    "characters": "6",
-                    "absoluteBoundingBox": {
-                      "x": 110.75,
-                      "y": 363.32,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_45"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_48",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 117",
-                    "absoluteBoundingBox": {
-                      "x": 197.7,
-                      "y": 373.59,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_48"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_48:label",
-                    "type": "TEXT",
-                    "name": "타원 117",
-                    "characters": "7",
-                    "absoluteBoundingBox": {
-                      "x": 197.7,
-                      "y": 373.59,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_48"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_46/child_1/child_1",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 114",
-                    "absoluteBoundingBox": {
-                      "x": 214.7,
-                      "y": 375.19,
-                      "width": 11.99,
-                      "height": 11.99
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11.99\" height=\"11.99\" viewBox=\"0 0 11.99 11.99\"><ellipse cx=\"5.995\" cy=\"5.995\" rx=\"5.495\" ry=\"5.495\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 255, 255)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_46/child_1/child_1"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_28",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 169",
-                    "absoluteBoundingBox": {
-                      "x": 23.71,
-                      "y": 375.79,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_28"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_28:label",
-                    "type": "TEXT",
-                    "name": "타원 169",
-                    "characters": "5",
-                    "absoluteBoundingBox": {
-                      "x": 23.71,
-                      "y": 375.79,
-                      "width": 13.08,
-                      "height": 13.08
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 1.0,
-                          "g": 1.0,
-                          "b": 1.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "+mn-ea",
-                      "fontStyle": "Regular",
-                      "fontSize": 7.38,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 9.22
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_28"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_46/child_1/child_2",
-                    "type": "SVG_BLOCK",
-                    "name": "Accept",
-                    "absoluteBoundingBox": {
-                      "x": 217.96,
-                      "y": 378.31,
-                      "width": 6.01,
-                      "height": 5.34
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"6.01\" height=\"5.34\" viewBox=\"0 0 6.01 5.34\"><rect x=\"0.5\" y=\"0.5\" width=\"5.01\" height=\"4.34\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_46/child_1/child_2"
-                    }
-                  }
-                ],
-                "debug": {
-                  "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:global_cluster:09"
-                }
-              },
-              {
-                "id": "dense_ui_panel:global_cluster:14",
-                "type": "GROUP",
-                "name": "14",
-                "absoluteBoundingBox": {
-                  "x": 223.66,
-                  "y": 340.19,
-                  "width": 39.08,
-                  "height": 19.99
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_78",
-                    "type": "SVG_BLOCK",
-                    "name": "직사각형 223",
-                    "absoluteBoundingBox": {
-                      "x": 223.66,
-                      "y": 340.19,
-                      "width": 18.65,
-                      "height": 19.99
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18.65\" height=\"19.99\" viewBox=\"0 0 18.65 19.99\"><rect x=\"0.5\" y=\"0.5\" width=\"17.65\" height=\"18.99\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_78"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_30",
-                    "type": "SVG_BLOCK",
-                    "name": "직사각형 171",
-                    "absoluteBoundingBox": {
-                      "x": 244.09,
-                      "y": 340.19,
-                      "width": 18.65,
-                      "height": 19.99
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18.65\" height=\"19.99\" viewBox=\"0 0 18.65 19.99\"><rect x=\"0.5\" y=\"0.5\" width=\"17.65\" height=\"18.99\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_30"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_68",
-                    "type": "SVG_BLOCK",
-                    "name": "Like",
-                    "absoluteBoundingBox": {
-                      "x": 226.7,
-                      "y": 344.95,
-                      "width": 12.82,
-                      "height": 11.32
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12.82\" height=\"11.32\" viewBox=\"0 0 12.82 11.32\"><rect x=\"0.5\" y=\"0.5\" width=\"11.82\" height=\"10.32\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_68"
-                    }
-                  }
-                ],
-                "debug": {
-                  "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:global_cluster:14"
-                }
-              },
-              {
-                "id": "dense_ui_panel:global_cluster:16",
-                "type": "GROUP",
-                "name": "16",
-                "absoluteBoundingBox": {
-                  "x": 38.13,
-                  "y": 377.25,
-                  "width": 8.8,
-                  "height": 9.55
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_16/child_2",
-                    "type": "SVG_BLOCK",
-                    "name": "Edit File",
-                    "absoluteBoundingBox": {
-                      "x": 38.13,
-                      "y": 377.25,
-                      "width": 8.8,
-                      "height": 9.55
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"8.8\" height=\"9.55\" viewBox=\"0 0 8.8 9.55\"><rect x=\"0.5\" y=\"0.5\" width=\"7.800000000000001\" height=\"8.55\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_16/child_2"
-                    }
-                  }
-                ],
-                "debug": {
-                  "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:global_cluster:16"
-                }
-              },
-              {
-                "id": "dense_ui_panel:global_cluster:17",
-                "type": "GROUP",
-                "name": "17",
-                "absoluteBoundingBox": {
-                  "x": 244.73,
-                  "y": 417.79,
-                  "width": 6.31,
-                  "height": 12.12
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_3",
-                    "type": "TEXT",
-                    "name": "TextBox 131",
-                    "characters": ">",
-                    "absoluteBoundingBox": {
-                      "x": 244.73,
-                      "y": 417.79,
-                      "width": 6.31,
-                      "height": 12.12
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 SemiBold",
-                      "fontStyle": "Regular",
-                      "fontSize": 10.0,
-                      "textAlignHorizontal": "RIGHT",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 12.5
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_3"
-                    }
-                  }
-                ],
-                "debug": {
-                  "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:global_cluster:17"
-                }
-              },
-              {
-                "id": "dense_ui_panel:global_cluster:18",
-                "type": "GROUP",
-                "name": "18",
-                "absoluteBoundingBox": {
-                  "x": 42.58,
-                  "y": 470.44,
-                  "width": 118.98,
-                  "height": 43.26
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_99/child_4/child_3",
-                    "type": "SVG_BLOCK",
-                    "name": "타원 243",
-                    "absoluteBoundingBox": {
-                      "x": 82.84,
-                      "y": 470.44,
-                      "width": 7.94,
-                      "height": 7.94
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"7.94\" height=\"7.94\" viewBox=\"0 0 7.94 7.94\"><ellipse cx=\"3.97\" cy=\"3.97\" rx=\"3.47\" ry=\"3.47\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 255, 255)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_99/child_4/child_3"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_99/child_4/child_3:label",
-                    "type": "TEXT",
-                    "name": "타원 243",
-                    "characters": "?",
-                    "absoluteBoundingBox": {
-                      "x": 82.84,
-                      "y": 470.44,
-                      "width": 7.94,
-                      "height": 7.94
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 5.0,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 6.25
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_99/child_4/child_3"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_10",
-                    "type": "TEXT",
-                    "name": "TextBox 231",
-                    "characters": "10%",
-                    "absoluteBoundingBox": {
-                      "x": 139.22,
-                      "y": 474.56,
-                      "width": 22.34,
-                      "height": 13.33
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.7529411764705882,
-                          "g": 0.0,
-                          "b": 0.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 SemiBold",
-                      "fontStyle": "Regular",
-                      "fontSize": 11.0,
-                      "textAlignHorizontal": "RIGHT",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 13.75
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_10"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_99/child_2",
-                    "type": "SVG_BLOCK",
-                    "name": "Like",
-                    "absoluteBoundingBox": {
-                      "x": 42.58,
-                      "y": 497.91,
-                      "width": 17.89,
-                      "height": 15.79
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17.89\" height=\"15.79\" viewBox=\"0 0 17.89 15.79\"><rect x=\"0.5\" y=\"0.5\" width=\"16.89\" height=\"14.79\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_99/child_2"
-                    }
-                  }
-                ],
-                "debug": {
-                  "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:global_cluster:18"
-                }
-              },
-              {
-                "id": "dense_ui_panel:global_cluster:19",
-                "type": "GROUP",
-                "name": "19",
-                "absoluteBoundingBox": {
-                  "x": 95.45,
-                  "y": 476.96,
-                  "width": 9.9,
-                  "height": 29.33
-                },
-                "relativeTransform": [
-                  [
-                    1,
-                    0,
-                    0
-                  ],
-                  [
-                    0,
-                    1,
-                    0
-                  ]
-                ],
-                "children": [
-                  {
-                    "id": "s29:slide_29/element_9/child_2",
-                    "type": "SVG_BLOCK",
-                    "name": "Info",
-                    "absoluteBoundingBox": {
-                      "x": 95.45,
-                      "y": 476.96,
-                      "width": 9.49,
-                      "height": 9.49
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9.49\" height=\"9.49\" viewBox=\"0 0 9.49 9.49\"><rect x=\"0.5\" y=\"0.5\" width=\"8.49\" height=\"8.49\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_9/child_2"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_6/child_2",
-                    "type": "SVG_BLOCK",
-                    "name": "Info",
-                    "absoluteBoundingBox": {
-                      "x": 95.86,
-                      "y": 496.8,
-                      "width": 9.49,
-                      "height": 9.49
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9.49\" height=\"9.49\" viewBox=\"0 0 9.49 9.49\"><rect x=\"0.5\" y=\"0.5\" width=\"8.49\" height=\"8.49\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "small_asset",
-                      "owner_id": "dense_ui_panel:global_ui_assets",
-                      "source_atom_id": "s29:slide_29/element_6/child_2"
-                    }
-                  }
-                ],
-                "debug": {
-                  "generator": "dense-ui-ir-v1",
-                  "owner_id": "dense_ui_panel:global_cluster:19"
-                }
-              }
-            ],
+            "children": [],
             "debug": {
               "generator": "dense-ui-ir-v1",
               "group_id": "dense_ui_panel:global_ui_assets_chunk"
@@ -3320,6 +1851,972 @@
                 }
               },
               {
+                "id": "s29:slide_29/element_61",
+                "type": "SVG_BLOCK",
+                "name": "타원 163",
+                "absoluteBoundingBox": {
+                  "x": 123.49,
+                  "y": 289.29,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_61"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_61:label",
+                "type": "TEXT",
+                "name": "타원 163",
+                "characters": "2a",
+                "absoluteBoundingBox": {
+                  "x": 123.49,
+                  "y": 289.29,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_61"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_69/child_1",
+                "type": "SVG_BLOCK",
+                "name": "타원 178",
+                "absoluteBoundingBox": {
+                  "x": 39.0,
+                  "y": 292.88,
+                  "width": 18.77,
+                  "height": 18.77
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18.77\" height=\"18.77\" viewBox=\"0 0 18.77 18.77\"><ellipse cx=\"9.385\" cy=\"9.385\" rx=\"8.719999999999999\" ry=\"8.719999999999999\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"0.6\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.33\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_69/child_1"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_69/child_2/child_1",
+                "type": "SVG_BLOCK",
+                "name": "직사각형 193",
+                "absoluteBoundingBox": {
+                  "x": 45.26,
+                  "y": 297.99,
+                  "width": 2.08,
+                  "height": 8.53
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"2.08\" height=\"8.53\" viewBox=\"0 0 2.08 8.53\"><rect x=\"0.5\" y=\"0.5\" width=\"1.08\" height=\"7.529999999999999\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_69/child_2/child_1"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_69/child_2/child_2",
+                "type": "SVG_BLOCK",
+                "name": "직사각형 194",
+                "absoluteBoundingBox": {
+                  "x": 49.43,
+                  "y": 297.99,
+                  "width": 2.08,
+                  "height": 8.53
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"2.08\" height=\"8.53\" viewBox=\"0 0 2.08 8.53\"><rect x=\"0.5\" y=\"0.5\" width=\"1.08\" height=\"7.529999999999999\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_69/child_2/child_2"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_24",
+                "type": "SVG_BLOCK",
+                "name": "타원 164",
+                "absoluteBoundingBox": {
+                  "x": 145.29,
+                  "y": 338.56,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_24"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_24:label",
+                "type": "TEXT",
+                "name": "타원 164",
+                "characters": "3f",
+                "absoluteBoundingBox": {
+                  "x": 145.29,
+                  "y": 338.56,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_24"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_31",
+                "type": "SVG_BLOCK",
+                "name": "타원 172",
+                "absoluteBoundingBox": {
+                  "x": 212.27,
+                  "y": 338.56,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_31"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_31:label",
+                "type": "TEXT",
+                "name": "타원 172",
+                "characters": "4",
+                "absoluteBoundingBox": {
+                  "x": 212.27,
+                  "y": 338.56,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_31"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_78",
+                "type": "SVG_BLOCK",
+                "name": "직사각형 223",
+                "absoluteBoundingBox": {
+                  "x": 223.66,
+                  "y": 340.19,
+                  "width": 18.65,
+                  "height": 19.99
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18.65\" height=\"19.99\" viewBox=\"0 0 18.65 19.99\"><rect x=\"0.5\" y=\"0.5\" width=\"17.65\" height=\"18.99\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_78"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_30",
+                "type": "SVG_BLOCK",
+                "name": "직사각형 171",
+                "absoluteBoundingBox": {
+                  "x": 244.09,
+                  "y": 340.19,
+                  "width": 18.65,
+                  "height": 19.99
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18.65\" height=\"19.99\" viewBox=\"0 0 18.65 19.99\"><rect x=\"0.5\" y=\"0.5\" width=\"17.65\" height=\"18.99\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_30"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_68",
+                "type": "SVG_BLOCK",
+                "name": "Like",
+                "absoluteBoundingBox": {
+                  "x": 226.7,
+                  "y": 344.95,
+                  "width": 12.82,
+                  "height": 11.32
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12.82\" height=\"11.32\" viewBox=\"0 0 12.82 11.32\"><rect x=\"0.5\" y=\"0.5\" width=\"11.82\" height=\"10.32\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_68"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_45",
+                "type": "SVG_BLOCK",
+                "name": "타원 158",
+                "absoluteBoundingBox": {
+                  "x": 110.75,
+                  "y": 363.32,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_45"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_45:label",
+                "type": "TEXT",
+                "name": "타원 158",
+                "characters": "6",
+                "absoluteBoundingBox": {
+                  "x": 110.75,
+                  "y": 363.32,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_45"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_48",
+                "type": "SVG_BLOCK",
+                "name": "타원 117",
+                "absoluteBoundingBox": {
+                  "x": 197.7,
+                  "y": 373.59,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_48"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_48:label",
+                "type": "TEXT",
+                "name": "타원 117",
+                "characters": "7",
+                "absoluteBoundingBox": {
+                  "x": 197.7,
+                  "y": 373.59,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_48"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_46/child_1/child_1",
+                "type": "SVG_BLOCK",
+                "name": "타원 114",
+                "absoluteBoundingBox": {
+                  "x": 214.7,
+                  "y": 375.19,
+                  "width": 11.99,
+                  "height": 11.99
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11.99\" height=\"11.99\" viewBox=\"0 0 11.99 11.99\"><ellipse cx=\"5.995\" cy=\"5.995\" rx=\"5.495\" ry=\"5.495\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 255, 255)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_46/child_1/child_1"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_16/child_2",
+                "type": "SVG_BLOCK",
+                "name": "Edit File",
+                "absoluteBoundingBox": {
+                  "x": 38.13,
+                  "y": 377.25,
+                  "width": 8.8,
+                  "height": 9.55
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"8.8\" height=\"9.55\" viewBox=\"0 0 8.8 9.55\"><rect x=\"0.5\" y=\"0.5\" width=\"7.800000000000001\" height=\"8.55\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_16/child_2"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_46/child_1/child_2",
+                "type": "SVG_BLOCK",
+                "name": "Accept",
+                "absoluteBoundingBox": {
+                  "x": 217.96,
+                  "y": 378.31,
+                  "width": 6.01,
+                  "height": 5.34
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"6.01\" height=\"5.34\" viewBox=\"0 0 6.01 5.34\"><rect x=\"0.5\" y=\"0.5\" width=\"5.01\" height=\"4.34\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_46/child_1/child_2"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_3",
+                "type": "TEXT",
+                "name": "TextBox 131",
+                "characters": ">",
+                "absoluteBoundingBox": {
+                  "x": 244.73,
+                  "y": 417.79,
+                  "width": 6.31,
+                  "height": 12.12
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.1,
+                      "b": 0.1
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 SemiBold",
+                  "fontStyle": "Regular",
+                  "fontSize": 10.0,
+                  "textAlignHorizontal": "RIGHT",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 12.5
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_3"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_99/child_4/child_3",
+                "type": "SVG_BLOCK",
+                "name": "타원 243",
+                "absoluteBoundingBox": {
+                  "x": 82.84,
+                  "y": 470.44,
+                  "width": 7.94,
+                  "height": 7.94
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"7.94\" height=\"7.94\" viewBox=\"0 0 7.94 7.94\"><ellipse cx=\"3.97\" cy=\"3.97\" rx=\"3.47\" ry=\"3.47\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 255, 255)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_99/child_4/child_3"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_99/child_4/child_3:label",
+                "type": "TEXT",
+                "name": "타원 243",
+                "characters": "?",
+                "absoluteBoundingBox": {
+                  "x": 82.84,
+                  "y": 470.44,
+                  "width": 7.94,
+                  "height": 7.94
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 Regular",
+                  "fontStyle": "Regular",
+                  "fontSize": 5.0,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 6.25
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_99/child_4/child_3"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_10",
+                "type": "TEXT",
+                "name": "TextBox 231",
+                "characters": "10%",
+                "absoluteBoundingBox": {
+                  "x": 139.22,
+                  "y": 474.56,
+                  "width": 22.34,
+                  "height": 13.33
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7529411764705882,
+                      "g": 0.0,
+                      "b": 0.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "LG스마트체 SemiBold",
+                  "fontStyle": "Regular",
+                  "fontSize": 11.0,
+                  "textAlignHorizontal": "RIGHT",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 13.75
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_10"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_9/child_2",
+                "type": "SVG_BLOCK",
+                "name": "Info",
+                "absoluteBoundingBox": {
+                  "x": 95.45,
+                  "y": 476.96,
+                  "width": 9.49,
+                  "height": 9.49
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9.49\" height=\"9.49\" viewBox=\"0 0 9.49 9.49\"><rect x=\"0.5\" y=\"0.5\" width=\"8.49\" height=\"8.49\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_9/child_2"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_6/child_2",
+                "type": "SVG_BLOCK",
+                "name": "Info",
+                "absoluteBoundingBox": {
+                  "x": 95.86,
+                  "y": 496.8,
+                  "width": 9.49,
+                  "height": 9.49
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9.49\" height=\"9.49\" viewBox=\"0 0 9.49 9.49\"><rect x=\"0.5\" y=\"0.5\" width=\"8.49\" height=\"8.49\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_6/child_2"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_99/child_2",
+                "type": "SVG_BLOCK",
+                "name": "Like",
+                "absoluteBoundingBox": {
+                  "x": 42.58,
+                  "y": 497.91,
+                  "width": 17.89,
+                  "height": 15.79
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17.89\" height=\"15.79\" viewBox=\"0 0 17.89 15.79\"><rect x=\"0.5\" y=\"0.5\" width=\"16.89\" height=\"14.79\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(95, 95, 95)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_99/child_2"
+                }
+              },
+              {
                 "id": "s29:slide_29/element_13/child_2",
                 "type": "SVG_BLOCK",
                 "name": "직선 연결선[R] 4",
@@ -3388,9 +2885,231 @@
             }
           },
           {
-            "id": "page_left_cluster:13",
+            "id": "page_left_cluster:11",
             "type": "GROUP",
-            "name": "13",
+            "name": "11",
+            "absoluteBoundingBox": {
+              "x": 28.39,
+              "y": 289.29,
+              "width": 13.08,
+              "height": 13.08
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "children": [
+              {
+                "id": "s29:slide_29/element_74",
+                "type": "SVG_BLOCK",
+                "name": "타원 204",
+                "absoluteBoundingBox": {
+                  "x": 28.39,
+                  "y": 289.29,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_74"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_74:label",
+                "type": "TEXT",
+                "name": "타원 204",
+                "characters": "2b",
+                "absoluteBoundingBox": {
+                  "x": 28.39,
+                  "y": 289.29,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_74"
+                }
+              }
+            ],
+            "debug": {
+              "generator": "dense-ui-ir-v1",
+              "owner_id": "page_left_cluster:11"
+            }
+          },
+          {
+            "id": "page_left_cluster:14",
+            "type": "GROUP",
+            "name": "14",
+            "absoluteBoundingBox": {
+              "x": 15.72,
+              "y": 318.22,
+              "width": 13.08,
+              "height": 13.08
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "children": [
+              {
+                "id": "s29:slide_29/element_27",
+                "type": "SVG_BLOCK",
+                "name": "타원 168",
+                "absoluteBoundingBox": {
+                  "x": 15.72,
+                  "y": 318.22,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_27"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_27:label",
+                "type": "TEXT",
+                "name": "타원 168",
+                "characters": "3",
+                "absoluteBoundingBox": {
+                  "x": 15.72,
+                  "y": 318.22,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_27"
+                }
+              }
+            ],
+            "debug": {
+              "generator": "dense-ui-ir-v1",
+              "owner_id": "page_left_cluster:14"
+            }
+          },
+          {
+            "id": "page_left_cluster:15",
+            "type": "GROUP",
+            "name": "15",
             "absoluteBoundingBox": {
               "x": 291.83,
               "y": 319.27,
@@ -3495,13 +3214,13 @@
             ],
             "debug": {
               "generator": "dense-ui-ir-v1",
-              "owner_id": "page_left_cluster:13"
+              "owner_id": "page_left_cluster:15"
             }
           },
           {
-            "id": "page_left_cluster:14",
+            "id": "page_left_cluster:16",
             "type": "GROUP",
-            "name": "14",
+            "name": "16",
             "absoluteBoundingBox": {
               "x": 22.9,
               "y": 324.44,
@@ -3555,7 +3274,229 @@
             ],
             "debug": {
               "generator": "dense-ui-ir-v1",
-              "owner_id": "page_left_cluster:14"
+              "owner_id": "page_left_cluster:16"
+            }
+          },
+          {
+            "id": "page_left_cluster:17",
+            "type": "GROUP",
+            "name": "17",
+            "absoluteBoundingBox": {
+              "x": 23.69,
+              "y": 345.92,
+              "width": 13.08,
+              "height": 13.08
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "children": [
+              {
+                "id": "s29:slide_29/element_23",
+                "type": "SVG_BLOCK",
+                "name": "타원 161",
+                "absoluteBoundingBox": {
+                  "x": 23.69,
+                  "y": 345.92,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_23"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_23:label",
+                "type": "TEXT",
+                "name": "타원 161",
+                "characters": "3d",
+                "absoluteBoundingBox": {
+                  "x": 23.69,
+                  "y": 345.92,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_23"
+                }
+              }
+            ],
+            "debug": {
+              "generator": "dense-ui-ir-v1",
+              "owner_id": "page_left_cluster:17"
+            }
+          },
+          {
+            "id": "page_left_cluster:18",
+            "type": "GROUP",
+            "name": "18",
+            "absoluteBoundingBox": {
+              "x": 23.71,
+              "y": 375.79,
+              "width": 13.08,
+              "height": 13.08
+            },
+            "relativeTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "children": [
+              {
+                "id": "s29:slide_29/element_28",
+                "type": "SVG_BLOCK",
+                "name": "타원 169",
+                "absoluteBoundingBox": {
+                  "x": 23.71,
+                  "y": 375.79,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13.08\" height=\"13.08\" viewBox=\"0 0 13.08 13.08\"><ellipse cx=\"6.54\" cy=\"6.54\" rx=\"6.04\" ry=\"6.04\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_28"
+                }
+              },
+              {
+                "id": "s29:slide_29/element_28:label",
+                "type": "TEXT",
+                "name": "타원 169",
+                "characters": "5",
+                "absoluteBoundingBox": {
+                  "x": 23.71,
+                  "y": 375.79,
+                  "width": 13.08,
+                  "height": 13.08
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0
+                    },
+                    "opacity": 1.0
+                  }
+                ],
+                "style": {
+                  "fontFamily": "+mn-ea",
+                  "fontStyle": "Regular",
+                  "fontSize": 7.38,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "TOP",
+                  "textAutoResize": "HEIGHT",
+                  "lineHeightPx": 9.22
+                },
+                "children": [],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "layer_role": "small_asset",
+                  "owner_id": "dense_ui_panel:global_ui_assets",
+                  "source_atom_id": "s29:slide_29/element_28"
+                }
+              }
+            ],
+            "debug": {
+              "generator": "dense-ui-ir-v1",
+              "owner_id": "page_left_cluster:18"
             }
           }
         ],

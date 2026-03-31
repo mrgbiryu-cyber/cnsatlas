@@ -1519,10 +1519,14 @@ def build_global_asset_semantic_groups(
     use_svg_shape_cells: bool,
     include_dense_body_overlays: bool,
     include_version_last: bool,
+    excluded_source_keys: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     source_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for atom in atoms:
-        source_groups[global_asset_source_key(atom)].append(atom)
+        source_key = global_asset_source_key(atom)
+        if excluded_source_keys and source_key in excluded_source_keys:
+            continue
+        source_groups[source_key].append(atom)
     source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
     for key, source_atoms in source_groups.items():
         source_atoms_sorted = sorted(source_atoms, key=atom_priority)
@@ -1601,6 +1605,15 @@ def is_left_side_page_atom(atom: dict[str, Any]) -> bool:
     return x + width < RIGHT_PANEL_X_CUTOFF
 
 
+def is_left_product_price_global_atom(atom: dict[str, Any]) -> bool:
+    if str(atom.get("owner_id") or "") != "dense_ui_panel:global_ui_assets":
+        return False
+    bounds = atom.get("visual_bounds_px") or {}
+    if not bounds:
+        return False
+    return bbox_intersects(bounds, LEFT_PRODUCT_PRICE_REGION)
+
+
 def render_page_atom_nodes(
     atom: dict[str, Any],
     assets: dict[str, Any],
@@ -1631,12 +1644,11 @@ def render_page_atom_nodes(
     return nodes
 
 
-def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any]) -> list[dict[str, Any]]:
+def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any]) -> tuple[list[dict[str, Any]], set[str]]:
     source_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for atom in page.get("atoms") or []:
-        if not is_left_side_page_atom(atom):
-            continue
-        source_groups[global_asset_source_key(atom)].append(atom)
+        if is_left_side_page_atom(atom) or is_left_product_price_global_atom(atom):
+            source_groups[global_asset_source_key(atom)].append(atom)
 
     source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
     for key, atoms in source_groups.items():
@@ -1683,6 +1695,8 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
     for index, (_, atoms, _) in enumerate(source_items):
         merged[find(index)].extend(atoms)
 
+    absorbed_global_source_keys: set[str] = set()
+
     for index, atoms in enumerate(
         sorted(
             merged.values(),
@@ -1696,10 +1710,12 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         rendered_children: list[dict[str, Any]] = []
         for atom in sorted(atoms, key=atom_priority):
             rendered_children.extend(render_page_atom_nodes(atom, assets))
+            if str(atom.get("owner_id") or "") == "dense_ui_panel:global_ui_assets":
+                absorbed_global_source_keys.add(global_asset_source_key(atom))
         if not rendered_children:
             continue
         semantic_groups.append(build_owner_group(f"page_left_cluster:{index:02d}", rendered_children))
-    return semantic_groups
+    return semantic_groups, absorbed_global_source_keys
 
 
 def render_dense_atom_nodes(
@@ -1936,6 +1952,8 @@ def build_dense_ui_panel_nodes(
     if small_asset_children and "dense_ui_panel:panel_small_assets_chunk" in chunk_bucket_map:
         chunk_children.append(build_group_group("dense_ui_panel:panel_small_assets_chunk", small_asset_children))
 
+    page_owner_children, absorbed_global_source_keys = build_page_owner_semantic_groups(page, assets)
+
     global_asset_children: list[dict[str, Any]] = []
     global_atoms = sorted(grouped.get("dense_ui_panel:global_ui_assets", []), key=atom_priority)
     if global_atoms:
@@ -1946,6 +1964,7 @@ def build_dense_ui_panel_nodes(
                 use_svg_shape_cells=use_svg_shape_cells,
                 include_dense_body_overlays=include_dense_body_overlays,
                 include_version_last=include_version_last,
+                excluded_source_keys=absorbed_global_source_keys,
             )
         )
     placeholder_nodes = build_top_meta_placeholder_nodes(page)
@@ -2032,7 +2051,6 @@ def build_dense_ui_panel_nodes(
             "page_type": page["page_type"],
         },
     }
-    page_owner_children = build_page_owner_semantic_groups(page, assets)
     return page_level_children + page_owner_children + [panel_frame]
 
 
