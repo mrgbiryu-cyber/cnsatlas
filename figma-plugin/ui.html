@@ -333,7 +333,7 @@
           const slideLabel = payload.slides && payload.slides.length
             ? payload.slides.join(", ")
             : "none";
-          setStatus(`PPTX 변환 완료: slide ${slideLabel}`);
+          setStatus(`PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0})`);
           updateRenderAvailability();
           parent.postMessage({
             pluginMessage: {

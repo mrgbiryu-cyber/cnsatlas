@@ -35,12 +35,13 @@ figma.ui.onmessage = async (message) => {
     try {
       const payload = JSON.parse(message.jsonText);
       activeRenderMode = message.renderMode === "vector-heavy" ? "vector-heavy" : "read-first";
+      let renderedCount = 0;
       if (payload && payload.kind === "slide-review-manifest" && payload.entry_bundle && payload.entry_bundle.document) {
         await renderFigmaReplayBundle(payload.entry_bundle);
       } else if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
         await renderFigmaReplayBundle(payload);
       } else {
-        await renderIntermediatePayload(payload);
+        renderedCount = await renderIntermediatePayload(payload);
       }
       figma.ui.postMessage({
         type: "render-success",
@@ -48,7 +49,7 @@ figma.ui.onmessage = async (message) => {
           ? `Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
           : payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : `Rendered ${payload.pages.length} slide previews (${activeRenderMode})`,
+          : `Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
       });
     } catch (error) {
       figma.ui.postMessage({
@@ -616,7 +617,7 @@ async function renderIntermediatePayload(payload) {
 
   if (renderedFrames.length > 0) {
     figma.viewport.scrollAndZoomIntoView(renderedFrames);
-    return;
+    return renderedFrames.length;
   }
 
   const emptyFrame = figma.createFrame();
@@ -626,6 +627,7 @@ async function renderIntermediatePayload(payload) {
   emptyFrame.strokes = [];
   figma.currentPage.appendChild(emptyFrame);
   figma.viewport.scrollAndZoomIntoView([emptyFrame]);
+  return 0;
 }
 
 function colorToSvg(color, opacity) {
