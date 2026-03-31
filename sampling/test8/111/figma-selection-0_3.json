@@ -1,0 +1,1042 @@
+{
+  "kind": "figma-analysis-export",
+  "export_scope": "selection",
+  "page": {
+    "id": "0:1",
+    "name": "Page 1"
+  },
+  "selection_ids": [
+    "1:1469",
+    "1:1470",
+    "1:1471",
+    "1:1474",
+    "1:1475",
+    "1:1476",
+    "1:1479",
+    "1:1480"
+  ],
+  "exported_at": "2026-03-31T08:03:39.689Z",
+  "scope_bounds": {
+    "x": 1808.552978515625,
+    "y": 185.31201171875,
+    "width": 202.717041015625,
+    "height": 42.017303466796875
+  },
+  "nodes": [
+    {
+      "id": "1:1469",
+      "name": "9,400,000",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1934.86767578125,
+        "y": 214.3244171142578,
+        "width": 75.0087890625,
+        "height": 13.004898071289062
+      },
+      "bounds_relative_to_scope": {
+        "x": 126.314697265625,
+        "y": 29.012405395507812,
+        "width": 75.0087890625,
+        "height": 13.004898071289062
+      },
+      "width": 78,
+      "height": 16,
+      "relative_transform": [
+        [
+          1,
+          0,
+          171.9600067138672
+        ],
+        [
+          0,
+          1,
+          490.8080139160156
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1933.9599609375
+        ],
+        [
+          0,
+          1,
+          211.80801391601562
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0.7529411911964417,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "characters": "9,400,000원",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": "mixed",
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 16
+        },
+        "letterSpacing": {
+          "unit": "PERCENT",
+          "value": -1.5625
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "1:1470",
+      "name": "최대할인가",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1808.552978515625,
+        "y": 216.80239868164062,
+        "width": 39.8927001953125,
+        "height": 7.8690032958984375
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 31.490386962890625,
+        "width": 39.8927001953125,
+        "height": 7.8690032958984375
+      },
+      "width": 41,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          46.08000183105469
+        ],
+        [
+          0,
+          1,
+          494.99200439453125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1808.0799560546875
+        ],
+        [
+          0,
+          1,
+          215.99200439453125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "characters": "최대할인가",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 8.600000381469727,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PERCENT",
+          "value": 3.125
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "1:1471",
+      "name": "Group",
+      "type": "GROUP",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1857.8800048828125,
+        "y": 193.73599243164062,
+        "width": 145.8699951171875,
+        "height": 33.54400634765625
+      },
+      "bounds_relative_to_scope": {
+        "x": 49.3270263671875,
+        "y": 8.423980712890625,
+        "width": 145.8699951171875,
+        "height": 33.54400634765625
+      },
+      "width": 145.8699951171875,
+      "height": 33.54400634765625,
+      "relative_transform": [
+        [
+          1,
+          0,
+          95.87999725341797
+        ],
+        [
+          0,
+          -1,
+          506.2799987792969
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1857.8800048828125
+        ],
+        [
+          0,
+          -1,
+          227.27999877929688
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [],
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "1:1472",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1857.8800048828125,
+            "y": 217.8000030517578,
+            "width": 9.47998046875,
+            "height": 9.479995727539062
+          },
+          "bounds_relative_to_scope": {
+            "x": 49.3270263671875,
+            "y": 32.48799133300781,
+            "width": 9.47998046875,
+            "height": 9.479995727539062
+          },
+          "width": 9.480003356933594,
+          "height": 9.479999542236328,
+          "relative_transform": [
+            [
+              1,
+              0,
+              95.87999725341797
+            ],
+            [
+              0,
+              -1,
+              506.2799987792969
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1857.8800048828125
+            ],
+            [
+              0,
+              -1,
+              227.27999877929688
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.37254902720451355,
+                "g": 0.37254902720451355,
+                "b": 0.37254902720451355
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1473",
+          "name": "9,900,000",
+          "type": "TEXT",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1935.65771484375,
+            "y": 196.2523956298828,
+            "width": 67.1234130859375,
+            "height": 13.004898071289062
+          },
+          "bounds_relative_to_scope": {
+            "x": 127.104736328125,
+            "y": 10.940383911132812,
+            "width": 67.1234130859375,
+            "height": 13.004898071289062
+          },
+          "width": 69,
+          "height": 16,
+          "relative_transform": [
+            [
+              1,
+              0,
+              172.75
+            ],
+            [
+              0,
+              1,
+              472.7359924316406
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1934.75
+            ],
+            [
+              0,
+              1,
+              193.73599243164062
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "characters": "9,900,000",
+          "text_style": {
+            "fontName": {
+              "family": "Inter",
+              "style": "Regular"
+            },
+            "fontSize": 14.199999809265137,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "textAutoResize": "WIDTH_AND_HEIGHT",
+            "lineHeight": {
+              "unit": "PIXELS",
+              "value": 16
+            },
+            "letterSpacing": {
+              "unit": "PERCENT",
+              "value": 0
+            }
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1:1474",
+      "name": "원",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 2003.5999755859375,
+        "y": 198.4759979248047,
+        "width": 7.6700439453125,
+        "height": 8.839996337890625
+      },
+      "bounds_relative_to_scope": {
+        "x": 195.0469970703125,
+        "y": 13.163986206054688,
+        "width": 7.6700439453125,
+        "height": 8.839996337890625
+      },
+      "width": 10,
+      "height": 12,
+      "relative_transform": [
+        [
+          1,
+          0,
+          241.14999389648438
+        ],
+        [
+          0,
+          1,
+          475.7359924316406
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          2003.1500244140625
+        ],
+        [
+          0,
+          1,
+          196.73599243164062
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "characters": "원",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 10,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 12
+        },
+        "letterSpacing": {
+          "unit": "PERCENT",
+          "value": 0
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "1:1475",
+      "name": "10,969,600",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1960.8048095703125,
+        "y": 186.33193969726562,
+        "width": 41.49169921875,
+        "height": 7.4182891845703125
+      },
+      "bounds_relative_to_scope": {
+        "x": 152.2518310546875,
+        "y": 1.019927978515625,
+        "width": 41.49169921875,
+        "height": 7.4182891845703125
+      },
+      "width": 43,
+      "height": 9,
+      "relative_transform": [
+        [
+          1,
+          0,
+          198.30999755859375
+        ],
+        [
+          0,
+          1,
+          464.31201171875
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1960.31005859375
+        ],
+        [
+          0,
+          1,
+          185.31201171875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0.7490196228027344,
+            "g": 0.7490196228027344,
+            "b": 0.7490196228027344
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "characters": "10,969,600",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 8.100000381469727,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 9
+        },
+        "letterSpacing": {
+          "unit": "PERCENT",
+          "value": -0.78125
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "1:1476",
+      "name": "Group",
+      "type": "GROUP",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1960.280029296875,
+        "y": 185.31201171875,
+        "width": 49.08000183105469,
+        "height": 9
+      },
+      "bounds_relative_to_scope": {
+        "x": 151.72705078125,
+        "y": 0,
+        "width": 49.08000183105469,
+        "height": 9
+      },
+      "width": 49.08000183105469,
+      "height": 9,
+      "relative_transform": [
+        [
+          1,
+          0,
+          198.27999877929688
+        ],
+        [
+          0,
+          -1,
+          473.31201171875
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1960.280029296875
+        ],
+        [
+          0,
+          -1,
+          194.31201171875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [],
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "1:1477",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1960.280029296875,
+            "y": 190.177001953125,
+            "width": 49.0799560546875,
+            "height": 0.3600006103515625
+          },
+          "bounds_relative_to_scope": {
+            "x": 151.72705078125,
+            "y": 4.864990234375,
+            "width": 49.0799560546875,
+            "height": 0.3600006103515625
+          },
+          "width": 49.08000183105469,
+          "height": 0.3600006103515625,
+          "relative_transform": [
+            [
+              1,
+              0,
+              198.27999877929688
+            ],
+            [
+              0,
+              -1,
+              469.53700256347656
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1960.280029296875
+            ],
+            [
+              0,
+              -1,
+              190.53700256347656
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.7490196228027344,
+                "g": 0.7490196228027344,
+                "b": 0.7490196228027344
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1478",
+          "name": "원",
+          "type": "TEXT",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 2002.652099609375,
+            "y": 186.03440856933594,
+            "width": 5.8291015625,
+            "height": 6.7183990478515625
+          },
+          "bounds_relative_to_scope": {
+            "x": 194.09912109375,
+            "y": 0.7223968505859375,
+            "width": 5.8291015625,
+            "height": 6.7183990478515625
+          },
+          "width": 7,
+          "height": 9,
+          "relative_transform": [
+            [
+              1,
+              0,
+              240.30999755859375
+            ],
+            [
+              0,
+              1,
+              464.31201171875
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              2002.31005859375
+            ],
+            [
+              0,
+              1,
+              185.31201171875
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.7490196228027344,
+                "g": 0.7490196228027344,
+                "b": 0.7490196228027344
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "characters": "원",
+          "text_style": {
+            "fontName": {
+              "family": "Inter",
+              "style": "Regular"
+            },
+            "fontSize": 7.599999904632568,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "textAutoResize": "WIDTH_AND_HEIGHT",
+            "lineHeight": {
+              "unit": "PIXELS",
+              "value": 9
+            },
+            "letterSpacing": {
+              "unit": "PERCENT",
+              "value": 50
+            }
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1:1479",
+      "name": "회원할인가",
+      "type": "TEXT",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1809.321044921875,
+        "y": 197.19439697265625,
+        "width": 39.8927001953125,
+        "height": 7.86041259765625
+      },
+      "bounds_relative_to_scope": {
+        "x": 0.76806640625,
+        "y": 11.88238525390625,
+        "width": 39.8927001953125,
+        "height": 7.86041259765625
+      },
+      "width": 41,
+      "height": 10,
+      "relative_transform": [
+        [
+          1,
+          0,
+          46.847999572753906
+        ],
+        [
+          0,
+          1,
+          475.3840026855469
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1808.8480224609375
+        ],
+        [
+          0,
+          1,
+          196.38400268554688
+        ]
+      ],
+      "opacity": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "strokes": [],
+      "stroke_weight": 1,
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "characters": "회원할인가",
+      "text_style": {
+        "fontName": {
+          "family": "Inter",
+          "style": "Regular"
+        },
+        "fontSize": 8.600000381469727,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "textAutoResize": "WIDTH_AND_HEIGHT",
+        "lineHeight": {
+          "unit": "PIXELS",
+          "value": 10
+        },
+        "letterSpacing": {
+          "unit": "PERCENT",
+          "value": 3.125
+        }
+      },
+      "children": []
+    },
+    {
+      "id": "1:1480",
+      "name": "Group",
+      "type": "GROUP",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1857.4000244140625,
+        "y": 196.0880126953125,
+        "width": 66.70000457763672,
+        "height": 12
+      },
+      "bounds_relative_to_scope": {
+        "x": 48.8470458984375,
+        "y": 10.7760009765625,
+        "width": 66.70000457763672,
+        "height": 12
+      },
+      "width": 66.70000457763672,
+      "height": 12,
+      "relative_transform": [
+        [
+          1,
+          0,
+          95.4000015258789
+        ],
+        [
+          0,
+          -1,
+          487.0880126953125
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1857.4000244140625
+        ],
+        [
+          0,
+          -1,
+          208.0880126953125
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [],
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "1:1481",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1857.4000244140625,
+            "y": 198,
+            "width": 9.5999755859375,
+            "height": 9.479995727539062
+          },
+          "bounds_relative_to_scope": {
+            "x": 48.8470458984375,
+            "y": 12.68798828125,
+            "width": 9.5999755859375,
+            "height": 9.479995727539062
+          },
+          "width": 9.599998474121094,
+          "height": 9.479999542236328,
+          "relative_transform": [
+            [
+              1,
+              0,
+              95.4000015258789
+            ],
+            [
+              0,
+              -1,
+              486.47999572753906
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1857.4000244140625
+            ],
+            [
+              0,
+              -1,
+              207.47999572753906
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.37254902720451355,
+                "g": 0.37254902720451355,
+                "b": 0.37254902720451355
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1482",
+          "name": "10%",
+          "type": "TEXT",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1901.7840576171875,
+            "y": 197.83119201660156,
+            "width": 21.08349609375,
+            "height": 8.368179321289062
+          },
+          "bounds_relative_to_scope": {
+            "x": 93.2310791015625,
+            "y": 12.519180297851562,
+            "width": 21.08349609375,
+            "height": 8.368179321289062
+          },
+          "width": 23,
+          "height": 12,
+          "relative_transform": [
+            [
+              1,
+              0,
+              139.10000610351562
+            ],
+            [
+              0,
+              1,
+              475.0880126953125
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1901.0999755859375
+            ],
+            [
+              0,
+              1,
+              196.0880126953125
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.7529411911964417,
+                "g": 0,
+                "b": 0
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "characters": "10%",
+          "text_style": {
+            "fontName": {
+              "family": "Inter",
+              "style": "Regular"
+            },
+            "fontSize": 11.199999809265137,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "textAutoResize": "WIDTH_AND_HEIGHT",
+            "lineHeight": {
+              "unit": "PIXELS",
+              "value": 12
+            },
+            "letterSpacing": {
+              "unit": "PERCENT",
+              "value": 6.25
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

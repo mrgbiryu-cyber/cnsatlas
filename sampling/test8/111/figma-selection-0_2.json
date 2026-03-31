@@ -1,0 +1,134 @@
+{
+  "kind": "figma-analysis-export",
+  "export_scope": "selection",
+  "page": {
+    "id": "0:1",
+    "name": "Page 1"
+  },
+  "selection_ids": [
+    "1:1949"
+  ],
+  "exported_at": "2026-03-31T08:02:40.996Z",
+  "scope_bounds": {
+    "x": 1787.43994140625,
+    "y": 174.12002563476562,
+    "width": 244.800048828125,
+    "height": 74.16200256347656
+  },
+  "nodes": [
+    {
+      "id": "1:1949",
+      "name": "Clip path group",
+      "type": "GROUP",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1787.43994140625,
+        "y": 174.12002563476562,
+        "width": 244.800048828125,
+        "height": 74.16200256347656
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 0,
+        "width": 244.800048828125,
+        "height": 74.16200256347656
+      },
+      "width": 244.8000030517578,
+      "height": 74.16200256347656,
+      "relative_transform": [
+        [
+          1,
+          0,
+          25.43994140625
+        ],
+        [
+          0,
+          1,
+          453.1200256347656
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1787.43994140625
+        ],
+        [
+          0,
+          1,
+          174.12002563476562
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [],
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "1:1946",
+          "name": "Rectangle",
+          "type": "RECTANGLE",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1787.43994140625,
+            "y": 174.12002563476562,
+            "width": 244.800048828125,
+            "height": 74.16200256347656
+          },
+          "bounds_relative_to_scope": {
+            "x": 0,
+            "y": 0,
+            "width": 244.800048828125,
+            "height": 74.16200256347656
+          },
+          "width": 244.8000030517578,
+          "height": 74.16200256347656,
+          "relative_transform": [
+            [
+              1,
+              0,
+              25.440000534057617
+            ],
+            [
+              0,
+              1,
+              453.1200256347656
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1787.43994140625
+            ],
+            [
+              0,
+              1,
+              174.12002563476562
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "IMAGE",
+              "visible": true,
+              "opacity": 1,
+              "imageHash": "80bfd6e54df69be75958fa55dabde140cfba1475",
+              "scaleMode": "FIT",
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 134.73995971679688,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        }
+      ]
+    }
+  ]
+}

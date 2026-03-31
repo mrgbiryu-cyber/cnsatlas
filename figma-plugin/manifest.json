@@ -7,11 +7,11 @@
   ],
   "main": "code.js",
   "ui": "ui.html",
-  "networkAccess": {
-    "allowedDomains": [
-      "http://127.0.0.1",
-      "http://localhost"
-    ],
-    "reasoning": "Local JSON processing and local PPTX helper server"
+    "networkAccess": {
+      "allowedDomains": ["none"],
+      "devAllowedDomains": [
+        "http://localhost:27184"
+      ],
+      "reasoning": "Local JSON processing and local PPTX helper server"
+    }
   }
-}

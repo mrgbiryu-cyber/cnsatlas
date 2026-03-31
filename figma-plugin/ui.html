@@ -311,7 +311,7 @@
 
         try {
           const fileBase64 = await readFileAsBase64(file);
-          const response = await fetch("http://127.0.0.1:27184/render-pptx", {
+          const response = await fetch("http://localhost:27184/render-pptx", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

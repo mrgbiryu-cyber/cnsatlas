@@ -1,0 +1,85 @@
+{
+  "kind": "figma-analysis-export",
+  "export_scope": "selection",
+  "page": {
+    "id": "0:1",
+    "name": "Page 1"
+  },
+  "selection_ids": [
+    "1:1484"
+  ],
+  "exported_at": "2026-03-31T08:03:54.339Z",
+  "scope_bounds": {
+    "x": 1799.31005859375,
+    "y": 178.19000244140625,
+    "width": 222.02001953125,
+    "height": 57.25999450683594
+  },
+  "nodes": [
+    {
+      "id": "1:1484",
+      "name": "Vector",
+      "type": "VECTOR",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1799.31005859375,
+        "y": 178.19000244140625,
+        "width": 222.02001953125,
+        "height": 57.25999450683594
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 0,
+        "width": 222.02001953125,
+        "height": 57.25999450683594
+      },
+      "width": 221.51998901367188,
+      "height": 56.7599983215332,
+      "relative_transform": [
+        [
+          1,
+          0,
+          37.560001373291016
+        ],
+        [
+          0,
+          -1,
+          514.2000007629395
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1799.56005859375
+        ],
+        [
+          0,
+          -1,
+          235.1999969482422
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "color": {
+            "r": 0.49803921580314636,
+            "g": 0.49803921580314636,
+            "b": 0.49803921580314636
+          },
+          "blendMode": "NORMAL"
+        }
+      ],
+      "stroke_weight": 0.5,
+      "corner_radius": 0,
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": []
+    }
+  ]
+}
