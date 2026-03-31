@@ -1475,6 +1475,15 @@ def atom_priority(atom: dict[str, Any]) -> tuple[int, tuple[int, ...], float, fl
     )
 
 
+def page_atom_priority(atom: dict[str, Any]) -> tuple[tuple[int, ...], int, float, float]:
+    return (
+        tuple(int(v) for v in (atom.get("source_order_path") or [])),
+        int(atom.get("z_index") or 0),
+        float((atom.get("visual_bounds_px") or {}).get("y") or 0.0),
+        float((atom.get("visual_bounds_px") or {}).get("x") or 0.0),
+    )
+
+
 def bounds_gap(a: dict[str, Any], b: dict[str, Any]) -> tuple[float, float]:
     ax1 = float(a["x"])
     ay1 = float(a["y"])
@@ -1664,7 +1673,7 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
 
     source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
     for key, atoms in source_groups.items():
-        atoms_sorted = sorted(atoms, key=atom_priority)
+        atoms_sorted = sorted(atoms, key=page_atom_priority)
         bounds = union_bounds([atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0) for atom in atoms_sorted])
         source_items.append((key, atoms_sorted, bounds))
 
@@ -1842,7 +1851,7 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         atom_subgroups = split_semantic_subcontainers(atoms)
         for subgroup_index, subgroup_atoms in enumerate(atom_subgroups, start=1):
             subgroup_children: list[dict[str, Any]] = []
-            for atom in sorted(subgroup_atoms, key=atom_priority):
+            for atom in sorted(subgroup_atoms, key=page_atom_priority):
                 subgroup_children.extend(render_page_atom_nodes(atom, assets))
                 if str(atom.get("owner_id") or "") == "dense_ui_panel:global_ui_assets":
                     absorbed_global_source_keys.add(global_asset_source_key(atom))
