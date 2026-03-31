@@ -1819,23 +1819,32 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         purchase_root = "/".join(root_parts[:2])
         purchase_bounds = purchase_atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)
 
-        primary_atoms: list[dict[str, Any]] = []
-        secondary_atoms: list[dict[str, Any]] = []
+        top_atoms: list[dict[str, Any]] = []
+        clip_background_atoms: list[dict[str, Any]] = []
+        summary_atoms: list[dict[str, Any]] = []
         for atom in atoms:
             atom_source = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
             atom_bounds = atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)
             atom_role = str(atom.get("layer_role") or "")
             if atom_source.startswith(purchase_root):
-                primary_atoms.append(atom)
+                top_atoms.append(atom)
                 continue
-            if atom_role == "background_card" and mostly_contains(atom_bounds, purchase_bounds):
-                primary_atoms.append(atom)
+            if atom_role == "background_card":
+                clip_background_atoms.append(atom)
                 continue
-            secondary_atoms.append(atom)
+            summary_atoms.append(atom)
 
-        if not primary_atoms or not secondary_atoms:
+        if not top_atoms:
             return [atoms]
-        return [primary_atoms, secondary_atoms]
+
+        ordered_groups: list[list[dict[str, Any]]] = []
+        # Later children render above earlier children. Keep bottom-most layers first.
+        if clip_background_atoms:
+            ordered_groups.append(clip_background_atoms)
+        if summary_atoms:
+            ordered_groups.append(summary_atoms)
+        ordered_groups.append(top_atoms)
+        return [group for group in ordered_groups if group]
 
     for index, atoms in enumerate(
         sorted(

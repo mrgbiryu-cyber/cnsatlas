@@ -2887,10 +2887,10 @@
                 "type": "GROUP",
                 "name": "01",
                 "absoluteBoundingBox": {
-                  "x": 29.87,
-                  "y": 458.53,
-                  "width": 236.25,
-                  "height": 65.66
+                  "x": 37.52,
+                  "y": 457.39,
+                  "width": 221.53,
+                  "height": 56.75
                 },
                 "relativeTransform": [
                   [
@@ -2906,14 +2906,14 @@
                 ],
                 "children": [
                   {
-                    "id": "s29:slide_29/element_99/child_1",
+                    "id": "s29:slide_29/element_11",
                     "type": "SVG_BLOCK",
-                    "name": "직사각형 213",
+                    "name": "모서리가 둥근 직사각형 232",
                     "absoluteBoundingBox": {
-                      "x": 29.87,
-                      "y": 458.53,
-                      "width": 236.25,
-                      "height": 65.66
+                      "x": 37.52,
+                      "y": 457.39,
+                      "width": 221.53,
+                      "height": 56.75
                     },
                     "relativeTransform": [
                       [
@@ -2927,197 +2927,13 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"236.25\" height=\"65.66\" viewBox=\"0 0 236.25 65.66\"><rect x=\"0.5\" y=\"0.5\" width=\"235.25\" height=\"64.66\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"221.53\" height=\"56.75\" viewBox=\"0 0 221.53 56.75\"><rect x=\"0.5\" y=\"0.5\" width=\"220.53\" height=\"55.75\" rx=\"8.58\" ry=\"8.58\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 255, 255)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "background_card",
-                      "owner_id": "owner:s29:slide_29/element_99",
-                      "source_atom_id": "s29:slide_29/element_99/child_1"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_99/child_3",
-                    "type": "SVG_BLOCK",
-                    "name": "직사각형 236",
-                    "absoluteBoundingBox": {
-                      "x": 69.0,
-                      "y": 489.56,
-                      "width": 193.3,
-                      "height": 31.44
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"193.3\" height=\"31.44\" viewBox=\"0 0 193.3 31.44\"><rect x=\"0.5\" y=\"0.5\" width=\"192.3\" height=\"30.44\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "background_card",
-                      "owner_id": "owner:s29:slide_29/element_99",
-                      "source_atom_id": "s29:slide_29/element_99/child_3"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_99/child_3:label",
-                    "type": "TEXT",
-                    "name": "직사각형 236",
-                    "characters": "구매하기",
-                    "absoluteBoundingBox": {
-                      "x": 69.0,
-                      "y": 489.56,
-                      "width": 193.3,
-                      "height": 31.44
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 12.0,
-                      "textAlignHorizontal": "CENTER",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 15.0
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "background_card",
-                      "owner_id": "owner:s29:slide_29/element_99",
-                      "source_atom_id": "s29:slide_29/element_99/child_3"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_99/child_4/child_1",
-                    "type": "TEXT",
-                    "name": "TextBox 240",
-                    "characters": "회원할인가",
-                    "absoluteBoundingBox": {
-                      "x": 40.48,
-                      "y": 468.95,
-                      "width": 39.76,
-                      "height": 10.9
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.1,
-                          "g": 0.1,
-                          "b": 0.1
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 9.0,
-                      "textAlignHorizontal": "LEFT",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 11.25
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "text",
-                      "owner_id": "owner:s29:slide_29/element_99/child_4",
-                      "source_atom_id": "s29:slide_29/element_99/child_4/child_1"
-                    }
-                  },
-                  {
-                    "id": "s29:slide_29/element_99/child_4/child_2",
-                    "type": "TEXT",
-                    "name": "TextBox 242",
-                    "characters": "9,900,000원",
-                    "absoluteBoundingBox": {
-                      "x": 199.91,
-                      "y": 467.33,
-                      "width": 61.34,
-                      "height": 13.33
-                    },
-                    "relativeTransform": [
-                      [
-                        1,
-                        0,
-                        0
-                      ],
-                      [
-                        0,
-                        1,
-                        0
-                      ]
-                    ],
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        },
-                        "opacity": 1.0
-                      }
-                    ],
-                    "style": {
-                      "fontFamily": "LG스마트체 Regular",
-                      "fontStyle": "Regular",
-                      "fontSize": 11.0,
-                      "textAlignHorizontal": "RIGHT",
-                      "textAlignVertical": "TOP",
-                      "textAutoResize": "HEIGHT",
-                      "lineHeightPx": 13.75
-                    },
-                    "children": [],
-                    "debug": {
-                      "generator": "dense-ui-ir-v1",
-                      "layer_role": "text",
-                      "owner_id": "owner:s29:slide_29/element_99/child_4",
-                      "source_atom_id": "s29:slide_29/element_99/child_4/child_2"
+                      "owner_id": "owner:page:29",
+                      "source_atom_id": "s29:slide_29/element_11"
                     }
                   }
                 ],
@@ -3131,10 +2947,10 @@
                 "type": "GROUP",
                 "name": "02",
                 "absoluteBoundingBox": {
-                  "x": 37.52,
-                  "y": 457.39,
-                  "width": 221.53,
-                  "height": 56.75
+                  "x": 46.06,
+                  "y": 463.66,
+                  "width": 204.48,
+                  "height": 43.81
                 },
                 "relativeTransform": [
                   [
@@ -3516,16 +3332,45 @@
                       "owner_id": "dense_ui_panel:global_ui_assets",
                       "source_atom_id": "s29:slide_29/element_10"
                     }
-                  },
+                  }
+                ],
+                "debug": {
+                  "generator": "dense-ui-ir-v1",
+                  "group_id": "page_left_cluster:22:subgroup:02"
+                }
+              },
+              {
+                "id": "page_left_cluster:22:subgroup:03",
+                "type": "GROUP",
+                "name": "03",
+                "absoluteBoundingBox": {
+                  "x": 29.87,
+                  "y": 458.53,
+                  "width": 236.25,
+                  "height": 65.66
+                },
+                "relativeTransform": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "children": [
                   {
-                    "id": "s29:slide_29/element_11",
+                    "id": "s29:slide_29/element_99/child_1",
                     "type": "SVG_BLOCK",
-                    "name": "모서리가 둥근 직사각형 232",
+                    "name": "직사각형 213",
                     "absoluteBoundingBox": {
-                      "x": 37.52,
-                      "y": 457.39,
-                      "width": 221.53,
-                      "height": 56.75
+                      "x": 29.87,
+                      "y": 458.53,
+                      "width": 236.25,
+                      "height": 65.66
                     },
                     "relativeTransform": [
                       [
@@ -3539,19 +3384,203 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"221.53\" height=\"56.75\" viewBox=\"0 0 221.53 56.75\"><rect x=\"0.5\" y=\"0.5\" width=\"220.53\" height=\"55.75\" rx=\"8.58\" ry=\"8.58\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"0.0\" stroke=\"rgb(255, 255, 255)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"236.25\" height=\"65.66\" viewBox=\"0 0 236.25 65.66\"><rect x=\"0.5\" y=\"0.5\" width=\"235.25\" height=\"64.66\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(255, 255, 255)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "background_card",
-                      "owner_id": "owner:page:29",
-                      "source_atom_id": "s29:slide_29/element_11"
+                      "owner_id": "owner:s29:slide_29/element_99",
+                      "source_atom_id": "s29:slide_29/element_99/child_1"
+                    }
+                  },
+                  {
+                    "id": "s29:slide_29/element_99/child_3",
+                    "type": "SVG_BLOCK",
+                    "name": "직사각형 236",
+                    "absoluteBoundingBox": {
+                      "x": 69.0,
+                      "y": 489.56,
+                      "width": 193.3,
+                      "height": 31.44
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"193.3\" height=\"31.44\" viewBox=\"0 0 193.3 31.44\"><rect x=\"0.5\" y=\"0.5\" width=\"192.3\" height=\"30.44\" rx=\"0.0\" ry=\"0.0\" fill=\"rgb(0, 0, 0)\" fill-opacity=\"1.0\" stroke=\"rgb(0, 0, 0)\" stroke-opacity=\"1.0\" stroke-width=\"1.0\"/></svg>",
+                    "children": [],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "layer_role": "background_card",
+                      "owner_id": "owner:s29:slide_29/element_99",
+                      "source_atom_id": "s29:slide_29/element_99/child_3"
+                    }
+                  },
+                  {
+                    "id": "s29:slide_29/element_99/child_3:label",
+                    "type": "TEXT",
+                    "name": "직사각형 236",
+                    "characters": "구매하기",
+                    "absoluteBoundingBox": {
+                      "x": 69.0,
+                      "y": 489.56,
+                      "width": 193.3,
+                      "height": 31.44
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.1,
+                          "b": 0.1
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "style": {
+                      "fontFamily": "LG스마트체 Regular",
+                      "fontStyle": "Regular",
+                      "fontSize": 12.0,
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "TOP",
+                      "textAutoResize": "HEIGHT",
+                      "lineHeightPx": 15.0
+                    },
+                    "children": [],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "layer_role": "background_card",
+                      "owner_id": "owner:s29:slide_29/element_99",
+                      "source_atom_id": "s29:slide_29/element_99/child_3"
+                    }
+                  },
+                  {
+                    "id": "s29:slide_29/element_99/child_4/child_1",
+                    "type": "TEXT",
+                    "name": "TextBox 240",
+                    "characters": "회원할인가",
+                    "absoluteBoundingBox": {
+                      "x": 40.48,
+                      "y": 468.95,
+                      "width": 39.76,
+                      "height": 10.9
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.1,
+                          "b": 0.1
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "style": {
+                      "fontFamily": "LG스마트체 Regular",
+                      "fontStyle": "Regular",
+                      "fontSize": 9.0,
+                      "textAlignHorizontal": "LEFT",
+                      "textAlignVertical": "TOP",
+                      "textAutoResize": "HEIGHT",
+                      "lineHeightPx": 11.25
+                    },
+                    "children": [],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "layer_role": "text",
+                      "owner_id": "owner:s29:slide_29/element_99/child_4",
+                      "source_atom_id": "s29:slide_29/element_99/child_4/child_1"
+                    }
+                  },
+                  {
+                    "id": "s29:slide_29/element_99/child_4/child_2",
+                    "type": "TEXT",
+                    "name": "TextBox 242",
+                    "characters": "9,900,000원",
+                    "absoluteBoundingBox": {
+                      "x": 199.91,
+                      "y": 467.33,
+                      "width": 61.34,
+                      "height": 13.33
+                    },
+                    "relativeTransform": [
+                      [
+                        1,
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        1,
+                        0
+                      ]
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "style": {
+                      "fontFamily": "LG스마트체 Regular",
+                      "fontStyle": "Regular",
+                      "fontSize": 11.0,
+                      "textAlignHorizontal": "RIGHT",
+                      "textAlignVertical": "TOP",
+                      "textAutoResize": "HEIGHT",
+                      "lineHeightPx": 13.75
+                    },
+                    "children": [],
+                    "debug": {
+                      "generator": "dense-ui-ir-v1",
+                      "layer_role": "text",
+                      "owner_id": "owner:s29:slide_29/element_99/child_4",
+                      "source_atom_id": "s29:slide_29/element_99/child_4/child_2"
                     }
                   }
                 ],
                 "debug": {
                   "generator": "dense-ui-ir-v1",
-                  "group_id": "page_left_cluster:22:subgroup:02"
+                  "group_id": "page_left_cluster:22:subgroup:03"
                 }
               }
             ],
