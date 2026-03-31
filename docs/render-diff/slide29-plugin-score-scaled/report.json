@@ -1,0 +1,166 @@
+{
+  "kind": "visual-region-score-report",
+  "profile": "slide29",
+  "reference": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/slide29-plugin-reference/reference.png",
+  "actual": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/block-bundles/ir-dense-ui-panel-29.bundle.json",
+  "generated_at": "2026-03-31T10:41:34.108Z",
+  "global_match_score": 0.509,
+  "full_match_score": 0.538,
+  "regions": [
+    {
+      "key": "full",
+      "crop": null,
+      "metrics": {
+        "crop": null,
+        "width": 1920,
+        "height": 1080,
+        "changed_pixels": 958067,
+        "changed_ratio": 0.4620307677469136,
+        "match_score": 0.5379692322530865
+      },
+      "changed_ratio": 0.4620307677469136,
+      "match_score": 0.538,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/full"
+    },
+    {
+      "key": "top_meta",
+      "crop": "20,10,940,70",
+      "metrics": {
+        "crop": {
+          "x": 20,
+          "y": 10,
+          "width": 940,
+          "height": 70
+        },
+        "width": 1880,
+        "height": 140,
+        "changed_pixels": 79891,
+        "changed_ratio": 0.3035372340425532,
+        "match_score": 0.6964627659574468
+      },
+      "changed_ratio": 0.3035372340425532,
+      "match_score": 0.6965,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/top_meta"
+    },
+    {
+      "key": "left_static",
+      "crop": "25,455,250,80",
+      "metrics": {
+        "crop": {
+          "x": 25,
+          "y": 455,
+          "width": 250,
+          "height": 80
+        },
+        "width": 500,
+        "height": 160,
+        "changed_pixels": 39306,
+        "changed_ratio": 0.491325,
+        "match_score": 0.508675
+      },
+      "changed_ratio": 0.491325,
+      "match_score": 0.5087,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/left_static"
+    },
+    {
+      "key": "left_option",
+      "crop": "30,395,245,62",
+      "metrics": {
+        "crop": {
+          "x": 30,
+          "y": 395,
+          "width": 245,
+          "height": 62
+        },
+        "width": 490,
+        "height": 124,
+        "changed_pixels": 6420,
+        "changed_ratio": 0.10566161948650428,
+        "match_score": 0.8943383805134957
+      },
+      "changed_ratio": 0.10566161948650428,
+      "match_score": 0.8943,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/left_option"
+    },
+    {
+      "key": "left_viewer",
+      "crop": "15,70,300,260",
+      "metrics": {
+        "crop": {
+          "x": 15,
+          "y": 70,
+          "width": 300,
+          "height": 260
+        },
+        "width": 600,
+        "height": 520,
+        "changed_pixels": 242367,
+        "changed_ratio": 0.7768173076923077,
+        "match_score": 0.22318269230769228
+      },
+      "changed_ratio": 0.7768173076923077,
+      "match_score": 0.2232,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/left_viewer"
+    },
+    {
+      "key": "center_controls",
+      "crop": "360,320,260,170",
+      "metrics": {
+        "crop": {
+          "x": 360,
+          "y": 320,
+          "width": 260,
+          "height": 170
+        },
+        "width": 520,
+        "height": 340,
+        "changed_pixels": 149935,
+        "changed_ratio": 0.8480486425339366,
+        "match_score": 0.15195135746606336
+      },
+      "changed_ratio": 0.8480486425339366,
+      "match_score": 0.152,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/center_controls"
+    },
+    {
+      "key": "right_panel",
+      "crop": "575,15,370,510",
+      "metrics": {
+        "crop": {
+          "x": 575,
+          "y": 15,
+          "width": 370,
+          "height": 510
+        },
+        "width": 740,
+        "height": 1020,
+        "changed_pixels": 291085,
+        "changed_ratio": 0.385645204027557,
+        "match_score": 0.614354795972443
+      },
+      "changed_ratio": 0.385645204027557,
+      "match_score": 0.6144,
+      "out_dir": "docs/render-diff/slide29-plugin-score-scaled/right_panel"
+    }
+  ],
+  "gates": [
+    {
+      "key": "right_panel_min",
+      "passed": true,
+      "threshold": 0.55,
+      "actual": 0.6144
+    },
+    {
+      "key": "left_static_min",
+      "passed": true,
+      "threshold": 0.25,
+      "actual": 0.5087
+    },
+    {
+      "key": "top_meta_min",
+      "passed": true,
+      "threshold": 0.5,
+      "actual": 0.6965
+    }
+  ]
+}

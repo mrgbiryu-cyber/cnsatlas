@@ -129,11 +129,14 @@ async function svgToPng(svg, outputPath) {
 async function cropOrCopyReference(referenceImagePath, outPath, crop) {
   let image = sharp(referenceImagePath);
   if (crop) {
+    const meta = await image.metadata();
+    const scaleX = (meta.width || crop.width) / 960;
+    const scaleY = (meta.height || crop.height) / 540;
     image = image.extract({
-      left: Math.max(0, Math.round(crop.x)),
-      top: Math.max(0, Math.round(crop.y)),
-      width: Math.round(crop.width),
-      height: Math.round(crop.height)
+      left: Math.max(0, Math.round(crop.x * scaleX)),
+      top: Math.max(0, Math.round(crop.y * scaleY)),
+      width: Math.round(crop.width * scaleX),
+      height: Math.round(crop.height * scaleY)
     });
   }
   await image.png().toFile(outPath);

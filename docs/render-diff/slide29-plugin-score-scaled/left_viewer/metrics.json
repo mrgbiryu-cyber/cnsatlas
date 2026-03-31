@@ -1,0 +1,13 @@
+{
+  "crop": {
+    "x": 15,
+    "y": 70,
+    "width": 300,
+    "height": 260
+  },
+  "width": 600,
+  "height": 520,
+  "changed_pixels": 242367,
+  "changed_ratio": 0.7768173076923077,
+  "match_score": 0.22318269230769228
+}
