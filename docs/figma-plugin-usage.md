@@ -34,6 +34,7 @@ python3 scripts/figma_plugin_local_server.py
 2. Figma 플러그인 실행
 3. `PPTX 직접 업로드` 영역에서 `.pptx` 선택
 4. 슬라이드 번호 입력
+슬라이드 번호를 비우면 전체 슬라이드를 처리합니다.
 5. `PPTX 변환 후 렌더` 클릭
 
 ## 기대 결과

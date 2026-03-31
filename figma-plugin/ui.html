@@ -121,10 +121,10 @@
         <input id="pptxFileInput" type="file" accept=".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation" />
       </div>
       <div class="row" style="margin-top: 8px;">
-        <input id="pptxSlides" type="text" placeholder="예: 12,19,29 또는 29" style="flex:1; border:1px solid #cbd5e1; border-radius:8px; padding:10px; font-size:12px;" />
+        <input id="pptxSlides" type="text" placeholder="예: 12,19,29 또는 29, 비워두면 전체" style="flex:1; border:1px solid #cbd5e1; border-radius:8px; padding:10px; font-size:12px;" />
         <button class="secondary" id="renderPptxButton" type="button">PPTX 변환 후 렌더</button>
       </div>
-      <p class="hint">먼저 <code>python3 scripts/figma_plugin_local_server.py</code>를 실행해야 합니다.</p>
+      <p class="hint">먼저 <code>python3 scripts/figma_plugin_local_server.py</code>를 실행해야 합니다. 페이지 번호를 비우면 전체 슬라이드를 처리합니다.</p>
     </div>
 
     <div class="panel">
@@ -330,7 +330,10 @@
 
           loadedJsonText = JSON.stringify(payload.payload);
           setSummary(summarizePayload(payload.payload, file.name, "intermediate"));
-          setStatus(`PPTX 변환 완료: slide ${payload.slides.join(", ")}`);
+          const slideLabel = payload.slides && payload.slides.length
+            ? payload.slides.join(", ")
+            : "none";
+          setStatus(`PPTX 변환 완료: slide ${slideLabel}`);
           updateRenderAvailability();
           parent.postMessage({
             pluginMessage: {

@@ -75,6 +75,7 @@ python3 scripts/figma_plugin_local_server.py
 
 1. `PPTX 직접 업로드` 영역에서 `.pptx` 선택
 2. 슬라이드 번호 입력
+슬라이드 번호를 비우면 전체 슬라이드를 처리합니다.
 3. `PPTX 변환 후 렌더` 클릭
 
 ## 패키지 생성

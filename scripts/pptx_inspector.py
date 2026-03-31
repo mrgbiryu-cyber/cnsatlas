@@ -341,7 +341,7 @@ def _extract_connector_links(node: ET.Element) -> dict[str, Any]:
     return payload
 
 
-def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
+def _extract_table(frame: ET.Element, theme_colors: dict[str, str] | None = None) -> dict[str, Any] | None:
     table = frame.find(".//a:tbl", NS)
     if table is None:
         return None
@@ -363,7 +363,7 @@ def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
         running_col_index = 0
         for cell_index, cell in enumerate(row.findall("a:tc", NS), start=1):
             tc_pr = cell.find("a:tcPr", NS)
-            text_runs = _extract_text_runs(cell)
+            text_runs = _extract_text_runs(cell, theme_colors)
             text_alignment = _extract_text_alignment(cell)
             grid_span = int(cell.attrib.get("gridSpan", "1")) if cell.attrib.get("gridSpan") else 1
             row_span = int(cell.attrib.get("rowSpan", "1")) if cell.attrib.get("rowSpan") else 1
@@ -381,7 +381,7 @@ def _extract_table(frame: ET.Element) -> dict[str, Any] | None:
                     "width_emu": width_emu,
                     "width_px": _emu_to_px(width_emu),
                     "style": {
-                        "fill": _extract_color_payload(tc_pr.find("a:solidFill", NS)) if tc_pr is not None else None,
+                        "fill": _extract_color_payload(tc_pr.find("a:solidFill", NS), theme_colors) if tc_pr is not None else None,
                         "anchor": tc_pr.attrib.get("anchor") if tc_pr is not None else None,
                         "marL": _emu_to_px(tc_pr.attrib.get("marL")) if tc_pr is not None and tc_pr.attrib.get("marL") else None,
                         "marR": _emu_to_px(tc_pr.attrib.get("marR")) if tc_pr is not None and tc_pr.attrib.get("marR") else None,
@@ -531,7 +531,7 @@ def _extract_element(
             payload.update(_extract_connector_links(node))
     elif tag == "graphicFrame":
         payload["bounds"] = _apply_group_transform(_extract_xfrm(node.find("p:xfrm", NS)), group_context)
-        table_payload = _extract_table(node)
+        table_payload = _extract_table(node, theme_colors)
         payload["table"] = table_payload
         payload["frame_kind"] = "table" if table_payload else "graphic_frame"
     elif tag == "pic":
@@ -649,12 +649,13 @@ def _extract_part_elements(
 def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str, Any]:
     inspections = inspect_pptx(pptx_path)
     inspection_by_no = {item.slide_no: item for item in inspections}
+    requested_slide_numbers = slide_numbers or [item.slide_no for item in inspections]
 
     with ZipFile(pptx_path) as archive:
         slide_size = _presentation_slide_size(archive)
         theme_colors = _extract_theme_colors(archive)
         slides_payload: list[dict[str, Any]] = []
-        for slide_no in slide_numbers:
+        for slide_no in requested_slide_numbers:
             inspection = inspection_by_no.get(slide_no)
             if inspection is None:
                 raise ValueError(f"Slide {slide_no} not found in {pptx_path}")
@@ -693,7 +694,7 @@ def extract_slide_details(pptx_path: Path, slide_numbers: list[int]) -> dict[str
 
         return {
             "pptxPath": str(pptx_path),
-            "requestedSlides": slide_numbers,
+            "requestedSlides": requested_slide_numbers,
             "slides": slides_payload,
         }
 

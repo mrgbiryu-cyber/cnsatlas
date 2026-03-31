@@ -59,7 +59,7 @@ class LocalHandler(BaseHTTPRequestHandler):
                 pptx_path = Path(temp_dir) / filename
                 pptx_path.write_bytes(pptx_bytes)
 
-                detail_payload = extract_slide_details(pptx_path, slides or [1])
+                detail_payload = extract_slide_details(pptx_path, slides)
                 intermediate = build_intermediate_model(detail_payload)
 
             self._send_json(
