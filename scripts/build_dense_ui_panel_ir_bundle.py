@@ -678,8 +678,11 @@ def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | N
     height = max(float(node_bounds["height"]), 1.0)
     shape_style = atom.get("shape_style") or {}
     role = str(atom.get("layer_role") or "")
+    source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
     fill_style = shape_style.get("fill") or (atom.get("cell_style") or {}).get("fill")
-    if not fill_style and role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
+    if role in {"top_meta_band_cell", "top_meta_info_cell"} and source_path.endswith(("cell_2", "cell_4")):
+        fill_style = {"type": "srgb", "value": "D9D9D9", "alpha": 1.0, "kind": "solid"}
+    elif not fill_style and role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
         fill_style = {"type": "srgb", "value": "F2F2F2", "alpha": 1.0, "kind": "solid"}
     elif role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
         resolved = str(fill_style.get("resolved_value") or "").upper()

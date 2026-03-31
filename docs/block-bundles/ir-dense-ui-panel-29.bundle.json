@@ -219,7 +219,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"601.49\" height=\"16.79\" viewBox=\"0 0 601.49 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"600.99\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"601.49\" height=\"16.79\" viewBox=\"0 0 601.49 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"600.99\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -334,7 +334,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"601.49\" height=\"16.79\" viewBox=\"0 0 601.49 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"600.99\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"601.49\" height=\"16.79\" viewBox=\"0 0 601.49 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"600.99\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -507,7 +507,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"133.66\" height=\"16.79\" viewBox=\"0 0 133.66 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"133.16\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"133.66\" height=\"16.79\" viewBox=\"0 0 133.66 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"133.16\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
@@ -622,7 +622,7 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"133.66\" height=\"16.79\" viewBox=\"0 0 133.66 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"133.16\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"133.66\" height=\"16.79\" viewBox=\"0 0 133.66 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"133.16\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
