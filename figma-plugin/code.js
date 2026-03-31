@@ -587,13 +587,9 @@ async function renderIntermediatePayload(payload) {
 
   clearPreviousVisualTests();
 
-  const rootFrame = figma.createFrame();
-  rootFrame.name = `CNS Atlas Visual Test (${activeRenderMode})`;
-  rootFrame.fills = [];
-  rootFrame.strokes = [];
-
   let cursorX = 0;
   let maxHeight = MIN_PAGE_HEIGHT;
+  const renderedFrames = [];
 
   for (const page of payload.pages) {
     const pageFrame = figma.createFrame();
@@ -605,7 +601,8 @@ async function renderIntermediatePayload(payload) {
     pageFrame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
     pageFrame.strokes = [{ type: "SOLID", color: { r: 0.82, g: 0.82, b: 0.82 } }];
     pageFrame.strokeWeight = 1;
-    rootFrame.appendChild(pageFrame);
+    figma.currentPage.appendChild(pageFrame);
+    renderedFrames.push(pageFrame);
 
     const childrenMap = buildChildrenMap(page.candidates);
     const roots = [...(childrenMap.get(page.page_id) || [])].sort(sortByPosition);
@@ -617,9 +614,18 @@ async function renderIntermediatePayload(payload) {
     maxHeight = Math.max(maxHeight, pageBounds.height);
   }
 
-  rootFrame.resize(Math.max(cursorX - SLIDE_GAP, 1), maxHeight);
-  figma.currentPage.appendChild(rootFrame);
-  figma.viewport.scrollAndZoomIntoView([rootFrame]);
+  if (renderedFrames.length > 0) {
+    figma.viewport.scrollAndZoomIntoView(renderedFrames);
+    return;
+  }
+
+  const emptyFrame = figma.createFrame();
+  emptyFrame.name = `CNS Atlas Visual Test (${activeRenderMode})`;
+  emptyFrame.resize(Math.max(cursorX - SLIDE_GAP, 1), maxHeight);
+  emptyFrame.fills = [];
+  emptyFrame.strokes = [];
+  figma.currentPage.appendChild(emptyFrame);
+  figma.viewport.scrollAndZoomIntoView([emptyFrame]);
 }
 
 function colorToSvg(color, opacity) {
