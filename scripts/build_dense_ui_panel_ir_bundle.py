@@ -684,7 +684,7 @@ def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | N
     if not line_style and role in {"top_meta_band_cell", "top_meta_info_cell"}:
         line_style = {
             "type": "solid",
-            "width_px": 1.0,
+            "width_px": 0.5,
             "resolved_value": "BFBFBF",
             "alpha": 1.0,
         }
@@ -693,7 +693,7 @@ def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | N
     ]
     if line_style and line_style.get("type"):
         stroke_color, stroke_opacity = svg_color(line_style, "rgb(0,0,0)")
-        stroke_width = max(float(line_style.get("width_px") or 1.0), 1.0)
+        stroke_width = max(float(line_style.get("width_px") or 1.0), 0.5)
         inset = stroke_width / 2.0
         svg_parts.append(
             f'<rect x="{inset}" y="{inset}" width="{max(width - stroke_width, 0.5)}" height="{max(height - stroke_width, 0.5)}" '
@@ -1901,7 +1901,7 @@ def build_dense_ui_panel_nodes(
         },
     }
     page_owner_children = build_page_owner_semantic_groups(page, assets)
-    return page_owner_children + page_level_children + [panel_frame]
+    return page_level_children + page_owner_children + [panel_frame]
 
 
 def build_bundle(
