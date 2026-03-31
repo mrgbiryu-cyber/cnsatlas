@@ -1789,6 +1789,44 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
                 kept[duplicate_index] = node
         return kept
 
+    def split_semantic_subcontainers(atoms: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+        purchase_atom = next(
+            (
+                atom
+                for atom in atoms
+                if "구매하기" in str(atom.get("text") or "")
+                and str(atom.get("layer_role") or "") == "background_card"
+            ),
+            None,
+        )
+        if not purchase_atom:
+            return [atoms]
+
+        source_path = str(((purchase_atom.get("debug_tags") or {}).get("source_path")) or "")
+        root_parts = source_path.split("/")
+        if len(root_parts) < 2:
+            return [atoms]
+        purchase_root = "/".join(root_parts[:2])
+        purchase_bounds = purchase_atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)
+
+        primary_atoms: list[dict[str, Any]] = []
+        secondary_atoms: list[dict[str, Any]] = []
+        for atom in atoms:
+            atom_source = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
+            atom_bounds = atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)
+            atom_role = str(atom.get("layer_role") or "")
+            if atom_source.startswith(purchase_root):
+                primary_atoms.append(atom)
+                continue
+            if atom_role == "background_card" and mostly_contains(atom_bounds, purchase_bounds):
+                primary_atoms.append(atom)
+                continue
+            secondary_atoms.append(atom)
+
+        if not primary_atoms or not secondary_atoms:
+            return [atoms]
+        return [primary_atoms, secondary_atoms]
+
     for index, atoms in enumerate(
         sorted(
             [atoms for entry_index, atoms in enumerate(merged_entries) if entry_index not in absorbed_entry_indices],
@@ -1800,11 +1838,23 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         start=1,
     ):
         rendered_children: list[dict[str, Any]] = []
-        for atom in sorted(atoms, key=atom_priority):
-            rendered_children.extend(render_page_atom_nodes(atom, assets))
-            if str(atom.get("owner_id") or "") == "dense_ui_panel:global_ui_assets":
-                absorbed_global_source_keys.add(global_asset_source_key(atom))
-        rendered_children = dedupe_group_text_nodes(rendered_children)
+        atom_subgroups = split_semantic_subcontainers(atoms)
+        for subgroup_index, subgroup_atoms in enumerate(atom_subgroups, start=1):
+            subgroup_children: list[dict[str, Any]] = []
+            for atom in sorted(subgroup_atoms, key=atom_priority):
+                subgroup_children.extend(render_page_atom_nodes(atom, assets))
+                if str(atom.get("owner_id") or "") == "dense_ui_panel:global_ui_assets":
+                    absorbed_global_source_keys.add(global_asset_source_key(atom))
+            subgroup_children = dedupe_group_text_nodes(subgroup_children)
+            if len(atom_subgroups) > 1:
+                rendered_children.append(
+                    build_group_group(
+                        f"page_left_cluster:{index:02d}:subgroup:{subgroup_index:02d}",
+                        subgroup_children,
+                    )
+                )
+            else:
+                rendered_children.extend(subgroup_children)
         if not rendered_children:
             continue
         semantic_groups.append(build_owner_group(f"page_left_cluster:{index:02d}", rendered_children))
