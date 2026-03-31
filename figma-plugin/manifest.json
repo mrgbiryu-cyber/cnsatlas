@@ -9,8 +9,9 @@
   "ui": "ui.html",
   "networkAccess": {
     "allowedDomains": [
-      "none"
+      "http://127.0.0.1",
+      "http://localhost"
     ],
-    "reasoning": "Local JSON processing only"
+    "reasoning": "Local JSON processing and local PPTX helper server"
   }
 }

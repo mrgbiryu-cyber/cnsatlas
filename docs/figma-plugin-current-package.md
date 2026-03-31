@@ -1,12 +1,22 @@
 # Current Figma Plugin Package
 
-현재 패키지는 `raw PPTX`를 Figma 안에서 직접 파싱하지 않습니다.
+현재 패키지는 두 경로를 지원합니다.
+
+1. JSON bundle 직접 업로드
+2. 로컬 helper server를 통한 PPTX 직접 업로드
 
 현재 지원 경로:
 
 1. `PPT intermediate candidates JSON` 생성
 2. 필요 시 `resolved IR` 또는 `dense_ui_panel bundle` 생성
 3. Figma 플러그인에서 생성된 `JSON bundle`을 업로드
+
+또는
+
+1. 로컬 helper server 실행
+2. Figma 플러그인에서 `PPTX` 직접 업로드
+3. helper server가 intermediate JSON으로 변환
+4. 플러그인이 바로 렌더
 
 ## 포함 파일
 
@@ -16,6 +26,7 @@
 - `scripts/build_ppt_replay_bundle.py`
 - `scripts/build_resolved_ppt_ir.py`
 - `scripts/build_dense_ui_panel_ir_bundle.py`
+- `scripts/figma_plugin_local_server.py`
 - `docs/block-bundles/ir-dense-ui-panel-29.bundle.json`
 - `docs/block-bundles/ir-dense-ui-panel-29-left-product-price-only.bundle.json`
 
@@ -50,7 +61,21 @@ python3 scripts/build_dense_ui_panel_ir_bundle.py \
 2. `Plugins > Development > Import plugin from manifest...`
 3. `figma-plugin/manifest.json` 선택
 4. 플러그인 실행
-5. 생성된 `figma replay bundle JSON` 또는 `dense_ui_panel bundle JSON` 업로드
+5. `JSON bundle` 업로드 또는 `PPTX 직접 업로드` 사용
+
+## PPTX 직접 업로드
+
+먼저 로컬 helper server 실행:
+
+```bash
+python3 scripts/figma_plugin_local_server.py
+```
+
+그 다음 플러그인에서:
+
+1. `PPTX 직접 업로드` 영역에서 `.pptx` 선택
+2. 슬라이드 번호 입력
+3. `PPTX 변환 후 렌더` 클릭
 
 ## 패키지 생성
 

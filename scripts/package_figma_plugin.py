@@ -18,6 +18,7 @@ PACKAGE_FILES = [
     "scripts/build_ppt_replay_bundle.py",
     "scripts/build_resolved_ppt_ir.py",
     "scripts/build_dense_ui_panel_ir_bundle.py",
+    "scripts/figma_plugin_local_server.py",
     "docs/block-bundles/ir-dense-ui-panel-29.bundle.json",
     "docs/block-bundles/ir-dense-ui-panel-29-left-product-price-only.bundle.json",
 ]
