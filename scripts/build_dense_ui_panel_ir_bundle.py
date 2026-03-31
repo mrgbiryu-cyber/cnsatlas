@@ -1703,6 +1703,43 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         else:
             merged[f"self:{key}"].extend(atoms)
 
+    merged_entries: list[list[dict[str, Any]]] = list(merged.values())
+
+    def entry_bounds(atoms: list[dict[str, Any]]) -> dict[str, float]:
+        return union_bounds([atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0) for atom in atoms])
+
+    def entry_roles(atoms: list[dict[str, Any]]) -> set[str]:
+        return {str(atom.get("layer_role") or "") for atom in atoms}
+
+    def is_purchase_container_entry(atoms: list[dict[str, Any]]) -> bool:
+        texts = " ".join(str(atom.get("text") or "").strip() for atom in atoms if atom.get("text")).lower()
+        roles = entry_roles(atoms)
+        if "background_card" not in roles:
+            return False
+        return "구매하기" in texts
+
+    def is_price_overlay_entry(atoms: list[dict[str, Any]]) -> bool:
+        texts = " ".join(str(atom.get("text") or "").strip() for atom in atoms if atom.get("text"))
+        if not any(token in texts for token in ["회원할인가", "최대할인가", "9,900,000", "9,400,000", "10%"]):
+            return False
+        roles = entry_roles(atoms)
+        return roles <= {"text", "small_asset", "group"}
+
+    absorbed_entry_indices: set[int] = set()
+    for index, atoms in enumerate(merged_entries):
+        if not is_purchase_container_entry(atoms):
+            continue
+        container_bounds = entry_bounds(atoms)
+        for other_index, other_atoms in enumerate(merged_entries):
+            if other_index == index or other_index in absorbed_entry_indices:
+                continue
+            if not is_price_overlay_entry(other_atoms):
+                continue
+            other_bounds = entry_bounds(other_atoms)
+            if mostly_contains(container_bounds, other_bounds):
+                atoms.extend(other_atoms)
+                absorbed_entry_indices.add(other_index)
+
     absorbed_global_source_keys: set[str] = set()
 
     def text_specificity(node: dict[str, Any]) -> tuple[int, int]:
@@ -1754,7 +1791,7 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
 
     for index, atoms in enumerate(
         sorted(
-            merged.values(),
+            [atoms for entry_index, atoms in enumerate(merged_entries) if entry_index not in absorbed_entry_indices],
             key=lambda atoms_in_group: (
                 min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in atoms_in_group),
                 min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in atoms_in_group),
