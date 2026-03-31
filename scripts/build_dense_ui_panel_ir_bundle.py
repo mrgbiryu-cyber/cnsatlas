@@ -677,9 +677,17 @@ def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | N
     width = max(float(node_bounds["width"]), 1.0)
     height = max(float(node_bounds["height"]), 1.0)
     shape_style = atom.get("shape_style") or {}
-    fill_style = shape_style.get("fill")
+    fill_style = shape_style.get("fill") or (atom.get("cell_style") or {}).get("fill")
     fill_color, fill_opacity = svg_color(fill_style, "rgb(255,255,255)", 0.0)
     line_style = shape_style.get("line") or {}
+    role = str(atom.get("layer_role") or "")
+    if not line_style and role in {"top_meta_band_cell", "top_meta_info_cell"}:
+        line_style = {
+            "type": "solid",
+            "width_px": 1.0,
+            "resolved_value": "BFBFBF",
+            "alpha": 1.0,
+        }
     svg_parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
     ]
