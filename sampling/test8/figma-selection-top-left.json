@@ -1,0 +1,332 @@
+{
+  "kind": "figma-analysis-export",
+  "export_scope": "selection",
+  "page": {
+    "id": "0:1",
+    "name": "Page 1"
+  },
+  "selection_ids": [
+    "1:1677"
+  ],
+  "exported_at": "2026-03-31T00:04:07.646Z",
+  "scope_bounds": {
+    "x": 1762,
+    "y": -270.96002197265625,
+    "width": 190.5800018310547,
+    "height": 207.92001342773438
+  },
+  "nodes": [
+    {
+      "id": "1:1677",
+      "name": "Group",
+      "type": "GROUP",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1762,
+        "y": -270.96002197265625,
+        "width": 190.5800018310547,
+        "height": 207.92001342773438
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 0,
+        "width": 190.5800018310547,
+        "height": 207.92001342773438
+      },
+      "width": 190.5800018310547,
+      "height": 207.92001342773438,
+      "relative_transform": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          215.95999145507812
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1762
+        ],
+        [
+          0,
+          -1,
+          -63.040008544921875
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [],
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "1:1678",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1762,
+            "y": -270.96002197265625,
+            "width": 57.5999755859375,
+            "height": 35.040008544921875
+          },
+          "bounds_relative_to_scope": {
+            "x": 0,
+            "y": 0,
+            "width": 57.5999755859375,
+            "height": 35.040008544921875
+          },
+          "width": 57.599998474121094,
+          "height": 35.040008544921875,
+          "relative_transform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              43.079986572265625
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1762
+            ],
+            [
+              0,
+              -1,
+              -235.92001342773438
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.7176470756530762,
+                "g": 0.8705882430076599,
+                "b": 0.9098039269447327
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1679",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1774.54296875,
+            "y": -257.3699951171875,
+            "width": 15.51904296875,
+            "height": 8.54998779296875
+          },
+          "bounds_relative_to_scope": {
+            "x": 12.54296875,
+            "y": 13.59002685546875,
+            "width": 15.51904296875,
+            "height": 8.54998779296875
+          },
+          "width": 15.519000053405762,
+          "height": 8.54998779296875,
+          "relative_transform": [
+            [
+              1,
+              0,
+              12.543000221252441
+            ],
+            [
+              0,
+              -1,
+              30.17999267578125
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1774.54296875
+            ],
+            [
+              0,
+              -1,
+              -248.82000732421875
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1680",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1790.81201171875,
+            "y": -256.8699951171875,
+            "width": 16.4520263671875,
+            "height": 6.519989013671875
+          },
+          "bounds_relative_to_scope": {
+            "x": 28.81201171875,
+            "y": 14.09002685546875,
+            "width": 16.4520263671875,
+            "height": 6.519989013671875
+          },
+          "width": 16.45199966430664,
+          "height": 6.519989013671875,
+          "relative_transform": [
+            [
+              1,
+              0,
+              28.812000274658203
+            ],
+            [
+              0,
+              -1,
+              28.649993896484375
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1790.81201171875
+            ],
+            [
+              0,
+              -1,
+              -250.35000610351562
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1681",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1890.5799560546875,
+            "y": -75.79998779296875,
+            "width": 62,
+            "height": 12.759979248046875
+          },
+          "bounds_relative_to_scope": {
+            "x": 128.5799560546875,
+            "y": 195.1600341796875,
+            "width": 62,
+            "height": 12.759979248046875
+          },
+          "width": 62,
+          "height": 12.759979248046875,
+          "relative_transform": [
+            [
+              1,
+              0,
+              128.5800018310547
+            ],
+            [
+              0,
+              -1,
+              215.95999145507812
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1890.5799560546875
+            ],
+            [
+              0,
+              -1,
+              -63.040008544921875
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 0.7411800026893616,
+              "color": {
+                "r": 0,
+                "g": 0.6509804129600525,
+                "b": 0.8666666746139526
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        }
+      ]
+    }
+  ]
+}

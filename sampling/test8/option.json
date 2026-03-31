@@ -1,0 +1,220 @@
+{
+  "kind": "figma-analysis-export",
+  "export_scope": "selection",
+  "page": {
+    "id": "0:1",
+    "name": "Page 1"
+  },
+  "selection_ids": [
+    "1:1463"
+  ],
+  "exported_at": "2026-03-31T00:05:11.790Z",
+  "scope_bounds": {
+    "x": 1798.1099853515625,
+    "y": 121.55000305175781,
+    "width": 222.02001953125,
+    "height": 47.779998779296875
+  },
+  "nodes": [
+    {
+      "id": "1:1463",
+      "name": "Group",
+      "type": "GROUP",
+      "visible": true,
+      "locked": false,
+      "bounds_absolute": {
+        "x": 1798.1099853515625,
+        "y": 121.55000305175781,
+        "width": 222.02001953125,
+        "height": 47.779998779296875
+      },
+      "bounds_relative_to_scope": {
+        "x": 0,
+        "y": 0,
+        "width": 222.02001953125,
+        "height": 47.779998779296875
+      },
+      "width": 221.52000427246094,
+      "height": 47.279998779296875,
+      "relative_transform": [
+        [
+          1,
+          0,
+          36.36000061035156
+        ],
+        [
+          0,
+          -1,
+          448.08001708984375
+        ]
+      ],
+      "composed_transform": [
+        [
+          1,
+          0,
+          1798.3599853515625
+        ],
+        [
+          0,
+          -1,
+          169.08001708984375
+        ]
+      ],
+      "opacity": 1,
+      "fills": [],
+      "strokes": [],
+      "plugin_data": {},
+      "shared_plugin_data": {},
+      "children": [
+        {
+          "id": "1:1464",
+          "name": "Vector",
+          "type": "VECTOR",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1798.1099853515625,
+            "y": 121.55000305175781,
+            "width": 222.02001953125,
+            "height": 47.779998779296875
+          },
+          "bounds_relative_to_scope": {
+            "x": 0,
+            "y": 0,
+            "width": 222.02001953125,
+            "height": 47.779998779296875
+          },
+          "width": 221.52000427246094,
+          "height": 47.279998779296875,
+          "relative_transform": [
+            [
+              1,
+              0,
+              36.36000061035156
+            ],
+            [
+              0,
+              -1,
+              448.0800018310547
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1798.3599853515625
+            ],
+            [
+              0,
+              -1,
+              169.0800018310547
+            ]
+          ],
+          "opacity": 1,
+          "fills": [],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.7490196228027344,
+                "g": 0.7490196228027344,
+                "b": 0.7490196228027344
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "stroke_weight": 0.5,
+          "corner_radius": 0,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "children": []
+        },
+        {
+          "id": "1:1465",
+          "name": "옵션",
+          "type": "TEXT",
+          "visible": true,
+          "locked": false,
+          "bounds_absolute": {
+            "x": 1807.8380126953125,
+            "y": 134.306396484375,
+            "width": 15.5653076171875,
+            "height": 7.67120361328125
+          },
+          "bounds_relative_to_scope": {
+            "x": 9.72802734375,
+            "y": 12.756393432617188,
+            "width": 15.5653076171875,
+            "height": 7.67120361328125
+          },
+          "width": 17,
+          "height": 10,
+          "relative_transform": [
+            [
+              1,
+              0,
+              45.40800094604492
+            ],
+            [
+              0,
+              1,
+              412.4100036621094
+            ]
+          ],
+          "composed_transform": [
+            [
+              1,
+              0,
+              1807.407958984375
+            ],
+            [
+              0,
+              1,
+              133.41000366210938
+            ]
+          ],
+          "opacity": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "color": {
+                "r": 0.49803921580314636,
+                "g": 0.49803921580314636,
+                "b": 0.49803921580314636
+              },
+              "blendMode": "NORMAL"
+            }
+          ],
+          "strokes": [],
+          "stroke_weight": 1,
+          "plugin_data": {},
+          "shared_plugin_data": {},
+          "characters": "옵션",
+          "text_style": {
+            "fontName": {
+              "family": "Inter",
+              "style": "Regular"
+            },
+            "fontSize": 8.600000381469727,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "textAutoResize": "WIDTH_AND_HEIGHT",
+            "lineHeight": {
+              "unit": "PIXELS",
+              "value": 10
+            },
+            "letterSpacing": {
+              "unit": "PERCENT",
+              "value": 12.5
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
