@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
 
 function usage() {
   console.error(
-    "usage: node score_regions.mjs --reference <plugin.json> --actual <bundle.json> --out-dir <dir> [--profile slide29]"
+    "usage: node score_regions.mjs (--reference <plugin.json> | --reference-image <reference.png>) --actual <bundle.json> --out-dir <dir> [--profile slide29]"
   );
   process.exit(1);
 }
@@ -45,15 +45,13 @@ function ensureDir(dir) {
 }
 
 function runRenderDiff(scriptPath, reference, actual, outDir, crop) {
-  const args = [
-    scriptPath,
-    "--reference",
-    reference,
-    "--actual",
-    actual,
-    "--out-dir",
-    outDir
-  ];
+  const args = [scriptPath];
+  if (reference.image) {
+    args.push("--reference-image", reference.image);
+  } else {
+    args.push("--reference", reference.json);
+  }
+  args.push("--actual", actual, "--out-dir", outDir);
   if (crop) {
     args.push("--crop", crop);
   }
@@ -123,7 +121,7 @@ function buildGateRows(regionRows) {
 
 function main() {
   const args = parseArgs(process.argv);
-  if (!args.reference || !args.actual || !args["out-dir"]) usage();
+  if ((!args.reference && !args["reference-image"]) || !args.actual || !args["out-dir"]) usage();
 
   const profileName = args.profile || "slide29";
   const regions = REGION_PROFILES[profileName];
@@ -132,9 +130,15 @@ function main() {
   }
 
   const repoRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
-  const scriptPath = path.resolve(path.dirname(new URL(import.meta.url).pathname), "render_diff.mjs");
+  const scriptPath = path.resolve(
+    path.dirname(new URL(import.meta.url).pathname),
+    args["reference-image"] ? "compare_pdf_to_bundle.mjs" : "render_diff.mjs"
+  );
   const outDir = path.resolve(args["out-dir"]);
   ensureDir(outDir);
+  const reference = args["reference-image"]
+    ? { image: path.resolve(args["reference-image"]) }
+    : { json: path.resolve(args.reference) };
 
   const rows = [];
   for (const region of regions) {
@@ -142,7 +146,7 @@ function main() {
     ensureDir(regionOutDir);
     const metrics = runRenderDiff(
       scriptPath,
-      path.resolve(args.reference),
+      reference,
       path.resolve(args.actual),
       regionOutDir,
       region.crop
@@ -161,7 +165,7 @@ function main() {
   const report = {
     kind: "visual-region-score-report",
     profile: profileName,
-    reference: path.resolve(args.reference),
+    reference: reference.image || reference.json,
     actual: path.resolve(args.actual),
     generated_at: new Date().toISOString(),
     global_match_score: aggregateScore(rows),

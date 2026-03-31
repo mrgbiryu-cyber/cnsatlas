@@ -1,0 +1,110 @@
+{
+  "kind": "visual-region-score-report",
+  "profile": "slide29",
+  "reference": "docs/render-diff/slide29-pdf-reference/reference.png",
+  "actual": "docs/block-bundles/ir-dense-ui-panel-29.bundle.json",
+  "global_match_score": 0.3018,
+  "full_match_score": 0.3471474343104245,
+  "regions": [
+    {
+      "key": "full",
+      "crop": null,
+      "width": 1584,
+      "height": 1224,
+      "changed_pixels": 1265761,
+      "changed_ratio": 0.6528525656895755,
+      "match_score": 0.3471474343104245,
+      "out_dir": "docs/render-diff/slide29-pdf-score/full"
+    },
+    {
+      "key": "top_meta",
+      "crop": {
+        "x": 20,
+        "y": 10,
+        "width": 940,
+        "height": 70
+      },
+      "width": 940,
+      "height": 70,
+      "changed_pixels": 25941,
+      "changed_ratio": 0.3942401215805471,
+      "match_score": 0.6057598784194529,
+      "out_dir": "docs/render-diff/slide29-pdf-score/top_meta"
+    },
+    {
+      "key": "left_static",
+      "crop": {
+        "x": 25,
+        "y": 455,
+        "width": 250,
+        "height": 80
+      },
+      "width": 250,
+      "height": 80,
+      "changed_pixels": 18266,
+      "changed_ratio": 0.9133,
+      "match_score": 0.0867,
+      "out_dir": "docs/render-diff/slide29-pdf-score/left_static"
+    },
+    {
+      "key": "left_option",
+      "crop": {
+        "x": 30,
+        "y": 395,
+        "width": 245,
+        "height": 62
+      },
+      "width": 245,
+      "height": 62,
+      "changed_pixels": 14051,
+      "changed_ratio": 0.9250164581961817,
+      "match_score": 0.07498354180381828,
+      "out_dir": "docs/render-diff/slide29-pdf-score/left_option"
+    },
+    {
+      "key": "left_viewer",
+      "crop": {
+        "x": 15,
+        "y": 70,
+        "width": 300,
+        "height": 260
+      },
+      "width": 300,
+      "height": 260,
+      "changed_pixels": 33774,
+      "changed_ratio": 0.433,
+      "match_score": 0.567,
+      "out_dir": "docs/render-diff/slide29-pdf-score/left_viewer"
+    },
+    {
+      "key": "center_controls",
+      "crop": {
+        "x": 360,
+        "y": 320,
+        "width": 260,
+        "height": 170
+      },
+      "width": 260,
+      "height": 170,
+      "changed_pixels": 43593,
+      "changed_ratio": 0.9862669683257919,
+      "match_score": 0.01373303167420814,
+      "out_dir": "docs/render-diff/slide29-pdf-score/center_controls"
+    },
+    {
+      "key": "right_panel",
+      "crop": {
+        "x": 575,
+        "y": 15,
+        "width": 370,
+        "height": 510
+      },
+      "width": 370,
+      "height": 510,
+      "changed_pixels": 151943,
+      "changed_ratio": 0.8052093269740328,
+      "match_score": 0.1947906730259672,
+      "out_dir": "docs/render-diff/slide29-pdf-score/right_panel"
+    }
+  ]
+}
