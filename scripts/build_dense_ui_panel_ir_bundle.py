@@ -566,9 +566,26 @@ def build_paragraph_text_group(atom: dict[str, Any], bounds: dict[str, Any], *, 
 def build_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, *, suffix: str = "") -> dict[str, Any]:
     node_bounds = dict(bounds or atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0))
     shape_style = atom.get("shape_style") or {}
+    role = str(atom.get("layer_role") or "")
+    source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
     fill_style = shape_style.get("fill") or (atom.get("cell_style") or {}).get("fill")
+    if role in {"top_meta_band_cell", "top_meta_info_cell"} and source_path.endswith(("cell_2", "cell_4")):
+        fill_style = {"type": "srgb", "value": "D9D9D9", "alpha": 1.0, "kind": "solid"}
+    elif role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
+        resolved = str((fill_style or {}).get("resolved_value") or "").upper()
+        if resolved in {"", "FFFFFF"}:
+            fill_style = {"type": "srgb", "value": "F2F2F2", "alpha": 1.0, "kind": "solid"}
     fills = [make_solid_fill(fill_style, {"r": 1.0, "g": 1.0, "b": 1.0})]
     strokes, stroke_weight = make_strokes(shape_style)
+    if role in {"top_meta_band_cell", "top_meta_info_cell"} and not strokes:
+        strokes = [
+            {
+                "type": "SOLID",
+                "color": {"r": 191 / 255, "g": 191 / 255, "b": 191 / 255},
+                "opacity": 1.0,
+            }
+        ]
+        stroke_weight = 0.5
     return {
         "id": f"{atom['id']}{suffix}",
         "type": "RECTANGLE",
@@ -1592,7 +1609,12 @@ def render_dense_atom_nodes(
         if role == "issue_card" and atom.get("text"):
             owner_children.append(build_text_node(atom, suffix=":label"))
         return owner_children
-    if role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell", "description_card", "issue_card"}:
+    if role in {"top_meta_band_cell", "top_meta_info_cell"}:
+        owner_children.append(build_rect_node(atom, suffix=":bg"))
+        if atom.get("text"):
+            owner_children.append(build_text_node(atom, suffix=":label"))
+        return owner_children
+    if role in {"description_header_cell", "description_card", "issue_card"}:
         if use_svg_shape_cells:
             owner_children.append(build_overlay_svg_rect_node(atom, suffix=":bg"))
         else:

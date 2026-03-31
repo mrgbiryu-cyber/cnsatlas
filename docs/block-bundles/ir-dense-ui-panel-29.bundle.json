@@ -116,7 +116,7 @@
                 "children": [
                   {
                     "id": "s29:layout_29/element_1:row_1:cell_1:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 1-1",
                     "absoluteBoundingBox": {
                       "x": 31.34,
@@ -136,14 +136,35 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"93.04\" height=\"16.79\" viewBox=\"0 0 93.04 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"92.54\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9490196078431372,
+                          "g": 0.9490196078431372,
+                          "b": 0.9490196078431372
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_band_cell",
                       "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_1",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_1"
                     }
                   },
                   {
@@ -199,7 +220,7 @@
                   },
                   {
                     "id": "s29:layout_29/element_1:row_1:cell_2:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 1-2",
                     "absoluteBoundingBox": {
                       "x": 124.37,
@@ -219,19 +240,40 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"601.49\" height=\"16.79\" viewBox=\"0 0 601.49 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"600.99\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8509803921568627,
+                          "g": 0.8509803921568627,
+                          "b": 0.8509803921568627
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_band_cell",
                       "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_2",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_2"
                     }
                   },
                   {
                     "id": "s29:layout_29/element_1:row_2:cell_1:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 2-1",
                     "absoluteBoundingBox": {
                       "x": 31.34,
@@ -251,14 +293,35 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"93.04\" height=\"16.79\" viewBox=\"0 0 93.04 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"92.54\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9490196078431372,
+                          "g": 0.9490196078431372,
+                          "b": 0.9490196078431372
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_band_cell",
                       "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_1",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_1"
                     }
                   },
                   {
@@ -314,7 +377,7 @@
                   },
                   {
                     "id": "s29:layout_29/element_1:row_2:cell_2:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 2-2",
                     "absoluteBoundingBox": {
                       "x": 124.37,
@@ -334,14 +397,35 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"601.49\" height=\"16.79\" viewBox=\"0 0 601.49 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"600.99\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8509803921568627,
+                          "g": 0.8509803921568627,
+                          "b": 0.8509803921568627
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_band_cell",
                       "owner_id": "dense_ui_panel:top_meta_band_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_2",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_2"
                     }
                   }
                 ],
@@ -404,7 +488,7 @@
                 "children": [
                   {
                     "id": "s29:layout_29/element_1:row_1:cell_3:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 1-3",
                     "absoluteBoundingBox": {
                       "x": 725.86,
@@ -424,14 +508,35 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"76.85\" height=\"16.79\" viewBox=\"0 0 76.85 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"76.35\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9490196078431372,
+                          "g": 0.9490196078431372,
+                          "b": 0.9490196078431372
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_info_cell",
                       "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_3",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_3"
                     }
                   },
                   {
@@ -487,7 +592,7 @@
                   },
                   {
                     "id": "s29:layout_29/element_1:row_1:cell_4:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 1-4",
                     "absoluteBoundingBox": {
                       "x": 802.71,
@@ -507,19 +612,40 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"133.66\" height=\"16.79\" viewBox=\"0 0 133.66 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"133.16\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8509803921568627,
+                          "g": 0.8509803921568627,
+                          "b": 0.8509803921568627
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_info_cell",
                       "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_4",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_1:cell_4"
                     }
                   },
                   {
                     "id": "s29:layout_29/element_1:row_2:cell_3:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 2-3",
                     "absoluteBoundingBox": {
                       "x": 725.86,
@@ -539,14 +665,35 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"76.85\" height=\"16.79\" viewBox=\"0 0 76.85 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"76.35\" height=\"16.29\" fill=\"rgb(242, 242, 242)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9490196078431372,
+                          "g": 0.9490196078431372,
+                          "b": 0.9490196078431372
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_info_cell",
                       "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_3",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_3"
                     }
                   },
                   {
@@ -602,7 +749,7 @@
                   },
                   {
                     "id": "s29:layout_29/element_1:row_2:cell_4:bg",
-                    "type": "SVG_BLOCK",
+                    "type": "RECTANGLE",
                     "name": "cell 2-4",
                     "absoluteBoundingBox": {
                       "x": 802.71,
@@ -622,14 +769,35 @@
                         0
                       ]
                     ],
-                    "svgMarkup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"133.66\" height=\"16.79\" viewBox=\"0 0 133.66 16.79\"><rect x=\"0.25\" y=\"0.25\" width=\"133.16\" height=\"16.29\" fill=\"rgb(217, 217, 217)\" fill-opacity=\"1.0\" stroke=\"rgb(191, 191, 191)\" stroke-opacity=\"1.0\" stroke-width=\"0.5\"/></svg>",
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8509803921568627,
+                          "g": 0.8509803921568627,
+                          "b": 0.8509803921568627
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.78,
+                          "g": 0.78,
+                          "b": 0.78
+                        },
+                        "opacity": 1.0
+                      }
+                    ],
+                    "strokeWeight": 1.0,
                     "children": [],
                     "debug": {
                       "generator": "dense-ui-ir-v1",
                       "layer_role": "top_meta_info_cell",
                       "owner_id": "dense_ui_panel:top_meta_info_cells",
-                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_4",
-                      "role": "overlay_svg_rect"
+                      "source_atom_id": "s29:layout_29/element_1:row_2:cell_4"
                     }
                   }
                 ],
