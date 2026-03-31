@@ -62,6 +62,21 @@ def make_solid_fill(style_color: dict[str, Any] | None, fallback: dict[str, floa
     return {"type": "SOLID", "color": color, "opacity": opacity}
 
 
+def contrast_fill_for_background(atom: dict[str, Any]) -> dict[str, Any] | None:
+    fill_style = ((atom.get("shape_style") or {}).get("fill")) or ((atom.get("cell_style") or {}).get("fill"))
+    if not fill_style:
+        return None
+    bg, opacity = color_from_style(fill_style, {"r": 1.0, "g": 1.0, "b": 1.0})
+    if opacity <= 0.0:
+        return None
+    luminance = 0.2126 * bg["r"] + 0.7152 * bg["g"] + 0.0722 * bg["b"]
+    if luminance <= 0.35:
+        return {"type": "SOLID", "color": {"r": 1.0, "g": 1.0, "b": 1.0}, "opacity": 1.0}
+    if luminance >= 0.8:
+        return {"type": "SOLID", "color": {"r": 0.1, "g": 0.1, "b": 0.1}, "opacity": 1.0}
+    return None
+
+
 def make_strokes(shape_style: dict[str, Any] | None) -> tuple[list[dict[str, Any]], float]:
     line = (shape_style or {}).get("line") or {}
     if not line:
@@ -129,6 +144,14 @@ def build_text_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
     fill_style = source_style.get("fill")
     if not fill_style and (atom.get("cell_style") or {}).get("fill"):
         fill_style = None
+    if not fill_style and suffix == ":label":
+        contrast_fill = contrast_fill_for_background(atom)
+        if contrast_fill:
+            fills = [contrast_fill]
+        else:
+            fills = [make_solid_fill(fill_style, {"r": 0.1, "g": 0.1, "b": 0.1})]
+    else:
+        fills = [make_solid_fill(fill_style, {"r": 0.1, "g": 0.1, "b": 0.1})]
     characters = compact_label_text(atom) if suffix == ":label" else str(atom.get("text") or "")
     if characters == "‹#›":
         title = str(atom.get("title") or "")
@@ -142,7 +165,7 @@ def build_text_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
         "characters": characters,
         "absoluteBoundingBox": node_bounds,
         "relativeTransform": identity_affine(),
-        "fills": [make_solid_fill(fill_style, {"r": 0.1, "g": 0.1, "b": 0.1})],
+        "fills": fills,
         "style": text_style(atom),
         "children": [],
         "debug": {
@@ -621,12 +644,41 @@ def build_small_asset_svg_node(atom: dict[str, Any], bounds: dict[str, Any] | No
     height = max(float(node_bounds["height"]), 1.0)
     shape_kind = str(atom.get("shape_kind") or "")
     shape_style = atom.get("shape_style") or {}
+    render_hint = str(atom.get("render_hint") or "")
+    title = str(atom.get("title") or "")
+    text_value = str(atom.get("text") or "").strip()
     fill_color, fill_opacity = svg_color(shape_style.get("fill"), "rgb(255,255,255)")
     line_style = shape_style.get("line") or {}
     stroke_color, stroke_opacity = svg_color(line_style, "rgb(120,120,120)")
     stroke_width = max(float(line_style.get("width_px") or 1.0), 1.0)
 
-    if shape_kind == "ellipse":
+    if title.lower() == "like":
+        svg_markup = (
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+            f'<path d="M {width * 0.5:.2f} {height * 0.86:.2f} '
+            f'C {width * 0.32:.2f} {height * 0.70:.2f}, {width * 0.12:.2f} {height * 0.54:.2f}, {width * 0.12:.2f} {height * 0.31:.2f} '
+            f'C {width * 0.12:.2f} {height * 0.15:.2f}, {width * 0.24:.2f} {height * 0.06:.2f}, {width * 0.37:.2f} {height * 0.06:.2f} '
+            f'C {width * 0.45:.2f} {height * 0.06:.2f}, {width * 0.50:.2f} {height * 0.12:.2f}, {width * 0.50:.2f} {height * 0.18:.2f} '
+            f'C {width * 0.50:.2f} {height * 0.12:.2f}, {width * 0.55:.2f} {height * 0.06:.2f}, {width * 0.63:.2f} {height * 0.06:.2f} '
+            f'C {width * 0.76:.2f} {height * 0.06:.2f}, {width * 0.88:.2f} {height * 0.15:.2f}, {width * 0.88:.2f} {height * 0.31:.2f} '
+            f'C {width * 0.88:.2f} {height * 0.54:.2f}, {width * 0.68:.2f} {height * 0.70:.2f}, {width * 0.50:.2f} {height * 0.86:.2f} Z" '
+            f'fill="none" stroke="rgb(95,95,95)" stroke-width="{max(stroke_width, 1.4):.2f}" stroke-linejoin="round" stroke-linecap="round"/>'
+            "</svg>"
+        )
+    elif render_hint in {"viewer_diagonal_tl_br", "viewer_diagonal_bl_tr"}:
+        x1, y1, x2, y2 = (0, 0, width, height)
+        if render_hint == "viewer_diagonal_bl_tr":
+            x1, y1, x2, y2 = (0, height, width, 0)
+        svg_markup = (
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
+            f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" '
+            f'stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="1.5" stroke-linecap="round"/>'
+            "</svg>"
+        )
+    elif shape_kind == "ellipse":
+        if text_value == "?" and stroke_color == "rgb(255, 255, 255)":
+            stroke_color = "rgb(140,140,140)"
+            stroke_opacity = 1.0
         svg_markup = (
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
             f'<ellipse cx="{width / 2}" cy="{height / 2}" rx="{max(width / 2 - stroke_width / 2, 0.5)}" '
@@ -1268,6 +1320,15 @@ def max_overlap_area(a: dict[str, Any], b: dict[str, Any]) -> float:
     return (right - left) * (bottom - top)
 
 
+def mostly_same_bounds(a: dict[str, Any], b: dict[str, Any], *, tolerance: float = 2.0) -> bool:
+    return (
+        abs(float(a["x"]) - float(b["x"])) <= tolerance
+        and abs(float(a["y"]) - float(b["y"])) <= tolerance
+        and abs(float(a["width"]) - float(b["width"])) <= tolerance
+        and abs(float(a["height"]) - float(b["height"])) <= tolerance
+    )
+
+
 def best_overlapping_card(bounds: dict[str, Any], card_atoms: list[dict[str, Any]]) -> dict[str, Any] | None:
     if not card_atoms:
         return None
@@ -1632,7 +1693,7 @@ def is_left_product_price_global_atom(atom: dict[str, Any]) -> bool:
     bounds = atom.get("visual_bounds_px") or {}
     if not bounds:
         return False
-    return bbox_intersects(bounds, LEFT_PRODUCT_PRICE_REGION)
+    return bbox_intersects(bounds, LEFT_PRODUCT_PRICE_REGION) or bbox_intersects(bounds, LEFT_VIEWER_REGION)
 
 
 def render_page_atom_nodes(
@@ -1671,6 +1732,112 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         if is_left_side_page_atom(atom) or is_left_product_price_global_atom(atom):
             source_groups[page_semantic_source_key(atom)].append(atom)
 
+    def root_source_key(atom: dict[str, Any]) -> str:
+        source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
+        parts = source_path.split("/")
+        if len(parts) >= 2:
+            return "/".join(parts[:2])
+        return source_path or str(atom.get("id") or "")
+
+    def set_placeholder_fill(atom: dict[str, Any], srgb_hex: str) -> None:
+        atom["shape_style"] = dict(atom.get("shape_style") or {})
+        atom["shape_style"]["fill"] = {
+            "type": "srgb",
+            "value": srgb_hex,
+            "resolved_value": srgb_hex,
+            "alpha": 1.0,
+            "kind": "solid",
+        }
+        atom["shape_style"].setdefault(
+            "line",
+            {
+                "type": "srgb",
+                "value": "BFBFBF",
+                "resolved_value": "BFBFBF",
+                "alpha": 1.0,
+                "kind": "solid",
+                "width_px": 1.0,
+            },
+        )
+
+    def set_outline_only(atom: dict[str, Any]) -> None:
+        atom["shape_style"] = dict(atom.get("shape_style") or {})
+        atom["shape_style"]["fill"] = {
+            "type": "srgb",
+            "value": "FFFFFF",
+            "resolved_value": "FFFFFF",
+            "alpha": 0.0,
+            "kind": "solid",
+        }
+        atom["shape_style"]["line"] = {
+            "type": "srgb",
+            "value": "BFBFBF",
+            "resolved_value": "BFBFBF",
+            "alpha": 1.0,
+            "kind": "solid",
+            "width_px": 1.0,
+        }
+
+    def mostly_contains(outer: dict[str, float], inner: dict[str, float]) -> bool:
+        overlap = max_overlap_area(outer, inner)
+        inner_area = max(float(inner["width"]) * float(inner["height"]), 1.0)
+        return overlap / inner_area >= 0.9
+
+    root_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for atoms in source_groups.values():
+        for atom in atoms:
+            root_groups[root_source_key(atom)].append(atom)
+
+    viewer_placeholder_keys: set[str] = set()
+    viewer_placeholder_bounds: dict[str, dict[str, float]] = {}
+    for key, atoms in list(root_groups.items()):
+        roles = {str(atom.get("layer_role") or "") for atom in atoms}
+        if "group" not in roles:
+            continue
+        background_cards = [atom for atom in atoms if str(atom.get("layer_role") or "") == "background_card"]
+        overlay_lines = [atom for atom in atoms if str(atom.get("layer_role") or "") == "overlay_mark"]
+        if len(background_cards) != 1 or len(overlay_lines) < 2:
+            continue
+        bg_bounds = background_cards[0].get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)
+        matching_lines = [
+            atom
+            for atom in overlay_lines
+            if mostly_same_bounds(bg_bounds, atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0), tolerance=4.0)
+        ]
+        if len(matching_lines) < 2:
+            continue
+        viewer_placeholder_keys.add(key)
+        viewer_placeholder_bounds[key] = bg_bounds
+        set_placeholder_fill(background_cards[0], "E6E6E6")
+        ordered_lines = sorted(
+            matching_lines,
+            key=lambda atom: tuple((atom.get("debug_tags") or {}).get("source_order_path") or []),
+        )
+        if ordered_lines:
+            ordered_lines[0]["render_hint"] = "viewer_diagonal_tl_br"
+        if len(ordered_lines) > 1:
+            ordered_lines[1]["render_hint"] = "viewer_diagonal_bl_tr"
+
+    for key, atoms in list(root_groups.items()):
+        if key in viewer_placeholder_keys:
+            continue
+        if len(atoms) != 1:
+            continue
+        atom = atoms[0]
+        if str(atom.get("layer_role") or "") != "background_card":
+            continue
+        atom_bounds = atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0)
+        atom_area = float(atom_bounds["width"]) * float(atom_bounds["height"])
+        for viewer_bounds in viewer_placeholder_bounds.values():
+            viewer_area = float(viewer_bounds["width"]) * float(viewer_bounds["height"])
+            if viewer_area <= 0.0:
+                continue
+            if atom_area < viewer_area * 1.4:
+                continue
+            if mostly_contains(atom_bounds, viewer_bounds):
+                set_outline_only(atom)
+                break
+
     source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
     for key, atoms in source_groups.items():
         atoms_sorted = sorted(atoms, key=page_atom_priority)
@@ -1702,10 +1869,19 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
             return True
         return False
 
-    def mostly_contains(outer: dict[str, float], inner: dict[str, float]) -> bool:
-        overlap = max_overlap_area(outer, inner)
-        inner_area = max(float(inner["width"]) * float(inner["height"]), 1.0)
-        return overlap / inner_area >= 0.9
+    def bounds_center(bounds: dict[str, float]) -> tuple[float, float]:
+        return (float(bounds["x"]) + float(bounds["width"]) * 0.5, float(bounds["y"]) + float(bounds["height"]) * 0.5)
+
+    def near_viewer_placeholder(bounds: dict[str, float]) -> str | None:
+        cx, cy = bounds_center(bounds)
+        for key, viewer_bounds in viewer_placeholder_bounds.items():
+            vx = float(viewer_bounds["x"]) - 24.0
+            vy = float(viewer_bounds["y"]) - 12.0
+            vw = float(viewer_bounds["width"]) + 72.0
+            vh = float(viewer_bounds["height"]) + 84.0
+            if vx <= cx <= vx + vw and vy <= cy <= vy + vh:
+                return key
+        return None
 
     semantic_groups: list[dict[str, Any]] = []
     large_container_indices = [
@@ -1716,7 +1892,15 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
 
     merged: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for index, (key, atoms, bounds) in enumerate(source_items):
+        root_key = root_source_key(atoms[0]) if atoms else key
+        if root_key in viewer_placeholder_keys:
+            merged[f"container:{root_key}"].extend(atoms)
+            continue
         if is_compact_left_control(atoms, bounds):
+            viewer_key = near_viewer_placeholder(bounds)
+            if viewer_key:
+                merged[f"container:{viewer_key}"].extend(atoms)
+                continue
             merged[f"self:{key}"].extend(atoms)
             continue
         container_candidates: list[tuple[float, int]] = []
@@ -2349,6 +2533,7 @@ LOWER_BODY_OVERLAY_VERSION_OWNER_IDS = {
     "dense_ui_panel:version_stack",
 }
 
+LEFT_VIEWER_REGION = make_bounds(0.0, 45.0, 320.0, 300.0)
 LEFT_PRODUCT_PRICE_REGION = make_bounds(0.0, 300.0, 300.0, 260.0)
 
 

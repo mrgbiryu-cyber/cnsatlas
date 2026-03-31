@@ -71,7 +71,21 @@ function parseCrop(value) {
   return { x: parts[0], y: parts[1], width: parts[2], height: parts[3] };
 }
 
-function renderBundleNode(node, pieces, offset) {
+function parseNumber(value, fallback) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+function resolveFontConfig(fontFamily) {
+  const family = String(fontFamily || "").trim();
+  if (!family) return { family: "Malgun Gothic, sans-serif", scale: 1.0 };
+  if (family.includes("LG스마트체")) {
+    return { family: "Malgun Gothic, sans-serif", scale: 1.15 };
+  }
+  return { family, scale: 1.0 };
+}
+
+function renderBundleNode(node, pieces, offset, assets) {
   const bbox = node.absoluteBoundingBox;
   if (!bbox) return;
   const x = bbox.x - offset.x;
@@ -86,11 +100,26 @@ function renderBundleNode(node, pieces, offset) {
     const fill = (node.fills || [])[0];
     const stroke = (node.strokes || [])[0];
     const strokeWidth = Number(node.strokeWeight || 0);
-    pieces.push(
-      `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
-        stroke ? cssRgba(stroke) : "none"
-      }" stroke-width="${strokeWidth}" />`
-    );
+    if (fill && fill.type === "IMAGE" && fill.imageRef && assets?.[fill.imageRef]?.base64) {
+      const asset = assets[fill.imageRef];
+      const mime = asset.mime_type || "image/png";
+      pieces.push(
+        `<image x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="none" href="data:${mime};base64,${asset.base64}" />`
+      );
+      if (stroke && strokeWidth > 0) {
+        pieces.push(
+          `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${cssRgba(
+            stroke
+          )}" stroke-width="${strokeWidth}" />`
+        );
+      }
+    } else {
+      pieces.push(
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+          stroke ? cssRgba(stroke) : "none"
+        }" stroke-width="${strokeWidth}" />`
+      );
+    }
   } else if (type === "TEXT") {
     const fill = (node.fills || [])[0];
     const style = node.style || {};
@@ -109,7 +138,7 @@ function renderBundleNode(node, pieces, offset) {
   }
 
   for (const child of node.children || []) {
-    renderBundleNode(child, pieces, offset);
+    renderBundleNode(child, pieces, offset, assets);
   }
 }
 
@@ -118,12 +147,192 @@ function bundleToSvg(bundle, crop) {
   const pageBox = crop || doc.absoluteBoundingBox;
   const pieces = [];
   pieces.push(`<rect x="0" y="0" width="${pageBox.width}" height="${pageBox.height}" fill="white" />`);
-  renderBundleNode(doc, pieces, { x: pageBox.x, y: pageBox.y });
+  renderBundleNode(doc, pieces, { x: pageBox.x, y: pageBox.y }, bundle.assets || {});
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${pageBox.width}" height="${pageBox.height}" viewBox="0 0 ${pageBox.width} ${pageBox.height}">${pieces.join("")}</svg>`;
 }
 
 async function svgToPng(svg, outputPath) {
   await sharp(Buffer.from(svg)).png().toFile(outputPath);
+}
+
+function miniSvg(width, height, content) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">${content}</svg>`;
+}
+
+async function svgBuffer(width, height, content) {
+  return sharp(Buffer.from(miniSvg(width, height, content))).png().toBuffer();
+}
+
+async function rectangleOverlay(node) {
+  const bbox = node.absoluteBoundingBox;
+  const fill = (node.fills || [])[0];
+  const stroke = (node.strokes || [])[0];
+  const strokeWidth = Number(node.strokeWeight || 0);
+  const content = `<rect x="0" y="0" width="${bbox.width}" height="${bbox.height}" fill="${
+    fill ? cssRgba(fill) : "none"
+  }" stroke="${stroke ? cssRgba(stroke) : "none"}" stroke-width="${strokeWidth}" />`;
+  return svgBuffer(bbox.width, bbox.height, content);
+}
+
+async function textOverlay(node) {
+  const bbox = node.absoluteBoundingBox;
+  const fill = (node.fills || [])[0];
+  const style = node.style || {};
+  const font = resolveFontConfig(style.fontFamily);
+  const fontSize = Number(style.fontSize || 12) * font.scale;
+  const fontFamily = font.family;
+  const lineHeight = Number(style.lineHeightPx || fontSize * 1.2);
+  const lines = String(node.characters || "").split("\n");
+  const alignH = String(style.textAlignHorizontal || "LEFT").toUpperCase();
+  const alignV = String(style.textAlignVertical || "TOP").toUpperCase();
+  const totalHeight = lines.length * lineHeight;
+  let startY = fontSize;
+  if (alignV === "CENTER") {
+    startY = Math.max(fontSize, (bbox.height - totalHeight) / 2 + fontSize);
+  } else if (alignV === "BOTTOM") {
+    startY = Math.max(fontSize, bbox.height - totalHeight + fontSize);
+  }
+  let textAnchor = "start";
+  let textX = 0;
+  if (alignH === "CENTER") {
+    textAnchor = "middle";
+    textX = bbox.width / 2;
+  } else if (alignH === "RIGHT") {
+    textAnchor = "end";
+    textX = bbox.width;
+  }
+  const content = lines
+    .map((line, index) => {
+      const dy = startY + index * lineHeight;
+      return `<text x="${textX}" y="${dy}" text-anchor="${textAnchor}" font-family="${esc(fontFamily)}" font-size="${fontSize}" fill="${cssRgba(
+        fill,
+        { r: 0, g: 0, b: 0, a: 1 }
+      )}">${esc(line)}</text>`;
+    })
+    .join("");
+  return svgBuffer(Math.max(1, bbox.width), Math.max(1, bbox.height), content);
+}
+
+async function imageOverlay(node, assets) {
+  const fill = (node.fills || [])[0];
+  if (!fill?.imageRef || !assets?.[fill.imageRef]?.base64) return null;
+  const asset = assets[fill.imageRef];
+  return sharp(Buffer.from(asset.base64, "base64"))
+    .resize(Math.max(1, Math.round(node.absoluteBoundingBox.width)), Math.max(1, Math.round(node.absoluteBoundingBox.height)), {
+      fit: "fill"
+    })
+    .png()
+    .toBuffer();
+}
+
+async function svgBlockOverlay(node) {
+  const bbox = node.absoluteBoundingBox;
+  if (!node.svgMarkup) return null;
+  return svgBuffer(
+    Math.max(1, bbox.width),
+    Math.max(1, bbox.height),
+    `<g transform="translate(0,0)">${node.svgMarkup}</g>`
+  );
+}
+
+function intersectRect(a, b) {
+  const left = Math.max(a.left, b.left);
+  const top = Math.max(a.top, b.top);
+  const right = Math.min(a.left + a.width, b.left + b.width);
+  const bottom = Math.min(a.top + a.height, b.top + b.height);
+  return {
+    left,
+    top,
+    width: Math.max(0, right - left),
+    height: Math.max(0, bottom - top)
+  };
+}
+
+async function clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight) {
+  const visible = intersectRect(
+    { left, top, width, height },
+    { left: 0, top: 0, width: canvasWidth, height: canvasHeight }
+  );
+  if (visible.width <= 0 || visible.height <= 0) return null;
+  const extract = {
+    left: Math.max(0, Math.round(visible.left - left)),
+    top: Math.max(0, Math.round(visible.top - top)),
+    width: Math.max(1, Math.round(visible.width)),
+    height: Math.max(1, Math.round(visible.height))
+  };
+  const clipped = await sharp(input).extract(extract).png().toBuffer();
+  return { input: clipped, left: Math.round(visible.left), top: Math.round(visible.top) };
+}
+
+async function collectCompositeOps(node, offset, assets, ops, canvasWidth, canvasHeight) {
+  const bbox = node.absoluteBoundingBox;
+  if (!bbox) return;
+  const left = Math.round(bbox.x - offset.x);
+  const top = Math.round(bbox.y - offset.y);
+  const width = Math.max(1, Math.round(bbox.width));
+  const height = Math.max(1, Math.round(bbox.height));
+  const type = node.type;
+
+  if (type === "SVG_BLOCK" && node.svgMarkup) {
+    const input = await svgBlockOverlay(node);
+    if (input) {
+      const clipped = await clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight);
+      if (clipped) ops.push(clipped);
+    }
+  } else if (type === "RECTANGLE") {
+    const fill = (node.fills || [])[0];
+    if (fill?.type === "IMAGE") {
+      const image = await imageOverlay(node, assets);
+      if (image) {
+        const clipped = await clipOverlay(image, left, top, width, height, canvasWidth, canvasHeight);
+        if (clipped) ops.push(clipped);
+      }
+      const stroke = (node.strokes || [])[0];
+      const strokeWidth = Number(node.strokeWeight || 0);
+      if (stroke && strokeWidth > 0) {
+        const input = await rectangleOverlay({
+          ...node,
+          fills: [],
+          strokes: [stroke],
+          strokeWeight
+        });
+        const clipped = await clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight);
+        if (clipped) ops.push(clipped);
+      }
+    } else {
+      const input = await rectangleOverlay(node);
+      const clipped = await clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight);
+      if (clipped) ops.push(clipped);
+    }
+  } else if (type === "TEXT") {
+    const input = await textOverlay(node);
+    const clipped = await clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight);
+    if (clipped) ops.push(clipped);
+  }
+
+  for (const child of node.children || []) {
+    await collectCompositeOps(child, offset, assets, ops, canvasWidth, canvasHeight);
+  }
+}
+
+async function renderBundleToPng(bundle, crop, outputPath) {
+  const doc = bundle.document;
+  const pageBox = crop || doc.absoluteBoundingBox;
+  const width = Math.max(1, Math.round(pageBox.width));
+  const height = Math.max(1, Math.round(pageBox.height));
+  const ops = [];
+  await collectCompositeOps(doc, { x: pageBox.x, y: pageBox.y }, bundle.assets || {}, ops, width, height);
+  await sharp({
+    create: {
+      width,
+      height,
+      channels: 4,
+      background: { r: 255, g: 255, b: 255, alpha: 1 }
+    }
+  })
+    .composite(ops)
+    .png()
+    .toFile(outputPath);
 }
 
 async function cropOrCopyReference(referenceImagePath, outPath, crop) {
@@ -142,13 +351,19 @@ async function cropOrCopyReference(referenceImagePath, outPath, crop) {
   await image.png().toFile(outPath);
 }
 
-async function diffPng(referencePng, actualPng, outPath) {
-  const ref = sharp(referencePng);
-  const act = sharp(actualPng);
+async function diffPng(referencePng, actualPng, outPath, options = {}) {
+  const blurSigma = parseNumber(options.blurSigma, 1.2);
+  const deltaThreshold = parseNumber(options.deltaThreshold, 40);
+  let ref = sharp(referencePng);
+  let act = sharp(actualPng);
   const refMeta = await ref.metadata();
   const actMeta = await act.metadata();
   const width = Math.max(refMeta.width || 0, actMeta.width || 0);
   const height = Math.max(refMeta.height || 0, actMeta.height || 0);
+  if (blurSigma > 0) {
+    ref = ref.clone().blur(blurSigma);
+    act = act.clone().blur(blurSigma);
+  }
   const refBuf = await ref.resize(width, height).ensureAlpha().raw().toBuffer();
   const actBuf = await act.resize(width, height).ensureAlpha().raw().toBuffer();
 
@@ -160,7 +375,7 @@ async function diffPng(referencePng, actualPng, outPath) {
     const db = Math.abs(refBuf[i + 2] - actBuf[i + 2]);
     const da = Math.abs(refBuf[i + 3] - actBuf[i + 3]);
     const delta = dr + dg + db + da;
-    if (delta > 24) {
+    if (delta > deltaThreshold) {
       changed += 1;
       diff[i] = 255;
       diff[i + 1] = 0;
@@ -177,6 +392,8 @@ async function diffPng(referencePng, actualPng, outPath) {
   return {
     width,
     height,
+    blur_sigma: blurSigma,
+    delta_threshold: deltaThreshold,
     changed_pixels: changed,
     changed_ratio: width * height ? changed / (width * height) : 0,
     match_score: width * height ? 1 - changed / (width * height) : 0
@@ -191,8 +408,6 @@ async function main() {
   ensureDir(outDir);
   const crop = parseCrop(args.crop);
   const actual = loadJson(path.resolve(args.actual));
-  const actualSvg = bundleToSvg(actual, crop);
-
   const referencePngPath = path.join(outDir, "reference.png");
   const actualSvgPath = path.join(outDir, "actual.svg");
   const actualPngPath = path.join(outDir, "actual.png");
@@ -200,9 +415,13 @@ async function main() {
   const metricsPath = path.join(outDir, "metrics.json");
 
   await cropOrCopyReference(path.resolve(args["reference-image"]), referencePngPath, crop);
+  const actualSvg = bundleToSvg(actual, crop);
   fs.writeFileSync(actualSvgPath, actualSvg, "utf-8");
-  await svgToPng(actualSvg, actualPngPath);
-  const metrics = await diffPng(referencePngPath, actualPngPath, diffPngPath);
+  await renderBundleToPng(actual, crop, actualPngPath);
+  const metrics = await diffPng(referencePngPath, actualPngPath, diffPngPath, {
+    blurSigma: args["blur-sigma"],
+    deltaThreshold: args["delta-threshold"]
+  });
   fs.writeFileSync(metricsPath, JSON.stringify({ crop, ...metrics }, null, 2), "utf-8");
   console.log(JSON.stringify({ outDir, metrics }, null, 2));
 }
