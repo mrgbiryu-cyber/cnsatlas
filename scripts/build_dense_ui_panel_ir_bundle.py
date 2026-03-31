@@ -1656,20 +1656,6 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         bounds = union_bounds([atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0) for atom in atoms_sorted])
         source_items.append((key, atoms_sorted, bounds))
 
-    parent = list(range(len(source_items)))
-
-    def find(index: int) -> int:
-        while parent[index] != index:
-            parent[index] = parent[parent[index]]
-            index = parent[index]
-        return index
-
-    def union(left: int, right: int) -> None:
-        left_root = find(left)
-        right_root = find(right)
-        if left_root != right_root:
-            parent[right_root] = left_root
-
     def is_large_left_container(atoms: list[dict[str, Any]], bounds: dict[str, float]) -> bool:
         roles = {str(atom.get("layer_role") or "") for atom in atoms}
         if not (roles & {"background_card", "section_block"}):
@@ -1681,19 +1667,30 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
         inner_area = max(float(inner["width"]) * float(inner["height"]), 1.0)
         return overlap / inner_area >= 0.9
 
-    for i, (_, atoms_i, bounds_i) in enumerate(source_items):
-        if not is_large_left_container(atoms_i, bounds_i):
-            continue
-        for j, (_, atoms_j, bounds_j) in enumerate(source_items):
-            if i == j:
-                continue
-            if mostly_contains(bounds_i, bounds_j):
-                union(i, j)
-
     semantic_groups: list[dict[str, Any]] = []
-    merged: dict[int, list[dict[str, Any]]] = defaultdict(list)
-    for index, (_, atoms, _) in enumerate(source_items):
-        merged[find(index)].extend(atoms)
+    large_container_indices = [
+        index
+        for index, (_, atoms, bounds) in enumerate(source_items)
+        if is_large_left_container(atoms, bounds)
+    ]
+
+    merged: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for index, (key, atoms, bounds) in enumerate(source_items):
+        container_candidates: list[tuple[float, int]] = []
+        for container_index in large_container_indices:
+            if container_index == index:
+                continue
+            _, _, container_bounds = source_items[container_index]
+            if mostly_contains(container_bounds, bounds):
+                container_area = float(container_bounds["width"]) * float(container_bounds["height"])
+                container_candidates.append((container_area, container_index))
+
+        if container_candidates:
+            _, chosen_index = min(container_candidates, key=lambda item: item[0])
+            chosen_key, _, _ = source_items[chosen_index]
+            merged[f"container:{chosen_key}"].extend(atoms)
+        else:
+            merged[f"self:{key}"].extend(atoms)
 
     absorbed_global_source_keys: set[str] = set()
 
