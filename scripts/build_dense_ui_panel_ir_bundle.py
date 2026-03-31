@@ -1486,6 +1486,73 @@ def build_global_asset_semantic_groups(
     return semantic_groups
 
 
+def is_left_side_page_atom(atom: dict[str, Any]) -> bool:
+    owner_id = str(atom.get("owner_id") or "")
+    if not owner_id.startswith("owner:"):
+        return False
+    bounds = atom.get("visual_bounds_px") or {}
+    x = float(bounds.get("x") or 0.0)
+    width = float(bounds.get("width") or 0.0)
+    return x + width < RIGHT_PANEL_X_CUTOFF
+
+
+def render_page_atom_nodes(
+    atom: dict[str, Any],
+    assets: dict[str, Any],
+) -> list[dict[str, Any]]:
+    role = str(atom.get("layer_role") or "")
+    subtype = str(atom.get("subtype") or "")
+    nodes: list[dict[str, Any]] = []
+    if role in {"text", "flow_label"}:
+        nodes.append(build_text_node(atom))
+        return nodes
+    if subtype == "image":
+        image_node = build_image_node(atom, assets)
+        if image_node:
+            nodes.append(image_node)
+        return nodes
+    if subtype == "group" or role == "section_block":
+        return nodes
+    svg_node = build_small_asset_svg_node(atom)
+    if svg_node:
+        nodes.append(svg_node)
+        if atom.get("text"):
+            nodes.append(build_text_node(atom, suffix=":label"))
+        return nodes
+    if atom.get("text"):
+        nodes.append(build_text_node(atom))
+    else:
+        nodes.append(build_rect_node(atom))
+    return nodes
+
+
+def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any]) -> list[dict[str, Any]]:
+    owner_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for atom in page.get("atoms") or []:
+        if not is_left_side_page_atom(atom):
+            continue
+        owner_groups[str(atom.get("owner_id") or "")].append(atom)
+
+    semantic_groups: list[dict[str, Any]] = []
+    for index, (owner_id, atoms) in enumerate(
+        sorted(
+            owner_groups.items(),
+            key=lambda item: (
+                min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in item[1]),
+                min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in item[1]),
+            ),
+        ),
+        start=1,
+    ):
+        rendered_children: list[dict[str, Any]] = []
+        for atom in sorted(atoms, key=atom_priority):
+            rendered_children.extend(render_page_atom_nodes(atom, assets))
+        if not rendered_children:
+            continue
+        semantic_groups.append(build_owner_group(f"page_left_cluster:{index:02d}", rendered_children))
+    return semantic_groups
+
+
 def render_dense_atom_nodes(
     atom: dict[str, Any],
     assets: dict[str, Any],
@@ -1825,7 +1892,8 @@ def build_dense_ui_panel_nodes(
             "page_type": page["page_type"],
         },
     }
-    return page_level_children + [panel_frame]
+    page_owner_children = build_page_owner_semantic_groups(page, assets)
+    return page_owner_children + page_level_children + [panel_frame]
 
 
 def build_bundle(
