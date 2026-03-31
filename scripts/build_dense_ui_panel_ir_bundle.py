@@ -1496,6 +1496,17 @@ def global_asset_source_key(atom: dict[str, Any]) -> str:
     return source_path or str(atom.get("id") or "")
 
 
+def page_semantic_source_key(atom: dict[str, Any]) -> str:
+    source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
+    owner_id = str(atom.get("owner_id") or "")
+    parts = source_path.split("/")
+    if owner_id.startswith("owner:s29:") and len(parts) >= 3:
+        return "/".join(parts[:3])
+    if len(parts) >= 2:
+        return "/".join(parts[:2])
+    return source_path or str(atom.get("id") or "")
+
+
 def cluster_signature(atoms: list[dict[str, Any]]) -> str:
     texts = [str(atom.get("text") or "").strip() for atom in atoms if str(atom.get("text") or "").strip()]
     joined = " ".join(texts[:3]).lower()
@@ -1648,7 +1659,7 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
     source_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for atom in page.get("atoms") or []:
         if is_left_side_page_atom(atom) or is_left_product_price_global_atom(atom):
-            source_groups[global_asset_source_key(atom)].append(atom)
+            source_groups[page_semantic_source_key(atom)].append(atom)
 
     source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
     for key, atoms in source_groups.items():
@@ -1694,6 +1705,53 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
 
     absorbed_global_source_keys: set[str] = set()
 
+    def text_specificity(node: dict[str, Any]) -> tuple[int, int]:
+        debug = node.get("debug") or {}
+        source_atom_id = str(debug.get("source_atom_id") or "")
+        owner_id = str(debug.get("owner_id") or "")
+        return (source_atom_id.count("/"), owner_id.count("/"))
+
+    def similar_text_position(left: dict[str, Any], right: dict[str, Any]) -> bool:
+        left_box = left.get("absoluteBoundingBox") or {}
+        right_box = right.get("absoluteBoundingBox") or {}
+        left_y = float(left_box.get("y") or 0.0)
+        right_y = float(right_box.get("y") or 0.0)
+        left_h = float(left_box.get("height") or 0.0)
+        right_h = float(right_box.get("height") or 0.0)
+        if abs(left_y - right_y) <= max(left_h, right_h, 12.0):
+            return True
+        return max_overlap_area(left_box, right_box) > 0.0
+
+    def dedupe_group_text_nodes(nodes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        kept: list[dict[str, Any]] = []
+        for node in nodes:
+            if node.get("type") != "TEXT":
+                kept.append(node)
+                continue
+            chars = str(node.get("characters") or "").strip()
+            if not chars:
+                kept.append(node)
+                continue
+
+            duplicate_index: int | None = None
+            for index, existing in enumerate(kept):
+                if existing.get("type") != "TEXT":
+                    continue
+                if str(existing.get("characters") or "").strip() != chars:
+                    continue
+                if similar_text_position(existing, node):
+                    duplicate_index = index
+                    break
+
+            if duplicate_index is None:
+                kept.append(node)
+                continue
+
+            existing = kept[duplicate_index]
+            if text_specificity(node) > text_specificity(existing):
+                kept[duplicate_index] = node
+        return kept
+
     for index, atoms in enumerate(
         sorted(
             merged.values(),
@@ -1709,6 +1767,7 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
             rendered_children.extend(render_page_atom_nodes(atom, assets))
             if str(atom.get("owner_id") or "") == "dense_ui_panel:global_ui_assets":
                 absorbed_global_source_keys.add(global_asset_source_key(atom))
+        rendered_children = dedupe_group_text_nodes(rendered_children)
         if not rendered_children:
             continue
         semantic_groups.append(build_owner_group(f"page_left_cluster:{index:02d}", rendered_children))
