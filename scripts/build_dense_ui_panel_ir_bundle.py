@@ -2147,6 +2147,8 @@ LOWER_BODY_OVERLAY_VERSION_OWNER_IDS = {
     "dense_ui_panel:version_stack",
 }
 
+LEFT_PRODUCT_PRICE_REGION = make_bounds(0.0, 300.0, 300.0, 260.0)
+
 
 def prune_lower_body_text_layer(node: dict[str, Any]) -> dict[str, Any] | None:
     node_type = str(node.get("type") or "")
@@ -2313,6 +2315,59 @@ def extract_lower_body_text_grid_overlay_version_bundle(bundle: dict[str, Any]) 
     return extracted
 
 
+def bbox_intersects(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    ax1 = float(a.get("x") or 0.0)
+    ay1 = float(a.get("y") or 0.0)
+    ax2 = ax1 + float(a.get("width") or 0.0)
+    ay2 = ay1 + float(a.get("height") or 0.0)
+    bx1 = float(b.get("x") or 0.0)
+    by1 = float(b.get("y") or 0.0)
+    bx2 = bx1 + float(b.get("width") or 0.0)
+    by2 = by1 + float(b.get("height") or 0.0)
+    return ax1 < bx2 and ax2 > bx1 and ay1 < by2 and ay2 > by1
+
+
+def prune_to_region(node: dict[str, Any], region: dict[str, Any]) -> dict[str, Any] | None:
+    bbox = node.get("absoluteBoundingBox") or {}
+    node_type = str(node.get("type") or "")
+
+    pruned_children: list[dict[str, Any]] = []
+    for child in node.get("children") or []:
+        pruned_child = prune_to_region(child, region)
+        if pruned_child is not None:
+            pruned_children.append(pruned_child)
+
+    if pruned_children:
+        pruned = dict(node)
+        pruned["children"] = pruned_children
+        if node_type in {"GROUP", "FRAME"}:
+            pruned["absoluteBoundingBox"] = union_bounds(
+                [child.get("absoluteBoundingBox") or make_bounds(0.0, 0.0, 1.0, 1.0) for child in pruned_children]
+            )
+        return pruned
+
+    if bbox and bbox_intersects(bbox, region):
+        pruned = dict(node)
+        pruned["children"] = []
+        return pruned
+
+    return None
+
+
+def extract_left_product_price_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
+    document = bundle.get("document") or {}
+    pruned_document = prune_to_region(document, LEFT_PRODUCT_PRICE_REGION)
+    if pruned_document is None:
+        raise SystemExit("left product/price extraction produced an empty bundle")
+
+    extracted = dict(bundle)
+    extracted["page_name"] = f"{bundle.get('page_name')} - Left Product Price"
+    extracted["node_id"] = pruned_document.get("id")
+    extracted["document"] = pruned_document
+    extracted["debug"] = dict(bundle.get("debug") or {}, export_mode="left_product_price_only")
+    return extracted
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a dense-ui-panel replay bundle from resolved PPT IR.")
     parser.add_argument("--input", required=True, help="Resolved IR JSON path")
@@ -2320,7 +2375,7 @@ def main() -> None:
     parser.add_argument("--slide", type=int, default=29, help="Slide number to render")
     parser.add_argument(
         "--export-mode",
-        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid", "lower_body_text_grid_and_overlays", "lower_body_text_grid_overlays_and_versions"],
+        choices=["full", "lower_body_text_only", "lower_body_text_and_boxes", "lower_body_text_and_grid", "lower_body_text_grid_and_overlays", "lower_body_text_grid_overlays_and_versions", "left_product_price_only"],
         default="full",
         help="Optional post-processing mode for the generated bundle",
     )
@@ -2367,6 +2422,8 @@ def main() -> None:
         bundle = extract_lower_body_text_grid_overlay_bundle(bundle)
     elif args.export_mode == "lower_body_text_grid_overlays_and_versions":
         bundle = extract_lower_body_text_grid_overlay_version_bundle(bundle)
+    elif args.export_mode == "left_product_price_only":
+        bundle = extract_left_product_price_bundle(bundle)
     output_path = Path(args.output).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")
