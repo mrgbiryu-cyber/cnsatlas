@@ -1,0 +1,12 @@
+{
+  "crop": {
+    "x": 360,
+    "y": 320,
+    "width": 260,
+    "height": 170
+  },
+  "width": 260,
+  "height": 170,
+  "changed_pixels": 36844,
+  "changed_ratio": 0.8335746606334842
+}

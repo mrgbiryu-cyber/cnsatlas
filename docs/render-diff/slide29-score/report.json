@@ -1,0 +1,189 @@
+{
+  "kind": "visual-region-score-report",
+  "profile": "slide29",
+  "reference": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/test8/222/plugin29.json",
+  "actual": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/block-bundles/ir-dense-ui-panel-29.bundle.json",
+  "generated_at": "2026-03-31T09:52:29.080255+00:00",
+  "global_match_score": 0.2764,
+  "full_match_score": 0.5885,
+  "regions": [
+    {
+      "key": "full",
+      "crop": null,
+      "changed_ratio": 0.4114718364197531,
+      "match_score": 0.5885,
+      "metrics": {
+        "crop": null,
+        "width": 960,
+        "height": 540,
+        "changed_pixels": 213307,
+        "changed_ratio": 0.4114718364197531
+      },
+      "out_dir": "docs/render-diff/slide29-score/full"
+    },
+    {
+      "key": "top_meta",
+      "crop": {
+        "x": 20,
+        "y": 10,
+        "width": 940,
+        "height": 70
+      },
+      "changed_ratio": 0.4430395136778115,
+      "match_score": 0.557,
+      "metrics": {
+        "crop": {
+          "x": 20,
+          "y": 10,
+          "width": 940,
+          "height": 70
+        },
+        "width": 940,
+        "height": 70,
+        "changed_pixels": 29152,
+        "changed_ratio": 0.4430395136778115
+      },
+      "out_dir": "docs/render-diff/slide29-score/top_meta"
+    },
+    {
+      "key": "left_static",
+      "crop": {
+        "x": 25,
+        "y": 455,
+        "width": 250,
+        "height": 80
+      },
+      "changed_ratio": 0.7299,
+      "match_score": 0.2701,
+      "metrics": {
+        "crop": {
+          "x": 25,
+          "y": 455,
+          "width": 250,
+          "height": 80
+        },
+        "width": 250,
+        "height": 80,
+        "changed_pixels": 14598,
+        "changed_ratio": 0.7299
+      },
+      "out_dir": "docs/render-diff/slide29-score/left_static"
+    },
+    {
+      "key": "left_option",
+      "crop": {
+        "x": 30,
+        "y": 395,
+        "width": 245,
+        "height": 62
+      },
+      "changed_ratio": 0.44634628044766295,
+      "match_score": 0.5537,
+      "metrics": {
+        "crop": {
+          "x": 30,
+          "y": 395,
+          "width": 245,
+          "height": 62
+        },
+        "width": 245,
+        "height": 62,
+        "changed_pixels": 6780,
+        "changed_ratio": 0.44634628044766295
+      },
+      "out_dir": "docs/render-diff/slide29-score/left_option"
+    },
+    {
+      "key": "left_viewer",
+      "crop": {
+        "x": 15,
+        "y": 70,
+        "width": 300,
+        "height": 260
+      },
+      "changed_ratio": 0.6918461538461539,
+      "match_score": 0.3082,
+      "metrics": {
+        "crop": {
+          "x": 15,
+          "y": 70,
+          "width": 300,
+          "height": 260
+        },
+        "width": 300,
+        "height": 260,
+        "changed_pixels": 53964,
+        "changed_ratio": 0.6918461538461539
+      },
+      "out_dir": "docs/render-diff/slide29-score/left_viewer"
+    },
+    {
+      "key": "center_controls",
+      "crop": {
+        "x": 360,
+        "y": 320,
+        "width": 260,
+        "height": 170
+      },
+      "changed_ratio": 0.8335746606334842,
+      "match_score": 0.1664,
+      "metrics": {
+        "crop": {
+          "x": 360,
+          "y": 320,
+          "width": 260,
+          "height": 170
+        },
+        "width": 260,
+        "height": 170,
+        "changed_pixels": 36844,
+        "changed_ratio": 0.8335746606334842
+      },
+      "out_dir": "docs/render-diff/slide29-score/center_controls"
+    },
+    {
+      "key": "right_panel",
+      "crop": {
+        "x": 575,
+        "y": 15,
+        "width": 370,
+        "height": 510
+      },
+      "changed_ratio": 0.8305087440381558,
+      "match_score": 0.1695,
+      "metrics": {
+        "crop": {
+          "x": 575,
+          "y": 15,
+          "width": 370,
+          "height": 510
+        },
+        "width": 370,
+        "height": 510,
+        "changed_pixels": 156717,
+        "changed_ratio": 0.8305087440381558
+      },
+      "out_dir": "docs/render-diff/slide29-score/right_panel"
+    }
+  ],
+  "gates": [
+    {
+      "key": "right_panel_min",
+      "threshold": 0.55,
+      "actual": 0.1695,
+      "passed": false
+    },
+    {
+      "key": "left_static_min",
+      "threshold": 0.25,
+      "actual": 0.2701,
+      "passed": true
+    },
+    {
+      "key": "top_meta_min",
+      "threshold": 0.5,
+      "actual": 0.557,
+      "passed": true
+    }
+  ]
+}
