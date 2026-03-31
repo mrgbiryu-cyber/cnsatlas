@@ -1683,6 +1683,25 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
             return False
         return float(bounds["width"]) >= 180.0 and float(bounds["height"]) >= 40.0
 
+    def is_compact_left_control(atoms: list[dict[str, Any]], bounds: dict[str, float]) -> bool:
+        roles = {str(atom.get("layer_role") or "") for atom in atoms}
+        subtypes = {str(atom.get("subtype") or "") for atom in atoms}
+        width = float(bounds["width"])
+        height = float(bounds["height"])
+        if roles & {"background_card", "section_block", "version_stack"}:
+            return False
+        if len(atoms) == 1 and "text" in roles:
+            return False
+        if width > 80.0 or height > 90.0:
+            return False
+        if "labeled_shape" in roles:
+            return True
+        if "group" in roles and roles <= {"group", "overlay_mark", "small_asset", "text"}:
+            return True
+        if "small_asset" in roles and subtypes & {"labeled_shape", "group"}:
+            return True
+        return False
+
     def mostly_contains(outer: dict[str, float], inner: dict[str, float]) -> bool:
         overlap = max_overlap_area(outer, inner)
         inner_area = max(float(inner["width"]) * float(inner["height"]), 1.0)
@@ -1697,6 +1716,9 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
 
     merged: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for index, (key, atoms, bounds) in enumerate(source_items):
+        if is_compact_left_control(atoms, bounds):
+            merged[f"self:{key}"].extend(atoms)
+            continue
         container_candidates: list[tuple[float, int]] = []
         for container_index in large_container_indices:
             if container_index == index:
