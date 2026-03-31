@@ -1527,16 +1527,16 @@ def render_page_atom_nodes(
 
 
 def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any]) -> list[dict[str, Any]]:
-    owner_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    source_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for atom in page.get("atoms") or []:
         if not is_left_side_page_atom(atom):
             continue
-        owner_groups[str(atom.get("owner_id") or "")].append(atom)
+        source_groups[global_asset_source_key(atom)].append(atom)
 
     semantic_groups: list[dict[str, Any]] = []
-    for index, (owner_id, atoms) in enumerate(
+    for index, (_, atoms) in enumerate(
         sorted(
-            owner_groups.items(),
+            source_groups.items(),
             key=lambda item: (
                 min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in item[1]),
                 min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in item[1]),
