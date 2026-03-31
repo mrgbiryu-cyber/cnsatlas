@@ -1638,13 +1638,57 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
             continue
         source_groups[global_asset_source_key(atom)].append(atom)
 
+    source_items: list[tuple[str, list[dict[str, Any]], dict[str, float]]] = []
+    for key, atoms in source_groups.items():
+        atoms_sorted = sorted(atoms, key=atom_priority)
+        bounds = union_bounds([atom.get("visual_bounds_px") or make_bounds(0.0, 0.0, 1.0, 1.0) for atom in atoms_sorted])
+        source_items.append((key, atoms_sorted, bounds))
+
+    parent = list(range(len(source_items)))
+
+    def find(index: int) -> int:
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root = find(left)
+        right_root = find(right)
+        if left_root != right_root:
+            parent[right_root] = left_root
+
+    def is_large_left_container(atoms: list[dict[str, Any]], bounds: dict[str, float]) -> bool:
+        roles = {str(atom.get("layer_role") or "") for atom in atoms}
+        if not (roles & {"background_card", "section_block"}):
+            return False
+        return float(bounds["width"]) >= 180.0 and float(bounds["height"]) >= 40.0
+
+    def mostly_contains(outer: dict[str, float], inner: dict[str, float]) -> bool:
+        overlap = max_overlap_area(outer, inner)
+        inner_area = max(float(inner["width"]) * float(inner["height"]), 1.0)
+        return overlap / inner_area >= 0.9
+
+    for i, (_, atoms_i, bounds_i) in enumerate(source_items):
+        if not is_large_left_container(atoms_i, bounds_i):
+            continue
+        for j, (_, atoms_j, bounds_j) in enumerate(source_items):
+            if i == j:
+                continue
+            if mostly_contains(bounds_i, bounds_j):
+                union(i, j)
+
     semantic_groups: list[dict[str, Any]] = []
-    for index, (_, atoms) in enumerate(
+    merged: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    for index, (_, atoms, _) in enumerate(source_items):
+        merged[find(index)].extend(atoms)
+
+    for index, atoms in enumerate(
         sorted(
-            source_groups.items(),
-            key=lambda item: (
-                min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in item[1]),
-                min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in item[1]),
+            merged.values(),
+            key=lambda atoms_in_group: (
+                min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in atoms_in_group),
+                min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in atoms_in_group),
             ),
         ),
         start=1,
