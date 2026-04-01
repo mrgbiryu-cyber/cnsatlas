@@ -80,7 +80,7 @@ class LocalHandler(BaseHTTPRequestHandler):
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Local helper server for Figma plugin PPTX upload.")
-    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=27184)
     args = parser.parse_args()
 
