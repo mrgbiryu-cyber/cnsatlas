@@ -38,6 +38,8 @@ figma.ui.onmessage = async (message) => {
       let renderedCount = 0;
       if (payload && payload.kind === "slide-review-manifest" && payload.entry_bundle && payload.entry_bundle.document) {
         await renderFigmaReplayBundle(payload.entry_bundle);
+      } else if (payload && payload.kind === "figma-replay-collection" && Array.isArray(payload.pages)) {
+        renderedCount = await renderFigmaReplayCollection(payload);
       } else if (payload && payload.kind === "figma-replay-bundle" && payload.document) {
         await renderFigmaReplayBundle(payload);
       } else {
@@ -47,6 +49,8 @@ figma.ui.onmessage = async (message) => {
         type: "render-success",
         message: payload && payload.kind === "slide-review-manifest"
           ? `Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
+          : payload && payload.kind === "figma-replay-collection"
+          ? `Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
           : payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
           : `Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
@@ -1580,12 +1584,38 @@ async function renderFigmaReplayBundle(bundle) {
   clearPreviousVisualTests();
   resetReplayDebugState();
 
+  const rootFrame = await buildReplayRootFrame(bundle, 0);
+  figma.currentPage.appendChild(rootFrame);
+  figma.viewport.scrollAndZoomIntoView([rootFrame]);
+}
+
+async function renderFigmaReplayCollection(collection) {
+  await ensureFontLoaded();
+  clearPreviousVisualTests();
+  resetReplayDebugState();
+
+  let cursorX = 0;
+  const renderedFrames = [];
+  for (const bundle of collection.pages || []) {
+    const rootFrame = await buildReplayRootFrame(bundle, cursorX);
+    figma.currentPage.appendChild(rootFrame);
+    renderedFrames.push(rootFrame);
+    cursorX += rootFrame.width + SLIDE_GAP;
+  }
+
+  if (renderedFrames.length > 0) {
+    figma.viewport.scrollAndZoomIntoView(renderedFrames);
+  }
+  return renderedFrames.length;
+}
+
+async function buildReplayRootFrame(bundle, xOffset) {
   const documentNode = bundle.document;
   const documentBounds = getReplayBounds(documentNode);
   const rootBounds = documentBounds || computeReplayRootBounds(documentNode);
   const rootFrame = figma.createFrame();
   rootFrame.name = `CNS Atlas Replay (${bundle.page_name || bundle.node_id || "page"})`;
-  rootFrame.x = 0;
+  rootFrame.x = xOffset;
   rootFrame.y = 0;
   rootFrame.resize(rootBounds.width, rootBounds.height);
   rootFrame.fills = (documentNode && documentNode.fills ? documentNode.fills : []).filter((fill) => fill && (fill.type === "SOLID" || fill.type === "IMAGE")).map((fill) => {
@@ -1625,9 +1655,7 @@ async function renderFigmaReplayBundle(bundle) {
   } else {
     await renderReplayNode(documentNode, rootFrame, replayOrigin, bundle);
   }
-
-  figma.currentPage.appendChild(rootFrame);
-  figma.viewport.scrollAndZoomIntoView([rootFrame]);
+  return rootFrame;
 }
 
 function sortByPosition(a, b) {

@@ -181,6 +181,9 @@
 
       function getPayloadKind(payload) {
         if (payload && Array.isArray(payload.pages)) {
+          if (payload.kind === "figma-replay-collection") {
+            return "figma-replay-collection";
+          }
           return "intermediate";
         }
         if (payload && payload.kind === "slide-review-manifest" && payload.entry_bundle && payload.entry_bundle.document) {
@@ -206,6 +209,17 @@
             `파일: ${fileName || "직접 입력"}`,
             `형식: intermediate JSON`,
             `슬라이드 수: ${payload.pages.length}`,
+            "",
+            ...slides
+          ].join("\n");
+        }
+
+        if (kind === "figma-replay-collection") {
+          const slides = payload.pages.map((page) => `- ${page.page_name || page.node_id || "unknown page"}`);
+          return [
+            `파일: ${fileName || "직접 입력"}`,
+            `형식: figma replay collection`,
+            `페이지 수: ${payload.pages.length}`,
             "",
             ...slides
           ].join("\n");
@@ -329,7 +343,7 @@
           }
 
           loadedJsonText = JSON.stringify(payload.payload);
-          setSummary(summarizePayload(payload.payload, file.name, "intermediate"));
+          setSummary(summarizePayload(payload.payload, file.name, getPayloadKind(payload.payload)));
           const slideLabel = payload.slides && payload.slides.length
             ? payload.slides.join(", ")
             : "none";

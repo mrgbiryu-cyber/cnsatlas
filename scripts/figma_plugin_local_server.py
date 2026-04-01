@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from build_intermediate_candidates import build_intermediate_model
+from build_visual_first_replay_bundle import build_bundle_from_page
 from pptx_inspector import extract_slide_details
 
 
@@ -61,16 +62,23 @@ class LocalHandler(BaseHTTPRequestHandler):
 
                 detail_payload = extract_slide_details(pptx_path, slides)
                 intermediate = build_intermediate_model(detail_payload)
+                bundles = [build_bundle_from_page(page, str(pptx_path)) for page in intermediate.get("pages") or []]
+                collection = {
+                    "kind": "figma-replay-collection",
+                    "source_kind": "pptx-upload-visual-first",
+                    "source_file": filename,
+                    "pages": bundles,
+                }
 
             self._send_json(
                 200,
                 {
                     "ok": True,
-                    "kind": "intermediate",
+                    "kind": "figma-replay-collection",
                     "serverVersion": self.server_version,
                     "requestedSlides": slides,
                     "pageCount": len(intermediate.get("pages") or []),
-                    "payload": intermediate,
+                    "payload": collection,
                     "slides": [page.get("slide_no") for page in intermediate.get("pages") or []],
                 },
             )
