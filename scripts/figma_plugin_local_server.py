@@ -28,7 +28,7 @@ def parse_slides(raw: Any) -> list[int]:
 
 
 class LocalHandler(BaseHTTPRequestHandler):
-    server_version = "CNSAtlasLocalPlugin/0.1"
+    server_version = "CNSAtlasLocalPlugin/2026-04-01b"
 
     def _send_json(self, status: int, payload: dict[str, Any]) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")

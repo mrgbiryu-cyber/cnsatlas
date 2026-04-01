@@ -45,15 +45,15 @@ figma.ui.onmessage = async (message) => {
       } else {
         renderedCount = await renderIntermediatePayload(payload);
       }
-      figma.ui.postMessage({
-        type: "render-success",
-        message: payload && payload.kind === "slide-review-manifest"
-          ? `Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
+        figma.ui.postMessage({
+          type: "render-success",
+          message: payload && payload.kind === "slide-review-manifest"
+          ? `v2026-04-01b | kind=slide-review-manifest | Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
           : payload && payload.kind === "figma-replay-collection"
-          ? `v2026-04-01b | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
+          ? `v2026-04-01b | kind=figma-replay-collection | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
           : payload && payload.kind === "figma-replay-bundle"
-          ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : `v2026-04-01b | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
+          ? `v2026-04-01b | kind=figma-replay-bundle | Rendered figma replay bundle (${payload.page_name || "unknown page"})`
+          : `v2026-04-01b | kind=intermediate | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
       });
     } catch (error) {
       figma.ui.postMessage({
