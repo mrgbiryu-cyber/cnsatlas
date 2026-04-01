@@ -169,6 +169,7 @@
       const renderModeInputs = Array.from(document.querySelectorAll('input[name="renderMode"]'));
 
       let loadedJsonText = "";
+      const REQUIRED_SERVER_VERSION = "CNSAtlasLocalPlugin/2026-04-01b";
 
       function setStatus(message, isError = false) {
         status.textContent = message;
@@ -342,6 +343,15 @@
             throw new Error(payload.error || `HTTP ${response.status}`);
           }
 
+          if (payload.kind !== "figma-replay-collection") {
+            throw new Error(`구버전 서버 응답입니다. kind=${payload.kind || "unknown"} (expected figma-replay-collection)`);
+          }
+          if ((payload.serverVersion || "") !== REQUIRED_SERVER_VERSION) {
+            throw new Error(
+              `서버 버전 불일치: ${payload.serverVersion || "unknown"} (expected ${REQUIRED_SERVER_VERSION})`
+            );
+          }
+
           loadedJsonText = JSON.stringify(payload.payload);
           setSummary(summarizePayload(payload.payload, file.name, getPayloadKind(payload.payload)));
           const slideLabel = payload.slides && payload.slides.length
@@ -351,7 +361,7 @@
             ? payload.requestedSlides.join(", ")
             : "ALL";
           setStatus(
-            `v2026-04-01b | PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, server: ${payload.serverVersion || "unknown"})`
+            `v2026-04-01b | kind=${payload.kind || "unknown"} | PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, server: ${payload.serverVersion || "unknown"})`
           );
           updateRenderAvailability();
           parent.postMessage({
