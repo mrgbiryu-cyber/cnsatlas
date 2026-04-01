@@ -50,10 +50,10 @@ figma.ui.onmessage = async (message) => {
         message: payload && payload.kind === "slide-review-manifest"
           ? `Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
           : payload && payload.kind === "figma-replay-collection"
-          ? `Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
+          ? `v2026-04-01b | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
           : payload && payload.kind === "figma-replay-bundle"
           ? `Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : `Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
+          : `v2026-04-01b | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
       });
     } catch (error) {
       figma.ui.postMessage({
