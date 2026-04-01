@@ -335,12 +335,14 @@ async function renderBundleToPng(bundle, crop, outputPath) {
     .toFile(outputPath);
 }
 
-async function cropOrCopyReference(referenceImagePath, outPath, crop) {
+async function cropOrCopyReference(referenceImagePath, outPath, crop, referenceBaseBox = null) {
   let image = sharp(referenceImagePath);
   if (crop) {
     const meta = await image.metadata();
-    const scaleX = (meta.width || crop.width) / 960;
-    const scaleY = (meta.height || crop.height) / 540;
+    const baseWidth = Math.max(1, Math.round(referenceBaseBox?.width || 960));
+    const baseHeight = Math.max(1, Math.round(referenceBaseBox?.height || 540));
+    const scaleX = (meta.width || crop.width) / baseWidth;
+    const scaleY = (meta.height || crop.height) / baseHeight;
     image = image.extract({
       left: Math.max(0, Math.round(crop.x * scaleX)),
       top: Math.max(0, Math.round(crop.y * scaleY)),
@@ -408,13 +410,14 @@ async function main() {
   ensureDir(outDir);
   const crop = parseCrop(args.crop);
   const actual = loadJson(path.resolve(args.actual));
+  const actualDocBox = actual?.document?.absoluteBoundingBox || null;
   const referencePngPath = path.join(outDir, "reference.png");
   const actualSvgPath = path.join(outDir, "actual.svg");
   const actualPngPath = path.join(outDir, "actual.png");
   const diffPngPath = path.join(outDir, "diff.png");
   const metricsPath = path.join(outDir, "metrics.json");
 
-  await cropOrCopyReference(path.resolve(args["reference-image"]), referencePngPath, crop);
+  await cropOrCopyReference(path.resolve(args["reference-image"]), referencePngPath, crop, actualDocBox);
   const actualSvg = bundleToSvg(actual, crop);
   fs.writeFileSync(actualSvgPath, actualSvg, "utf-8");
   await renderBundleToPng(actual, crop, actualPngPath);
