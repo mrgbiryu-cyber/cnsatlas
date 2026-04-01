@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Any
 
 from build_intermediate_candidates import build_intermediate_model
+from build_dense_ui_panel_ir_bundle import build_bundle as build_dense_ui_panel_bundle
+from build_resolved_ppt_ir import build_page_ir
 from build_visual_first_replay_bundle import build_bundle_from_page
 from pptx_inspector import extract_slide_details
 
@@ -62,7 +64,13 @@ class LocalHandler(BaseHTTPRequestHandler):
 
                 detail_payload = extract_slide_details(pptx_path, slides)
                 intermediate = build_intermediate_model(detail_payload)
-                bundles = [build_bundle_from_page(page, str(pptx_path)) for page in intermediate.get("pages") or []]
+                bundles = []
+                for page in intermediate.get("pages") or []:
+                    resolved_page = build_page_ir(page)
+                    if str(resolved_page.get("page_type") or "") == "dense_ui_panel":
+                        bundles.append(build_dense_ui_panel_bundle(resolved_page, str(pptx_path)))
+                    else:
+                        bundles.append(build_bundle_from_page(page, str(pptx_path)))
                 collection = {
                     "kind": "figma-replay-collection",
                     "source_kind": "pptx-upload-visual-first",
