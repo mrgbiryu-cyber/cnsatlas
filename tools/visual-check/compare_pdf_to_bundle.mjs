@@ -142,12 +142,88 @@ function renderBundleNode(node, pieces, offset, assets) {
   }
 }
 
+function renderPluginNode(node, pieces, offset = { x: 0, y: 0 }) {
+  const bbox = node.bounds_relative_to_scope;
+  const type = node.type;
+  if (bbox) {
+    const x = bbox.x - offset.x;
+    const y = bbox.y - offset.y;
+    const w = bbox.width;
+    const h = bbox.height;
+    if (type === "RECTANGLE") {
+      const fill = (node.fills || []).find((item) => item.visible !== false);
+      const stroke = (node.strokes || []).find((item) => item.visible !== false);
+      pieces.push(
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+          stroke ? cssRgba(stroke) : "none"
+        }" stroke-width="${Number(node.stroke_weight || 0)}" rx="${Number(node.corner_radius || 0)}" />`
+      );
+    } else if (type === "ELLIPSE") {
+      const fill = (node.fills || []).find((item) => item.visible !== false);
+      const stroke = (node.strokes || []).find((item) => item.visible !== false);
+      pieces.push(
+        `<ellipse cx="${x + w / 2}" cy="${y + h / 2}" rx="${w / 2}" ry="${h / 2}" fill="${
+          fill ? cssRgba(fill) : "none"
+        }" stroke="${stroke ? cssRgba(stroke) : "none"}" stroke-width="${Number(node.stroke_weight || 0)}" />`
+      );
+    } else if (type === "VECTOR" || type === "LINE" || type === "POLYGON") {
+      const fill = (node.fills || []).find((item) => item.visible !== false);
+      const stroke = (node.strokes || []).find((item) => item.visible !== false);
+      if (Array.isArray(node.vector_paths) && node.vector_paths.length > 0) {
+        for (const part of node.vector_paths) {
+          pieces.push(
+            `<path d="${part.data}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+              stroke ? cssRgba(stroke) : "none"
+            }" stroke-width="${Number(node.stroke_weight || 0)}" />`
+          );
+        }
+      } else {
+        pieces.push(
+          `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${Number(node.stroke_weight || 0)}" />`
+        );
+      }
+    } else if (type === "TEXT") {
+      const fill = (node.fills || []).find((item) => item.visible !== false);
+      const style = node.style || {};
+      const fontSize = Number(style.fontSize || 12);
+      const fontFamily = style.fontFamily || "sans-serif";
+      const lines = String(node.characters || "").split("\n");
+      lines.forEach((line, index) => {
+        const dy = y + fontSize + index * (Number(style.lineHeightPx || fontSize * 1.2));
+        pieces.push(
+          `<text x="${x}" y="${dy}" font-family="${esc(fontFamily)}" font-size="${fontSize}" fill="${cssRgba(
+            fill,
+            { r: 0, g: 0, b: 0, a: 1 }
+          )}">${esc(line)}</text>`
+        );
+      });
+    }
+  }
+
+  for (const child of node.children || []) {
+    renderPluginNode(child, pieces, offset);
+  }
+}
+
 function bundleToSvg(bundle, crop) {
   const doc = bundle.document;
   const pageBox = crop || doc.absoluteBoundingBox;
   const pieces = [];
   pieces.push(`<rect x="0" y="0" width="${pageBox.width}" height="${pageBox.height}" fill="white" />`);
   renderBundleNode(doc, pieces, { x: pageBox.x, y: pageBox.y }, bundle.assets || {});
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${pageBox.width}" height="${pageBox.height}" viewBox="0 0 ${pageBox.width} ${pageBox.height}">${pieces.join("")}</svg>`;
+}
+
+function pluginToSvg(plugin, crop) {
+  const root = (plugin.nodes || [])[0];
+  const pageBox = crop || plugin.scope_bounds || root?.bounds_relative_to_scope || { x: 0, y: 0, width: 1280, height: 720 };
+  const pieces = [];
+  pieces.push(`<rect x="0" y="0" width="${pageBox.width}" height="${pageBox.height}" fill="white" />`);
+  for (const node of plugin.nodes || []) {
+    renderPluginNode(node, pieces, { x: pageBox.x, y: pageBox.y });
+  }
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${pageBox.width}" height="${pageBox.height}" viewBox="0 0 ${pageBox.width} ${pageBox.height}">${pieces.join("")}</svg>`;
 }
 
@@ -353,6 +429,24 @@ async function cropOrCopyReference(referenceImagePath, outPath, crop, referenceB
   await image.png().toFile(outPath);
 }
 
+function getActualBaseBox(actual) {
+  if (actual?.kind === "figma-analysis-export") {
+    return actual.scope_bounds || actual.nodes?.[0]?.bounds_relative_to_scope || null;
+  }
+  return actual?.document?.absoluteBoundingBox || null;
+}
+
+async function renderActualToPng(actual, crop, outputPath) {
+  if (actual?.kind === "figma-analysis-export") {
+    const svg = pluginToSvg(actual, crop);
+    await sharp(Buffer.from(svg)).png().toFile(outputPath);
+    return svg;
+  }
+  const svg = bundleToSvg(actual, crop);
+  await renderBundleToPng(actual, crop, outputPath);
+  return svg;
+}
+
 async function diffPng(referencePng, actualPng, outPath, options = {}) {
   const blurSigma = parseNumber(options.blurSigma, 1.2);
   const deltaThreshold = parseNumber(options.deltaThreshold, 40);
@@ -410,7 +504,7 @@ async function main() {
   ensureDir(outDir);
   const crop = parseCrop(args.crop);
   const actual = loadJson(path.resolve(args.actual));
-  const actualDocBox = actual?.document?.absoluteBoundingBox || null;
+  const actualDocBox = getActualBaseBox(actual);
   const referencePngPath = path.join(outDir, "reference.png");
   const actualSvgPath = path.join(outDir, "actual.svg");
   const actualPngPath = path.join(outDir, "actual.png");
@@ -418,9 +512,9 @@ async function main() {
   const metricsPath = path.join(outDir, "metrics.json");
 
   await cropOrCopyReference(path.resolve(args["reference-image"]), referencePngPath, crop, actualDocBox);
-  const actualSvg = bundleToSvg(actual, crop);
+  const actualSvg = actual?.kind === "figma-analysis-export" ? pluginToSvg(actual, crop) : bundleToSvg(actual, crop);
   fs.writeFileSync(actualSvgPath, actualSvg, "utf-8");
-  await renderBundleToPng(actual, crop, actualPngPath);
+  await renderActualToPng(actual, crop, actualPngPath);
   const metrics = await diffPng(referencePngPath, actualPngPath, diffPngPath, {
     blurSigma: args["blur-sigma"],
     deltaThreshold: args["delta-threshold"]

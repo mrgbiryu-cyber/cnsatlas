@@ -1,0 +1,10 @@
+{
+  "crop": null,
+  "width": 2560,
+  "height": 1440,
+  "blur_sigma": 1.2,
+  "delta_threshold": 40,
+  "changed_pixels": 541423,
+  "changed_ratio": 0.1468703884548611,
+  "match_score": 0.8531296115451389
+}
