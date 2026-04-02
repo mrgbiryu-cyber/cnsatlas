@@ -1560,16 +1560,36 @@ async function renderReplayNode(node, parentNode, origin, bundle) {
         }
         return;
       }
-      if (!isClipLikeReplayNode(node) && (hasVisibleSolidPaint(node) || hasVisibleStroke(node))) {
-        createReplayFrameShell(node, parentNode, currentNodeOrigin);
-      }
-      for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, nextOriginBase, bundle);
+      {
+        const frameBounds = getReplayBounds(node) || origin;
+        const frameContainer = createReplayContainer(node, parentNode, currentNodeOrigin);
+        const frameLocalOrigin = Object.assign({}, nextOriginBase, {
+          x: frameBounds.x,
+          y: frameBounds.y,
+          width: frameBounds.width,
+          height: frameBounds.height,
+        });
+        if (!isClipLikeReplayNode(node) && (hasVisibleSolidPaint(node) || hasVisibleStroke(node))) {
+          createReplayFrameShell(node, frameContainer, frameLocalOrigin);
+        }
+        for (const child of node.children || []) {
+          await renderReplayNode(child, frameContainer, frameLocalOrigin, bundle);
+        }
       }
       return;
     case "GROUP":
-      for (const child of node.children || []) {
-        await renderReplayNode(child, parentNode, nextOriginBase, bundle);
+      {
+        const groupBounds = getReplayBounds(node) || origin;
+        const groupContainer = createReplayContainer(node, parentNode, currentNodeOrigin);
+        const groupLocalOrigin = Object.assign({}, nextOriginBase, {
+          x: groupBounds.x,
+          y: groupBounds.y,
+          width: groupBounds.width,
+          height: groupBounds.height,
+        });
+        for (const child of node.children || []) {
+          await renderReplayNode(child, groupContainer, groupLocalOrigin, bundle);
+        }
       }
       return;
     default:
