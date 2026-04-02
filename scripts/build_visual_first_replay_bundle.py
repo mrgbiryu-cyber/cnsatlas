@@ -115,11 +115,18 @@ def estimate_text_font_size(text_value: str, text_style: dict[str, Any], bounds:
     height = max(float(bounds.get("height", 24)), 1.0)
     single_line = "\n" not in (text_value or "")
     short_text = len((text_value or "").strip()) <= 18
-    base_by_height = height * (0.56 if single_line and short_text else 0.42)
+    if table_cell:
+        base_by_height = height * (0.64 if single_line and short_text else 0.5)
+    else:
+        base_by_height = height * (0.56 if single_line and short_text else 0.42)
     rough_capacity = max(int((width - 12) / max(base_by_height * 0.55, 4)), 4)
     multiline_penalty = 0.82 if len(text_value or "") > rough_capacity else 1.0
-    width_penalty = 0.86 if width < 120 else 0.94 if width < 220 else 1.0
-    local_scale = 0.9 if table_cell else 1.0
+    if table_cell:
+        width_penalty = 0.92 if width < 120 else 0.97 if width < 220 else 1.0
+        local_scale = 1.02
+    else:
+        width_penalty = 0.86 if width < 120 else 0.94 if width < 220 else 1.0
+        local_scale = 1.0
     return clamp_font_size(base_by_height * multiline_penalty * width_penalty * local_scale * scale)
 
 
@@ -1047,15 +1054,27 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             cell_style = cell_extra.get("cell_style") or {}
             cell_name = f"cell {row_index}-{start_column_index}"
             if strategy in {"table-heavy", "ui-mockup"}:
+                if strategy == "table-heavy":
+                    frame_fill = (
+                        [solid_paint(cell_style.get("fill"), {"r": 0.8471, "g": 0.8471, "b": 0.8471}, 1.0)]
+                        if cell_style.get("fill")
+                        else [{"type": "SOLID", "color": {"r": 1, "g": 1, "b": 1}, "opacity": 1.0}]
+                    )
+                    frame_strokes = [{"type": "SOLID", "color": {"r": 0.78, "g": 0.78, "b": 0.78}, "opacity": 1.0}]
+                    frame_stroke_weight = 1.1
+                else:
+                    frame_fill = [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)] if cell_style.get("fill") else []
+                    frame_strokes = [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": 1.0}]
+                    frame_stroke_weight = 1
                 cell_frame = {
                     "id": f"{cell_candidate['candidate_id']}:frame",
                     "type": "FRAME",
                     "name": cell_name,
                     "absoluteBoundingBox": cell_abs_bounds,
                     "relativeTransform": relative_transform_from_bounds(cell_candidate.get("bounds_px")),
-                    "fills": [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)] if cell_style.get("fill") else [],
-                    "strokes": [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": 1.0}],
-                    "strokeWeight": 1,
+                    "fills": frame_fill,
+                    "strokes": frame_strokes,
+                    "strokeWeight": frame_stroke_weight,
                     "children": [],
                     "debug": dict(build_source_debug(cell_candidate), visual_strategy=strategy, role="table_cell"),
                 }
