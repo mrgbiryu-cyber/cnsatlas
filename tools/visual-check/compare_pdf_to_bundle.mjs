@@ -150,14 +150,23 @@ function renderPluginNode(node, pieces, offset = { x: 0, y: 0 }) {
     const y = bbox.y - offset.y;
     const w = bbox.width;
     const h = bbox.height;
+    const imageFill = (node.fills || []).find((item) => item && item.visible !== false && item.type === "IMAGE" && item.imageHash);
     if (type === "RECTANGLE") {
       const fill = (node.fills || []).find((item) => item.visible !== false);
       const stroke = (node.strokes || []).find((item) => item.visible !== false);
-      pieces.push(
-        `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
-          stroke ? cssRgba(stroke) : "none"
-        }" stroke-width="${Number(node.stroke_weight || 0)}" rx="${Number(node.corner_radius || 0)}" />`
-      );
+      if (imageFill) {
+        pieces.push(
+          `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#d8dde4" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${Number(node.stroke_weight || 0)}" rx="${Number(node.corner_radius || 0)}" />`
+        );
+      } else {
+        pieces.push(
+          `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${Number(node.stroke_weight || 0)}" rx="${Number(node.corner_radius || 0)}" />`
+        );
+      }
     } else if (type === "ELLIPSE") {
       const fill = (node.fills || []).find((item) => item.visible !== false);
       const stroke = (node.strokes || []).find((item) => item.visible !== false);
@@ -203,7 +212,13 @@ function renderPluginNode(node, pieces, offset = { x: 0, y: 0 }) {
       const fill = (node.fills || []).find((item) => item.visible !== false);
       const stroke = (node.strokes || []).find((item) => item.visible !== false);
       const strokeWidth = Number(node.stroke_weight || node.strokeWeight || 0);
-      if (fill || stroke) {
+      if (imageFill) {
+        pieces.push(
+          `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#d8dde4" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${strokeWidth}" rx="${Number(node.corner_radius || node.cornerRadius || 0)}" />`
+        );
+      } else if (fill || stroke) {
         pieces.push(
           `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
             stroke ? cssRgba(stroke) : "none"

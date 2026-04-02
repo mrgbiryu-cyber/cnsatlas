@@ -2311,10 +2311,14 @@ async function createTableCell(candidate, parentNode) {
   text.name = `${cell.name} text`;
   text.fontName = await resolveFontName(textStyle);
   text.characters = candidate.text || "";
-  text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || 10);
+  text.fontSize = deriveTableCellFontSize(textStyle, cellStyle, parentNode.height, width);
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, "l");
   text.textAlignVertical = mapVerticalAlign(cellStyle.anchor, "ctr");
+  text.lineHeight = {
+    unit: "PIXELS",
+    value: Math.max(Math.round(text.fontSize * 1.22), text.fontSize + 2),
+  };
   const leftInset = typeof cellStyle.marL === "number" ? cellStyle.marL : 6;
   const rightInset = typeof cellStyle.marR === "number" ? cellStyle.marR : 6;
   const availableWidth = Math.max(width - leftInset - rightInset, 12);
@@ -2373,4 +2377,28 @@ async function createImagePlaceholder(candidate, parentNode, origin, fallbackInd
 
 function clampFontSize(value) {
   return Math.max(10, Math.min(Math.round(value), 28));
+}
+
+function deriveTableCellFontSize(textStyle, cellStyle, rowHeight, width) {
+  const hinted = Number(
+    textStyle.font_size_max
+    || textStyle.font_size_avg
+    || textStyle.fontSize
+    || cellStyle.fontSize
+    || 0
+  );
+  const height = Number(rowHeight || 0);
+  const cellWidth = Number(width || 0);
+  let minimum = 10;
+  if (height >= 36) {
+    minimum = 12;
+  } else if (height >= 28) {
+    minimum = 11;
+  } else if (height < 20) {
+    minimum = 9;
+  }
+  if (cellWidth > 0 && cellWidth < 72) {
+    minimum = Math.max(9, minimum - 1);
+  }
+  return Math.max(minimum, clampFontSize(hinted || minimum));
 }
