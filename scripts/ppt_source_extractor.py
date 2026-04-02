@@ -117,7 +117,19 @@ def classify_page_visual_strategy(candidates: list[dict[str, Any]]) -> dict[str,
     image_count = counts.get("image", 0)
     group_count = counts.get("group", 0) + counts.get("section_block", 0)
 
-    if image_count >= 5 or (labeled_shape_count >= 20 and shape_count >= 15 and table_cell_count < 40):
+    is_dense_ui_panel = (
+        table_count >= 2
+        and 10 <= table_cell_count <= 24
+        and labeled_shape_count >= 35
+        and shape_count >= 20
+        and image_count >= 5
+        and group_count >= 10
+        and connector_count <= 8
+    )
+
+    if is_dense_ui_panel:
+        page_type = "dense_ui_panel"
+    elif image_count >= 5 or (labeled_shape_count >= 20 and shape_count >= 15 and table_cell_count < 40):
         page_type = "ui-mockup"
     elif table_cell_count >= 40 or table_count >= 2:
         page_type = "table-heavy"
