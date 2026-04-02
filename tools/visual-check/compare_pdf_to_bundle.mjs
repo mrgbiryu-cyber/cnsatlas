@@ -199,6 +199,17 @@ function renderPluginNode(node, pieces, offset = { x: 0, y: 0 }) {
           )}">${esc(line)}</text>`
         );
       });
+    } else if (type === "FRAME") {
+      const fill = (node.fills || []).find((item) => item.visible !== false);
+      const stroke = (node.strokes || []).find((item) => item.visible !== false);
+      const strokeWidth = Number(node.stroke_weight || node.strokeWeight || 0);
+      if (fill || stroke) {
+        pieces.push(
+          `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${strokeWidth}" rx="${Number(node.corner_radius || node.cornerRadius || 0)}" />`
+        );
+      }
     }
   }
 

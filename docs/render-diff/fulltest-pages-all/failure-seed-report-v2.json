@@ -36,8 +36,6 @@
       "title": "화면목록",
       "match_score": 0.8329581705729167,
       "failure_tags": [
-        "page_underfill",
-        "root_bounds_mismatch",
         "table_scaffold",
         "text_sizing"
       ]
@@ -48,8 +46,6 @@
       "title": "화면목록",
       "match_score": 0.91850341796875,
       "failure_tags": [
-        "page_underfill",
-        "root_bounds_mismatch",
         "table_scaffold"
       ]
     },
@@ -62,9 +58,7 @@
         "text_sizing",
         "fill_color_mismatch",
         "table_scaffold",
-        "cell_layout",
-        "page_underfill",
-        "root_bounds_mismatch"
+        "cell_layout"
       ]
     },
     {
@@ -86,9 +80,7 @@
       "match_score": 0.7782306857638888,
       "failure_tags": [
         "text_sizing",
-        "table_scaffold",
-        "page_underfill",
-        "root_bounds_mismatch"
+        "table_scaffold"
       ]
     },
     {
@@ -111,9 +103,7 @@
         "text_sizing",
         "fill_color_mismatch",
         "table_scaffold",
-        "cell_layout",
-        "page_underfill",
-        "root_bounds_mismatch"
+        "cell_layout"
       ]
     },
     {
