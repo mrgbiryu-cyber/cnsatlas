@@ -138,12 +138,14 @@ function renderBundleNode(node, pieces, offset, assets) {
     const fill = (node.fills || [])[0];
     const style = node.style || {};
     const fontSize = Number(style.fontSize || 12);
-    const fontFamily = style.fontFamily || "sans-serif";
+    const font = resolveFontConfig(style.fontFamily);
+    const fontFamily = font.family;
+    const effectiveFontSize = fontSize * font.scale;
     const lines = String(node.characters || "").split("\n");
     lines.forEach((line, index) => {
-      const dy = y + fontSize + index * (Number(style.lineHeightPx || fontSize * 1.2));
+      const dy = y + effectiveFontSize + index * (Number(style.lineHeightPx || effectiveFontSize * 1.2));
       pieces.push(
-        `<text x="${x}" y="${dy}" font-family="${esc(fontFamily)}" font-size="${fontSize}" fill="${cssRgba(
+        `<text x="${x}" y="${dy}" font-family="${esc(fontFamily)}" font-size="${effectiveFontSize}" fill="${cssRgba(
           fill,
           { r: 0, g: 0, b: 0, a: 1 }
         )}">${esc(line)}</text>`
