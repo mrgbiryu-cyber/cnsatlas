@@ -87,16 +87,29 @@ function resolveFontConfig(fontFamily) {
 
 function renderBundleNode(node, pieces, offset, assets) {
   const bbox = node.absoluteBoundingBox;
-  if (!bbox) return;
-  const x = bbox.x - offset.x;
-  const y = bbox.y - offset.y;
-  const w = bbox.width;
-  const h = bbox.height;
   const type = node.type;
+  const x = bbox ? bbox.x - offset.x : 0;
+  const y = bbox ? bbox.y - offset.y : 0;
+  const w = bbox ? bbox.width : 0;
+  const h = bbox ? bbox.height : 0;
 
   if (type === "SVG_BLOCK" && node.svgMarkup) {
     pieces.push(`<g transform="translate(${x},${y})">${node.svgMarkup}</g>`);
+  } else if (type === "FRAME") {
+    if (!bbox) return;
+    const fill = (node.fills || [])[0];
+    const stroke = (node.strokes || [])[0];
+    const strokeWidth = Number(node.strokeWeight || node.stroke_weight || 0);
+    const radius = Number(node.cornerRadius || node.corner_radius || 0);
+    if (fill || stroke) {
+      pieces.push(
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+          stroke ? cssRgba(stroke) : "none"
+        }" stroke-width="${strokeWidth}" rx="${radius}" />`
+      );
+    }
   } else if (type === "RECTANGLE") {
+    if (!bbox) return;
     const fill = (node.fills || [])[0];
     const stroke = (node.strokes || [])[0];
     const strokeWidth = Number(node.strokeWeight || 0);
@@ -121,6 +134,7 @@ function renderBundleNode(node, pieces, offset, assets) {
       );
     }
   } else if (type === "TEXT") {
+    if (!bbox) return;
     const fill = (node.fills || [])[0];
     const style = node.style || {};
     const fontSize = Number(style.fontSize || 12);
@@ -135,6 +149,39 @@ function renderBundleNode(node, pieces, offset, assets) {
         )}">${esc(line)}</text>`
       );
     });
+  } else if (type === "VECTOR" || type === "LINE" || type === "POLYGON") {
+    const fill = (node.fills || [])[0];
+    const stroke = (node.strokes || [])[0];
+    const strokeWidth = Number(node.strokeWeight || 0);
+    const fillGeometry = Array.isArray(node.fillGeometry) ? node.fillGeometry : [];
+    const strokeGeometry = Array.isArray(node.strokeGeometry) ? node.strokeGeometry : [];
+    if (fillGeometry.length > 0) {
+      for (const part of fillGeometry) {
+        const pathData = part?.path;
+        if (!pathData) continue;
+        pieces.push(
+          `<path d="${pathData}" transform="translate(${x},${y})" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${strokeWidth}" />`
+        );
+      }
+    } else if (strokeGeometry.length > 0) {
+      for (const part of strokeGeometry) {
+        const pathData = part?.path;
+        if (!pathData) continue;
+        pieces.push(
+          `<path d="${pathData}" transform="translate(${x},${y})" fill="none" stroke="${
+            stroke ? cssRgba(stroke) : "none"
+          }" stroke-width="${strokeWidth || 1}" />`
+        );
+      }
+    } else if (bbox) {
+      pieces.push(
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill ? cssRgba(fill) : "none"}" stroke="${
+          stroke ? cssRgba(stroke) : "none"
+        }" stroke-width="${strokeWidth}" />`
+      );
+    }
   }
 
   for (const child of node.children || []) {
