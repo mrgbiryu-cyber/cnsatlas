@@ -1369,6 +1369,59 @@ function createReplayFrameShell(node, parentNode, origin) {
   return shell;
 }
 
+function replayNodeBounds(node) {
+  return getReplayBounds(node) || null;
+}
+
+function isBackgroundLikeReplayNode(node, referenceBounds) {
+  const bounds = replayNodeBounds(node);
+  if (!bounds || !referenceBounds) return false;
+  const widthRatio = bounds.width / Math.max(referenceBounds.width || 1, 1);
+  const heightRatio = bounds.height / Math.max(referenceBounds.height || 1, 1);
+  if (widthRatio < 0.7 || heightRatio < 0.7) return false;
+
+  if (node.type === "RECTANGLE" && (hasVisibleSolidPaint(node) || hasVisibleStroke(node))) {
+    return true;
+  }
+
+  if (node.type === "FRAME" || node.type === "GROUP") {
+    if (hasVisibleSolidPaint(node) || hasVisibleStroke(node)) {
+      return true;
+    }
+    const children = node.children || [];
+    const largeRectChild = children.find((child) => {
+      if (child.type !== "RECTANGLE") return false;
+      const cb = replayNodeBounds(child);
+      if (!cb) return false;
+      const childWidthRatio = cb.width / Math.max(bounds.width || 1, 1);
+      const childHeightRatio = cb.height / Math.max(bounds.height || 1, 1);
+      return childWidthRatio >= 0.95 && childHeightRatio >= 0.95;
+    });
+    if (largeRectChild) return true;
+  }
+
+  return false;
+}
+
+function replayPaintPriority(node, referenceBounds) {
+  if (isBackgroundLikeReplayNode(node, referenceBounds)) return 0;
+  if (node.type === "TEXT") return 3;
+  return 1;
+}
+
+function sortReplayChildrenForPaint(children, referenceBounds) {
+  return [...(children || [])].sort((a, b) => {
+    const pa = replayPaintPriority(a, referenceBounds);
+    const pb = replayPaintPriority(b, referenceBounds);
+    if (pa !== pb) return pa - pb;
+    const ab = replayNodeBounds(a) || {};
+    const bb = replayNodeBounds(b) || {};
+    if ((ab.y || 0) !== (bb.y || 0)) return (ab.y || 0) - (bb.y || 0);
+    if ((ab.x || 0) !== (bb.x || 0)) return (ab.x || 0) - (bb.x || 0);
+    return 0;
+  });
+}
+
 async function renderReplayText(node, parentNode, origin) {
   const bounds = getReplayBounds(node);
   if (!bounds) {
@@ -1669,7 +1722,7 @@ async function buildReplayRootFrame(bundle, xOffset) {
     pageBounds: documentBounds || rootBounds,
   });
   if (documentNode && documentNode.type === "FRAME") {
-    for (const child of documentNode.children || []) {
+    for (const child of sortReplayChildrenForPaint(documentNode.children || [], rootBounds)) {
       await renderReplayNode(child, rootFrame, replayOrigin, bundle);
     }
   } else {
