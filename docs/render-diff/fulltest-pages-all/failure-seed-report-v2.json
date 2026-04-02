@@ -1,0 +1,172 @@
+{
+  "kind": "visual-failure-seed-report-v2",
+  "priority_order": [
+    "text_sizing",
+    "line_wrapping",
+    "line_height",
+    "text_overflow_or_clip",
+    "text_alignment",
+    "fill_color_mismatch",
+    "stroke_color_mismatch",
+    "opacity_or_overlay_mismatch",
+    "table_scaffold",
+    "cell_layout",
+    "merged_cell_or_span_issue",
+    "border_weight_or_grid_issue",
+    "page_level_z_order",
+    "local_z_order",
+    "group_flattening",
+    "container_preservation",
+    "page_underfill",
+    "root_bounds_mismatch",
+    "clip_or_overflow_issue",
+    "connector_direction",
+    "connector_group_flattening",
+    "connector_anchor_mismatch",
+    "arrowhead_direction_mismatch",
+    "dense_panel_layering",
+    "text_packing",
+    "left_side_grouping",
+    "notice_panel_layout"
+  ],
+  "rows": [
+    {
+      "slide_no": 3,
+      "page_type": "table-heavy",
+      "title": "화면목록",
+      "match_score": 0.8329581705729167,
+      "failure_tags": [
+        "page_underfill",
+        "root_bounds_mismatch",
+        "table_scaffold",
+        "text_sizing"
+      ]
+    },
+    {
+      "slide_no": 4,
+      "page_type": "table-heavy",
+      "title": "화면목록",
+      "match_score": 0.91850341796875,
+      "failure_tags": [
+        "page_underfill",
+        "root_bounds_mismatch",
+        "table_scaffold"
+      ]
+    },
+    {
+      "slide_no": 7,
+      "page_type": "table-heavy",
+      "title": "모델 판매상태 별 Front 노출 정책",
+      "match_score": 0.5966113281250001,
+      "failure_tags": [
+        "text_sizing",
+        "fill_color_mismatch",
+        "table_scaffold",
+        "cell_layout",
+        "page_underfill",
+        "root_bounds_mismatch"
+      ]
+    },
+    {
+      "slide_no": 9,
+      "page_type": "flow-process",
+      "title": "일시품절 상태 확인 조건 (API)",
+      "match_score": 0.7961724175347222,
+      "failure_tags": [
+        "page_level_z_order",
+        "connector_direction",
+        "connector_group_flattening",
+        "text_sizing"
+      ]
+    },
+    {
+      "slide_no": 11,
+      "page_type": "table-heavy",
+      "title": "가격 영역 노출 정보",
+      "match_score": 0.7782306857638888,
+      "failure_tags": [
+        "text_sizing",
+        "table_scaffold",
+        "page_underfill",
+        "root_bounds_mismatch"
+      ]
+    },
+    {
+      "slide_no": 12,
+      "page_type": "flow-process",
+      "title": "일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+      "match_score": 0.8531296115451389,
+      "failure_tags": [
+        "connector_direction",
+        "connector_group_flattening",
+        "text_sizing"
+      ]
+    },
+    {
+      "slide_no": 15,
+      "page_type": "table-heavy",
+      "title": "제품 번들링 정책",
+      "match_score": 0.5491604275173612,
+      "failure_tags": [
+        "text_sizing",
+        "fill_color_mismatch",
+        "table_scaffold",
+        "cell_layout",
+        "page_underfill",
+        "root_bounds_mismatch"
+      ]
+    },
+    {
+      "slide_no": 19,
+      "page_type": "table-heavy",
+      "title": "리뷰 - 제품 카테고리별 평가 항목",
+      "match_score": 0.7202707248263889,
+      "failure_tags": [
+        "text_sizing",
+        "table_scaffold",
+        "cell_layout"
+      ]
+    },
+    {
+      "slide_no": 20,
+      "page_type": "ui-mockup",
+      "title": "3D 공간 랜더링 이미지 - 리뷰 사진 제공 케이스",
+      "match_score": 0.6115904405381944,
+      "failure_tags": [
+        "text_sizing",
+        "fill_color_mismatch",
+        "page_underfill",
+        "root_bounds_mismatch",
+        "ui_grouping",
+        "container_preservation",
+        "local_z_order"
+      ]
+    },
+    {
+      "slide_no": 28,
+      "page_type": "ui-mockup",
+      "title": "제품 관련 공지사항",
+      "match_score": 0.6440700954861112,
+      "failure_tags": [
+        "text_sizing",
+        "fill_color_mismatch",
+        "ui_grouping",
+        "notice_panel_layout"
+      ]
+    },
+    {
+      "slide_no": 29,
+      "page_type": "dense_ui_panel",
+      "title": "옵션 선택",
+      "match_score": 0.6951996527777777,
+      "failure_tags": [
+        "text_sizing",
+        "line_wrapping",
+        "fill_color_mismatch",
+        "dense_panel_layering",
+        "text_packing",
+        "left_side_grouping"
+      ]
+    }
+  ]
+}
