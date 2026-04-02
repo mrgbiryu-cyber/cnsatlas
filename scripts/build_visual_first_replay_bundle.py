@@ -979,10 +979,6 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
     scaled_row_heights: dict[str, float] = {}
     for row_candidate in rows:
         scaled_row_heights[row_candidate["candidate_id"]] = max(scale_value((row_candidate.get("extra") or {}).get("row_height_px") or 28, scale_y), 21.0)
-
-    row_y_positions = [abs_bounds["y"]]
-    for row_candidate in rows:
-        row_y_positions.append(row_y_positions[-1] + scaled_row_heights[row_candidate["candidate_id"]])
     if grid_columns:
         column_widths = [scale_value(column.get("width_px") or 0, scale_x) for column in grid_columns]
     else:
@@ -992,7 +988,8 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
     for width in column_widths:
         column_x_positions.append(column_x_positions[-1] + width)
 
-    for row_index, row_candidate in enumerate(rows, start=1):
+    effective_row_heights: dict[str, float] = {}
+    for row_candidate in rows:
         cell_candidates = [child for child in children_map.get(row_candidate["candidate_id"], []) if child.get("subtype") == "table_cell"]
         row_height = scaled_row_heights[row_candidate["candidate_id"]]
         for cell_candidate in cell_candidates:
@@ -1004,6 +1001,31 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             if strategy == "table-heavy":
                 estimated_height = min(estimated_height, row_height * 1.25)
             row_height = max(row_height, estimated_height)
+        effective_row_heights[row_candidate["candidate_id"]] = row_height
+
+    if strategy == "table-heavy":
+        total_height = sum(effective_row_heights.values())
+        available_height = float(abs_bounds["height"])
+        if total_height > available_height and total_height > 0:
+            shrink = available_height / total_height
+            min_row_height = 16.0
+            adjusted: dict[str, float] = {}
+            for row_candidate in rows:
+                adjusted[row_candidate["candidate_id"]] = max(min_row_height, effective_row_heights[row_candidate["candidate_id"]] * shrink)
+            adjusted_total = sum(adjusted.values())
+            if adjusted_total > available_height and adjusted_total > 0:
+                shrink2 = available_height / adjusted_total
+                for row_candidate in rows:
+                    adjusted[row_candidate["candidate_id"]] = max(12.0, adjusted[row_candidate["candidate_id"]] * shrink2)
+            effective_row_heights = adjusted
+
+    row_y_positions = [abs_bounds["y"]]
+    for row_candidate in rows:
+        row_y_positions.append(row_y_positions[-1] + effective_row_heights[row_candidate["candidate_id"]])
+
+    for row_index, row_candidate in enumerate(rows, start=1):
+        cell_candidates = [child for child in children_map.get(row_candidate["candidate_id"], []) if child.get("subtype") == "table_cell"]
+        row_height = effective_row_heights[row_candidate["candidate_id"]]
         row_abs_bounds = make_bounds(abs_bounds["x"], row_cursor_y, abs_bounds["width"], row_height)
         for cell_candidate in cell_candidates:
             cell_extra = cell_candidate.get("extra") or {}
@@ -1020,7 +1042,7 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
             spanned_height = row_height
             if row_span > 1:
                 current_index = rows.index(row_candidate)
-                spanned_height = sum(scaled_row_heights[rows[i]["candidate_id"]] for i in range(current_index, min(current_index + row_span, len(rows))))
+                spanned_height = sum(effective_row_heights[rows[i]["candidate_id"]] for i in range(current_index, min(current_index + row_span, len(rows))))
             cell_abs_bounds = make_bounds(row_abs_bounds["x"] + cell_x, row_abs_bounds["y"], cell_width, spanned_height)
             cell_style = cell_extra.get("cell_style") or {}
             cell_name = f"cell {row_index}-{start_column_index}"
@@ -1194,8 +1216,8 @@ def build_page_root(context: dict[str, Any], assets: dict[str, Any]) -> dict[str
     root_bounds = {
         "x": 0.0,
         "y": 0.0,
-        "width": TARGET_SLIDE_WIDTH,
-        "height": TARGET_SLIDE_HEIGHT,
+        "width": float(context.get("width") or TARGET_SLIDE_WIDTH),
+        "height": float(context.get("height") or TARGET_SLIDE_HEIGHT),
     }
     page_name = f"Slide {context['slide_no']} - {context['title']}"
     inner_frame = {

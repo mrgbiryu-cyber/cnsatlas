@@ -54,10 +54,12 @@ def relative_transform_from_bounds(bounds: dict[str, Any] | None) -> list[list[f
     ]
 
 
-def build_page_scale(page: dict[str, Any]) -> tuple[float, float]:
+def build_page_scale(page: dict[str, Any], page_type: str | None = None) -> tuple[float, float]:
     slide_size = page.get("slide_size") or {}
     width = float(slide_size.get("width_px") or TARGET_SLIDE_WIDTH)
     height = float(slide_size.get("height_px") or TARGET_SLIDE_HEIGHT)
+    if page_type == "table-heavy":
+        return 1.0, 1.0
     scale_x = TARGET_SLIDE_WIDTH / width if width else 1.0
     scale_y = TARGET_SLIDE_HEIGHT / height if height else 1.0
     return scale_x, scale_y
@@ -177,8 +179,15 @@ def build_placeholder_anchor_map(candidates: list[dict[str, Any]]) -> dict[str, 
 
 
 def build_page_context(page: dict[str, Any]) -> dict[str, Any]:
-    scale_x, scale_y = build_page_scale(page)
     candidates = page.get("candidates") or []
+    visual_strategy = classify_page_visual_strategy(candidates)
+    page_type = str(visual_strategy.get("page_type") or "generic")
+    scale_x, scale_y = build_page_scale(page, page_type)
+    slide_size = page.get("slide_size") or {}
+    source_width = float(slide_size.get("width_px") or TARGET_SLIDE_WIDTH)
+    source_height = float(slide_size.get("height_px") or TARGET_SLIDE_HEIGHT)
+    width = source_width if page_type == "table-heavy" else TARGET_SLIDE_WIDTH
+    height = source_height if page_type == "table-heavy" else TARGET_SLIDE_HEIGHT
     children_map = build_children_map(candidates)
     return {
         "page": page,
@@ -187,13 +196,13 @@ def build_page_context(page: dict[str, Any]) -> dict[str, Any]:
         "title": page.get("title_or_label") or f"Slide {page.get('slide_no')}",
         "scale_x": scale_x,
         "scale_y": scale_y,
-        "width": TARGET_SLIDE_WIDTH,
-        "height": TARGET_SLIDE_HEIGHT,
+        "width": width,
+        "height": height,
         "candidates": candidates,
         "children_map": children_map,
         "roots": sorted(children_map.get(page.get("page_id"), []), key=sort_by_position_key),
         "placeholder_anchor_map": build_placeholder_anchor_map(candidates),
-        "visual_strategy": classify_page_visual_strategy(candidates),
+        "visual_strategy": visual_strategy,
     }
 
 
