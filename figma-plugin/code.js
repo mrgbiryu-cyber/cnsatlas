@@ -1317,11 +1317,15 @@ function createReplayContainer(node, parentNode, origin) {
     return parentNode;
   }
   const local = boundsRelativeToOrigin(bounds, origin);
+  const snappedX = Math.round(local.x);
+  const snappedY = Math.round(local.y);
+  const snappedWidth = Math.max(Math.round(local.width), 1);
+  const snappedHeight = Math.max(Math.round(local.height), 1);
   const frame = figma.createFrame();
   frame.name = node.name || node.type || "container";
-  frame.x = local.x;
-  frame.y = local.y;
-  frame.resize(local.width, local.height);
+  frame.x = snappedX;
+  frame.y = snappedY;
+  frame.resize(snappedWidth, snappedHeight);
   frame.fills = [];
   frame.strokes = [];
   frame.clipsContent = false;
@@ -1336,11 +1340,15 @@ function createReplayFrameShell(node, parentNode, origin) {
     return null;
   }
   const local = boundsRelativeToOrigin(bounds, origin);
+  const snappedX = Math.round(local.x);
+  const snappedY = Math.round(local.y);
+  const snappedWidth = Math.max(Math.round(local.width), 1);
+  const snappedHeight = Math.max(Math.round(local.height), 1);
   const shell = figma.createRectangle();
   shell.name = node.name || node.type || "frame-shell";
-  shell.x = local.x;
-  shell.y = local.y;
-  shell.resize(local.width, local.height);
+  shell.x = snappedX;
+  shell.y = snappedY;
+  shell.resize(snappedWidth, snappedHeight);
   shell.fills = (node.fills || []).filter((fill) => fill && (fill.type === "SOLID" || fill.type === "IMAGE")).map((fill) => {
     if (fill.type === "SOLID") {
       return {
@@ -1383,7 +1391,8 @@ async function renderReplayText(node, parentNode, origin) {
   text.name = node.name || "Text";
   text.fontName = await resolveFigmaFontName(node.style || {});
   text.characters = node.characters || "";
-  text.fontSize = node.style && node.style.fontSize ? node.style.fontSize : 12;
+  const sourceFontSize = node.style && typeof node.style.fontSize === "number" ? node.style.fontSize : 12;
+  text.fontSize = Math.max(1, Math.round(sourceFontSize));
   text.textAlignHorizontal = mapReplayHorizontalAlign(node.style && node.style.textAlignHorizontal);
   text.textAlignVertical = mapReplayVerticalAlign(node.style && node.style.textAlignVertical);
   const textAutoResize = (node.style && node.style.textAutoResize) || "NONE";
@@ -1397,10 +1406,10 @@ async function renderReplayText(node, parentNode, origin) {
     text.resize(snappedWidth, snappedHeight);
   }
   if (node.style && typeof node.style.letterSpacing === "number") {
-    text.letterSpacing = { value: node.style.letterSpacing, unit: "PIXELS" };
+    text.letterSpacing = { value: Math.round(node.style.letterSpacing * 100) / 100, unit: "PIXELS" };
   }
   if (node.style && typeof node.style.lineHeightPx === "number") {
-    text.lineHeight = { unit: "PIXELS", value: node.style.lineHeightPx };
+    text.lineHeight = { unit: "PIXELS", value: Math.max(text.fontSize + 1, Math.round(node.style.lineHeightPx)) };
   }
   text.fills = (node.fills || []).filter((fill) => fill && fill.type === "SOLID").map((fill) => ({
     type: "SOLID",
@@ -1412,6 +1421,7 @@ async function renderReplayText(node, parentNode, origin) {
   }
   text.x = snappedX;
   text.y = snappedY;
+  text.opacity = 1;
   const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
   if (rotation) {
     text.rotation = rotation;
@@ -1426,11 +1436,15 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
     return;
   }
   const local = boundsRelativeToOrigin(bounds, origin);
+  const snappedX = Math.round(local.x);
+  const snappedY = Math.round(local.y);
+  const snappedWidth = Math.max(Math.round(local.width), 1);
+  const snappedHeight = Math.max(Math.round(local.height), 1);
   const rect = figma.createRectangle();
   rect.name = node.name || "Rectangle";
-  rect.x = local.x;
-  rect.y = local.y;
-  rect.resize(local.width, local.height);
+  rect.x = snappedX;
+  rect.y = snappedY;
+  rect.resize(snappedWidth, snappedHeight);
   if (typeof node.cornerRadius === "number") {
     rect.cornerRadius = node.cornerRadius;
   }
@@ -1484,8 +1498,8 @@ function renderReplayVector(node, parentNode, origin) {
   const svg = buildVectorSvg(vectorNode, local);
   const svgNode = figma.createNodeFromSvg(svg);
   svgNode.name = node.name || "Vector";
-  svgNode.x = local.x;
-  svgNode.y = local.y;
+  svgNode.x = Math.round(local.x);
+  svgNode.y = Math.round(local.y);
   if (signs.rotation) {
     svgNode.rotation = signs.rotation;
   }
@@ -1505,8 +1519,8 @@ function renderReplaySvgBlock(node, parentNode, origin) {
   const local = boundsRelativeToOrigin(bounds, origin);
   const svgNode = figma.createNodeFromSvg(node.svgMarkup);
   svgNode.name = node.name || "SvgBlock";
-  svgNode.x = local.x;
-  svgNode.y = local.y;
+  svgNode.x = Math.round(local.x);
+  svgNode.y = Math.round(local.y);
   const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
   if (rotation) {
     svgNode.rotation = rotation;
