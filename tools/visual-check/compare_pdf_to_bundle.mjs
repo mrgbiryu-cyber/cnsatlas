@@ -6,7 +6,7 @@ import sharp from "sharp";
 
 function usage() {
   console.error(
-    "usage: node compare_pdf_to_bundle.mjs --reference-image <reference.png> --actual <bundle.json> --out-dir <dir> [--crop x,y,w,h]"
+    "usage: node compare_pdf_to_bundle.mjs --reference-image <reference.png> --actual <bundle.json> --out-dir <dir> [--crop x,y,w,h] [--density 600]"
   );
   process.exit(1);
 }
@@ -302,16 +302,16 @@ function pluginToSvg(plugin, crop) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${pageBox.width}" height="${pageBox.height}" viewBox="0 0 ${pageBox.width} ${pageBox.height}">${pieces.join("")}</svg>`;
 }
 
-async function svgToPng(svg, outputPath) {
-  await sharp(Buffer.from(svg)).png().toFile(outputPath);
+async function svgToPng(svg, outputPath, density = 600) {
+  await sharp(Buffer.from(svg), { density: Math.max(72, Math.round(density)) }).png().toFile(outputPath);
 }
 
 function miniSvg(width, height, content) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">${content}</svg>`;
 }
 
-async function svgBuffer(width, height, content) {
-  return sharp(Buffer.from(miniSvg(width, height, content))).png().toBuffer();
+async function svgBuffer(width, height, content, density = 600) {
+  return sharp(Buffer.from(miniSvg(width, height, content)), { density: Math.max(72, Math.round(density)) }).png().toBuffer();
 }
 
 async function rectangleOverlay(node) {
@@ -325,7 +325,7 @@ async function rectangleOverlay(node) {
   return svgBuffer(bbox.width, bbox.height, content);
 }
 
-async function textOverlay(node) {
+async function textOverlay(node, density = 600) {
   const bbox = node.absoluteBoundingBox;
   const fill = (node.fills || [])[0];
   const style = node.style || {};
@@ -361,7 +361,7 @@ async function textOverlay(node) {
       )}">${esc(line)}</text>`;
     })
     .join("");
-  return svgBuffer(Math.max(1, bbox.width), Math.max(1, bbox.height), content);
+  return svgBuffer(Math.max(1, bbox.width), Math.max(1, bbox.height), content, density);
 }
 
 async function imageOverlay(node, assets) {
@@ -376,13 +376,14 @@ async function imageOverlay(node, assets) {
     .toBuffer();
 }
 
-async function svgBlockOverlay(node) {
+async function svgBlockOverlay(node, density = 600) {
   const bbox = node.absoluteBoundingBox;
   if (!node.svgMarkup) return null;
   return svgBuffer(
     Math.max(1, bbox.width),
     Math.max(1, bbox.height),
-    `<g transform="translate(0,0)">${node.svgMarkup}</g>`
+    `<g transform="translate(0,0)">${node.svgMarkup}</g>`,
+    density
   );
 }
 
@@ -415,7 +416,7 @@ async function clipOverlay(input, left, top, width, height, canvasWidth, canvasH
   return { input: clipped, left: Math.round(visible.left), top: Math.round(visible.top) };
 }
 
-async function collectCompositeOps(node, offset, assets, ops, canvasWidth, canvasHeight) {
+async function collectCompositeOps(node, offset, assets, ops, canvasWidth, canvasHeight, density = 600) {
   const bbox = node.absoluteBoundingBox;
   if (!bbox) return;
   const left = Math.round(bbox.x - offset.x);
@@ -425,7 +426,7 @@ async function collectCompositeOps(node, offset, assets, ops, canvasWidth, canva
   const type = node.type;
 
   if (type === "SVG_BLOCK" && node.svgMarkup) {
-    const input = await svgBlockOverlay(node);
+    const input = await svgBlockOverlay(node, density);
     if (input) {
       const clipped = await clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight);
       if (clipped) ops.push(clipped);
@@ -456,23 +457,23 @@ async function collectCompositeOps(node, offset, assets, ops, canvasWidth, canva
       if (clipped) ops.push(clipped);
     }
   } else if (type === "TEXT") {
-    const input = await textOverlay(node);
+    const input = await textOverlay(node, density);
     const clipped = await clipOverlay(input, left, top, width, height, canvasWidth, canvasHeight);
     if (clipped) ops.push(clipped);
   }
 
   for (const child of node.children || []) {
-    await collectCompositeOps(child, offset, assets, ops, canvasWidth, canvasHeight);
+    await collectCompositeOps(child, offset, assets, ops, canvasWidth, canvasHeight, density);
   }
 }
 
-async function renderBundleToPng(bundle, crop, outputPath) {
+async function renderBundleToPng(bundle, crop, outputPath, density = 600) {
   const doc = bundle.document;
   const pageBox = crop || doc.absoluteBoundingBox;
   const width = Math.max(1, Math.round(pageBox.width));
   const height = Math.max(1, Math.round(pageBox.height));
   const ops = [];
-  await collectCompositeOps(doc, { x: pageBox.x, y: pageBox.y }, bundle.assets || {}, ops, width, height);
+  await collectCompositeOps(doc, { x: pageBox.x, y: pageBox.y }, bundle.assets || {}, ops, width, height, density);
   await sharp({
     create: {
       width,
@@ -516,14 +517,14 @@ function getActualBaseBox(actual) {
   return actual?.document?.absoluteBoundingBox || null;
 }
 
-async function renderActualToPng(actual, crop, outputPath) {
+async function renderActualToPng(actual, crop, outputPath, density = 600) {
   if (actual?.kind === "figma-analysis-export") {
     const svg = pluginToSvg(actual, crop);
-    await sharp(Buffer.from(svg)).png().toFile(outputPath);
+    await sharp(Buffer.from(svg), { density: Math.max(72, Math.round(density)) }).png().toFile(outputPath);
     return svg;
   }
   const svg = bundleToSvg(actual, crop);
-  await sharp(Buffer.from(svg)).png().toFile(outputPath);
+  await sharp(Buffer.from(svg), { density: Math.max(72, Math.round(density)) }).png().toFile(outputPath);
   return svg;
 }
 
@@ -671,6 +672,7 @@ async function main() {
   const outDir = path.resolve(args["out-dir"]);
   ensureDir(outDir);
   const crop = parseCrop(args.crop);
+  const density = parseNumber(args.density, 600);
   const actual = loadJson(path.resolve(args.actual));
   const actualDocBox = getActualBaseBox(actual);
   const referencePngPath = path.join(outDir, "reference.png");
@@ -682,12 +684,12 @@ async function main() {
   await cropOrCopyReference(path.resolve(args["reference-image"]), referencePngPath, crop, actualDocBox);
   const actualSvg = actual?.kind === "figma-analysis-export" ? pluginToSvg(actual, crop) : bundleToSvg(actual, crop);
   fs.writeFileSync(actualSvgPath, actualSvg, "utf-8");
-  await renderActualToPng(actual, crop, actualPngPath);
+  await renderActualToPng(actual, crop, actualPngPath, density);
   const metrics = await diffPng(referencePngPath, actualPngPath, diffPngPath, {
     blurSigma: args["blur-sigma"],
     deltaThreshold: args["delta-threshold"]
   });
-  fs.writeFileSync(metricsPath, JSON.stringify({ crop, ...metrics }, null, 2), "utf-8");
+  fs.writeFileSync(metricsPath, JSON.stringify({ crop, density, ...metrics }, null, 2), "utf-8");
   console.log(JSON.stringify({ outDir, metrics }, null, 2));
 }
 

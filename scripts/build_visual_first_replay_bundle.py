@@ -201,7 +201,8 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
         text_style["fill"] = run_fill
     text_value = candidate.get("text") or candidate.get("title") or ""
     wrap_mode = derive_wrap_mode(text_value, text_style, bounds, force_wrap=force_wrap)
-    inferred_placeholder_size = None if table_cell else infer_placeholder_font_size(candidate, bounds, scale)
+    has_explicit_source_size = bool(text_style.get("font_size_max") or text_style.get("font_size_avg") or run_font_sizes)
+    inferred_placeholder_size = None if (table_cell or has_explicit_source_size) else infer_placeholder_font_size(candidate, bounds, scale)
     font_size = inferred_placeholder_size or estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale)
     placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
     text_auto_resize = "HEIGHT" if wrap_mode != "none" or placeholder else "NONE"
@@ -234,8 +235,11 @@ def is_background_overlay_candidate(candidate: dict[str, Any], context: dict[str
 
 
 def visual_layer_sort_key(candidate: dict[str, Any], context: dict[str, Any]) -> tuple[Any, ...]:
-    # Background-like translucent cards should be painted first to avoid
-    # washing out foreground text and controls.
+    # Default: preserve source order as-is (stable across decks).
+    # Dense UI panel only: keep legacy translucent-card back-painting heuristic.
+    page_type = str(((context.get("visual_strategy") or {}).get("page_type") or "generic")).lower()
+    if page_type != "dense_ui_panel":
+        return sort_by_position_key(candidate)
     bg_rank = 0 if is_background_overlay_candidate(candidate, context) else 1
     return (bg_rank, *sort_by_position_key(candidate))
 
@@ -805,7 +809,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
 
     def readable_elbow(start: dict[str, float], end: dict[str, float], start_side: str, end_side: str, kind_name: str, adjusts: dict[str, Any]) -> list[dict[str, float]]:
         span = max(abs(end["x"] - start["x"]), abs(end["y"] - start["y"]))
-        lead_margin = max(6.0, min(16.0, span * 0.18))
+        lead_margin = max(4.0, min(12.0, span * 0.12))
         start_lead = offset_from_side(start, start_side, lead_margin)
         end_lead = offset_from_side(end, end_side, lead_margin)
         start_orientation = "horizontal" if start_side in {"left", "right"} else "vertical"
@@ -828,25 +832,23 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             return [start, elbow_a if score_a <= score_b else elbow_b, end]
 
         if start_orientation == "horizontal" and end_orientation == "horizontal":
-            route_right = max(start_lead["x"], end_lead["x"]) + 18
-            route_left = min(start_lead["x"], end_lead["x"]) - 18
+            route_right = max(start_lead["x"], end_lead["x"]) + 10
+            route_left = min(start_lead["x"], end_lead["x"]) - 10
             prefer_right = start_side == "right" or end_side == "left"
             route_x = route_right if prefer_right else route_left
-            return [start, start_lead, {"x": route_x, "y": start_lead["y"]}, {"x": route_x, "y": end_lead["y"]}, end_lead, end]
+            return [start, start_lead, {"x": route_x, "y": end_lead["y"]}, end]
 
         if start_orientation == "vertical" and end_orientation == "vertical":
-            route_bottom = max(start_lead["y"], end_lead["y"]) + 18
-            route_top = min(start_lead["y"], end_lead["y"]) - 18
+            route_bottom = max(start_lead["y"], end_lead["y"]) + 10
+            route_top = min(start_lead["y"], end_lead["y"]) - 10
             prefer_bottom = start_side == "bottom" or end_side == "top"
             route_y = route_bottom if prefer_bottom else route_top
-            return [start, start_lead, {"x": start_lead["x"], "y": route_y}, {"x": end_lead["x"], "y": route_y}, end_lead, end]
+            return [start, start_lead, {"x": end_lead["x"], "y": route_y}, end]
 
         if kind_name == "bentConnector4":
-            mid_x = start_lead["x"] + (end_lead["x"] - start_lead["x"]) * adj1
-            mid_y = start_lead["y"] + (end_lead["y"] - start_lead["y"]) * adj2
             if start_orientation == "horizontal":
-                return [start, start_lead, {"x": mid_x, "y": start_lead["y"]}, {"x": mid_x, "y": mid_y}, {"x": end_lead["x"], "y": mid_y}, end_lead, end]
-            return [start, start_lead, {"x": start_lead["x"], "y": mid_y}, {"x": mid_x, "y": mid_y}, {"x": mid_x, "y": end_lead["y"]}, end_lead, end]
+                return [start, start_lead, {"x": end_lead["x"], "y": start_lead["y"]}, end]
+            return [start, start_lead, {"x": start_lead["x"], "y": end_lead["y"]}, end]
 
         if start_orientation == "horizontal" and end_orientation == "vertical":
             return [start, start_lead, {"x": end_lead["x"], "y": start_lead["y"]}, end_lead, end]
@@ -858,6 +860,31 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             return [start, start_lead, {"x": mid_x, "y": start_lead["y"]}, {"x": mid_x, "y": end_lead["y"]}, end_lead, end]
         mid_y = start_lead["y"] + (end_lead["y"] - start_lead["y"]) * adj1
         return [start, start_lead, {"x": start_lead["x"], "y": mid_y}, {"x": end_lead["x"], "y": mid_y}, end_lead, end]
+
+    def simplify_connector_points(kind_name: str, pts: list[dict[str, float]]) -> list[dict[str, float]]:
+        if len(pts) <= 2:
+            return pts
+        start = pts[0]
+        end = pts[-1]
+        dx = end["x"] - start["x"]
+        dy = end["y"] - start["y"]
+        if kind_name == "straightConnector1":
+            if abs(dx) <= 2 or abs(dy) <= 2:
+                return [start, end]
+            if abs(dx) >= abs(dy):
+                return [start, {"x": end["x"], "y": start["y"]}, end]
+            return [start, {"x": start["x"], "y": end["y"]}, end]
+        if kind_name in {"bentConnector2", "bentConnector4"} and len(pts) > 4:
+            if abs(dx) >= abs(dy):
+                mid_x = start["x"] + dx * 0.5
+                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
+            mid_y = start["y"] + dy * 0.5
+            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
+        if len(pts) > 5:
+            if abs(dx) >= abs(dy):
+                return [start, {"x": end["x"], "y": start["y"]}, end]
+            return [start, {"x": start["x"], "y": end["y"]}, end]
+        return pts
 
     start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
     end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
@@ -946,6 +973,8 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height},
         ]
 
+    points = compress_polyline(points)
+    points = simplify_connector_points(kind, points)
     points = compress_polyline(points)
 
     min_x = min(point["x"] for point in points)

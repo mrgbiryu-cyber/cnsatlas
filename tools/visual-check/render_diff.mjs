@@ -6,7 +6,7 @@ import sharp from "sharp";
 
 function usage() {
   console.error(
-    "usage: node render_diff.mjs --reference <plugin.json|bundle.json> --actual <bundle.json> --out-dir <dir> [--crop x,y,w,h]"
+    "usage: node render_diff.mjs --reference <plugin.json|bundle.json> --actual <bundle.json> --out-dir <dir> [--crop x,y,w,h] [--density 600]"
   );
   process.exit(1);
 }
@@ -190,8 +190,8 @@ function pluginToSvg(reference, crop) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${pageBox.width}" height="${pageBox.height}" viewBox="0 0 ${pageBox.width} ${pageBox.height}">${pieces.join("")}</svg>`;
 }
 
-async function svgToPng(svg, outputPath) {
-  await sharp(Buffer.from(svg)).png().toFile(outputPath);
+async function svgToPng(svg, outputPath, density = 600) {
+  await sharp(Buffer.from(svg), { density: Math.max(72, Math.round(density)) }).png().toFile(outputPath);
 }
 
 async function diffPng(referencePng, actualPng, outPath) {
@@ -237,6 +237,7 @@ async function diffPng(referencePng, actualPng, outPath) {
 async function main() {
   const args = parseArgs(process.argv);
   if (!args.reference || !args.actual || !args["out-dir"]) usage();
+  const density = Number.isFinite(Number(args.density)) ? Number(args.density) : 600;
   const outDir = path.resolve(args["out-dir"]);
   ensureDir(outDir);
   const crop = parseCrop(args.crop);
@@ -257,10 +258,10 @@ async function main() {
 
   fs.writeFileSync(referenceSvgPath, referenceSvg, "utf-8");
   fs.writeFileSync(actualSvgPath, actualSvg, "utf-8");
-  await svgToPng(referenceSvg, referencePngPath);
-  await svgToPng(actualSvg, actualPngPath);
+  await svgToPng(referenceSvg, referencePngPath, density);
+  await svgToPng(actualSvg, actualPngPath, density);
   const metrics = await diffPng(referencePngPath, actualPngPath, diffPngPath);
-  fs.writeFileSync(metricsPath, JSON.stringify({ crop, ...metrics }, null, 2), "utf-8");
+  fs.writeFileSync(metricsPath, JSON.stringify({ crop, density, ...metrics }, null, 2), "utf-8");
   console.log(JSON.stringify({ outDir, metrics }, null, 2));
 }
 
