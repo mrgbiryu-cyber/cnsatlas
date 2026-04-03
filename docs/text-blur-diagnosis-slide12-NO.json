@@ -1,0 +1,212 @@
+{
+  "input": {
+    "figma_export": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/fulltest/figma-page-11_31696.json",
+    "pptx": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/pptsample.pptx",
+    "slide": 12,
+    "text": "NO"
+  },
+  "target": {
+    "node_id": "54:13971",
+    "node_name": "Google Shape;477;p15 text",
+    "characters": "NO",
+    "editable_text": true,
+    "text_style": {
+      "fontName": {
+        "family": "Malgun Gothic",
+        "style": "Regular"
+      },
+      "fontSize": 10,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      }
+    },
+    "absolute_bounds": {
+      "x": 15706.671875,
+      "y": 151.71531677246094,
+      "width": 13.9599609375,
+      "height": 7.4267578125
+    },
+    "local_bounds_in_slide": {
+      "x": 306.672,
+      "y": 151.715,
+      "width": 13.96,
+      "height": 7.427
+    },
+    "opacity": 1,
+    "blend_mode": null,
+    "effects": [],
+    "parent_transforms": [
+      {
+        "id": "54:13910",
+        "type": "FRAME",
+        "name": "Slide 12 - 일반제품 + 케어십 신청에 따른 프로세스(유상 케어십 )",
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rotation_deg": 0.0
+      },
+      {
+        "id": "54:13970",
+        "type": "FRAME",
+        "name": "Google Shape;477;p15",
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rotation_deg": 0.0
+      }
+    ]
+  },
+  "overlaps_above_target": [
+    {
+      "draw_index": 67,
+      "id": "54:13977",
+      "type": "FRAME",
+      "name": "VF/process_flow_connector/Google Shape;481;p15",
+      "overlap_ratio": 1.0,
+      "opacity": 1,
+      "blend_mode": null,
+      "effects_count": 0,
+      "fill_types": []
+    }
+  ],
+  "font_check": {
+    "figma_font_family": "Malgun Gothic",
+    "source_match": {
+      "candidate_id": "s12:slide_12/element_14",
+      "distance": 1.117,
+      "font_family": "Malgun Gothic",
+      "font_size_max": 8.0,
+      "source_bounds_px": {
+        "x": 296.12,
+        "y": 143.22,
+        "width": 36.39,
+        "height": 22.62
+      }
+    },
+    "font_substituted": false
+  },
+  "factors": {
+    "font_substituted": false,
+    "frac_absolute_xy": true,
+    "frac_relative_xy": true,
+    "parent_scale": false,
+    "opacity_or_blend": false,
+    "has_effect": false,
+    "overlap_non_text": true,
+    "overlap_image_or_vector": false,
+    "mixed_image_text": false
+  },
+  "baseline": {
+    "blur_risk_score": 7,
+    "fidelity_risk_score": 2
+  },
+  "experiments": [
+    {
+      "name": "기존 변환 텍스트",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": true,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 7,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 0
+    },
+    {
+      "name": "같은 폰트/크기/문구로 Figma 새 텍스트 생성(대조군)",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": false,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 0,
+      "fidelity_risk_score": 0,
+      "blur_improvement": 7
+    },
+    {
+      "name": "효과/effect 제거",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": true,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 7,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 0
+    },
+    {
+      "name": "소수점 좌표 정수 보정",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": false,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 4,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 3
+    },
+    {
+      "name": "부모 scale 제거",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": true,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 7,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 0
+    },
+    {
+      "name": "겹친 레이어 숨김",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": true,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 3,
+      "fidelity_risk_score": 0,
+      "blur_improvement": 4
+    }
+  ]
+}

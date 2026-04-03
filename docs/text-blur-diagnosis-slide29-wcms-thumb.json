@@ -1,0 +1,225 @@
+{
+  "input": {
+    "figma_export": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/fulltest/figma-page-11_31696.json",
+    "pptx": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/pptsample.pptx",
+    "slide": 29,
+    "text": "WCMS에 등록한\n YouTube 썸네일 이미지"
+  },
+  "target": {
+    "node_id": "54:17815",
+    "node_name": "VF/labeled_ui_box/직사각형 9 text",
+    "characters": "WCMS에 등록한\n YouTube 썸네일 이미지",
+    "editable_text": true,
+    "text_style": {
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "fontSize": 11,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "textAutoResize": "NONE",
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      }
+    },
+    "absolute_bounds": {
+      "x": 39680.5625,
+      "y": 226.56300354003906,
+      "width": 109.921875,
+      "height": 22.96600341796875
+    },
+    "local_bounds_in_slide": {
+      "x": 480.562,
+      "y": 226.563,
+      "width": 109.922,
+      "height": 22.966
+    },
+    "opacity": 1,
+    "blend_mode": null,
+    "effects": [],
+    "parent_transforms": [
+      {
+        "id": "54:17687",
+        "type": "FRAME",
+        "name": "Slide 29 - 옵션 선택",
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rotation_deg": 0.0
+      },
+      {
+        "id": "54:17813",
+        "type": "FRAME",
+        "name": "VF/labeled_ui_box/직사각형 9",
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rotation_deg": 0.0
+      }
+    ]
+  },
+  "overlaps_above_target": [
+    {
+      "draw_index": 132,
+      "id": "54:17819",
+      "type": "FRAME",
+      "name": "VF/labeled_ui_box/모서리가 둥근 직사각형 8",
+      "overlap_ratio": 0.4663,
+      "opacity": 1,
+      "blend_mode": null,
+      "effects_count": 0,
+      "fill_types": []
+    },
+    {
+      "draw_index": 133,
+      "id": "54:17820",
+      "type": "RECTANGLE",
+      "name": "Rectangle",
+      "overlap_ratio": 0.4663,
+      "opacity": 1,
+      "blend_mode": null,
+      "effects_count": 0,
+      "fill_types": [
+        "SOLID"
+      ]
+    }
+  ],
+  "font_check": {
+    "figma_font_family": "Inter",
+    "source_match": {
+      "candidate_id": "s29:slide_29/element_64",
+      "distance": 3.977,
+      "font_family": null,
+      "font_size_max": 11.0,
+      "source_bounds_px": {
+        "x": 438.73,
+        "y": 191.66,
+        "width": 191.64,
+        "height": 85.06
+      }
+    },
+    "font_substituted": false
+  },
+  "factors": {
+    "font_substituted": false,
+    "frac_absolute_xy": true,
+    "frac_relative_xy": false,
+    "parent_scale": false,
+    "opacity_or_blend": false,
+    "has_effect": false,
+    "overlap_non_text": true,
+    "overlap_image_or_vector": false,
+    "mixed_image_text": false
+  },
+  "baseline": {
+    "blur_risk_score": 5,
+    "fidelity_risk_score": 2
+  },
+  "experiments": [
+    {
+      "name": "기존 변환 텍스트",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 5,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 0
+    },
+    {
+      "name": "같은 폰트/크기/문구로 Figma 새 텍스트 생성(대조군)",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": false,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 0,
+      "fidelity_risk_score": 0,
+      "blur_improvement": 5
+    },
+    {
+      "name": "효과/effect 제거",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 5,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 0
+    },
+    {
+      "name": "소수점 좌표 정수 보정",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": false,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 4,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 1
+    },
+    {
+      "name": "부모 scale 제거",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": true,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 5,
+      "fidelity_risk_score": 2,
+      "blur_improvement": 0
+    },
+    {
+      "name": "겹친 레이어 숨김",
+      "factors": {
+        "font_substituted": false,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 1,
+      "fidelity_risk_score": 0,
+      "blur_improvement": 4
+    }
+  ]
+}

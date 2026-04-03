@@ -1,0 +1,200 @@
+{
+  "input": {
+    "figma_export": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/fulltest/figma-page-11_31696.json",
+    "pptx": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/sampling/pptsample.pptx",
+    "slide": 13,
+    "text": "회원할인가"
+  },
+  "target": {
+    "node_id": "54:14439",
+    "node_name": "TextBox 91 text",
+    "characters": "회원할인가",
+    "editable_text": true,
+    "text_style": {
+      "fontName": {
+        "family": "Malgun Gothic",
+        "style": "Regular"
+      },
+      "fontSize": 10,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      }
+    },
+    "absolute_bounds": {
+      "x": 16852.912109375,
+      "y": 633.9685668945312,
+      "width": 48.916015625,
+      "height": 9.5703125
+    },
+    "local_bounds_in_slide": {
+      "x": 52.912,
+      "y": 633.969,
+      "width": 48.916,
+      "height": 9.57
+    },
+    "opacity": 1,
+    "blend_mode": null,
+    "effects": [],
+    "parent_transforms": [
+      {
+        "id": "54:14249",
+        "type": "FRAME",
+        "name": "Slide 13 - 일시불 PDP 최대혜택가 계산의 재구독 할인 금액 적용 Flow",
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rotation_deg": 0.0
+      },
+      {
+        "id": "54:14438",
+        "type": "FRAME",
+        "name": "TextBox 91",
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rotation_deg": 0.0
+      }
+    ]
+  },
+  "overlaps_above_target": [],
+  "font_check": {
+    "figma_font_family": "Malgun Gothic",
+    "source_match": {
+      "candidate_id": "s13:slide_13/element_70",
+      "distance": 2.494,
+      "font_family": "LG스마트체 Regular",
+      "font_size_max": 8.0,
+      "source_bounds_px": {
+        "x": 46.18,
+        "y": 627.66,
+        "width": 67.35,
+        "height": 22.62
+      }
+    },
+    "font_substituted": true
+  },
+  "factors": {
+    "font_substituted": true,
+    "frac_absolute_xy": true,
+    "frac_relative_xy": false,
+    "parent_scale": false,
+    "opacity_or_blend": false,
+    "has_effect": false,
+    "overlap_non_text": false,
+    "overlap_image_or_vector": false,
+    "mixed_image_text": false
+  },
+  "baseline": {
+    "blur_risk_score": 1,
+    "fidelity_risk_score": 3
+  },
+  "experiments": [
+    {
+      "name": "기존 변환 텍스트",
+      "factors": {
+        "font_substituted": true,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 1,
+      "fidelity_risk_score": 3,
+      "blur_improvement": 0
+    },
+    {
+      "name": "같은 폰트/크기/문구로 Figma 새 텍스트 생성(대조군)",
+      "factors": {
+        "font_substituted": true,
+        "frac_absolute_xy": false,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 0,
+      "fidelity_risk_score": 3,
+      "blur_improvement": 1
+    },
+    {
+      "name": "효과/effect 제거",
+      "factors": {
+        "font_substituted": true,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 1,
+      "fidelity_risk_score": 3,
+      "blur_improvement": 0
+    },
+    {
+      "name": "소수점 좌표 정수 보정",
+      "factors": {
+        "font_substituted": true,
+        "frac_absolute_xy": false,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 0,
+      "fidelity_risk_score": 3,
+      "blur_improvement": 1
+    },
+    {
+      "name": "부모 scale 제거",
+      "factors": {
+        "font_substituted": true,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 1,
+      "fidelity_risk_score": 3,
+      "blur_improvement": 0
+    },
+    {
+      "name": "겹친 레이어 숨김",
+      "factors": {
+        "font_substituted": true,
+        "frac_absolute_xy": true,
+        "frac_relative_xy": false,
+        "parent_scale": false,
+        "opacity_or_blend": false,
+        "has_effect": false,
+        "overlap_non_text": false,
+        "overlap_image_or_vector": false,
+        "mixed_image_text": false
+      },
+      "blur_risk_score": 1,
+      "fidelity_risk_score": 3,
+      "blur_improvement": 0
+    }
+  ]
+}

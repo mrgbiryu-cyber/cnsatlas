@@ -1,0 +1,38 @@
+{
+  "text_total": 2312,
+  "editable_text_total": 2312,
+  "frac_absolute_any": 2312,
+  "frac_relative_xy_any": 875,
+  "parent_scale_any": 0,
+  "parent_rotation_any": 8,
+  "opacity_lt1_any": 0,
+  "blend_not_normal_any": 0,
+  "effects_any": 0,
+  "duplicate_text_same_pos": 0,
+  "overlap_non_text_renderable_any": 228,
+  "overlap_non_text_image_any": 7,
+  "overlap_non_text_vector_any": 0,
+  "overlap_non_text_types": {
+    "RECTANGLE": 201,
+    "FRAME": 21,
+    "ELLIPSE": 6
+  },
+  "font_families_top10": [
+    [
+      "Malgun Gothic",
+      2141
+    ],
+    [
+      "Inter",
+      159
+    ],
+    [
+      "Arial",
+      7
+    ],
+    [
+      "LG Smart_H",
+      5
+    ]
+  ]
+}
