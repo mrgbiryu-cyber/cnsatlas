@@ -216,6 +216,30 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     }
 
 
+def is_background_overlay_candidate(candidate: dict[str, Any], context: dict[str, Any]) -> bool:
+    subtype = str(candidate.get("subtype") or "")
+    if subtype not in {"shape", "labeled_shape"}:
+        return False
+    bounds = candidate.get("bounds_px") or {}
+    area = float(bounds.get("width") or 0) * float(bounds.get("height") or 0)
+    page_area = float(context.get("width") or TARGET_SLIDE_WIDTH) * float(context.get("height") or TARGET_SLIDE_HEIGHT)
+    if page_area <= 0 or area < page_area * 0.08:
+        return False
+    shape_style = ((candidate.get("extra") or {}).get("shape_style") or {})
+    fill = shape_style.get("fill") or {}
+    alpha = fill.get("alpha")
+    if alpha is None:
+        return False
+    return float(alpha) < 0.85
+
+
+def visual_layer_sort_key(candidate: dict[str, Any], context: dict[str, Any]) -> tuple[Any, ...]:
+    # Background-like translucent cards should be painted first to avoid
+    # washing out foreground text and controls.
+    bg_rank = 0 if is_background_overlay_candidate(candidate, context) else 1
+    return (bg_rank, *sort_by_position_key(candidate))
+
+
 def fit_text_bounds_to_content(text_value: str, bounds: dict[str, Any], style: dict[str, Any], *, allow_shrink: bool = True, is_table_cell: bool = False) -> dict[str, Any]:
     if not allow_shrink:
         return bounds
@@ -1235,7 +1259,7 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
             "children": [],
             "debug": build_source_debug(candidate),
         }
-        for child in sorted(children_map.get(candidate["candidate_id"], []), key=sort_by_position_key):
+        for child in sorted(children_map.get(candidate["candidate_id"], []), key=lambda row: visual_layer_sort_key(row, context)):
             child_node = build_visual_node_from_candidate(child, context, assets)
             if child_node:
                 node["children"].append(child_node)
@@ -1312,7 +1336,8 @@ def build_page_root(context: dict[str, Any], assets: dict[str, Any]) -> dict[str
             "strategy_signals": (context.get("visual_strategy") or {}).get("signals"),
         },
     }
-    for candidate in context["roots"]:
+    roots = sorted(context["roots"], key=lambda row: visual_layer_sort_key(row, context))
+    for candidate in roots:
         child = build_visual_node_from_candidate(candidate, context, assets)
         if child:
             inner_frame["children"].append(child)
