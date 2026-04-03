@@ -490,16 +490,21 @@ async function cropOrCopyReference(referenceImagePath, outPath, crop, referenceB
   let image = sharp(referenceImagePath);
   if (crop) {
     const meta = await image.metadata();
-    const baseWidth = Math.max(1, Math.round(referenceBaseBox?.width || 960));
-    const baseHeight = Math.max(1, Math.round(referenceBaseBox?.height || 540));
-    const scaleX = (meta.width || crop.width) / baseWidth;
-    const scaleY = (meta.height || crop.height) / baseHeight;
-    image = image.extract({
-      left: Math.max(0, Math.round(crop.x * scaleX)),
-      top: Math.max(0, Math.round(crop.y * scaleY)),
-      width: Math.round(crop.width * scaleX),
-      height: Math.round(crop.height * scaleY)
-    });
+    const imageWidth = Math.max(1, Math.round(meta.width || crop.width || 1));
+    const imageHeight = Math.max(1, Math.round(meta.height || crop.height || 1));
+    const baseWidth = Math.max(1, Math.round(referenceBaseBox?.width || imageWidth));
+    const baseHeight = Math.max(1, Math.round(referenceBaseBox?.height || imageHeight));
+    const scaleX = imageWidth / baseWidth;
+    const scaleY = imageHeight / baseHeight;
+    const rawLeft = Math.max(0, Math.round(crop.x * scaleX));
+    const rawTop = Math.max(0, Math.round(crop.y * scaleY));
+    const left = Math.min(rawLeft, Math.max(0, imageWidth - 1));
+    const top = Math.min(rawTop, Math.max(0, imageHeight - 1));
+    const rawWidth = Math.max(1, Math.round(crop.width * scaleX));
+    const rawHeight = Math.max(1, Math.round(crop.height * scaleY));
+    const width = Math.max(1, Math.min(rawWidth, imageWidth - left));
+    const height = Math.max(1, Math.min(rawHeight, imageHeight - top));
+    image = image.extract({ left, top, width, height });
   }
   await image.png().toFile(outPath);
 }
