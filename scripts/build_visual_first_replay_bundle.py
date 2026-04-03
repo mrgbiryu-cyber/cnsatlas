@@ -770,6 +770,10 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"]},
             {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"] + abs_bounds["height"]},
         ]
+    elif strategy == "flow-process" and start_px and end_px:
+        # Prefer extracted connector endpoints when available.
+        # Flow-process pages were regressing when we forced bbox-only routing.
+        points = readable_elbow(start_px, end_px, kind, adjusts, bounds)
     elif strategy == "flow-process":
         points = bounds_connector_points(kind)
     elif start_px and end_px:
