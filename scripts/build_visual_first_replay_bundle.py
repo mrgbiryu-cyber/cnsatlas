@@ -765,8 +765,47 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             return {"x": point["x"], "y": point["y"] + margin}
         return {"x": point["x"], "y": point["y"]}
 
+    def compress_polyline(points: list[dict[str, float]], epsilon: float = 0.4) -> list[dict[str, float]]:
+        if not points:
+            return points
+
+        deduped = [points[0]]
+        for point in points[1:]:
+            prev = deduped[-1]
+            if abs(point["x"] - prev["x"]) <= epsilon and abs(point["y"] - prev["y"]) <= epsilon:
+                continue
+            deduped.append(point)
+
+        if len(deduped) <= 2:
+            return deduped
+
+        def collinear(a: dict[str, float], b: dict[str, float], c: dict[str, float]) -> bool:
+            abx = b["x"] - a["x"]
+            aby = b["y"] - a["y"]
+            bcx = c["x"] - b["x"]
+            bcy = c["y"] - b["y"]
+            cross = abs(abx * bcy - aby * bcx)
+            if cross > epsilon:
+                return False
+            return (
+                min(a["x"], c["x"]) - epsilon <= b["x"] <= max(a["x"], c["x"]) + epsilon
+                and min(a["y"], c["y"]) - epsilon <= b["y"] <= max(a["y"], c["y"]) + epsilon
+            )
+
+        reduced = [deduped[0]]
+        for index in range(1, len(deduped) - 1):
+            a = reduced[-1]
+            b = deduped[index]
+            c = deduped[index + 1]
+            if collinear(a, b, c):
+                continue
+            reduced.append(b)
+        reduced.append(deduped[-1])
+        return reduced
+
     def readable_elbow(start: dict[str, float], end: dict[str, float], start_side: str, end_side: str, kind_name: str, adjusts: dict[str, Any]) -> list[dict[str, float]]:
-        lead_margin = 16
+        span = max(abs(end["x"] - start["x"]), abs(end["y"] - start["y"]))
+        lead_margin = max(6.0, min(16.0, span * 0.18))
         start_lead = offset_from_side(start, start_side, lead_margin)
         end_lead = offset_from_side(end, end_side, lead_margin)
         start_orientation = "horizontal" if start_side in {"left", "right"} else "vertical"
@@ -780,6 +819,13 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             if abs(end["x"] - start["x"]) >= abs(end["y"] - start["y"]):
                 return [start, {"x": end["x"], "y": start["y"]}, end]
             return [start, {"x": start["x"], "y": end["y"]}, end]
+
+        if kind_name == "bentConnector2":
+            elbow_a = {"x": start["x"], "y": end["y"]}
+            elbow_b = {"x": end["x"], "y": start["y"]}
+            score_a = abs(elbow_a["x"] - start_lead["x"]) + abs(elbow_a["y"] - end_lead["y"])
+            score_b = abs(elbow_b["x"] - start_lead["x"]) + abs(elbow_b["y"] - end_lead["y"])
+            return [start, elbow_a if score_a <= score_b else elbow_b, end]
 
         if start_orientation == "horizontal" and end_orientation == "horizontal":
             route_right = max(start_lead["x"], end_lead["x"]) + 18
@@ -899,6 +945,8 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height * 0.5},
             {"x": abs_bounds["x"] + local_width, "y": abs_bounds["y"] + local_height},
         ]
+
+    points = compress_polyline(points)
 
     min_x = min(point["x"] for point in points)
     min_y = min(point["y"] for point in points)
