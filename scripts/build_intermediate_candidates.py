@@ -506,6 +506,8 @@ def append_element_candidates(
                 "shape_kind": shape_subtype,
                 "shape_style": element.get("shape_style"),
                 "text_style": element.get("text_style"),
+                "text_runs": element.get("text_runs"),
+                "text_alignment": element.get("text_alignment"),
                 "source_scope": source_scope,
                 "placeholder": placeholder,
                 **connector_extra,

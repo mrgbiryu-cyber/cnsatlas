@@ -171,9 +171,6 @@ def derive_wrap_mode(text_value: str, text_style: dict[str, Any], bounds: dict[s
     raw_wrap = str((text_style or {}).get("wrap") or "").lower()
     if raw_wrap in {"square", "tight", "through"}:
         return "wrap"
-    width = float(bounds.get("width", 120))
-    if width < 180 and len(text_value or "") > 12:
-        return "wrap"
     return "none"
 
 
@@ -185,13 +182,14 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     font_size = inferred_placeholder_size or estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale)
     placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
     text_auto_resize = "HEIGHT" if wrap_mode != "none" or placeholder else "WIDTH_AND_HEIGHT"
+    line_height_ratio = 1.22 if table_cell else 1.2
     return {
         "fontSize": font_size,
         "fontFamily": text_style.get("font_family") or "Inter",
         "textAlignHorizontal": map_horizontal_align(text_style.get("horizontal_align"), horizontal_fallback),
         "textAlignVertical": map_vertical_align(text_style.get("vertical_align"), vertical_fallback),
         "textAutoResize": text_auto_resize,
-        "lineHeightPx": None,
+        "lineHeightPx": round(font_size * line_height_ratio, 2),
     }
 
 
@@ -304,7 +302,7 @@ def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, co
         text_value,
         text_bounds,
         style,
-        allow_shrink=not force_wrap,
+        allow_shrink=False,
         is_table_cell=table_cell,
     )
     fragments, layout_mode = header_text_fragments(text_value, candidate, text_bounds, table_cell=table_cell)
@@ -720,6 +718,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
 
     start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
     end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
+    inferred_endpoint = bool(extra.get("inferred_start_point") or extra.get("inferred_end_point"))
     adjusts = extra.get("connector_adjusts") or {}
     bounds = candidate.get("bounds_px") or {}
     raw_width = float(bounds.get("width") or 0)
@@ -771,9 +770,12 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             {"x": abs_bounds["x"] + (abs_bounds["width"] / 2), "y": abs_bounds["y"] + abs_bounds["height"]},
         ]
     elif strategy == "flow-process" and start_px and end_px:
-        # Prefer extracted connector endpoints when available.
-        # Flow-process pages were regressing when we forced bbox-only routing.
-        points = readable_elbow(start_px, end_px, kind, adjusts, bounds)
+        # Flow/process connectors are sensitive to routing heuristics.
+        # If endpoint facts are inferred (not explicit in source), keep a direct path.
+        if inferred_endpoint:
+            points = [start_px, end_px]
+        else:
+            points = readable_elbow(start_px, end_px, kind, adjusts, bounds)
     elif strategy == "flow-process":
         points = bounds_connector_points(kind)
     elif start_px and end_px:
@@ -829,10 +831,7 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
             f"M {round(tip['x'],2)} {round(tip['y'],2)} L {round(left_x,2)} {round(left_y,2)} L {round(right_x,2)} {round(right_y,2)} Z"
         )
 
-    # Prefer a visible terminal arrow on flow/process pages even when source
-    # metadata is incomplete.
-    has_any_arrow = head_end.get("type") == "triangle" or tail_end.get("type") == "triangle"
-    if (head_end.get("type") == "triangle" or (strategy == "flow-process" and not has_any_arrow)) and len(localized_points) >= 2:
+    if head_end.get("type") == "triangle" and len(localized_points) >= 2:
         append_arrow(localized_points, 0, 1)
     if tail_end.get("type") == "triangle" and len(localized_points) >= 2:
         append_arrow(localized_points, len(localized_points) - 1, len(localized_points) - 2)
