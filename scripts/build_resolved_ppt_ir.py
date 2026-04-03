@@ -792,8 +792,8 @@ def build_chunk_bucket(chunk_id: str, atoms: list[dict[str, Any]]) -> dict[str, 
     }
 
 
-def build_page_ir(page: dict[str, Any]) -> dict[str, Any]:
-    context = build_page_context(page)
+def build_page_ir(page: dict[str, Any], *, preserve_native_size: bool = False) -> dict[str, Any]:
+    context = build_page_context(page, preserve_native_size=preserve_native_size)
     pattern_type = infer_pattern_type(context)
     by_id = {str(candidate.get("candidate_id") or ""): candidate for candidate in context["candidates"]}
     children_map = context["children_map"]
@@ -845,7 +845,7 @@ def main() -> None:
         "ir_version": "resolved-ppt-ir-v1",
         "source_kind": "ppt-intermediate",
         "source_file": str(Path(args.input).resolve()),
-        "pages": [build_page_ir(page) for page in pages],
+        "pages": [build_page_ir(page, preserve_native_size=True) for page in pages],
     }
 
     output_path = Path(args.output).resolve()

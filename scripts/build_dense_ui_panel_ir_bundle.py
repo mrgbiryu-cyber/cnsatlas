@@ -11,8 +11,11 @@ import textwrap
 from typing import Any
 
 
-TARGET_SLIDE_WIDTH = 960.0
-TARGET_SLIDE_HEIGHT = 540.0
+BASE_TARGET_SLIDE_WIDTH = 960.0
+BASE_TARGET_SLIDE_HEIGHT = 540.0
+
+TARGET_SLIDE_WIDTH = BASE_TARGET_SLIDE_WIDTH
+TARGET_SLIDE_HEIGHT = BASE_TARGET_SLIDE_HEIGHT
 RIGHT_PANEL_X_CUTOFF = TARGET_SLIDE_WIDTH * 0.58
 ROW_ID_RE = re.compile(r":row_(\d+)")
 
@@ -24,6 +27,29 @@ def make_bounds(x: float, y: float, width: float, height: float) -> dict[str, fl
         "width": round(float(width), 2),
         "height": round(float(height), 2),
     }
+
+
+LEFT_VIEWER_REGION = make_bounds(0.0, 45.0, 320.0, 300.0)
+LEFT_PRODUCT_PRICE_REGION = make_bounds(0.0, 300.0, 300.0, 260.0)
+
+
+def configure_page_geometry(page: dict[str, Any]) -> None:
+    global TARGET_SLIDE_WIDTH, TARGET_SLIDE_HEIGHT, RIGHT_PANEL_X_CUTOFF, LEFT_VIEWER_REGION, LEFT_PRODUCT_PRICE_REGION
+    slide_bounds = page.get("slide_bounds_px") or {}
+    width = float(slide_bounds.get("width") or BASE_TARGET_SLIDE_WIDTH)
+    height = float(slide_bounds.get("height") or BASE_TARGET_SLIDE_HEIGHT)
+    if width <= 0 or height <= 0:
+        width = BASE_TARGET_SLIDE_WIDTH
+        height = BASE_TARGET_SLIDE_HEIGHT
+
+    TARGET_SLIDE_WIDTH = width
+    TARGET_SLIDE_HEIGHT = height
+    RIGHT_PANEL_X_CUTOFF = TARGET_SLIDE_WIDTH * 0.58
+
+    scale_x = TARGET_SLIDE_WIDTH / BASE_TARGET_SLIDE_WIDTH
+    scale_y = TARGET_SLIDE_HEIGHT / BASE_TARGET_SLIDE_HEIGHT
+    LEFT_VIEWER_REGION = make_bounds(0.0, 45.0 * scale_y, 320.0 * scale_x, 300.0 * scale_y)
+    LEFT_PRODUCT_PRICE_REGION = make_bounds(0.0, 300.0 * scale_y, 300.0 * scale_x, 260.0 * scale_y)
 
 
 def identity_affine() -> list[list[float]]:
@@ -2441,6 +2467,7 @@ def build_bundle(
     include_dense_body_overlays: bool = False,
     include_version_last: bool = False,
 ) -> dict[str, Any]:
+    configure_page_geometry(page)
     inferred_svg_stack = use_svg_dense_panel_stack(page)
     include_dense_body_grid = include_dense_body_grid or inferred_svg_stack
     include_dense_body_overlays = include_dense_body_overlays or inferred_svg_stack
@@ -2542,10 +2569,6 @@ LOWER_BODY_OVERLAY_VERSION_OWNER_IDS = {
     "dense_ui_panel:issue_card",
     "dense_ui_panel:version_stack",
 }
-
-LEFT_VIEWER_REGION = make_bounds(0.0, 45.0, 320.0, 300.0)
-LEFT_PRODUCT_PRICE_REGION = make_bounds(0.0, 300.0, 300.0, 260.0)
-
 
 def prune_lower_body_text_layer(node: dict[str, Any]) -> dict[str, Any] | None:
     node_type = str(node.get("type") or "")

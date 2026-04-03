@@ -204,7 +204,7 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     inferred_placeholder_size = None if table_cell else infer_placeholder_font_size(candidate, bounds, scale)
     font_size = inferred_placeholder_size or estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale)
     placeholder = ((candidate.get("extra") or {}).get("placeholder") or {})
-    text_auto_resize = "HEIGHT" if wrap_mode != "none" or placeholder else "WIDTH_AND_HEIGHT"
+    text_auto_resize = "HEIGHT" if wrap_mode != "none" or placeholder else "NONE"
     line_height_ratio = 1.22 if table_cell else 1.2
     return {
         "fontSize": font_size,

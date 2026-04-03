@@ -1386,11 +1386,15 @@ async function renderReplayText(node, parentNode, origin) {
   text.fontSize = node.style && node.style.fontSize ? node.style.fontSize : 12;
   text.textAlignHorizontal = mapReplayHorizontalAlign(node.style && node.style.textAlignHorizontal);
   text.textAlignVertical = mapReplayVerticalAlign(node.style && node.style.textAlignVertical);
-  if ((node.style && node.style.textAutoResize) === "HEIGHT") {
+  const textAutoResize = (node.style && node.style.textAutoResize) || "NONE";
+  if (textAutoResize === "HEIGHT") {
     text.textAutoResize = "HEIGHT";
     text.resize(snappedWidth, snappedHeight);
-  } else {
+  } else if (textAutoResize === "WIDTH_AND_HEIGHT") {
     text.textAutoResize = "WIDTH_AND_HEIGHT";
+  } else {
+    text.textAutoResize = "NONE";
+    text.resize(snappedWidth, snappedHeight);
   }
   if (node.style && typeof node.style.letterSpacing === "number") {
     text.letterSpacing = { value: node.style.letterSpacing, unit: "PIXELS" };

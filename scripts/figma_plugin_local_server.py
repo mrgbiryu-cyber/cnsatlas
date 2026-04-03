@@ -66,7 +66,7 @@ class LocalHandler(BaseHTTPRequestHandler):
                 intermediate = build_intermediate_model(detail_payload)
                 bundles = []
                 for page in intermediate.get("pages") or []:
-                    resolved_page = build_page_ir(page)
+                    resolved_page = build_page_ir(page, preserve_native_size=True)
                     if str(resolved_page.get("page_type") or "") == "dense_ui_panel":
                         bundles.append(build_dense_ui_panel_bundle(resolved_page, str(pptx_path)))
                     else:
