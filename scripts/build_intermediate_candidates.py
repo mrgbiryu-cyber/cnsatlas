@@ -479,14 +479,8 @@ def append_element_candidates(
             connector_extra["end_connection"] = end_connection
             connector_extra["end_target_bounds_px"] = emu_bounds_to_px(end_target.get("bounds")) if end_target else None
             connector_extra["end_point_px"] = connection_point_px(end_target.get("bounds") if end_target else None, end_connection.get("idx"))
-        if not connector_extra.get("start_point_px") or not connector_extra.get("end_point_px"):
-            inferred_start, inferred_end = infer_connector_endpoints(element, element_index)
-            if inferred_start and not connector_extra.get("start_point_px"):
-                connector_extra["start_point_px"] = inferred_start
-                connector_extra["inferred_start_point"] = True
-            if inferred_end and not connector_extra.get("end_point_px"):
-                connector_extra["end_point_px"] = inferred_end
-                connector_extra["inferred_end_point"] = True
+        # Keep connector routing deterministic:
+        # use explicit PPT connection facts first, then renderer fallback geometry.
         if element.get("connector_adjusts"):
             connector_extra["connector_adjusts"] = element.get("connector_adjusts")
 

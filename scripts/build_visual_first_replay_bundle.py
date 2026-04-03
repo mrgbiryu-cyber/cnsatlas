@@ -175,7 +175,30 @@ def derive_wrap_mode(text_value: str, text_style: dict[str, Any], bounds: dict[s
 
 
 def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
-    text_style = (candidate.get("extra") or {}).get("text_style") or {}
+    extra = candidate.get("extra") or {}
+    text_style = dict(extra.get("text_style") or {})
+    text_runs = extra.get("text_runs") or []
+    run_font_sizes = [
+        float(run.get("font_size"))
+        for run in text_runs
+        if run.get("type") == "text" and run.get("font_size")
+    ]
+    run_font_family = next(
+        (str(run.get("font_family")) for run in text_runs if run.get("type") == "text" and run.get("font_family")),
+        None,
+    )
+    run_fill = next(
+        (run.get("fill") for run in text_runs if run.get("type") == "text" and run.get("fill")),
+        None,
+    )
+    if not text_style.get("font_size_max") and run_font_sizes:
+        text_style["font_size_max"] = max(run_font_sizes)
+    if not text_style.get("font_size_avg") and run_font_sizes:
+        text_style["font_size_avg"] = round(sum(run_font_sizes) / len(run_font_sizes), 2)
+    if not text_style.get("font_family") and run_font_family:
+        text_style["font_family"] = run_font_family
+    if not text_style.get("fill") and run_fill:
+        text_style["fill"] = run_fill
     text_value = candidate.get("text") or candidate.get("title") or ""
     wrap_mode = derive_wrap_mode(text_value, text_style, bounds, force_wrap=force_wrap)
     inferred_placeholder_size = None if table_cell else infer_placeholder_font_size(candidate, bounds, scale)
@@ -297,6 +320,15 @@ def should_skip_layout_placeholder_text(candidate: dict[str, Any]) -> bool:
 def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, context: dict[str, Any] | None = None, force_wrap: bool = False, table_cell: bool = False, horizontal_fallback: str = "l", vertical_fallback: str = "t", scale: float = 1.0) -> dict[str, Any]:
     text_bounds = resolve_text_bounds(candidate, abs_bounds, context, table_cell)
     text_value = candidate.get("text") or candidate.get("title") or ""
+    extra = candidate.get("extra") or {}
+    text_style = dict(extra.get("text_style") or {})
+    text_runs = extra.get("text_runs") or []
+    run_fill = next(
+        (run.get("fill") for run in text_runs if run.get("type") == "text" and run.get("fill")),
+        None,
+    )
+    if not text_style.get("fill") and run_fill:
+        text_style["fill"] = run_fill
     style = build_text_style(candidate, text_bounds, force_wrap=force_wrap, table_cell=table_cell, horizontal_fallback=horizontal_fallback, vertical_fallback=vertical_fallback, scale=scale)
     text_bounds = fit_text_bounds_to_content(
         text_value,
@@ -331,7 +363,7 @@ def build_text_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], *, co
         "characters": text_value,
         "absoluteBoundingBox": text_bounds,
         "relativeTransform": relative_transform_from_bounds(candidate.get("bounds_px")),
-        "fills": [solid_paint(((candidate.get("extra") or {}).get("text_style") or {}).get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
+        "fills": [solid_paint(text_style.get("fill"), {"r": 0.12, "g": 0.12, "b": 0.12}, 1.0)],
         "style": style,
         "children": [],
         "debug": dict(build_source_debug(candidate), rotation_degrees=normalize_degrees((candidate.get("bounds_px") or {}).get("rotation", 0))),

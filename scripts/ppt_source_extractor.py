@@ -93,11 +93,17 @@ def scale_point(point: dict[str, Any] | None, scale_x: float, scale_y: float) ->
     }
 
 
-def sort_by_position_key(candidate: dict[str, Any]) -> tuple[float, float, float]:
+def sort_by_position_key(candidate: dict[str, Any]) -> tuple[Any, ...]:
     bounds = candidate.get("bounds_px") or {}
     source_scope = ((candidate.get("extra") or {}).get("source_scope") or "slide").lower()
     scope_rank = {"master": 0, "layout": 1, "slide": 2}.get(source_scope, 3)
-    return (scope_rank, float(bounds.get("y", 0)), float(bounds.get("x", 0)))
+    source_order_path = tuple(int(v) for v in (candidate.get("source_order_path") or []) if isinstance(v, int))
+    return (
+        scope_rank,
+        source_order_path,
+        float(bounds.get("y", 0)),
+        float(bounds.get("x", 0)),
+    )
 
 
 def build_children_map(candidates: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
