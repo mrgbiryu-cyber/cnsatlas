@@ -1288,8 +1288,8 @@ def build_page_root(context: dict[str, Any], assets: dict[str, Any]) -> dict[str
     return root
 
 
-def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, Any]:
-    context = build_page_context(page)
+def build_bundle_from_page(page: dict[str, Any], source_file: str, *, preserve_native_size: bool = False) -> dict[str, Any]:
+    context = build_page_context(page, preserve_native_size=preserve_native_size)
     assets: dict[str, Any] = {}
     root = build_page_root(context, assets)
     return {
@@ -1308,6 +1308,7 @@ def build_bundle_from_page(page: dict[str, Any], source_file: str) -> dict[str, 
             "candidate_count": len(context["candidates"]),
             "root_candidate_count": len(context["roots"]),
             "visual_strategy": context["visual_strategy"],
+            "preserve_native_size": bool(context.get("preserve_native_size")),
         },
     }
 
@@ -1317,6 +1318,11 @@ def main() -> None:
     parser.add_argument("--input", required=True, help="Intermediate candidates JSON path")
     parser.add_argument("--output-dir", required=True, help="Output directory")
     parser.add_argument("--slides", nargs="*", type=int, help="Optional slide numbers")
+    parser.add_argument(
+        "--preserve-native-size",
+        action="store_true",
+        help="Keep source slide dimensions instead of normalizing to 960x540.",
+    )
     args = parser.parse_args()
 
     payload = load_intermediate_payload(args.input)
@@ -1325,7 +1331,11 @@ def main() -> None:
 
     selected = iter_selected_pages(payload, set(args.slides) if args.slides else None)
     for page in selected:
-        bundle = build_bundle_from_page(page, str(Path(args.input).resolve()))
+        bundle = build_bundle_from_page(
+            page,
+            str(Path(args.input).resolve()),
+            preserve_native_size=args.preserve_native_size,
+        )
         output_path = output_dir / f"visual-slide-{page['slide_no']}.bundle.json"
         with output_path.open("w", encoding="utf-8") as handle:
             json.dump(bundle, handle, ensure_ascii=False, indent=2)

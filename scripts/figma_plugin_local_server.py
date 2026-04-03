@@ -70,7 +70,13 @@ class LocalHandler(BaseHTTPRequestHandler):
                     if str(resolved_page.get("page_type") or "") == "dense_ui_panel":
                         bundles.append(build_dense_ui_panel_bundle(resolved_page, str(pptx_path)))
                     else:
-                        bundles.append(build_bundle_from_page(page, str(pptx_path)))
+                        bundles.append(
+                            build_bundle_from_page(
+                                page,
+                                str(pptx_path),
+                                preserve_native_size=True,
+                            )
+                        )
                 collection = {
                     "kind": "figma-replay-collection",
                     "source_kind": "pptx-upload-visual-first",
