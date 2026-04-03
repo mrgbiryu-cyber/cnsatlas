@@ -1237,12 +1237,7 @@ def build_visual_node_from_candidate(candidate: dict[str, Any], context: dict[st
     return None
 
 
-def build_page_root(
-    context: dict[str, Any],
-    assets: dict[str, Any],
-    *,
-    slide_background: dict[str, Any] | None = None,
-) -> dict[str, Any]:
+def build_page_root(context: dict[str, Any], assets: dict[str, Any]) -> dict[str, Any]:
     root_bounds = {
         "x": 0.0,
         "y": 0.0,
@@ -1286,31 +1281,6 @@ def build_page_root(
             "strategy_signals": (context.get("visual_strategy") or {}).get("signals"),
         },
     }
-    if slide_background and slide_background.get("base64"):
-        slide_no = int(context.get("slide_no") or 0)
-        bg_image_ref = f"slide-bg-{slide_no}"
-        assets[bg_image_ref] = {
-            "filename": slide_background.get("filename") or f"slide-{slide_no}.png",
-            "mime_type": slide_background.get("mime_type") or "image/png",
-            "base64": slide_background.get("base64"),
-        }
-        background_node = {
-            "id": f"{context['page_id']}:slide_background",
-            "type": "RECTANGLE",
-            "name": "slide_background",
-            "absoluteBoundingBox": root_bounds,
-            "relativeTransform": identity_affine(),
-            "fills": [{"type": "IMAGE", "imageRef": bg_image_ref, "scaleMode": "FILL"}],
-            "strokes": [],
-            "strokeWeight": 0,
-            "locked": True,
-            "debug": {
-                "generator": "visual-first-v1",
-                "role": "slide_background",
-                "source": slide_background.get("source") or "unknown",
-            },
-        }
-        inner_frame["children"].append(background_node)
     for candidate in context["roots"]:
         child = build_visual_node_from_candidate(candidate, context, assets)
         if child:
@@ -1318,16 +1288,10 @@ def build_page_root(
     return root
 
 
-def build_bundle_from_page(
-    page: dict[str, Any],
-    source_file: str,
-    *,
-    preserve_native_size: bool = False,
-    slide_background: dict[str, Any] | None = None,
-) -> dict[str, Any]:
+def build_bundle_from_page(page: dict[str, Any], source_file: str, *, preserve_native_size: bool = False) -> dict[str, Any]:
     context = build_page_context(page, preserve_native_size=preserve_native_size)
     assets: dict[str, Any] = {}
-    root = build_page_root(context, assets, slide_background=slide_background)
+    root = build_page_root(context, assets)
     return {
         "kind": "figma-replay-bundle",
         "source_kind": "ppt-visual-first",

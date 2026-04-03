@@ -48,12 +48,12 @@ figma.ui.onmessage = async (message) => {
         figma.ui.postMessage({
           type: "render-success",
           message: payload && payload.kind === "slide-review-manifest"
-          ? `v2026-04-03b | kind=slide-review-manifest | Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
+          ? `v2026-04-03a | kind=slide-review-manifest | Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
           : payload && payload.kind === "figma-replay-collection"
-          ? `v2026-04-03b | kind=figma-replay-collection | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
+          ? `v2026-04-03a | kind=figma-replay-collection | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
           : payload && payload.kind === "figma-replay-bundle"
-          ? `v2026-04-03b | kind=figma-replay-bundle | Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : `v2026-04-03b | kind=intermediate | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
+          ? `v2026-04-03a | kind=figma-replay-bundle | Rendered figma replay bundle (${payload.page_name || "unknown page"})`
+          : `v2026-04-03a | kind=intermediate | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
       });
     } catch (error) {
       figma.ui.postMessage({
@@ -718,18 +718,6 @@ function annotateReplayNode(renderedNode, sourceNode, context, role) {
   }
 }
 
-function applyReplayNodeFlags(renderedNode, sourceNode) {
-  if (!renderedNode || !sourceNode) {
-    return;
-  }
-  if (sourceNode.visible === false && "visible" in renderedNode) {
-    renderedNode.visible = false;
-  }
-  if (sourceNode.locked === true && "locked" in renderedNode) {
-    renderedNode.locked = true;
-  }
-}
-
 function getReplayBounds(node) {
   return node.absoluteBoundingBox || node.absoluteRenderBounds || null;
 }
@@ -1339,7 +1327,6 @@ function createReplayContainer(node, parentNode, origin) {
   frame.clipsContent = false;
   parentNode.appendChild(frame);
   annotateReplayNode(frame, node, origin, "frame-container");
-  applyReplayNodeFlags(frame, node);
   return frame;
 }
 
@@ -1379,7 +1366,6 @@ function createReplayFrameShell(node, parentNode, origin) {
   }
   parentNode.appendChild(shell);
   annotateReplayNode(shell, node, origin, "frame-shell");
-  applyReplayNodeFlags(shell, node);
   return shell;
 }
 
@@ -1424,7 +1410,6 @@ async function renderReplayText(node, parentNode, origin) {
   }
   parentNode.appendChild(text);
   annotateReplayNode(text, node, origin, "render-node");
-  applyReplayNodeFlags(text, node);
 }
 
 function renderReplayRectangle(node, parentNode, origin, bundle) {
@@ -1473,7 +1458,6 @@ function renderReplayRectangle(node, parentNode, origin, bundle) {
   }
   parentNode.appendChild(rect);
   annotateReplayNode(rect, node, origin, "render-node");
-  applyReplayNodeFlags(rect, node);
 }
 
 function renderReplayVector(node, parentNode, origin) {
@@ -1503,7 +1487,6 @@ function renderReplayVector(node, parentNode, origin) {
     renderFlipY: signs.flipY,
     renderRotationHint: signs.rotation,
   }), "render-node");
-  applyReplayNodeFlags(svgNode, node);
 }
 
 function renderReplaySvgBlock(node, parentNode, origin) {
@@ -1522,7 +1505,6 @@ function renderReplaySvgBlock(node, parentNode, origin) {
   }
   parentNode.appendChild(svgNode);
   annotateReplayNode(svgNode, node, origin, "render-node");
-  applyReplayNodeFlags(svgNode, node);
 }
 
 async function renderReplayNode(node, parentNode, origin, bundle) {
