@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <title>CNS Atlas PPT Visual Test v2026-04-03a</title>
+    <title>CNS Atlas PPT Visual Test v2026-04-03b</title>
     <style>
       body {
         font-family: Inter, Arial, sans-serif;
@@ -102,7 +102,7 @@
     </style>
   </head>
   <body>
-    <h1>CNS Atlas PPT Visual Test v2026-04-03a</h1>
+    <h1>CNS Atlas PPT Visual Test v2026-04-03b</h1>
 
     <div class="panel">
       <p class="hint">
@@ -169,7 +169,7 @@
       const renderModeInputs = Array.from(document.querySelectorAll('input[name="renderMode"]'));
 
       let loadedJsonText = "";
-      const REQUIRED_SERVER_VERSION = "CNSAtlasLocalPlugin/2026-04-03a";
+      const REQUIRED_SERVER_VERSION = "CNSAtlasLocalPlugin/2026-04-03b";
 
       function setStatus(message, isError = false) {
         status.textContent = message;
@@ -364,8 +364,10 @@
           const firstSize = pageSizes.length
             ? `${pageSizes[0].width || "?"}x${pageSizes[0].height || "?"}`
             : "unknown";
+          const hybridState = payload.hybridBackgroundEnabled === true ? "on" : "off";
+          const hybridStatus = payload.hybridBackgroundStatus || "unknown";
           setStatus(
-            `v2026-04-03a | kind=${payload.kind || "unknown"} | PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, firstPage=${firstSize}, native=${payload.nativeSizeEnabled === true ? "on" : "off"}, server: ${payload.serverVersion || "unknown"})`
+            `v2026-04-03b | kind=${payload.kind || "unknown"} | PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, firstPage=${firstSize}, native=${payload.nativeSizeEnabled === true ? "on" : "off"}, hybrid=${hybridState}/${hybridStatus}, server: ${payload.serverVersion || "unknown"})`
           );
           updateRenderAvailability();
           parent.postMessage({
