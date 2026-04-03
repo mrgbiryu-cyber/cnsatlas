@@ -28,7 +28,7 @@ def parse_slides(raw: Any) -> list[int]:
 
 
 class LocalHandler(BaseHTTPRequestHandler):
-    server_version = "CNSAtlasLocalPlugin/2026-04-01b"
+    server_version = "CNSAtlasLocalPlugin/2026-04-03a"
 
     def _send_json(self, status: int, payload: dict[str, Any]) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -83,6 +83,21 @@ class LocalHandler(BaseHTTPRequestHandler):
                     "source_file": filename,
                     "pages": bundles,
                 }
+                page_sizes = []
+                for bundle in bundles:
+                    doc = bundle.get("document") or {}
+                    bounds = doc.get("absoluteBoundingBox") or {}
+                    slide_no = ((doc.get("debug") or {}).get("source_slide_no"))
+                    if not isinstance(slide_no, int):
+                        slide_no = None
+                    page_sizes.append(
+                        {
+                            "slide": slide_no,
+                            "width": bounds.get("width"),
+                            "height": bounds.get("height"),
+                            "pageName": bundle.get("page_name"),
+                        }
+                    )
 
             self._send_json(
                 200,
@@ -94,6 +109,8 @@ class LocalHandler(BaseHTTPRequestHandler):
                     "pageCount": len(intermediate.get("pages") or []),
                     "payload": collection,
                     "slides": [page.get("slide_no") for page in intermediate.get("pages") or []],
+                    "pageSizes": page_sizes,
+                    "nativeSizeEnabled": True,
                 },
             )
         except Exception as error:  # noqa: BLE001
