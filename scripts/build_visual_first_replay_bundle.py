@@ -719,61 +719,104 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
     local_height = max(abs_bounds["height"], 6)
     relative_transform = identity_affine()
 
-    def readable_elbow(start: dict[str, float], end: dict[str, float], kind_name: str, adjusts: dict[str, Any], raw_bounds: dict[str, Any]) -> list[dict[str, float]]:
+    def side_from_idx(idx: int | None) -> str:
+        if idx == 0:
+            return "top"
+        if idx == 1:
+            return "left"
+        if idx == 2:
+            return "bottom"
+        if idx == 3:
+            return "right"
+        if idx == 4:
+            return "top-left"
+        if idx == 5:
+            return "top-right"
+        if idx == 6:
+            return "bottom-left"
+        if idx == 7:
+            return "bottom-right"
+        return "unknown"
+
+    def infer_side_from_delta(dx: float, dy: float, role: str) -> str:
+        if abs(dx) >= abs(dy):
+            if role == "start":
+                return "right" if dx >= 0 else "left"
+            return "left" if dx >= 0 else "right"
+        if role == "start":
+            return "bottom" if dy >= 0 else "top"
+        return "top" if dy >= 0 else "bottom"
+
+    def choose_connector_side(raw_side: str, inferred_side: str) -> str:
+        if raw_side == "unknown":
+            return inferred_side
+        if "-" in raw_side:
+            return inferred_side
+        return raw_side
+
+    def offset_from_side(point: dict[str, float], side: str, margin: float) -> dict[str, float]:
+        if side in {"left", "top-left", "bottom-left"}:
+            return {"x": point["x"] - margin, "y": point["y"]}
+        if side in {"right", "top-right", "bottom-right"}:
+            return {"x": point["x"] + margin, "y": point["y"]}
+        if side == "top":
+            return {"x": point["x"], "y": point["y"] - margin}
+        if side == "bottom":
+            return {"x": point["x"], "y": point["y"] + margin}
+        return {"x": point["x"], "y": point["y"]}
+
+    def readable_elbow(start: dict[str, float], end: dict[str, float], start_side: str, end_side: str, kind_name: str, adjusts: dict[str, Any]) -> list[dict[str, float]]:
         lead_margin = 16
-        dx = end["x"] - start["x"]
-        dy = end["y"] - start["y"]
-        flip_h = bool(raw_bounds.get("flipH"))
-        flip_v = bool(raw_bounds.get("flipV"))
+        start_lead = offset_from_side(start, start_side, lead_margin)
+        end_lead = offset_from_side(end, end_side, lead_margin)
+        start_orientation = "horizontal" if start_side in {"left", "right"} else "vertical"
+        end_orientation = "horizontal" if end_side in {"left", "right"} else "vertical"
         adj1 = (adjusts.get("adj1", 50000) or 50000) / 100000
-        if abs(dx) <= 4 or abs(dy) <= 4:
-            return [start, end]
-        horizontal = abs(dx) >= abs(dy)
-        if strategy == "flow-process":
-            if kind_name == "bentConnector2":
-                elbow_a = {"x": start["x"], "y": end["y"]}
-                elbow_b = {"x": end["x"], "y": start["y"]}
-                corner_x = abs_bounds["x"] + (abs_bounds["width"] if flip_h else 0)
-                corner_y = abs_bounds["y"] + (abs_bounds["height"] if flip_v else 0)
-                score_a = abs(elbow_a["x"] - corner_x) + abs(elbow_a["y"] - corner_y)
-                score_b = abs(elbow_b["x"] - corner_x) + abs(elbow_b["y"] - corner_y)
-                elbow = elbow_a if score_a <= score_b else elbow_b
-                return [start, elbow, end]
-            if horizontal:
-                mid_x = abs_bounds["x"] + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
-                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
-            mid_y = abs_bounds["y"] + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
-            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
+        adj2 = (adjusts.get("adj2", 50000) or 50000) / 100000
+
         if kind_name == "straightConnector1":
-            if horizontal:
+            if abs(start["y"] - end["y"]) <= 3 or abs(start["x"] - end["x"]) <= 3:
+                return [start, end]
+            if abs(end["x"] - start["x"]) >= abs(end["y"] - start["y"]):
                 return [start, {"x": end["x"], "y": start["y"]}, end]
             return [start, {"x": start["x"], "y": end["y"]}, end]
-        if kind_name == "bentConnector2":
-            elbow_a = {"x": start["x"], "y": end["y"]}
-            elbow_b = {"x": end["x"], "y": start["y"]}
-            score_a = abs(elbow_a["x"] - abs_bounds["x"]) + abs(elbow_a["y"] - abs_bounds["y"])
-            score_b = abs(elbow_b["x"] - abs_bounds["x"]) + abs(elbow_b["y"] - abs_bounds["y"])
-            return [start, elbow_a if score_a <= score_b else elbow_b, end]
-        if kind_name == "bentConnector3":
-            if horizontal:
-                mid_x = abs_bounds["x"] + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
-                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
-            mid_y = abs_bounds["y"] + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
-            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
+
+        if start_orientation == "horizontal" and end_orientation == "horizontal":
+            route_right = max(start_lead["x"], end_lead["x"]) + 18
+            route_left = min(start_lead["x"], end_lead["x"]) - 18
+            prefer_right = start_side == "right" or end_side == "left"
+            route_x = route_right if prefer_right else route_left
+            return [start, start_lead, {"x": route_x, "y": start_lead["y"]}, {"x": route_x, "y": end_lead["y"]}, end_lead, end]
+
+        if start_orientation == "vertical" and end_orientation == "vertical":
+            route_bottom = max(start_lead["y"], end_lead["y"]) + 18
+            route_top = min(start_lead["y"], end_lead["y"]) - 18
+            prefer_bottom = start_side == "bottom" or end_side == "top"
+            route_y = route_bottom if prefer_bottom else route_top
+            return [start, start_lead, {"x": start_lead["x"], "y": route_y}, {"x": end_lead["x"], "y": route_y}, end_lead, end]
+
         if kind_name == "bentConnector4":
-            if horizontal:
-                mid_x = abs_bounds["x"] + abs_bounds["width"] * ((1 - adj1) if flip_h else adj1)
-                return [start, {"x": mid_x, "y": start["y"]}, {"x": mid_x, "y": end["y"]}, end]
-            mid_y = abs_bounds["y"] + abs_bounds["height"] * ((1 - adj1) if flip_v else adj1)
-            return [start, {"x": start["x"], "y": mid_y}, {"x": end["x"], "y": mid_y}, end]
-        if horizontal:
-            route_y = start["y"] + (lead_margin if dy >= 0 else -lead_margin)
-            return [start, {"x": start["x"], "y": route_y}, {"x": end["x"], "y": route_y}, end]
-        route_x = start["x"] + (lead_margin if dx >= 0 else -lead_margin)
-        return [start, {"x": route_x, "y": start["y"]}, {"x": route_x, "y": end["y"]}, end]
+            mid_x = start_lead["x"] + (end_lead["x"] - start_lead["x"]) * adj1
+            mid_y = start_lead["y"] + (end_lead["y"] - start_lead["y"]) * adj2
+            if start_orientation == "horizontal":
+                return [start, start_lead, {"x": mid_x, "y": start_lead["y"]}, {"x": mid_x, "y": mid_y}, {"x": end_lead["x"], "y": mid_y}, end_lead, end]
+            return [start, start_lead, {"x": start_lead["x"], "y": mid_y}, {"x": mid_x, "y": mid_y}, {"x": mid_x, "y": end_lead["y"]}, end_lead, end]
+
+        if start_orientation == "horizontal" and end_orientation == "vertical":
+            return [start, start_lead, {"x": end_lead["x"], "y": start_lead["y"]}, end_lead, end]
+        if start_orientation == "vertical" and end_orientation == "horizontal":
+            return [start, start_lead, {"x": start_lead["x"], "y": end_lead["y"]}, end_lead, end]
+
+        if start_orientation == "horizontal":
+            mid_x = start_lead["x"] + (end_lead["x"] - start_lead["x"]) * adj1
+            return [start, start_lead, {"x": mid_x, "y": start_lead["y"]}, {"x": mid_x, "y": end_lead["y"]}, end_lead, end]
+        mid_y = start_lead["y"] + (end_lead["y"] - start_lead["y"]) * adj1
+        return [start, start_lead, {"x": start_lead["x"], "y": mid_y}, {"x": end_lead["x"], "y": mid_y}, end_lead, end]
 
     start_px = scale_point(extra.get("start_point_px"), scale_x, scale_y)
     end_px = scale_point(extra.get("end_point_px"), scale_x, scale_y)
+    start_idx = ((extra.get("start_connection") or {}).get("idx"))
+    end_idx = ((extra.get("end_connection") or {}).get("idx"))
     inferred_endpoint = bool(extra.get("inferred_start_point") or extra.get("inferred_end_point"))
     adjusts = extra.get("connector_adjusts") or {}
     bounds = candidate.get("bounds_px") or {}
@@ -831,11 +874,19 @@ def build_connector_node(candidate: dict[str, Any], abs_bounds: dict[str, Any], 
         if inferred_endpoint:
             points = [start_px, end_px]
         else:
-            points = readable_elbow(start_px, end_px, kind, adjusts, bounds)
+            delta_x = end_px["x"] - start_px["x"]
+            delta_y = end_px["y"] - start_px["y"]
+            start_side = choose_connector_side(side_from_idx(start_idx), infer_side_from_delta(delta_x, delta_y, "start"))
+            end_side = choose_connector_side(side_from_idx(end_idx), infer_side_from_delta(delta_x, delta_y, "end"))
+            points = readable_elbow(start_px, end_px, start_side, end_side, kind, adjusts)
     elif strategy == "flow-process":
         points = bounds_connector_points(kind)
     elif start_px and end_px:
-        points = readable_elbow(start_px, end_px, kind, adjusts, bounds)
+        delta_x = end_px["x"] - start_px["x"]
+        delta_y = end_px["y"] - start_px["y"]
+        start_side = choose_connector_side(side_from_idx(start_idx), infer_side_from_delta(delta_x, delta_y, "start"))
+        end_side = choose_connector_side(side_from_idx(end_idx), infer_side_from_delta(delta_x, delta_y, "end"))
+        points = readable_elbow(start_px, end_px, start_side, end_side, kind, adjusts)
     elif kind == "straightConnector1":
         points = [
             {"x": abs_bounds["x"], "y": abs_bounds["y"] + local_height / 2},

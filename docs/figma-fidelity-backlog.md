@@ -69,11 +69,30 @@ connector와 arrow의 실제 방향과 연결감을 높인다.
 2. arrow head type 반영
 3. 직선/세로선/기본 방향 처리 보강
 4. bend path 가능성 검토
+5. start/end `idx` 기반 side(top/left/bottom/right)로 꺾임점 산정
+6. PPTX connector adjust(`adj1/adj2`)를 side 경로에 적용
 
 ### 성공 기준
 
 - slide 12 flow line이 현재보다 자연스럽게 보임
 - 화살표 방향 오류 감소
+
+## Batch 6. Z-order 계층 안정화
+
+목표:
+
+그룹(부모) 레벨에서 발생하는 상하 역전을 제거한다.
+
+### 작업
+
+1. 노드/그룹/청크 모두 `source_order_path` 보존
+2. 형제 정렬은 `source_order_path` 우선, 정적 priority는 tie-breaker로만 사용
+3. 부모 그룹이 자식보다 앞서는 역전 케이스 회귀 테스트 추가
+
+### 성공 기준
+
+- Figma에서 클릭 시 상단 객체가 의도한 그룹으로 선택됨
+- 상위 그룹 때문에 하위 텍스트/도형이 가려지는 케이스 감소
 
 ## Batch 4. 이미지 정합성
 
