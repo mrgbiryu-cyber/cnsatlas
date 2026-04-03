@@ -208,7 +208,7 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     line_height_ratio = 1.22 if table_cell else 1.2
     return {
         "fontSize": font_size,
-        "fontFamily": text_style.get("font_family") or "Inter",
+        "fontFamily": text_style.get("font_family") or "Malgun Gothic",
         "textAlignHorizontal": map_horizontal_align(text_style.get("horizontal_align"), horizontal_fallback),
         "textAlignVertical": map_vertical_align(text_style.get("vertical_align"), vertical_fallback),
         "textAutoResize": text_auto_resize,

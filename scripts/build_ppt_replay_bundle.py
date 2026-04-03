@@ -195,7 +195,7 @@ def build_text_style(candidate: dict[str, Any], bounds: dict[str, Any], *, force
     wrap_mode = derive_wrap_mode(text_value, text_style, bounds, force_wrap=force_wrap)
     return {
         "fontSize": estimate_text_font_size(text_value, text_style, bounds, table_cell=table_cell, scale=scale),
-        "fontFamily": text_style.get("font_family") or "Inter",
+        "fontFamily": text_style.get("font_family") or "Malgun Gothic",
         "textAlignHorizontal": map_horizontal_align(text_style.get("horizontal_align"), horizontal_fallback),
         "textAlignVertical": map_vertical_align(text_style.get("vertical_align"), vertical_fallback),
         "textAutoResize": "HEIGHT" if wrap_mode != "none" else "WIDTH_AND_HEIGHT",

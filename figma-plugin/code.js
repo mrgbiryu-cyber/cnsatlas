@@ -1,4 +1,6 @@
 const DEFAULT_FONT = { family: "Inter", style: "Regular" };
+const FORCE_SYSTEM_FONT = true;
+const SYSTEM_FONT_FAMILY = "Malgun Gothic";
 const SLIDE_GAP = 120;
 const MIN_PAGE_WIDTH = 960;
 const MIN_PAGE_HEIGHT = 540;
@@ -155,6 +157,16 @@ async function ensureFontLoaded() {
 }
 
 function normalizeFontCandidate(textStyle) {
+  if (FORCE_SYSTEM_FONT) {
+    const rawStyle = String(textStyle && textStyle.font_style ? textStyle.font_style : "Regular");
+    const requested = String(rawStyle).toLowerCase();
+    const style = requested.includes("bold") ? "Bold" : "Regular";
+    return {
+      family: SYSTEM_FONT_FAMILY,
+      style,
+      fallbacks: [{ family: SYSTEM_FONT_FAMILY, style }, DEFAULT_FONT],
+    };
+  }
   const rawFamily = textStyle && textStyle.font_family ? textStyle.font_family : "";
   if (!rawFamily) {
     return { family: DEFAULT_FONT.family, style: DEFAULT_FONT.style, fallbacks: [DEFAULT_FONT] };
@@ -209,6 +221,33 @@ async function resolveFontName(textStyle) {
 }
 
 async function resolveFigmaFontName(style) {
+  if (FORCE_SYSTEM_FONT) {
+    const requestedStyle = String((style && style.fontStyle) || "Regular").toLowerCase();
+    const styleName = requestedStyle.includes("bold") ? "Bold" : "Regular";
+    const candidates = [
+      { family: SYSTEM_FONT_FAMILY, style: styleName },
+      { family: SYSTEM_FONT_FAMILY, style: "Regular" },
+      DEFAULT_FONT,
+    ];
+    for (const font of candidates) {
+      const key = `${font.family}::${font.style}`;
+      if (fontAvailability.has(key)) {
+        const cached = fontAvailability.get(key);
+        if (cached) {
+          return cached;
+        }
+        continue;
+      }
+      try {
+        await figma.loadFontAsync(font);
+        fontAvailability.set(key, font);
+        return font;
+      } catch (error) {
+        fontAvailability.set(key, null);
+      }
+    }
+    return DEFAULT_FONT;
+  }
   const family = style && style.fontFamily ? style.fontFamily : DEFAULT_FONT.family;
   const fontStyle = style && style.fontStyle ? style.fontStyle : DEFAULT_FONT.style;
   const postScript = style && style.fontPostScriptName ? style.fontPostScriptName : null;
@@ -361,6 +400,8 @@ function alignTextNode(node, bounds, textStyle, horizontalFallback, verticalFall
   } else {
     node.y = topInset;
   }
+  node.x = Math.round(node.x);
+  node.y = Math.round(node.y);
 }
 
 function mapHorizontalAlign(value, fallback) {
@@ -423,9 +464,13 @@ function deriveWrapMode(textValue, textStyle, bounds, options) {
 function createTransparentFrame(bounds, name) {
   const frame = figma.createFrame();
   frame.name = name;
-  frame.x = bounds.x;
-  frame.y = bounds.y;
-  frame.resize(bounds.width, bounds.height);
+  const snappedX = Math.round(bounds.x);
+  const snappedY = Math.round(bounds.y);
+  const snappedWidth = Math.max(Math.round(bounds.width), 1);
+  const snappedHeight = Math.max(Math.round(bounds.height), 1);
+  frame.x = snappedX;
+  frame.y = snappedY;
+  frame.resize(snappedWidth, snappedHeight);
   frame.fills = [];
   frame.strokes = [];
   frame.clipsContent = false;
@@ -479,7 +524,7 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
   text.fontName = await resolveFontName(textStyle);
   text.characters = textValue || candidate.title || "";
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.12, g: 0.12, b: 0.12 }, 1)];
-  text.fontSize = clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45);
+  text.fontSize = Math.max(1, Math.round(clampFontSize(textStyle.font_size_max || textStyle.font_size_avg || bounds.height * 0.45)));
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, horizontalFallback);
   text.textAlignVertical = mapVerticalAlign(textStyle.vertical_align, verticalFallback);
   const wrapMode = deriveWrapMode(text.characters, textStyle, bounds, { forceWrap: false });
@@ -487,9 +532,9 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
 
   const leftInset = typeof textStyle.lIns === "number" ? textStyle.lIns : 6;
   const rightInset = typeof textStyle.rIns === "number" ? textStyle.rIns : 6;
-  const contentWidth = Math.max(bounds.width - leftInset - rightInset, 12);
+  const contentWidth = Math.max(Math.round(bounds.width - leftInset - rightInset), 12);
   if (wrapMode !== "none") {
-    text.resize(contentWidth, Math.max(bounds.height, 16));
+    text.resize(contentWidth, Math.max(Math.round(bounds.height), 16));
   }
 
   container.appendChild(text);
@@ -503,6 +548,10 @@ async function appendTextIntoContainer(container, candidate, textValue, textStyl
     horizontalFallback,
     verticalFallback
   );
+  text.x = Math.round(text.x);
+  text.y = Math.round(text.y);
+  text.opacity = 1;
+  text.effects = [];
   return text;
 }
 
@@ -1422,6 +1471,7 @@ async function renderReplayText(node, parentNode, origin) {
   text.x = snappedX;
   text.y = snappedY;
   text.opacity = 1;
+  text.effects = [];
   const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
   if (rotation) {
     text.rotation = rotation;
@@ -2319,9 +2369,9 @@ async function createTableCell(candidate, parentNode) {
       .filter((column) => column.column_index < startColumnIndex)
       .reduce((sum, column) => sum + (column.width_px || 0), 0)
     : parentNode.children.filter((child) => child.type === "FRAME").reduce((sum, child) => sum + child.width, 0);
-  cell.x = cellX;
+  cell.x = Math.round(cellX);
   cell.y = 0;
-  cell.resize(width, parentNode.height);
+  cell.resize(Math.max(Math.round(width), 1), Math.max(Math.round(parentNode.height), 1));
   const cellStyle = extra.cell_style || {};
   const fill = cellStyle.fill ? makeSolidPaint(cellStyle.fill, { r: 1, g: 1, b: 1 }, 1) : { type: "SOLID", color: { r: 1, g: 1, b: 1 } };
   cell.fills = [fill];
@@ -2333,7 +2383,7 @@ async function createTableCell(candidate, parentNode) {
   text.name = `${cell.name} text`;
   text.fontName = await resolveFontName(textStyle);
   text.characters = candidate.text || "";
-  text.fontSize = deriveTableCellFontSize(textStyle, cellStyle, parentNode.height, width);
+  text.fontSize = Math.max(1, Math.round(deriveTableCellFontSize(textStyle, cellStyle, parentNode.height, width)));
   text.fills = [makeSolidPaint(textStyle.fill, { r: 0.15, g: 0.15, b: 0.15 }, 1)];
   text.textAlignHorizontal = mapHorizontalAlign(textStyle.horizontal_align, "l");
   text.textAlignVertical = mapVerticalAlign(cellStyle.anchor, "ctr");
@@ -2343,12 +2393,16 @@ async function createTableCell(candidate, parentNode) {
   };
   const leftInset = typeof cellStyle.marL === "number" ? cellStyle.marL : 6;
   const rightInset = typeof cellStyle.marR === "number" ? cellStyle.marR : 6;
-  const availableWidth = Math.max(width - leftInset - rightInset, 12);
+  const availableWidth = Math.max(Math.round(width - leftInset - rightInset), 12);
   const wrapMode = deriveWrapMode(text.characters, Object.assign({}, textStyle, cellStyle), { width, height: parentNode.height }, { forceWrap: true });
   text.textAutoResize = wrapMode === "none" ? "WIDTH_AND_HEIGHT" : "HEIGHT";
-  text.resize(availableWidth, Math.max(parentNode.height, 16));
+  text.resize(availableWidth, Math.max(Math.round(parentNode.height), 16));
   cell.appendChild(text);
   alignTextNode(text, { width, height: parentNode.height }, Object.assign({}, textStyle, cellStyle), "l", cellStyle.anchor || "ctr");
+  text.x = Math.round(text.x);
+  text.y = Math.round(text.y);
+  text.opacity = 1;
+  text.effects = [];
   return cell;
 }
 
