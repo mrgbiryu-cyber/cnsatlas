@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <title>CNS Atlas PPT Visual Test v2026-04-03a</title>
+    <title>CNS Atlas PPT Visual Test V50</title>
     <style>
       body {
         font-family: Inter, Arial, sans-serif;
@@ -102,7 +102,7 @@
     </style>
   </head>
   <body>
-    <h1>CNS Atlas PPT Visual Test v2026-04-03a</h1>
+    <h1>CNS Atlas PPT Visual Test V50</h1>
 
     <div class="panel">
       <p class="hint">
@@ -112,7 +112,7 @@
         <input id="fileInput" type="file" accept=".json,.pptx,application/json,application/vnd.openxmlformats-officedocument.presentationml.presentation" />
         <button class="secondary" id="clearButton" type="button">초기화</button>
       </div>
-      <div class="status" id="status">JSON 파일을 선택하세요.</div>
+      <div class="status" id="status">V50 | JSON 파일을 선택하세요.</div>
     </div>
 
     <div class="panel">
@@ -169,10 +169,12 @@
       const renderModeInputs = Array.from(document.querySelectorAll('input[name="renderMode"]'));
 
       let loadedJsonText = "";
-      const REQUIRED_SERVER_VERSION = "CNSAtlasLocalPlugin/2026-04-03a";
+      const BUILD_TAG = "V50";
+      const REQUIRED_SERVER_VERSION = `CNSAtlasLocalPlugin/${BUILD_TAG}`;
 
       function setStatus(message, isError = false) {
-        status.textContent = message;
+        const raw = String(message || "");
+        status.textContent = raw.startsWith(`${BUILD_TAG} |`) ? raw : `${BUILD_TAG} | ${raw}`;
         status.className = isError ? "status danger" : "status";
       }
 
@@ -365,7 +367,7 @@
             ? `${pageSizes[0].width || "?"}x${pageSizes[0].height || "?"}`
             : "unknown";
           setStatus(
-            `v2026-04-03a | kind=${payload.kind || "unknown"} | PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, firstPage=${firstSize}, native=${payload.nativeSizeEnabled === true ? "on" : "off"}, server: ${payload.serverVersion || "unknown"})`
+            `${BUILD_TAG} | kind=${payload.kind || "unknown"} | PPTX 변환 완료: slides ${slideLabel} (count: ${(payload.slides && payload.slides.length) || 0}, requested: ${requestedLabel}, firstPage=${firstSize}, native=${payload.nativeSizeEnabled === true ? "on" : "off"}, server: ${payload.serverVersion || "unknown"})`
           );
           updateRenderAvailability();
           parent.postMessage({

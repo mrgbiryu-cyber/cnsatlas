@@ -15,6 +15,8 @@ from build_resolved_ppt_ir import build_page_ir
 from build_visual_first_replay_bundle import build_bundle_from_page
 from pptx_inspector import extract_slide_details
 
+SERVER_BUILD_TAG = "V50"
+
 
 def parse_slides(raw: Any) -> list[int]:
     if raw is None or raw == "":
@@ -28,7 +30,7 @@ def parse_slides(raw: Any) -> list[int]:
 
 
 class LocalHandler(BaseHTTPRequestHandler):
-    server_version = "CNSAtlasLocalPlugin/2026-04-03a"
+    server_version = f"CNSAtlasLocalPlugin/{SERVER_BUILD_TAG}"
 
     def _send_json(self, status: int, payload: dict[str, Any]) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -124,7 +126,7 @@ def main() -> None:
     args = parser.parse_args()
 
     server = ThreadingHTTPServer((args.host, args.port), LocalHandler)
-    print(f"listening on http://{args.host}:{args.port}")
+    print(f"listening on http://{args.host}:{args.port} ({LocalHandler.server_version})")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

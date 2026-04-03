@@ -1,6 +1,7 @@
 const DEFAULT_FONT = { family: "Inter", style: "Regular" };
 const FORCE_SYSTEM_FONT = true;
 const SYSTEM_FONT_FAMILY = "Malgun Gothic";
+const PLUGIN_BUILD_TAG = "V50";
 const SLIDE_GAP = 120;
 const MIN_PAGE_WIDTH = 960;
 const MIN_PAGE_HEIGHT = 540;
@@ -50,12 +51,12 @@ figma.ui.onmessage = async (message) => {
         figma.ui.postMessage({
           type: "render-success",
           message: payload && payload.kind === "slide-review-manifest"
-          ? `v2026-04-03a | kind=slide-review-manifest | Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
+          ? `${PLUGIN_BUILD_TAG} | kind=slide-review-manifest | Rendered review manifest (${payload.title || payload.review_id || "unknown review"})`
           : payload && payload.kind === "figma-replay-collection"
-          ? `v2026-04-03a | kind=figma-replay-collection | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
+          ? `${PLUGIN_BUILD_TAG} | kind=figma-replay-collection | Rendered replay collection (${payload.pages.length} pages) / frames: ${renderedCount}`
           : payload && payload.kind === "figma-replay-bundle"
-          ? `v2026-04-03a | kind=figma-replay-bundle | Rendered figma replay bundle (${payload.page_name || "unknown page"})`
-          : `v2026-04-03a | kind=intermediate | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
+          ? `${PLUGIN_BUILD_TAG} | kind=figma-replay-bundle | Rendered figma replay bundle (${payload.page_name || "unknown page"})`
+          : `${PLUGIN_BUILD_TAG} | kind=intermediate | Rendered ${payload.pages.length} slide previews (${activeRenderMode}) / frames: ${renderedCount}`,
       });
     } catch (error) {
       figma.ui.postMessage({
