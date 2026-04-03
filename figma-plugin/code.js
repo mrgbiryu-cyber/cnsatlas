@@ -1375,6 +1375,10 @@ async function renderReplayText(node, parentNode, origin) {
     return;
   }
   const local = boundsRelativeToOrigin(bounds, origin);
+  const snappedX = Math.round(local.x);
+  const snappedY = Math.round(local.y);
+  const snappedWidth = Math.max(Math.round(local.width), 12);
+  const snappedHeight = Math.max(Math.round(local.height), 16);
   const text = figma.createText();
   text.name = node.name || "Text";
   text.fontName = await resolveFigmaFontName(node.style || {});
@@ -1384,7 +1388,7 @@ async function renderReplayText(node, parentNode, origin) {
   text.textAlignVertical = mapReplayVerticalAlign(node.style && node.style.textAlignVertical);
   if ((node.style && node.style.textAutoResize) === "HEIGHT") {
     text.textAutoResize = "HEIGHT";
-    text.resize(Math.max(local.width, 12), Math.max(local.height, 16));
+    text.resize(snappedWidth, snappedHeight);
   } else {
     text.textAutoResize = "WIDTH_AND_HEIGHT";
   }
@@ -1402,8 +1406,8 @@ async function renderReplayText(node, parentNode, origin) {
   if (text.fills.length === 0) {
     text.fills = [{ type: "SOLID", color: { r: 0, g: 0, b: 0 } }];
   }
-  text.x = local.x;
-  text.y = local.y;
+  text.x = snappedX;
+  text.y = snappedY;
   const rotation = transformRotationDegrees(origin.sourceTransform || identityAffine());
   if (rotation) {
     text.rotation = rotation;
