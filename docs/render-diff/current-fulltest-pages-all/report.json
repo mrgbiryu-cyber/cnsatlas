@@ -1,0 +1,206 @@
+{
+  "kind": "current-fulltest-scan-report",
+  "completed": 39,
+  "start": 1,
+  "end": 39,
+  "requested_start": 1,
+  "requested_end": 39,
+  "scale": 1,
+  "results": [
+    {
+      "slide_no": 1,
+      "match_score": 0.9482367621527777,
+      "changed_ratio": 0.05176323784722222
+    },
+    {
+      "slide_no": 2,
+      "match_score": 0.9125987413194444,
+      "changed_ratio": 0.08740125868055555
+    },
+    {
+      "slide_no": 3,
+      "match_score": 0.7847363281249999,
+      "changed_ratio": 0.215263671875
+    },
+    {
+      "slide_no": 4,
+      "match_score": 0.9192979600694444,
+      "changed_ratio": 0.08070203993055555
+    },
+    {
+      "slide_no": 5,
+      "match_score": 0.9727105034722222,
+      "changed_ratio": 0.027289496527777776
+    },
+    {
+      "slide_no": 6,
+      "match_score": 0.906953125,
+      "changed_ratio": 0.093046875
+    },
+    {
+      "slide_no": 7,
+      "match_score": 0.8359971788194445,
+      "changed_ratio": 0.16400282118055556
+    },
+    {
+      "slide_no": 8,
+      "match_score": 0.8120486111111112,
+      "changed_ratio": 0.18795138888888888
+    },
+    {
+      "slide_no": 9,
+      "match_score": 0.7581315104166666,
+      "changed_ratio": 0.24186848958333335
+    },
+    {
+      "slide_no": 10,
+      "match_score": 0.8912847222222222,
+      "changed_ratio": 0.10871527777777777
+    },
+    {
+      "slide_no": 11,
+      "match_score": 0.7811219618055556,
+      "changed_ratio": 0.21887803819444446
+    },
+    {
+      "slide_no": 12,
+      "match_score": 0.8178689236111111,
+      "changed_ratio": 0.1821310763888889
+    },
+    {
+      "slide_no": 13,
+      "match_score": 0.8991178385416667,
+      "changed_ratio": 0.10088216145833333
+    },
+    {
+      "slide_no": 14,
+      "match_score": 0.8766666666666667,
+      "changed_ratio": 0.12333333333333334
+    },
+    {
+      "slide_no": 15,
+      "match_score": 0.6295703125000001,
+      "changed_ratio": 0.3704296875
+    },
+    {
+      "slide_no": 16,
+      "match_score": 0.8775227864583334,
+      "changed_ratio": 0.12247721354166667
+    },
+    {
+      "slide_no": 17,
+      "match_score": 0.8432975260416666,
+      "changed_ratio": 0.15670247395833334
+    },
+    {
+      "slide_no": 18,
+      "match_score": 0.8206825086805556,
+      "changed_ratio": 0.17931749131944444
+    },
+    {
+      "slide_no": 19,
+      "match_score": 0.6871137152777778,
+      "changed_ratio": 0.31288628472222224
+    },
+    {
+      "slide_no": 20,
+      "match_score": 0.7213248697916667,
+      "changed_ratio": 0.27867513020833334
+    },
+    {
+      "slide_no": 21,
+      "match_score": 0.905906032986111,
+      "changed_ratio": 0.09409396701388889
+    },
+    {
+      "slide_no": 22,
+      "match_score": 0.6972623697916667,
+      "changed_ratio": 0.30273763020833333
+    },
+    {
+      "slide_no": 23,
+      "match_score": 0.7437055121527778,
+      "changed_ratio": 0.2562944878472222
+    },
+    {
+      "slide_no": 24,
+      "match_score": 0.7194042968750001,
+      "changed_ratio": 0.280595703125
+    },
+    {
+      "slide_no": 25,
+      "match_score": 0.8701877170138889,
+      "changed_ratio": 0.1298122829861111
+    },
+    {
+      "slide_no": 26,
+      "match_score": 0.6441579861111111,
+      "changed_ratio": 0.35584201388888886
+    },
+    {
+      "slide_no": 27,
+      "match_score": 0.9725640190972222,
+      "changed_ratio": 0.02743598090277778
+    },
+    {
+      "slide_no": 28,
+      "match_score": 0.7048263888888888,
+      "changed_ratio": 0.2951736111111111
+    },
+    {
+      "slide_no": 29,
+      "match_score": 0.7295421006944445,
+      "changed_ratio": 0.2704578993055556
+    },
+    {
+      "slide_no": 30,
+      "match_score": 0.8530891927083333,
+      "changed_ratio": 0.14691080729166667
+    },
+    {
+      "slide_no": 31,
+      "match_score": 0.8669932725694445,
+      "changed_ratio": 0.13300672743055555
+    },
+    {
+      "slide_no": 32,
+      "match_score": 0.7840494791666667,
+      "changed_ratio": 0.21595052083333333
+    },
+    {
+      "slide_no": 33,
+      "match_score": 0.7570052083333334,
+      "changed_ratio": 0.24299479166666665
+    },
+    {
+      "slide_no": 34,
+      "match_score": 0.8759646267361111,
+      "changed_ratio": 0.12403537326388889
+    },
+    {
+      "slide_no": 35,
+      "match_score": 0.7440993923611111,
+      "changed_ratio": 0.2559006076388889
+    },
+    {
+      "slide_no": 36,
+      "match_score": 0.7631098090277778,
+      "changed_ratio": 0.23689019097222222
+    },
+    {
+      "slide_no": 37,
+      "match_score": 0.9024609375,
+      "changed_ratio": 0.0975390625
+    },
+    {
+      "slide_no": 38,
+      "match_score": 0.7905360243055556,
+      "changed_ratio": 0.20946397569444444
+    },
+    {
+      "slide_no": 39,
+      "match_score": 0.9815125868055555,
+      "changed_ratio": 0.018487413194444444
+    }
+  ]
+}

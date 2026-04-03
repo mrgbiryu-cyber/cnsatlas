@@ -1061,7 +1061,9 @@ def build_table_node(candidate: dict[str, Any], context: dict[str, Any], assets:
                         else [{"type": "SOLID", "color": {"r": 1, "g": 1, "b": 1}, "opacity": 1.0}]
                     )
                     frame_strokes = [{"type": "SOLID", "color": {"r": 0.78, "g": 0.78, "b": 0.78}, "opacity": 1.0}]
-                    frame_stroke_weight = 1.1
+                    # Table-heavy pages are frequently over-drawn when each cell keeps a thick border.
+                    # Use a slightly lighter default while keeping common table contrast stable.
+                    frame_stroke_weight = 0.9
                 else:
                     frame_fill = [solid_paint(cell_style.get("fill"), {"r": 1, "g": 1, "b": 1}, 1.0)] if cell_style.get("fill") else []
                     frame_strokes = [{"type": "SOLID", "color": {"r": 0.82, "g": 0.82, "b": 0.82}, "opacity": 1.0}]

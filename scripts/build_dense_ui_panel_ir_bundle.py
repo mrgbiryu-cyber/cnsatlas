@@ -595,7 +595,8 @@ def build_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | None = None, 
     source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
     fill_style = shape_style.get("fill") or (atom.get("cell_style") or {}).get("fill")
     if role in {"top_meta_band_cell", "top_meta_info_cell"} and source_path.endswith(("cell_2", "cell_4")):
-        fill_style = {"type": "srgb", "value": "D9D9D9", "alpha": 1.0, "kind": "solid"}
+        # Value cells in top meta rows are white in the PPT reference.
+        fill_style = {"type": "srgb", "value": "FFFFFF", "alpha": 1.0, "kind": "solid"}
     elif role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
         resolved = str((fill_style or {}).get("resolved_value") or "").upper()
         if resolved in {"", "FFFFFF"}:
@@ -752,7 +753,8 @@ def build_overlay_svg_rect_node(atom: dict[str, Any], bounds: dict[str, Any] | N
     source_path = str(((atom.get("debug_tags") or {}).get("source_path")) or "")
     fill_style = shape_style.get("fill") or (atom.get("cell_style") or {}).get("fill")
     if role in {"top_meta_band_cell", "top_meta_info_cell"} and source_path.endswith(("cell_2", "cell_4")):
-        fill_style = {"type": "srgb", "value": "D9D9D9", "alpha": 1.0, "kind": "solid"}
+        # Value cells in top meta rows are white in the PPT reference.
+        fill_style = {"type": "srgb", "value": "FFFFFF", "alpha": 1.0, "kind": "solid"}
     elif not fill_style and role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
         fill_style = {"type": "srgb", "value": "F2F2F2", "alpha": 1.0, "kind": "solid"}
     elif role in {"top_meta_band_cell", "top_meta_info_cell", "description_header_cell"}:
@@ -1545,6 +1547,18 @@ def page_atom_priority(atom: dict[str, Any]) -> tuple[tuple[int, ...], int, floa
     )
 
 
+def cluster_order_key(atoms_in_cluster: list[dict[str, Any]]) -> tuple[tuple[int, ...], float, float]:
+    source_orders = [
+        tuple(int(v) for v in (atom.get("source_order_path") or []))
+        for atom in atoms_in_cluster
+        if atom.get("source_order_path")
+    ]
+    min_source_order = min(source_orders) if source_orders else ()
+    min_y = min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in atoms_in_cluster)
+    min_x = min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in atoms_in_cluster)
+    return (min_source_order, min_y, min_x)
+
+
 def bounds_gap(a: dict[str, Any], b: dict[str, Any]) -> tuple[float, float]:
     ax1 = float(a["x"])
     ay1 = float(a["y"])
@@ -1648,10 +1662,7 @@ def build_global_asset_semantic_groups(
     for cluster_index, cluster_atoms in enumerate(
         sorted(
             merged.values(),
-            key=lambda atoms_in_cluster: (
-                min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in atoms_in_cluster),
-                min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in atoms_in_cluster),
-            ),
+            key=cluster_order_key,
         ),
         start=1,
     ):
@@ -1808,7 +1819,9 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
             continue
         viewer_placeholder_keys.add(key)
         viewer_placeholder_bounds[key] = bg_bounds
-        set_placeholder_fill(background_cards[0], "E6E6E6")
+        # PPT image placeholders (X diagonals over card) should stay transparent/white body.
+        # Filling these cards with gray causes broad visual drift on dense pages.
+        set_outline_only(background_cards[0])
         ordered_lines = sorted(
             matching_lines,
             key=lambda atom: tuple((atom.get("debug_tags") or {}).get("source_order_path") or []),
@@ -2055,10 +2068,7 @@ def build_page_owner_semantic_groups(page: dict[str, Any], assets: dict[str, Any
     for index, atoms in enumerate(
         sorted(
             [atoms for entry_index, atoms in enumerate(merged_entries) if entry_index not in absorbed_entry_indices],
-            key=lambda atoms_in_group: (
-                min(float((atom.get("visual_bounds_px") or {}).get("y") or 0.0) for atom in atoms_in_group),
-                min(float((atom.get("visual_bounds_px") or {}).get("x") or 0.0) for atom in atoms_in_group),
-            ),
+            key=cluster_order_key,
         ),
         start=1,
     ):

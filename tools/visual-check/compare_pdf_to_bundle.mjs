@@ -518,13 +518,15 @@ async function renderActualToPng(actual, crop, outputPath) {
     return svg;
   }
   const svg = bundleToSvg(actual, crop);
-  await renderBundleToPng(actual, crop, outputPath);
+  await sharp(Buffer.from(svg)).png().toFile(outputPath);
   return svg;
 }
 
 async function diffPng(referencePng, actualPng, outPath, options = {}) {
   const blurSigma = parseNumber(options.blurSigma, 1.2);
   const deltaThreshold = parseNumber(options.deltaThreshold, 40);
+  const hotspotMinPixels = Math.max(1, Math.round(parseNumber(options.hotspotMinPixels, 80)));
+  const hotspotLimit = Math.max(1, Math.round(parseNumber(options.hotspotLimit, 12)));
   let ref = sharp(referencePng);
   let act = sharp(actualPng);
   const refMeta = await ref.metadata();
@@ -539,6 +541,7 @@ async function diffPng(referencePng, actualPng, outPath, options = {}) {
   const actBuf = await act.resize(width, height).ensureAlpha().raw().toBuffer();
 
   const diff = Buffer.alloc(refBuf.length);
+  const changedMask = new Uint8Array(width * height);
   let changed = 0;
   for (let i = 0; i < refBuf.length; i += 4) {
     const dr = Math.abs(refBuf[i] - actBuf[i]);
@@ -548,6 +551,7 @@ async function diffPng(referencePng, actualPng, outPath, options = {}) {
     const delta = dr + dg + db + da;
     if (delta > deltaThreshold) {
       changed += 1;
+      changedMask[i / 4] = 1;
       diff[i] = 255;
       diff[i + 1] = 0;
       diff[i + 2] = 0;
@@ -560,6 +564,7 @@ async function diffPng(referencePng, actualPng, outPath, options = {}) {
     }
   }
   await sharp(diff, { raw: { width, height, channels: 4 } }).png().toFile(outPath);
+  const hotspots = extractHotspots(changedMask, width, height, hotspotMinPixels, hotspotLimit);
   return {
     width,
     height,
@@ -567,8 +572,91 @@ async function diffPng(referencePng, actualPng, outPath, options = {}) {
     delta_threshold: deltaThreshold,
     changed_pixels: changed,
     changed_ratio: width * height ? changed / (width * height) : 0,
-    match_score: width * height ? 1 - changed / (width * height) : 0
+    match_score: width * height ? 1 - changed / (width * height) : 0,
+    hotspots
   };
+}
+
+function extractHotspots(mask, width, height, minPixels, limit) {
+  const visited = new Uint8Array(mask.length);
+  const qx = new Int32Array(mask.length);
+  const qy = new Int32Array(mask.length);
+  const regions = [];
+
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      const start = y * width + x;
+      if (!mask[start] || visited[start]) continue;
+
+      let head = 0;
+      let tail = 0;
+      qx[tail] = x;
+      qy[tail] = y;
+      tail += 1;
+      visited[start] = 1;
+
+      let count = 0;
+      let minX = x;
+      let maxX = x;
+      let minY = y;
+      let maxY = y;
+
+      while (head < tail) {
+        const cx = qx[head];
+        const cy = qy[head];
+        head += 1;
+        count += 1;
+
+        if (cx < minX) minX = cx;
+        if (cx > maxX) maxX = cx;
+        if (cy < minY) minY = cy;
+        if (cy > maxY) maxY = cy;
+
+        const n1 = cy * width + (cx + 1);
+        const n2 = cy * width + (cx - 1);
+        const n3 = (cy + 1) * width + cx;
+        const n4 = (cy - 1) * width + cx;
+
+        if (cx + 1 < width && mask[n1] && !visited[n1]) {
+          visited[n1] = 1;
+          qx[tail] = cx + 1;
+          qy[tail] = cy;
+          tail += 1;
+        }
+        if (cx - 1 >= 0 && mask[n2] && !visited[n2]) {
+          visited[n2] = 1;
+          qx[tail] = cx - 1;
+          qy[tail] = cy;
+          tail += 1;
+        }
+        if (cy + 1 < height && mask[n3] && !visited[n3]) {
+          visited[n3] = 1;
+          qx[tail] = cx;
+          qy[tail] = cy + 1;
+          tail += 1;
+        }
+        if (cy - 1 >= 0 && mask[n4] && !visited[n4]) {
+          visited[n4] = 1;
+          qx[tail] = cx;
+          qy[tail] = cy - 1;
+          tail += 1;
+        }
+      }
+
+      if (count >= minPixels) {
+        regions.push({
+          pixels: count,
+          x: minX,
+          y: minY,
+          width: maxX - minX + 1,
+          height: maxY - minY + 1
+        });
+      }
+    }
+  }
+
+  regions.sort((a, b) => b.pixels - a.pixels);
+  return regions.slice(0, limit);
 }
 
 async function main() {

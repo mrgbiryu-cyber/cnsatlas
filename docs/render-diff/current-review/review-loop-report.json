@@ -1,16 +1,40 @@
 {
   "kind": "current-review-loop-report",
   "slides": [
-    9
+    9,
+    12,
+    19,
+    29
   ],
   "scale": 1,
   "rows": [
     {
       "slide_no": 9,
-      "match_score": 0.09686523437500005,
-      "changed_ratio": 0.903134765625,
+      "match_score": 0.7581315104166666,
+      "changed_ratio": 0.24186848958333335,
       "board_png": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide9-cmp/board.png",
       "actual_json": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide9.bundle.json"
+    },
+    {
+      "slide_no": 12,
+      "match_score": 0.8178689236111111,
+      "changed_ratio": 0.1821310763888889,
+      "board_png": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide12-cmp/board.png",
+      "actual_json": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide12.bundle.json"
+    },
+    {
+      "slide_no": 19,
+      "match_score": 0.6765245225694445,
+      "changed_ratio": 0.32347547743055555,
+      "board_png": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide19-cmp/board.png",
+      "actual_json": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide19.bundle.json"
+    },
+    {
+      "slide_no": 29,
+      "match_score": 0.7295421006944445,
+      "changed_ratio": 0.2704578993055556,
+      "board_png": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide29-cmp/board.png",
+      "actual_json": "/mnt/c/users/mrgbi/onedrive/desktop/cnsatlas/docs/render-diff/current-review/slide29.bundle.json"
     }
   ]
 }
